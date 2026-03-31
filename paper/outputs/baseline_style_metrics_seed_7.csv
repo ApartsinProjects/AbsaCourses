@@ -1,0 +1,7 @@
+style,n_reviews,micro_f1,micro_precision,micro_recall
+"Casual (Texting style: lowercase, no punctuation, slang like 'tbh', 'idk', 'tho', fragments)",102,0.7443037974683544,0.7577319587628866,0.7313432835820896
+Analytic but Simple (Explains 'why' but uses simple language),95,0.6358974358974359,0.6595744680851063,0.6138613861386139
+Short (Max 10-15 words. Fragments allowed),98,0.6358695652173914,0.7090909090909091,0.5763546798029556
+Simple & Direct (Use only common words. No academic jargon. Like talking to a friend),108,0.5795724465558195,0.583732057416268,0.5754716981132075
+"Rant/Rave (Emotional, very subjective, lots of punctuation !!! or ...)",102,0.5758354755784062,0.6588235294117647,0.5114155251141552
+"Confused Student (Unsure about things, asks rhetorical questions)",94,0.513595166163142,0.5592105263157895,0.4748603351955307

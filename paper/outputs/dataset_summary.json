@@ -1,0 +1,14 @@
+{
+  "n_reviews": 5984,
+  "n_unique_courses": 14,
+  "n_unique_lecturers": 8,
+  "word_count_mean": 14.03,
+  "word_count_median": 9.0,
+  "word_count_min": 1,
+  "word_count_max": 60,
+  "char_count_mean": 76.7,
+  "aspect_count_mean": 2.0,
+  "aspect_count_median": 2.0,
+  "aspect_count_min": 1,
+  "aspect_count_max": 3
+}

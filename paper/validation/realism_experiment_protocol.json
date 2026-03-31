@@ -1,0 +1,64 @@
+{
+  "real_review_source": "OMSCS Reviews public course pages",
+  "source_urls": {
+    "CS-6200": "https://awaisrauf.com/omscs_reviews/CS-6200",
+    "CS-6250": "https://awaisrauf.com/omscs_reviews/CS-6250",
+    "CS-6400": "https://awaisrauf.com/omscs_reviews/CS-6400",
+    "CS-7641": "https://awaisrauf.com/omscs_reviews/CS-7641"
+  },
+  "sample_size": 32,
+  "generator_model_default": "gpt-5.2",
+  "judge_model_default": "gpt-5.4",
+  "random_seed": 42,
+  "attribute_space": {
+    "course_code": "Exact course identifier used in the target review domain.",
+    "course_title": "Human-readable course title.",
+    "semester": "Term marker such as Fall 2022 or Spring 2023.",
+    "student_background": "Prior familiarity with the topic, math maturity, coding fluency, or security/network background.",
+    "motivation": "Why the student took the course, such as requirement, curiosity, or specialization fit.",
+    "grade_band": "Observed or expected performance level, including ambiguity around final grade when natural.",
+    "workload_intensity": "Perceived weekly effort and project crunch level.",
+    "assessment_profile": "Relative emphasis on projects, exams, reports, quizzes, or participation.",
+    "instruction_quality": "Perception of lectures, notes, examples, and conceptual clarity.",
+    "support_channel_experience": "Office hours, forums, TAs, Piazza, email responsiveness, or peer support.",
+    "administrative_friction": "Confusing rubrics, grading opacity, deadlines, tooling issues, or policy frustration.",
+    "emotional_temperature": "Measured, mixed, enthusiastic, bitter, exhausted, or resigned tone.",
+    "linguistic_style": "Analytic, terse, rant-like, uncertain, casually compressed, or moderately polished prose.",
+    "hedging_and_uncertainty": "Degree of confidence, second-guessing, or partial disagreement inside the same review.",
+    "specificity_markers": "Realistic concrete references to assignments, lectures, datasets, readings, forums, or deadlines.",
+    "recommendation_stance": "Would recommend, only for prepared students, or actively discourage."
+  },
+  "prompt_cycles": [
+    {
+      "cycle_id": 0,
+      "name": "rich_attributes_baseline",
+      "goal": "Generate domain-matched reviews using a larger attribute space while preserving aspect-level labels.",
+      "additional_instruction": "Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona."
+    },
+    {
+      "cycle_id": 1,
+      "name": "reduce_synthetic_signatures",
+      "goal": "Suppress robotic balance and over-explicit contrasts that make synthetic text easy to detect.",
+      "additional_instruction": "Use partial contradictions, hedging, and one or two concrete course-specific details. Do not summarize every aspect neatly. Let some judgments feel incidental rather than checklist-like."
+    },
+    {
+      "cycle_id": 2,
+      "name": "messier_realism",
+      "goal": "Increase natural unevenness and domain realism without collapsing label faithfulness.",
+      "additional_instruction": "Allow sentence fragments, imperfect transitions, asymmetric emphasis, grade uncertainty, and references to forums, projects, grading confusion, or time pressure when appropriate. Keep the text plausible for a real student review."
+    }
+  ],
+  "recommended_protocol": {
+    "step_1": "Sample a matched set of real reviews from the public OMSCS source.",
+    "step_2": "Generate synthetic reviews with cycle 0 using the richer attribute space.",
+    "step_3": "Ask the judge model to label each blind item as real or synthetic and provide confidence.",
+    "step_4": "Inspect false positives and false negatives for synthetic signatures.",
+    "step_5": "Refine the prompt and rerun cycles 1 and 2.",
+    "step_6": "Stop once the judge is near chance or once prompt changes start harming label control."
+  },
+  "evaluation_targets": {
+    "primary": "Judge accuracy on real-vs-synthetic discrimination",
+    "secondary": "Judge confidence gap between real and synthetic items",
+    "tertiary": "Qualitative reasons the judge gives for calling a review synthetic"
+  }
+}

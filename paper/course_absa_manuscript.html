@@ -1,0 +1,432 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Toward Synthetic ABSA for Higher Education Course Reviews</title>
+  <style>
+    :root {
+      --paper: #f5f0e6;
+      --ink: #1c2529;
+      --muted: #5b6a70;
+      --accent: #174b63;
+      --accent-soft: #d9e6ec;
+      --line: #c9c2b5;
+      --callout: #fff8df;
+      --review: #f7e8e3;
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ink);
+      background:
+        radial-gradient(circle at top left, rgba(23,75,99,0.08), transparent 34%),
+        linear-gradient(180deg, #efe8da 0%, var(--paper) 28%, #fbf8f1 100%);
+      line-height: 1.6;
+    }
+    .page {
+      max-width: 1080px;
+      margin: 0 auto;
+      padding: 42px 28px 80px;
+    }
+    header {
+      border-bottom: 2px solid var(--line);
+      padding-bottom: 20px;
+      margin-bottom: 26px;
+    }
+    h1, h2, h3 {
+      font-family: Cambria, Georgia, serif;
+      line-height: 1.2;
+      color: #112d3a;
+      margin: 0 0 12px;
+    }
+    h1 { font-size: 2.25rem; max-width: 900px; }
+    h2 {
+      font-size: 1.45rem;
+      border-top: 1px solid var(--line);
+      padding-top: 22px;
+      margin-top: 30px;
+    }
+    h3 { font-size: 1.08rem; margin-top: 24px; }
+    p, li { font-size: 1rem; }
+    .meta, .note {
+      color: var(--muted);
+      font-size: 0.96rem;
+    }
+    .abstract, .callout, .review-box {
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      padding: 18px 20px;
+      background: rgba(255,255,255,0.65);
+      box-shadow: 0 14px 32px rgba(17,45,58,0.05);
+    }
+    .callout { background: var(--callout); }
+    .review-box { background: var(--review); }
+    .two-col {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+      margin: 18px 0;
+    }
+    .pipeline {
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      padding: 18px;
+      background: rgba(255,255,255,0.7);
+    }
+    .flow {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      align-items: center;
+      margin-top: 12px;
+    }
+    .step {
+      background: linear-gradient(180deg, #f8fbfc 0%, #ddeaf0 100%);
+      border: 1px solid #b6cad4;
+      border-radius: 12px;
+      padding: 12px 14px;
+      min-width: 140px;
+      flex: 1 1 140px;
+      text-align: center;
+      font-size: 0.95rem;
+      color: #173947;
+    }
+    .arrow {
+      color: var(--accent);
+      font-size: 1.3rem;
+      font-weight: bold;
+    }
+    figure {
+      margin: 20px 0 24px;
+      padding: 14px;
+      border: 1px solid var(--line);
+      border-radius: 16px;
+      background: rgba(255,255,255,0.78);
+    }
+    figure img {
+      width: 100%;
+      display: block;
+      border-radius: 10px;
+    }
+    figcaption {
+      margin-top: 10px;
+      font-size: 0.93rem;
+      color: var(--muted);
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 16px 0 24px;
+      background: rgba(255,255,255,0.84);
+      font-size: 0.95rem;
+    }
+    th, td {
+      border: 1px solid #d4cec2;
+      padding: 9px 10px;
+      vertical-align: top;
+      text-align: left;
+    }
+    th {
+      background: #e5ecef;
+      color: #173947;
+    }
+    tbody tr:nth-child(even) { background: rgba(243,247,248,0.8); }
+    ul { padding-left: 22px; }
+    .small { font-size: 0.9rem; }
+    .refs li { margin-bottom: 10px; }
+    a { color: var(--accent); }
+  </style>
+</head>
+<body>
+  <main class="page">
+    <header>
+      <h1>Toward Synthetic Aspect-Based Sentiment Analysis for Higher Education Course Reviews: A Dual-Pipeline Study of Data Generation and ABSA Modeling</h1>
+      <p class="meta">Draft manuscript for <em>Computers &amp; Education</em>. Evidence in this version combines the project README and notebooks, newly generated EDA artifacts, and additional baseline experiments run on the released JSONL dataset.</p>
+    </header>
+
+    <section class="abstract">
+      <h2>Abstract</h2>
+      <p>
+        Manual annotation for aspect-based sentiment analysis (ABSA) in higher education is expensive, domain-specific, and difficult to scale across diverse writing styles. This paper studies a synthetic-data-centered workflow for educational ABSA that combines two linked contributions: (1) a local large-language-model pipeline for generating labeled student course reviews with aspect-level sentiment annotations, and (2) an ABSA analysis pipeline that detects aspects and estimates sentiment polarity for each detected aspect. The released dataset contains 5,984 minimally cleaned reviews derived from 6,000 generated records, covers 10 educational aspects, and averages 2 labeled aspects per review. To strengthen the evidence base beyond a single notebook run, we add exploratory data analysis, representative qualitative examples, multi-seed baseline experiments, a learning-curve study, and held-out-style robustness tests. The project notebook reports strong recorded test performance for the BERT-based pipeline on a separate cleaned split of 5,052 reviews, with per-aspect precision ranging from 0.7342 to 1.0000 and sentiment mean squared error (MSE) ranging from 0.0107 to 0.1239. On the released dataset, an additional TF-IDF baseline averaged 0.5979 micro-F1 across three random splits and improved steadily as more synthetic training data were added. These results suggest that the synthetic corpus is internally learnable and stylistically varied, but a journal-ready claim still requires validation on real student feedback and direct ablations of the generation pipeline.
+      </p>
+    </section>
+
+    <section>
+      <h2>1. Introduction</h2>
+      <p>
+        Student reviews contain actionable evidence about workload, clarity, support, fairness, materials, and overall learning experience, yet most institutional feedback analysis still depends on manual reading or coarse sentiment summaries. ABSA is better suited to this setting because the same review can simultaneously praise one aspect and criticize another. The challenge is that high-quality educational ABSA datasets are scarce, expensive to annotate, and often limited to a single institution, course type, or annotation scheme.
+      </p>
+      <p>
+        The present project addresses that bottleneck by pairing synthetic data generation with downstream ABSA modeling. Instead of treating data generation and model training as separate tasks, the repository already encodes them as an end-to-end workflow: a synthetic review generator produces multi-aspect course reviews in multiple student personas, and a BERT-based analysis pipeline learns aspect detection and sentiment scoring from those labels. For a journal submission, however, the repository alone is not enough; it must be translated into a defensible scientific contribution with explicit evidence boundaries, additional analyses, and reviewer-facing limitations.
+      </p>
+      <p>
+        The strongest claim this version can safely support is therefore narrow: <strong>a synthetic educational review corpus with controlled aspect labels can support internally consistent ABSA training, produce diverse review forms, and serve as a useful experimental testbed for educational opinion mining.</strong> The manuscript does not claim that synthetic data yet replaces manually annotated educational feedback or that the observed gains will transfer unchanged to real institutional review data.
+      </p>
+    </section>
+
+    <section>
+      <h2>2. Literature Review</h2>
+      <p>
+        The proposed work sits at the intersection of three literatures: general ABSA benchmarks and methods, synthetic text data generation for classification, and educational feedback analysis. SemEval task definitions helped establish ABSA as a standard fine-grained sentiment problem by formalizing aspect detection and aspect sentiment prediction with shared datasets and evaluation procedures [1, 2]. More recent ABSA work continues to show the value of pretrained transformers and sentiment-aware pretraining for fine-grained polarity modeling [3, 4].
+      </p>
+      <p>
+        On the data side, recent large-language-model studies show both the promise and the limitations of synthetic text generation for supervised NLP. Synthetic data can reduce annotation cost and bootstrap label-rich corpora, but performance depends strongly on task properties and on how well the generation process controls quality, diversity, and label faithfulness [5]. This caution is especially relevant here because educational ABSA is a subjective and domain-specific task.
+      </p>
+      <p>
+        In education, prior work has emphasized that student feedback is noisy, stylistically varied, and pedagogically important. Welch and Mihalcea demonstrated the value of targeted sentiment analysis for student comments [6], while Chathuranga et al. released an annotated student course feedback corpus for opinion targets and polarity [7]. Nikolić et al. further showed that ABSA can be informative for higher education reviews, but that source characteristics matter and performance varies across aspect frequencies and review sources [8]. A recent review by Shaik et al. also identifies ambiguity, domain language, and annotation scarcity as recurring obstacles for educational feedback analysis [9]. Together, this literature supports the relevance of the problem and explains why a synthetic educational ABSA resource may be useful, while also motivating the need for stronger external validation than synthetic-only experiments can provide.
+      </p>
+    </section>
+
+    <section>
+      <h2>3. Methodology</h2>
+
+      <div class="two-col">
+        <div class="pipeline">
+          <h3>3.1 Synthetic Data Generation Pipeline</h3>
+          <p class="small">This pipeline is reconstructed from the repository documentation and generation notebooks.</p>
+          <div class="flow">
+            <div class="step">Balanced parameter sampling<br>grade, course, lecturer, style, aspect labels</div>
+            <div class="arrow">→</div>
+            <div class="step">Prompt construction with constraints<br>forbidden phrases, persona rules, aspect targets</div>
+            <div class="arrow">→</div>
+            <div class="step">Pass 1 generation<br>draft synthetic student review</div>
+            <div class="arrow">→</div>
+            <div class="step">Pass 2 refinement<br>repair label mismatches and improve stylistic fit</div>
+            <div class="arrow">→</div>
+            <div class="step">Noise injection and export<br>typos, slang, casing variation, JSONL output</div>
+          </div>
+        </div>
+
+        <div class="pipeline">
+          <h3>3.2 ABSA Analysis Pipeline</h3>
+          <p class="small">This pipeline follows the released training notebook.</p>
+          <div class="flow">
+            <div class="step">Text encoder<br><code>bert-base-uncased</code></div>
+            <div class="arrow">→</div>
+            <div class="step">Aspect detection head<br>10 binary outputs with BCE loss</div>
+            <div class="arrow">→</div>
+            <div class="step">Sentiment regression head<br>10 scores in [-1, 1] with masked MSE</div>
+            <div class="arrow">→</div>
+            <div class="step">Calibration<br>threshold sweep on a held-out split</div>
+            <div class="arrow">→</div>
+            <div class="step">Per-aspect test evaluation<br>accuracy, precision, recall, MSE</div>
+          </div>
+        </div>
+      </div>
+
+      <h3>3.3 Dataset Used in This Draft</h3>
+      <p>
+        The released JSONL file contains 6,000 synthetic records. After minimal cleaning that removed blank review texts and preserved only reviews with at least one valid labeled aspect, 5,984 reviews remained. The cleaned corpus spans 14 course names, 8 lecturers, and 10 aspect categories. Reviews are short by design: the mean length is 14.03 words, the median is 9 words, and each review contains an average of 2 labeled aspects.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Table 1. Dataset Summary</th>
+            <th>Value</th>
+            <th>Interpretation</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Clean reviews</td><td>5,984</td><td>Usable records for current experiments</td></tr>
+          <tr><td>Course names</td><td>14</td><td>Multiple academic contexts rather than a single course</td></tr>
+          <tr><td>Lecturers</td><td>8</td><td>Named entities present in the synthetic reviews</td></tr>
+          <tr><td>Aspect inventory</td><td>10</td><td><code>clarity</code>, <code>difficulty</code>, <code>exam_fairness</code>, <code>interest</code>, <code>lecturer_quality</code>, <code>materials</code>, <code>overall_experience</code>, <code>relevance</code>, <code>support</code>, <code>workload</code></td></tr>
+          <tr><td>Mean / median words</td><td>14.03 / 9</td><td>Short-form review style dominates the corpus</td></tr>
+          <tr><td>Mean aspects per review</td><td>2.0</td><td>Many reviews are genuinely multi-aspect</td></tr>
+          <tr><td>Min-max words</td><td>1-60</td><td>Substantial variation in compression and detail</td></tr>
+        </tbody>
+      </table>
+
+      <h3>3.4 Additional Experiments Added for This Paper</h3>
+      <ul>
+        <li>Exploratory data analysis on review length, aspect-sentiment counts, aspect co-occurrence, and grade-style balance.</li>
+        <li>A reproducible TF-IDF baseline with 80/10/10 train-calibration-test splits across three random seeds.</li>
+        <li>A learning-curve study using 25%, 50%, 75%, and 100% of the training data.</li>
+        <li>A held-out-style generalization experiment to test robustness to unseen writing styles.</li>
+        <li>Representative qualitative examples for mixed-polarity and persona-specific reviews.</li>
+      </ul>
+    </section>
+
+    <section>
+      <h2>4. Results</h2>
+
+      <figure>
+        <img src="outputs/figures/aspect_sentiment_heatmap.png" alt="Aspect sentiment heatmap">
+        <figcaption><strong>Figure 1.</strong> Distribution of positive, neutral, and negative labels across the 10 aspect categories. The synthetic data are not sentiment-balanced per aspect, which makes the task more realistic but also creates harder aspects such as <code>relevance</code>, <code>interest</code>, and <code>overall_experience</code>.</figcaption>
+      </figure>
+
+      <div class="two-col">
+        <figure>
+          <img src="outputs/figures/review_length_distribution.png" alt="Review length distribution">
+          <figcaption><strong>Figure 2.</strong> Review lengths are intentionally short and noisy, consistent with course-survey comments and casual online feedback.</figcaption>
+        </figure>
+        <figure>
+          <img src="outputs/figures/grade_style_heatmap.png" alt="Grade by style heatmap">
+          <figcaption><strong>Figure 3.</strong> Grade labels and writing styles are broadly distributed rather than collapsing into a single review persona.</figcaption>
+        </figure>
+      </div>
+
+      <h3>4.1 Representative Data Examples</h3>
+      <table>
+        <thead>
+          <tr>
+            <th>Table 2. Representative Reviews</th>
+            <th>Style</th>
+            <th>Aspect labels</th>
+            <th>Excerpt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Mixed polarity</td>
+            <td>Casual texting</td>
+            <td><code>clarity=neutral</code>, <code>exam_fairness=negative</code>, <code>relevance=positive</code></td>
+            <td>"prof levi's ds course was fine tbh ... exams tho were super unfair ... but still passed and got an a"</td>
+          </tr>
+          <tr>
+            <td>Analytic</td>
+            <td>Analytic but Simple</td>
+            <td><code>workload=positive</code>, <code>support=positive</code>, <code>relevance=positive</code></td>
+            <td>"the workload was heavy but doable ... office hours were super helpful ... useful for real-life problems"</td>
+          </tr>
+          <tr>
+            <td>Rant</td>
+            <td>Rant/Rave</td>
+            <td><code>materials=neutral</code>, <code>difficulty=negative</code>, <code>relevance=positive</code></td>
+            <td>"cyber sec basics was so hard!!! ... i got lost ... but at least we did real world stuff that made sense"</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <h3>4.2 Recorded Notebook Results for the BERT-Based Pipeline</h3>
+      <p>
+        The repository notebook already contains a full BERT-based run on a separate cleaned file with 5,052 reviews and a 4,041/505/506 train-calibration-test split. Those recorded results are important because they reflect the intended ABSA modeling contribution of the project. They should be treated as recorded project evidence rather than as a rerun from this paper script.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Table 3. Recorded Notebook Per-Aspect Test Results</th>
+            <th>Precision</th>
+            <th>Recall</th>
+            <th>MSE</th>
+            <th>Threshold</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>exam_fairness</code></td><td>1.0000</td><td>1.0000</td><td>0.0166</td><td>0.95</td></tr>
+          <tr><td><code>materials</code></td><td>0.9700</td><td>0.9898</td><td>0.0253</td><td>0.65</td></tr>
+          <tr><td><code>support</code></td><td>0.9639</td><td>0.9639</td><td>0.0107</td><td>0.85</td></tr>
+          <tr><td><code>workload</code></td><td>0.9200</td><td>0.9684</td><td>0.0478</td><td>0.30</td></tr>
+          <tr><td><code>lecturer_quality</code></td><td>0.8889</td><td>0.9143</td><td>0.0693</td><td>0.10</td></tr>
+          <tr><td><code>clarity</code></td><td>0.9379</td><td>0.9379</td><td>0.0311</td><td>0.75</td></tr>
+          <tr><td><code>interest</code></td><td>0.8636</td><td>0.9048</td><td>0.0207</td><td>0.70</td></tr>
+          <tr><td><code>difficulty</code></td><td>0.8652</td><td>0.8750</td><td>0.1239</td><td>0.80</td></tr>
+          <tr><td><code>relevance</code></td><td>0.7857</td><td>0.9296</td><td>0.0501</td><td>0.30</td></tr>
+          <tr><td><code>overall_experience</code></td><td>0.7342</td><td>0.8406</td><td>0.0159</td><td>0.30</td></tr>
+        </tbody>
+      </table>
+
+      <h3>4.3 Additional Baseline and Robustness Evidence</h3>
+      <p>
+        To make the paper less dependent on a single notebook output, we trained an additional TF-IDF baseline on the released JSONL dataset. Across three random splits, the baseline achieved a mean detection micro-F1 of 0.5979 (standard deviation 0.0140) and a mean detected-aspect sentiment MSE of 0.4329 (standard deviation 0.0292). These scores are much lower than the recorded BERT notebook results, which is expected, but they serve two useful functions: they confirm that the released dataset supports learnable structure, and they provide a reproducible non-neural reference point for future model comparisons.
+      </p>
+
+      <table>
+        <thead>
+          <tr>
+            <th>Table 4. Multi-Seed Baseline Summary</th>
+            <th>Mean</th>
+            <th>Std.</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Detection micro-precision</td><td>0.6432</td><td>0.0241</td></tr>
+          <tr><td>Detection micro-recall</td><td>0.5592</td><td>0.0178</td></tr>
+          <tr><td>Detection micro-F1</td><td>0.5979</td><td>0.0140</td></tr>
+          <tr><td>Detection macro-F1</td><td>0.6048</td><td>0.0130</td></tr>
+          <tr><td>Sentiment MSE on detected aspects</td><td>0.4329</td><td>0.0292</td></tr>
+          <tr><td>Sentiment polarity accuracy</td><td>0.5214</td><td>0.0210</td></tr>
+        </tbody>
+      </table>
+
+      <div class="two-col">
+        <figure>
+          <img src="outputs/figures/baseline_detection_f1_by_aspect.png" alt="Detection F1 by aspect">
+          <figcaption><strong>Figure 4.</strong> Baseline detection F1 varies substantially by aspect, indicating that some aspect categories are easier to infer from review text than others.</figcaption>
+        </figure>
+        <figure>
+          <img src="outputs/figures/baseline_sentiment_mse_by_aspect.png" alt="Sentiment MSE by aspect">
+          <figcaption><strong>Figure 5.</strong> Sentiment regression is easiest for <code>lecturer_quality</code> and <code>overall_experience</code>, and hardest for <code>relevance</code>, <code>interest</code>, and <code>workload</code>.</figcaption>
+        </figure>
+      </div>
+
+      <h3>4.4 Learning Curve and Style Robustness</h3>
+      <p>
+        Reviewer-facing evidence is stronger when it shows whether performance improves consistently with additional synthetic data and whether stylistic diversity translates into robustness. Both tests were positive, although not uniformly strong. Detection micro-F1 rose from 0.5621 at 25% of the training set to 0.5945 with the full training set, while sentiment MSE decreased from 0.4777 to 0.4005. This pattern is consistent with the intended use of the dataset as scalable synthetic supervision.
+      </p>
+
+      <figure>
+        <img src="outputs/figures/learning_curve.png" alt="Learning curve">
+        <figcaption><strong>Figure 6.</strong> Learning-curve analysis shows that more synthetic training data improve both detection quality and sentiment error, supporting the argument that the corpus is not purely redundant synthetic noise.</figcaption>
+      </figure>
+
+      <p>
+        We also tested style generalization by training on five styles and evaluating on the sixth unseen style. The best held-out result occurred for the casual texting style (micro-F1 = 0.6835), while the confused-student style was clearly hardest (micro-F1 = 0.5060). This matters because it shows that style diversity helps, but also that rhetorical uncertainty remains a failure mode worth deeper analysis.
+      </p>
+
+      <figure>
+        <img src="outputs/figures/style_holdout_micro_f1.png" alt="Held-out style results">
+        <figcaption><strong>Figure 7.</strong> Held-out-style generalization is uneven. The strongest generalization appears on casual and short forms, while confused rhetorical style remains the weakest unseen condition.</figcaption>
+      </figure>
+
+      <div class="review-box">
+        <h3>Reviewer-Facing Interpretation</h3>
+        <p>
+          If this manuscript were reviewed today, the strongest positive point would be that it now includes more than a synthetic-data story: it contains a concrete dataset characterization, qualitative examples, a model pipeline, a calibration strategy, additional baselines, a learning curve, and a robustness test. The main reservation would remain external validity. The current evidence demonstrates internal learnability on synthetic reviews, but not transfer to real student feedback.
+        </p>
+      </div>
+    </section>
+
+    <section>
+      <h2>5. Conclusion</h2>
+      <p>
+        This project can support a credible paper if it is framed as a synthetic educational ABSA resource plus an internally validated ABSA pipeline, not yet as a replacement for manually annotated real-world educational data. The released data are diverse in style, multi-aspect in structure, and sufficiently regular to support both transformer-based and classical baselines. The strongest evidence in the current version is the combination of two coherent pipelines: a synthetic data generation workflow designed to produce aspect-labeled educational reviews, and an ABSA analysis pipeline that performs aspect detection, sentiment regression, and threshold calibration.
+      </p>
+      <p>
+        The clearest next step for journal acceptance is to connect the synthetic corpus to an external reality check. That means evaluating transfer to real student comments, adding human judgment of label fidelity and realism, and isolating which generation components matter most. Until then, the paper should emphasize dataset construction, pipeline design, internal consistency, and the role of synthetic supervision as a scaffold for educational ABSA research.
+      </p>
+
+      <div class="callout">
+        <h3>Highest-Value Missing Experiments</h3>
+        <ul>
+          <li>Train on the synthetic corpus and test on a real manually annotated student-feedback dataset.</li>
+          <li>Run a human evaluation of review realism, aspect faithfulness, and sentiment-label correctness.</li>
+          <li>Ablate the two-pass refinement, persona prompting, and noise injection steps in the generation pipeline.</li>
+          <li>Compare synthetic-only training against synthetic-plus-small-real-data fine-tuning.</li>
+          <li>Add systematic error analysis for the weakest settings, especially confused-student style and difficult/relevance aspects.</li>
+        </ul>
+      </div>
+    </section>
+
+    <section>
+      <h2>Bibliography</h2>
+      <ol class="refs">
+        <li>Maria Pontiki, Haris Papageorgiou, Dimitrios Galanis, Ion Androutsopoulos, John Pavlopoulos, and Suresh Manandhar. 2014. <a href="https://aclanthology.org/S14-2004/">SemEval-2014 Task 4: Aspect Based Sentiment Analysis</a>. Proceedings of the 8th International Workshop on Semantic Evaluation, pages 27-35.</li>
+        <li>Maria Pontiki, Dimitris Galanis, Haris Papageorgiou, Ion Androutsopoulos, Suresh Manandhar, Mohammad AL-Smadi, Mahmoud Al-Ayyoub, Yanyan Zhao, Bing Qin, Orphée De Clercq, Véronique Hoste, Marianna Apidianaki, Xavier Tannier, Natalia Loukachevitch, Evgeniy Kotelnikov, Nuria Bel, Salud María Jiménez-Zafra, and Gülşen Eryiğit. 2016. <a href="https://aclanthology.org/S16-1002/">SemEval-2016 Task 5: Aspect Based Sentiment Analysis</a>. Proceedings of SemEval-2016, pages 19-30.</li>
+        <li>Jacob Devlin, Ming-Wei Chang, Kenton Lee, and Kristina Toutanova. 2019. <a href="https://aclanthology.org/N19-1423/">BERT: Pre-training of Deep Bidirectional Transformers for Language Understanding</a>. Proceedings of NAACL-HLT 2019, pages 4171-4186.</li>
+        <li>Yice Zhang, Yifan Yang, Bin Liang, Shiwei Chen, Bing Qin, and Ruifeng Xu. 2023. <a href="https://aclanthology.org/2023.findings-acl.612/">An Empirical Study of Sentiment-Enhanced Pre-Training for Aspect-Based Sentiment Analysis</a>. Findings of ACL 2023, pages 9633-9651.</li>
+        <li>Zhuoyan Li, Hangxiao Zhu, Zhuoran Lu, and Ming Yin. 2023. <a href="https://aclanthology.org/2023.emnlp-main.647/">Synthetic Data Generation with Large Language Models for Text Classification: Potential and Limitations</a>. EMNLP 2023, pages 10443-10461.</li>
+        <li>Charles Welch and Rada Mihalcea. 2016. <a href="https://aclanthology.org/C16-1233/">Targeted Sentiment to Understand Student Comments</a>. COLING 2016, pages 2471-2481.</li>
+        <li>Janaka Chathuranga, Shanika Ediriweera, Ravindu Hasantha, Pranidhith Munasinghe, and Surangika Ranathunga. 2018. <a href="https://aclanthology.org/L18-1425.pdf">Annotating Opinions and Opinion Targets in Student Course Feedback</a>. LREC 2018 Workshop paper.</li>
+        <li>Nikola Nikolić, Olivera Grljević, and Aleksandar Kovačević. 2020. <a href="https://doi.org/10.1108/EL-06-2019-0140">Aspect-based sentiment analysis of reviews in the domain of higher education</a>. <em>The Electronic Library</em>, 38(1), 44-64.</li>
+        <li>Thanveer Shaik, Xiaohui Tao, Yan Li, Christopher Dann, Jacquie McDonald, Petrea Redmond, and Linda Galligan. 2022. <a href="https://doi.org/10.1109/ACCESS.2022.3177752">A Review of the Trends and Challenges in Adopting Natural Language Processing Methods for Education Feedback Analysis</a>. <em>IEEE Access</em>, 10, 56720-56739.</li>
+      </ol>
+      <p class="note">Source note: local experimental values in this draft come from [E:\Projects\CourseABSA\paper\outputs](E:\Projects\CourseABSA\paper\outputs), while notebook-reported BERT results were extracted from [E:\Projects\CourseABSA\edu\absa_train_new.ipynb](E:\Projects\CourseABSA\edu\absa_train_new.ipynb).</p>
+    </section>
+  </main>
+</body>
+</html>

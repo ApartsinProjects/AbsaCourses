@@ -1,0 +1,7 @@
+held_out_style,n_test,micro_f1,macro_f1,sentiment_mse_detected,sentiment_polarity_accuracy
+"Casual (Texting style: lowercase, no punctuation, slang like 'tbh', 'idk', 'tho', fragments)",956,0.6834622100274382,0.688412520224278,0.4575646927278634,0.46204379562043796
+Short (Max 10-15 words. Fragments allowed),961,0.624019312009656,0.6213259240846041,0.4657005962446697,0.5087040618955513
+Analytic but Simple (Explains 'why' but uses simple language),1049,0.617453069507864,0.6233294128634851,0.43719492879568,0.5110928512736237
+Simple & Direct (Use only common words. No academic jargon. Like talking to a friend),987,0.5676720804331014,0.5818986170651516,0.4496652178440449,0.5258855585831063
+"Rant/Rave (Emotional, very subjective, lots of punctuation !!! or ...)",1008,0.5413858182798598,0.5498534269625993,0.4406353024866227,0.5039840637450199
+"Confused Student (Unsure about things, asks rhetorical questions)",1023,0.5059539560730352,0.5126718386092244,0.4994101134137904,0.4769874476987448

@@ -1,0 +1,11 @@
+aspect,threshold,calib_f1
+clarity,0.75,0.9283
+difficulty,0.8,0.8922
+exam_fairness,0.95,1.0
+interest,0.7,0.9268
+lecturer_quality,0.1,0.9398
+materials,0.65,0.9697
+overall_experience,0.3,0.9
+relevance,0.3,0.9574
+support,0.85,0.9831
+workload,0.3,0.9796

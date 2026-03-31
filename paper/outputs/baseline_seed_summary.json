@@ -1,0 +1,38 @@
+{
+  "micro_precision": {
+    "mean": 0.6432,
+    "std": 0.0241
+  },
+  "micro_recall": {
+    "mean": 0.5592,
+    "std": 0.0178
+  },
+  "micro_f1": {
+    "mean": 0.5979,
+    "std": 0.014
+  },
+  "macro_precision": {
+    "mean": 0.703,
+    "std": 0.0103
+  },
+  "macro_recall": {
+    "mean": 0.5584,
+    "std": 0.017
+  },
+  "macro_f1": {
+    "mean": 0.6048,
+    "std": 0.013
+  },
+  "sentiment_mse_detected": {
+    "mean": 0.4329,
+    "std": 0.0292
+  },
+  "sentiment_mae_detected": {
+    "mean": 0.5322,
+    "std": 0.0149
+  },
+  "sentiment_polarity_accuracy": {
+    "mean": 0.5214,
+    "std": 0.021
+  }
+}
