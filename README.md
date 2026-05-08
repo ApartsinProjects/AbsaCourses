@@ -226,10 +226,10 @@ The reviewer-facing gap plan is in [`paper/reviewer_gap_plan.md`](paper/reviewer
 Until a venue is fixed, please cite the draft as a working paper:
 
 ```bibtex
-@misc{sasson2026courseabsa,
+@misc{aperstein2026courseabsa,
   title  = {Toward Synthetic Aspect-Based Sentiment Analysis for Higher Education
             Course Reviews: A Dual-Pipeline Study of Data Generation and ABSA Modeling},
-  author = {Sasson, Omri and Aperstein, Yehudit and Apartsin, Alexander},
+  author = {Aperstein, Yehudit and Apartsin, Alexander},
   year   = {2026},
   url    = {https://github.com/ApartsinProjects/AbsaCourses}
 }
