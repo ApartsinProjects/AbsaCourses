@@ -1,0 +1,805 @@
+{
+  "n_items": 80,
+  "items": [
+    {
+      "item_id": "J001",
+      "audit_row_id": "106",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "supported 2/2; sentiment 2/2",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J002",
+      "audit_row_id": "244",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "supported 1/1; sentiment 1/1",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J003",
+      "audit_row_id": "94",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "supported 2/2; sentiment 2/2",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J004",
+      "audit_row_id": "168",
+      "aspect": "clarity",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "They mention detailed grading comments and using office hours/TAs’ forum threads to keep up, implying helpful explanations/clarity overall.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J005",
+      "audit_row_id": "5",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "supported 1/1; sentiment 1/1",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J006",
+      "audit_row_id": "228",
+      "aspect": "lecturer_quality",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Lectures were described as 'dry' (negative) but recorded lectures helped (positive), yielding an overall mixed/neutral view.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J007",
+      "audit_row_id": "233",
+      "aspect": "interest",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "They note not hating the content and having tangible interest when lab scenarios clicked.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J008",
+      "audit_row_id": "186",
+      "aspect": "practical_application",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The project using a small graphing tool is described as memorable, suggesting positive hands-on/practical value.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J009",
+      "audit_row_id": "11",
+      "aspect": "practical_application",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Mentions practical steps and applying vector spaces to real problems felt really useful.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J010",
+      "audit_row_id": "114",
+      "aspect": "prerequisite_fit",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The reviewer says the prerequisite fit felt solid and the track expects the basics.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J011",
+      "audit_row_id": "195",
+      "aspect": "organization",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Mentions uneven lectures and having to slog through on their own, hurting overall organization.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J012",
+      "audit_row_id": "53",
+      "aspect": "difficulty",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Describes the course as rough, with a painful software stack, and they failed the course, supporting negative difficulty.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J013",
+      "audit_row_id": "249",
+      "aspect": "feedback_quality",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "States that quick feedback helped adjust mid-term, indicating positive feedback quality.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J014",
+      "audit_row_id": "202",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "supported 2/2; sentiment 2/2",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J015",
+      "audit_row_id": "175",
+      "aspect": "interest",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The reviewer says they went in with 'genuine curiosity,' indicating positive interest despite later struggles.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J016",
+      "audit_row_id": "205",
+      "aspect": "grading_transparency",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The reviewer says grading felt transparent because you could see how a few points mattered, though feedback was slow.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J017",
+      "audit_row_id": "80",
+      "aspect": "workload",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "They describe the workload as heavy but manageable most weeks, which is a generally positive/acceptable view of workload.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J018",
+      "audit_row_id": "113",
+      "aspect": "prerequisite_fit",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The review says 'the prerequisite fit felt solid for my background,' indicating a positive prerequisite fit.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J019",
+      "audit_row_id": "187",
+      "aspect": "prerequisite_fit",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The reviewer says the prerequisites fit better than expected, indicating a positive fit.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J020",
+      "audit_row_id": "234",
+      "aspect": "difficulty",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The course is described as tougher than expected with piling deadlines and a heavy grind.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J021",
+      "audit_row_id": "89",
+      "aspect": "tooling_usability",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review says the tooling setup was 'a headache' and mentions last-minute access issues, which is negative, not neutral.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J022",
+      "audit_row_id": "61",
+      "aspect": "peer_interaction",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review says peer discussion helped more than official materials, indicating a positive view of peer interaction.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J023",
+      "audit_row_id": "220",
+      "aspect": "interest",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The student says it was their main focus and mentions things they liked, but overall tone is more negative/strained than neutral.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J024",
+      "audit_row_id": "76",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 2/2; sentiment 1/2",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J025",
+      "audit_row_id": "8",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 2/2; sentiment 0/2",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J026",
+      "audit_row_id": "114",
+      "aspect": "workload",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "They describe juggling a full-time job, stress, and squeezing study time, implying a heavy workload rather than neutral.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J027",
+      "audit_row_id": "27",
+      "aspect": "support",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "They describe sparse/late feedback and official materials not fitting their questions; peer discussions helped but overall support reads mixed/negative, not neutral.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J028",
+      "audit_row_id": "111",
+      "aspect": "interest",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "Says the course was 'not enjoyable' and motivation was inconsistent, which is overall negative despite being 'useful.'",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J029",
+      "audit_row_id": "129",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 2/2; sentiment 0/2",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J030",
+      "audit_row_id": "190",
+      "aspect": "assessment_design",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "Mentions deadlines stacking up oddly and a single pivotal big assessment, implying a negative view rather than neutral.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J031",
+      "audit_row_id": "188",
+      "aspect": "prerequisite_fit",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "Says prerequisites \"seemed to build on what was promised,\" which is mildly positive/adequate, not negative.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J032",
+      "audit_row_id": "37",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 3/3; sentiment 1/3",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J033",
+      "audit_row_id": "170",
+      "aspect": "lecturer_quality",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The reviewer says Prof. Cohen’s lectures were clear with decent pacing, which is mildly positive rather than neutral.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J034",
+      "audit_row_id": "247",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/1; sentiment 0/1",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J035",
+      "audit_row_id": "216",
+      "aspect": "overall_experience",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review is mixed: 'overall was okay' with clear negatives (sparse feedback, sloppy communication) but also positives (smooth LMS, manageable pace, approachable professor, office hours helped), not purely negative.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J036",
+      "audit_row_id": "197",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/1; sentiment 0/1",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J037",
+      "audit_row_id": "38",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 3/3; sentiment 1/3",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J038",
+      "audit_row_id": "37",
+      "aspect": "prerequisite_fit",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "It says prerequisite fit starts accessible but ramps up sharply and is more taxing than the easier prerequisite, which is mixed/negative not clearly positive.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J039",
+      "audit_row_id": "55",
+      "aspect": "difficulty",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The student says the pace hit hard, assignments pile up with tight deadlines, and it adds stress—this reads negative rather than neutral.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J040",
+      "audit_row_id": "81",
+      "aspect": "pacing",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "Deadlines and workload were 'clustered' around exams, suggesting poor pacing/overload, not positive.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J041",
+      "audit_row_id": "43",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 2/3; sentiment 2/3",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J042",
+      "audit_row_id": "217",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/2; sentiment 0/2",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J043",
+      "audit_row_id": "174",
+      "aspect": "lecturer_quality",
+      "declared_polarity": "neutral",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "No clear mention of lecturer/instructor quality; only office hours and feedback timing are referenced.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J044",
+      "audit_row_id": "97",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/2; sentiment 0/2",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J045",
+      "audit_row_id": "127",
+      "aspect": "practical_application",
+      "declared_polarity": "negative",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review discusses pacing, deadlines, slides, feedback quality, and group study needs, but does not address real-world or practical application of course content.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J046",
+      "audit_row_id": "98",
+      "aspect": "grading_transparency",
+      "declared_polarity": "negative",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review mentions failing, tough grades, deadlines, and variable feedback, but does not discuss how grading criteria/rubrics were explained or transparent.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J047",
+      "audit_row_id": "112",
+      "aspect": "accessibility",
+      "declared_polarity": "positive",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "No clear discussion of accommodations, approachability, clarity for diverse learners, or access; LMS smoothness is more about logistics than accessibility.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J048",
+      "audit_row_id": "2",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/2; sentiment 1/2",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J049",
+      "audit_row_id": "184",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 2/3; sentiment 2/3",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J050",
+      "audit_row_id": "183",
+      "aspect": "practical_application",
+      "declared_polarity": "positive",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "Review does not mention practical or real-world application; it focuses on tooling, prerequisites, forums, recordings, and workload.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J051",
+      "audit_row_id": "14",
+      "aspect": "materials",
+      "declared_polarity": "neutral",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review discusses software stack, feedback, pace, and workload, but does not clearly mention course materials.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J052",
+      "audit_row_id": "153",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/2; sentiment 1/2",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J053",
+      "audit_row_id": "243",
+      "aspect": "difficulty",
+      "declared_polarity": "neutral",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review discusses being assignment-heavy and abstract, but does not clearly state overall difficulty level.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J054",
+      "audit_row_id": "53",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 2/3; sentiment 2/3",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J055",
+      "audit_row_id": "14",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/2; sentiment 1/2",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J056",
+      "audit_row_id": "48",
+      "aspect": "exam_fairness",
+      "declared_polarity": "negative",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review mentions high-stakes exams but does not comment on whether exams were fair or unfair.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J057",
+      "audit_row_id": "13",
+      "aspect": "organization",
+      "declared_polarity": "neutral",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review doesn’t clearly discuss course organization/structure, only mentions late feedback and a messy quiz.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J058",
+      "audit_row_id": "98",
+      "aspect": "tooling_usability",
+      "declared_polarity": "neutral",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review does not mention any tools, platforms, or usability of course software.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J059",
+      "audit_row_id": "72",
+      "aspect": "lecturer_quality",
+      "declared_polarity": "neutral",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review mentions recorded lectures helping but does not clearly evaluate the lecturer's quality.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J060",
+      "audit_row_id": "124",
+      "aspect": "exam_fairness",
+      "declared_polarity": "neutral",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "The review discusses ramp-up difficulty, tooling setup, deadlines, and confusion about gradients, but says nothing about exams or their fairness.",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J061",
+      "audit_row_id": "206",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 0/1; sentiment 0/1",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J062",
+      "audit_row_id": "87",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 2/2; sentiment 1/2",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J063",
+      "audit_row_id": "88",
+      "aspect": "accessibility",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Quick feedback and office hours being a 'lifeline' indicate helpful access to support, despite slower email replies.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J064",
+      "audit_row_id": "10",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/1; sentiment 0/1",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J065",
+      "audit_row_id": "200",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/3; sentiment 0/3",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J066",
+      "audit_row_id": "28",
+      "aspect": "peer_interaction",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "They say peer discussions helped more than slides and they relied on classmates to sanity-check work, indicating positive peer interaction.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J067",
+      "audit_row_id": "67",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/2; sentiment 1/2",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J068",
+      "audit_row_id": "151",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 1/1; sentiment 0/1",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J069",
+      "audit_row_id": "13",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "no",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 2/3; sentiment 1/3",
+      "bucket": "C"
+    },
+    {
+      "item_id": "J070",
+      "audit_row_id": "118",
+      "aspect": "__row_summary__",
+      "declared_polarity": "",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "supported 3/3; sentiment 2/3",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J071",
+      "audit_row_id": "0",
+      "aspect": "organization",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Says the organization was solid with reliable weekly modules and clear deadline patterns.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J072",
+      "audit_row_id": "236",
+      "aspect": "overall_experience",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Review mixes positives (concepts click, peer help) and negatives (skimpy examples, platform quirks, stress), yielding a neutral overall tone.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J073",
+      "audit_row_id": "244",
+      "aspect": "assessment_design",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The reviewer says assessments are \"exhausting,\" with too much packed into tight windows, a difficult midterm block, and unclear reasoning behind scores.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J074",
+      "audit_row_id": "112",
+      "aspect": "materials",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Mentions notes not guiding directly and feeling like proofs weren’t built in class, implying course materials/notes were lacking.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J075",
+      "audit_row_id": "118",
+      "aspect": "exam_fairness",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "They say the midterm felt fair on paper but questions leaned on topics they hadn’t mastered, indicating a negative experience with exam fairness.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J076",
+      "audit_row_id": "222",
+      "aspect": "materials",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "Slides described as serviceable but not memorable, implying neither clearly positive nor strongly negative overall.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J077",
+      "audit_row_id": "19",
+      "aspect": "assessment_design",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "Assessments are described as \"fairly fair but exhausting,\" which is mixed/leaning negative rather than clearly positive.",
+      "bucket": "B"
+    },
+    {
+      "item_id": "J078",
+      "audit_row_id": "47",
+      "aspect": "organization",
+      "declared_polarity": "negative",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "It explicitly says the organization feels messy and deadlines/cadence weren’t helpful, indicating negative organization.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J079",
+      "audit_row_id": "137",
+      "aspect": "workload",
+      "declared_polarity": "positive",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "yes",
+      "gpt_note": "The review describes the workload as doable/manageable when broken into small blocks, despite a rough start with the software stack.",
+      "bucket": "A"
+    },
+    {
+      "item_id": "J080",
+      "audit_row_id": "160",
+      "aspect": "tooling_usability",
+      "declared_polarity": "neutral",
+      "gpt_supported": "yes",
+      "gpt_sentiment_match": "no",
+      "gpt_note": "Reviewer says the tooling “didn’t feel obviously user-friendly,” indicating negative sentiment rather than neutral.",
+      "bucket": "B"
+    }
+  ]
+}
