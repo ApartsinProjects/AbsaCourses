@@ -1,0 +1,59 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820" role="img" aria-label="Synthetic educational review generation pipeline">
+  <defs>
+    <style>
+      .bg { fill: #fcfbf7; }
+      .frame { fill: #fffefe; stroke: #d8d3c9; stroke-width: 1.2; }
+      .label { font: 700 30px Georgia, "Times New Roman", serif; fill: #16324a; }
+      .body { font: 17px Georgia, "Times New Roman", serif; fill: #31414f; }
+      .chip { font: 700 13px Arial, sans-serif; fill: #4d6277; letter-spacing: 0.08em; text-transform: uppercase; }
+      .arrow { stroke: #6a7886; stroke-width: 4; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 12 10; }
+      .panelA { fill: #edf3f7; stroke: #d7e2ea; stroke-width: 1.4; }
+      .panelB { fill: #f2f5ee; stroke: #dde4d5; stroke-width: 1.4; }
+      .panelC { fill: #f8f1e9; stroke: #eadbcc; stroke-width: 1.4; }
+      .panelD { fill: #edf4ee; stroke: #d5e3d7; stroke-width: 1.4; }
+      .side { fill: #f7f7f3; stroke: #ddd7cc; stroke-width: 1.2; }
+      .center { text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6a7886"/>
+    </marker>
+    <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#d9d3ca" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect class="bg" width="1600" height="820"/>
+  <rect x="34" y="34" width="1532" height="752" class="frame"/>
+
+  <rect x="116" y="180" width="320" height="132" rx="24" class="panelA" filter="url(#shadow)"/>
+  <text x="276" y="236" class="label center">Target labels</text>
+  <text x="276" y="274" class="body center">1-3 aspect sentiments</text>
+
+  <rect x="116" y="416" width="320" height="132" rx="24" class="panelB" filter="url(#shadow)"/>
+  <text x="276" y="472" class="label center">Context state</text>
+  <text x="276" y="510" class="body center">course, student, style</text>
+
+  <rect x="624" y="262" width="348" height="204" rx="26" class="panelC" filter="url(#shadow)"/>
+  <text x="798" y="330" class="label center">Stabilized prompt</text>
+  <text x="798" y="372" class="body center">labels + context + realism rule</text>
+
+  <rect x="1154" y="262" width="330" height="204" rx="26" class="panelD" filter="url(#shadow)"/>
+  <text x="1319" y="330" class="label center">Benchmark record</text>
+  <text x="1319" y="372" class="body center">review + labels + attributes</text>
+
+  <path class="arrow" d="M436 246 C520 246, 540 304, 624 328"/>
+  <path class="arrow" d="M436 482 C520 482, 540 424, 624 400"/>
+  <path class="arrow" d="M972 364 L1154 364"/>
+
+  <rect x="650" y="612" width="296" height="80" rx="18" class="side"/>
+  <text x="798" y="644" class="chip center">Inter-cycle update</text>
+  <text x="798" y="673" class="body center">realism loop revises prompt</text>
+  <path class="arrow dashed" d="M1230 466 C1230 604, 930 604, 930 612"/>
+  <path class="arrow dashed" d="M650 612 C650 566, 700 514, 734 466"/>
+
+  <rect x="104" y="648" width="332" height="56" rx="16" class="side"/>
+  <text x="270" y="682" class="body center">separate supervision and variation</text>
+
+  <rect x="1148" y="648" width="342" height="56" rx="16" class="side"/>
+  <text x="1319" y="682" class="body center">export one review-level training row</text>
+</svg>

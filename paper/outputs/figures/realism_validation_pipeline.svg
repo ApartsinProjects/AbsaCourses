@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="860" viewBox="0 0 1600 860" role="img" aria-label="Realism validation and prompt refinement pipeline">
+  <defs>
+    <style>
+      .bg { fill: #fcfbf7; }
+      .frame { fill: #fffefe; stroke: #d8d3c9; stroke-width: 1.2; }
+      .label { font: 700 30px Georgia, "Times New Roman", serif; fill: #16324a; }
+      .body { font: 17px Georgia, "Times New Roman", serif; fill: #31414f; }
+      .chip { font: 700 13px Arial, sans-serif; fill: #4d6277; letter-spacing: 0.08em; text-transform: uppercase; }
+      .arrow { stroke: #6a7886; stroke-width: 4.2; fill: none; marker-end: url(#arrow); }
+      .dashed { stroke-dasharray: 12 10; }
+      .panelA { fill: #eef3f6; stroke: #d7e2ea; stroke-width: 1.4; }
+      .panelB { fill: #f2f5ee; stroke: #dde4d5; stroke-width: 1.4; }
+      .panelC { fill: #f8f1e9; stroke: #eadbcc; stroke-width: 1.4; }
+      .panelD { fill: #edf4ee; stroke: #d5e3d7; stroke-width: 1.4; }
+      .side { fill: #f7f7f3; stroke: #ddd7cc; stroke-width: 1.2; }
+      .center { text-anchor: middle; }
+    </style>
+    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#6a7886"/>
+    </marker>
+    <filter id="shadow3" x="-10%" y="-10%" width="120%" height="120%">
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#d9d3ca" flood-opacity="0.28"/>
+    </filter>
+  </defs>
+  <rect class="bg" width="1600" height="860"/>
+  <rect x="34" y="34" width="1532" height="792" class="frame"/>
+
+  <rect x="174" y="334" width="310" height="140" rx="24" class="panelA" filter="url(#shadow3)"/>
+  <text x="329" y="394" class="label center">Data pool</text>
+  <text x="329" y="432" class="body center">30 synthetic + 30 real reviews</text>
+
+  <rect x="642" y="144" width="316" height="148" rx="28" class="panelB" filter="url(#shadow3)"/>
+  <text x="800" y="208" class="label center">Realism judge</text>
+  <text x="800" y="246" class="body center">binary real-vs-synthetic decisions</text>
+
+  <rect x="1116" y="334" width="290" height="140" rx="24" class="panelC" filter="url(#shadow3)"/>
+  <text x="1261" y="394" class="label center">Evaluation</text>
+  <text x="1261" y="432" class="body center">judge outputs and cue evidence</text>
+
+  <rect x="642" y="580" width="316" height="148" rx="28" class="panelD" filter="url(#shadow3)"/>
+  <text x="800" y="644" class="label center">Prompt revision</text>
+  <text x="800" y="682" class="body center">editor updates the next cycle</text>
+
+  <path class="arrow" d="M484 404 C560 404, 586 304, 642 236"/>
+  <path class="arrow" d="M958 236 C1062 252, 1146 312, 1162 334"/>
+  <path class="arrow" d="M1261 474 C1261 544, 1034 620, 958 642"/>
+  <path class="arrow dashed" d="M642 642 C510 622, 364 548, 312 474"/>
+
+  <rect x="1110" y="160" width="320" height="82" rx="18" class="side"/>
+  <text x="1270" y="191" class="chip center">Cycle metrics</text>
+  <text x="1270" y="221" class="body center">accuracy, confusion, entropy, cue tags</text>
+
+  <rect x="188" y="610" width="278" height="58" rx="16" class="side"/>
+  <text x="327" y="645" class="body center">one fixed prompt per cycle</text>
+</svg>
