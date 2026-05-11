@@ -1,0 +1,12 @@
+{
+  "study_id": "absa-pilot",
+  "argilla_url": "https://apartsin-absa-labeling.hf.space",
+  "workspace": "argilla",
+  "tasks": {
+    "9": {
+      "dataset_name": "absa-pilot__task_9",
+      "workspace": "argilla",
+      "n_records": 10
+    }
+  }
+}
