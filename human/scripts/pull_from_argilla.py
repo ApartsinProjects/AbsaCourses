@@ -52,11 +52,13 @@ def read_settings() -> Dict[str, Any]:
     return json.loads(SETTINGS_PATH.read_text(encoding="utf-8"))
 
 
-def discover_tasks(only: Optional[List[int]]) -> List[int]:
+def discover_task_dirs(only: Optional[List[int]]) -> Dict[int, Path]:
+    """Find every tasks/task_<N>[_suffix]/ folder that has an
+    argilla_state.json (written by push_to_argilla.py)."""
     tasks_dir = ROOT / "tasks"
-    nums: List[int] = []
+    out: Dict[int, Path] = {}
     if not tasks_dir.exists():
-        return nums
+        return out
     for d in sorted(tasks_dir.iterdir()):
         if not d.is_dir() or not d.name.startswith("task_"):
             continue
@@ -66,9 +68,13 @@ def discover_tasks(only: Optional[List[int]]) -> List[int]:
             n = int(d.name.split("_")[1])
         except (IndexError, ValueError):
             continue
-        if only is None or n in only:
-            nums.append(n)
-    return sorted(set(nums))
+        if only is not None and n not in only:
+            continue
+        if n in out and d.name == f"task_{n}":
+            out[n] = d
+        elif n not in out:
+            out[n] = d
+    return out
 
 
 def read_rater_columns(task_dir: Path, letter: str) -> List[str]:
@@ -134,8 +140,7 @@ def fetch_records(client: "rg.Argilla", workspace: str, dataset_name: str) -> Li
         return list(dataset.records)
 
 
-def pull_one_task(client: "rg.Argilla", task_n: int, user_to_letter: Dict[str, str]) -> None:
-    task_dir = ROOT / "tasks" / f"task_{task_n}"
+def pull_one_task(client: "rg.Argilla", task_n: int, task_dir: Path, user_to_letter: Dict[str, str]) -> None:
     state = json.loads((task_dir / "argilla_state.json").read_text(encoding="utf-8"))
     dataset_name = state.get("dataset_name")
     workspace = state.get("workspace", "default")
@@ -231,13 +236,13 @@ def main() -> None:
     explicit_map = cfg.get("rater_emails") or {}
     user_to_letter = build_user_to_letter(client, explicit_map)
 
-    tasks = discover_tasks(args.task)
-    if not tasks:
+    task_dirs = discover_task_dirs(args.task)
+    if not task_dirs:
         print("No task folders with argilla_state.json found. Run push first.")
         sys.exit(2)
-    print(f"Pulling tasks: {tasks}")
-    for n in tasks:
-        pull_one_task(client, n, user_to_letter)
+    print(f"Pulling tasks: {sorted(task_dirs.keys())}")
+    for n, task_dir in sorted(task_dirs.items()):
+        pull_one_task(client, n, task_dir, user_to_letter)
 
 
 if __name__ == "__main__":

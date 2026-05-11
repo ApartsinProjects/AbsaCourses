@@ -73,11 +73,17 @@ def read_settings() -> Tuple[str, str, str]:
     return url, key, ws
 
 
-def discover_tasks(only: Optional[List[int]]) -> List[int]:
+def discover_task_dirs(only: Optional[List[int]]) -> Dict[int, Path]:
+    """Find every tasks/task_<N>[_suffix]/ folder and return {N: Path}.
+
+    Handles suffixed folder names (e.g. `task_9_pilot`) by parsing the
+    integer from the first underscore-separated component after "task_".
+    If multiple folders share the same N, prefer the exact `task_N` name.
+    """
     tasks_dir = ROOT / "tasks"
-    nums: List[int] = []
+    out: Dict[int, Path] = {}
     if not tasks_dir.exists():
-        return nums
+        return out
     for d in sorted(tasks_dir.iterdir()):
         if not d.is_dir() or not d.name.startswith("task_"):
             continue
@@ -85,9 +91,14 @@ def discover_tasks(only: Optional[List[int]]) -> List[int]:
             n = int(d.name.split("_")[1])
         except (IndexError, ValueError):
             continue
-        if only is None or n in only:
-            nums.append(n)
-    return sorted(set(nums))
+        if only is not None and n not in only:
+            continue
+        # Prefer the bare `task_N` name on conflict.
+        if n in out and d.name == f"task_{n}":
+            out[n] = d
+        elif n not in out:
+            out[n] = d
+    return out
 
 
 def read_manifest(task_dir: Path) -> List[Dict[str, str]]:
@@ -159,10 +170,10 @@ def push_one_task(
     client: "rg.Argilla",
     workspace: str,
     task_n: int,
+    task_dir: Path,
     study_id: str,
     recreate: bool,
 ) -> Dict[str, object]:
-    task_dir = ROOT / "tasks" / f"task_{task_n}"
     manifest_rows = read_manifest(task_dir)
     if not manifest_rows:
         print(f"  task_{task_n}: empty manifest, skipping")
@@ -229,11 +240,13 @@ def main() -> None:
     url, key, workspace = read_settings()
     client = rg.Argilla(api_url=url, api_key=key)
 
-    tasks = discover_tasks(args.task)
-    if not tasks:
+    task_dirs = discover_task_dirs(args.task)
+    if not task_dirs:
         print("No task folders found under tasks/.")
         sys.exit(2)
-    print(f"Pushing tasks: {tasks}")
+    print(f"Pushing tasks: {sorted(task_dirs.keys())}")
+    for n, p in sorted(task_dirs.items()):
+        print(f"  task_{n}: {p.name}")
 
     summary: Dict[str, object] = {
         "study_id": args.study_id,
@@ -241,8 +254,8 @@ def main() -> None:
         "workspace": workspace,
         "tasks": {},
     }
-    for n in tasks:
-        info = push_one_task(client, workspace, n, args.study_id, args.recreate)
+    for n, task_dir in sorted(task_dirs.items()):
+        info = push_one_task(client, workspace, n, task_dir, args.study_id, args.recreate)
         summary["tasks"][str(n)] = info  # type: ignore[index]
 
     summary_path = ROOT / "tasks" / "argilla_state.json"
