@@ -66,9 +66,9 @@ This pass focused on whether the experiment scripts:
 ## Current recommended launch target
 
 - Plan:
-  `E:\Projects\CourseABSA\paper\experiment_rounds\next_round_individual_20260403_plan.json`
+  `/paper/experiment_rounds/next_round_individual_20260403_plan.json`
 - Status path:
-  `E:\Projects\CourseABSA\paper\experiment_rounds\next_round_individual_20260403\status.json`
+  `/paper/experiment_rounds/next_round_individual_20260403/status.json`
 
 ## Bottom line
 

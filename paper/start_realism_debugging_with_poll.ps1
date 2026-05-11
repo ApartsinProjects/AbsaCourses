@@ -1,6 +1,6 @@
 $ErrorActionPreference = "Stop"
 
-$repoRoot = "E:\Projects\CourseABSA"
+$repoRoot = Split-Path -Parent (Split-Path -Parent $MyInvocation.MyCommand.Path)
 $validationDir = Join-Path $repoRoot "paper\validation"
 $realismOut = Join-Path $validationDir "realism_cycle_sequence_current.out.log"
 $realismErr = Join-Path $validationDir "realism_cycle_sequence_current.err.log"
@@ -24,7 +24,7 @@ foreach ($path in @(
 }
 
 $realism = Start-Process -FilePath python `
-    -ArgumentList "E:\Projects\CourseABSA\paper\realism_validation_experiment.py","run-cycle-sequence","--sample-size","32" `
+    -ArgumentList (Join-Path $repoRoot "paper\realism_validation_experiment.py"),"run-cycle-sequence","--sample-size","32" `
     -WorkingDirectory $repoRoot `
     -RedirectStandardOutput $realismOut `
     -RedirectStandardError $realismErr `
@@ -33,7 +33,7 @@ $realism = Start-Process -FilePath python `
 Start-Sleep -Seconds 2
 
 $poller = Start-Process -FilePath python `
-    -ArgumentList "E:\Projects\CourseABSA\paper\poll_realism_progress.py","--loop","--interval-seconds","300" `
+    -ArgumentList (Join-Path $repoRoot "paper\poll_realism_progress.py"),"--loop","--interval-seconds","300" `
     -WorkingDirectory $repoRoot `
     -RedirectStandardOutput $pollOut `
     -RedirectStandardError $pollErr `

@@ -42,6 +42,6 @@ A synthetic educational review generation pipeline can produce a diverse, aspect
 - Table: multi-seed baseline summary
 
 ## Current artifact locations
-- Manuscript draft: `E:\Projects\CourseABSA\paper\course_absa_manuscript.html`
-- Analysis script: `E:\Projects\CourseABSA\paper\edu_absa_paper_analysis.py`
-- Output directory: `E:\Projects\CourseABSA\paper\outputs`
+- Manuscript draft: `/paper/course_absa_manuscript.html`
+- Analysis script: `/paper/edu_absa_paper_analysis.py`
+- Output directory: `/paper/outputs`

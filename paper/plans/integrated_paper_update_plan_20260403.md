@@ -32,7 +32,7 @@ The paper should therefore now be treated as an evidence-refresh problem rather 
 
 Use the current main synthetic corpus:
 
-- [batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl](E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl)
+- [batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl](/paper/generated_datasets/batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl)
 
 Do not use the disabled legacy `edu` data path.
 
@@ -79,22 +79,22 @@ These artifacts are already valid unless replaced by fresher reruns under the sa
 
 ### Reusable paper artifacts
 
-- [course_absa_manuscript.html](E:\Projects\CourseABSA\paper\course_absa_manuscript.html)
+- [course_absa_manuscript.html](/paper/course_absa_manuscript.html)
 - current publication figures and tables under:
-  - [outputs/figures](E:\Projects\CourseABSA\paper\outputs\figures)
-  - [outputs/tables](E:\Projects\CourseABSA\paper\outputs\tables)
+  - [outputs/figures](/paper/outputs/figures)
+  - [outputs/tables](/paper/outputs/tables)
 
 ### Reusable generator-side evidence
 
-- realism-cycle artifacts under [validation](E:\Projects\CourseABSA\paper\validation)
-- prompt package under [generation_protocol](E:\Projects\CourseABSA\paper\generation_protocol)
-- current 10K generation outputs under [generated_datasets](E:\Projects\CourseABSA\paper\generated_datasets)
+- realism-cycle artifacts under [validation](/paper/validation)
+- prompt package under [generation_protocol](/paper/generation_protocol)
+- current 10K generation outputs under [generated_datasets](/paper/generated_datasets)
 
 ### Reusable real-data mapping artifacts
 
-- [synthetic_to_real_transfer_summary.csv](E:\Projects\CourseABSA\paper\real_transfer\synthetic_to_real_transfer_summary.csv)
-- [overlap_internal_vs_external_summary.csv](E:\Projects\CourseABSA\paper\real_transfer\overlap_internal_vs_external_summary.csv)
-- overlap-support tables in [real_transfer](E:\Projects\CourseABSA\paper\real_transfer)
+- [synthetic_to_real_transfer_summary.csv](/paper/real_transfer/synthetic_to_real_transfer_summary.csv)
+- [overlap_internal_vs_external_summary.csv](/paper/real_transfer/overlap_internal_vs_external_summary.csv)
+- overlap-support tables in [real_transfer](/paper/real_transfer)
 
 These should be refreshed only if reruns alter the underlying metrics or if stricter external-validation checks are added.
 
@@ -187,9 +187,9 @@ Purpose:
 
 Outputs:
 - refreshed:
-  - [model_comparison_summary.csv](E:\Projects\CourseABSA\paper\benchmark_outputs\model_comparison_summary.csv)
-  - [model_comparison_per_aspect.csv](E:\Projects\CourseABSA\paper\benchmark_outputs\model_comparison_per_aspect.csv)
-  - [model_comparison_metadata.json](E:\Projects\CourseABSA\paper\benchmark_outputs\model_comparison_metadata.json)
+  - [model_comparison_summary.csv](/paper/benchmark_outputs/model_comparison_summary.csv)
+  - [model_comparison_per_aspect.csv](/paper/benchmark_outputs/model_comparison_per_aspect.csv)
+  - [model_comparison_metadata.json](/paper/benchmark_outputs/model_comparison_metadata.json)
 
 ## Phase B. Uncertainty and Stronger Local Baselines
 

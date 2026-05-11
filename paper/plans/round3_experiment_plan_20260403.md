@@ -33,12 +33,12 @@ Each experiment in this round must support one paper claim and one reviewer conc
 
 These settings apply unless a specific experiment overrides them.
 
-- Synthetic corpus: [batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl](E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl)
+- Synthetic corpus: [batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl](/paper/generated_datasets/batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl)
 - Main split: deterministic `8000 / 1000 / 1000`
 - Main schema: `20` aspects grouped into five pedagogical blocks
 - Overlap real-data evaluation:
-  - mapped Herath benchmark at [synthetic_to_real_transfer_summary.csv](E:\Projects\CourseABSA\paper\real_transfer\synthetic_to_real_transfer_summary.csv)
-  - overlap comparison at [overlap_internal_vs_external_summary.csv](E:\Projects\CourseABSA\paper\real_transfer\overlap_internal_vs_external_summary.csv)
+  - mapped Herath benchmark at [synthetic_to_real_transfer_summary.csv](/paper/real_transfer/synthetic_to_real_transfer_summary.csv)
+  - overlap comparison at [overlap_internal_vs_external_summary.csv](/paper/real_transfer/overlap_internal_vs_external_summary.csv)
 - Validation policy:
   - model selection on validation only
   - threshold calibration on validation only

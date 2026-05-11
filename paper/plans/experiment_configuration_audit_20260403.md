@@ -8,11 +8,11 @@ fallback to the legacy `edu/final_student_reviews.jsonl` dataset.
 ## Active benchmark targets
 
 - Local benchmark default dataset:
-  `E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl`
+  `/paper/generated_datasets/batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl`
 - Mapped real-transfer synthetic source:
-  `E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl`
+  `/paper/generated_datasets/batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl`
 - Mapped real-transfer corpus:
-  `E:\Projects\CourseABSA\external_data\Student_feedback_analysis_dataset\Annotated Student Feedback Data`
+  `/external_data/Student_feedback_analysis_dataset/Annotated Student Feedback Data`
 
 ## Corrected safeguards
 
@@ -39,9 +39,9 @@ fallback to the legacy `edu/final_student_reviews.jsonl` dataset.
 ## Intended launch target
 
 - Plan file:
-  `E:\Projects\CourseABSA\paper\experiment_rounds\next_round_individual_20260403_plan.json`
+  `/paper/experiment_rounds/next_round_individual_20260403_plan.json`
 - Launch command:
-  `python E:\Projects\CourseABSA\paper\run_experiment_round.py --plan E:\Projects\CourseABSA\paper\experiment_rounds\next_round_individual_20260403_plan.json --status E:\Projects\CourseABSA\paper\experiment_rounds\next_round_individual_20260403\status.json`
+  `python /paper/run_experiment_round.py --plan /paper/experiment_rounds/next_round_individual_20260403_plan.json --status /paper/experiment_rounds/next_round_individual_20260403/status.json`
 
 ## Notes
 
