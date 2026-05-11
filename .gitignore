@@ -1,6 +1,14 @@
 # API keys and credentials
 .opeai.key
 .gemini.key
+.env
+.env.*
+*.key
+*.token
+labelstudio.json
+argilla.json
+.labelstudio.json
+.argilla.json
 
 # Agent state and tombstoned directories
 .codex/
