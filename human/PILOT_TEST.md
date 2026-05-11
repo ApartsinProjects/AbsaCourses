@@ -13,40 +13,52 @@ truth.
 | `tasks/task_9_pilot/_truth.json` | hidden source labels, used after labeling for scoring |
 | `tasks/task_9_pilot/rater_A.csv` | per-rater file with empty answer columns |
 | `argilla_settings/task_9.py` | Argilla settings module (pattern 4, single labeler) |
-| `scripts/push_to_argilla.py` | provisioner |
+| `scripts/provision_argilla_space.py` | one-shot HF Space provisioner |
+| `scripts/push_to_argilla.py` | task uploader |
 | `scripts/pull_from_argilla.py` | response collector |
 | `scripts/score_task_1.py` | already-built scorer; works on the pilot too with `--responses_dir responses/task_9` |
 
-## Step 1: stand up a free Argilla instance on Hugging Face
+## Step 1: stand up the Argilla Space (automated)
+
+Prereq: HF token with Space-write permission, set in your shell:
+
+```powershell
+$env:HF_TOKEN = "hf_xxxxxxxxxxxxxxxxxxxxxxxxx"
+```
+
+Then:
+
+```bash
+"C:/Users/apart/AppData/Local/Programs/Python/Python311/python.exe" \
+    human/scripts/provision_argilla_space.py \
+    --name absa-labeling
+```
+
+This duplicates the Argilla template Space into `<your-handle>/absa-labeling`
+(private by default), sets strong random owner credentials as Space
+secrets, waits for the build to finish, and writes
+`C:\Users\apart\.argilla.json` automatically. It prints the owner
+password at the end so you can also log into the UI in a browser.
+
+If you would rather click through manually, the equivalent steps are:
 
 1. Open https://huggingface.co/new-space?template=argilla/argilla-template-space.
-2. Pick any Space name. Choose CPU Basic (free). Choose Private if you do
-   not want others to see the reviews.
-3. Click "Duplicate Space". Wait ~2 minutes for the container to build.
-4. Visit the Space URL (`https://<your-handle>-<space-name>.hf.space`),
-   sign in with the default admin account if prompted.
-5. In the Argilla UI, click your avatar (top right) > My Settings > API
-   key. Copy it.
-
-## Step 2: configure the client
-
-Create `~/.argilla.json` (or `C:\Users\<you>\.argilla.json` on Windows):
+2. Pick a name, CPU Basic (free), Private.
+3. Click "Duplicate Space". Wait ~2 minutes.
+4. Visit the URL, copy the API key from the Argilla UI (avatar > My
+   Settings > API key).
+5. Create `C:\Users\apart\.argilla.json` by hand:
 
 ```json
 {
-  "api_url": "https://<your-handle>-<your-space-name>.hf.space",
-  "api_key": "<key-from-the-argilla-ui>",
+  "api_url": "https://<your-handle>-<space-name>.hf.space",
+  "api_key": "<key-from-argilla-ui>",
   "workspace": "default",
   "rater_emails": {
-    "A": "<your-argilla-username-or-email>"
+    "A": "owner"
   }
 }
 ```
-
-On Unix, `chmod 600 ~/.argilla.json` after creating it.
-
-The `rater_emails` value for `A` should match the Argilla username you see
-in the UI (often your email).
 
 ## Step 3: push the pilot
 
