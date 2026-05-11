@@ -1,0 +1,411 @@
+{
+  "n_items": 50,
+  "items": [
+    {
+      "item_id": "H001",
+      "herath_mapped_labels": {
+        "accessibility": "neutral"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H002",
+      "herath_mapped_labels": {
+        "accessibility": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H003",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "accessibility": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H004",
+      "herath_mapped_labels": {
+        "overall_experience": "positive",
+        "accessibility": "negative"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H005",
+      "herath_mapped_labels": {
+        "accessibility": "positive",
+        "organization": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H006",
+      "herath_mapped_labels": {
+        "overall_experience": "positive",
+        "workload": "positive",
+        "assessment_design": "positive",
+        "lecturer_quality": "neutral",
+        "grading_transparency": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H007",
+      "herath_mapped_labels": {
+        "lecturer_quality": "neutral",
+        "workload": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H008",
+      "herath_mapped_labels": {
+        "workload": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H009",
+      "herath_mapped_labels": {
+        "organization": "positive",
+        "lecturer_quality": "positive",
+        "workload": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H010",
+      "herath_mapped_labels": {
+        "workload": "negative",
+        "lecturer_quality": "neutral",
+        "materials": "neutral"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H011",
+      "herath_mapped_labels": {
+        "grading_transparency": "negative",
+        "assessment_design": "neutral",
+        "exam_fairness": "neutral"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H012",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "grading_transparency": "positive",
+        "exam_fairness": "neutral"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H013",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "grading_transparency": "positive",
+        "overall_experience": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H014",
+      "herath_mapped_labels": {
+        "lecturer_quality": "negative",
+        "grading_transparency": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H015",
+      "herath_mapped_labels": {
+        "exam_fairness": "negative",
+        "grading_transparency": "negative",
+        "lecturer_quality": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H016",
+      "herath_mapped_labels": {
+        "exam_fairness": "negative",
+        "lecturer_quality": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H017",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "overall_experience": "positive",
+        "exam_fairness": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H018",
+      "herath_mapped_labels": {
+        "lecturer_quality": "neutral",
+        "exam_fairness": "neutral"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H019",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "exam_fairness": "negative"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H020",
+      "herath_mapped_labels": {
+        "exam_fairness": "negative",
+        "lecturer_quality": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H021",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "organization": "negative",
+        "assessment_design": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H022",
+      "herath_mapped_labels": {
+        "lecturer_quality": "negative",
+        "assessment_design": "neutral"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H023",
+      "herath_mapped_labels": {
+        "workload": "negative",
+        "lecturer_quality": "negative",
+        "assessment_design": "negative",
+        "overall_experience": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H024",
+      "herath_mapped_labels": {
+        "assessment_design": "positive",
+        "materials": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H025",
+      "herath_mapped_labels": {
+        "assessment_design": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H026",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "materials": "neutral"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H027",
+      "herath_mapped_labels": {
+        "overall_experience": "positive",
+        "materials": "negative"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H028",
+      "herath_mapped_labels": {
+        "materials": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H029",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "materials": "negative"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H030",
+      "herath_mapped_labels": {
+        "lecturer_quality": "negative",
+        "materials": "negative",
+        "exam_fairness": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H031",
+      "herath_mapped_labels": {
+        "overall_experience": "positive",
+        "organization": "neutral"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H032",
+      "herath_mapped_labels": {
+        "organization": "neutral",
+        "lecturer_quality": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H033",
+      "herath_mapped_labels": {
+        "organization": "positive",
+        "lecturer_quality": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H034",
+      "herath_mapped_labels": {
+        "organization": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H035",
+      "herath_mapped_labels": {
+        "lecturer_quality": "neutral",
+        "organization": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H036",
+      "herath_mapped_labels": {
+        "overall_experience": "positive",
+        "organization": "neutral",
+        "workload": "negative"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H037",
+      "herath_mapped_labels": {
+        "overall_experience": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H038",
+      "herath_mapped_labels": {
+        "overall_experience": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H039",
+      "herath_mapped_labels": {
+        "overall_experience": "positive",
+        "lecturer_quality": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H040",
+      "herath_mapped_labels": {
+        "overall_experience": "positive",
+        "materials": "neutral",
+        "lecturer_quality": "negative",
+        "organization": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H041",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H042",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H043",
+      "herath_mapped_labels": {
+        "materials": "positive",
+        "lecturer_quality": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H044",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive",
+        "organization": "neutral",
+        "exam_fairness": "neutral"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H045",
+      "herath_mapped_labels": {
+        "overall_experience": "negative",
+        "lecturer_quality": "negative",
+        "materials": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H046",
+      "herath_mapped_labels": {
+        "organization": "positive",
+        "lecturer_quality": "neutral"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H047",
+      "herath_mapped_labels": {
+        "lecturer_quality": "positive"
+      },
+      "herath_doc_sent": "Positive"
+    },
+    {
+      "item_id": "H048",
+      "herath_mapped_labels": {
+        "materials": "negative"
+      },
+      "herath_doc_sent": "Negative"
+    },
+    {
+      "item_id": "H049",
+      "herath_mapped_labels": {
+        "assessment_design": "neutral"
+      },
+      "herath_doc_sent": "Neutral"
+    },
+    {
+      "item_id": "H050",
+      "herath_mapped_labels": {
+        "organization": "positive",
+        "materials": "neutral"
+      },
+      "herath_doc_sent": "Positive"
+    }
+  ]
+}

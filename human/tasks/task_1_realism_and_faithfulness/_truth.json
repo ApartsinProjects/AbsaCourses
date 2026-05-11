@@ -1,0 +1,528 @@
+{
+  "n_real": 40,
+  "n_synthetic": 40,
+  "items": [
+    {
+      "item_id": "R001",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R002",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R003",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R004",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R005",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R006",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R007",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R008",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R009",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R010",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R011",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R012",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R013",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R014",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R015",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R016",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R017",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R018",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R019",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R020",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R021",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R022",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R023",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R024",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R025",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R026",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R027",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R028",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R029",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R030",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R031",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R032",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R033",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R034",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R035",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R036",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R037",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R038",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R039",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "R040",
+      "source": "real",
+      "aspects": {}
+    },
+    {
+      "item_id": "S001",
+      "source": "synthetic",
+      "aspects": {
+        "accessibility": "negative"
+      }
+    },
+    {
+      "item_id": "S002",
+      "source": "synthetic",
+      "aspects": {
+        "assessment_design": "neutral",
+        "peer_interaction": "negative",
+        "difficulty": "negative"
+      }
+    },
+    {
+      "item_id": "S003",
+      "source": "synthetic",
+      "aspects": {
+        "peer_interaction": "positive",
+        "practical_application": "positive"
+      }
+    },
+    {
+      "item_id": "S004",
+      "source": "synthetic",
+      "aspects": {
+        "accessibility": "negative",
+        "practical_application": "neutral"
+      }
+    },
+    {
+      "item_id": "S005",
+      "source": "synthetic",
+      "aspects": {
+        "interest": "neutral",
+        "grading_transparency": "positive"
+      }
+    },
+    {
+      "item_id": "S006",
+      "source": "synthetic",
+      "aspects": {
+        "overall_experience": "positive",
+        "pacing": "positive"
+      }
+    },
+    {
+      "item_id": "S007",
+      "source": "synthetic",
+      "aspects": {
+        "materials": "neutral",
+        "interest": "positive",
+        "relevance": "neutral"
+      }
+    },
+    {
+      "item_id": "S008",
+      "source": "synthetic",
+      "aspects": {
+        "practical_application": "positive"
+      }
+    },
+    {
+      "item_id": "S009",
+      "source": "synthetic",
+      "aspects": {
+        "materials": "negative",
+        "grading_transparency": "neutral"
+      }
+    },
+    {
+      "item_id": "S010",
+      "source": "synthetic",
+      "aspects": {
+        "exam_fairness": "positive"
+      }
+    },
+    {
+      "item_id": "S011",
+      "source": "synthetic",
+      "aspects": {
+        "organization": "negative",
+        "grading_transparency": "neutral",
+        "workload": "neutral"
+      }
+    },
+    {
+      "item_id": "S012",
+      "source": "synthetic",
+      "aspects": {
+        "tooling_usability": "negative",
+        "materials": "negative",
+        "workload": "negative"
+      }
+    },
+    {
+      "item_id": "S013",
+      "source": "synthetic",
+      "aspects": {
+        "organization": "positive",
+        "lecturer_quality": "neutral"
+      }
+    },
+    {
+      "item_id": "S014",
+      "source": "synthetic",
+      "aspects": {
+        "accessibility": "positive",
+        "exam_fairness": "neutral"
+      }
+    },
+    {
+      "item_id": "S015",
+      "source": "synthetic",
+      "aspects": {
+        "exam_fairness": "negative",
+        "practical_application": "neutral",
+        "peer_interaction": "negative"
+      }
+    },
+    {
+      "item_id": "S016",
+      "source": "synthetic",
+      "aspects": {
+        "materials": "positive",
+        "overall_experience": "neutral",
+        "workload": "neutral"
+      }
+    },
+    {
+      "item_id": "S017",
+      "source": "synthetic",
+      "aspects": {
+        "interest": "negative",
+        "difficulty": "negative",
+        "assessment_design": "positive"
+      }
+    },
+    {
+      "item_id": "S018",
+      "source": "synthetic",
+      "aspects": {
+        "clarity": "neutral",
+        "tooling_usability": "positive"
+      }
+    },
+    {
+      "item_id": "S019",
+      "source": "synthetic",
+      "aspects": {
+        "support": "negative",
+        "exam_fairness": "neutral",
+        "grading_transparency": "negative"
+      }
+    },
+    {
+      "item_id": "S020",
+      "source": "synthetic",
+      "aspects": {
+        "difficulty": "positive",
+        "grading_transparency": "negative",
+        "interest": "positive"
+      }
+    },
+    {
+      "item_id": "S021",
+      "source": "synthetic",
+      "aspects": {
+        "overall_experience": "neutral",
+        "exam_fairness": "positive",
+        "materials": "positive"
+      }
+    },
+    {
+      "item_id": "S022",
+      "source": "synthetic",
+      "aspects": {
+        "relevance": "negative"
+      }
+    },
+    {
+      "item_id": "S023",
+      "source": "synthetic",
+      "aspects": {
+        "clarity": "negative"
+      }
+    },
+    {
+      "item_id": "S024",
+      "source": "synthetic",
+      "aspects": {
+        "accessibility": "negative",
+        "organization": "negative",
+        "prerequisite_fit": "neutral"
+      }
+    },
+    {
+      "item_id": "S025",
+      "source": "synthetic",
+      "aspects": {
+        "interest": "neutral",
+        "accessibility": "neutral",
+        "practical_application": "negative"
+      }
+    },
+    {
+      "item_id": "S026",
+      "source": "synthetic",
+      "aspects": {
+        "materials": "positive",
+        "interest": "negative"
+      }
+    },
+    {
+      "item_id": "S027",
+      "source": "synthetic",
+      "aspects": {
+        "support": "neutral"
+      }
+    },
+    {
+      "item_id": "S028",
+      "source": "synthetic",
+      "aspects": {
+        "lecturer_quality": "neutral"
+      }
+    },
+    {
+      "item_id": "S029",
+      "source": "synthetic",
+      "aspects": {
+        "difficulty": "neutral",
+        "tooling_usability": "positive"
+      }
+    },
+    {
+      "item_id": "S030",
+      "source": "synthetic",
+      "aspects": {
+        "pacing": "negative",
+        "prerequisite_fit": "positive"
+      }
+    },
+    {
+      "item_id": "S031",
+      "source": "synthetic",
+      "aspects": {
+        "assessment_design": "negative",
+        "organization": "negative",
+        "overall_experience": "positive"
+      }
+    },
+    {
+      "item_id": "S032",
+      "source": "synthetic",
+      "aspects": {
+        "practical_application": "positive"
+      }
+    },
+    {
+      "item_id": "S033",
+      "source": "synthetic",
+      "aspects": {
+        "assessment_design": "negative"
+      }
+    },
+    {
+      "item_id": "S034",
+      "source": "synthetic",
+      "aspects": {
+        "prerequisite_fit": "positive",
+        "support": "neutral"
+      }
+    },
+    {
+      "item_id": "S035",
+      "source": "synthetic",
+      "aspects": {
+        "practical_application": "neutral"
+      }
+    },
+    {
+      "item_id": "S036",
+      "source": "synthetic",
+      "aspects": {
+        "peer_interaction": "positive"
+      }
+    },
+    {
+      "item_id": "S037",
+      "source": "synthetic",
+      "aspects": {
+        "clarity": "positive"
+      }
+    },
+    {
+      "item_id": "S038",
+      "source": "synthetic",
+      "aspects": {
+        "accessibility": "negative",
+        "interest": "positive"
+      }
+    },
+    {
+      "item_id": "S039",
+      "source": "synthetic",
+      "aspects": {
+        "difficulty": "negative",
+        "feedback_quality": "positive"
+      }
+    },
+    {
+      "item_id": "S040",
+      "source": "synthetic",
+      "aspects": {
+        "grading_transparency": "negative",
+        "practical_application": "positive",
+        "feedback_quality": "neutral"
+      }
+    }
+  ]
+}
