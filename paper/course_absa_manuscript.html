@@ -1082,6 +1082,19 @@
       <p>
         The most important extensions are broader synthetic-to-real tests across more real educational datasets and more of the 20-aspect schema, improved generation or filtering to raise label faithfulness and sentiment correctness on generated reviews, and broader prompt-based comparisons that add decomposition variants and cross-provider LLM baselines on the same fixed benchmark split.
       </p>
+
+      <h3>7.2 Educational Implications</h3>
+      <p>
+        Although this study is framed as a benchmark-and-corpus contribution, the underlying motivation is practical: institutions accumulate large volumes of course feedback, and aspect-level summaries are pedagogically more useful than overall sentiment. A controllable synthetic resource has three complementary roles in this setting. First, it lowers the cost of <em>model bootstrapping</em>. Programs that cannot fund the per-comment annotation required for a private ABSA model can pretrain on synthetic data calibrated to their own aspect schema and fine-tune on a small adjudicated slice of real reviews. Second, it supports <em>longitudinal monitoring</em>. Course-improvement cycles benefit from comparable aspect distributions across terms, instructors, and cohorts; a documented synthetic benchmark gives the modeling layer a stable yardstick against which a department-specific model can be tracked. Third, it allows <em>controlled stress-testing</em>. By construction the synthetic corpus exposes minority aspects (e.g. <code>accessibility</code>, <code>grading_transparency</code>, <code>peer_interaction</code>) that are rarely well represented in any single institution's archive, so it can act as a probing set for known coverage gaps. None of these uses presume that synthetic supervision replaces human annotation; rather, the corpus is a scaffold that makes the model-development stage cheaper and the evaluation stage more reproducible.
+      </p>
+      <p>
+        The label-faithfulness audit constrains those use cases. With overall aspect-sentiment match at 0.42 on a 250-review sample, the corpus should be treated as a noisy training resource rather than as a calibrated ground truth, and any deployment built on top of it should be checked against locally adjudicated examples before consequential decisions, especially for sentiment polarity. The faithfulness-aware filtering extension flagged in Section 7.1 is the natural next step for institutional users who plan to base course-improvement signals on the model's outputs.
+      </p>
+
+      <h3>7.3 Ethics Statement</h3>
+      <p>
+        The synthetic corpus released with this study contains no identifiable student data: instructor names, course codes, and personas are sampled or invented as part of the controlled-generation protocol, and the corpus is generated rather than scraped. The mapped external evaluation uses the publicly released Herath et al. 2022 student-feedback corpus under its MIT license; that release was prepared by the authors of the original study with their institutional approvals, and our use is limited to evaluation, citation, and a conservative schema mapping documented at <code>paper/real_transfer/herath_mapping.json</code>. Preliminary realism-validation work also drew on the public OMSCS course-review pages; only public text was used and no individual reviewer is identified in any downstream artifact. Any institutional deployment of the resulting models should re-consent or re-anonymize student-authored text per local research-ethics policy and should make clear to students and instructors that an automated aspect summary is produced from feedback they submit. We do not recommend using model outputs as inputs to high-stakes personnel decisions about instructors without human review.
+      </p>
     </section>
 
     <section>
