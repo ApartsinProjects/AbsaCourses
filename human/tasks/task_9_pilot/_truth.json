@@ -1,0 +1,44 @@
+{
+  "items": [
+    {
+      "item_id": "R016",
+      "source": "real"
+    },
+    {
+      "item_id": "R020",
+      "source": "real"
+    },
+    {
+      "item_id": "R036",
+      "source": "real"
+    },
+    {
+      "item_id": "S026",
+      "source": "synthetic"
+    },
+    {
+      "item_id": "S032",
+      "source": "synthetic"
+    },
+    {
+      "item_id": "S003",
+      "source": "synthetic"
+    },
+    {
+      "item_id": "R006",
+      "source": "real"
+    },
+    {
+      "item_id": "S021",
+      "source": "synthetic"
+    },
+    {
+      "item_id": "S030",
+      "source": "synthetic"
+    },
+    {
+      "item_id": "R013",
+      "source": "real"
+    }
+  ]
+}
