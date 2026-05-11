@@ -151,7 +151,8 @@ def pull_one_task(client: "rg.Argilla", task_n: int, user_to_letter: Dict[str, s
     # Group answers by (letter, item_id).
     per_rater: Dict[str, Dict[str, Dict[str, str]]] = defaultdict(dict)
     for rec in records:
-        item_id = getattr(rec, "external_id", None)
+        # Argilla v2 uses rec.id; older versions used external_id.
+        item_id = getattr(rec, "id", None) or getattr(rec, "external_id", None)
         if not item_id:
             md = getattr(rec, "metadata", None) or {}
             item_id = md.get("item_id") if isinstance(md, dict) else None

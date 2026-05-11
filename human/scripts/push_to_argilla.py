@@ -151,7 +151,7 @@ def manifest_row_to_record(row: Dict[str, str], settings: "rg.Settings") -> "rg.
     return rg.Record(
         fields=fields,
         metadata=metadata,
-        external_id=row.get("item_id", None),
+        id=row.get("item_id", None),
     )
 
 
