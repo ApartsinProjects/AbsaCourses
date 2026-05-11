@@ -1,149 +1,140 @@
-# Toward Synthetic ABSA for Higher Education Course Reviews
+# A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis
 
-A dual-pipeline study of (1) **synthetic student-review generation** with aspect-level
-sentiment labels, and (2) an **ABSA analysis pipeline** that detects aspects and
-estimates per-aspect sentiment polarity from those reviews.
+A synthetic-data-centered study of aspect-based sentiment analysis (ABSA) for
+higher-education course reviews. Two linked artifacts: (1) a generation pipeline
+that produces 10,000 student-style reviews labeled across a **20-aspect pedagogical
+inventory**, and (2) a reproducible benchmark that runs classical, transformer, joint,
+and GPT-based ABSA approaches on those reviews and reports a conservative external
+evaluation against the Herath et al. 2022 student-feedback corpus.
 
 ![Hero](assets/hero.png)
 
-> **Status:** draft manuscript, internal validation only.
 > **Manuscript (rendered):** [`paper/course_absa_manuscript.html`](paper/course_absa_manuscript.html)
-> once GitHub Pages is published, the same draft is served at the project's Pages URL.
+> &nbsp;&middot;&nbsp; **Live page:** [https://apartsinprojects.github.io/AbsaCourses/](https://apartsinprojects.github.io/AbsaCourses/)
+> &nbsp;&middot;&nbsp; **Authors:** Yehudit Aperstein, Alexander Apartsin
 
 ---
 
 ## Abstract
 
-Manual annotation for aspect-based sentiment analysis (ABSA) in higher education is
-expensive, domain-specific, and difficult to scale across diverse writing styles. This
-project studies a synthetic-data-centred workflow that pairs two contributions:
+Educational ABSA can support course improvement, but public aspect-labeled student
+feedback remains scarce because educational reviews are private, institution-specific,
+and expensive to annotate. This study introduces a controlled synthetic benchmark for
+educational ABSA built from **10,000** synthetic course reviews with explicit
+train-validation-test splits and a **20-aspect** pedagogical schema spanning
+instructional quality, assessment and course management, learning demand, learning
+environment, and engagement.
 
-1. a **local LLM pipeline** that generates labeled student course reviews with
-   aspect-level sentiment annotations, and
-2. an **ABSA analysis pipeline** that detects aspects and regresses sentiment polarity
-   for each detected aspect.
-
-The released dataset contains **5,984 cleaned reviews** (from 6,000 generated records),
-covers **10 educational aspects**, and averages **2 labeled aspects per review**.
-The repository's BERT notebook reports per-aspect precision in the range
-**0.7342&ndash;1.0000** and sentiment MSE in **0.0107&ndash;0.1239** on a separate cleaned
-split. A reproducible TF-IDF baseline added on the released JSONL averages
-**micro-F1 = 0.598 &plusmn; 0.014** across three seeds and improves monotonically with more
-synthetic training data.
-
-The current evidence supports **internal learnability and stylistic diversity** of the
-synthetic corpus. It does **not** yet support claims of transfer to real student
-feedback, and the manuscript is framed accordingly.
+The corpus is generated with sampled target labels, sampled nuance attributes, and a
+realism-tuned prompt refined through a three-cycle judge-editor procedure. On the
+resulting benchmark, local baselines show the task is nontrivial; the strongest untuned
+local model, BERT-base, reaches **micro-F1 = 0.2760** on a held-out detection split,
+and a tuned BERT schedule reaches **0.2930**. Full-test GPT-5.2 inference reaches
+**0.2519** in zero-shot mode and **0.2501** with retrieval-based few-shot prompting.
+A conservative external evaluation on **2,829 mapped Herath reviews** yields BERT
+micro-F1 = **0.4593** on a 9-aspect overlap, indicating partial synthetic-to-real
+transfer. Realism and faithfulness diagnostics are reported as generator-side analyses
+that explain how the benchmark was stabilized and where label noise remains.
 
 ---
 
-## Key claims and what they rest on
+## What the evidence currently supports
 
-| Claim                                                                                          | Evidence                                                                                          |
-|------------------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------|
-| The synthetic corpus is multi-aspect, multi-style, and short-form by design.                   | [paper/outputs/dataset_summary.json](paper/outputs/dataset_summary.json), Figures 1&ndash;3 of the manuscript. |
-| The corpus is internally learnable with both classical and transformer ABSA pipelines.         | TF-IDF multi-seed baseline + recorded BERT notebook results.                                      |
-| Performance improves with more synthetic training data.                                        | Learning-curve study (Figure 6).                                                                  |
-| Persona diversity yields non-trivial held-out-style robustness.                                | Style-holdout experiment (Figure 7).                                                              |
-| The pipeline is **not yet** validated against real student feedback.                           | [paper/reviewer_gap_plan.md](paper/reviewer_gap_plan.md) and the manuscript's limitations section.|
+| claim                                                                                | evidence                                                                                                |
+|--------------------------------------------------------------------------------------|---------------------------------------------------------------------------------------------------------|
+| 10K-review, 20-aspect synthetic corpus with multi-style coverage and prompt cycles.  | Manuscript Section 3 + [`paper/generated_datasets/`](paper/generated_datasets/) (data) + [`paper/plans/`](paper/plans/) (protocol). |
+| Local benchmark is calibrated, multi-seed, and reproducible.                         | [`paper/benchmark_outputs/model_comparison_summary.csv`](paper/benchmark_outputs/model_comparison_summary.csv), Phase A and Phase B1 status files under [`paper/experiment_rounds/`](paper/experiment_rounds/). |
+| GPT-5.2 inference family executed at full-test scale in batch mode.                  | [`paper/benchmark_outputs/openai_batch_eval_summary.csv`](paper/benchmark_outputs/openai_batch_eval_summary.csv) and per-prompt CSVs alongside. |
+| Synthetic-to-real transfer measured on a public real corpus.                         | [`paper/real_transfer/synthetic_to_real_transfer_summary.csv`](paper/real_transfer/synthetic_to_real_transfer_summary.csv) + manuscript Section 6.6 + Figure A1. |
+| LLM-judge faithfulness audit at corpus scale (n=250, 501 declared aspects).          | [`paper/faithfulness_audit/faithfulness_audit_gpt-5_2_250_summary.json`](paper/faithfulness_audit/faithfulness_audit_gpt-5_2_250_summary.json). |
+| Three human-rater studies scaffolded and ready to run.                               | [`human/`](human/) — codebook, instructions, samplers, scoring scripts, pre-generated rater CSVs. **Not yet collected.** |
 
 ---
 
 ## Dataset
 
-**File:** [`edu/final_student_reviews.jsonl`](edu/final_student_reviews.jsonl) &nbsp;&middot;&nbsp;
-JSONL, one review per line.
+**Active corpus:** [`paper/generated_datasets/batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl`](paper/generated_datasets/) (10,000 records).
 
-**Schema:**
+**Aspect inventory (20)**, grouped into five pedagogical blocks:
 
-```json
-{
-  "course_name": "Computer Networks",
-  "lecturer": "Prof. Klein",
-  "grade": "D (Barely passed)",
-  "style": "Confused Student",
-  "aspects": { "workload": "neutral", "exam_fairness": "negative" },
-  "review_text": "so is this course worth it? workload's okay i guess but the exam made no sense..."
-}
-```
+| Group                                  | Aspects |
+|----------------------------------------|---------|
+| Instructional quality                  | `clarity`, `lecturer_quality`, `materials`, `feedback_quality` |
+| Assessment and course management       | `exam_fairness`, `assessment_design`, `grading_transparency`, `organization`, `tooling_usability` |
+| Learning demand and readiness          | `difficulty`, `workload`, `pacing`, `prerequisite_fit` |
+| Learning environment                   | `support`, `accessibility`, `peer_interaction` |
+| Engagement and value                   | `relevance`, `interest`, `practical_application`, `overall_experience` |
 
-**Aspect inventory (10):** `clarity`, `difficulty`, `exam_fairness`, `interest`,
-`lecturer_quality`, `materials`, `overall_experience`, `relevance`, `support`,
-`workload`. Sentiment values: `positive`, `neutral`, `negative`.
+Each record carries `target_attributes` (the sampled aspect-sentiment labels), a
+`nuance_attributes` block (course, instructor, semester, persona, recommendation
+stance, etc.), and the final review text. See manuscript Appendix A.1 for full
+definitions.
 
-**Summary statistics** (cleaned set of 5,984 reviews):
-
-| metric                  | value |
-|-------------------------|-------|
-| reviews                 | 5,984 |
-| courses / lecturers     | 14 / 8 |
-| aspects                 | 10 |
-| mean / median words     | 14.0 / 9 |
-| mean aspects per review | 2.0 |
-| word range              | 1&ndash;60 |
-
----
-
-## Methodology in brief
-
-**Synthetic generation pipeline** (`edu/`):
-balanced parameter sampling (grade, course, lecturer, style, aspect targets) &rarr;
-constraint-rich prompt (forbidden phrases, persona rules) &rarr;
-**pass 1** draft via local Llama&nbsp;3 (Ollama) &rarr;
-**pass 2** refinement to repair label mismatches &rarr;
-noise injection (typos, casing, slang) &rarr; JSONL.
-
-**ABSA analysis pipeline** (`paper/`):
-`bert-base-uncased` encoder &rarr; 10 binary aspect heads (BCE) &rarr;
-10-dim sentiment regression head in [-1, 1] (masked MSE) &rarr;
-per-aspect threshold calibration on a held-out split &rarr;
-per-aspect evaluation (accuracy, precision, recall, MSE).
-
-A non-neural TF-IDF + logistic regression / ridge baseline is reproducible from
-[`paper/edu_absa_paper_analysis.py`](paper/edu_absa_paper_analysis.py); a transformer
-benchmark across BERT / DistilBERT / RoBERTa / ALBERT is in
-[`paper/absa_model_comparison.py`](paper/absa_model_comparison.py).
+**External evaluation corpus:** [`external_data/Student_feedback_analysis_dataset/`](external_data/Student_feedback_analysis_dataset/)
+holds the Herath et al. 2022 LREC corpus (3,000 hand-annotated reviews, MIT
+licensed). The mapping from Herath's aspect schema into 9 of our 20 aspects is at
+[`paper/real_transfer/herath_mapping.json`](paper/real_transfer/herath_mapping.json).
 
 ---
 
 ## Headline results
 
-**Recorded BERT notebook (separate cleaned split, n=5,052; 4,041 / 505 / 506):**
+**Local benchmark on the held-out detection split** (cells from [`paper/benchmark_outputs/model_comparison_summary.csv`](paper/benchmark_outputs/model_comparison_summary.csv)):
 
-| aspect              | precision | recall | MSE    | threshold |
-|---------------------|-----------|--------|--------|-----------|
-| `exam_fairness`     | 1.0000    | 1.0000 | 0.0166 | 0.95      |
-| `materials`         | 0.9700    | 0.9898 | 0.0253 | 0.65      |
-| `support`           | 0.9639    | 0.9639 | 0.0107 | 0.85      |
-| `workload`          | 0.9200    | 0.9684 | 0.0478 | 0.30      |
-| `clarity`           | 0.9379    | 0.9379 | 0.0311 | 0.75      |
-| `lecturer_quality`  | 0.8889    | 0.9143 | 0.0693 | 0.10      |
-| `interest`          | 0.8636    | 0.9048 | 0.0207 | 0.70      |
-| `difficulty`        | 0.8652    | 0.8750 | 0.1239 | 0.80      |
-| `relevance`         | 0.7857    | 0.9296 | 0.0501 | 0.30      |
-| `overall_experience`| 0.7342    | 0.8406 | 0.0159 | 0.30      |
+| approach              | micro-F1 | macro-F1 | sent-MSE |
+|-----------------------|---------:|---------:|---------:|
+| `bert-base-uncased`   |   0.2760 |   0.3364 |   0.4959 |
+| `distilbert-base-uncased` | 0.2691 | 0.3376 |   0.5044 |
+| `distilbert_joint`    |   0.2524 |   0.3248 |   0.5428 |
+| `bert_joint`          |   0.2447 |   0.3208 |   0.5288 |
+| `tfidf_two_step`      |   0.2326 |   0.2867 |   0.6830 |
+| `albert-base-v2`      |   0.1829 |   0.1828 |   0.5773 |
+| `roberta-base`        |   0.1829 |   0.1828 |   0.6838 |
 
-Source: [paper/outputs/recorded_notebook_test_results.csv](paper/outputs/recorded_notebook_test_results.csv).
+**GPT-5.2 inference (full 1,000-review test split, batch mode):** see
+[`paper/benchmark_outputs/openai_batch_eval_summary.csv`](paper/benchmark_outputs/openai_batch_eval_summary.csv).
+Headline: zero-shot 0.2519, retrieval-based few-shot 0.2501. Aspect-by-aspect and
+two-pass variants still pending.
 
-**TF-IDF baseline on the released JSONL (3 seeds, 80/10/10 train/calib/test):**
+**Synthetic-to-real transfer on Herath (n=2,829, 9-aspect overlap):**
 
-| metric                              | mean   | std    |
-|-------------------------------------|--------|--------|
-| detection micro-F1                  | 0.5979 | 0.0140 |
-| detection macro-F1                  | 0.6048 | 0.0130 |
-| sentiment MSE on detected aspects   | 0.4329 | 0.0292 |
-| sentiment polarity accuracy         | 0.5214 | 0.0210 |
+| approach              | micro-F1 | macro-F1 | sent-MSE |
+|-----------------------|---------:|---------:|---------:|
+| `bert-base-uncased`   |   0.4593 |   0.3059 |   0.3990 |
+| `distilbert-base-uncased` | 0.4156 | 0.3515 |   0.3888 |
+| `tfidf_two_step`      |   0.3740 |   0.2303 |   0.7019 |
 
-Source: [paper/outputs/baseline_seed_summary.json](paper/outputs/baseline_seed_summary.json).
+Source: [`paper/real_transfer/synthetic_to_real_transfer_summary.csv`](paper/real_transfer/synthetic_to_real_transfer_summary.csv).
 
-**Learning curve (released JSONL, single seed):**
-detection micro-F1 rises from **0.5621** at 25% training data to **0.5945** at 100%;
-sentiment MSE drops from **0.4777** to **0.4005** over the same range.
-See [Figure 6](paper/outputs/figures/learning_curve.png).
+**LLM-judge faithfulness audit on synthetic labels (n=250 reviews, 501 declared
+aspects):**
 
-**Style-holdout robustness:**
-best on *casual texting* (micro-F1 = 0.6835), worst on *confused student*
-(micro-F1 = 0.5060). See [Figure 7](paper/outputs/figures/style_holdout_micro_f1.png).
+| metric                                  | rate    |
+|-----------------------------------------|--------:|
+| aspect supported                        |  0.7705 |
+| aspect-sentiment match                  |  0.4232 |
+| rows fully supported                    |  0.5920 |
+| rows fully sentiment-match              |  0.2120 |
+
+Source: [`paper/faithfulness_audit/faithfulness_audit_gpt-5_2_250_summary.json`](paper/faithfulness_audit/faithfulness_audit_gpt-5_2_250_summary.json).
+A human-rater replay of the same audit is scaffolded in `human/tasks/task_3_llm_judge_agreement/`.
+
+---
+
+## Human-rater studies
+
+Three studies are pre-built under [`human/`](human/) and ready to send to raters.
+None of them is collected yet.
+
+| task | purpose | sample |
+|---|---|---|
+| **Task 1** realism + label faithfulness | can humans distinguish synthetic from real reviews? are the synthetic labels faithful? | 40 synthetic + 40 real, 3 raters |
+| **Task 2** Herath re-annotation under the 20-aspect schema | does our schema-mapping for Herath agree with independent humans? | 50 Herath reviews, 3 raters |
+| **Task 3** human vs. LLM-judge agreement | does GPT-5.2's faithfulness audit agree with human raters? | 80 stratified audit pairs, 3 raters |
+
+Each task has rater CSVs, a hidden ground-truth file, a codebook, instructions, and
+a scoring script that produces paper-ready tables and Cohen's kappa. See
+[`human/README.md`](human/README.md) for the full workflow.
 
 ---
 
@@ -151,84 +142,84 @@ best on *casual texting* (micro-F1 = 0.6835), worst on *confused student*
 
 ```
 .
-├── README.md                          # this file
-├── assets/hero.png                    # README banner
-├── index.html                         # GitHub Pages entry → manuscript
-├── .nojekyll                          # disable Jekyll on Pages
-├── edu/                               # synthetic data generation
-│   ├── final_student_reviews.jsonl    # released dataset (6,000 records, 5,984 clean)
-│   ├── dataset_generator.ipynb
-│   ├── dataset_generator_balanced.ipynb
-│   ├── absa_train_new.ipynb           # BERT ABSA training notebook
-│   ├── LLMDemo.ipynb
-│   └── ReadMe.md                      # generation pipeline notes
-└── paper/                             # paper artifacts
-    ├── course_absa_manuscript.html    # rendered draft manuscript
-    ├── edu_absa_paper_analysis.py     # EDA + TF-IDF baselines + learning curve
-    ├── absa_model_comparison.py       # transformer + OpenAI-prompt benchmark
-    ├── realism_validation_experiment.py  # real-vs-synthetic LLM-judge protocol
-    ├── reviewer_gap_plan.md           # self-assessment of evidence boundaries
-    ├── validation_protocol.md         # realism validation plan
-    ├── outputs/                       # CSVs and figures used in the manuscript
-    └── validation/                    # OMSCS real-review samples + judge protocol
+|-- README.md
+|-- index.html                         <- Pages entry: redirects to the manuscript
+|-- .nojekyll                          <- disables Jekyll on Pages
+|-- assets/hero.png                    <- README banner
+|-- human/                             <- three human-rater studies (codebook, instructions, samplers, scoring, generated CSVs)
+|-- external_data/                     <- Herath et al. 2022 LREC corpus (MIT)
+|-- edu/                               <- legacy 6K/10-aspect notebooks (superseded by the 10K corpus under paper/generated_datasets/)
+`-- paper/
+    |-- course_absa_manuscript.html    <- 1,490-line draft (Sections 1-8 + Appendix)
+    |-- plans/                         <- experiment plans and audits (live_todo, integrated_plan, round plans, etc.)
+    |-- *.py, *.ps1                    <- production scripts: build_, aggregate_, evaluate_, submit_, consume_, analyze_, ...
+    |-- benchmark_outputs/             <- local benchmark CSVs (model_comparison_summary, openai_batch_eval_summary)
+    |-- real_transfer/                 <- Herath transfer outputs and aspect-mapping
+    |-- faithfulness_audit/            <- LLM-judge audit details at multiple sample sizes
+    |-- experiment_rounds/             <- phase A and B1 run statuses + logs
+    |-- generated_datasets/            <- the 10K corpus and intermediate generation outputs
+    |-- generation_protocol/           <- prompt package and realism-cycle artifacts
+    |-- validation/                    <- realism-cycle batches and OMSCS samples
+    |-- analysis/                      <- diagnostic CSVs and reports
+    `-- outputs/                       <- publication-ready figures (PNG + SVG) and tables
 ```
 
 ---
 
 ## Reproducing the analysis
 
-The released JSONL is the canonical input for every analysis script.
+Each script is independent and can be run from the repo root. They expect the data
+files in `paper/generated_datasets/`, `paper/real_transfer/`, and `external_data/` to
+be present; large data folders are not all checked in. See `paper/plans/` for the
+governing protocols.
 
 ```bash
-# Python 3.9+ recommended. Suggested:
-pip install numpy pandas scikit-learn matplotlib seaborn
-
-# EDA + TF-IDF baselines + learning curve + style-holdout
-python paper/edu_absa_paper_analysis.py
-
-# Transformer benchmark (BERT / DistilBERT / RoBERTa / ALBERT)
-# Adds an OpenAI-prompt baseline if .opeai.key is present.
-pip install torch transformers
+# Local benchmark (transformer + classical + joint + GPT-batch family)
 python paper/absa_model_comparison.py
-```
 
-Outputs land in [`paper/outputs/`](paper/outputs/) (CSVs and figures referenced by the
-manuscript). The transformer benchmark writes to `paper/benchmark_outputs/`.
+# Synthetic-to-real transfer on Herath
+python paper/evaluate_synthetic_to_real_transfer.py
+
+# LLM-judge faithfulness audit
+python paper/label_faithfulness_audit.py
+
+# Build the three human studies (already executed; rerun to regenerate)
+python human/scripts/sample_task_1.py
+python human/scripts/sample_task_2.py
+python human/scripts/sample_task_3.py
+```
 
 ---
 
-## Scope and limitations (the honest list)
+## Scope and limitations
 
-What the current evidence supports:
+**Supported by current evidence:**
 
-- **A learnable, stylistically diverse synthetic ABSA corpus** for higher-education
-  reviews, with internally consistent BERT and TF-IDF baselines.
-- **Monotonic gains** with more synthetic training data.
-- **Non-trivial style robustness** in held-out-style evaluation.
+- A multi-aspect, multi-style synthetic corpus that is learnable across classical,
+  transformer, joint, and GPT-based inference modes.
+- Conservative external validation on a public, hand-annotated educational corpus.
+- Corpus-scale label-quality diagnostics from an LLM-judge audit.
 
-What it does **not** yet support, and what is therefore out of scope for this draft:
+**Not yet defensible, by design of this draft:**
 
-- Generalization from synthetic reviews to **real student feedback**. The realism
-  validation experiment ([`paper/realism_validation_experiment.py`](paper/realism_validation_experiment.py))
-  is implemented but its first cycle did not complete because the OpenAI judge call
-  hit `insufficient_quota`; see
-  [`paper/validation/prompt_debug_cycle_0_status.json`](paper/validation/prompt_debug_cycle_0_status.json).
-- Claims that the **two-pass refinement** is necessary &mdash; this needs an ablation.
-- Replacement of human annotation by synthetic labels &mdash; this needs human
-  evaluation of realism, aspect correctness, and sentiment faithfulness.
+- **Human-rater confirmation of label faithfulness and realism.** The studies are
+  scaffolded in [`human/`](human/) but data collection has not begun.
+- **A second real-data corpus.** Transfer is currently evaluated on Herath only.
+- **A faithfulness-aware filtering ablation.** Internal plans flag this as the
+  single most valuable remaining experiment for journal acceptance.
+- **Hybrid synthetic-plus-real fine-tuning** against a small real training slice.
 
-The reviewer-facing gap plan is in [`paper/reviewer_gap_plan.md`](paper/reviewer_gap_plan.md).
+See [`paper/plans/integrated_paper_update_plan_20260403.md`](paper/plans/integrated_paper_update_plan_20260403.md)
+and [`paper/plans/live_todo_20260403.md`](paper/plans/live_todo_20260403.md) for the
+full status of remaining work.
 
 ---
 
 ## Citation
 
-Until a venue is fixed, please cite the draft as a working paper:
-
 ```bibtex
 @misc{aperstein2026courseabsa,
-  title  = {Toward Synthetic Aspect-Based Sentiment Analysis for Higher Education
-            Course Reviews: A Dual-Pipeline Study of Data Generation and ABSA Modeling},
+  title  = {A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis},
   author = {Aperstein, Yehudit and Apartsin, Alexander},
   year   = {2026},
   url    = {https://github.com/ApartsinProjects/AbsaCourses}
@@ -239,7 +230,12 @@ Until a venue is fixed, please cite the draft as a working paper:
 
 ## Acknowledgements
 
-Local LLM inference uses [Ollama](https://ollama.com/) with Llama&nbsp;3.
-Real-review validation samples are drawn from the public
-[OMSCS Reviews](https://awaisrauf.com/omscs_reviews/) pages (CS-6200, CS-6250,
-CS-6400, CS-7641) for research and evaluation only.
+External validation uses the publicly released **Herath et al. 2022** student
+feedback corpus (LREC), distributed under MIT. Cite the original release:
+
+> Herath, M., Chamindu, K., Maduwantha, H., & Ranathunga, S. (2022). Dataset and
+> Baseline for Automatic Student Feedback Analysis. *Proceedings of the Thirteenth
+> Language Resources and Evaluation Conference*, 2042-2049.
+
+Realism-validation sample selection drew from public OMSCS course pages for the
+preliminary cycle-0 exploration.
