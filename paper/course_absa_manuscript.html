@@ -343,6 +343,35 @@
       color: var(--ink, #1c2529);
       letter-spacing: 0.01em;
     }
+    .docx-download {
+      position: fixed;
+      top: 16px;
+      right: 16px;
+      z-index: 1000;
+      display: inline-flex;
+      align-items: center;
+      gap: 7px;
+      padding: 8px 14px;
+      background: #174b63;
+      color: #fff;
+      font-family: Cambria, Georgia, serif;
+      font-size: 0.92rem;
+      text-decoration: none;
+      border-radius: 8px;
+      box-shadow: 0 6px 18px rgba(17,45,58,0.25);
+      transition: background 0.15s ease, transform 0.15s ease;
+    }
+    .docx-download:hover {
+      background: #11607f;
+      transform: translateY(-1px);
+      color: #fff;
+    }
+    @media print {
+      .docx-download { display: none; }
+    }
+    @media screen and (max-width: 700px) {
+      .docx-download { position: static; display: inline-flex; margin: 12px 0; }
+    }
   </style>
   <script>
     document.addEventListener("DOMContentLoaded", function() {
@@ -359,6 +388,8 @@
   </script>
 </head>
 <body>
+  <a class="docx-download" href="course_absa_manuscript.docx" download
+     title="Download the Microsoft Word version of this manuscript">&#8681; Word (.docx)</a>
   <main class="page">
     <header>
       <h1>A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis</h1>
