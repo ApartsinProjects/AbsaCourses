@@ -10,6 +10,32 @@ names, author order, or publication year/volume. This audit closed that gap by
 spot-checking each entry's author list against Crossref and the published landing
 page, and corrected six entries.
 
+## Third pass: full automated web verification (2026-05-11)
+
+Every one of the 30 references was re-checked programmatically against its
+authoritative source: Crossref (`api.crossref.org/works/{doi}`) for DOI-backed
+entries, the ACL Anthology BibTeX endpoint (`aclanthology.org/{id}.bib`) for ACL
+entries, and a Crossref/DBLP title lookup for the NeurIPS entry. For each
+reference the script compared canonical first-author surname, publication year,
+and title token-overlap against the manuscript text. The verifier and its raw
+results are reproducible from `_bib_verify.py`.
+
+That pass found **one remaining error**:
+
+| ref # | field | before | after | source |
+|------:|-------|--------|-------|--------|
+| 19 | anthology URL | `https://aclanthology.org/2024.lrec-main.912/` (resolves to a different paper, "LexComSpaL2") | `https://aclanthology.org/2024.lrec-main.879/` | DBLP `conf/coling/EdwardsC24` + ACL Anthology BibTeX |
+| 19 | pages | `10448-10461` | `10058-10072` | ACL Anthology BibTeX |
+
+The first-author fix to ref 19 (`Clifton M. Edwards` -> `Aleksandra Edwards`)
+from the second pass was correct; only the URL and page range were still wrong,
+because the second pass verified authorship by title search but never checked
+that the cited anthology ID actually pointed at the right paper.
+
+After this fix, the automated audit reports **30 / 30 references clean**:
+year, first-author surname, and title all match the authoritative record for
+every entry.
+
 ## Corrections applied to `paper/course_absa_manuscript.html`
 
 | ref # | field         | before                                                                                          | after                                                                                                       | source                            |
