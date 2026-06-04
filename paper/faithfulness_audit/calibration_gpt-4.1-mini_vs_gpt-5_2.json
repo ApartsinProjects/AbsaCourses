@@ -1,0 +1,14 @@
+{
+  "candidate_model": "gpt-4.1-mini",
+  "n_rows": 250,
+  "spearman_rho": 0.5204,
+  "pearson_r": 0.4694,
+  "candidate_aggregate_support_rate": 0.5526,
+  "candidate_aggregate_match_rate": 0.3742,
+  "candidate_avg_row_score": 0.3647,
+  "gpt5_avg_row_score": 0.3613,
+  "acceptance_threshold_spearman": 0.6,
+  "accepted": false,
+  "recommendation": "ESCALATE: rho=0.520 < 0.6; try gpt-4.1-mini or gpt-5.2",
+  "elapsed_seconds": 649.0
+}

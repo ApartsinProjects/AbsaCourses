@@ -1,0 +1,11 @@
+{
+  "accessibility": 0.5499999999999999,
+  "assessment_design": 0.7999999999999999,
+  "exam_fairness": 0.35,
+  "grading_transparency": 0.95,
+  "lecturer_quality": 0.6,
+  "materials": 0.6,
+  "organization": 0.7,
+  "overall_experience": 0.6,
+  "workload": 0.75
+}

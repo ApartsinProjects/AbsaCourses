@@ -1,0 +1,56 @@
+{
+  "seed": 42,
+  "n_corpus": 10000,
+  "buckets": [
+    {
+      "bucket": "top25",
+      "n": 2500,
+      "score_min": 1.0,
+      "score_max": 1.0,
+      "score_mean": 1.0,
+      "n_with_score": 2500,
+      "path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\top25.jsonl",
+      "ids_path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\top25.row_ids.txt"
+    },
+    {
+      "bucket": "top50",
+      "n": 5000,
+      "score_min": 0.5,
+      "score_max": 1.0,
+      "score_mean": 0.912,
+      "n_with_score": 5000,
+      "path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\top50.jsonl",
+      "ids_path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\top50.row_ids.txt"
+    },
+    {
+      "bucket": "full",
+      "n": 10000,
+      "score_min": 0.0,
+      "score_max": 1.0,
+      "score_mean": 0.5766,
+      "n_with_score": 10000,
+      "path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\full.jsonl",
+      "ids_path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\full.row_ids.txt"
+    },
+    {
+      "bucket": "bot25",
+      "n": 2500,
+      "score_min": 0.0,
+      "score_max": 0.3333,
+      "score_mean": 0.0379,
+      "n_with_score": 2500,
+      "path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\bot25.jsonl",
+      "ids_path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\bot25.row_ids.txt"
+    },
+    {
+      "bucket": "random_5k",
+      "n": 5000,
+      "score_min": 0.0,
+      "score_max": 1.0,
+      "score_mean": 0.5848,
+      "n_with_score": 5000,
+      "path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\random_5k.jsonl",
+      "ids_path": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\buckets\\random_5k.row_ids.txt"
+    }
+  ]
+}

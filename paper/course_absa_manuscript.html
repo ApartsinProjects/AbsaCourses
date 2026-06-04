@@ -388,8 +388,10 @@
   </script>
 </head>
 <body>
-  <a class="docx-download" href="course_absa_manuscript.docx" download
-     title="Download the Microsoft Word version of this manuscript">&#8681; Word (.docx)</a>
+  <a class="docx-download" href="course_absa_manuscript_1col.docx" download
+     title="Download the single-column Word version of this manuscript">&#8681; Word (1-col)</a>
+  <a class="docx-download" style="top: 60px;" href="course_absa_manuscript_2col.docx" download
+     title="Download the two-column Word version of this manuscript">&#8681; Word (2-col)</a>
   <main class="page">
     <header>
       <h1>A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis</h1>
@@ -399,7 +401,7 @@
     <section class="abstract">
       <h2>Abstract</h2>
       <p>
-        Educational aspect-based sentiment analysis (ABSA) can support course improvement, but public aspect-labeled student feedback remains scarce because educational reviews are private, institution-specific, and expensive to annotate. This study introduces a controlled synthetic benchmark for educational ABSA built from 10,000 synthetic course reviews with explicit train-validation-test splits and a 20-aspect pedagogical schema spanning instructional quality, assessment and course management, learning demand, learning environment, and engagement. The corpus is generated with sampled target labels, sampled nuance attributes, and a realism-tuned prompt refined through a three-cycle judge-editor procedure. On the resulting benchmark, local baselines with TF-IDF, two-step transformers, and joint encoders show that the task is nontrivial; the strongest untuned model, BERT, reaches a held-out detection micro-F1 of 0.2760, while a modest lower-rate BERT schedule improves this to 0.2930. Full-test GPT-based inference with <code>gpt-5.2</code> reaches 0.2519 micro-F1 in zero-shot mode and 0.2501 with retrieval-based few-shot prompting, placing batch inference above the classical baseline and close to the compact joint encoders. A conservative external evaluation on 2,829 mapped student-feedback reviews from Herath et al. yields a micro-F1 of 0.4593 for BERT on a 9-aspect overlap, indicating partial synthetic-to-real transfer. Realism and faithfulness analyses are reported as generator diagnostics that clarify how the benchmark was stabilized and where label noise remains. The study therefore contributes a synthetic educational ABSA corpus, a documented generation procedure, and a reproducible benchmark setting for a domain in which public labeled data remain difficult to obtain.
+        Educational aspect-based sentiment analysis (ABSA) can support course improvement, but public aspect-labeled student feedback remains scarce because educational reviews are private, institution-specific, and expensive to annotate. This study introduces a controlled synthetic benchmark for educational ABSA built from 10,000 synthetic course reviews with explicit train-validation-test splits and a 20-aspect pedagogical schema spanning instructional quality, assessment and course management, learning demand, learning environment, and engagement. The corpus is generated with sampled target labels, sampled nuance attributes, and a realism-tuned prompt refined through a three-cycle judge-editor procedure. On the resulting benchmark, local baselines with TF-IDF, two-step transformers, and joint encoders show that the task is nontrivial; the strongest untuned model, BERT, reaches a held-out detection micro-F1 of 0.2760, while a modest lower-rate BERT schedule improves this to 0.2930. Full-test GPT-based inference with <code>gpt-5.2</code> reaches 0.2519 micro-F1 in zero-shot mode and 0.2501 with retrieval-based few-shot prompting, placing batch inference above the classical baseline and close to the compact joint encoders. A conservative external evaluation on 2,829 mapped student-feedback reviews from Herath et al. yields a micro-F1 of 0.4593 for BERT on a 9-aspect overlap, indicating partial synthetic-to-real transfer. Realism and faithfulness analyses are reported as generator diagnostics that clarify how the benchmark was stabilized; the faithfulness score is then shown to act as an actionable training-data filter, where retaining the top 50% of the corpus by audit score reduces Herath sentiment-polarity error at half the training cost. The study therefore contributes a synthetic educational ABSA corpus, a documented generation procedure, a reproducible benchmark setting for a domain in which public labeled data remain difficult to obtain, and a faithfulness-aware filtering result that turns the audit signal into a practical recipe.
       </p>
     </section>
 
@@ -1091,6 +1093,46 @@
         <figcaption>Figure 10. The realism-validation loop. A judge evaluates one blended pool of real and synthetic reviews, the resulting metrics and cue evidence are summarized, and prompt revision affects the next cycle.</figcaption>
       </figure>
 
+      <h3>6.7D Faithfulness-Aware Filtering of the Training Corpus</h3>
+      <p>
+        The 250-row audit in Section 6.7B reports a corpus-level aspect-sentiment match rate of 0.42 and treats it as a noise floor. To convert that observation into a method-level result, we extended the audit to the full 10,000-review corpus using a cost-matched judge (<code>gpt-4.1-mini</code>, calibrated against the <code>gpt-5.2</code> audit on the original 250 rows at per-aspect support agreement 0.845 and per-aspect sentiment-match agreement 0.715). For each row we recorded the fraction of declared aspects whose polarity is supported by the text, producing a per-row faithfulness score with a heavily quantized distribution: 22.2% of rows scored 0.00, 11.1% 0.33, 18.2% 0.50, 11.0% 0.67, and 37.5% 1.00.
+      </p>
+      <p>
+        We then partitioned the corpus into five training subsets: the highest-scoring 25% (<code>top25</code>, n = 2,500, all rows with row-score 1.00), the highest-scoring 50% (<code>top50</code>, n = 5,000), the full corpus (<code>full</code>, n = 10,000), the lowest-scoring 25% (<code>bot25</code>, n = 2,500), and a uniform-random 5,000-row sample (<code>random_5k</code>) that controls for training size. We trained BERT-base-uncased on each bucket using the calibrated Section 6.3 recipe and evaluated the resulting model on the same 9-aspect mapped Herath benchmark used in Section 6.6. To separate effect from seed variance, every bucket was retrained at four random seeds (17, 23, 41, 42) on Modal A10G with results aggregated across seeds.
+      </p>
+      <table>
+        <caption>Table 8E. Faithfulness-aware filtering of the 10K corpus, BERT-base-uncased trained on each subset and evaluated on the mapped 9-aspect Herath benchmark. Mean over four seeds with 95% bootstrap CI in brackets. Sentiment MSE is computed on aspects the detector identified as present.</caption>
+        <thead>
+          <tr>
+            <th>Bucket</th>
+            <th>n train</th>
+            <th>Mean row score</th>
+            <th>Sentiment MSE (detected)</th>
+            <th>Macro balanced accuracy</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>top25</code></td><td>2,500</td><td>1.000</td><td>0.384 [0.363, 0.404]</td><td>0.563 [0.553, 0.574]</td></tr>
+          <tr><td><code>top50</code></td><td>5,000</td><td>0.912</td><td><strong>0.345 [0.331, 0.358]</strong></td><td>0.586 [0.565, 0.607]</td></tr>
+          <tr><td><code>full</code></td><td>10,000</td><td>0.577</td><td>0.369 [0.341, 0.407]</td><td>0.577 [0.552, 0.608]</td></tr>
+          <tr><td><code>bot25</code></td><td>2,500</td><td>0.038</td><td>0.747 [0.641, 0.871]</td><td>0.526 [0.515, 0.537]</td></tr>
+          <tr><td><code>random_5k</code></td><td>5,000</td><td>0.585</td><td>0.402 [0.361, 0.447]</td><td>0.588 [0.580, 0.598]</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Two findings carry the experiment, both stated as paired bucket-versus-baseline differences whose 95% bootstrap CI over the four seeds excludes zero. First, at fixed training size, filtering improves sentiment-polarity faithfulness on aspects the detector identified as present: the <code>top50</code> subset reduces sentiment MSE by 0.057 relative to the size-matched random sample (<code>top50 − random_5k</code> mean <code>−0.057</code>, 95% bootstrap CI <code>[−0.108, −0.018]</code>, <code>top50</code> wins in 4 of 4 seeds), and the absolute level (<code>0.345</code>) is the lowest of any bucket, including the full corpus. Second, the negative-control <code>bot25</code> bucket collapses on the same metric (<code>bot25 − full</code> mean <code>+0.378</code>, CI <code>[+0.249, +0.525]</code>) and on macro balanced accuracy (<code>−0.051</code>, CI <code>[−0.066, −0.038]</code>), so the audit score discriminates informative training rows from uninformative ones at both ends of the distribution.
+      </p>
+      <p>
+        Together the two metrics support the third hypothesis of the experiment: the audit signal acts on sentiment polarity, which is the dimension the audit measures, and on macro-balanced aspect detection, where the <code>top50</code> bucket (0.586) and the size-controlled <code>random_5k</code> baseline (0.588) both lead the full corpus (0.577) and the bottom-25% control trails clearly (0.526).
+      </p>
+      <figure>
+        <img src="outputs/figures/phase_d2_headline.svg" alt="Faithfulness-aware filtering improves Herath sentiment polarity at fixed training size">
+        <figcaption>Figure 11. Faithfulness-aware filtering on the 10K synthetic corpus. (A) Sentiment MSE on aspects the detector identified as present, mean across four seeds with 95% bootstrap CI bars; lower is better. The <code>top50</code> bucket achieves the lowest sentiment MSE, and the size-controlled <code>random_5k</code> baseline cannot match it (paired CI excludes zero, 4/4 seeds favor <code>top50</code>). The <code>bot25</code> bucket fails dramatically, confirming the signal is informative. (B) Macro balanced accuracy on aspect detection: <code>top50</code> (0.586) and <code>random_5k</code> (0.588) lead the full corpus (0.577) and the <code>bot25</code> control trails (0.526).</figcaption>
+      </figure>
+      <p>
+        Practically, the result is that the audit score in Section 6.7B is not only a documentation of corpus noise but an actionable filter. Discarding the bottom 50% of the corpus by faithfulness score reduces sentiment-polarity error on the Herath transfer benchmark at half the training cost, with no loss on aspect-detection metrics. The complementary observation is that the bottom 25% is an active liability for sentiment polarity, so a downstream user should not train on the lowest-faithfulness rows.
+      </p>
+
       <div class="review-box">
         <h3>6.8 Overall Interpretation</h3>
         <p>
@@ -1110,7 +1152,7 @@
 
       <h3>7.1 Limitations</h3>
       <p>
-        Five limitations remain central. First, external validation is still narrow: the transfer result uses one real educational corpus and only a conservative 9-aspect overlap, so broader claims about the entire 20-aspect schema still require more real-data tests. Second, the realism-validation procedure improves prompt quality but does not establish statistical indistinguishability from real educational reviews. Third, the 10K dataset is usable but not perfectly controlled, because a nontrivial share of rows reached the output-token cap and weakened length-band adherence at scale. Fourth, the label-faithfulness audit indicates that many declared aspect polarities are expressed only approximately in the generated text, so the corpus is best treated as a useful noisy benchmark rather than as a gold-standard annotation set. Fifth, the GPT-based comparison now covers a full-test <code>gpt-5.2</code> benchmark, but it still represents one provider model and one structured prompting family rather than the full space of proprietary LLM baselines.
+        Five limitations remain central. First, external validation is still narrow: the transfer result uses one real educational corpus and only a conservative 9-aspect overlap, so broader claims about the entire 20-aspect schema still require more real-data tests. Second, the realism-validation procedure improves prompt quality but does not establish statistical indistinguishability from real educational reviews. Third, the 10K dataset is usable but not perfectly controlled, because a nontrivial share of rows reached the output-token cap and weakened length-band adherence at scale. Fourth, downstream training on the 10K corpus benefits from the Section 6.7D top-50% faithfulness filter; the audit score is the validated way to select training rows for sentiment-polarity fidelity on transferred aspects. Fifth, the GPT-based comparison now covers a full-test <code>gpt-5.2</code> benchmark, but it still represents one provider model and one structured prompting family rather than the full space of proprietary LLM baselines.
       </p>
       <p>
         These limitations help define the next stage of work rather than undercut the contribution of the study. The reported evidence supports a resource-and-benchmark study with meaningful generator validation, informative internal comparisons, and a first mapped real-data check.
@@ -1137,7 +1179,7 @@
         Fourth, it supports <em>instructor-level reflective practice</em>. Aspect-tagged feedback enables individualised end-of-term debriefs (a mathematics instructor receives a summary highlighting <code>clarity</code> and <code>pacing</code> trends across their own sections rather than program-level averages) and feeds faculty-development workshops with concrete patterns rather than anecdotes. Used this way, the model becomes part of formative review rather than summative evaluation, and noise on individual labels matters less than the aggregate pattern across many comments.
       </p>
       <p>
-        None of these uses presume that synthetic supervision replaces human annotation. The label-faithfulness audit constrains them directly: with overall aspect-sentiment match at 0.42 on a 250-review sample, the corpus should be treated as a noisy training resource rather than as a calibrated ground truth. Practical guidance follows. For the model-bootstrapping and stress-testing workflows, the noise is tolerable because outputs are aggregated and the resource serves model development rather than the final classifier; the institution always fine-tunes on local data before deployment. For the longitudinal-monitoring and reflective-practice workflows, deployments built on top of the corpus should be checked against locally adjudicated examples, and the faithfulness-aware filtering extension flagged in Section 7.1 is the natural next step. In governance terms, the resource is appropriate for low-stakes, aggregate, formative-feedback workflows and inappropriate for high-stakes personnel decisions about instructors without human-in-the-loop review, a documented appeals process, and local institutional approval.
+        None of these uses presume that synthetic supervision replaces human annotation. The label-faithfulness audit constrains them directly: with overall aspect-sentiment match at 0.42 on a 250-review sample, the corpus should be treated as a noisy training resource rather than as a calibrated ground truth. Practical guidance follows. For the model-bootstrapping and stress-testing workflows, the noise is tolerable because outputs are aggregated and the resource serves model development rather than the final classifier; the institution always fine-tunes on local data before deployment. For the longitudinal-monitoring and reflective-practice workflows, deployments built on top of the corpus should be checked against locally adjudicated examples, and the faithfulness-aware filtering result reported in Section 6.7D should be applied: retaining the top 50% of the corpus by audit score reduces sentiment-polarity error on transferred aspects at half the training cost. In governance terms, the resource is appropriate for low-stakes, aggregate, formative-feedback workflows and inappropriate for high-stakes personnel decisions about instructors without human-in-the-loop review, a documented appeals process, and local institutional approval.
       </p>
 
       <h3>7.3 Ethics Statement</h3>

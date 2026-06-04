@@ -1,0 +1,37 @@
+[
+  {
+    "bucket": "top25",
+    "ok": true,
+    "elapsed_s": 150.0,
+    "n_rows": 2500,
+    "run_dir": "synthetic_to_real_transfer_20260604T123913Z"
+  },
+  {
+    "bucket": "top50",
+    "ok": true,
+    "elapsed_s": 279.3,
+    "n_rows": 5000,
+    "run_dir": "synthetic_to_real_transfer_20260604T124122Z"
+  },
+  {
+    "bucket": "full",
+    "ok": true,
+    "elapsed_s": 504.5,
+    "n_rows": 10000,
+    "run_dir": "synthetic_to_real_transfer_20260604T124509Z"
+  },
+  {
+    "bucket": "bot25",
+    "ok": true,
+    "elapsed_s": 147.8,
+    "n_rows": 2500,
+    "run_dir": "synthetic_to_real_transfer_20260604T123914Z"
+  },
+  {
+    "bucket": "random_5k",
+    "ok": true,
+    "elapsed_s": 281.2,
+    "n_rows": 5000,
+    "run_dir": "synthetic_to_real_transfer_20260604T124128Z"
+  }
+]

@@ -31,3 +31,24 @@ Desktop.ini
 
 # Derived figure rasters for the .docx build (regenerable from SVG)
 paper/outputs/figures/_docx_png/
+
+# Claude Code session state
+.claude/
+
+# Per-bucket per-seed sample-prediction dumps are large and regenerable from
+# the audit CSV + bucket JSONLs + Modal harness. Keep the summary / per_aspect
+# / metadata / thresholds / train.log artefacts which are load-bearing for the
+# paper, ignore the prediction dumps.
+paper/experiment_rounds/phase_d2_filtering_*/runs/*/run/artifacts/*sample_predictions*.jsonl
+
+# Per-run Herath mapped JSONLs duplicate the canonical mapping; keep only the
+# manifest.json + run-level summary/per_aspect/metadata.
+paper/experiment_rounds/phase_d2_filtering_*/runs/*/herath_mapped_real_reviews.jsonl
+
+# Bucket-corpus JSONLs are deterministic functions of the source corpus and
+# the row_ids.txt list; keep the row_ids and manifest, ignore the materialized
+# JSONLs (regenerable via paper/_d2_bucket.py).
+paper/faithfulness_audit/buckets/*.jsonl
+
+# Temporary calibration input (regenerable from existing GPT-5.2 audit details)
+_d2_cal_input.jsonl
