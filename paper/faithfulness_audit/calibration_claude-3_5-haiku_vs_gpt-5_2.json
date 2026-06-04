@@ -1,0 +1,12 @@
+{
+  "candidate_model": "anthropic/claude-3.5-haiku",
+  "n_aspects_common": 497,
+  "per_aspect_support_agreement": 0.8169,
+  "per_aspect_match_agreement": 0.6781,
+  "candidate_support_rate": 0.9054,
+  "candidate_match_rate": 0.672,
+  "gpt5_support_rate": 0.7746,
+  "gpt5_match_rate": 0.4266,
+  "accepted": true,
+  "elapsed_seconds": 79.5
+}

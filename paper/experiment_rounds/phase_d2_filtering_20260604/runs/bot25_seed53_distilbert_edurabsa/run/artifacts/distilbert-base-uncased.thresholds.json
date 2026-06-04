@@ -1,0 +1,9 @@
+{
+  "accessibility": 0.05,
+  "exam_fairness": 0.05,
+  "lecturer_quality": 0.05,
+  "materials": 0.05,
+  "organization": 0.3,
+  "overall_experience": 0.05,
+  "workload": 0.44999999999999996
+}

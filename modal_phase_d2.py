@@ -25,6 +25,7 @@ HERE = Path(__file__).parent.resolve()
 PAPER_DIR = HERE / "paper"
 BUCKETS_DIR = HERE / "paper" / "faithfulness_audit" / "buckets"
 HERATH_ROOT_LOCAL = Path(r"E:\Projects\CourseABSA\external_data\Student_feedback_analysis_dataset\Annotated Student Feedback Data")
+EDURABSA_MAPPED_LOCAL = HERE / "external_data" / "EduRABSA_mapped" / "edurabsa_all_mapped.jsonl"
 PHASE_OUT = HERE / "paper" / "experiment_rounds" / f"phase_d2_filtering_{datetime.now(timezone.utc).strftime('%Y%m%d')}"
 BUCKET_NAMES = ["top25", "top50", "full", "bot25", "random_5k"]
 
@@ -44,6 +45,7 @@ image = (
     .add_local_file(str(PAPER_DIR / "absa_model_comparison.py"), "/app/paper/absa_model_comparison.py", copy=True)
     .add_local_file(str(PAPER_DIR / "evaluate_synthetic_to_real_transfer.py"), "/app/paper/evaluate_synthetic_to_real_transfer.py", copy=True)
     .add_local_dir(str(HERATH_ROOT_LOCAL), "/app/external_data/Student_feedback_analysis_dataset/Annotated Student Feedback Data", copy=True)
+    .add_local_file(str(EDURABSA_MAPPED_LOCAL), "/app/external_data/edurabsa_all_mapped.jsonl", copy=True)
     .add_local_dir(str(BUCKETS_DIR), "/app/buckets", copy=True)
 )
 
@@ -59,19 +61,30 @@ results_vol = modal.Volume.from_name("phase-d2-results", create_if_missing=True)
     volumes={"/results": results_vol},
 )
 def train_bucket(spec: dict) -> dict:
-    """Run evaluate_synthetic_to_real_transfer.py for (bucket, seed); commit to vol."""
+    """Run evaluate_synthetic_to_real_transfer.py for (bucket, seed, arch, target); commit to vol."""
     import shutil
     from pathlib import Path as P
 
     bucket = spec["bucket"]
     seed = int(spec["seed"])
+    arch = spec.get("arch", "bert-base-uncased")
+    target = spec.get("target", "herath")  # "herath" or "edurabsa"
+    arch_tag = arch.replace("-base-uncased", "").replace("/", "_")
     t0 = time.time()
     bucket_jsonl = P(f"/app/buckets/{bucket}.jsonl")
     assert bucket_jsonl.exists(), f"missing bucket: {bucket_jsonl}"
     n_rows = sum(1 for _ in bucket_jsonl.open(encoding="utf-8"))
-    print(f"[{bucket} seed={seed}] start n_rows={n_rows}", flush=True)
+    print(f"[{bucket} seed={seed} arch={arch_tag} target={target}] start n_rows={n_rows}", flush=True)
 
-    out_root = P(f"/results/{bucket}_seed{seed}")
+    # Path scheme: legacy ../{bucket}/ and ../{bucket}_seedS/ are Herath BERT seed42 / +seed
+    # For non-default arch or target, suffix accordingly.
+    suffix = ""
+    if arch != "bert-base-uncased": suffix += f"_{arch_tag}"
+    if target != "herath": suffix += f"_{target}"
+    if arch == "bert-base-uncased" and target == "herath":
+        out_root = P(f"/results/{bucket}_seed{seed}") if seed != 42 else P(f"/results/{bucket}")
+    else:
+        out_root = P(f"/results/{bucket}_seed{seed}{suffix}")
     if out_root.exists():
         shutil.rmtree(out_root)
     out_root.mkdir(parents=True)
@@ -80,13 +93,15 @@ def train_bucket(spec: dict) -> dict:
         "python", "paper/evaluate_synthetic_to_real_transfer.py",
         "--synthetic-path", str(bucket_jsonl),
         "--herath-root", "/app/external_data/Student_feedback_analysis_dataset/Annotated Student Feedback Data",
-        "--approaches", "bert-base-uncased",
+        "--approaches", arch,
         "--epochs-detection", "3",
         "--epochs-sentiment", "3",
         "--seed", str(seed),
         "--no-write-latest",
     ]
-    print(f"[{bucket} seed={seed}] cmd: {' '.join(cmd)}", flush=True)
+    if target == "edurabsa":
+        cmd += ["--real-mapped-jsonl", "/app/external_data/edurabsa_all_mapped.jsonl"]
+    print(f"[{bucket} seed={seed} arch={arch_tag} target={target}] cmd: {' '.join(cmd)}", flush=True)
     proc = subprocess.run(cmd, cwd="/app", capture_output=True, text=True, timeout=110 * 60)
     log_path = out_root / "train.log"
     log_path.write_text(
@@ -147,20 +162,26 @@ def list_results() -> list[dict]:
 
 
 @app.local_entrypoint()
-def main(buckets: str = ",".join(BUCKET_NAMES), seeds: str = "42") -> None:
+def main(buckets: str = ",".join(BUCKET_NAMES), seeds: str = "42",
+         archs: str = "bert-base-uncased", targets: str = "herath") -> None:
     names = [b.strip() for b in buckets.split(",") if b.strip()]
     seed_list = [int(s) for s in seeds.split(",") if s.strip()]
-    print(f"[local] dispatching buckets={names} seeds={seed_list}", flush=True)
+    arch_list = [a.strip() for a in archs.split(",") if a.strip()]
+    target_list = [t.strip() for t in targets.split(",") if t.strip()]
+    print(f"[local] dispatching buckets={names} seeds={seed_list} archs={arch_list} targets={target_list}", flush=True)
     print(f"[local] results will be pulled to: {PHASE_OUT}/runs/", flush=True)
     PHASE_OUT.mkdir(parents=True, exist_ok=True)
     (PHASE_OUT / "runs").mkdir(exist_ok=True)
 
-    specs = [{"bucket": b, "seed": s} for b in names for s in seed_list]
-    print(f"[local] {len(specs)} (bucket,seed) specs", flush=True)
+    specs = [{"bucket": b, "seed": s, "arch": a, "target": t}
+             for b in names for s in seed_list for a in arch_list for t in target_list]
+    print(f"[local] {len(specs)} (bucket,seed,arch,target) specs", flush=True)
     # Fan out
     results = list(train_bucket.map(specs))
-    suffix = "_s" + "_".join(str(s) for s in seed_list)
-    summary_path = PHASE_OUT / f"modal_summary{suffix}.json"
+    seed_tag = "_s" + "_".join(str(s) for s in seed_list)
+    arch_tag = "_" + "_".join(a.replace("-base-uncased","") for a in arch_list)
+    target_tag = "_t" + "_".join(target_list) if target_list != ["herath"] else ""
+    summary_path = PHASE_OUT / f"modal_summary{seed_tag}{arch_tag}{target_tag}.json"
     summary_path.write_text(json.dumps(results, indent=2), encoding="utf-8")
     print(f"[local] modal summary -> {summary_path}", flush=True)
     print(json.dumps(results, indent=2))

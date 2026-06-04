@@ -1,0 +1,50 @@
+{
+  "source": "/app/external_data/Student_feedback_analysis_dataset/Annotated Student Feedback Data",
+  "mapping": {
+    "Lecturer#X_1": "lecturer_quality",
+    "Lecturer#X_2": "lecturer_quality",
+    "Lecturer#X_3": "lecturer_quality",
+    "Lecturer#X_x": "lecturer_quality",
+    "Lecturer#X_1_Impli": "lecturer_quality",
+    "Lecturer#X_2_Impli": "lecturer_quality",
+    "Lecturer#X_3_Impli": "lecturer_quality",
+    "Lecturer#X_x_Impli": "lecturer_quality",
+    "Course#X_x": "overall_experience",
+    "Course#X_x_Impli": "overall_experience",
+    "Course_Structure#X_1": "organization",
+    "Course_Structure#X_1_Impli": "organization",
+    "Course_Structure#X_2": "workload",
+    "Course_Structure#X_2_Impli": "workload",
+    "Course_Structure#X_5": "grading_transparency",
+    "Course_Structure#X_5_Impli": "grading_transparency",
+    "Subject_Material#X_1": "materials",
+    "Subject_Material#X_1_Impli": "materials",
+    "Subject_Material#X_x": "materials",
+    "Subject_Material#X_1a": "materials",
+    "End_Exam#X_x": "exam_fairness",
+    "End_Exam#X_x_Impli": "exam_fairness",
+    "End_Exam#X_x2": "exam_fairness",
+    "CA#X_x": "assessment_design",
+    "CA#X_x_Impli": "assessment_design",
+    "Learning_Environment#X_x": "accessibility",
+    "Learning_Environment#X_x_Impli": "accessibility"
+  },
+  "polarity_map": {
+    "Positive": "positive",
+    "Negative": "negative",
+    "Neutral#Sug": "neutral",
+    "Neutral#NSug": "neutral"
+  },
+  "n_reviews": 2829,
+  "overlap_aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ]
+}

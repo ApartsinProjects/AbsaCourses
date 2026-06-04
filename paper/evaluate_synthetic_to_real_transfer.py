@@ -191,6 +191,36 @@ def collapse_review_labels(pairs: List[Tuple[str, str]]) -> Dict[str, str]:
     return collapsed
 
 
+def load_real_from_mapped_jsonl(path: Path) -> pd.DataFrame:
+    """Load a pre-mapped real-data JSONL whose rows already match the schema
+    {text, aspects: {<aspect>: <polarity>}}. Used for E2 EduRABSA transfer.
+    """
+    rows: List[Dict[str, object]] = []
+    with path.open(encoding="utf-8") as f:
+        for line in f:
+            r = json.loads(line)
+            text = str(r.get("text", "")).strip()
+            aspects = r.get("aspects", {})
+            if not text or not aspects:
+                continue
+            rows.append(
+                {
+                    "text": text,
+                    "aspects": aspects,
+                    "target_attributes": aspects,
+                    "nuance_attributes": {},
+                    "course_name": "",
+                    "grade": "",
+                    "style": "",
+                    "source_path": str(path),
+                    "doc_sent": "",
+                }
+            )
+    if not rows:
+        raise ValueError(f"No rows in pre-mapped JSONL {path}")
+    return pd.DataFrame(rows)
+
+
 def load_herath_mapped_dataset(root: Path) -> pd.DataFrame:
     rows: List[Dict[str, object]] = []
     for xmi_path in sorted(root.rglob("*.xmi")):
@@ -308,6 +338,10 @@ def main() -> None:
     parser = argparse.ArgumentParser(description="Evaluate synthetic-trained ABSA models on mapped real student-feedback data.")
     parser.add_argument("--synthetic-path", default=str(DEFAULT_SYNTHETIC_PATH))
     parser.add_argument("--herath-root", default=str(DEFAULT_HERATH_ROOT))
+    parser.add_argument("--real-mapped-jsonl", default="",
+        help="Optional: bypass XMI parsing and load a pre-mapped real JSONL "
+             "with the same {text, aspects: {aspect: polarity}} schema. "
+             "Used for E2 EduRABSA transfer target.")
     parser.add_argument(
         "--approaches",
         nargs="+",
@@ -362,7 +396,11 @@ def main() -> None:
     log_event(f"Resume checkpoint -> {resume_path}")
 
     synthetic_df = load_jsonl(resolve_data_path(args.synthetic_path))
-    real_df = load_herath_mapped_dataset(Path(args.herath_root))
+    if getattr(args, "real_mapped_jsonl", "") and Path(args.real_mapped_jsonl).exists():
+        real_df = load_real_from_mapped_jsonl(Path(args.real_mapped_jsonl))
+        log_event(f"Loaded pre-mapped real JSONL ({len(real_df)} rows) from {args.real_mapped_jsonl}")
+    else:
+        real_df = load_herath_mapped_dataset(Path(args.herath_root))
     overlap_table = summarize_overlap(real_df)
 
     real_jsonl = OUT_DIR / "herath_mapped_real_reviews.jsonl"

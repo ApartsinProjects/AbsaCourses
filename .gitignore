@@ -52,3 +52,8 @@ paper/faithfulness_audit/buckets/*.jsonl
 
 # Temporary calibration input (regenerable from existing GPT-5.2 audit details)
 _d2_cal_input.jsonl
+
+# EduRABSA raw downloads from HuggingFace (regenerable; the mapped JSONL
+# in external_data/EduRABSA_mapped/ is what the experiment consumes).
+external_data/EduRABSA/
+external_data/EduRABSA_ASQE/

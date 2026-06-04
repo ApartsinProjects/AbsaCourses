@@ -1,0 +1,41 @@
+=== stdout ===
+[2026-06-04T17:17:43.368104+00:00] Resume signature mismatch at /app/paper/real_transfer/resume_real_transfer.json; starting a fresh checkpoint
+[2026-06-04T17:17:43.368468+00:00] Detailed log file -> /app/paper/benchmark_outputs/logs/real_transfer_20260604T171743Z.log
+[2026-06-04T17:17:43.368508+00:00] Resume checkpoint -> /app/paper/real_transfer/resume_real_transfer.json
+[2026-06-04T17:17:43.949676+00:00] Loaded pre-mapped real JSONL (5584 rows) from /app/external_data/edurabsa_all_mapped.jsonl
+[2026-06-04T17:17:44.226388+00:00] [bert-base-uncased] transfer evaluation start
+[2026-06-04T17:17:44.226670+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-04T17:17:47.466308+00:00] [bert-base-uncased] detection training start: train_rows=2317 val_rows=289 epochs=3 batch_size=8 device=cuda
+[2026-06-04T17:18:19.834517+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.0531 val_micro_f1=0.4638 val_macro_f1=0.4978 best_macro_f1=0.4978 patience=0 epoch_seconds=32.4
+[2026-06-04T17:18:52.296603+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=0.8779 val_micro_f1=0.4549 val_macro_f1=0.5064 best_macro_f1=0.5064 patience=0 epoch_seconds=32.3
+[2026-06-04T17:19:24.769464+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.7838 val_micro_f1=0.5059 val_macro_f1=0.5419 best_macro_f1=0.5419 patience=0 epoch_seconds=32.3
+[2026-06-04T17:19:24.891022+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.5419
+[2026-06-04T17:19:24.891473+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-04T17:19:24.894069+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-04T17:19:25.435832+00:00] [bert-base-uncased] sentiment training start: train_rows=2317 val_rows=289 epochs=3 batch_size=8 device=cuda
+[2026-06-04T17:19:57.778896+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.6898 val_mse=0.6122 best_val_mse=0.6122 patience=0 epoch_seconds=32.3
+[2026-06-04T17:20:30.165498+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.4584 val_mse=0.4373 best_val_mse=0.4373 patience=0 epoch_seconds=32.4
+[2026-06-04T17:21:02.701779+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.2979 val_mse=0.4126 best_val_mse=0.4126 patience=0 epoch_seconds=32.4
+[2026-06-04T17:21:02.806689+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.4126
+[2026-06-04T17:21:02.807105+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[2026-06-04T17:21:50.436702+00:00] [bert-base-uncased] transfer evaluation complete: micro_f1=0.4205 sentiment_mse=0.3871
+{
+  "real_jsonl": "/app/paper/real_transfer/herath_mapped_real_reviews.jsonl",
+  "overlap_summary": "/app/paper/real_transfer/herath_overlap_summary.csv",
+  "summary": "/app/paper/real_transfer/synthetic_to_real_transfer_summary.csv",
+  "per_aspect": "/app/paper/real_transfer/synthetic_to_real_transfer_per_aspect.csv",
+  "run_dir": "/app/paper/real_transfer/runs/synthetic_to_real_transfer_20260604T172150Z",
+  "n_real_reviews": 5584,
+  "overlap_aspects": [
+    "accessibility",
+    "exam_fairness",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ]
+}
+
+=== stderr ===
+

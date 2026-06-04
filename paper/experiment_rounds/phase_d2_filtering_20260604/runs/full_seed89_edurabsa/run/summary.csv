@@ -1,0 +1,2 @@
+approach,micro_precision,micro_recall,micro_f1,macro_precision,macro_recall,macro_f1,macro_balanced_accuracy,macro_specificity,macro_mcc,label_accuracy,subset_accuracy,samples_f1,samples_jaccard,sentiment_mse_detected,eval_split,n_real_reviews,n_overlap_aspects
+bert-base-uncased,0.38219115287646116,0.302466896426628,0.33768732280275415,0.4245920067806811,0.2973126415443481,0.2858001353838476,0.5547995647494554,0.8122864879545626,0.12984516774446322,0.6653192795742939,0.04154727793696275,0.3150805021148861,0.23498899918133445,0.5840841898590505,real_herath_mapped,5584,7

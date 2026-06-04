@@ -1,0 +1,31 @@
+{
+  "created_at_utc": "2026-06-04T17:05:11.413918+00:00",
+  "synthetic_path": "/app/buckets/top50.jsonl",
+  "herath_root": "/app/external_data/Student_feedback_analysis_dataset/Annotated Student Feedback Data",
+  "approaches": [
+    "bert-base-uncased"
+  ],
+  "epochs_detection": 3,
+  "epochs_sentiment": 3,
+  "batch_size": 8,
+  "max_len": 192,
+  "lr": 3e-05,
+  "seed": 53,
+  "n_real_reviews": 2829,
+  "n_overlap_aspects": 9,
+  "artifact_policy": {
+    "sample_predictions": true,
+    "detection_probabilities": true,
+    "detection_logits": true,
+    "sentiment_prediction_values": true,
+    "checkpoint_artifact_mirror": true
+  },
+  "files": {
+    "summary": "/app/paper/real_transfer/runs/synthetic_to_real_transfer_20260604T170511Z/summary.csv",
+    "per_aspect": "/app/paper/real_transfer/runs/synthetic_to_real_transfer_20260604T170511Z/per_aspect.csv",
+    "artifact_dir": "/app/paper/real_transfer/runs/synthetic_to_real_transfer_20260604T170511Z/artifacts",
+    "latest_summary": "",
+    "latest_per_aspect": ""
+  },
+  "write_latest": false
+}

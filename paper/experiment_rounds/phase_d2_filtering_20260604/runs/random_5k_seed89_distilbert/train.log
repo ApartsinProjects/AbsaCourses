@@ -1,0 +1,42 @@
+=== stdout ===
+[2026-06-04T17:10:23.279866+00:00] Resume signature mismatch at /app/paper/real_transfer/resume_real_transfer.json; starting a fresh checkpoint
+[2026-06-04T17:10:23.280213+00:00] Detailed log file -> /app/paper/benchmark_outputs/logs/real_transfer_20260604T171023Z.log
+[2026-06-04T17:10:23.280257+00:00] Resume checkpoint -> /app/paper/real_transfer/resume_real_transfer.json
+[2026-06-04T17:10:26.465448+00:00] [distilbert-base-uncased] transfer evaluation start
+[2026-06-04T17:10:26.465767+00:00] [distilbert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-04T17:10:29.914293+00:00] [distilbert-base-uncased] detection training start: train_rows=2755 val_rows=344 epochs=3 batch_size=8 device=cuda
+[2026-06-04T17:10:50.846831+00:00] [distilbert-base-uncased] detection epoch 1/3: train_loss=1.1620 val_micro_f1=0.2869 val_macro_f1=0.3012 best_macro_f1=0.3012 patience=0 epoch_seconds=20.9
+[2026-06-04T17:11:11.433492+00:00] [distilbert-base-uncased] detection epoch 2/3: train_loss=1.0373 val_micro_f1=0.3447 val_macro_f1=0.3817 best_macro_f1=0.3817 patience=0 epoch_seconds=20.5
+[2026-06-04T17:11:32.041406+00:00] [distilbert-base-uncased] detection epoch 3/3: train_loss=0.9534 val_micro_f1=0.3416 val_macro_f1=0.3583 best_macro_f1=0.3817 patience=0 epoch_seconds=20.5
+[2026-06-04T17:11:32.078916+00:00] [distilbert-base-uncased] detection training complete: best_macro_f1=0.3817
+[2026-06-04T17:11:32.079251+00:00] [distilbert-base-uncased:detection] released GPU training lock
+[2026-06-04T17:11:32.081165+00:00] [distilbert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-04T17:11:32.533751+00:00] [distilbert-base-uncased] sentiment training start: train_rows=2755 val_rows=344 epochs=3 batch_size=8 device=cuda
+[2026-06-04T17:11:53.144699+00:00] [distilbert-base-uncased] sentiment epoch 1/3: train_loss=0.6848 val_mse=0.7198 best_val_mse=0.7198 patience=0 epoch_seconds=20.6
+[2026-06-04T17:12:13.844245+00:00] [distilbert-base-uncased] sentiment epoch 2/3: train_loss=0.6217 val_mse=0.6057 best_val_mse=0.6057 patience=0 epoch_seconds=20.7
+[2026-06-04T17:12:34.617356+00:00] [distilbert-base-uncased] sentiment epoch 3/3: train_loss=0.4790 val_mse=0.6097 best_val_mse=0.6057 patience=0 epoch_seconds=20.7
+[2026-06-04T17:12:34.647919+00:00] [distilbert-base-uncased] sentiment training complete: best_val_mse=0.6057
+[2026-06-04T17:12:34.648313+00:00] [distilbert-base-uncased:sentiment] released GPU training lock
+[2026-06-04T17:12:48.182943+00:00] [distilbert-base-uncased] transfer evaluation complete: micro_f1=0.3150 sentiment_mse=0.5834
+{
+  "real_jsonl": "/app/paper/real_transfer/herath_mapped_real_reviews.jsonl",
+  "overlap_summary": "/app/paper/real_transfer/herath_overlap_summary.csv",
+  "summary": "/app/paper/real_transfer/synthetic_to_real_transfer_summary.csv",
+  "per_aspect": "/app/paper/real_transfer/synthetic_to_real_transfer_per_aspect.csv",
+  "run_dir": "/app/paper/real_transfer/runs/synthetic_to_real_transfer_20260604T171248Z",
+  "n_real_reviews": 2829,
+  "overlap_aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ]
+}
+
+=== stderr ===
+
