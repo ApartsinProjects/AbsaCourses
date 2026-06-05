@@ -1,0 +1,16 @@
+{
+  "n_rows": 10000,
+  "n_rows_with_audit": 10000,
+  "n_declared_aspect_labels": 20019,
+  "n_supported": 16678,
+  "n_dropped_unsupported": 3341,
+  "n_matched_kept_for_sentiment": 11204,
+  "n_masked_polarity_mismatch": 5474,
+  "n_rows_emptied_detection": 523,
+  "n_audit_aspect_not_in_declared": 0,
+  "n_declared_aspect_not_in_audit": 0,
+  "drop_rate_unsupported": 0.1669,
+  "mask_rate_polarity_mismatch": 0.2734,
+  "support_rate": 0.8331,
+  "sentiment_keep_rate": 0.5597
+}
