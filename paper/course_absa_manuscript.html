@@ -423,7 +423,7 @@
         The central contribution is therefore practical and scientific at the same time: <strong>a synthetic educational review corpus with controlled aspect labels can support internally consistent ABSA training and evaluation, while diversity and realism analyses help stabilize the generation process.</strong> Synthetic supervision is treated here as a practical way to study an educational NLP problem whose pedagogical value is high but whose public labeled data remain unusually scarce.
       </p>
       <p>
-        The remainder of the paper proceeds as follows. Section 2 situates the study in the ABSA, synthetic-data, and educational-feedback literatures. Section 3 describes the corpus design and generation protocol, Section 4 defines the benchmark task and evaluation setup, Section 5 reports generator-oriented validation analyses, and Section 6 presents the main benchmark and external-validation results before Section 7 discusses limitations and implications.
+        The remainder of the paper proceeds as follows. Section 2 situates the study in the ABSA, synthetic-data, and educational-feedback literatures. Section 3 describes the corpus design and generation protocol, Section 4 defines the benchmark task and evaluation setup, and Section 5 presents the main benchmark, external-validation, and generator-faithfulness results before Section 6 discusses limitations and implications. Generator realism-validation and corpus-scale output-control diagnostics are reported in the appendix.
       </p>
       <div class="callout">
         <h3>Contributions</h3>
@@ -497,11 +497,11 @@
         After those two states are sampled, they are merged only at prompt construction time. A realism-constrained instruction is appended to the sampled labels and attributes to form the generation request. The generator then produces a draft review, a refinement stage removes recurrent synthetic cues while attempting to preserve the declared labels, and the exported record retains both its aspect labels and its sampled nuance attributes. Large-scale generation is therefore not driven by a single free-form prompt, but by a fixed template whose row-level variation comes from independently sampled targets and contextual controls.
       </p>
       <p>
-        Figure 2 condenses the generation protocol to its main structural idea. One input stream defines the supervision target, namely one to three aspect-sentiment labels. A second input stream defines how those labels are realized in text through sampled course context, student state, pedagogical circumstances, and style controls. These streams meet only at prompt construction time, after which generation yields a review-level benchmark record that preserves both the text and the sampled control state. The dashed feedback path is shown as an inter-cycle revision rather than a per-row operation because realism validation updates the stabilized instruction between complete prompt states.
+        Figure 1 condenses the generation protocol to its main structural idea. One input stream defines the supervision target, namely one to three aspect-sentiment labels. A second input stream defines how those labels are realized in text through sampled course context, student state, pedagogical circumstances, and style controls. These streams meet only at prompt construction time, after which generation yields a review-level benchmark record that preserves both the text and the sampled control state. The dashed feedback path is shown as an inter-cycle revision rather than a per-row operation because realism validation updates the stabilized instruction between complete prompt states.
       </p>
       <figure>
         <img src="outputs/figures/synthetic_data_generation_pipeline.svg" alt="Synthetic data generation pipeline">
-        <figcaption>Figure 2. Supervision targets and contextual attributes are sampled separately, merged through a stabilized prompt, and exported as review-level benchmark records.</figcaption>
+        <figcaption>Figure 1. Supervision targets and contextual attributes are sampled separately, merged through a stabilized prompt, and exported as review-level benchmark records.</figcaption>
       </figure>
 
       <h3>3.2 ABSA Analysis Pipeline</h3>
@@ -650,7 +650,7 @@
         so it asks a separate binary presence question for each \(a_k\) and only then queries sentiment where needed. This formulation is more expensive but useful for diagnosing whether per-aspect prompting improves recall control or sentiment calibration.
       </p>
       <p>
-        These GPT-based variants are part of the ABSA evaluation plan, not the realism protocol. The realism protocol remains a separate judge-based validation loop used to improve the generator prompt, whereas the evaluation plan asks whether different ABSA approaches can recover the synthetic aspect labels once the dataset has been fixed. Across all planned approaches, model selection, threshold calibration, and prompt-choice decisions are confined to the validation split, and final benchmark numbers are reported only on held-out data.
+        These GPT-based variants are part of the ABSA evaluation plan, not the realism protocol. The realism protocol (Appendix A.11) remains a separate judge-based validation loop used to improve the generator prompt, whereas the evaluation plan asks whether different ABSA approaches can recover the synthetic aspect labels once the dataset has been fixed. Across all planned approaches, model selection, threshold calibration, and prompt-choice decisions are confined to the validation split, and final benchmark numbers are reported only on held-out data.
       </p>
       <p>
         Table 3 functions as a compact map of the executed experiment families. Rather than repeating implementation details, it keeps the benchmark logic visible in one place: which approaches learn from synthetic supervision, which recover labels through inference-time prompting, and which analyses are used to examine robustness and transfer.
@@ -677,7 +677,7 @@
       </p>
 
       <table>
-        <caption>Table 4. Exact corpus-level counts and ranges for the synthetic benchmark and the two real-data pools used in realism analysis and external transfer. The table provides the precise summary values that complement the broader visual distribution shown later in Figure 4.</caption>
+        <caption>Table 4. Exact corpus-level counts and ranges for the synthetic benchmark and the two real-data pools used in realism analysis and external transfer. The table provides the precise summary values that complement the broader visual distribution shown later in Figure 3.</caption>
         <thead>
           <tr>
             <th>Measure</th>
@@ -701,60 +701,24 @@
     </section>
 
     <section>
-      <h2>5. Generator Validation Analyses</h2>
-
-      <h3>5.1 Realism-Validation Protocol</h3>
+      <h2>5. Results</h2>
       <p>
-        To assess generator quality without redefining the paper's main task, we built a small-scale real-versus-synthetic discrimination protocol. The reference pool is a public OMSCS review source from which 32 reviews were prepared across four computer science courses. This source is useful for a first realism stress test because it provides naturally written educational reviews with concrete course experiences, but it is not representative enough to serve as the only real benchmark. It is graduate-level, computer-science-heavy, English-only, and drawn from a single public review website. Accordingly, OMSCS is treated as a constrained validation source rather than a final external evaluation set, and these reviews are never mixed into the ABSA train, validation, or test splits.
-      </p>
-      <p>
-        The realism-validation procedure is iterative. In this protocol, one cycle means a complete pass over 60 judge questions: 30 real reviews and 30 synthetic reviews, each judged independently as a binary REAL-versus-SYNTHETIC decision with confidence, cue tags, and justification. Synthetic reviews are generated from sampled aspect sentiments together with a sampled subset of nuance attributes rather than the full schema, so the prompt remains controllable without looking templated. Each cycle records judge labels, confidence, entropy, a chance-confusion percentage, and exact-versus-chance significance statistics. When the judge correctly identifies synthetic cues, those explanations are fed into an editor step that rewrites the instruction before the next cycle, so each cycle is evaluated under one fixed prompt specification rather than an ad hoc prompt mixture. These checks are positioned as generator validation steps that support the main synthetic-data ABSA study, not as a substitute for the paper's core training-and-evaluation experiments. They are diagnostic, single-source, and single-judge evidence rather than a broad realism claim.
-      </p>
-      <div class="math-block">
-        $$\hat{y}_{c,i} \in \{\text{real}, \text{synthetic}\}, \qquad q_{c,i} \in [0,1]$$
-        $$\mathrm{Acc}_c = \frac{1}{M}\sum_{i=1}^{M} \mathbf{1}[\hat{y}_{c,i} = y_i], \qquad M = 60$$
-        $$\mathrm{Confusion}_c = 100\left(1 - \frac{|\mathrm{Acc}_c - 0.5|}{0.5}\right)$$
-        $$H_c = -\frac{1}{M}\sum_{i=1}^{M}\left(q_{c,i}\log q_{c,i} + (1-q_{c,i})\log(1-q_{c,i})\right)$$
-        $$I_{c+1} = E\left(I_c, \{(\hat{y}_{c,i}, q_{c,i}, r_{c,i}) : \hat{y}_{c,i}=\text{synthetic} \land y_i=\text{synthetic}\}\right)$$
-      </div>
-      <p>
-        Here \(y_i\) is the hidden ground-truth source label, \(\hat{y}_{c,i}\) is the judge decision for item \(i\) in cycle \(c\), \(q_{c,i}\) is the judge confidence, \(r_{c,i}\) denotes the textual cue explanation, \(\mathrm{Acc}_c\) is the judge accuracy, \(\mathrm{Confusion}_c\) is the paper-facing chance-confusion statistic, \(H_c\) is mean decision entropy, and \(E\) is the editor function that produces the next stable realism instruction only from cues that correctly exposed synthetic items.
-      </p>
-      <figure>
-        <img src="outputs/figures/realism_improvement_curve.svg" alt="Realism improvement curve">
-        <figcaption>Figure 1. Realism-validation outcomes across three judge-editor cycles. The three panels summarize judge accuracy, chance-confusion, and decision entropy over complete 60-question cycles. The figure documents how judge uncertainty changes across cycles rather than claiming statistical indistinguishability from real reviews.</figcaption>
-      </figure>
-
-      <h3>5.2 Complementary Generator Diagnostics</h3>
-      <ul>
-        <li>A real-versus-synthetic validation harness with cycle-by-cycle prompt-debug logging.</li>
-        <li>Compact model-assisted audits of aspect support and sentiment consistency on both stable-prompt samples and the full dataset.</li>
-      </ul>
-      <p>
-        We also ran compact model-assisted auxiliary audits with <code>gpt-5.2</code>. On 30 synthetic reviews generated directly from the corpus-generation prompt, all declared aspects were judged to be textually supported (\(1.0000\) support rates at both the aspect and review level), while exact sentiment agreement was lower (\(0.7377\) at the aspect level and \(0.5333\) at the full-review level). This prompt-level result should be read together with the harsher full-dataset audit reported later in Section 6.7B: the combination suggests that target aspect presence can be preserved under the generation prompt, but large-scale generation still introduces substantial label-faithfulness drift, especially for sentiment polarity. Together these diagnostics justify treating realism and faithfulness checks as generator audits rather than as evidence that the 10K corpus is a synthetic gold standard.
-      </p>
-
-    </section>
-
-    <section>
-      <h2>6. Results</h2>
-      <p>
-        The results are presented in the same order as the paper's claim structure. We begin with the corpus itself, then report the main local benchmark, then the full-test GPT and real-data comparisons, and only afterward return to generator-quality diagnostics such as output-control drift, label faithfulness, and realism validation. This ordering is intentional: the central claim concerns the value of the synthetic corpus as an educational ABSA benchmark resource, whereas realism and faithfulness analyses explain the strengths and limits of the generation process.
+        The results are presented in the same order as the paper's claim structure. We begin with the corpus itself, then report the main local benchmark, then the full-test GPT and real-data comparisons, and only afterward return to generator-quality diagnostics, focusing on label faithfulness and a faithfulness-aware filtering recipe. This ordering is intentional: the central claim concerns the value of the synthetic corpus as an educational ABSA benchmark resource, whereas faithfulness analysis explains the strengths and limits of the generation process. Corpus-scale output-control statistics and the three-cycle realism-validation procedure are generator diagnostics reported in full in the appendix.
       </p>
 
       <figure>
         <img src="outputs/figures/production_aspect_sentiment_heatmap.svg" alt="Aspect sentiment heatmap">
-        <figcaption>Figure 3. Aspect-level label support across the 10K / 20-aspect corpus. The heatmap shows polarity composition for each aspect, ordered by total support, and the companion bar panel shows the total number of labeled mentions per aspect.</figcaption>
+        <figcaption>Figure 2. Aspect-level label support across the 10K / 20-aspect corpus. The heatmap shows polarity composition for each aspect, ordered by total support, and the companion bar panel shows the total number of labeled mentions per aspect.</figcaption>
       </figure>
 
       <figure>
         <img src="outputs/figures/production_dataset_profile.svg" alt="Corpus profile">
-        <figcaption>Figure 4. Corpus profile and diversity cues. The panels visualize the distributional shape of review length, aspect-count mixture, course coverage, and observed style cues, while Table 4 provides the corresponding exact summary values.</figcaption>
+        <figcaption>Figure 3. Corpus profile and diversity cues. The panels visualize the distributional shape of review length, aspect-count mixture, course coverage, and observed style cues, while Table 4 provides the corresponding exact summary values.</figcaption>
       </figure>
 
-      <h3>6.1 Corpus Profile and Representative Examples</h3>
+      <h3>5.1 Corpus Profile and Representative Examples</h3>
       <p>
-        Figure 3 and Figure 4 establish the corpus-level structure before any model results are introduced. Figure 3 shows how label support is distributed across aspects and sentiment polarities, which makes it easier to distinguish heavily represented pedagogical dimensions from thinner parts of the schema. Figure 4 complements that view with review length, aspect-count mixture, course coverage, and style variation. Table 5 then gives a qualitative sense of how these distributions appear in actual review text. These examples are included to help the reader interpret the benchmark qualitatively, not as a substitute for aggregate model evidence.
+        Figure 2 and Figure 3 establish the corpus-level structure before any model results are introduced. Figure 2 shows how label support is distributed across aspects and sentiment polarities, which makes it easier to distinguish heavily represented pedagogical dimensions from thinner parts of the schema. Figure 3 complements that view with review length, aspect-count mixture, course coverage, and style variation. Table 5 then gives a qualitative sense of how these distributions appear in actual review text. These examples are included to help the reader interpret the benchmark qualitatively, not as a substitute for aggregate model evidence.
       </p>
       <table>
         <caption>Table 5. Representative synthetic review snippets showing how aspect labels appear under different writing styles and pedagogical situations.</caption>
@@ -788,7 +752,7 @@
         </tbody>
       </table>
 
-      <h3>6.2 Scope of Reported Analyses</h3>
+      <h3>5.2 Scope of Reported Analyses</h3>
       <table>
         <caption>Table 6. Evidence map for the reported analyses. Unlike Table 3, which organizes the method families, this table aligns each analysis block with its data source, split, and interpretive role in the study.</caption>
         <thead>
@@ -812,7 +776,7 @@
         Table 6 therefore complements rather than repeats Table 3. Table 3 says which method families are executed, while Table 6 says what each analysis block is meant to establish, which split it uses, and how it should be interpreted alongside the main benchmark.
       </p>
 
-      <h3>6.3 Internal Benchmark on the 10K / 20-Aspect Corpus</h3>
+      <h3>5.3 Internal Benchmark on the 10K / 20-Aspect Corpus</h3>
       <p>
         The main benchmark uses the 10,000-review corpus with a strict 8,000/1,000/1,000 train-validation-test split. Seven local approaches are reported: TF-IDF, four two-step transformer encoders, and two joint encoders that predict aspect presence and polarity together. Among the untuned models, <code>bert-base-uncased</code> gives the strongest held-out micro-F1 at 0.2760 with a detected-aspect sentiment MSE of 0.4959, followed by <code>distilbert-base-uncased</code> at 0.2691. The joint variants remain competitive but lower, with <code>distilbert_joint</code> at 0.2524 and <code>bert_joint</code> at 0.2447, which supports the two-step decomposition as the clearest baseline family in this benchmark.
       </p>
@@ -826,7 +790,7 @@
         The additional diagnostics tell a fuller story than F1 alone. On the principal local comparison, BERT and DistilBERT are nearly tied in macro balanced accuracy at 0.6229 and 0.6207 respectively, while BERT now also holds the strongest untuned sentiment MSE and macro MCC. This is useful because the 20-aspect benchmark contains many negative label decisions per review, so balanced accuracy and specificity clarify whether a model is improving by recovering minority positives or merely by exploiting the dominant negatives. Appendix A.10 reports these complementary diagnostics for the principal synthetic-benchmark, GPT-based, and mapped real-data comparisons.
       </p>
       <p>
-        Table 7 provides the exact values for the executed local benchmark. Figure 5 serves a different role: instead of repeating the table cell-by-cell, it visualizes the main trade-offs among detection quality, recall, runtime, and sentiment error. This separation is intentional so that the table remains the precise archival record while the figure highlights the comparative structure of the result space.
+        Table 7 provides the exact values for the executed local benchmark. Figure 4 serves a different role: instead of repeating the table cell-by-cell, it visualizes the main trade-offs among detection quality, recall, runtime, and sentiment error. This separation is intentional so that the table remains the precise archival record while the figure highlights the comparative structure of the result space.
       </p>
 
       <table>
@@ -855,10 +819,10 @@
 
       <figure>
         <img src="outputs/figures/production_method_comparison.svg" alt="Benchmark comparison">
-        <figcaption>Figure 5. Local-benchmark trade-offs on the 10K / 20-aspect corpus. The left panel visualizes the cost-quality frontier using runtime, micro-F1, and sentiment MSE, while the right panel contrasts micro-F1 with micro-recall to show how some models gain coverage at the cost of more false positives.</figcaption>
+        <figcaption>Figure 4. Local-benchmark trade-offs on the 10K / 20-aspect corpus. The left panel visualizes the cost-quality frontier using runtime, micro-F1, and sentiment MSE, while the right panel contrasts micro-F1 with micro-recall to show how some models gain coverage at the cost of more false positives.</figcaption>
       </figure>
 
-      <h3>6.4 GPT-Based Inference Methods</h3>
+      <h3>5.4 GPT-Based Inference Methods</h3>
       <p>
         GPT-based ABSA inference is also evaluated as a full-test executed method family. Using OpenAI Batch mode with <code>gpt-5.2</code>, we ran zero-shot, fixed few-shot, diverse few-shot, and retrieval-based few-shot prompting over the entire 1,000-review held-out test split under the same structured output contract used throughout the benchmark. The strongest configuration is zero-shot structured prompting with a micro-F1 of 0.2519, followed closely by retrieval-based few-shot prompting at 0.2501, fixed few-shot at 0.2450, and diverse few-shot at 0.2374.
       </p>
@@ -890,14 +854,14 @@
         The confusion-based diagnostics reinforce that interpretation. The strongest GPT variants reach macro balanced accuracy near 0.59 with macro specificity around 0.87, which indicates conservative but well-controlled prediction behavior: the batch prompts avoid broad overprediction, but they still miss many positive aspects that the stronger local encoders recover. In other words, GPT-based inference is competitive partly because it remains selective rather than because it dominates recall. Appendix A.10 includes these complementary values alongside the main F1-based ranking.
       </p>
 
-      <h3>6.5 Per-Aspect Behavior of the Best Model</h3>
+      <h3>5.5 Per-Aspect Behavior of the Best Model</h3>
       <p>
         The per-aspect profile of the best untuned model, BERT, is uneven in a way that matches the pedagogical complexity of the label space. Stronger aspect categories concentrate in the assessment-and-management and learning-demand blocks, especially <code>workload</code>, <code>grading_transparency</code>, <code>exam_fairness</code>, <code>pacing</code>, and <code>tooling_usability</code>. Harder categories cluster in the instructional-quality, learning-environment, and engagement blocks, including <code>peer_interaction</code>, <code>support</code>, <code>interest</code>, <code>feedback_quality</code>, and <code>clarity</code>, which likely require more implicit reasoning and weaker lexical cues. This pattern shows that the benchmark is not uniformly easy even when labels are known by construction.
       </p>
 
       <figure>
         <img src="outputs/figures/production_best_model_per_aspect.svg" alt="Best-model per-aspect benchmark">
-        <figcaption>Figure 6. Per-aspect detection F1 and sentiment MSE for the best untuned local model, BERT, on the held-out test split. The figure separates the strongest and weakest aspect groups, making it easier to see where the benchmark remains lexically explicit versus pedagogically latent.</figcaption>
+        <figcaption>Figure 5. Per-aspect detection F1 and sentiment MSE for the best untuned local model, BERT, on the held-out test split. The figure separates the strongest and weakest aspect groups, making it easier to see where the benchmark remains lexically explicit versus pedagogically latent.</figcaption>
       </figure>
 
       <table>
@@ -927,7 +891,7 @@
         </tbody>
       </table>
 
-      <h3>6.6 External Validation on a Mapped Real Student-Feedback Dataset</h3>
+      <h3>5.6 External Validation on a Mapped Real Student-Feedback Dataset</h3>
       <p>
         The study also includes one external validation on the annotated student-feedback dataset of Herath et al. [11]. We conservatively mapped the original annotation scheme to the subset of our pedagogical schema with defensible correspondence, yielding a 9-aspect overlap consisting of <code>accessibility</code>, <code>assessment_design</code>, <code>exam_fairness</code>, <code>grading_transparency</code>, <code>lecturer_quality</code>, <code>materials</code>, <code>organization</code>, <code>overall_experience</code>, and <code>workload</code>. This produced 2,829 mapped real reviews, which were used purely as an external evaluation set: no real reviews were used during synthetic training, validation-threshold calibration, or prompt refinement.
       </p>
@@ -942,7 +906,7 @@
       </p>
 
       <table>
-        <caption>Table 8A. Exact synthetic-to-real transfer scores on the mapped Herath benchmark over the conservative nine-aspect overlap. The table gives the precise model values, while Figure 7 adds the overlap-support context needed to interpret them.</caption>
+        <caption>Table 8A. Exact synthetic-to-real transfer scores on the mapped Herath benchmark over the conservative nine-aspect overlap. The table gives the precise model values, while Figure 6 adds the overlap-support context needed to interpret them.</caption>
         <thead>
           <tr>
             <th>Rank</th>
@@ -964,12 +928,12 @@
 
       <figure>
         <img src="outputs/figures/real_transfer_overview.svg" alt="External validation on mapped real student feedback">
-        <figcaption>Figure 7. External validation on mapped real student feedback. The left panel provides overlap-support context from the mapped Herath corpus, while the center and right panels visualize the transfer scores reported exactly in Table 8A. The figure supports a partial-transfer claim only for the conservative 9-aspect overlap.</figcaption>
+        <figcaption>Figure 6. External validation on mapped real student feedback. The left panel provides overlap-support context from the mapped Herath corpus, while the center and right panels visualize the transfer scores reported exactly in Table 8A. The figure supports a partial-transfer claim only for the conservative 9-aspect overlap.</figcaption>
       </figure>
 
       <figure>
         <img src="outputs/figures/overlap_internal_vs_external_f1.svg" alt="Overlap-matched internal versus external comparison">
-        <figcaption>Figure 8. Overlap-matched internal versus external comparison on the same nine aspects. The absence of a uniform external drop indicates that the mapped real benchmark is partly shaped by overlap support and aspect composition rather than only by domain shift.</figcaption>
+        <figcaption>Figure 7. Overlap-matched internal versus external comparison on the same nine aspects. The absence of a uniform external drop indicates that the mapped real benchmark is partly shaped by overlap support and aspect composition rather than only by domain shift.</figcaption>
       </figure>
 
       <table>
@@ -1014,20 +978,12 @@
         Table 8C is included to prevent overinterpretation of the transfer result. Our mapped-overlap score should not be read as “worse than Herath” or “better than Welch” in any simple leaderboard sense, because the task definitions differ substantially. Welch and Mihalcea study targeted sentiment toward extracted course or instructor entities, while Herath et al. evaluate aspect-level sentiment under their own annotation structure. The most defensible reading is narrower: the reported result shows that models trained only on the synthetic corpus recover some real educational signal on one mapped real benchmark, but the paper does not yet claim parity with prior real-data educational sentiment systems under their native tasks.
       </p>
 
-      <h3>6.7 Corpus-Scale Generation Diagnostics</h3>
+      <h3>5.7 Corpus-Scale Generation Diagnostics</h3>
       <p>
-        The next three subsections return from downstream model behavior to generator quality. They document how the 10K corpus behaves as generated data: first in terms of output control at corpus scale, then in terms of label faithfulness, and finally in terms of the three-cycle realism procedure that shaped the final prompt specification.
+        The next two subsections return from downstream model behavior to generator quality: first the model-assisted label-faithfulness audit, then a faithfulness-aware filtering recipe that turns that audit into a training-data selection method. Corpus-scale output-control statistics (Appendix A.14) and the three-cycle realism-validation procedure (Appendix A.13) are reported separately as generator diagnostics.
       </p>
 
-      <h3>6.7A Full-Corpus Output Control</h3>
-      <p>
-        The full dataset is large enough to support a realistic internal benchmark, and it also reveals how output control behaves at scale. All 10,000 rows returned usable review text and no duplicates were detected. At the same time, 841 rows were marked incomplete because they reached the output-token cap, and overall length-band adherence settled at 0.6819 over the full corpus. The resulting dataset is therefore broad and usable while still leaving room for stronger long-form control in later releases.
-      </p>
-      <p>
-        This behavior does not invalidate the benchmark, because every row still contains the target labels and usable text, and the train-validation-test pipeline runs cleanly on the assembled corpus. It does, however, matter for interpretation: stronger long-form length control would further improve the controllability of future releases. Figure 4 makes this visible directly by combining length, aspect-count, course, and style evidence in one place.
-      </p>
-
-      <h3>6.7B Model-Assisted Label-Faithfulness Audit</h3>
+      <h3>5.8 Model-Assisted Label-Faithfulness Audit</h3>
       <p>
         A complementary label-faithfulness analysis asks whether generated reviews visibly express the aspect-sentiment labels they were assigned, not only whether the text looks realistic. We therefore ran a conservative model-assisted audit with <code>gpt-5.2</code> as a strict checker over two samples: 250 reviews from the 10K corpus and all 25 reviews from the pilot sample. For each review, the auditor received the raw text and declared aspect sentiments, then judged whether each declared aspect was supported in the text and whether the polarity matched.
       </p>
@@ -1054,42 +1010,12 @@
         These results make the character of the corpus clearer. Many declared aspects are visibly present in the text, but polarity faithfulness is weaker, especially at full-corpus scale. At the same time, the larger 250-review audit is more favorable than the earlier smaller probe, which suggests that the benchmark preserves declared aspect presence more consistently than the harsher initial sample implied, even though polarity drift remains substantial. The benchmark is therefore strongest as a controllable and useful educational ABSA resource whose labels remain informative but imperfect. This interpretation supports benchmarking and method comparison while also motivating future filtering or post-generation verification. Appendix A.8 retains the detailed audit table for direct comparison with later regenerated versions of the corpus.
       </p>
 
-      <h3>6.7C Three-Cycle Realism-Validation Procedure</h3>
+      <h3>5.9 Faithfulness-Aware Filtering of the Training Corpus</h3>
       <p>
-        The realism study remains diagnostic, and it is reported here as a complete three-cycle procedure rather than as a single pass. Each cycle used 60 independent judge questions: 30 real OMSCS reviews and 30 synthetic reviews generated from the richer attribute prompt, with binary REAL-versus-SYNTHETIC decisions, confidence scores, cue tags, and textual justification. Across cycles 0, 1, and 2, judge item accuracy was 0.5167, 0.4333, and 0.4333; mean confusion was 0.5737, 0.6417, and 0.6430; mean entropy was 0.6912, 0.7020, and 0.7068 bits; and the number of correctly detected synthetic reviews fell from 5 to 1 to 0. These diagnostics indicate that the stabilized prompt reduced several synthetic cues, even though the accuracy-based chance-confusion statistic was not monotonic across cycles.
+        The 250-row audit in Section 5.8 reports a corpus-level aspect-sentiment match rate of 0.42 as a generator diagnostic. To turn that diagnostic into a method-level result, we extended the audit to the full 10,000-review corpus using a cost-matched judge (<code>gpt-4.1-mini</code>, calibrated against the <code>gpt-5.2</code> audit on the original 250 rows at per-aspect support agreement 0.845 and per-aspect sentiment-match agreement 0.715). For each row we recorded the fraction of declared aspects whose polarity is supported by the text, producing a per-row faithfulness score with a heavily quantized distribution: 22.2% of rows scored 0.00, 11.1% 0.33, 18.2% 0.50, 11.0% 0.67, and 37.5% 1.00.
       </p>
       <p>
-        The final cycle does <em>not</em> support an equivalence claim. In cycle 2, the judge accuracy remained 0.4333, the exact binomial test against chance yielded <code>p = 0.366294</code>, and the Wilson 95% interval was <code>[0.3157, 0.5590]</code>, which is too wide for the predefined ±0.10 equivalence margin. The value of the procedure is therefore diagnostic rather than confirmatory. Judge explanations repeatedly highlighted generic specificity, overbalanced structure, overpolished prose, stacked motifs, and occasional persona inconsistencies; those cues were then used by the editor step to stabilize the next-cycle prompt. The realism analysis therefore contributes a cycle-level improvement curve, cue summaries, prompt states, and side-by-side appendix examples rather than only a final binary verdict.
-      </p>
-      <table>
-        <caption>Table 9. Realism-study summary across the three complete judge-editor cycles, including accuracy, confusion, entropy, and whether prompt rewriting was triggered.</caption>
-        <thead>
-          <tr>
-            <th>Prompt state</th>
-            <th>Cycle</th>
-            <th>Judge accuracy</th>
-            <th>Mean confusion</th>
-            <th>Mean entropy (bits)</th>
-            <th>Binomial p-value</th>
-            <th>Editor triggered</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><code>rich_attributes_baseline</code></td><td>0</td><td>0.5167</td><td>0.5737</td><td>0.6912</td><td>0.8974</td><td>yes</td></tr>
-          <tr><td><code>reduce_synthetic_signatures</code></td><td>1</td><td>0.4333</td><td>0.6417</td><td>0.7020</td><td>0.3663</td><td>yes</td></tr>
-          <tr><td><code>messier_realism</code></td><td>2</td><td>0.4333</td><td>0.6430</td><td>0.7068</td><td>0.3663</td><td>no</td></tr>
-        </tbody>
-      </table>
-      <p>
-        To make the realism analysis auditable, the appendix includes side-by-side real and synthetic review examples together with the synthetic review's sampled aspects and nuance attributes. The paper therefore reports not only the final cycle summary, but also the prompt instructions and qualitative evidence used to justify revision between cycles; the paired examples appear in Appendix A.2.
-      </p>
-
-      <h3>6.7D Faithfulness-Aware Filtering of the Training Corpus</h3>
-      <p>
-        The 250-row audit in Section 6.7B reports a corpus-level aspect-sentiment match rate of 0.42 as a generator diagnostic. To turn that diagnostic into a method-level result, we extended the audit to the full 10,000-review corpus using a cost-matched judge (<code>gpt-4.1-mini</code>, calibrated against the <code>gpt-5.2</code> audit on the original 250 rows at per-aspect support agreement 0.845 and per-aspect sentiment-match agreement 0.715). For each row we recorded the fraction of declared aspects whose polarity is supported by the text, producing a per-row faithfulness score with a heavily quantized distribution: 22.2% of rows scored 0.00, 11.1% 0.33, 18.2% 0.50, 11.0% 0.67, and 37.5% 1.00.
-      </p>
-      <p>
-        We then partitioned the corpus into five training subsets: the highest-scoring 25% (<code>top25</code>, n = 2,500, all rows with row-score 1.00), the highest-scoring 50% (<code>top50</code>, n = 5,000), the full corpus (<code>full</code>, n = 10,000), the lowest-scoring 25% (<code>bot25</code>, n = 2,500), and a uniform-random 5,000-row sample (<code>random_5k</code>) that controls for training size. We trained BERT-base-uncased and DistilBERT-base-uncased on each bucket using the calibrated Section 6.3 recipe and evaluated each resulting model on two transfer targets: the same 9-aspect mapped Herath benchmark used in Section 6.6, and the EduRABSA 7-aspect mapping of the Hua et al. educational-review corpus (5,651 English course-and-staff reviews from RateMyProfessor, Waterloo, and Exeter). To separate effect from seed variance, every (bucket, architecture, target) configuration was retrained at eight random seeds (17, 23, 41, 42, 53, 89, 101, 137) on Modal A10G, with results aggregated across seeds.
+        We then partitioned the corpus into five training subsets: the highest-scoring 25% (<code>top25</code>, n = 2,500, all rows with row-score 1.00), the highest-scoring 50% (<code>top50</code>, n = 5,000), the full corpus (<code>full</code>, n = 10,000), the lowest-scoring 25% (<code>bot25</code>, n = 2,500), and a uniform-random 5,000-row sample (<code>random_5k</code>) that controls for training size. We trained BERT-base-uncased and DistilBERT-base-uncased on each bucket using the calibrated Section 5.3 recipe and evaluated each resulting model on two transfer targets: the same 9-aspect mapped Herath benchmark used in Section 5.6, and the EduRABSA 7-aspect mapping of the Hua et al. educational-review corpus (5,651 English course-and-staff reviews from RateMyProfessor, Waterloo, and Exeter). To separate effect from seed variance, every (bucket, architecture, target) configuration was retrained at eight random seeds (17, 23, 41, 42, 53, 89, 101, 137) on Modal A10G, with results aggregated across seeds.
       </p>
       <table>
         <caption>Table 8E. Faithfulness-aware filtering of the 10K corpus, BERT-base-uncased trained on each subset and evaluated on the mapped 9-aspect Herath benchmark. Mean over eight seeds with 95% bootstrap CI in brackets. Sentiment MSE is computed on aspects the detector identified as present.</caption>
@@ -1132,17 +1058,17 @@
       </table>
       <figure>
         <img src="outputs/figures/phase_e_headline.svg" alt="Faithfulness-aware filtering reduces sentiment-polarity error across two architectures and two transfer targets">
-        <figcaption>Figure 9. Faithfulness-aware filtering on the 10K synthetic corpus, evaluated across two transfer targets and two BERT-family architectures (n = 8 random seeds per condition, 95% bootstrap CI; lower is better). The <code>bot25</code> bucket fails on every condition, confirming the audit score is informative at the unfavorable end of the distribution. The <code>top50</code> bucket beats the size-matched random sample on both Herath transfer conditions, and matches the full corpus while training on half the data.</figcaption>
+        <figcaption>Figure 8. Faithfulness-aware filtering on the 10K synthetic corpus, evaluated across two transfer targets and two BERT-family architectures (n = 8 random seeds per condition, 95% bootstrap CI; lower is better). The <code>bot25</code> bucket fails on every condition, confirming the audit score is informative at the unfavorable end of the distribution. The <code>top50</code> bucket beats the size-matched random sample on both Herath transfer conditions, and matches the full corpus while training on half the data.</figcaption>
       </figure>
       <p>
-        Practically, the result is that the audit score in Section 6.7B is an actionable filter for downstream training. Discarding the bottom 50% of the corpus by faithfulness score matches the full-corpus sentiment-MSE level at half the training cost on Herath, and the recipe transfers to a smaller distilled architecture without loss. Discarding the bottom 25% is decisively the wrong move: that bucket is an active liability for sentiment polarity on every (architecture, target) condition we tested, with sentiment MSE 0.34 to 0.42 above the full corpus.
+        Practically, the result is that the audit score in Section 5.8 is an actionable filter for downstream training. Discarding the bottom 50% of the corpus by faithfulness score matches the full-corpus sentiment-MSE level at half the training cost on Herath, and the recipe transfers to a smaller distilled architecture without loss. Discarding the bottom 25% is decisively the wrong move: that bucket is an active liability for sentiment polarity on every (architecture, target) condition we tested, with sentiment MSE 0.34 to 0.42 above the full corpus.
       </p>
       <p>
         We additionally cross-checked that the bucketing is not specific to the chosen audit judge by re-auditing the original 250-row calibration sample with Claude 3.5 Haiku via OpenRouter: per-aspect support agreement against the GPT-5.2 audit was 0.817 and sentiment-match agreement was 0.678, comparable to the gpt-4.1-mini calibration used at scale. The audit-derived buckets are therefore robust to the choice of cost-matched judge.
       </p>
 
       <div class="review-box">
-        <h3>6.8 Overall Interpretation</h3>
+        <h3>5.10 Overall Interpretation</h3>
         <p>
         Taken together, the study presents a coherent account of controlled synthetic supervision for educational ABSA: corpus characterization, qualitative examples, a documented ABSA modeling pipeline, calibrated 20-aspect discriminative baselines, a mapped 9-aspect synthetic-to-real evaluation on annotated student feedback, and a three-cycle realism study. The evidence supports internal learnability on synthetic reviews, informative differences among modeling choices, partial transfer to one real educational corpus, and a faithfulness-aware filtering recipe that retains the top-50% of the corpus by audit score to reduce sentiment-polarity error on transferred aspects.
         </p>
@@ -1150,7 +1076,7 @@
     </section>
 
     <section>
-      <h2>7. Discussion</h2>
+      <h2>6. Discussion</h2>
       <p>
         The results support interpreting the study as a synthetic educational ABSA benchmark together with a strong internal modeling analysis and one conservative external transfer check. The strongest evidence lies where those pieces connect directly: controlled generation produces aspect-labeled educational reviews, and a downstream ABSA pipeline tests whether those labels are learnable under a strict train-validation-test regime.
       </p>
@@ -1158,9 +1084,9 @@
         The study is therefore strongest as an investigation of dataset construction and internal learnability under synthetic supervision. Its value lies in offering a controllable benchmark resource for a domain where public aspect-labeled data remain scarce, together with a transparent account of how that benchmark connects to one real educational annotation space.
       </p>
 
-      <h3>7.1 Limitations</h3>
+      <h3>6.1 Limitations</h3>
       <p>
-        Five limitations remain central. First, external validation uses two real educational corpora (Herath 9-aspect, EduRABSA 7-aspect) and conservative aspect overlaps, so broader claims about the entire 20-aspect schema still require additional real-data tests. Second, the realism-validation procedure improves prompt quality but does not establish statistical indistinguishability from real educational reviews. Third, the 10K dataset is usable but not perfectly controlled, because a nontrivial share of rows reached the output-token cap and weakened length-band adherence at scale. Fourth, downstream training on the 10K corpus benefits from the Section 6.7D top-50% faithfulness filter (validated across two BERT-family architectures and both transfer targets); the audit score is the validated way to select training rows for sentiment-polarity fidelity on transferred aspects. Fifth, the GPT-based comparison now covers a full-test <code>gpt-5.2</code> benchmark, but it still represents one provider model and one structured prompting family rather than the full space of proprietary LLM baselines.
+        Five limitations remain central. First, external validation uses two real educational corpora (Herath 9-aspect, EduRABSA 7-aspect) and conservative aspect overlaps, so broader claims about the entire 20-aspect schema still require additional real-data tests. Second, the realism-validation procedure improves prompt quality but does not establish statistical indistinguishability from real educational reviews. Third, the 10K dataset is usable but not perfectly controlled, because a nontrivial share of rows reached the output-token cap and weakened length-band adherence at scale. Fourth, downstream training on the 10K corpus benefits from the Section 5.9 top-50% faithfulness filter (validated across two BERT-family architectures and both transfer targets); the audit score is the validated way to select training rows for sentiment-polarity fidelity on transferred aspects. Fifth, the GPT-based comparison now covers a full-test <code>gpt-5.2</code> benchmark, but it still represents one provider model and one structured prompting family rather than the full space of proprietary LLM baselines.
       </p>
       <p>
         These limitations help define the next stage of work rather than undercut the contribution of the study. The reported evidence supports a resource-and-benchmark study with meaningful generator validation, informative internal comparisons, and a first mapped real-data check.
@@ -1170,7 +1096,7 @@
         The most important extensions are broader synthetic-to-real tests across more real educational datasets and more of the 20-aspect schema, improved generation or filtering to raise label faithfulness and sentiment correctness on generated reviews, and broader prompt-based comparisons that add decomposition variants and cross-provider LLM baselines on the same fixed benchmark split.
       </p>
 
-      <h3>7.2 Educational Implications</h3>
+      <h3>6.2 Educational Implications</h3>
       <p>
         Although this study is framed as a benchmark-and-corpus contribution, the underlying motivation is practical: institutions accumulate large volumes of course feedback, and aspect-level summaries are pedagogically more useful than overall sentiment. A controllable synthetic resource has four complementary roles in this setting, each tied to a concrete institutional workflow and to the constraints that the label-faithfulness audit makes visible.
       </p>
@@ -1187,17 +1113,17 @@
         Fourth, it supports <em>instructor-level reflective practice</em>. Aspect-tagged feedback enables individualised end-of-term debriefs (a mathematics instructor receives a summary highlighting <code>clarity</code> and <code>pacing</code> trends across their own sections rather than program-level averages) and feeds faculty-development workshops with concrete patterns rather than anecdotes. Used this way, the model becomes part of formative review rather than summative evaluation, and noise on individual labels matters less than the aggregate pattern across many comments.
       </p>
       <p>
-        None of these uses presume that synthetic supervision replaces human annotation. The label-faithfulness audit constrains them directly: with overall aspect-sentiment match at 0.42 on a 250-review sample, the corpus should be treated as a noisy training resource rather than as a calibrated ground truth. Practical guidance follows. For the model-bootstrapping and stress-testing workflows, the noise is tolerable because outputs are aggregated and the resource serves model development rather than the final classifier; the institution always fine-tunes on local data before deployment. For the longitudinal-monitoring and reflective-practice workflows, deployments built on top of the corpus should be checked against locally adjudicated examples, and the faithfulness-aware filtering result reported in Section 6.7D should be applied: retaining the top 50% of the corpus by audit score reduces sentiment-polarity error on transferred aspects at half the training cost. In governance terms, the resource is appropriate for low-stakes, aggregate, formative-feedback workflows and inappropriate for high-stakes personnel decisions about instructors without human-in-the-loop review, a documented appeals process, and local institutional approval.
+        None of these uses presume that synthetic supervision replaces human annotation. The label-faithfulness audit constrains them directly: with overall aspect-sentiment match at 0.42 on a 250-review sample, the corpus should be treated as a noisy training resource rather than as a calibrated ground truth. Practical guidance follows. For the model-bootstrapping and stress-testing workflows, the noise is tolerable because outputs are aggregated and the resource serves model development rather than the final classifier; the institution always fine-tunes on local data before deployment. For the longitudinal-monitoring and reflective-practice workflows, deployments built on top of the corpus should be checked against locally adjudicated examples, and the faithfulness-aware filtering result reported in Section 5.9 should be applied: retaining the top 50% of the corpus by audit score reduces sentiment-polarity error on transferred aspects at half the training cost. In governance terms, the resource is appropriate for low-stakes, aggregate, formative-feedback workflows and inappropriate for high-stakes personnel decisions about instructors without human-in-the-loop review, a documented appeals process, and local institutional approval.
       </p>
 
-      <h3>7.3 Ethics Statement</h3>
+      <h3>6.3 Ethics Statement</h3>
       <p>
         The synthetic corpus released with this study contains no identifiable student data: instructor names, course codes, and personas are sampled or invented as part of the controlled-generation protocol, and the corpus is generated rather than scraped. The mapped external evaluation uses the publicly released Herath et al. 2022 student-feedback corpus under its MIT license; that release was prepared by the authors of the original study with their institutional approvals, and our use is limited to evaluation, citation, and a conservative schema mapping documented at <code>paper/real_transfer/herath_mapping.json</code>. Preliminary realism-validation work also drew on the public OMSCS course-review pages; only public text was used and no individual reviewer is identified in any downstream artifact. Any institutional deployment of the resulting models should re-consent or re-anonymize student-authored text per local research-ethics policy and should make clear to students and instructors that an automated aspect summary is produced from feedback they submit. We do not recommend using model outputs as inputs to high-stakes personnel decisions about instructors without human review.
       </p>
     </section>
 
     <section>
-      <h2>8. Conclusion</h2>
+      <h2>7. Conclusion</h2>
       <p>
         This study contributes a 10K synthetic educational ABSA corpus over a 20-aspect pedagogical schema, a documented generation protocol, and a benchmark setting that makes internal train-validation-test evaluation possible in a domain where public labeled data remain difficult to obtain. It also includes a conservative synthetic-to-real evaluation on mapped annotated student feedback, which supports partial transfer on a 9-aspect overlap, and generator validations that clarify how realism control and label faithfulness behave at corpus scale. Taken together, the evidence supports controlled synthetic supervision as a productive way to study educational ABSA, compare model families, and establish an openly reusable benchmark in a data-scarce domain.
       </p>
@@ -1359,7 +1285,7 @@ Return only the review text.</pre></td>
         Table A4 documents the conservative overlap used for external validation against the Herath student-feedback corpus. The mapped real benchmark is intentionally narrower than the full 20-aspect schema, because only defensible correspondences were retained.
       </p>
       <table>
-        <caption>Table A4. Exact support and polarity balance for the nine overlap aspects retained in the mapped Herath benchmark. This appendix table preserves the full counts behind the lighter overlap context summarized in Figure 7.</caption>
+        <caption>Table A4. Exact support and polarity balance for the nine overlap aspects retained in the mapped Herath benchmark. This appendix table preserves the full counts behind the lighter overlap context summarized in Figure 6.</caption>
         <thead>
           <tr>
             <th>Aspect</th>
@@ -1468,7 +1394,7 @@ Return only the review text.</pre></td>
 
       <h3>A.9 Additional Local-Benchmark Robustness Analyses</h3>
       <p>
-        Tables A8-A10 and Figures A3-A4 collect the robustness analyses cited in Section 6.3. They show how the two-step and joint formulations compare directly, how stable the strongest local models are across three seeds, and how a modest training-budget change affects BERT and DistilBERT.
+        Tables A8-A10 and Figures A3-A4 collect the robustness analyses cited in Section 5.3. They show how the two-step and joint formulations compare directly, how stable the strongest local models are across three seeds, and how a modest training-budget change affects BERT and DistilBERT.
       </p>
       <table>
         <caption>Table A8. Joint-versus-two-step comparison on the held-out synthetic benchmark.</caption>
@@ -1566,6 +1492,77 @@ Return only the review text.</pre></td>
           <tr><td>Mapped real-data transfer</td><td><code>tfidf_two_step</code></td><td>0.3740</td><td>0.2303</td><td>0.5403</td><td>0.7992</td><td>0.1162</td><td>0.7019</td></tr>
         </tbody>
       </table>
+
+
+      <h3>A.11 Generator Realism-Validation Protocol</h3>
+      <p>
+        To assess generator quality without redefining the paper's main task, we built a small-scale real-versus-synthetic discrimination protocol. The reference pool is a public OMSCS review source from which 32 reviews were prepared across four computer science courses. This source is useful for a first realism stress test because it provides naturally written educational reviews with concrete course experiences, but it is not representative enough to serve as the only real benchmark. It is graduate-level, computer-science-heavy, English-only, and drawn from a single public review website. Accordingly, OMSCS is treated as a constrained validation source rather than a final external evaluation set, and these reviews are never mixed into the ABSA train, validation, or test splits.
+      </p>
+      <p>
+        The realism-validation procedure is iterative. In this protocol, one cycle means a complete pass over 60 judge questions: 30 real reviews and 30 synthetic reviews, each judged independently as a binary REAL-versus-SYNTHETIC decision with confidence, cue tags, and justification. Synthetic reviews are generated from sampled aspect sentiments together with a sampled subset of nuance attributes rather than the full schema, so the prompt remains controllable without looking templated. Each cycle records judge labels, confidence, entropy, a chance-confusion percentage, and exact-versus-chance significance statistics. When the judge correctly identifies synthetic cues, those explanations are fed into an editor step that rewrites the instruction before the next cycle, so each cycle is evaluated under one fixed prompt specification rather than an ad hoc prompt mixture. These checks are positioned as generator validation steps that support the main synthetic-data ABSA study, not as a substitute for the paper's core training-and-evaluation experiments. They are diagnostic, single-source, and single-judge evidence rather than a broad realism claim.
+      </p>
+      <div class="math-block">
+        $$\hat{y}_{c,i} \in \{\text{real}, \text{synthetic}\}, \qquad q_{c,i} \in [0,1]$$
+        $$\mathrm{Acc}_c = \frac{1}{M}\sum_{i=1}^{M} \mathbf{1}[\hat{y}_{c,i} = y_i], \qquad M = 60$$
+        $$\mathrm{Confusion}_c = 100\left(1 - \frac{|\mathrm{Acc}_c - 0.5|}{0.5}\right)$$
+        $$H_c = -\frac{1}{M}\sum_{i=1}^{M}\left(q_{c,i}\log q_{c,i} + (1-q_{c,i})\log(1-q_{c,i})\right)$$
+        $$I_{c+1} = E\left(I_c, \{(\hat{y}_{c,i}, q_{c,i}, r_{c,i}) : \hat{y}_{c,i}=\text{synthetic} \land y_i=\text{synthetic}\}\right)$$
+      </div>
+      <p>
+        Here \(y_i\) is the hidden ground-truth source label, \(\hat{y}_{c,i}\) is the judge decision for item \(i\) in cycle \(c\), \(q_{c,i}\) is the judge confidence, \(r_{c,i}\) denotes the textual cue explanation, \(\mathrm{Acc}_c\) is the judge accuracy, \(\mathrm{Confusion}_c\) is the paper-facing chance-confusion statistic, \(H_c\) is mean decision entropy, and \(E\) is the editor function that produces the next stable realism instruction only from cues that correctly exposed synthetic items.
+      </p>
+      <figure>
+        <img src="outputs/figures/realism_improvement_curve.svg" alt="Realism improvement curve">
+        <figcaption>Figure A5. Realism-validation outcomes across three judge-editor cycles. The three panels summarize judge accuracy, chance-confusion, and decision entropy over complete 60-question cycles. The figure documents how judge uncertainty changes across cycles rather than claiming statistical indistinguishability from real reviews.</figcaption>
+      </figure>
+
+      <h3>A.12 Complementary Generator Diagnostics</h3>
+      <ul>
+        <li>A real-versus-synthetic validation harness with cycle-by-cycle prompt-debug logging.</li>
+        <li>Compact model-assisted audits of aspect support and sentiment consistency on both stable-prompt samples and the full dataset.</li>
+      </ul>
+      <p>
+        We also ran compact model-assisted auxiliary audits with <code>gpt-5.2</code>. On 30 synthetic reviews generated directly from the corpus-generation prompt, all declared aspects were judged to be textually supported (\(1.0000\) support rates at both the aspect and review level), while exact sentiment agreement was lower (\(0.7377\) at the aspect level and \(0.5333\) at the full-review level). This prompt-level result should be read together with the harsher full-dataset audit reported in Section 5.8: the combination suggests that target aspect presence can be preserved under the generation prompt, but large-scale generation still introduces substantial label-faithfulness drift, especially for sentiment polarity. Together these diagnostics justify treating realism and faithfulness checks as generator audits rather than as evidence that the 10K corpus is a synthetic gold standard.
+      </p>
+
+      <h3>A.13 Three-Cycle Realism-Validation Results</h3>
+      <p>
+        The realism study remains diagnostic, and it is reported here as a complete three-cycle procedure rather than as a single pass. Each cycle used 60 independent judge questions: 30 real OMSCS reviews and 30 synthetic reviews generated from the richer attribute prompt, with binary REAL-versus-SYNTHETIC decisions, confidence scores, cue tags, and textual justification. Across cycles 0, 1, and 2, judge item accuracy was 0.5167, 0.4333, and 0.4333; mean confusion was 0.5737, 0.6417, and 0.6430; mean entropy was 0.6912, 0.7020, and 0.7068 bits; and the number of correctly detected synthetic reviews fell from 5 to 1 to 0. These diagnostics indicate that the stabilized prompt reduced several synthetic cues, even though the accuracy-based chance-confusion statistic was not monotonic across cycles.
+      </p>
+      <p>
+        The final cycle does <em>not</em> support an equivalence claim. In cycle 2, the judge accuracy remained 0.4333, the exact binomial test against chance yielded <code>p = 0.366294</code>, and the Wilson 95% interval was <code>[0.3157, 0.5590]</code>, which is too wide for the predefined ±0.10 equivalence margin. The value of the procedure is therefore diagnostic rather than confirmatory. Judge explanations repeatedly highlighted generic specificity, overbalanced structure, overpolished prose, stacked motifs, and occasional persona inconsistencies; those cues were then used by the editor step to stabilize the next-cycle prompt. The realism analysis therefore contributes a cycle-level improvement curve, cue summaries, prompt states, and side-by-side appendix examples rather than only a final binary verdict.
+      </p>
+      <table>
+        <caption>Table A12. Realism-study summary across the three complete judge-editor cycles, including accuracy, confusion, entropy, and whether prompt rewriting was triggered.</caption>
+        <thead>
+          <tr>
+            <th>Prompt state</th>
+            <th>Cycle</th>
+            <th>Judge accuracy</th>
+            <th>Mean confusion</th>
+            <th>Mean entropy (bits)</th>
+            <th>Binomial p-value</th>
+            <th>Editor triggered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>rich_attributes_baseline</code></td><td>0</td><td>0.5167</td><td>0.5737</td><td>0.6912</td><td>0.8974</td><td>yes</td></tr>
+          <tr><td><code>reduce_synthetic_signatures</code></td><td>1</td><td>0.4333</td><td>0.6417</td><td>0.7020</td><td>0.3663</td><td>yes</td></tr>
+          <tr><td><code>messier_realism</code></td><td>2</td><td>0.4333</td><td>0.6430</td><td>0.7068</td><td>0.3663</td><td>no</td></tr>
+        </tbody>
+      </table>
+      <p>
+        To make the realism analysis auditable, the appendix includes side-by-side real and synthetic review examples together with the synthetic review's sampled aspects and nuance attributes. The paper therefore reports not only the final cycle summary, but also the prompt instructions and qualitative evidence used to justify revision between cycles; the paired examples appear in Appendix A.2.
+      </p>
+
+      <h3>A.14 Full-Corpus Output Control</h3>
+      <p>
+        The full dataset is large enough to support a realistic internal benchmark, and it also reveals how output control behaves at scale. All 10,000 rows returned usable review text and no duplicates were detected. At the same time, 841 rows were marked incomplete because they reached the output-token cap, and overall length-band adherence settled at 0.6819 over the full corpus. The resulting dataset is therefore broad and usable while still leaving room for stronger long-form control in later releases.
+      </p>
+      <p>
+        This behavior does not invalidate the benchmark, because every row still contains the target labels and usable text, and the train-validation-test pipeline runs cleanly on the assembled corpus. It does, however, matter for interpretation: stronger long-form length control would further improve the controllability of future releases. Figure 3 makes this visible directly by combining length, aspect-count, course, and style evidence in one place.
+      </p>
+
     </section>
 
     <section>
