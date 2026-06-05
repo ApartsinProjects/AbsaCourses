@@ -1,0 +1,788 @@
+[
+  {
+    "run_name": "V1_seed17",
+    "experiment": "V1",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 365.1,
+    "headline": {
+      "experiment": "V1_permutation_control",
+      "seed": 17,
+      "n_aspects": 20,
+      "real_label_reference_micro_f1": 0.276,
+      "permuted_train_full_test": {
+        "micro_precision": 0.10164758447361072,
+        "micro_recall": 0.900990099009901,
+        "micro_f1": 0.18268506900878292,
+        "n_rows": 1000
+      },
+      "permuted_micro_f1": 0.18268506900878292,
+      "gap_real_minus_permuted": 0.0933,
+      "thresholds": {
+        "accessibility": 0.39999999999999997,
+        "assessment_design": 0.49999999999999994,
+        "clarity": 0.44999999999999996,
+        "difficulty": 0.39999999999999997,
+        "exam_fairness": 0.05,
+        "feedback_quality": 0.05,
+        "grading_transparency": 0.05,
+        "interest": 0.05,
+        "lecturer_quality": 0.05,
+        "materials": 0.44999999999999996,
+        "organization": 0.44999999999999996,
+        "overall_experience": 0.05,
+        "pacing": 0.49999999999999994,
+        "peer_interaction": 0.05,
+        "practical_application": 0.49999999999999994,
+        "prerequisite_fit": 0.05,
+        "relevance": 0.49999999999999994,
+        "support": 0.39999999999999997,
+        "tooling_usability": 0.49999999999999994,
+        "workload": 0.44999999999999996
+      },
+      "interpretation": "permuted ~= 0.277 => label-prior only (no signal); permuted << 0.277 => text genuinely predicts labels (signal present)",
+      "elapsed_seconds": 359.8
+    }
+  },
+  {
+    "run_name": "V1_seed23",
+    "experiment": "V1",
+    "seed": 23,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 367.3,
+    "headline": {
+      "experiment": "V1_permutation_control",
+      "seed": 23,
+      "n_aspects": 20,
+      "real_label_reference_micro_f1": 0.276,
+      "permuted_train_full_test": {
+        "micro_precision": 0.09900662251655629,
+        "micro_recall": 0.9042338709677419,
+        "micro_f1": 0.17847194588141663,
+        "n_rows": 1000
+      },
+      "permuted_micro_f1": 0.17847194588141663,
+      "gap_real_minus_permuted": 0.0975,
+      "thresholds": {
+        "accessibility": 0.5499999999999999,
+        "assessment_design": 0.39999999999999997,
+        "clarity": 0.44999999999999996,
+        "difficulty": 0.49999999999999994,
+        "exam_fairness": 0.44999999999999996,
+        "feedback_quality": 0.44999999999999996,
+        "grading_transparency": 0.05,
+        "interest": 0.05,
+        "lecturer_quality": 0.05,
+        "materials": 0.39999999999999997,
+        "organization": 0.44999999999999996,
+        "overall_experience": 0.05,
+        "pacing": 0.44999999999999996,
+        "peer_interaction": 0.49999999999999994,
+        "practical_application": 0.49999999999999994,
+        "prerequisite_fit": 0.05,
+        "relevance": 0.49999999999999994,
+        "support": 0.39999999999999997,
+        "tooling_usability": 0.44999999999999996,
+        "workload": 0.44999999999999996
+      },
+      "interpretation": "permuted ~= 0.277 => label-prior only (no signal); permuted << 0.277 => text genuinely predicts labels (signal present)",
+      "elapsed_seconds": 361.1
+    }
+  },
+  {
+    "run_name": "V1_seed41",
+    "experiment": "V1",
+    "seed": 41,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 364.3,
+    "headline": {
+      "experiment": "V1_permutation_control",
+      "seed": 41,
+      "n_aspects": 20,
+      "real_label_reference_micro_f1": 0.276,
+      "permuted_train_full_test": {
+        "micro_precision": 0.10317374350086655,
+        "micro_recall": 0.9370388588293163,
+        "micro_f1": 0.18588086061374837,
+        "n_rows": 1000
+      },
+      "permuted_micro_f1": 0.18588086061374837,
+      "gap_real_minus_permuted": 0.0901,
+      "thresholds": {
+        "accessibility": 0.05,
+        "assessment_design": 0.05,
+        "clarity": 0.05,
+        "difficulty": 0.05,
+        "exam_fairness": 0.39999999999999997,
+        "feedback_quality": 0.44999999999999996,
+        "grading_transparency": 0.39999999999999997,
+        "interest": 0.44999999999999996,
+        "lecturer_quality": 0.44999999999999996,
+        "materials": 0.49999999999999994,
+        "organization": 0.05,
+        "overall_experience": 0.5499999999999999,
+        "pacing": 0.44999999999999996,
+        "peer_interaction": 0.44999999999999996,
+        "practical_application": 0.39999999999999997,
+        "prerequisite_fit": 0.49999999999999994,
+        "relevance": 0.35,
+        "support": 0.05,
+        "tooling_usability": 0.44999999999999996,
+        "workload": 0.39999999999999997
+      },
+      "interpretation": "permuted ~= 0.277 => label-prior only (no signal); permuted << 0.277 => text genuinely predicts labels (signal present)",
+      "elapsed_seconds": 358.9
+    }
+  },
+  {
+    "run_name": "V4_seed17",
+    "experiment": "V4",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 381.0,
+    "headline": {
+      "experiment": "V4_clean_label_ceiling",
+      "seed": 17,
+      "n_aspects": 20,
+      "full_data_reference_micro_f1": 0.276,
+      "variants": {
+        "row_score_eq_1p0": {
+          "n_train": 2956,
+          "n_calib": 393,
+          "n_test": 404,
+          "metrics": {
+            "micro_precision": 0.25412541254125415,
+            "micro_recall": 0.45901639344262296,
+            "micro_f1": 0.3271375464684015,
+            "n_rows": 404
+          },
+          "micro_f1": 0.3271375464684015,
+          "jump_over_full_0p277": 0.0511,
+          "thresholds": {
+            "accessibility": 0.7999999999999999,
+            "assessment_design": 0.65,
+            "clarity": 0.49999999999999994,
+            "difficulty": 0.6,
+            "exam_fairness": 0.95,
+            "feedback_quality": 0.44999999999999996,
+            "grading_transparency": 0.9,
+            "interest": 0.39999999999999997,
+            "lecturer_quality": 0.65,
+            "materials": 0.7,
+            "organization": 0.85,
+            "overall_experience": 0.39999999999999997,
+            "pacing": 0.65,
+            "peer_interaction": 0.9,
+            "practical_application": 0.7,
+            "prerequisite_fit": 0.75,
+            "relevance": 0.7999999999999999,
+            "support": 0.39999999999999997,
+            "tooling_usability": 0.85,
+            "workload": 0.9
+          }
+        },
+        "row_score_ge_0p5": {
+          "n_train": 5298,
+          "n_calib": 690,
+          "n_test": 683,
+          "metrics": {
+            "micro_precision": 0.26406926406926406,
+            "micro_recall": 0.45933734939759036,
+            "micro_f1": 0.3353490929081913,
+            "n_rows": 683
+          },
+          "micro_f1": 0.3353490929081913,
+          "jump_over_full_0p277": 0.0593,
+          "thresholds": {
+            "accessibility": 0.7,
+            "assessment_design": 0.7999999999999999,
+            "clarity": 0.6,
+            "difficulty": 0.65,
+            "exam_fairness": 0.9,
+            "feedback_quality": 0.39999999999999997,
+            "grading_transparency": 0.85,
+            "interest": 0.49999999999999994,
+            "lecturer_quality": 0.85,
+            "materials": 0.7999999999999999,
+            "organization": 0.75,
+            "overall_experience": 0.49999999999999994,
+            "pacing": 0.7999999999999999,
+            "peer_interaction": 0.75,
+            "practical_application": 0.65,
+            "prerequisite_fit": 0.5499999999999999,
+            "relevance": 0.65,
+            "support": 0.49999999999999994,
+            "tooling_usability": 0.7,
+            "workload": 0.6
+          }
+        }
+      },
+      "interpretation": "large jump over 0.277 => ceiling is label noise, not the task",
+      "elapsed_seconds": 375.6
+    }
+  },
+  {
+    "run_name": "V4_seed23",
+    "experiment": "V4",
+    "seed": 23,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 384.3,
+    "headline": {
+      "experiment": "V4_clean_label_ceiling",
+      "seed": 23,
+      "n_aspects": 20,
+      "full_data_reference_micro_f1": 0.276,
+      "variants": {
+        "row_score_eq_1p0": {
+          "n_train": 2996,
+          "n_calib": 368,
+          "n_test": 389,
+          "metrics": {
+            "micro_precision": 0.22874149659863946,
+            "micro_recall": 0.4310897435897436,
+            "micro_f1": 0.29888888888888887,
+            "n_rows": 389
+          },
+          "micro_f1": 0.29888888888888887,
+          "jump_over_full_0p277": 0.0229,
+          "thresholds": {
+            "accessibility": 0.65,
+            "assessment_design": 0.7,
+            "clarity": 0.75,
+            "difficulty": 0.6,
+            "exam_fairness": 0.44999999999999996,
+            "feedback_quality": 0.5499999999999999,
+            "grading_transparency": 0.95,
+            "interest": 0.44999999999999996,
+            "lecturer_quality": 0.85,
+            "materials": 0.75,
+            "organization": 0.75,
+            "overall_experience": 0.65,
+            "pacing": 0.9,
+            "peer_interaction": 0.5499999999999999,
+            "practical_application": 0.75,
+            "prerequisite_fit": 0.65,
+            "relevance": 0.75,
+            "support": 0.5499999999999999,
+            "tooling_usability": 0.7999999999999999,
+            "workload": 0.7
+          }
+        },
+        "row_score_ge_0p5": {
+          "n_train": 5353,
+          "n_calib": 650,
+          "n_test": 668,
+          "metrics": {
+            "micro_precision": 0.2813786008230453,
+            "micro_recall": 0.4243599689681924,
+            "micro_f1": 0.3383854005567584,
+            "n_rows": 668
+          },
+          "micro_f1": 0.3383854005567584,
+          "jump_over_full_0p277": 0.0624,
+          "thresholds": {
+            "accessibility": 0.5499999999999999,
+            "assessment_design": 0.7999999999999999,
+            "clarity": 0.49999999999999994,
+            "difficulty": 0.6,
+            "exam_fairness": 0.9,
+            "feedback_quality": 0.5499999999999999,
+            "grading_transparency": 0.9,
+            "interest": 0.6,
+            "lecturer_quality": 0.7,
+            "materials": 0.75,
+            "organization": 0.6,
+            "overall_experience": 0.39999999999999997,
+            "pacing": 0.75,
+            "peer_interaction": 0.9,
+            "practical_application": 0.75,
+            "prerequisite_fit": 0.6,
+            "relevance": 0.9,
+            "support": 0.65,
+            "tooling_usability": 0.9,
+            "workload": 0.6
+          }
+        }
+      },
+      "interpretation": "large jump over 0.277 => ceiling is label noise, not the task",
+      "elapsed_seconds": 379.0
+    }
+  },
+  {
+    "run_name": "V4_seed41",
+    "experiment": "V4",
+    "seed": 41,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 376.9,
+    "headline": {
+      "experiment": "V4_clean_label_ceiling",
+      "seed": 41,
+      "n_aspects": 20,
+      "full_data_reference_micro_f1": 0.276,
+      "variants": {
+        "row_score_eq_1p0": {
+          "n_train": 2978,
+          "n_calib": 395,
+          "n_test": 380,
+          "metrics": {
+            "micro_precision": 0.23563218390804597,
+            "micro_recall": 0.4548335974643423,
+            "micro_f1": 0.3104380746349378,
+            "n_rows": 380
+          },
+          "micro_f1": 0.3104380746349378,
+          "jump_over_full_0p277": 0.0344,
+          "thresholds": {
+            "accessibility": 0.7,
+            "assessment_design": 0.7999999999999999,
+            "clarity": 0.6,
+            "difficulty": 0.5499999999999999,
+            "exam_fairness": 0.39999999999999997,
+            "feedback_quality": 0.5499999999999999,
+            "grading_transparency": 0.7999999999999999,
+            "interest": 0.44999999999999996,
+            "lecturer_quality": 0.85,
+            "materials": 0.75,
+            "organization": 0.65,
+            "overall_experience": 0.6,
+            "pacing": 0.49999999999999994,
+            "peer_interaction": 0.7999999999999999,
+            "practical_application": 0.6,
+            "prerequisite_fit": 0.75,
+            "relevance": 0.44999999999999996,
+            "support": 0.49999999999999994,
+            "tooling_usability": 0.65,
+            "workload": 0.95
+          }
+        },
+        "row_score_ge_0p5": {
+          "n_train": 5318,
+          "n_calib": 680,
+          "n_test": 673,
+          "metrics": {
+            "micro_precision": 0.31089934484812387,
+            "micro_recall": 0.3930722891566265,
+            "micro_f1": 0.34718989025606917,
+            "n_rows": 673
+          },
+          "micro_f1": 0.34718989025606917,
+          "jump_over_full_0p277": 0.0712,
+          "thresholds": {
+            "accessibility": 0.5499999999999999,
+            "assessment_design": 0.9,
+            "clarity": 0.65,
+            "difficulty": 0.6,
+            "exam_fairness": 0.65,
+            "feedback_quality": 0.5499999999999999,
+            "grading_transparency": 0.95,
+            "interest": 0.5499999999999999,
+            "lecturer_quality": 0.49999999999999994,
+            "materials": 0.65,
+            "organization": 0.7999999999999999,
+            "overall_experience": 0.44999999999999996,
+            "pacing": 0.7999999999999999,
+            "peer_interaction": 0.75,
+            "practical_application": 0.7999999999999999,
+            "prerequisite_fit": 0.65,
+            "relevance": 0.65,
+            "support": 0.5499999999999999,
+            "tooling_usability": 0.5499999999999999,
+            "workload": 0.85
+          }
+        }
+      },
+      "interpretation": "large jump over 0.277 => ceiling is label noise, not the task",
+      "elapsed_seconds": 371.6
+    }
+  },
+  {
+    "run_name": "V3_seed42",
+    "experiment": "V3",
+    "seed": 42,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 794.8,
+    "headline": {
+      "experiment": "V3_learning_curve",
+      "seed": 42,
+      "n_aspects": 20,
+      "n_test": 1000,
+      "sizes": [
+        250,
+        500,
+        1000,
+        2000,
+        4000,
+        8000
+      ],
+      "subsample_seed": 2042,
+      "points": [
+        {
+          "train_size": 250,
+          "metrics": {
+            "micro_precision": 0.1011582191053023,
+            "micro_recall": 0.9458519622454049,
+            "micro_f1": 0.18276937844972402,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.18276937844972402
+        },
+        {
+          "train_size": 500,
+          "metrics": {
+            "micro_precision": 0.10676199709161416,
+            "micro_recall": 0.8753104818678589,
+            "micro_f1": 0.19031160555165524,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.19031160555165524
+        },
+        {
+          "train_size": 1000,
+          "metrics": {
+            "micro_precision": 0.12587556654305726,
+            "micro_recall": 0.6070541480377546,
+            "micro_f1": 0.20851463185735006,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.20851463185735006
+        },
+        {
+          "train_size": 2000,
+          "metrics": {
+            "micro_precision": 0.14465408805031446,
+            "micro_recall": 0.5027322404371585,
+            "micro_f1": 0.22466422466422467,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.22466422466422467
+        },
+        {
+          "train_size": 4000,
+          "metrics": {
+            "micro_precision": 0.1620656057161416,
+            "micro_recall": 0.49577744659711875,
+            "micro_f1": 0.24427854607759147,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.24427854607759147
+        },
+        {
+          "train_size": 8000,
+          "metrics": {
+            "micro_precision": 0.1803307842788547,
+            "micro_recall": 0.503725782414307,
+            "micro_f1": 0.26558407543216345,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.26558407543216345
+        }
+      ],
+      "full_data_reference_micro_f1": 0.276,
+      "interpretation": "rising curve => signal scales with data; flat curve => noise plateau",
+      "elapsed_seconds": 788.1
+    }
+  },
+  {
+    "run_name": "V3_seed17",
+    "experiment": "V3",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 799.8,
+    "headline": {
+      "experiment": "V3_learning_curve",
+      "seed": 17,
+      "n_aspects": 20,
+      "n_test": 1000,
+      "sizes": [
+        250,
+        500,
+        1000,
+        2000,
+        4000,
+        8000
+      ],
+      "subsample_seed": 2017,
+      "points": [
+        {
+          "train_size": 250,
+          "metrics": {
+            "micro_precision": 0.1012685214795864,
+            "micro_recall": 0.9405940594059405,
+            "micro_f1": 0.1828505437397748,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.1828505437397748
+        },
+        {
+          "train_size": 500,
+          "metrics": {
+            "micro_precision": 0.10769445803340555,
+            "micro_recall": 0.7628712871287129,
+            "micro_f1": 0.18874395247718784,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.18874395247718784
+        },
+        {
+          "train_size": 1000,
+          "metrics": {
+            "micro_precision": 0.1251880507199656,
+            "micro_recall": 0.5767326732673267,
+            "micro_f1": 0.20572134910824652,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.20572134910824652
+        },
+        {
+          "train_size": 2000,
+          "metrics": {
+            "micro_precision": 0.14805825242718446,
+            "micro_recall": 0.5133663366336634,
+            "micro_f1": 0.22983156028368795,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.22983156028368795
+        },
+        {
+          "train_size": 4000,
+          "metrics": {
+            "micro_precision": 0.18561182351662683,
+            "micro_recall": 0.42277227722772276,
+            "micro_f1": 0.25796707446005135,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.25796707446005135
+        },
+        {
+          "train_size": 8000,
+          "metrics": {
+            "micro_precision": 0.25786593707250344,
+            "micro_recall": 0.37326732673267327,
+            "micro_f1": 0.3050161812297735,
+            "n_rows": 1000
+          },
+          "micro_f1": 0.3050161812297735
+        }
+      ],
+      "full_data_reference_micro_f1": 0.276,
+      "interpretation": "rising curve => signal scales with data; flat curve => noise plateau",
+      "elapsed_seconds": 793.6
+    }
+  },
+  {
+    "run_name": "B5_seed42",
+    "experiment": "B5",
+    "seed": 42,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 441.5,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 42,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 1980,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.716012084592145,
+        "micro_recall": 0.8200692041522492,
+        "micro_f1": 0.7645161290322581,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.7645161290322581,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.0028,
+      "delta_over_synth_only": 0.3052,
+      "thresholds": {
+        "accessibility": 0.65,
+        "assessment_design": 0.75,
+        "exam_fairness": 0.85,
+        "grading_transparency": 0.85,
+        "lecturer_quality": 0.3,
+        "materials": 0.7,
+        "organization": 0.9,
+        "overall_experience": 0.7,
+        "workload": 0.9
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 436.1
+    }
+  },
+  {
+    "run_name": "B5_seed17",
+    "experiment": "B5",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 441.1,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 17,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 1980,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.7357723577235772,
+        "micro_recall": 0.8341013824884793,
+        "micro_f1": 0.7818574514038877,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.7818574514038877,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": 0.0146,
+      "delta_over_synth_only": 0.3226,
+      "thresholds": {
+        "accessibility": 0.7,
+        "assessment_design": 0.6,
+        "exam_fairness": 0.6,
+        "grading_transparency": 0.65,
+        "lecturer_quality": 0.3,
+        "materials": 0.5499999999999999,
+        "organization": 0.85,
+        "overall_experience": 0.5499999999999999,
+        "workload": 0.85
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 435.0
+    }
+  },
+  {
+    "run_name": "B5_seed23",
+    "experiment": "B5",
+    "seed": 23,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 438.9,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 23,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 1980,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.7854821235102926,
+        "micro_recall": 0.8229284903518729,
+        "micro_f1": 0.8037694013303769,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.8037694013303769,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": 0.0365,
+      "delta_over_synth_only": 0.3445,
+      "thresholds": {
+        "accessibility": 0.95,
+        "assessment_design": 0.7999999999999999,
+        "exam_fairness": 0.49999999999999994,
+        "grading_transparency": 0.85,
+        "lecturer_quality": 0.44999999999999996,
+        "materials": 0.6,
+        "organization": 0.7999999999999999,
+        "overall_experience": 0.75,
+        "workload": 0.9
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 434.3
+    }
+  },
+  {
+    "run_name": "B5_seed41",
+    "experiment": "B5",
+    "seed": 41,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 436.6,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 41,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 1980,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.7344398340248963,
+        "micro_recall": 0.8438617401668653,
+        "micro_f1": 0.7853577371048253,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.7853577371048253,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": 0.0181,
+      "delta_over_synth_only": 0.3261,
+      "thresholds": {
+        "accessibility": 0.95,
+        "assessment_design": 0.7999999999999999,
+        "exam_fairness": 0.95,
+        "grading_transparency": 0.95,
+        "lecturer_quality": 0.39999999999999997,
+        "materials": 0.9,
+        "organization": 0.44999999999999996,
+        "overall_experience": 0.5499999999999999,
+        "workload": 0.85
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 432.8
+    }
+  }
+]

@@ -1,0 +1,106 @@
+=== stdout ===
+[2026-06-05T10:57:48.661011+00:00] [V4 seed=41] device=cuda
+[2026-06-05T10:57:49.694956+00:00] [V4 seed=41] base split train=8000 calib=1000 test=1000
+[2026-06-05T10:57:49.752260+00:00] [V4 seed=41][row_score_eq_1p0] filtered train=2978 calib=395 test=380
+[2026-06-05T10:57:49.752579+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T10:57:57.604061+00:00] [bert-base-uncased] detection training start: train_rows=2978 val_rows=395 epochs=3 batch_size=8 device=cuda
+[2026-06-05T10:58:38.867810+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2613 val_micro_f1=0.1907 val_macro_f1=0.2422 best_macro_f1=0.2422 patience=0 epoch_seconds=41.3
+[2026-06-05T10:59:20.430568+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.0972 val_micro_f1=0.2724 val_macro_f1=0.3325 best_macro_f1=0.3325 patience=0 epoch_seconds=41.4
+[2026-06-05T11:00:02.124702+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.9556 val_micro_f1=0.2874 val_macro_f1=0.3221 best_macro_f1=0.3325 patience=0 epoch_seconds=41.5
+[2026-06-05T11:00:02.189748+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.3325
+[2026-06-05T11:00:02.190219+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T11:00:05.884663+00:00] [V4 seed=41][row_score_eq_1p0] clean micro_f1=0.3104
+[2026-06-05T11:00:05.983361+00:00] [V4 seed=41][row_score_ge_0p5] filtered train=5318 calib=680 test=673
+[2026-06-05T11:00:05.983706+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T11:00:09.758432+00:00] [bert-base-uncased] detection training start: train_rows=5318 val_rows=680 epochs=3 batch_size=8 device=cuda
+[2026-06-05T11:01:24.152381+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2181 val_micro_f1=0.2470 val_macro_f1=0.2744 best_macro_f1=0.2744 patience=0 epoch_seconds=74.4
+[2026-06-05T11:02:38.799354+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.1014 val_micro_f1=0.2775 val_macro_f1=0.3294 best_macro_f1=0.3294 patience=0 epoch_seconds=74.6
+[2026-06-05T11:03:53.814927+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.0189 val_micro_f1=0.3099 val_macro_f1=0.3395 best_macro_f1=0.3395 patience=0 epoch_seconds=74.9
+[2026-06-05T11:03:53.909286+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.3395
+[2026-06-05T11:03:53.909953+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T11:04:00.156590+00:00] [V4 seed=41][row_score_ge_0p5] clean micro_f1=0.3472
+RESULT_JSON_BEGIN
+{
+  "experiment": "V4_clean_label_ceiling",
+  "seed": 41,
+  "n_aspects": 20,
+  "full_data_reference_micro_f1": 0.276,
+  "variants": {
+    "row_score_eq_1p0": {
+      "n_train": 2978,
+      "n_calib": 395,
+      "n_test": 380,
+      "metrics": {
+        "micro_precision": 0.23563218390804597,
+        "micro_recall": 0.4548335974643423,
+        "micro_f1": 0.3104380746349378,
+        "n_rows": 380
+      },
+      "micro_f1": 0.3104380746349378,
+      "jump_over_full_0p277": 0.0344,
+      "thresholds": {
+        "accessibility": 0.7,
+        "assessment_design": 0.7999999999999999,
+        "clarity": 0.6,
+        "difficulty": 0.5499999999999999,
+        "exam_fairness": 0.39999999999999997,
+        "feedback_quality": 0.5499999999999999,
+        "grading_transparency": 0.7999999999999999,
+        "interest": 0.44999999999999996,
+        "lecturer_quality": 0.85,
+        "materials": 0.75,
+        "organization": 0.65,
+        "overall_experience": 0.6,
+        "pacing": 0.49999999999999994,
+        "peer_interaction": 0.7999999999999999,
+        "practical_application": 0.6,
+        "prerequisite_fit": 0.75,
+        "relevance": 0.44999999999999996,
+        "support": 0.49999999999999994,
+        "tooling_usability": 0.65,
+        "workload": 0.95
+      }
+    },
+    "row_score_ge_0p5": {
+      "n_train": 5318,
+      "n_calib": 680,
+      "n_test": 673,
+      "metrics": {
+        "micro_precision": 0.31089934484812387,
+        "micro_recall": 0.3930722891566265,
+        "micro_f1": 0.34718989025606917,
+        "n_rows": 673
+      },
+      "micro_f1": 0.34718989025606917,
+      "jump_over_full_0p277": 0.0712,
+      "thresholds": {
+        "accessibility": 0.5499999999999999,
+        "assessment_design": 0.9,
+        "clarity": 0.65,
+        "difficulty": 0.6,
+        "exam_fairness": 0.65,
+        "feedback_quality": 0.5499999999999999,
+        "grading_transparency": 0.95,
+        "interest": 0.5499999999999999,
+        "lecturer_quality": 0.49999999999999994,
+        "materials": 0.65,
+        "organization": 0.7999999999999999,
+        "overall_experience": 0.44999999999999996,
+        "pacing": 0.7999999999999999,
+        "peer_interaction": 0.75,
+        "practical_application": 0.7999999999999999,
+        "prerequisite_fit": 0.65,
+        "relevance": 0.65,
+        "support": 0.5499999999999999,
+        "tooling_usability": 0.5499999999999999,
+        "workload": 0.85
+      }
+    }
+  },
+  "interpretation": "large jump over 0.277 => ceiling is label noise, not the task",
+  "elapsed_seconds": 371.6
+}
+RESULT_JSON_END
+
+=== stderr ===
+

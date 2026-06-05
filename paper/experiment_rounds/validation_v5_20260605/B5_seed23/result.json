@@ -1,0 +1,44 @@
+{
+  "experiment": "B5_synth_to_real_finetune",
+  "seed": 23,
+  "n_aspects": 9,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_syn_train": 8000,
+  "n_real_train": 1980,
+  "n_real_calib": 283,
+  "n_real_test": 566,
+  "synth_to_real_real_test": {
+    "micro_precision": 0.7854821235102926,
+    "micro_recall": 0.8229284903518729,
+    "micro_f1": 0.8037694013303769,
+    "n_rows": 566
+  },
+  "synth_to_real_micro_f1": 0.8037694013303769,
+  "reference_synthetic_only_transfer_micro_f1": 0.4593,
+  "reference_real_only_training_micro_f1": 0.7673,
+  "delta_over_real_only": 0.0365,
+  "delta_over_synth_only": 0.3445,
+  "thresholds": {
+    "accessibility": 0.95,
+    "assessment_design": 0.7999999999999999,
+    "exam_fairness": 0.49999999999999994,
+    "grading_transparency": 0.85,
+    "lecturer_quality": 0.44999999999999996,
+    "materials": 0.6,
+    "organization": 0.7999999999999999,
+    "overall_experience": 0.75,
+    "workload": 0.9
+  },
+  "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+  "elapsed_seconds": 434.3
+}

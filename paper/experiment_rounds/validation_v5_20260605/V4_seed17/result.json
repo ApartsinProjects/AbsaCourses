@@ -1,0 +1,80 @@
+{
+  "experiment": "V4_clean_label_ceiling",
+  "seed": 17,
+  "n_aspects": 20,
+  "full_data_reference_micro_f1": 0.276,
+  "variants": {
+    "row_score_eq_1p0": {
+      "n_train": 2956,
+      "n_calib": 393,
+      "n_test": 404,
+      "metrics": {
+        "micro_precision": 0.25412541254125415,
+        "micro_recall": 0.45901639344262296,
+        "micro_f1": 0.3271375464684015,
+        "n_rows": 404
+      },
+      "micro_f1": 0.3271375464684015,
+      "jump_over_full_0p277": 0.0511,
+      "thresholds": {
+        "accessibility": 0.7999999999999999,
+        "assessment_design": 0.65,
+        "clarity": 0.49999999999999994,
+        "difficulty": 0.6,
+        "exam_fairness": 0.95,
+        "feedback_quality": 0.44999999999999996,
+        "grading_transparency": 0.9,
+        "interest": 0.39999999999999997,
+        "lecturer_quality": 0.65,
+        "materials": 0.7,
+        "organization": 0.85,
+        "overall_experience": 0.39999999999999997,
+        "pacing": 0.65,
+        "peer_interaction": 0.9,
+        "practical_application": 0.7,
+        "prerequisite_fit": 0.75,
+        "relevance": 0.7999999999999999,
+        "support": 0.39999999999999997,
+        "tooling_usability": 0.85,
+        "workload": 0.9
+      }
+    },
+    "row_score_ge_0p5": {
+      "n_train": 5298,
+      "n_calib": 690,
+      "n_test": 683,
+      "metrics": {
+        "micro_precision": 0.26406926406926406,
+        "micro_recall": 0.45933734939759036,
+        "micro_f1": 0.3353490929081913,
+        "n_rows": 683
+      },
+      "micro_f1": 0.3353490929081913,
+      "jump_over_full_0p277": 0.0593,
+      "thresholds": {
+        "accessibility": 0.7,
+        "assessment_design": 0.7999999999999999,
+        "clarity": 0.6,
+        "difficulty": 0.65,
+        "exam_fairness": 0.9,
+        "feedback_quality": 0.39999999999999997,
+        "grading_transparency": 0.85,
+        "interest": 0.49999999999999994,
+        "lecturer_quality": 0.85,
+        "materials": 0.7999999999999999,
+        "organization": 0.75,
+        "overall_experience": 0.49999999999999994,
+        "pacing": 0.7999999999999999,
+        "peer_interaction": 0.75,
+        "practical_application": 0.65,
+        "prerequisite_fit": 0.5499999999999999,
+        "relevance": 0.65,
+        "support": 0.49999999999999994,
+        "tooling_usability": 0.7,
+        "workload": 0.6
+      }
+    }
+  },
+  "interpretation": "large jump over 0.277 => ceiling is label noise, not the task",
+  "elapsed_seconds": 375.6
+}

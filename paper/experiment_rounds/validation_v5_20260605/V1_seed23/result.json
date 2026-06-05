@@ -1,0 +1,38 @@
+{
+  "experiment": "V1_permutation_control",
+  "seed": 23,
+  "n_aspects": 20,
+  "real_label_reference_micro_f1": 0.276,
+  "permuted_train_full_test": {
+    "micro_precision": 0.09900662251655629,
+    "micro_recall": 0.9042338709677419,
+    "micro_f1": 0.17847194588141663,
+    "n_rows": 1000
+  },
+  "permuted_micro_f1": 0.17847194588141663,
+  "gap_real_minus_permuted": 0.0975,
+  "thresholds": {
+    "accessibility": 0.5499999999999999,
+    "assessment_design": 0.39999999999999997,
+    "clarity": 0.44999999999999996,
+    "difficulty": 0.49999999999999994,
+    "exam_fairness": 0.44999999999999996,
+    "feedback_quality": 0.44999999999999996,
+    "grading_transparency": 0.05,
+    "interest": 0.05,
+    "lecturer_quality": 0.05,
+    "materials": 0.39999999999999997,
+    "organization": 0.44999999999999996,
+    "overall_experience": 0.05,
+    "pacing": 0.44999999999999996,
+    "peer_interaction": 0.49999999999999994,
+    "practical_application": 0.49999999999999994,
+    "prerequisite_fit": 0.05,
+    "relevance": 0.49999999999999994,
+    "support": 0.39999999999999997,
+    "tooling_usability": 0.44999999999999996,
+    "workload": 0.44999999999999996
+  },
+  "interpretation": "permuted ~= 0.277 => label-prior only (no signal); permuted << 0.277 => text genuinely predicts labels (signal present)",
+  "elapsed_seconds": 361.1
+}

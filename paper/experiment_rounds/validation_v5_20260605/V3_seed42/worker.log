@@ -1,0 +1,142 @@
+=== stdout ===
+[2026-06-05T10:57:51.274645+00:00] [V3 seed=42] device=cuda
+[2026-06-05T10:57:52.450402+00:00] [V3 seed=42] base split train=8000 calib=1000 test=1000
+[2026-06-05T10:57:52.451603+00:00] [V3 seed=42] size=250 training
+[2026-06-05T10:57:52.452045+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T10:57:58.035572+00:00] [bert-base-uncased] detection training start: train_rows=250 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T10:58:06.185546+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2781 val_micro_f1=0.1772 val_macro_f1=0.1480 best_macro_f1=0.1480 patience=0 epoch_seconds=8.1
+[2026-06-05T10:58:13.929195+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.2451 val_micro_f1=0.1737 val_macro_f1=0.1536 best_macro_f1=0.1536 patience=0 epoch_seconds=7.6
+[2026-06-05T10:58:21.711073+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.2151 val_micro_f1=0.1639 val_macro_f1=0.1353 best_macro_f1=0.1536 patience=0 epoch_seconds=7.6
+[2026-06-05T10:58:21.772390+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.1536
+[2026-06-05T10:58:21.773514+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T10:58:30.692108+00:00] [V3 seed=42] size=250 micro_f1=0.1828
+[2026-06-05T10:58:30.693116+00:00] [V3 seed=42] size=500 training
+[2026-06-05T10:58:30.693466+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T10:58:31.435157+00:00] [bert-base-uncased] detection training start: train_rows=500 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T10:58:42.307180+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2618 val_micro_f1=0.1759 val_macro_f1=0.1297 best_macro_f1=0.1297 patience=0 epoch_seconds=10.9
+[2026-06-05T10:58:53.251570+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.2414 val_micro_f1=0.1783 val_macro_f1=0.1446 best_macro_f1=0.1446 patience=0 epoch_seconds=10.9
+[2026-06-05T10:59:04.317982+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.1868 val_micro_f1=0.1818 val_macro_f1=0.1442 best_macro_f1=0.1446 patience=0 epoch_seconds=11.0
+[2026-06-05T10:59:04.375035+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.1446
+[2026-06-05T10:59:04.375412+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T10:59:13.360933+00:00] [V3 seed=42] size=500 micro_f1=0.1903
+[2026-06-05T10:59:13.361957+00:00] [V3 seed=42] size=1000 training
+[2026-06-05T10:59:13.362286+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T10:59:14.357995+00:00] [bert-base-uncased] detection training start: train_rows=1000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T10:59:32.046743+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2562 val_micro_f1=0.1732 val_macro_f1=0.0992 best_macro_f1=0.0992 patience=0 epoch_seconds=17.7
+[2026-06-05T10:59:49.759374+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.2333 val_micro_f1=0.1822 val_macro_f1=0.1778 best_macro_f1=0.1778 patience=0 epoch_seconds=17.7
+[2026-06-05T11:00:07.555234+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.1634 val_micro_f1=0.2032 val_macro_f1=0.2015 best_macro_f1=0.2015 patience=0 epoch_seconds=17.7
+[2026-06-05T11:00:07.658565+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.2015
+[2026-06-05T11:00:07.659692+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T11:00:16.695324+00:00] [V3 seed=42] size=1000 micro_f1=0.2085
+[2026-06-05T11:00:16.696682+00:00] [V3 seed=42] size=2000 training
+[2026-06-05T11:00:16.697140+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T11:00:18.308343+00:00] [bert-base-uncased] detection training start: train_rows=2000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T11:00:49.413598+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2524 val_micro_f1=0.1746 val_macro_f1=0.1257 best_macro_f1=0.1257 patience=0 epoch_seconds=31.1
+[2026-06-05T11:01:20.669157+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.2018 val_micro_f1=0.2186 val_macro_f1=0.2356 best_macro_f1=0.2356 patience=0 epoch_seconds=31.2
+[2026-06-05T11:01:52.070014+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.0937 val_micro_f1=0.2310 val_macro_f1=0.2653 best_macro_f1=0.2653 patience=0 epoch_seconds=31.3
+[2026-06-05T11:01:52.159729+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.2653
+[2026-06-05T11:01:52.160329+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T11:02:01.243581+00:00] [V3 seed=42] size=2000 micro_f1=0.2247
+[2026-06-05T11:02:01.245652+00:00] [V3 seed=42] size=4000 training
+[2026-06-05T11:02:01.246036+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T11:02:04.090427+00:00] [bert-base-uncased] detection training start: train_rows=4000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T11:03:02.306024+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2350 val_micro_f1=0.2191 val_macro_f1=0.2385 best_macro_f1=0.2385 patience=0 epoch_seconds=58.2
+[2026-06-05T11:04:00.617585+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.1449 val_micro_f1=0.2492 val_macro_f1=0.2909 best_macro_f1=0.2909 patience=0 epoch_seconds=58.3
+[2026-06-05T11:04:59.001427+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.0550 val_micro_f1=0.2503 val_macro_f1=0.2592 best_macro_f1=0.2909 patience=0 epoch_seconds=58.3
+[2026-06-05T11:04:59.053281+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.2909
+[2026-06-05T11:04:59.053714+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T11:05:08.135306+00:00] [V3 seed=42] size=4000 micro_f1=0.2443
+[2026-06-05T11:05:08.138635+00:00] [V3 seed=42] size=8000 training
+[2026-06-05T11:05:08.139140+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T11:05:13.231111+00:00] [bert-base-uncased] detection training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T11:07:05.319520+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2023 val_micro_f1=0.2428 val_macro_f1=0.2926 best_macro_f1=0.2926 patience=0 epoch_seconds=112.1
+[2026-06-05T11:08:57.720857+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.1055 val_micro_f1=0.2825 val_macro_f1=0.3136 best_macro_f1=0.3136 patience=0 epoch_seconds=112.4
+[2026-06-05T11:10:50.239400+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.0360 val_micro_f1=0.2715 val_macro_f1=0.2962 best_macro_f1=0.3136 patience=0 epoch_seconds=112.4
+[2026-06-05T11:10:50.289993+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.3136
+[2026-06-05T11:10:50.290411+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T11:10:59.356641+00:00] [V3 seed=42] size=8000 micro_f1=0.2656
+RESULT_JSON_BEGIN
+{
+  "experiment": "V3_learning_curve",
+  "seed": 42,
+  "n_aspects": 20,
+  "n_test": 1000,
+  "sizes": [
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000
+  ],
+  "subsample_seed": 2042,
+  "points": [
+    {
+      "train_size": 250,
+      "metrics": {
+        "micro_precision": 0.1011582191053023,
+        "micro_recall": 0.9458519622454049,
+        "micro_f1": 0.18276937844972402,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.18276937844972402
+    },
+    {
+      "train_size": 500,
+      "metrics": {
+        "micro_precision": 0.10676199709161416,
+        "micro_recall": 0.8753104818678589,
+        "micro_f1": 0.19031160555165524,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.19031160555165524
+    },
+    {
+      "train_size": 1000,
+      "metrics": {
+        "micro_precision": 0.12587556654305726,
+        "micro_recall": 0.6070541480377546,
+        "micro_f1": 0.20851463185735006,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.20851463185735006
+    },
+    {
+      "train_size": 2000,
+      "metrics": {
+        "micro_precision": 0.14465408805031446,
+        "micro_recall": 0.5027322404371585,
+        "micro_f1": 0.22466422466422467,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.22466422466422467
+    },
+    {
+      "train_size": 4000,
+      "metrics": {
+        "micro_precision": 0.1620656057161416,
+        "micro_recall": 0.49577744659711875,
+        "micro_f1": 0.24427854607759147,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.24427854607759147
+    },
+    {
+      "train_size": 8000,
+      "metrics": {
+        "micro_precision": 0.1803307842788547,
+        "micro_recall": 0.503725782414307,
+        "micro_f1": 0.26558407543216345,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.26558407543216345
+    }
+  ],
+  "full_data_reference_micro_f1": 0.276,
+  "interpretation": "rising curve => signal scales with data; flat curve => noise plateau",
+  "elapsed_seconds": 788.1
+}
+RESULT_JSON_END
+
+=== stderr ===
+

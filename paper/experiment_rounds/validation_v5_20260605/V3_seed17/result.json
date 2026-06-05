@@ -1,0 +1,80 @@
+{
+  "experiment": "V3_learning_curve",
+  "seed": 17,
+  "n_aspects": 20,
+  "n_test": 1000,
+  "sizes": [
+    250,
+    500,
+    1000,
+    2000,
+    4000,
+    8000
+  ],
+  "subsample_seed": 2017,
+  "points": [
+    {
+      "train_size": 250,
+      "metrics": {
+        "micro_precision": 0.1012685214795864,
+        "micro_recall": 0.9405940594059405,
+        "micro_f1": 0.1828505437397748,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.1828505437397748
+    },
+    {
+      "train_size": 500,
+      "metrics": {
+        "micro_precision": 0.10769445803340555,
+        "micro_recall": 0.7628712871287129,
+        "micro_f1": 0.18874395247718784,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.18874395247718784
+    },
+    {
+      "train_size": 1000,
+      "metrics": {
+        "micro_precision": 0.1251880507199656,
+        "micro_recall": 0.5767326732673267,
+        "micro_f1": 0.20572134910824652,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.20572134910824652
+    },
+    {
+      "train_size": 2000,
+      "metrics": {
+        "micro_precision": 0.14805825242718446,
+        "micro_recall": 0.5133663366336634,
+        "micro_f1": 0.22983156028368795,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.22983156028368795
+    },
+    {
+      "train_size": 4000,
+      "metrics": {
+        "micro_precision": 0.18561182351662683,
+        "micro_recall": 0.42277227722772276,
+        "micro_f1": 0.25796707446005135,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.25796707446005135
+    },
+    {
+      "train_size": 8000,
+      "metrics": {
+        "micro_precision": 0.25786593707250344,
+        "micro_recall": 0.37326732673267327,
+        "micro_f1": 0.3050161812297735,
+        "n_rows": 1000
+      },
+      "micro_f1": 0.3050161812297735
+    }
+  ],
+  "full_data_reference_micro_f1": 0.276,
+  "interpretation": "rising curve => signal scales with data; flat curve => noise plateau",
+  "elapsed_seconds": 793.6
+}

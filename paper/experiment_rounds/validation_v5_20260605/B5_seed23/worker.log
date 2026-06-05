@@ -1,0 +1,70 @@
+=== stdout ===
+[2026-06-05T11:03:52.877201+00:00] [B5 seed=23] device=cuda
+[2026-06-05T11:03:53.960635+00:00] [B5 seed=23] synth train=8000 calib=1000 (9-aspect)
+[2026-06-05T11:03:53.982375+00:00] [B5 seed=23] real train=1980 calib=283 test=566 (9-aspect)
+[2026-06-05T11:03:53.982446+00:00] [B5 seed=23] STAGE 1: pretrain on synthetic (9-aspect)
+[2026-06-05T11:03:53.982744+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T11:04:00.248019+00:00] [bert-base-uncased] detection training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T11:05:53.294335+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.1624 val_micro_f1=0.2863 val_macro_f1=0.3333 best_macro_f1=0.3333 patience=0 epoch_seconds=113.0
+[2026-06-05T11:07:46.825221+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.0550 val_micro_f1=0.3342 val_macro_f1=0.3646 best_macro_f1=0.3646 patience=0 epoch_seconds=113.4
+[2026-06-05T11:09:40.517482+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.9980 val_micro_f1=0.3201 val_macro_f1=0.3673 best_macro_f1=0.3673 patience=0 epoch_seconds=113.5
+[2026-06-05T11:09:40.629332+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.3673
+[2026-06-05T11:09:40.629741+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T11:09:40.633222+00:00] [B5 seed=23] STAGE 2: fine-tune on real-Herath (same head)
+[2026-06-05T11:09:40.633627+00:00] [bert-base-uncased:detection-finetune] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T11:09:41.164727+00:00] [finetune] start: train_rows=1980 val_rows=283 epochs=3 from pretrained head
+[2026-06-05T11:10:08.461094+00:00] [finetune] epoch 1/3: train_loss=0.7477 val_micro_f1=0.5736 val_macro_f1=0.4924 patience=0 secs=27.3
+[2026-06-05T11:10:35.782356+00:00] [finetune] epoch 2/3: train_loss=0.4289 val_micro_f1=0.7567 val_macro_f1=0.6244 patience=0 secs=27.3
+[2026-06-05T11:11:03.290407+00:00] [finetune] epoch 3/3: train_loss=0.2752 val_micro_f1=0.7652 val_macro_f1=0.6329 patience=0 secs=27.4
+[2026-06-05T11:11:03.383472+00:00] [finetune] complete: best_val_macro_f1=0.6329
+[2026-06-05T11:11:03.383899+00:00] [bert-base-uncased:detection-finetune] released GPU training lock
+[2026-06-05T11:11:07.106804+00:00] [B5 seed=23] synth->real real-test micro_f1=0.8038
+RESULT_JSON_BEGIN
+{
+  "experiment": "B5_synth_to_real_finetune",
+  "seed": 23,
+  "n_aspects": 9,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_syn_train": 8000,
+  "n_real_train": 1980,
+  "n_real_calib": 283,
+  "n_real_test": 566,
+  "synth_to_real_real_test": {
+    "micro_precision": 0.7854821235102926,
+    "micro_recall": 0.8229284903518729,
+    "micro_f1": 0.8037694013303769,
+    "n_rows": 566
+  },
+  "synth_to_real_micro_f1": 0.8037694013303769,
+  "reference_synthetic_only_transfer_micro_f1": 0.4593,
+  "reference_real_only_training_micro_f1": 0.7673,
+  "delta_over_real_only": 0.0365,
+  "delta_over_synth_only": 0.3445,
+  "thresholds": {
+    "accessibility": 0.95,
+    "assessment_design": 0.7999999999999999,
+    "exam_fairness": 0.49999999999999994,
+    "grading_transparency": 0.85,
+    "lecturer_quality": 0.44999999999999996,
+    "materials": 0.6,
+    "organization": 0.7999999999999999,
+    "overall_experience": 0.75,
+    "workload": 0.9
+  },
+  "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+  "elapsed_seconds": 434.3
+}
+RESULT_JSON_END
+
+=== stderr ===
+
