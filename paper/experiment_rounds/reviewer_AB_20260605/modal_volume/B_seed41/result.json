@@ -1,0 +1,51 @@
+{
+  "experiment": "B_real_herath_trained_baseline",
+  "seed": 41,
+  "n_total_mapped": 2829,
+  "n_overlap_aspects": 9,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_train": 1980,
+  "n_calib": 283,
+  "n_test": 566,
+  "thresholds": {
+    "accessibility": 0.5499999999999999,
+    "assessment_design": 0.85,
+    "exam_fairness": 0.95,
+    "grading_transparency": 0.75,
+    "lecturer_quality": 0.44999999999999996,
+    "materials": 0.44999999999999996,
+    "organization": 0.49999999999999994,
+    "overall_experience": 0.85,
+    "workload": 0.95
+  },
+  "synthetic_only_reference_micro_f1": 0.4593,
+  "real_test_summary": {
+    "micro_precision": 0.7581920903954802,
+    "micro_recall": 0.799761620977354,
+    "micro_f1": 0.7784222737819025,
+    "macro_precision": 0.6540910342915128,
+    "macro_recall": 0.7346875613154683,
+    "macro_f1": 0.6568786090091671,
+    "macro_balanced_accuracy": 0.8272916111981601,
+    "macro_specificity": 0.9198956610808519,
+    "macro_mcc": 0.6052519292393066,
+    "label_accuracy": 0.9250098154691794,
+    "subset_accuracy": 0.558303886925795,
+    "samples_f1": 0.7981972679852539,
+    "samples_jaccard": 0.7397905098435134,
+    "sentiment_mse_detected": 0.21414417965669885
+  },
+  "real_test_micro_f1": 0.7784222737819025,
+  "real_test_macro_f1": 0.6568786090091671,
+  "elapsed_seconds": 144.9
+}

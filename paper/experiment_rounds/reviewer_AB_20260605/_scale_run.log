@@ -1,0 +1,585 @@
+C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:45: DeprecationWarning: 'asyncio.WindowsSelectorEventLoopPolicy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:45: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+✓ Initialized. View run at 
+https://modal.com/apps/llmcourse/main/ap-RzyxkcpjBh2HgrkxHnDyju
+✓ Created objects.
+├── 🔨 Created mount 
+│   E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\modal_reviewer_ab.py
+├── 🔨 Created mount 
+│   E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\absa_data_io.py
+├── 🔨 Created mount 
+│   E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\absa_model_comparison.
+│   py
+├── 🔨 Created mount 
+│   E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\reviewer_ab_worker.py
+├── 🔨 Created mount 
+│   E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\reviewer_ab_data\gener
+│   ated_reviews_10k.jsonl
+├── 🔨 Created mount 
+│   E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\reviewer_ab_data\at_sc
+│   ale_per_row_scores.csv
+├── 🔨 Created mount 
+│   E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\reviewer_ab_data\herat
+│   h_mapped_real_reviews_2829.jsonl
+└── 🔨 Created function run_spec.
+[local] dispatching 6 specs: [{'experiment': 'A', 'seed': 17}, {'experiment': 'A', 'seed': 23}, {'experiment': 'A', 'seed': 41}, {'experiment': 'B', 'seed': 17}, {'experiment': 'B', 'seed': 23}, {'experiment': 'B', 'seed': 41}]
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+[A_seed17] start
+[A_seed23] start
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+[A_seed41] start
+[B_seed17] start
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+[B_seed23] start
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+[B_seed41] start
+[B_seed17] done ok=True rc=0 in 150.5s
+[B_seed23] done ok=True rc=0 in 151.7s
+[B_seed41] done ok=True rc=0 in 152.7s
+[A_seed41] done ok=True rc=0 in 694.5s
+[A_seed17] done ok=True rc=0 in 706.1s
+[A_seed23] done ok=True rc=0 in 708.1s
+[local] summary -> E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\experiment_rounds\reviewer_AB_20260605\modal_summary_20260605T102405Z.json
+[
+  {
+    "run_name": "A_seed17",
+    "experiment": "A",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 706.1,
+    "headline": {
+      "experiment": "A_filtered_test_f1",
+      "seed": 17,
+      "n_aspects": 20,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "clarity",
+        "difficulty",
+        "exam_fairness",
+        "feedback_quality",
+        "grading_transparency",
+        "interest",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "pacing",
+        "peer_interaction",
+        "practical_application",
+        "prerequisite_fit",
+        "relevance",
+        "support",
+        "tooling_usability",
+        "workload"
+      ],
+      "thresholds": {
+        "accessibility": 0.49999999999999994,
+        "assessment_design": 0.75,
+        "clarity": 0.5499999999999999,
+        "difficulty": 0.6,
+        "exam_fairness": 0.75,
+        "feedback_quality": 0.5499999999999999,
+        "grading_transparency": 0.6,
+        "interest": 0.6,
+        "lecturer_quality": 0.65,
+        "materials": 0.85,
+        "organization": 0.5499999999999999,
+        "overall_experience": 0.35,
+        "pacing": 0.7,
+        "peer_interaction": 0.6,
+        "practical_application": 0.6,
+        "prerequisite_fit": 0.6,
+        "relevance": 0.49999999999999994,
+        "support": 0.44999999999999996,
+        "tooling_usability": 0.7999999999999999,
+        "workload": 0.85
+      },
+      "paper_reference": {
+        "bert_micro_f1_single_seed": 0.276,
+        "bert_micro_f1_3seed_mean": 0.2791,
+        "tol": 0.02
+      },
+      "full_test": {
+        "micro_precision": 0.2124392116713591,
+        "micro_recall": 0.41089108910891087,
+        "micro_f1": 0.28007423654462626,
+        "n_rows": 1000
+      },
+      "reproduce_ok": true,
+      "n_test_rows_joined_to_faithfulness": 1000,
+      "test_predictions_path": "/results/A_seed17/test_predictions.jsonl",
+      "faithful_only_row_score_eq_1": {
+        "micro_precision": 0.21881123448726322,
+        "micro_recall": 0.4992548435171386,
+        "micro_f1": 0.3042688465031789,
+        "n_rows": 404
+      },
+      "row_score_ge_0p5": {
+        "micro_precision": 0.2353395061728395,
+        "micro_recall": 0.45933734939759036,
+        "micro_f1": 0.3112244897959184,
+        "n_rows": 683
+      },
+      "noisy_row_score_lt_1": {
+        "micro_precision": 0.20833333333333334,
+        "micro_recall": 0.3669384729429207,
+        "micro_f1": 0.2657718120805369,
+        "n_rows": 596
+      },
+      "delta_faithful_minus_full": 0.0242,
+      "elapsed_seconds": 700.5
+    }
+  },
+  {
+    "run_name": "A_seed23",
+    "experiment": "A",
+    "seed": 23,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 708.1,
+    "headline": {
+      "experiment": "A_filtered_test_f1",
+      "seed": 23,
+      "n_aspects": 20,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "clarity",
+        "difficulty",
+        "exam_fairness",
+        "feedback_quality",
+        "grading_transparency",
+        "interest",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "pacing",
+        "peer_interaction",
+        "practical_application",
+        "prerequisite_fit",
+        "relevance",
+        "support",
+        "tooling_usability",
+        "workload"
+      ],
+      "thresholds": {
+        "accessibility": 0.5499999999999999,
+        "assessment_design": 0.65,
+        "clarity": 0.5499999999999999,
+        "difficulty": 0.6,
+        "exam_fairness": 0.7,
+        "feedback_quality": 0.5499999999999999,
+        "grading_transparency": 0.75,
+        "interest": 0.5499999999999999,
+        "lecturer_quality": 0.7,
+        "materials": 0.7,
+        "organization": 0.7,
+        "overall_experience": 0.44999999999999996,
+        "pacing": 0.85,
+        "peer_interaction": 0.65,
+        "practical_application": 0.75,
+        "prerequisite_fit": 0.44999999999999996,
+        "relevance": 0.65,
+        "support": 0.49999999999999994,
+        "tooling_usability": 0.95,
+        "workload": 0.7999999999999999
+      },
+      "paper_reference": {
+        "bert_micro_f1_single_seed": 0.276,
+        "bert_micro_f1_3seed_mean": 0.2791,
+        "tol": 0.02
+      },
+      "full_test": {
+        "micro_precision": 0.22406639004149378,
+        "micro_recall": 0.3810483870967742,
+        "micro_f1": 0.2821948488241881,
+        "n_rows": 1000
+      },
+      "reproduce_ok": true,
+      "n_test_rows_joined_to_faithfulness": 1000,
+      "test_predictions_path": "/results/A_seed23/test_predictions.jsonl",
+      "faithful_only_row_score_eq_1": {
+        "micro_precision": 0.2459396751740139,
+        "micro_recall": 0.5096153846153846,
+        "micro_f1": 0.3317683881064163,
+        "n_rows": 389
+      },
+      "row_score_ge_0p5": {
+        "micro_precision": 0.2598533455545371,
+        "micro_recall": 0.43987587276958884,
+        "micro_f1": 0.3267070008643042,
+        "n_rows": 668
+      },
+      "noisy_row_score_lt_1": {
+        "micro_precision": 0.21047573282075924,
+        "micro_recall": 0.3220588235294118,
+        "micro_f1": 0.25457715780296425,
+        "n_rows": 611
+      },
+      "delta_faithful_minus_full": 0.0496,
+      "elapsed_seconds": 700.4
+    }
+  },
+  {
+    "run_name": "A_seed41",
+    "experiment": "A",
+    "seed": 41,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 694.5,
+    "headline": {
+      "experiment": "A_filtered_test_f1",
+      "seed": 41,
+      "n_aspects": 20,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "clarity",
+        "difficulty",
+        "exam_fairness",
+        "feedback_quality",
+        "grading_transparency",
+        "interest",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "pacing",
+        "peer_interaction",
+        "practical_application",
+        "prerequisite_fit",
+        "relevance",
+        "support",
+        "tooling_usability",
+        "workload"
+      ],
+      "thresholds": {
+        "accessibility": 0.39999999999999997,
+        "assessment_design": 0.7,
+        "clarity": 0.49999999999999994,
+        "difficulty": 0.7,
+        "exam_fairness": 0.75,
+        "feedback_quality": 0.6,
+        "grading_transparency": 0.9,
+        "interest": 0.5499999999999999,
+        "lecturer_quality": 0.65,
+        "materials": 0.7,
+        "organization": 0.9,
+        "overall_experience": 0.44999999999999996,
+        "pacing": 0.85,
+        "peer_interaction": 0.9,
+        "practical_application": 0.7,
+        "prerequisite_fit": 0.65,
+        "relevance": 0.65,
+        "support": 0.3,
+        "tooling_usability": 0.7,
+        "workload": 0.75
+      },
+      "paper_reference": {
+        "bert_micro_f1_single_seed": 0.276,
+        "bert_micro_f1_3seed_mean": 0.2791,
+        "tol": 0.02
+      },
+      "full_test": {
+        "micro_precision": 0.2021047596268835,
+        "micro_recall": 0.41564190850959176,
+        "micro_f1": 0.2719665271966527,
+        "n_rows": 1000
+      },
+      "reproduce_ok": true,
+      "n_test_rows_joined_to_faithfulness": 1000,
+      "test_predictions_path": "/results/A_seed41/test_predictions.jsonl",
+      "faithful_only_row_score_eq_1": {
+        "micro_precision": 0.20089858793324775,
+        "micro_recall": 0.4960380348652932,
+        "micro_f1": 0.28597533120146185,
+        "n_rows": 380
+      },
+      "row_score_ge_0p5": {
+        "micro_precision": 0.21793948126801152,
+        "micro_recall": 0.4555722891566265,
+        "micro_f1": 0.2948343079922027,
+        "n_rows": 673
+      },
+      "noisy_row_score_lt_1": {
+        "micro_precision": 0.20282119710255433,
+        "micro_recall": 0.37945791726105566,
+        "micro_f1": 0.2643478260869565,
+        "n_rows": 620
+      },
+      "delta_faithful_minus_full": 0.014,
+      "elapsed_seconds": 688.6
+    }
+  },
+  {
+    "run_name": "B_seed17",
+    "experiment": "B",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 150.5,
+    "headline": {
+      "experiment": "B_real_herath_trained_baseline",
+      "seed": 17,
+      "n_total_mapped": 2829,
+      "n_overlap_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_train": 1980,
+      "n_calib": 283,
+      "n_test": 566,
+      "thresholds": {
+        "accessibility": 0.05,
+        "assessment_design": 0.35,
+        "exam_fairness": 0.7,
+        "grading_transparency": 0.49999999999999994,
+        "lecturer_quality": 0.49999999999999994,
+        "materials": 0.9,
+        "organization": 0.65,
+        "overall_experience": 0.9,
+        "workload": 0.95
+      },
+      "synthetic_only_reference_micro_f1": 0.4593,
+      "real_test_summary": {
+        "micro_precision": 0.6958710976837865,
+        "micro_recall": 0.7960829493087558,
+        "micro_f1": 0.7426114991939817,
+        "macro_precision": 0.6171889847342654,
+        "macro_recall": 0.7254314786309992,
+        "macro_f1": 0.6147318443013522,
+        "macro_balanced_accuracy": 0.8102288676639479,
+        "macro_specificity": 0.8950262566968967,
+        "macro_mcc": 0.5598077453379641,
+        "label_accuracy": 0.9059678052610914,
+        "subset_accuracy": 0.5070671378091873,
+        "samples_f1": 0.7762975540360699,
+        "samples_jaccard": 0.7106133266027259,
+        "sentiment_mse_detected": 0.21033275810703528
+      },
+      "real_test_micro_f1": 0.7426114991939817,
+      "real_test_macro_f1": 0.6147318443013522,
+      "elapsed_seconds": 142.6
+    }
+  },
+  {
+    "run_name": "B_seed23",
+    "experiment": "B",
+    "seed": 23,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 151.7,
+    "headline": {
+      "experiment": "B_real_herath_trained_baseline",
+      "seed": 23,
+      "n_total_mapped": 2829,
+      "n_overlap_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_train": 1980,
+      "n_calib": 283,
+      "n_test": 566,
+      "thresholds": {
+        "accessibility": 0.7,
+        "assessment_design": 0.9,
+        "exam_fairness": 0.6,
+        "grading_transparency": 0.39999999999999997,
+        "lecturer_quality": 0.49999999999999994,
+        "materials": 0.6,
+        "organization": 0.6,
+        "overall_experience": 0.7,
+        "workload": 0.7999999999999999
+      },
+      "synthetic_only_reference_micro_f1": 0.4593,
+      "real_test_summary": {
+        "micro_precision": 0.7913340935005702,
+        "micro_recall": 0.7877412031782066,
+        "micro_f1": 0.7895335608646189,
+        "macro_precision": 0.6841620208084294,
+        "macro_recall": 0.6501698842743244,
+        "macro_f1": 0.6626273018087908,
+        "macro_balanced_accuracy": 0.7879376459046722,
+        "macro_specificity": 0.9257054075350202,
+        "macro_mcc": 0.590516260644268,
+        "label_accuracy": 0.9273655280722418,
+        "subset_accuracy": 0.5530035335689046,
+        "samples_f1": 0.7989348303835937,
+        "samples_jaccard": 0.7408463738852432,
+        "sentiment_mse_detected": 0.271528240216913
+      },
+      "real_test_micro_f1": 0.7895335608646189,
+      "real_test_macro_f1": 0.6626273018087908,
+      "elapsed_seconds": 144.0
+    }
+  },
+  {
+    "run_name": "B_seed41",
+    "experiment": "B",
+    "seed": 41,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 152.7,
+    "headline": {
+      "experiment": "B_real_herath_trained_baseline",
+      "seed": 41,
+      "n_total_mapped": 2829,
+      "n_overlap_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_train": 1980,
+      "n_calib": 283,
+      "n_test": 566,
+      "thresholds": {
+        "accessibility": 0.5499999999999999,
+        "assessment_design": 0.85,
+        "exam_fairness": 0.95,
+        "grading_transparency": 0.75,
+        "lecturer_quality": 0.44999999999999996,
+        "materials": 0.44999999999999996,
+        "organization": 0.49999999999999994,
+        "overall_experience": 0.85,
+        "workload": 0.95
+      },
+      "synthetic_only_reference_micro_f1": 0.4593,
+      "real_test_summary": {
+        "micro_precision": 0.7581920903954802,
+        "micro_recall": 0.799761620977354,
+        "micro_f1": 0.7784222737819025,
+        "macro_precision": 0.6540910342915128,
+        "macro_recall": 0.7346875613154683,
+        "macro_f1": 0.6568786090091671,
+        "macro_balanced_accuracy": 0.8272916111981601,
+        "macro_specificity": 0.9198956610808519,
+        "macro_mcc": 0.6052519292393066,
+        "label_accuracy": 0.9250098154691794,
+        "subset_accuracy": 0.558303886925795,
+        "samples_f1": 0.7981972679852539,
+        "samples_jaccard": 0.7397905098435134,
+        "sentiment_mse_detected": 0.21414417965669885
+      },
+      "real_test_micro_f1": 0.7784222737819025,
+      "real_test_macro_f1": 0.6568786090091671,
+      "elapsed_seconds": 144.9
+    }
+  }
+]
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/llmcourse/main/ap-RzyxkcpjBh2HgrkxHnDyju

@@ -1,0 +1,22 @@
+[
+  {
+    "run_name": "A_seed42",
+    "experiment": "A",
+    "seed": 42,
+    "ok": false,
+    "rc": 1,
+    "elapsed_s": 6.9,
+    "stderr_tail": "Traceback (most recent call last):\n  File \"/app/paper/reviewer_ab_worker.py\", line 320, in <module>\n    main()\n  File \"/app/paper/reviewer_ab_worker.py\", line 309, in main\n    res = run_experiment_a(Path(args.corpus_path), Path(args.scores_csv), args.seed, out_dir)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/paper/reviewer_ab_worker.py\", line 117, in run_experiment_a\n    det_model, det_tok = eng.train_detection(\"bert-base-uncased\", train_df, calib_df, aspects, cfg)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/paper/absa_model_comparison.py\", line 1008, in train_detection\n    with gpu_training_lock(cfg.device, f\"{model_name}:detection\"):\n  File \"/opt/conda/lib/python3.11/contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"/app/paper/absa_model_comparison.py\", line 232, in gpu_training_lock\n    fd = os.open(str(lock_path), os.O_CREAT | os.O_EXCL | os.O_WRONLY)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/app/paper/benchmark_outputs/gpu_training.lock'\n",
+    "stdout_tail": "[2026-06-05T08:55:56.334409+00:00] [A seed=42] device=cuda\n[2026-06-05T08:55:57.393112+00:00] [A seed=42] loaded corpus rows=10000\n[2026-06-05T08:55:57.397987+00:00] [A seed=42] n_aspects=20\n[2026-06-05T08:55:57.401126+00:00] [A seed=42] split train=8000 calib=1000 test=1000\n[2026-06-05T08:55:57.403755+00:00] [A seed=42] split matches library three_way_split exactly\n"
+  },
+  {
+    "run_name": "B_seed42",
+    "experiment": "B",
+    "seed": 42,
+    "ok": false,
+    "rc": 1,
+    "elapsed_s": 6.3,
+    "stderr_tail": "Traceback (most recent call last):\n  File \"/app/paper/reviewer_ab_worker.py\", line 320, in <module>\n    main()\n  File \"/app/paper/reviewer_ab_worker.py\", line 311, in main\n    res = run_experiment_b(Path(args.herath_mapped_jsonl), args.seed, out_dir)\n          ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/paper/reviewer_ab_worker.py\", line 256, in run_experiment_b\n    det_model, det_tok = eng.train_detection(\"bert-base-uncased\", train_df, calib_df, aspects, cfg)\n                         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\n  File \"/app/paper/absa_model_comparison.py\", line 1008, in train_detection\n    with gpu_training_lock(cfg.device, f\"{model_name}:detection\"):\n  File \"/opt/conda/lib/python3.11/contextlib.py\", line 137, in __enter__\n    return next(self.gen)\n           ^^^^^^^^^^^^^^\n  File \"/app/paper/absa_model_comparison.py\", line 232, in gpu_training_lock\n    fd = os.open(str(lock_path), os.O_CREAT | os.O_EXCL | os.O_WRONLY)\n         ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\nFileNotFoundError: [Errno 2] No such file or directory: '/app/paper/benchmark_outputs/gpu_training.lock'\n",
+    "stdout_tail": "[2026-06-05T08:55:58.377583+00:00] [B seed=42] device=cuda\n[2026-06-05T08:55:58.396527+00:00] [B seed=42] loaded mapped Herath rows=2829\n[2026-06-05T08:55:58.397191+00:00] [B seed=42] overlap aspects (9)=['accessibility', 'assessment_design', 'exam_fairness', 'grading_transparency', 'lecturer_quality', 'materials', 'organization', 'overall_experience', 'workload']\n[2026-06-05T08:55:58.398184+00:00] [B seed=42] split real-train=1980 calib=283 real-test=566\n"
+  }
+]

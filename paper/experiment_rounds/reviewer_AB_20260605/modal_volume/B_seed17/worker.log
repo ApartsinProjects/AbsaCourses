@@ -1,0 +1,76 @@
+=== stdout ===
+[2026-06-05T10:12:25.517962+00:00] [B seed=17] device=cuda
+[2026-06-05T10:12:25.540890+00:00] [B seed=17] loaded mapped Herath rows=2829
+[2026-06-05T10:12:25.541581+00:00] [B seed=17] overlap aspects (9)=['accessibility', 'assessment_design', 'exam_fairness', 'grading_transparency', 'lecturer_quality', 'materials', 'organization', 'overall_experience', 'workload']
+[2026-06-05T10:12:25.542523+00:00] [B seed=17] split real-train=1980 calib=283 real-test=566
+[2026-06-05T10:12:25.542858+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T10:12:32.444089+00:00] [bert-base-uncased] detection training start: train_rows=1980 val_rows=283 epochs=3 batch_size=8 device=cuda
+[2026-06-05T10:12:54.569627+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=0.8848 val_micro_f1=0.6399 val_macro_f1=0.4651 best_macro_f1=0.4651 patience=0 epoch_seconds=22.1
+[2026-06-05T10:13:16.086804+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=0.5112 val_micro_f1=0.6625 val_macro_f1=0.5176 best_macro_f1=0.5176 patience=0 epoch_seconds=21.3
+[2026-06-05T10:13:37.676691+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.3165 val_micro_f1=0.7674 val_macro_f1=0.5745 best_macro_f1=0.5745 patience=0 epoch_seconds=21.4
+[2026-06-05T10:13:37.796530+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.5745
+[2026-06-05T10:13:37.797453+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T10:13:37.806326+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T10:13:38.810211+00:00] [bert-base-uncased] sentiment training start: train_rows=1980 val_rows=283 epochs=3 batch_size=8 device=cuda
+[2026-06-05T10:14:00.367534+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.3216 val_mse=0.2481 best_val_mse=0.2481 patience=0 epoch_seconds=21.6
+[2026-06-05T10:14:21.859203+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.1665 val_mse=0.2364 best_val_mse=0.2364 patience=0 epoch_seconds=21.4
+[2026-06-05T10:14:43.467918+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.1178 val_mse=0.2405 best_val_mse=0.2364 patience=0 epoch_seconds=21.5
+[2026-06-05T10:14:43.512556+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.2364
+[2026-06-05T10:14:43.513110+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[2026-06-05T10:14:47.998916+00:00] [B seed=17] real-test micro_f1=0.7426 macro_f1=0.6147
+RESULT_JSON_BEGIN
+{
+  "experiment": "B_real_herath_trained_baseline",
+  "seed": 17,
+  "n_total_mapped": 2829,
+  "n_overlap_aspects": 9,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_train": 1980,
+  "n_calib": 283,
+  "n_test": 566,
+  "thresholds": {
+    "accessibility": 0.05,
+    "assessment_design": 0.35,
+    "exam_fairness": 0.7,
+    "grading_transparency": 0.49999999999999994,
+    "lecturer_quality": 0.49999999999999994,
+    "materials": 0.9,
+    "organization": 0.65,
+    "overall_experience": 0.9,
+    "workload": 0.95
+  },
+  "synthetic_only_reference_micro_f1": 0.4593,
+  "real_test_summary": {
+    "micro_precision": 0.6958710976837865,
+    "micro_recall": 0.7960829493087558,
+    "micro_f1": 0.7426114991939817,
+    "macro_precision": 0.6171889847342654,
+    "macro_recall": 0.7254314786309992,
+    "macro_f1": 0.6147318443013522,
+    "macro_balanced_accuracy": 0.8102288676639479,
+    "macro_specificity": 0.8950262566968967,
+    "macro_mcc": 0.5598077453379641,
+    "label_accuracy": 0.9059678052610914,
+    "subset_accuracy": 0.5070671378091873,
+    "samples_f1": 0.7762975540360699,
+    "samples_jaccard": 0.7106133266027259,
+    "sentiment_mse_detected": 0.21033275810703528
+  },
+  "real_test_micro_f1": 0.7426114991939817,
+  "real_test_macro_f1": 0.6147318443013522,
+  "elapsed_seconds": 142.6
+}
+RESULT_JSON_END
+
+=== stderr ===
+

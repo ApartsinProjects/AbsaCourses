@@ -1,0 +1,112 @@
+=== stdout ===
+[2026-06-05T10:12:23.244148+00:00] [A seed=41] device=cuda
+[2026-06-05T10:12:24.312590+00:00] [A seed=41] loaded corpus rows=10000
+[2026-06-05T10:12:24.317436+00:00] [A seed=41] n_aspects=20
+[2026-06-05T10:12:24.320634+00:00] [A seed=41] split train=8000 calib=1000 test=1000
+[2026-06-05T10:12:24.323362+00:00] [A seed=41] split matches library three_way_split exactly
+[2026-06-05T10:12:24.323644+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T10:12:34.998880+00:00] [bert-base-uncased] detection training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T10:14:24.743202+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.2093 val_micro_f1=0.2423 val_macro_f1=0.2703 best_macro_f1=0.2703 patience=0 epoch_seconds=109.7
+[2026-06-05T10:16:15.572866+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.1110 val_micro_f1=0.2561 val_macro_f1=0.3022 best_macro_f1=0.3022 patience=0 epoch_seconds=110.7
+[2026-06-05T10:18:07.058676+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.0435 val_micro_f1=0.2690 val_macro_f1=0.3062 best_macro_f1=0.3062 patience=0 epoch_seconds=111.3
+[2026-06-05T10:18:07.206543+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.3062
+[2026-06-05T10:18:07.207040+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-06-05T10:18:07.214421+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-06-05T10:18:07.819744+00:00] [bert-base-uncased] sentiment training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-06-05T10:19:59.186141+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.6418 val_mse=0.5984 best_val_mse=0.5984 patience=0 epoch_seconds=111.4
+[2026-06-05T10:21:50.745069+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.5460 val_mse=0.5558 best_val_mse=0.5558 patience=0 epoch_seconds=111.5
+[2026-06-05T10:23:42.518633+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.4486 val_mse=0.5609 best_val_mse=0.5558 patience=0 epoch_seconds=111.5
+[2026-06-05T10:23:42.600797+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.5558
+[2026-06-05T10:23:42.601177+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[2026-06-05T10:23:51.549398+00:00] [A seed=41] FULL test micro_f1=0.2720
+[2026-06-05T10:23:51.549483+00:00] [A seed=41] reproduce gate (|0.2720 - 0.276|<= 0.02): True
+[2026-06-05T10:23:51.758357+00:00] [A seed=41] joined faithfulness for 1000/1000 test rows
+[2026-06-05T10:23:51.800998+00:00] [A seed=41] FILTERED faithful(=1.0) micro_f1=0.28597533120146185 (n=380); >=0.5 micro_f1=0.2948343079922027 (n=673)
+RESULT_JSON_BEGIN
+{
+  "experiment": "A_filtered_test_f1",
+  "seed": 41,
+  "n_aspects": 20,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "clarity",
+    "difficulty",
+    "exam_fairness",
+    "feedback_quality",
+    "grading_transparency",
+    "interest",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "pacing",
+    "peer_interaction",
+    "practical_application",
+    "prerequisite_fit",
+    "relevance",
+    "support",
+    "tooling_usability",
+    "workload"
+  ],
+  "thresholds": {
+    "accessibility": 0.39999999999999997,
+    "assessment_design": 0.7,
+    "clarity": 0.49999999999999994,
+    "difficulty": 0.7,
+    "exam_fairness": 0.75,
+    "feedback_quality": 0.6,
+    "grading_transparency": 0.9,
+    "interest": 0.5499999999999999,
+    "lecturer_quality": 0.65,
+    "materials": 0.7,
+    "organization": 0.9,
+    "overall_experience": 0.44999999999999996,
+    "pacing": 0.85,
+    "peer_interaction": 0.9,
+    "practical_application": 0.7,
+    "prerequisite_fit": 0.65,
+    "relevance": 0.65,
+    "support": 0.3,
+    "tooling_usability": 0.7,
+    "workload": 0.75
+  },
+  "paper_reference": {
+    "bert_micro_f1_single_seed": 0.276,
+    "bert_micro_f1_3seed_mean": 0.2791,
+    "tol": 0.02
+  },
+  "full_test": {
+    "micro_precision": 0.2021047596268835,
+    "micro_recall": 0.41564190850959176,
+    "micro_f1": 0.2719665271966527,
+    "n_rows": 1000
+  },
+  "reproduce_ok": true,
+  "n_test_rows_joined_to_faithfulness": 1000,
+  "test_predictions_path": "/results/A_seed41/test_predictions.jsonl",
+  "faithful_only_row_score_eq_1": {
+    "micro_precision": 0.20089858793324775,
+    "micro_recall": 0.4960380348652932,
+    "micro_f1": 0.28597533120146185,
+    "n_rows": 380
+  },
+  "row_score_ge_0p5": {
+    "micro_precision": 0.21793948126801152,
+    "micro_recall": 0.4555722891566265,
+    "micro_f1": 0.2948343079922027,
+    "n_rows": 673
+  },
+  "noisy_row_score_lt_1": {
+    "micro_precision": 0.20282119710255433,
+    "micro_recall": 0.37945791726105566,
+    "micro_f1": 0.2643478260869565,
+    "n_rows": 620
+  },
+  "delta_faithful_minus_full": 0.014,
+  "elapsed_seconds": 688.6
+}
+RESULT_JSON_END
+
+=== stderr ===
+

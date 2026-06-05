@@ -1,0 +1,83 @@
+{
+  "experiment": "A_filtered_test_f1",
+  "seed": 41,
+  "n_aspects": 20,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "clarity",
+    "difficulty",
+    "exam_fairness",
+    "feedback_quality",
+    "grading_transparency",
+    "interest",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "pacing",
+    "peer_interaction",
+    "practical_application",
+    "prerequisite_fit",
+    "relevance",
+    "support",
+    "tooling_usability",
+    "workload"
+  ],
+  "thresholds": {
+    "accessibility": 0.39999999999999997,
+    "assessment_design": 0.7,
+    "clarity": 0.49999999999999994,
+    "difficulty": 0.7,
+    "exam_fairness": 0.75,
+    "feedback_quality": 0.6,
+    "grading_transparency": 0.9,
+    "interest": 0.5499999999999999,
+    "lecturer_quality": 0.65,
+    "materials": 0.7,
+    "organization": 0.9,
+    "overall_experience": 0.44999999999999996,
+    "pacing": 0.85,
+    "peer_interaction": 0.9,
+    "practical_application": 0.7,
+    "prerequisite_fit": 0.65,
+    "relevance": 0.65,
+    "support": 0.3,
+    "tooling_usability": 0.7,
+    "workload": 0.75
+  },
+  "paper_reference": {
+    "bert_micro_f1_single_seed": 0.276,
+    "bert_micro_f1_3seed_mean": 0.2791,
+    "tol": 0.02
+  },
+  "full_test": {
+    "micro_precision": 0.2021047596268835,
+    "micro_recall": 0.41564190850959176,
+    "micro_f1": 0.2719665271966527,
+    "n_rows": 1000
+  },
+  "reproduce_ok": true,
+  "n_test_rows_joined_to_faithfulness": 1000,
+  "test_predictions_path": "/results/A_seed41/test_predictions.jsonl",
+  "faithful_only_row_score_eq_1": {
+    "micro_precision": 0.20089858793324775,
+    "micro_recall": 0.4960380348652932,
+    "micro_f1": 0.28597533120146185,
+    "n_rows": 380
+  },
+  "row_score_ge_0p5": {
+    "micro_precision": 0.21793948126801152,
+    "micro_recall": 0.4555722891566265,
+    "micro_f1": 0.2948343079922027,
+    "n_rows": 673
+  },
+  "noisy_row_score_lt_1": {
+    "micro_precision": 0.20282119710255433,
+    "micro_recall": 0.37945791726105566,
+    "micro_f1": 0.2643478260869565,
+    "n_rows": 620
+  },
+  "delta_faithful_minus_full": 0.014,
+  "elapsed_seconds": 688.6
+}
