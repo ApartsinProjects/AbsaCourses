@@ -1,0 +1,280 @@
+[17:21:46.659] ============================================================
+[17:21:46.659]   GPU2RunPod: job-20260605-172146
+[17:21:46.659]   Script: python3 -u c1_driver_runpod.py
+[17:21:46.659]   GPU: RTX_4090, Max: $1.2/hr, Cloud: SECURE
+[17:21:46.659]   Log file: C:\Users\apart\Projects\claude-skills\gpu2runpod\logs\job-20260605-172146.log
+[17:21:46.659] ============================================================
+[17:21:46.660] [preflight] Validating credentials (RunPod API + R2 storage)...
+[17:21:49.648]   RunPod API key OK + R2 volume reachable
+[17:21:49.648] [0a/6] Bundle integrity check (file existence + tar readability)...
+[17:21:49.652]   Integrity OK
+[17:21:49.652] [1/6] Initializing RunPod storage + uploading data...
+  [runpod-storage] Volume: v0rxzbhzc2, Job prefix: job-20260605-172146/
+  [runpod-storage] Volume accessible
+  Uploaded: c1_driver_runpod.py (3,654 bytes)
+  Uploaded: absa_data_io.py (6,606 bytes)
+  Uploaded: c1_worker.py (14,110 bytes)
+  Uploaded: absa_model_comparison.py (107,712 bytes)
+  Uploaded: edurabsa_test_mapped.jsonl (696,850 bytes)
+  Uploaded: herath_mapped_real_reviews_2829.jsonl (1,510,038 bytes)
+  Uploaded: cleaned_corpus_10k.jsonl (9,264,023 bytes)
+  Uploaded: onstart.sh (15,965 bytes)
+  Uploaded: progress_reporter.py (4,347 bytes)
+  Uploaded: gpu2runpod_observer.py (4,224 bytes)
+[17:21:55.281]   Upload complete (5.6s)
+[17:21:55.281] [2/6] Searching for RTX_4090 (<=$1.20/hr, SECURE)...
+  [runpod] Searching for RTX_4090 (chain=1 SKUs, pools=['SECURE'])
+  [runpod] Found: NVIDIA GeForce RTX 4090 @ ~$0.340/hr, 24GB VRAM (SECURE, stock=Low)
+[17:21:58.261]   GPU found: RTX 4090 @ $0.340/hr (SECURE)
+[17:21:58.261]   ETA: ~66 min total, ~$0.3741
+[17:21:58.261]     upload=0m  boot=2m  setup=4m  train=60m  fetch=0m
+[17:21:59.077]   [budget] RunPod balance $19.46; job needs ~$0.37 (+buffer $0.41)
+[17:21:59.077] [3/6] Creating RunPod pod...
+  Auto-selected image: runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04
+[17:22:00.713]   Pod created: mi406h1nslquxs (image: runpod/pytorch:2.4.0-py3.11-cuda12.4.1-devel-ubuntu22.04)
+[17:22:00.713] [4/6] Waiting for pod to boot + SSH health check...
+[17:22:00.713]   [timing] pod_created_at=2026-06-05T17:22:00.713735
+  [runpod] Waiting for pod mi406h1nslquxs to boot (timeout=300s)...
+  [runpod] Status: RUNNING
+[17:22:25.121]   Pod RUNNING after 24s
+[17:22:25.866]   SSH endpoint: 213.173.109.18:14587
+[17:22:27.106]   SSH health check: OK (1s)
+[17:22:27.106]   [timing] boot=24s  ssh_ready=2s  total_to_ssh=26s
+[17:22:27.106] [5/6] Bootstrapping pod (pip install + storage download + run job)...
+[17:22:32.232]   Bootstrap started: [bootstrap] ENV: ep=https://s3api-us-ks-2.runpod.io/ vol=v0rxzbhzc2 pfx=job-20260605-172146
+BOOTSTRAP_PID:148
+[17:22:32.232]   [timing] bootstrap_start=5s after SSH
+[17:22:32.238] [6/6] Monitoring (Ctrl+C to detach, use 'recover' to reconnect)...
+  Polling storage every 5s (stale_timeout=1800s)...
+[17:22:33.591] [pod] [GPU2RunPod] [0s] Starting job: job-20260605-172146
+[17:22:33.591] [pod] [GPU2RunPod] [0s] ENV: ep=https://s3api-us-ks-2.runpod.io/ vol=v0rxzbhzc2 pfx=job-20260605-172146
+[17:22:33.592] [pod] [GPU2RunPod] [0s] Image: "Ubuntu 22.04.5 LTS"
+[17:22:33.592] [pod] [GPU2RunPod] [0s] GPU: NVIDIA GeForce RTX 4090, 24564 MiB
+[17:22:33.592] [pod] unPod] [0s] Image: "Ubuntu 22.04.5 LTS"
+[17:22:33.592] [pod] [GPU2RunPod] [0s] GPU: NVIDIA GeForce RTX 4090, 24564 MiB
+[17:22:35.589] [pod] [GPU2RunPod] [3s] CUDA preflight OK (12.4)
+[17:22:35.589] [pod] [GPU2RunPod] [3s] Installing packages...
+[17:22:37.590] [pod] 4 -> peft>=0.19,<0.20 bitsandbytes<0.45 trl<0.13
+[17:22:37.590] [pod] [GPU2RunPod] [4s] Workload profile: full
+[17:22:37.590] [pod] 4.1+cu124 -> peft>=0.19,<0.20 bitsandbytes<0.45 trl<0.13
+[17:22:37.590] [pod] [GPU2RunPod] [4s] Workload profile: full
+[17:22:56.597] [pod]  with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[17:22:56.598] [pod] [notice] A new release of pip is available: 24.2 -> 26.1.2
+[17:22:56.598] [pod] [notice] To update, run: python -m pip install --upgrade pip
+[17:22:57.591] [pod] [GPU2RunPod] [24s] Packages installed (21s, profile=full)
+[17:22:57.591] [pod] [GPU2RunPod] [24s] Downloading data from RunPod storage...
+[17:22:57.591] [pod] [GPU2RunPod] [24s] Downloading data from RunPod storage...
+[17:23:02.597] [pod] 172146/data/c1_driver_runpod.py (3,654 bytes)
+[17:23:02.597] [pod]   job-20260605-172146/data/absa_data_io.py (6,606 bytes)
+[17:23:02.597] [pod]   job-20260605-172146/data/c1_worker.py (14,110 bytes)
+[17:23:02.597] [pod]   job-20260605-172146/data/absa_model_comparison.py (107,712 bytes)
+[17:23:02.597] [pod]   job-20260605-172146/data/edurabsa_test_mapped.jsonl (696,850 bytes)
+[17:23:02.597] [pod]   job-20260605-172146/data/herath_mapped_real_reviews_2829.jsonl (1,510,038 bytes)
+[17:23:02.597] [pod]   job-20260605-172146/data/cleaned_corpus_10k.jsonl (9,264,023 bytes)
+[17:23:02.598] [pod] [GPU2RunPod] Downloaded 7 files (11,602,993 bytes) in 4.9s (2.3 MB/s)
+[17:23:02.598] [pod] [GPU2RunPod] [29s] Data download complete (5s)
+[17:23:02.598] [pod] [GPU2RunPod] [29s] Data download complete (5s)
+[17:23:03.593] [pod] /progress_reporter.py
+[17:23:03.593] [pod]   Downloaded gpu2runpod_observer.py to /root/data/gpu2runpod_observer.py
+[17:23:03.593] [pod] [GPU2RunPod] [31s] Starting progress reporter
+[17:23:03.593] [pod] [GPU2RunPod] [31s] Starting GPU observer
+[17:23:03.593] [pod] [GPU2RunPod] [31s] TensorBoard not started (pass --tensorboard to runpod_runner.py to enable)
+[17:23:03.593] [pod] [GPU2RunPod] [31s] Running: python3 -u c1_driver_runpod.py
+[17:23:03.593] [pod] [train] installing pinned deps (transformers==4.46.0, accelerate==1.1.1, sklearn, pandas)...
+[17:23:03.593] [pod] /root/gpu2runpod_observer.py:27: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+[17:23:03.593] [pod]   import pynvml
+[17:23:04.592] [pod] WARNING: The candidate selected for download or install is a yanked version: 'transformers' candidate (version 4.46.0 at https://files.pythonhosted.org/packages/db/88/1ef8a624a33d7fe460a686b9e0194a7916320fc0d67d4e38e570beeac039/transformers-4.46.0-py3-none-any.whl (from https://pypi.org/simple/transformers/) (requires-python:>=3.8.0))
+[17:23:04.593] [pod] Reason for being yanked: This version unfortunately does not work with 3.8 but we did not drop the support yet
+[17:23:04.593] [pod] [observer] GPU: 0% util, 0.46/23.99GB VRAM, 31C, 9.8W
+  PROGRESS: t=0.6m
+[17:23:07.593] [pod] WARNING: Running pip as the 'root' user can result in broken permissions and conflicting behaviour with the system package manager, possibly rendering your system unusable.It is recommended to use a virtual environment instead: https://pip.pypa.io/warnings/venv. Use the --root-user-action option if you know what you are doing and want to suppress this warning.
+[17:23:07.593] [pod] [notice] A new release of pip is available: 24.2 -> 26.1.2
+[17:23:07.593] [pod] [notice] To update, run: python3 -m pip install --upgrade pip
+[17:23:07.593] [pod] /usr/local/lib/python3.11/dist-packages/torch/cuda/__init__.py:58: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+[17:23:07.593] [pod]   import pynvml  # type: ignore[import]
+[17:23:07.593] [pod] [train] GPU: NVIDIA GeForce RTX 4090 | torch 2.4.1+cu124
+[17:23:08.591] [pod] [train] transformers 4.46.0
+[17:23:11.592] [pod] [train] bert-base-uncased import OK
+[17:23:11.592] [pod] [train] 1/8 smoke: herath seed42 (reproduce gate vs 0.4593)...
+[17:23:11.592] [pod] [2026-06-05T14:23:11.546625+00:00] [C1 seed=42 target=herath] device=cuda
+[17:23:12.613] [pod] [2026-06-05T14:23:11.615480+00:00] [C1 seed=42 target=herath] real_rows=2829 aspects(9)=['accessibility', 'assessment_design', 'exam_fairness', 'grading_transparency', 'lecturer_quality', 'materials', 'organization', 'overall_experience', 'workload']
+[17:23:12.614] [pod] [2026-06-05T14:23:11.618057+00:00] [C1 seed=42 target=herath] restricted synth rows with >=1 overlap aspect: 6867/10000
+[17:23:12.614] [pod] [2026-06-05T14:23:11.618232+00:00] [C1 seed=42 target=herath] synth split train=5495 calib=686 (test split unused)
+[17:23:12.614] [pod] [2026-06-05T14:23:11.645398+00:00] [C1 seed=42 baseline] det_train_rows=5495 det_labels=7395 sent_labels=7395
+[17:23:12.614] [pod] [2026-06-05T14:23:11.645782+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /root/data/paper/benchmark_outputs/gpu_training.lock
+  PROGRESS: t=0.7m
+[17:23:14.593] [pod] [observer] GPU: 0% util, 1.31/23.99GB VRAM, 32C, 20.4W
+[17:23:15.593] [pod] [2026-06-05T14:23:15.212521+00:00] [bert-base-uncased] detection training start: train_rows=5495 val_rows=686 epochs=3 batch_size=8 device=cuda
+  PROGRESS: t=0.8m
+
+  >> Phase: Training
+  PROGRESS: [=============>       ] 69% (6867/10000) | t=0.9m
+[17:23:25.593] [pod] [observer] GPU: 94% util, 3.4/23.99GB VRAM, 54C, 365.9W
+  PROGRESS: [=============>       ] 69% (6867/10000) | t=1.0m
+[17:23:35.594] [pod] [observer] GPU: 91% util, 3.4/23.99GB VRAM, 60C, 368.7W
+  PROGRESS: [=============>       ] 69% (6867/10000) | t=1.1m
+  PROGRESS: [=============>       ] 69% (6867/10000) | t=1.2m
+[17:23:45.595] [pod] [2026-06-05T14:23:44.600541+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.0949 val_micro_f1=0.3535 val_macro_f1=0.3803 best_macro_f1=0.3803 patience=0 epoch_seconds=29.4
+[17:23:46.597] [pod] [observer] GPU: 90% util, 3.42/23.99GB VRAM, 60C, 335.6W
+  PROGRESS: [=============>       ] 69% (6867/10000) | t=1.3m
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0949 | epoch=1 | acc=0.3535 | t=1.4m
+[17:23:56.596] [pod] [observer] GPU: 93% util, 3.42/23.99GB VRAM, 62C, 372.1W
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0949 | epoch=1 | acc=0.3535 | t=1.5m
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0949 | epoch=1 | acc=0.3535 | t=1.6m
+[17:24:07.598] [pod] [observer] GPU: 94% util, 3.42/23.99GB VRAM, 67C, 373.2W
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0949 | epoch=1 | acc=0.3535 | t=1.7m
+[17:24:14.598] [pod] [2026-06-05T14:24:14.004531+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=0.9722 val_micro_f1=0.3826 val_macro_f1=0.4122 best_macro_f1=0.4122 patience=0 epoch_seconds=29.2
+[17:24:17.601] [pod] [observer] GPU: 94% util, 3.42/23.99GB VRAM, 64C, 371.3W
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0949 | epoch=1 | acc=0.3535 | t=1.8m
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9722 | epoch=2 | acc=0.3826 | t=1.8m
+[17:24:28.600] [pod] [observer] GPU: 94% util, 3.42/23.99GB VRAM, 69C, 369.9W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9722 | epoch=2 | acc=0.3826 | t=1.9m
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9722 | epoch=2 | acc=0.3826 | t=2.0m
+[17:24:38.602] [pod] [observer] GPU: 91% util, 3.42/23.99GB VRAM, 68C, 371.5W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9722 | epoch=2 | acc=0.3826 | t=2.1m
+[17:24:43.606] [pod] [2026-06-05T14:24:43.428164+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.9056 val_micro_f1=0.3709 val_macro_f1=0.3802 best_macro_f1=0.4122 patience=0 epoch_seconds=29.2
+[17:24:43.606] [pod] [2026-06-05T14:24:43.468563+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.4122
+[17:24:43.606] [pod] [2026-06-05T14:24:43.468755+00:00] [bert-base-uncased:detection] released GPU training lock
+[17:24:43.606] [pod] [2026-06-05T14:24:43.476473+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /root/data/paper/benchmark_outputs/gpu_training.lock
+[17:24:44.604] [pod] [2026-06-05T14:24:43.856518+00:00] [bert-base-uncased] sentiment training start: train_rows=5495 val_rows=686 epochs=3 batch_size=8 device=cuda
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9722 | epoch=2 | acc=0.3826 | t=2.2m
+[17:24:49.609] [pod] [observer] GPU: 92% util, 4.31/23.99GB VRAM, 68C, 371.8W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9722 | epoch=2 | acc=0.3826 | t=2.3m
+  PROGRESS: [====================>] 100% (3/3) | loss=0.9056 | epoch=3 | acc=0.4122 | t=2.4m
+[17:24:59.605] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 67C, 370.4W
+  PROGRESS: [====================>] 100% (3/3) | loss=0.9056 | epoch=3 | acc=0.4122 | t=2.5m
+  PROGRESS: [====================>] 100% (3/3) | loss=0.9056 | epoch=3 | acc=0.4122 | t=2.6m
+[17:25:10.602] [pod] [observer] GPU: 91% util, 4.31/23.99GB VRAM, 69C, 372.6W
+[17:25:13.605] [pod] [2026-06-05T14:25:13.106819+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.6441 val_mse=0.5592 best_val_mse=0.5592 patience=0 epoch_seconds=29.2
+  PROGRESS: [====================>] 100% (3/3) | loss=0.9056 | epoch=3 | acc=0.4122 | t=2.7m
+[17:25:20.602] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 69C, 374.9W
+  PROGRESS: [====================>] 100% (3/3) | loss=0.9056 | epoch=3 | acc=0.4122 | t=2.8m
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6441 | epoch=1 | t=2.9m
+[17:25:31.605] [pod] [observer] GPU: 92% util, 4.31/23.99GB VRAM, 69C, 375.5W
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6441 | epoch=1 | t=3.0m
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6441 | epoch=1 | t=3.1m
+[17:25:41.609] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 69C, 375.7W
+[17:25:42.607] [pod] [2026-06-05T14:25:42.431227+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.5084 val_mse=0.4917 best_val_mse=0.4917 patience=0 epoch_seconds=29.3
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6441 | epoch=1 | t=3.2m
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6441 | epoch=1 | t=3.3m
+[17:25:52.606] [pod] [observer] GPU: 92% util, 4.31/23.99GB VRAM, 69C, 376.9W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.5084 | epoch=2 | t=3.4m
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.5084 | epoch=2 | t=3.5m
+[17:26:02.606] [pod] [observer] GPU: 91% util, 4.31/23.99GB VRAM, 69C, 376.0W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.5084 | epoch=2 | t=3.6m
+[17:26:12.606] [pod] [2026-06-05T14:26:11.851980+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.3768 val_mse=0.5101 best_val_mse=0.4917 patience=0 epoch_seconds=29.3
+[17:26:12.606] [pod] [2026-06-05T14:26:11.892425+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.4917
+[17:26:12.606] [pod] [2026-06-05T14:26:11.892618+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[17:26:12.606] [pod] [observer] GPU: 76% util, 4.31/23.99GB VRAM, 70C, 395.5W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.5084 | epoch=2 | t=3.7m
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.5084 | epoch=2 | t=3.8m
+[17:26:21.608] [pod] [2026-06-05T14:26:20.828604+00:00] [C1 seed=42 baseline] real-transfer micro_f1=0.3185 sentiment_mse_detected=0.3493
+[17:26:21.608] [pod] [2026-06-05T14:26:20.911523+00:00] [C1 seed=42 treatment] det_train_rows=5495 det_labels=6305 sent_labels=4302
+[17:26:21.608] [pod] [2026-06-05T14:26:20.911909+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /root/data/paper/benchmark_outputs/gpu_training.lock
+[17:26:23.607] [pod] [observer] GPU: 0% util, 4.31/23.99GB VRAM, 52C, 69.1W
+[17:26:23.607] [pod] [2026-06-05T14:26:22.926767+00:00] [bert-base-uncased] detection training start: train_rows=5495 val_rows=686 epochs=3 batch_size=8 device=cuda
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.5084 | epoch=2 | t=3.9m
+  PROGRESS: [====================>] 100% (3/3) | loss=0.3768 | epoch=3 | acc=0.3185 | t=4.0m
+[17:26:33.610] [pod] [observer] GPU: 93% util, 4.31/23.99GB VRAM, 69C, 375.0W
+  PROGRESS: [====================>] 100% (3/3) | loss=0.3768 | epoch=3 | acc=0.3185 | t=4.0m
+  PROGRESS: [====================>] 100% (3/3) | loss=0.3768 | epoch=3 | acc=0.3185 | t=4.1m
+[17:26:43.610] [pod] [observer] GPU: 91% util, 4.31/23.99GB VRAM, 69C, 376.5W
+  PROGRESS: [====================>] 100% (3/3) | loss=0.3768 | epoch=3 | acc=0.3185 | t=4.2m
+[17:26:52.609] [pod] [2026-06-05T14:26:52.294561+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.0849 val_micro_f1=0.3856 val_macro_f1=0.4252 best_macro_f1=0.4252 patience=0 epoch_seconds=29.4
+  PROGRESS: [====================>] 100% (3/3) | loss=0.3768 | epoch=3 | acc=0.3185 | t=4.3m
+[17:26:54.616] [pod] [observer] GPU: 91% util, 4.31/23.99GB VRAM, 69C, 367.1W
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0849 | epoch=1 | acc=0.3856 | t=4.4m
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0849 | epoch=1 | acc=0.3856 | t=4.5m
+[17:27:04.612] [pod] [observer] GPU: 93% util, 4.31/23.99GB VRAM, 67C, 376.4W
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0849 | epoch=1 | acc=0.3856 | t=4.6m
+[17:27:15.615] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 69C, 375.2W
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0849 | epoch=1 | acc=0.3856 | t=4.7m
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0849 | epoch=1 | acc=0.3856 | t=4.8m
+[17:27:22.613] [pod] [2026-06-05T14:27:21.679133+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=0.9268 val_micro_f1=0.3778 val_macro_f1=0.4236 best_macro_f1=0.4252 patience=0 epoch_seconds=29.3
+[17:27:25.614] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 70C, 374.2W
+  PROGRESS: [======>              ] 33% (1/3) | loss=1.0849 | epoch=1 | acc=0.3856 | t=4.9m
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9268 | epoch=2 | acc=0.3778 | t=5.0m
+[17:27:36.613] [pod] [observer] GPU: 91% util, 4.31/23.99GB VRAM, 66C, 376.4W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9268 | epoch=2 | acc=0.3778 | t=5.1m
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9268 | epoch=2 | acc=0.3778 | t=5.2m
+[17:27:46.615] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 70C, 374.3W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9268 | epoch=2 | acc=0.3778 | t=5.3m
+[17:27:51.617] [pod] [2026-06-05T14:27:51.022147+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.8416 val_micro_f1=0.4033 val_macro_f1=0.4226 best_macro_f1=0.4252 patience=1 epoch_seconds=29.3
+[17:27:51.618] [pod] [2026-06-05T14:27:51.022167+00:00] [bert-base-uncased] detection early stop at epoch 3
+[17:27:51.618] [pod] [2026-06-05T14:27:51.062570+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.4252
+[17:27:51.618] [pod] [2026-06-05T14:27:51.062758+00:00] [bert-base-uncased:detection] released GPU training lock
+[17:27:51.618] [pod] [2026-06-05T14:27:51.063872+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /root/data/paper/benchmark_outputs/gpu_training.lock
+[17:27:51.618] [pod] [2026-06-05T14:27:51.450437+00:00] [bert-base-uncased] sentiment training start: train_rows=5495 val_rows=686 epochs=3 batch_size=8 device=cuda
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.9268 | epoch=2 | acc=0.3778 | t=5.4m
+[17:27:57.620] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 69C, 368.8W
+  PROGRESS: [====================>] 100% (3/3) | loss=0.8416 | epoch=3 | acc=0.4252 | t=5.5m
+[17:28:07.617] [pod] [observer] GPU: 93% util, 4.31/23.99GB VRAM, 67C, 369.9W
+  PROGRESS: [====================>] 100% (3/3) | loss=0.8416 | epoch=3 | acc=0.4252 | t=5.6m
+  PROGRESS: [====================>] 100% (3/3) | loss=0.8416 | epoch=3 | acc=0.4252 | t=5.7m
+[17:28:18.619] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 68C, 367.8W
+  PROGRESS: [====================>] 100% (3/3) | loss=0.8416 | epoch=3 | acc=0.4252 | t=5.8m
+[17:28:21.618] [pod] [2026-06-05T14:28:20.690152+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.6383 val_mse=0.5268 best_val_mse=0.5268 patience=0 epoch_seconds=29.2
+  PROGRESS: [====================>] 100% (3/3) | loss=0.8416 | epoch=3 | acc=0.4252 | t=5.9m
+[17:28:28.619] [pod] [observer] GPU: 91% util, 4.31/23.99GB VRAM, 70C, 368.0W
+  PROGRESS: [====================>] 100% (3/3) | loss=0.8416 | epoch=3 | acc=0.4252 | t=6.0m
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6383 | epoch=1 | t=6.1m
+[17:28:39.627] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 67C, 367.5W
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6383 | epoch=1 | t=6.1m
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6383 | epoch=1 | t=6.2m
+[17:28:49.620] [pod] [observer] GPU: 91% util, 4.31/23.99GB VRAM, 69C, 368.3W
+[17:28:50.621] [pod] [2026-06-05T14:28:49.966987+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.4175 val_mse=0.4365 best_val_mse=0.4365 patience=0 epoch_seconds=29.2
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6383 | epoch=1 | t=6.3m
+  PROGRESS: [======>              ] 33% (1/3) | loss=0.6383 | epoch=1 | t=6.4m
+[17:29:00.622] [pod] [observer] GPU: 94% util, 4.31/23.99GB VRAM, 65C, 368.3W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.4175 | epoch=2 | t=6.5m
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.4175 | epoch=2 | t=6.6m
+[17:29:10.623] [pod] [observer] GPU: 91% util, 4.31/23.99GB VRAM, 69C, 370.8W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.4175 | epoch=2 | t=6.7m
+[17:29:19.623] [pod] [2026-06-05T14:29:19.351136+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.2799 val_mse=0.4414 best_val_mse=0.4365 patience=0 epoch_seconds=29.3
+[17:29:19.624] [pod] [2026-06-05T14:29:19.391581+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.4365
+[17:29:19.624] [pod] [2026-06-05T14:29:19.391767+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[17:29:20.623] [pod] [observer] GPU: 77% util, 4.31/23.99GB VRAM, 69C, 384.0W
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.4175 | epoch=2 | t=6.8m
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.4175 | epoch=2 | t=6.9m
+[17:29:28.625] [pod] [2026-06-05T14:29:28.226873+00:00] [C1 seed=42 treatment] real-transfer micro_f1=0.2640 sentiment_mse_detected=0.4627
+[17:29:28.625] [pod] [2026-06-05T14:29:28.302255+00:00] [C1 seed=42] reproduce gate (|0.3185 - 0.4593| <= 0.05): False
+[17:29:28.626] [pod] [train] herath s42: baseline_det_f1=0.3185 reproduce_ok=False sentmse_delta=0.1134
+[17:29:28.626] [pod] [train] REPRODUCE GATE FAILED (baseline 0.3185 not ~0.4593). Not scaling.
+[17:29:28.626] [pod] [train] === DONE ===
+[17:29:29.625] [pod] [GPU2RunPod] [416s] Training finished (exit=0, 416s total, 385s training)
+[17:29:29.625] [pod] [GPU2RunPod] [416s] Uploading results to RunPod storage...
+[17:29:29.625] [pod] 385s training)
+[17:29:29.625] [pod] [GPU2RunPod] [416s] Uploading results to RunPod storage...
+  PROGRESS: [=============>       ] 67% (2/3) | loss=0.4175 | epoch=2 | t=7.0m
+[17:29:34.626] [pod] ect.csv (1,968 bytes)
+[17:29:34.626] [pod]   herath_seed42/baseline/test_predictions.jsonl (5,479,108 bytes)
+[17:29:34.626] [pod]   herath_seed42/treatment/per_aspect.csv (1,992 bytes)
+[17:29:34.626] [pod]   herath_seed42/treatment/test_predictions.jsonl (5,632,664 bytes)
+[17:29:34.626] [pod] [GPU2RunPod] Uploaded 5 files (11,117,957 bytes) in 4.4s (2.4 MB/s)
+[17:29:34.627] [pod] [GPU2RunPod] [421s] ALL DONE (total 421s)
+[17:29:34.627] [pod] [GPU2RunPod] [421s] ALL DONE (total 421s)
+[17:29:39.012] 
+  Job finished: status=success exit_code=0 elapsed=426s
+[17:29:39.012] [7] Downloading results...
+  [runpod-storage] Downloading job-20260605-172146/results/ to results
+  [runpod-storage] Downloaded: per_aspect.csv (1,968 bytes)
+  [runpod-storage] Downloaded: result.json (2,225 bytes)
+  [runpod-storage] Downloaded: per_aspect.csv (1,992 bytes)
+  [runpod-storage] Downloaded: test_predictions.jsonl (5,479,108 bytes)
+  [runpod-storage] Downloaded: test_predictions.jsonl (5,632,664 bytes)
+  [runpod-storage] Downloaded 5 result files
+[17:29:42.421]   Downloaded 5 files to results (3.4s)
+[17:29:42.422] 
+============================================================
+[17:29:42.422]   COMPLETE: job-20260605-172146
+[17:29:42.422]   Results: results
+[17:29:42.422]   Actual cost: $0.0436 (7.7 min @ $0.340/hr)
+[17:29:42.422] ============================================================
+[17:29:42.422] 
+  Cleanup...
+[17:29:42.423]   Results validation: PASS - 6 non-empty files
+[17:29:43.099]   [cleanup] Pod mi406h1nslquxs terminated (budget-first default)
+  [runpod-storage] Deleting job prefix: job-20260605-172146/
+  [runpod-storage] Deleted 21 objects for job job-20260605-172146
+[17:29:53.191]   [cleanup] Storage job prefix job-20260605-172146/ deleted
+[17:29:53.191]   Cleanup complete

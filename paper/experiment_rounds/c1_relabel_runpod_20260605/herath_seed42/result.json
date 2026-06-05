@@ -1,0 +1,78 @@
+{
+  "experiment": "C1_relabel_and_retrain_synthetic_only_transfer",
+  "seed": 42,
+  "target": "herath",
+  "n_real_rows": 2829,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_aspects": 9,
+  "synthetic_only_transfer_reference_micro_f1_herath": 0.4593,
+  "reproduce_ok": false,
+  "baseline": {
+    "condition": "baseline",
+    "n_det_train_rows": 5495,
+    "n_det_train_labels": 7395,
+    "n_sent_train_labels": 7395,
+    "thresholds": {
+      "accessibility": 0.65,
+      "assessment_design": 0.65,
+      "exam_fairness": 0.5499999999999999,
+      "grading_transparency": 0.65,
+      "lecturer_quality": 0.85,
+      "materials": 0.65,
+      "organization": 0.7,
+      "overall_experience": 0.49999999999999994,
+      "workload": 0.65
+    },
+    "detection_micro_f1": 0.318483719423295,
+    "detection_micro_precision": 0.5217622080679406,
+    "detection_micro_recall": 0.2291909536022383,
+    "detection_macro_f1": 0.23437828180531303,
+    "sentiment_mse_detected": 0.3493235493693102
+  },
+  "treatment": {
+    "condition": "treatment",
+    "n_det_train_rows": 5495,
+    "n_det_train_labels": 6305,
+    "n_sent_train_labels": 4302,
+    "thresholds": {
+      "accessibility": 0.5499999999999999,
+      "assessment_design": 0.6,
+      "exam_fairness": 0.95,
+      "grading_transparency": 0.6,
+      "lecturer_quality": 0.75,
+      "materials": 0.39999999999999997,
+      "organization": 0.5499999999999999,
+      "overall_experience": 0.49999999999999994,
+      "workload": 0.7
+    },
+    "detection_micro_f1": 0.26400335242352285,
+    "detection_micro_precision": 0.32926829268292684,
+    "detection_micro_recall": 0.2203310795057123,
+    "detection_macro_f1": 0.2524798741992152,
+    "sentiment_mse_detected": 0.4626913288621008
+  },
+  "paired_delta_treatment_minus_baseline": {
+    "detection_micro_f1": -0.0545,
+    "sentiment_mse_detected": 0.1134
+  },
+  "config": {
+    "max_len": 192,
+    "batch_size": 8,
+    "lr": 3e-05,
+    "epochs_detection": 3,
+    "epochs_sentiment": 3,
+    "patience": 2,
+    "split_calib": 0.1,
+    "split_test": 0.1
+  }
+}
