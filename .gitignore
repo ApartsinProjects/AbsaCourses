@@ -57,3 +57,7 @@ _d2_cal_input.jsonl
 # in external_data/EduRABSA_mapped/ is what the experiment consumes).
 external_data/EduRABSA/
 external_data/EduRABSA_ASQE/
+
+# html2tex bundle (regenerable from the source HTML via the html2tex skill).
+_tmlr/
+
