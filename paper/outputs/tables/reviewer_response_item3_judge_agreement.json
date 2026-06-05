@@ -1,0 +1,55 @@
+{
+  "evidence_item": "3 - multi-judge convergence vs gpt-5.2",
+  "reference": "E:\\Projects\\CourseABSA\\paper\\faithfulness_audit\\faithfulness_audit_gpt-5_2_250_llm_responses.jsonl",
+  "reference_n_rows": 250,
+  "reference_n_aspects": 501,
+  "n_sample_rows": 250,
+  "judges": [
+    {
+      "judge": "gpt-4.1-mini",
+      "recomputed_vs_gpt5_2": {
+        "n_aspects_common": 501,
+        "per_aspect_support_agreement": 0.8743,
+        "per_aspect_match_agreement": 0.7904
+      },
+      "stored_in_calibration_json": {
+        "spearman_rho": 0.5204,
+        "pearson_r": 0.4694,
+        "candidate_aggregate_support_rate": 0.5526,
+        "candidate_aggregate_match_rate": 0.3742
+      }
+    },
+    {
+      "judge": "gpt-4o-mini",
+      "recomputed_vs_gpt5_2": {
+        "n_aspects_common": 498,
+        "per_aspect_support_agreement": 0.8454,
+        "per_aspect_match_agreement": 0.7149
+      },
+      "stored_in_calibration_json": {
+        "spearman_rho": 0.4593,
+        "pearson_r": 0.4625,
+        "candidate_aggregate_support_rate": 0.5766,
+        "candidate_aggregate_match_rate": 0.3449
+      }
+    },
+    {
+      "judge": "claude-3.5-haiku",
+      "recomputed_vs_gpt5_2": {
+        "n_aspects_common": 497,
+        "per_aspect_support_agreement": 0.8169,
+        "per_aspect_match_agreement": 0.6781
+      },
+      "stored_in_calibration_json": {
+        "per_aspect_support_agreement": 0.8169,
+        "per_aspect_match_agreement": 0.6781,
+        "n_aspects_common": 497,
+        "candidate_support_rate": 0.9054,
+        "candidate_match_rate": 0.672
+      }
+    }
+  ],
+  "note_behavioral_validation": "The strongest validity argument is behavioral, not human: the bot25 negative-control bucket (rows the judge scored LOWEST) collapses downstream Herath/EduRABSA sentiment transfer on ALL (architecture, target) conditions (Item 2: bot25 MSE >> full MSE in every cell), showing low-audit rows really are worse training data independent of any human label.",
+  "FLAG_manuscript_label_swap": "Manuscript line 1018 cites the AT-SCALE judge gpt-4.1-mini at 'per-aspect support agreement 0.845 and sentiment-match agreement 0.715'. Those values are actually gpt-4o-mini's (recomputed 0.8454 / 0.7149). The TRUE gpt-4.1-mini agreement vs gpt-5.2, recomputed here from the raw response files, is 0.8743 support / 0.7904 match (HIGHER, more favorable). The at-scale audit (_d2_atscale.py, MODEL='gpt-4.1-mini') was run with gpt-4.1-mini, so the manuscript should cite 0.874 / 0.790, not 0.845 / 0.715. Methodology is verified: recomputing Haiku from raw responses reproduces its stored 0.8169 / 0.6781 exactly.",
+  "note_human_study": "A human study is DESIGNED at human/ (codebook.md, tasks/task_1_realism_and_faithfulness, tasks/task_3_llm_judge_agreement) but has NO collected responses for the faithfulness/judge-agreement tasks (human/responses/task_1, task_3 hold only empty .gitkeep). A separate real-vs-synthetic discrimination study (human/responses/task_9/rater_A_complete.csv) does have one rater file, but it is a different study (realism discrimination, not faithfulness or judge agreement). Faithfulness/judge-agreement human validation is specified-but-not-executed; no human faithfulness results exist."
+}

@@ -1,0 +1,74 @@
+{
+  "evidence_item": "1 - test-split label faithfulness",
+  "input_artifact": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\faithfulness_audit\\at_scale_gpt-4.1-mini_per_row_scores.csv",
+  "n_scored_rows": 10000,
+  "caveats": [
+    "row_id is the 0-based line index into the 10K synthetic corpus (batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl).",
+    "The faithfulness audit indexes the 10K TRAINING corpus. The internal benchmark's 8000/1000/1000 split (manuscript Section 5.9) is defined on this same 10K corpus per the manuscript, but the EXACT test row_ids cannot be reconstructed with certainty: the training notebook (edu/absa_train_new.ipynb) splits via two nested sklearn train_test_split(random_state=42) calls on a file 'o4_mini_final_student_reviews_clean.jsonl' that is NOT on disk, while the manuscript text describes a numpy 'seeded permutation with seed 42' + fixed 0.80/0.10/0.10. These procedures give different partitions.",
+    "Therefore the full-10K faithfulness is the primary number; two seed-42 1000-row holdout reconstructions are reported as labelled fallbacks.",
+    "No per-row TEST predictions exist anywhere on disk (searched E:\\Projects\\CourseABSA and E:\\Claude\\CourseABSA for test_results*.csv / *test_pred*); the high-faithfulness-subset detection F1 is therefore NOT computable from saved artifacts and is intentionally omitted."
+  ],
+  "subsets": [
+    {
+      "subset": "full_10K",
+      "n_rows": 10000,
+      "mean_support_rate": 0.8421,
+      "mean_match_rate": 0.5766,
+      "mean_row_score": 0.5766,
+      "row_score_dist_pct": {
+        "0.00": 22.16,
+        "0.33": 11.13,
+        "0.50": 18.17,
+        "0.67": 11.01,
+        "1.00": 37.53
+      },
+      "n_aspects_total": 20019,
+      "row_ids_min_max": [
+        0,
+        9999
+      ]
+    },
+    {
+      "subset": "seed42_holdout_numpy_permutation_1000 (FALLBACK: matches manuscript text)",
+      "n_rows": 1000,
+      "mean_support_rate": 0.837,
+      "mean_match_rate": 0.5763,
+      "mean_row_score": 0.5763,
+      "row_score_dist_pct": {
+        "0.00": 22.3,
+        "0.33": 10.4,
+        "0.50": 18.2,
+        "0.67": 12.1,
+        "1.00": 37.0
+      },
+      "n_aspects_total": 1993,
+      "row_ids_min_max": [
+        4,
+        9987
+      ]
+    },
+    {
+      "subset": "seed42_holdout_nested_sklearn_1000 (FALLBACK: matches notebook code path)",
+      "n_rows": 1000,
+      "mean_support_rate": 0.8443,
+      "mean_match_rate": 0.575,
+      "mean_row_score": 0.575,
+      "row_score_dist_pct": {
+        "0.00": 23.2,
+        "0.33": 9.3,
+        "0.50": 19.0,
+        "0.67": 10.8,
+        "1.00": 37.7
+      },
+      "n_aspects_total": 1958,
+      "row_ids_min_max": [
+        0,
+        9998
+      ]
+    }
+  ],
+  "filtered_test_f1": {
+    "computable": false,
+    "reason": "No saved per-row TEST predictions on disk. Cannot recompute detection micro-F1 on row_score==1.0 subset vs full test. NOT fabricated."
+  }
+}
