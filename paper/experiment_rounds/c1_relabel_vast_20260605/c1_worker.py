@@ -201,20 +201,32 @@ def run(seed: int, target: str, out_dir: Path, cleaned_jsonl: Path,
     eng.log_event(f"[C1 seed={seed} target={target}] device={cfg.device}")
 
     cleaned_rows = _load_cleaned_corpus(cleaned_jsonl)
-    n = len(cleaned_rows)
-    assert n == 10000, f"expected 10000 cleaned rows, got {n}"
+    assert len(cleaned_rows) == 10000, f"expected 10000 cleaned rows, got {len(cleaned_rows)}"
 
     real_df = _load_real(target, herath_jsonl, edurabsa_jsonl)
     aspects = sorted({a for d in real_df["aspects"] for a in d.keys()})
     eng.log_event(f"[C1 seed={seed} target={target}] real_rows={len(real_df)} aspects({len(aspects)})={aspects}")
+
+    # Restrict the synthetic corpus to rows declaring >=1 overlap aspect in the ORIGINAL
+    # labels, matching evaluate_synthetic_to_real_transfer.restrict_to_overlap (which
+    # drops no-overlap rows BEFORE the split, then three_way_split over the restricted
+    # set). Keying on aspects_original keeps the kept-row set IDENTICAL for baseline and
+    # treatment, so the paired comparison stays matched; cleaning only changes labels
+    # within these rows. Without this, training on all 10k rows (mostly all-negative for
+    # the overlap aspects) under-trains the detector and the baseline does not reproduce
+    # the 0.4593 synthetic-only transfer reference (it gave 0.301).
+    keep = set(aspects)
+    restricted_rows = [r for r in cleaned_rows if any(a in keep for a in r["aspects_original"].keys())]
+    n = len(restricted_rows)
+    eng.log_event(f"[C1 seed={seed} target={target}] restricted synth rows with >=1 overlap aspect: {n}/10000")
 
     # SAME split row_ids for both conditions (computed on row order, label-independent)
     train_idx, calib_idx, test_idx = _split_indices(n, cfg, seed)
     eng.log_event(f"[C1 seed={seed} target={target}] synth split train={len(train_idx)} calib={len(calib_idx)} (test split unused)")
 
     out_dir.mkdir(parents=True, exist_ok=True)
-    baseline = _run_condition("baseline", cleaned_rows, aspects, real_df, cfg, seed, out_dir, train_idx, calib_idx)
-    treatment = _run_condition("treatment", cleaned_rows, aspects, real_df, cfg, seed, out_dir, train_idx, calib_idx)
+    baseline = _run_condition("baseline", restricted_rows, aspects, real_df, cfg, seed, out_dir, train_idx, calib_idx)
+    treatment = _run_condition("treatment", restricted_rows, aspects, real_df, cfg, seed, out_dir, train_idx, calib_idx)
 
     reproduce_ok = None
     if target == "herath":
