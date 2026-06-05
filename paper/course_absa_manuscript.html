@@ -512,12 +512,8 @@
         Within that split, the primary task formulation is two-step ABSA. A first stage predicts which aspects are present in a review, and a second stage assigns sentiment only to the aspects selected by the detector. This decomposition keeps omission errors and polarity errors analytically separate and makes the evaluation easier to interpret than a single opaque score. Reported results therefore combine multi-label detection metrics such as precision, recall, and F1 with a detected-aspect sentiment MSE that measures how well polarity is recovered once an aspect has been predicted. Prompt-based methods and mapped real-data transfer are evaluated under the same output contract, but they are reported as supporting analyses rather than as the central benchmark family.
       </p>
       <p>
-        Figure 3 summarizes the evaluation side of the study. Every reported approach begins from the same review-level corpus and the same 8,000/1,000/1,000 split, so differences in outcome come from the modeling approach rather than from incompatible data conditions. The diagram therefore emphasizes a single shared evaluation contract rather than separate model-specific pipelines: one corpus, one split, one validation stage, and one held-out reporting stage. The side annotations mark the two most important boundaries around that core flow, namely that validation is reserved for calibration and model choice, while mapped real-data transfer and generator-validation analyses are treated as complementary checks rather than replacements for the main synthetic benchmark.
+        The evaluation side of the study uses a single shared contract. Every reported approach begins from the same review-level corpus and the same 8,000/1,000/1,000 split, so differences in outcome come from the modeling approach rather than from incompatible data conditions: one corpus, one split, one validation stage, and one held-out reporting stage. Validation is reserved for calibration and model choice, while mapped real-data transfer and generator-validation analyses are treated as complementary checks rather than replacements for the main synthetic benchmark.
       </p>
-      <figure>
-        <img src="outputs/figures/absa_analysis_pipeline.svg" alt="ABSA analysis pipeline">
-        <figcaption>Figure 3. All reported methods share one corpus, one split policy, one validation stage, and one held-out test report.</figcaption>
-      </figure>
 
       <h3>3.3 Aspect Inventory and Pedagogical Scope</h3>
       <p>
@@ -681,7 +677,7 @@
       </p>
 
       <table>
-        <caption>Table 4. Exact corpus-level counts and ranges for the synthetic benchmark and the two real-data pools used in realism analysis and external transfer. The table provides the precise summary values that complement the broader visual distribution shown later in Figure 5.</caption>
+        <caption>Table 4. Exact corpus-level counts and ranges for the synthetic benchmark and the two real-data pools used in realism analysis and external transfer. The table provides the precise summary values that complement the broader visual distribution shown later in Figure 4.</caption>
         <thead>
           <tr>
             <th>Measure</th>
@@ -748,17 +744,17 @@
 
       <figure>
         <img src="outputs/figures/production_aspect_sentiment_heatmap.svg" alt="Aspect sentiment heatmap">
-        <figcaption>Figure 4. Aspect-level label support across the 10K / 20-aspect corpus. The heatmap shows polarity composition for each aspect, ordered by total support, and the companion bar panel shows the total number of labeled mentions per aspect.</figcaption>
+        <figcaption>Figure 3. Aspect-level label support across the 10K / 20-aspect corpus. The heatmap shows polarity composition for each aspect, ordered by total support, and the companion bar panel shows the total number of labeled mentions per aspect.</figcaption>
       </figure>
 
       <figure>
         <img src="outputs/figures/production_dataset_profile.svg" alt="Corpus profile">
-        <figcaption>Figure 5. Corpus profile and diversity cues. The panels visualize the distributional shape of review length, aspect-count mixture, course coverage, and observed style cues, while Table 4 provides the corresponding exact summary values.</figcaption>
+        <figcaption>Figure 4. Corpus profile and diversity cues. The panels visualize the distributional shape of review length, aspect-count mixture, course coverage, and observed style cues, while Table 4 provides the corresponding exact summary values.</figcaption>
       </figure>
 
       <h3>6.1 Corpus Profile and Representative Examples</h3>
       <p>
-        Figure 4 and Figure 5 establish the corpus-level structure before any model results are introduced. Figure 4 shows how label support is distributed across aspects and sentiment polarities, which makes it easier to distinguish heavily represented pedagogical dimensions from thinner parts of the schema. Figure 5 complements that view with review length, aspect-count mixture, course coverage, and style variation. Table 5 then gives a qualitative sense of how these distributions appear in actual review text. These examples are included to help the reader interpret the benchmark qualitatively, not as a substitute for aggregate model evidence.
+        Figure 3 and Figure 4 establish the corpus-level structure before any model results are introduced. Figure 3 shows how label support is distributed across aspects and sentiment polarities, which makes it easier to distinguish heavily represented pedagogical dimensions from thinner parts of the schema. Figure 4 complements that view with review length, aspect-count mixture, course coverage, and style variation. Table 5 then gives a qualitative sense of how these distributions appear in actual review text. These examples are included to help the reader interpret the benchmark qualitatively, not as a substitute for aggregate model evidence.
       </p>
       <table>
         <caption>Table 5. Representative synthetic review snippets showing how aspect labels appear under different writing styles and pedagogical situations.</caption>
@@ -830,7 +826,7 @@
         The additional diagnostics tell a fuller story than F1 alone. On the principal local comparison, BERT and DistilBERT are nearly tied in macro balanced accuracy at 0.6229 and 0.6207 respectively, while BERT now also holds the strongest untuned sentiment MSE and macro MCC. This is useful because the 20-aspect benchmark contains many negative label decisions per review, so balanced accuracy and specificity clarify whether a model is improving by recovering minority positives or merely by exploiting the dominant negatives. Appendix A.10 reports these complementary diagnostics for the principal synthetic-benchmark, GPT-based, and mapped real-data comparisons.
       </p>
       <p>
-        Table 7 provides the exact values for the executed local benchmark. Figure 6 serves a different role: instead of repeating the table cell-by-cell, it visualizes the main trade-offs among detection quality, recall, runtime, and sentiment error. This separation is intentional so that the table remains the precise archival record while the figure highlights the comparative structure of the result space.
+        Table 7 provides the exact values for the executed local benchmark. Figure 5 serves a different role: instead of repeating the table cell-by-cell, it visualizes the main trade-offs among detection quality, recall, runtime, and sentiment error. This separation is intentional so that the table remains the precise archival record while the figure highlights the comparative structure of the result space.
       </p>
 
       <table>
@@ -859,7 +855,7 @@
 
       <figure>
         <img src="outputs/figures/production_method_comparison.svg" alt="Benchmark comparison">
-        <figcaption>Figure 6. Local-benchmark trade-offs on the 10K / 20-aspect corpus. The left panel visualizes the cost-quality frontier using runtime, micro-F1, and sentiment MSE, while the right panel contrasts micro-F1 with micro-recall to show how some models gain coverage at the cost of more false positives.</figcaption>
+        <figcaption>Figure 5. Local-benchmark trade-offs on the 10K / 20-aspect corpus. The left panel visualizes the cost-quality frontier using runtime, micro-F1, and sentiment MSE, while the right panel contrasts micro-F1 with micro-recall to show how some models gain coverage at the cost of more false positives.</figcaption>
       </figure>
 
       <h3>6.4 GPT-Based Inference Methods</h3>
@@ -901,7 +897,7 @@
 
       <figure>
         <img src="outputs/figures/production_best_model_per_aspect.svg" alt="Best-model per-aspect benchmark">
-        <figcaption>Figure 7. Per-aspect detection F1 and sentiment MSE for the best untuned local model, BERT, on the held-out test split. The figure separates the strongest and weakest aspect groups, making it easier to see where the benchmark remains lexically explicit versus pedagogically latent.</figcaption>
+        <figcaption>Figure 6. Per-aspect detection F1 and sentiment MSE for the best untuned local model, BERT, on the held-out test split. The figure separates the strongest and weakest aspect groups, making it easier to see where the benchmark remains lexically explicit versus pedagogically latent.</figcaption>
       </figure>
 
       <table>
@@ -946,7 +942,7 @@
       </p>
 
       <table>
-        <caption>Table 8A. Exact synthetic-to-real transfer scores on the mapped Herath benchmark over the conservative nine-aspect overlap. The table gives the precise model values, while Figure 8 adds the overlap-support context needed to interpret them.</caption>
+        <caption>Table 8A. Exact synthetic-to-real transfer scores on the mapped Herath benchmark over the conservative nine-aspect overlap. The table gives the precise model values, while Figure 7 adds the overlap-support context needed to interpret them.</caption>
         <thead>
           <tr>
             <th>Rank</th>
@@ -968,12 +964,12 @@
 
       <figure>
         <img src="outputs/figures/real_transfer_overview.svg" alt="External validation on mapped real student feedback">
-        <figcaption>Figure 8. External validation on mapped real student feedback. The left panel provides overlap-support context from the mapped Herath corpus, while the center and right panels visualize the transfer scores reported exactly in Table 8A. The figure supports a partial-transfer claim only for the conservative 9-aspect overlap.</figcaption>
+        <figcaption>Figure 7. External validation on mapped real student feedback. The left panel provides overlap-support context from the mapped Herath corpus, while the center and right panels visualize the transfer scores reported exactly in Table 8A. The figure supports a partial-transfer claim only for the conservative 9-aspect overlap.</figcaption>
       </figure>
 
       <figure>
         <img src="outputs/figures/overlap_internal_vs_external_f1.svg" alt="Overlap-matched internal versus external comparison">
-        <figcaption>Figure 9. Overlap-matched internal versus external comparison on the same nine aspects. The absence of a uniform external drop indicates that the mapped real benchmark is partly shaped by overlap support and aspect composition rather than only by domain shift.</figcaption>
+        <figcaption>Figure 8. Overlap-matched internal versus external comparison on the same nine aspects. The absence of a uniform external drop indicates that the mapped real benchmark is partly shaped by overlap support and aspect composition rather than only by domain shift.</figcaption>
       </figure>
 
       <table>
@@ -1028,7 +1024,7 @@
         The full dataset is large enough to support a realistic internal benchmark, and it also reveals how output control behaves at scale. All 10,000 rows returned usable review text and no duplicates were detected. At the same time, 841 rows were marked incomplete because they reached the output-token cap, and overall length-band adherence settled at 0.6819 over the full corpus. The resulting dataset is therefore broad and usable while still leaving room for stronger long-form control in later releases.
       </p>
       <p>
-        This behavior does not invalidate the benchmark, because every row still contains the target labels and usable text, and the train-validation-test pipeline runs cleanly on the assembled corpus. It does, however, matter for interpretation: stronger long-form length control would further improve the controllability of future releases. Figure 5 makes this visible directly by combining length, aspect-count, course, and style evidence in one place.
+        This behavior does not invalidate the benchmark, because every row still contains the target labels and usable text, and the train-validation-test pipeline runs cleanly on the assembled corpus. It does, however, matter for interpretation: stronger long-form length control would further improve the controllability of future releases. Figure 4 makes this visible directly by combining length, aspect-count, course, and style evidence in one place.
       </p>
 
       <h3>6.7B Model-Assisted Label-Faithfulness Audit</h3>
@@ -1088,11 +1084,6 @@
         To make the realism analysis auditable, the appendix includes side-by-side real and synthetic review examples together with the synthetic review's sampled aspects and nuance attributes. The paper therefore reports not only the final cycle summary, but also the prompt instructions and qualitative evidence used to justify revision between cycles; the paired examples appear in Appendix A.2.
       </p>
 
-      <figure>
-        <img src="outputs/figures/realism_validation_pipeline.svg" alt="Realism validation and prompt refinement pipeline">
-        <figcaption>Figure 10. The realism-validation loop. A judge evaluates one blended pool of real and synthetic reviews, the resulting metrics and cue evidence are summarized, and prompt revision affects the next cycle.</figcaption>
-      </figure>
-
       <h3>6.7D Faithfulness-Aware Filtering of the Training Corpus</h3>
       <p>
         The 250-row audit in Section 6.7B reports a corpus-level aspect-sentiment match rate of 0.42 as a generator diagnostic. To turn that diagnostic into a method-level result, we extended the audit to the full 10,000-review corpus using a cost-matched judge (<code>gpt-4.1-mini</code>, calibrated against the <code>gpt-5.2</code> audit on the original 250 rows at per-aspect support agreement 0.845 and per-aspect sentiment-match agreement 0.715). For each row we recorded the fraction of declared aspects whose polarity is supported by the text, producing a per-row faithfulness score with a heavily quantized distribution: 22.2% of rows scored 0.00, 11.1% 0.33, 18.2% 0.50, 11.0% 0.67, and 37.5% 1.00.
@@ -1141,7 +1132,7 @@
       </table>
       <figure>
         <img src="outputs/figures/phase_e_headline.svg" alt="Faithfulness-aware filtering reduces sentiment-polarity error across two architectures and two transfer targets">
-        <figcaption>Figure 11. Faithfulness-aware filtering on the 10K synthetic corpus, evaluated across two transfer targets and two BERT-family architectures (n = 8 random seeds per condition, 95% bootstrap CI; lower is better). The <code>bot25</code> bucket fails on every condition, confirming the audit score is informative at the unfavorable end of the distribution. The <code>top50</code> bucket beats the size-matched random sample on both Herath transfer conditions, and matches the full corpus while training on half the data.</figcaption>
+        <figcaption>Figure 9. Faithfulness-aware filtering on the 10K synthetic corpus, evaluated across two transfer targets and two BERT-family architectures (n = 8 random seeds per condition, 95% bootstrap CI; lower is better). The <code>bot25</code> bucket fails on every condition, confirming the audit score is informative at the unfavorable end of the distribution. The <code>top50</code> bucket beats the size-matched random sample on both Herath transfer conditions, and matches the full corpus while training on half the data.</figcaption>
       </figure>
       <p>
         Practically, the result is that the audit score in Section 6.7B is an actionable filter for downstream training. Discarding the bottom 50% of the corpus by faithfulness score matches the full-corpus sentiment-MSE level at half the training cost on Herath, and the recipe transfers to a smaller distilled architecture without loss. Discarding the bottom 25% is decisively the wrong move: that bucket is an active liability for sentiment polarity on every (architecture, target) condition we tested, with sentiment MSE 0.34 to 0.42 above the full corpus.
@@ -1368,7 +1359,7 @@ Return only the review text.</pre></td>
         Table A4 documents the conservative overlap used for external validation against the Herath student-feedback corpus. The mapped real benchmark is intentionally narrower than the full 20-aspect schema, because only defensible correspondences were retained.
       </p>
       <table>
-        <caption>Table A4. Exact support and polarity balance for the nine overlap aspects retained in the mapped Herath benchmark. This appendix table preserves the full counts behind the lighter overlap context summarized in Figure 8.</caption>
+        <caption>Table A4. Exact support and polarity balance for the nine overlap aspects retained in the mapped Herath benchmark. This appendix table preserves the full counts behind the lighter overlap context summarized in Figure 7.</caption>
         <thead>
           <tr>
             <th>Aspect</th>
