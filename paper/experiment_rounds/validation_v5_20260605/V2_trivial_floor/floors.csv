@@ -1,0 +1,6 @@
+baseline,micro_f1,micro_precision,micro_recall
+predict_all_negative,0.0,0.0,0.0
+predict_all_positive,0.18289192749738792,0.10065,1.0
+predict_by_train_frequency_gt0p5,0.0,0.0,0.0
+random_at_train_prevalence_mean,0.10062897189128865,0.1009949570182037,0.10028564331843022
+bert_paper_reference,0.276,,

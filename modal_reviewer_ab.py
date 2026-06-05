@@ -29,8 +29,8 @@ import modal
 HERE = Path(__file__).parent.resolve()
 PAPER_DIR = HERE / "paper"
 DATA_DIR = PAPER_DIR / "reviewer_ab_data"
-TAG = "20260605"
-PHASE_OUT = PAPER_DIR / "experiment_rounds" / f"reviewer_AB_{TAG}"
+TAG = "validation_v5_20260605"
+PHASE_OUT = PAPER_DIR / "experiment_rounds" / TAG
 
 image = (
     modal.Image.from_registry(

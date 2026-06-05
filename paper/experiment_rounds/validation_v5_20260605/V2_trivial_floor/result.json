@@ -1,0 +1,76 @@
+{
+  "experiment": "V2_trivial_baseline_floor",
+  "seed": 42,
+  "n_test_rows": 1000,
+  "n_aspects": 20,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "clarity",
+    "difficulty",
+    "exam_fairness",
+    "feedback_quality",
+    "grading_transparency",
+    "interest",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "pacing",
+    "peer_interaction",
+    "practical_application",
+    "prerequisite_fit",
+    "relevance",
+    "support",
+    "tooling_usability",
+    "workload"
+  ],
+  "train_prevalence": {
+    "accessibility": 0.107125,
+    "assessment_design": 0.09725,
+    "clarity": 0.096625,
+    "difficulty": 0.098875,
+    "exam_fairness": 0.106,
+    "feedback_quality": 0.0945,
+    "grading_transparency": 0.101,
+    "interest": 0.09675,
+    "lecturer_quality": 0.101,
+    "materials": 0.10025,
+    "organization": 0.100375,
+    "overall_experience": 0.100375,
+    "pacing": 0.101,
+    "peer_interaction": 0.09675,
+    "practical_application": 0.097625,
+    "prerequisite_fit": 0.1035,
+    "relevance": 0.0925,
+    "support": 0.102625,
+    "tooling_usability": 0.10225,
+    "workload": 0.102875
+  },
+  "paper_bert_micro_f1": 0.276,
+  "floors": {
+    "predict_all_negative": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0
+    },
+    "predict_all_positive": {
+      "micro_precision": 0.10065,
+      "micro_recall": 1.0,
+      "micro_f1": 0.18289192749738792
+    },
+    "predict_by_train_frequency_gt0p5": {
+      "micro_precision": 0.0,
+      "micro_recall": 0.0,
+      "micro_f1": 0.0,
+      "n_aspects_predicted_present": 0
+    },
+    "random_at_train_prevalence": {
+      "micro_f1_mean": 0.10062897189128865,
+      "micro_f1_std": 0.006528798045078542,
+      "micro_precision_mean": 0.1009949570182037,
+      "micro_recall_mean": 0.10028564331843022,
+      "n_draws": 200
+    }
+  }
+}
