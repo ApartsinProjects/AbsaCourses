@@ -1,0 +1,39 @@
+{
+  "experiment": "internal_20aspect_auroc_local",
+  "seed": 42,
+  "n_aspects": 20,
+  "thresholded": {
+    "micro_f1": 0.276,
+    "macro_balanced_accuracy": 0.6229,
+    "micro_recall": 0.4396,
+    "micro_precision": 0.2012
+  },
+  "threshold_free": {
+    "n_test": 1000,
+    "micro_auroc": 0.6884,
+    "macro_auroc": 0.6813,
+    "macro_ap": 0.3437,
+    "per_aspect_auroc": {
+      "accessibility": 0.626,
+      "assessment_design": 0.715,
+      "clarity": 0.64,
+      "difficulty": 0.629,
+      "exam_fairness": 0.75,
+      "feedback_quality": 0.66,
+      "grading_transparency": 0.76,
+      "interest": 0.585,
+      "lecturer_quality": 0.758,
+      "materials": 0.715,
+      "organization": 0.709,
+      "overall_experience": 0.562,
+      "pacing": 0.827,
+      "peer_interaction": 0.629,
+      "practical_application": 0.746,
+      "prerequisite_fit": 0.536,
+      "relevance": 0.671,
+      "support": 0.545,
+      "tooling_usability": 0.757,
+      "workload": 0.807
+    }
+  }
+}
