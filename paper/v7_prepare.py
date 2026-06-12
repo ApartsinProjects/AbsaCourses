@@ -48,6 +48,9 @@ def main():
     req_path = BATCH_DIR / "v7_audit_requests.jsonl"
     man_rows = []
     text_format = build_text_format()
+    # gpt-4.1-mini-batch rejects text.verbosity='low' (only 'medium' supported)
+    if isinstance(text_format, dict) and text_format.get("verbosity") == "low":
+        text_format["verbosity"] = "medium"
     schema_aspects = set()
     # first pass to collect the global aspect vocabulary (for injection)
     loaded = {}
