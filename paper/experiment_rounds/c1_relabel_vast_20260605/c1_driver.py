@@ -28,6 +28,9 @@ sys.path.insert(0, str(BASE / "code"))  # c1_worker.py
 import c1_worker as c1  # noqa: E402
 from torch.utils.tensorboard import SummaryWriter  # noqa: E402
 
+c1.eng.configure_console_encoding()
+c1.eng.ensure_dirs()  # creates benchmark_outputs/ so the gpu_training_lock path exists
+
 RESULTS = Path("results")
 RESULTS.mkdir(parents=True, exist_ok=True)
 DATA = BASE / "data"
