@@ -1,0 +1,1201 @@
+custom_id,dataset,row_idx,variant,gt_faithful,labels,n_aspects,support_rate,match_rate,audit_faithful
+v7_herath_2042_faithful,herath,2042,faithful,True,"{""materials"": ""positive"", ""lecturer_quality"": ""neutral""}",2,0.5,0.5,False
+v7_herath_2042_flip,herath,2042,flip,False,"{""materials"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.5,0.0,False
+v7_herath_2042_inject,herath,2042,inject,False,"{""materials"": ""positive"", ""lecturer_quality"": ""neutral"", ""organization"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_2065_faithful,herath,2065,faithful,True,"{""lecturer_quality"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_2065_flip,herath,2065,flip,False,"{""lecturer_quality"": ""negative"", ""organization"": ""negative""}",2,0.5,0.0,False
+v7_herath_2065_inject,herath,2065,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""positive"", ""overall_experience"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1176_faithful,herath,1176,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""assessment_design"": ""positive"", ""exam_fairness"": ""positive""}",4,1.0,1.0,True
+v7_herath_1176_flip,herath,1176,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""assessment_design"": ""negative"", ""exam_fairness"": ""negative""}",4,1.0,0.0,False
+v7_herath_1176_inject,herath,1176,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""assessment_design"": ""positive"", ""exam_fairness"": ""positive"", ""accessibility"": ""positive""}",5,0.8,0.8,False
+v7_herath_1066_faithful,herath,1066,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1066_flip,herath,1066,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1066_inject,herath,1066,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,0.5,0.5,False
+v7_herath_1431_faithful,herath,1431,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1431_flip,herath,1431,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1431_inject,herath,1431,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_herath_854_faithful,herath,854,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_854_flip,herath,854,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_854_inject,herath,854,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1289_faithful,herath,1289,faithful,True,"{""lecturer_quality"": ""neutral""}",1,1.0,0.0,False
+v7_herath_1289_flip,herath,1289,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_1289_inject,herath,1289,inject,False,"{""lecturer_quality"": ""neutral"", ""overall_experience"": ""positive""}",2,1.0,0.0,False
+v7_herath_1959_faithful,herath,1959,faithful,True,"{""organization"": ""positive"", ""assessment_design"": ""positive"", ""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",4,0.75,0.75,False
+v7_herath_1959_flip,herath,1959,flip,False,"{""organization"": ""negative"", ""assessment_design"": ""negative"", ""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",4,0.5,0.0,False
+v7_herath_1959_inject,herath,1959,inject,False,"{""organization"": ""positive"", ""assessment_design"": ""positive"", ""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive""}",5,0.8,0.8,False
+v7_herath_560_faithful,herath,560,faithful,True,"{""assessment_design"": ""negative"", ""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",3,1.0,1.0,True
+v7_herath_560_flip,herath,560,flip,False,"{""assessment_design"": ""positive"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",3,1.0,0.0,False
+v7_herath_560_inject,herath,560,inject,False,"{""assessment_design"": ""negative"", ""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""grading_transparency"": ""negative""}",4,0.75,0.75,False
+v7_herath_36_faithful,herath,36,faithful,True,"{""assessment_design"": ""positive""}",1,0.0,0.0,False
+v7_herath_36_flip,herath,36,flip,False,"{""assessment_design"": ""negative""}",1,0.0,0.0,False
+v7_herath_36_inject,herath,36,inject,False,"{""assessment_design"": ""positive"", ""workload"": ""negative""}",2,0.0,0.0,False
+v7_herath_2534_faithful,herath,2534,faithful,True,"{""assessment_design"": ""positive""}",1,1.0,1.0,True
+v7_herath_2534_flip,herath,2534,flip,False,"{""assessment_design"": ""negative""}",1,1.0,0.0,False
+v7_herath_2534_inject,herath,2534,inject,False,"{""assessment_design"": ""positive"", ""grading_transparency"": ""negative""}",2,0.5,0.5,False
+v7_herath_2380_faithful,herath,2380,faithful,True,"{""materials"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2380_flip,herath,2380,flip,False,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_2380_inject,herath,2380,inject,False,"{""materials"": ""neutral"", ""exam_fairness"": ""negative""}",2,0.5,0.0,False
+v7_herath_737_faithful,herath,737,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_737_flip,herath,737,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_737_inject,herath,737,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""positive""}",2,0.5,0.5,False
+v7_herath_2687_faithful,herath,2687,faithful,True,"{""materials"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2687_flip,herath,2687,flip,False,"{""materials"": ""negative""}",1,0.0,0.0,False
+v7_herath_2687_inject,herath,2687,inject,False,"{""materials"": ""neutral"", ""accessibility"": ""positive""}",2,0.5,0.0,False
+v7_herath_1719_faithful,herath,1719,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive""}",3,1.0,1.0,True
+v7_herath_1719_flip,herath,1719,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""materials"": ""negative""}",3,1.0,0.0,False
+v7_herath_1719_inject,herath,1719,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""accessibility"": ""positive""}",4,0.75,0.75,False
+v7_herath_1678_faithful,herath,1678,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_herath_1678_flip,herath,1678,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_herath_1678_inject,herath,1678,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""workload"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_391_faithful,herath,391,faithful,True,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""neutral""}",2,1.0,0.5,False
+v7_herath_391_flip,herath,391,flip,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""negative""}",2,1.0,0.5,False
+v7_herath_391_inject,herath,391,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""neutral"", ""materials"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_470_faithful,herath,470,faithful,True,"{""exam_fairness"": ""neutral"", ""lecturer_quality"": ""neutral""}",2,1.0,0.5,False
+v7_herath_470_flip,herath,470,flip,False,"{""exam_fairness"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_herath_470_inject,herath,470,inject,False,"{""exam_fairness"": ""neutral"", ""lecturer_quality"": ""neutral"", ""workload"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_10_faithful,herath,10,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_herath_10_flip,herath,10,flip,False,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_herath_10_inject,herath,10,inject,False,"{""overall_experience"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.0,False
+v7_herath_1534_faithful,herath,1534,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""neutral""}",2,1.0,0.5,False
+v7_herath_1534_flip,herath,1534,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.5,False
+v7_herath_1534_inject,herath,1534,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""neutral"", ""accessibility"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_27_faithful,herath,27,faithful,True,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_27_flip,herath,27,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_27_inject,herath,27,inject,False,"{""organization"": ""positive"", ""workload"": ""positive""}",2,0.0,0.0,False
+v7_herath_773_faithful,herath,773,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_herath_773_flip,herath,773,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_herath_773_inject,herath,773,inject,False,"{""overall_experience"": ""negative"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_herath_364_faithful,herath,364,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_364_flip,herath,364,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_364_inject,herath,364,inject,False,"{""lecturer_quality"": ""negative"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_herath_1676_faithful,herath,1676,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_1676_flip,herath,1676,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1676_inject,herath,1676,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""positive""}",2,0.5,0.5,False
+v7_herath_1569_faithful,herath,1569,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_1569_flip,herath,1569,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_1569_inject,herath,1569,inject,False,"{""lecturer_quality"": ""negative"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_herath_1324_faithful,herath,1324,faithful,True,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""neutral"", ""overall_experience"": ""negative""}",3,1.0,0.6666666666666666,False
+v7_herath_1324_flip,herath,1324,flip,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative"", ""overall_experience"": ""positive""}",3,1.0,0.3333333333333333,False
+v7_herath_1324_inject,herath,1324,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""neutral"", ""overall_experience"": ""negative"", ""organization"": ""positive""}",4,0.75,0.5,False
+v7_herath_1209_faithful,herath,1209,faithful,True,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""neutral""}",2,1.0,0.5,False
+v7_herath_1209_flip,herath,1209,flip,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",2,0.5,0.0,False
+v7_herath_1209_inject,herath,1209,inject,False,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""neutral"", ""organization"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_466_faithful,herath,466,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""neutral""}",3,1.0,0.3333333333333333,False
+v7_herath_466_flip,herath,466,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""exam_fairness"": ""negative""}",3,1.0,0.0,False
+v7_herath_466_inject,herath,466,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""neutral"", ""accessibility"": ""negative""}",4,0.75,0.25,False
+v7_herath_2717_faithful,herath,2717,faithful,True,"{""lecturer_quality"": ""positive"", ""accessibility"": ""positive""}",2,0.5,0.5,False
+v7_herath_2717_flip,herath,2717,flip,False,"{""lecturer_quality"": ""negative"", ""accessibility"": ""negative""}",2,0.5,0.0,False
+v7_herath_2717_inject,herath,2717,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""workload"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_2587_faithful,herath,2587,faithful,True,"{""workload"": ""negative"", ""materials"": ""negative""}",2,1.0,1.0,True
+v7_herath_2587_flip,herath,2587,flip,False,"{""workload"": ""positive"", ""materials"": ""positive""}",2,1.0,0.0,False
+v7_herath_2587_inject,herath,2587,inject,False,"{""workload"": ""negative"", ""materials"": ""negative"", ""accessibility"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1046_faithful,herath,1046,faithful,True,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""negative""}",2,1.0,1.0,True
+v7_herath_1046_flip,herath,1046,flip,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,1.0,0.0,False
+v7_herath_1046_inject,herath,1046,inject,False,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""negative"", ""organization"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2155_faithful,herath,2155,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_2155_flip,herath,2155,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_2155_inject,herath,2155,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1080_faithful,herath,1080,faithful,True,"{""lecturer_quality"": ""positive"", ""organization"": ""negative"", ""exam_fairness"": ""neutral""}",3,1.0,0.6666666666666666,False
+v7_herath_1080_flip,herath,1080,flip,False,"{""lecturer_quality"": ""negative"", ""organization"": ""positive"", ""exam_fairness"": ""negative""}",3,1.0,0.3333333333333333,False
+v7_herath_1080_inject,herath,1080,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""negative"", ""exam_fairness"": ""neutral"", ""overall_experience"": ""positive""}",4,1.0,0.75,False
+v7_herath_2197_faithful,herath,2197,faithful,True,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_2197_flip,herath,2197,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2197_inject,herath,2197,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""negative""}",2,0.5,0.5,False
+v7_herath_1370_faithful,herath,1370,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1370_flip,herath,1370,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1370_inject,herath,1370,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.5,False
+v7_herath_1825_faithful,herath,1825,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1825_flip,herath,1825,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1825_inject,herath,1825,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_224_faithful,herath,224,faithful,True,"{""overall_experience"": ""positive"", ""organization"": ""neutral""}",2,1.0,0.5,False
+v7_herath_224_flip,herath,224,flip,False,"{""overall_experience"": ""negative"", ""organization"": ""negative""}",2,0.5,0.0,False
+v7_herath_224_inject,herath,224,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""neutral"", ""grading_transparency"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_2226_faithful,herath,2226,faithful,True,"{""overall_experience"": ""positive""}",1,0.0,0.0,False
+v7_herath_2226_flip,herath,2226,flip,False,"{""overall_experience"": ""negative""}",1,0.0,0.0,False
+v7_herath_2226_inject,herath,2226,inject,False,"{""overall_experience"": ""positive"", ""grading_transparency"": ""positive""}",2,0.5,0.5,False
+v7_herath_1477_faithful,herath,1477,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1477_flip,herath,1477,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1477_inject,herath,1477,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_1935_faithful,herath,1935,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1935_flip,herath,1935,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1935_inject,herath,1935,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_herath_1974_faithful,herath,1974,faithful,True,"{""organization"": ""positive"", ""lecturer_quality"": ""neutral"", ""exam_fairness"": ""neutral""}",3,1.0,0.3333333333333333,False
+v7_herath_1974_flip,herath,1974,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_1974_inject,herath,1974,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""neutral"", ""exam_fairness"": ""neutral"", ""materials"": ""negative""}",4,0.75,0.75,False
+v7_herath_2018_faithful,herath,2018,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_herath_2018_flip,herath,2018,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_herath_2018_inject,herath,2018,inject,False,"{""overall_experience"": ""positive"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_herath_2452_faithful,herath,2452,faithful,True,"{""organization"": ""neutral""}",1,1.0,1.0,True
+v7_herath_2452_flip,herath,2452,flip,False,"{""organization"": ""negative""}",1,1.0,1.0,True
+v7_herath_2452_inject,herath,2452,inject,False,"{""organization"": ""neutral"", ""accessibility"": ""positive""}",2,0.0,0.0,False
+v7_herath_2112_faithful,herath,2112,faithful,True,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_2112_flip,herath,2112,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2112_inject,herath,2112,inject,False,"{""organization"": ""positive"", ""assessment_design"": ""positive""}",2,0.0,0.0,False
+v7_herath_504_faithful,herath,504,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_504_flip,herath,504,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_504_inject,herath,504,inject,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,1.0,True
+v7_herath_1710_faithful,herath,1710,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1710_flip,herath,1710,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1710_inject,herath,1710,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_2239_faithful,herath,2239,faithful,True,"{""organization"": ""positive"", ""materials"": ""positive""}",2,1.0,1.0,True
+v7_herath_2239_flip,herath,2239,flip,False,"{""organization"": ""negative"", ""materials"": ""negative""}",2,1.0,0.0,False
+v7_herath_2239_inject,herath,2239,inject,False,"{""organization"": ""positive"", ""materials"": ""positive"", ""assessment_design"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1590_faithful,herath,1590,faithful,True,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive"", ""assessment_design"": ""positive"", ""materials"": ""positive""}",4,0.75,0.75,False
+v7_herath_1590_flip,herath,1590,flip,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative"", ""assessment_design"": ""negative"", ""materials"": ""negative""}",4,1.0,0.0,False
+v7_herath_1590_inject,herath,1590,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive"", ""assessment_design"": ""positive"", ""materials"": ""positive"", ""workload"": ""positive""}",5,1.0,1.0,True
+v7_herath_1725_faithful,herath,1725,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_herath_1725_flip,herath,1725,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_herath_1725_inject,herath,1725,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.5,0.5,False
+v7_herath_2177_faithful,herath,2177,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2177_flip,herath,2177,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2177_inject,herath,2177,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_herath_1210_faithful,herath,1210,faithful,True,"{""lecturer_quality"": ""neutral""}",1,1.0,0.0,False
+v7_herath_1210_flip,herath,1210,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1210_inject,herath,1210,inject,False,"{""lecturer_quality"": ""neutral"", ""accessibility"": ""negative""}",2,1.0,0.0,False
+v7_herath_2103_faithful,herath,2103,faithful,True,"{""organization"": ""positive"", ""lecturer_quality"": ""neutral""}",2,0.0,0.0,False
+v7_herath_2103_flip,herath,2103,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.0,0.0,False
+v7_herath_2103_inject,herath,2103,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""neutral"", ""workload"": ""positive""}",3,0.0,0.0,False
+v7_herath_2060_faithful,herath,2060,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2060_flip,herath,2060,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2060_inject,herath,2060,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_herath_1191_faithful,herath,1191,faithful,True,"{""lecturer_quality"": ""neutral"", ""exam_fairness"": ""neutral""}",2,1.0,0.0,False
+v7_herath_1191_flip,herath,1191,flip,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,1.0,True
+v7_herath_1191_inject,herath,1191,inject,False,"{""lecturer_quality"": ""neutral"", ""exam_fairness"": ""neutral"", ""organization"": ""positive""}",3,0.6666666666666666,0.0,False
+v7_herath_91_faithful,herath,91,faithful,True,"{""organization"": ""positive"", ""lecturer_quality"": ""positive""}",2,0.0,0.0,False
+v7_herath_91_flip,herath,91,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.0,0.0,False
+v7_herath_91_inject,herath,91,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""positive""}",3,0.0,0.0,False
+v7_herath_72_faithful,herath,72,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_72_flip,herath,72,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_72_inject,herath,72,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_951_faithful,herath,951,faithful,True,"{""materials"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_951_flip,herath,951,flip,False,"{""materials"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_951_inject,herath,951,inject,False,"{""materials"": ""positive"", ""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1564_faithful,herath,1564,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1564_flip,herath,1564,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1564_inject,herath,1564,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_herath_1996_faithful,herath,1996,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_1996_flip,herath,1996,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_1996_inject,herath,1996,inject,False,"{""lecturer_quality"": ""neutral"", ""overall_experience"": ""negative""}",2,0.5,0.0,False
+v7_herath_2096_faithful,herath,2096,faithful,True,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2096_flip,herath,2096,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative"", ""materials"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_herath_2096_inject,herath,2096,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""workload"": ""positive""}",4,0.5,0.5,False
+v7_herath_982_faithful,herath,982,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_982_flip,herath,982,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_982_inject,herath,982,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""positive""}",2,1.0,0.5,False
+v7_herath_2108_faithful,herath,2108,faithful,True,"{""lecturer_quality"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2108_flip,herath,2108,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2108_inject,herath,2108,inject,False,"{""lecturer_quality"": ""neutral"", ""assessment_design"": ""positive""}",2,0.5,0.0,False
+v7_herath_573_faithful,herath,573,faithful,True,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""neutral""}",2,0.5,0.5,False
+v7_herath_573_flip,herath,573,flip,False,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""negative""}",2,0.5,0.0,False
+v7_herath_573_inject,herath,573,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""neutral"", ""exam_fairness"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_2272_faithful,herath,2272,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2272_flip,herath,2272,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2272_inject,herath,2272,inject,False,"{""lecturer_quality"": ""neutral"", ""organization"": ""positive""}",2,0.0,0.0,False
+v7_herath_1670_faithful,herath,1670,faithful,True,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,1.0,True
+v7_herath_1670_flip,herath,1670,flip,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",2,1.0,0.0,False
+v7_herath_1670_inject,herath,1670,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative"", ""workload"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_414_faithful,herath,414,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_414_flip,herath,414,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_414_inject,herath,414,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_herath_1094_faithful,herath,1094,faithful,True,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""positive""}",2,1.0,1.0,True
+v7_herath_1094_flip,herath,1094,flip,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",2,0.5,0.0,False
+v7_herath_1094_inject,herath,1094,inject,False,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""positive"", ""workload"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_890_faithful,herath,890,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_890_flip,herath,890,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_890_inject,herath,890,inject,False,"{""lecturer_quality"": ""negative"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_herath_398_faithful,herath,398,faithful,True,"{""lecturer_quality"": ""positive"", ""materials"": ""positive""}",2,1.0,1.0,True
+v7_herath_398_flip,herath,398,flip,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative""}",2,1.0,0.0,False
+v7_herath_398_inject,herath,398,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1845_faithful,herath,1845,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_1845_flip,herath,1845,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_1845_inject,herath,1845,inject,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,1.0,True
+v7_herath_141_faithful,herath,141,faithful,True,"{""materials"": ""positive"", ""organization"": ""positive"", ""lecturer_quality"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_141_flip,herath,141,flip,False,"{""materials"": ""negative"", ""organization"": ""negative"", ""lecturer_quality"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_herath_141_inject,herath,141,inject,False,"{""materials"": ""positive"", ""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""positive""}",4,0.5,0.5,False
+v7_herath_2054_faithful,herath,2054,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2054_flip,herath,2054,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2054_inject,herath,2054,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_1631_faithful,herath,1631,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_1631_flip,herath,1631,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_1631_inject,herath,1631,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_217_faithful,herath,217,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_217_flip,herath,217,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_217_inject,herath,217,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_herath_2248_faithful,herath,2248,faithful,True,"{""lecturer_quality"": ""positive"", ""workload"": ""positive""}",2,1.0,1.0,True
+v7_herath_2248_flip,herath,2248,flip,False,"{""lecturer_quality"": ""negative"", ""workload"": ""negative""}",2,1.0,0.0,False
+v7_herath_2248_inject,herath,2248,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_713_faithful,herath,713,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_713_flip,herath,713,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_713_inject,herath,713,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_732_faithful,herath,732,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_732_flip,herath,732,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_732_inject,herath,732,inject,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,0.5,False
+v7_herath_1462_faithful,herath,1462,faithful,True,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,1.0,True
+v7_herath_1462_flip,herath,1462,flip,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",2,0.5,0.0,False
+v7_herath_1462_inject,herath,1462,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_576_faithful,herath,576,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_576_flip,herath,576,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_576_inject,herath,576,inject,False,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""positive""}",2,0.5,0.0,False
+v7_herath_705_faithful,herath,705,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_herath_705_flip,herath,705,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_herath_705_inject,herath,705,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_690_faithful,herath,690,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_690_flip,herath,690,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_690_inject,herath,690,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""negative""}",2,0.5,0.5,False
+v7_herath_85_faithful,herath,85,faithful,True,"{""materials"": ""neutral""}",1,1.0,0.0,False
+v7_herath_85_flip,herath,85,flip,False,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_85_inject,herath,85,inject,False,"{""materials"": ""neutral"", ""assessment_design"": ""negative""}",2,0.5,0.0,False
+v7_herath_2691_faithful,herath,2691,faithful,True,"{""organization"": ""neutral""}",1,1.0,1.0,True
+v7_herath_2691_flip,herath,2691,flip,False,"{""organization"": ""negative""}",1,1.0,1.0,True
+v7_herath_2691_inject,herath,2691,inject,False,"{""organization"": ""neutral"", ""assessment_design"": ""positive""}",2,0.5,0.0,False
+v7_herath_1662_faithful,herath,1662,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1662_flip,herath,1662,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1662_inject,herath,1662,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",2,0.5,0.5,False
+v7_herath_2362_faithful,herath,2362,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2362_flip,herath,2362,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2362_inject,herath,2362,inject,False,"{""lecturer_quality"": ""neutral"", ""overall_experience"": ""negative""}",2,0.5,0.0,False
+v7_herath_764_faithful,herath,764,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_764_flip,herath,764,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_764_inject,herath,764,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""positive""}",2,1.0,1.0,True
+v7_herath_756_faithful,herath,756,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_756_flip,herath,756,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_756_inject,herath,756,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_2747_faithful,herath,2747,faithful,True,"{""organization"": ""neutral"", ""lecturer_quality"": ""neutral""}",2,0.5,0.5,False
+v7_herath_2747_flip,herath,2747,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.0,0.0,False
+v7_herath_2747_inject,herath,2747,inject,False,"{""organization"": ""neutral"", ""lecturer_quality"": ""neutral"", ""materials"": ""positive""}",3,0.3333333333333333,0.0,False
+v7_herath_1469_faithful,herath,1469,faithful,True,"{""exam_fairness"": ""neutral"", ""overall_experience"": ""positive""}",2,1.0,0.5,False
+v7_herath_1469_flip,herath,1469,flip,False,"{""exam_fairness"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_herath_1469_inject,herath,1469,inject,False,"{""exam_fairness"": ""neutral"", ""overall_experience"": ""positive"", ""workload"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1436_faithful,herath,1436,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1436_flip,herath,1436,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1436_inject,herath,1436,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_herath_568_faithful,herath,568,faithful,True,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""assessment_design"": ""positive"", ""exam_fairness"": ""negative""}",4,1.0,0.75,False
+v7_herath_568_flip,herath,568,flip,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative"", ""assessment_design"": ""negative"", ""exam_fairness"": ""positive""}",4,1.0,0.5,False
+v7_herath_568_inject,herath,568,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""assessment_design"": ""positive"", ""exam_fairness"": ""negative"", ""overall_experience"": ""negative""}",5,1.0,0.8,False
+v7_herath_1060_faithful,herath,1060,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1060_flip,herath,1060,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1060_inject,herath,1060,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_1965_faithful,herath,1965,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""neutral""}",2,0.5,0.5,False
+v7_herath_1965_flip,herath,1965,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.5,0.0,False
+v7_herath_1965_inject,herath,1965,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""neutral"", ""materials"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2704_faithful,herath,2704,faithful,True,"{""organization"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2704_flip,herath,2704,flip,False,"{""organization"": ""negative""}",1,1.0,1.0,True
+v7_herath_2704_inject,herath,2704,inject,False,"{""organization"": ""neutral"", ""overall_experience"": ""positive""}",2,1.0,0.0,False
+v7_herath_1120_faithful,herath,1120,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_1120_flip,herath,1120,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_1120_inject,herath,1120,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_209_faithful,herath,209,faithful,True,"{""materials"": ""neutral""}",1,1.0,1.0,True
+v7_herath_209_flip,herath,209,flip,False,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_209_inject,herath,209,inject,False,"{""materials"": ""neutral"", ""lecturer_quality"": ""negative""}",2,0.5,0.0,False
+v7_herath_736_faithful,herath,736,faithful,True,"{""assessment_design"": ""neutral"", ""exam_fairness"": ""negative"", ""lecturer_quality"": ""negative""}",3,1.0,0.6666666666666666,False
+v7_herath_736_flip,herath,736,flip,False,"{""assessment_design"": ""negative"", ""exam_fairness"": ""positive"", ""lecturer_quality"": ""positive""}",3,1.0,0.3333333333333333,False
+v7_herath_736_inject,herath,736,inject,False,"{""assessment_design"": ""neutral"", ""exam_fairness"": ""negative"", ""lecturer_quality"": ""negative"", ""organization"": ""negative""}",4,0.75,0.5,False
+v7_herath_294_faithful,herath,294,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_294_flip,herath,294,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_294_inject,herath,294,inject,False,"{""lecturer_quality"": ""neutral"", ""assessment_design"": ""positive""}",2,0.0,0.0,False
+v7_herath_1400_faithful,herath,1400,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_1400_flip,herath,1400,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_1400_inject,herath,1400,inject,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,0.5,False
+v7_herath_840_faithful,herath,840,faithful,True,"{""grading_transparency"": ""negative""}",1,1.0,1.0,True
+v7_herath_840_flip,herath,840,flip,False,"{""grading_transparency"": ""positive""}",1,1.0,0.0,False
+v7_herath_840_inject,herath,840,inject,False,"{""grading_transparency"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,1.0,True
+v7_herath_251_faithful,herath,251,faithful,True,"{""materials"": ""neutral""}",1,1.0,0.0,False
+v7_herath_251_flip,herath,251,flip,False,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_251_inject,herath,251,inject,False,"{""materials"": ""neutral"", ""workload"": ""negative""}",2,0.5,0.0,False
+v7_herath_1604_faithful,herath,1604,faithful,True,"{""overall_experience"": ""neutral"", ""lecturer_quality"": ""positive""}",2,0.5,0.0,False
+v7_herath_1604_flip,herath,1604,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.5,0.0,False
+v7_herath_1604_inject,herath,1604,inject,False,"{""overall_experience"": ""neutral"", ""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",3,0.3333333333333333,0.0,False
+v7_herath_1601_faithful,herath,1601,faithful,True,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""neutral""}",2,1.0,0.5,False
+v7_herath_1601_flip,herath,1601,flip,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",2,1.0,0.5,False
+v7_herath_1601_inject,herath,1601,inject,False,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""neutral"", ""assessment_design"": ""negative""}",3,1.0,0.6666666666666666,False
+v7_herath_2446_faithful,herath,2446,faithful,True,"{""organization"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2446_flip,herath,2446,flip,False,"{""organization"": ""negative""}",1,1.0,1.0,True
+v7_herath_2446_inject,herath,2446,inject,False,"{""organization"": ""neutral"", ""grading_transparency"": ""negative""}",2,0.0,0.0,False
+v7_herath_155_faithful,herath,155,faithful,True,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_155_flip,herath,155,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative"", ""materials"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_herath_155_inject,herath,155,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""accessibility"": ""negative""}",4,1.0,1.0,True
+v7_herath_2057_faithful,herath,2057,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2057_flip,herath,2057,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2057_inject,herath,2057,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_herath_367_faithful,herath,367,faithful,True,"{""lecturer_quality"": ""positive"", ""organization"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_367_flip,herath,367,flip,False,"{""lecturer_quality"": ""negative"", ""organization"": ""negative"", ""exam_fairness"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_herath_367_inject,herath,367,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""positive"", ""exam_fairness"": ""positive"", ""materials"": ""positive""}",4,0.5,0.5,False
+v7_herath_1806_faithful,herath,1806,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1806_flip,herath,1806,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1806_inject,herath,1806,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.5,False
+v7_herath_182_faithful,herath,182,faithful,True,"{""organization"": ""positive"", ""lecturer_quality"": ""neutral""}",2,0.0,0.0,False
+v7_herath_182_flip,herath,182,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.5,0.5,False
+v7_herath_182_inject,herath,182,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""neutral"", ""grading_transparency"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_930_faithful,herath,930,faithful,True,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""neutral""}",2,0.5,0.5,False
+v7_herath_930_flip,herath,930,flip,False,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""negative""}",2,0.5,0.0,False
+v7_herath_930_inject,herath,930,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""neutral"", ""materials"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_821_faithful,herath,821,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_821_flip,herath,821,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_821_inject,herath,821,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_herath_2773_faithful,herath,2773,faithful,True,"{""organization"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2773_flip,herath,2773,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2773_inject,herath,2773,inject,False,"{""organization"": ""neutral"", ""grading_transparency"": ""negative""}",2,0.0,0.0,False
+v7_herath_869_faithful,herath,869,faithful,True,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""neutral""}",2,0.0,0.0,False
+v7_herath_869_flip,herath,869,flip,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""negative""}",2,0.0,0.0,False
+v7_herath_869_inject,herath,869,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""neutral"", ""grading_transparency"": ""negative""}",3,0.0,0.0,False
+v7_herath_1696_faithful,herath,1696,faithful,True,"{""lecturer_quality"": ""positive"", ""workload"": ""neutral""}",2,1.0,0.5,False
+v7_herath_1696_flip,herath,1696,flip,False,"{""lecturer_quality"": ""negative"", ""workload"": ""negative""}",2,1.0,0.5,False
+v7_herath_1696_inject,herath,1696,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""neutral"", ""grading_transparency"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_739_faithful,herath,739,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""neutral""}",2,1.0,0.5,False
+v7_herath_739_flip,herath,739,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_739_inject,herath,739,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""neutral"", ""exam_fairness"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_2073_faithful,herath,2073,faithful,True,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_2073_flip,herath,2073,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2073_inject,herath,2073,inject,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",2,0.0,0.0,False
+v7_herath_545_faithful,herath,545,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_545_flip,herath,545,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_545_inject,herath,545,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.5,False
+v7_herath_2786_faithful,herath,2786,faithful,True,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_2786_flip,herath,2786,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2786_inject,herath,2786,inject,False,"{""organization"": ""positive"", ""overall_experience"": ""negative""}",2,0.5,0.0,False
+v7_herath_678_faithful,herath,678,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.5,False
+v7_herath_678_flip,herath,678,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,0.5,False
+v7_herath_678_inject,herath,678,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative"", ""accessibility"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_1332_faithful,herath,1332,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1332_flip,herath,1332,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1332_inject,herath,1332,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",2,0.5,0.5,False
+v7_herath_2604_faithful,herath,2604,faithful,True,"{""workload"": ""negative""}",1,1.0,1.0,True
+v7_herath_2604_flip,herath,2604,flip,False,"{""workload"": ""positive""}",1,1.0,0.0,False
+v7_herath_2604_inject,herath,2604,inject,False,"{""workload"": ""negative"", ""overall_experience"": ""positive""}",2,0.5,0.5,False
+v7_herath_1819_faithful,herath,1819,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1819_flip,herath,1819,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1819_inject,herath,1819,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""positive""}",2,0.5,0.5,False
+v7_herath_2369_faithful,herath,2369,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2369_flip,herath,2369,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2369_inject,herath,2369,inject,False,"{""lecturer_quality"": ""neutral"", ""assessment_design"": ""negative""}",2,0.0,0.0,False
+v7_herath_1707_faithful,herath,1707,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1707_flip,herath,1707,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1707_inject,herath,1707,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_herath_1967_faithful,herath,1967,faithful,True,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_1967_flip,herath,1967,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_1967_inject,herath,1967,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""positive""}",2,0.0,0.0,False
+v7_herath_2143_faithful,herath,2143,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_2143_flip,herath,2143,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_2143_inject,herath,2143,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1101_faithful,herath,1101,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1101_flip,herath,1101,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1101_inject,herath,1101,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_herath_423_faithful,herath,423,faithful,True,"{""lecturer_quality"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_herath_423_flip,herath,423,flip,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative""}",2,0.5,0.0,False
+v7_herath_423_inject,herath,423,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""accessibility"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_723_faithful,herath,723,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_723_flip,herath,723,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_723_inject,herath,723,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_herath_2542_faithful,herath,2542,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2542_flip,herath,2542,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2542_inject,herath,2542,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.5,False
+v7_herath_1322_faithful,herath,1322,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1322_flip,herath,1322,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1322_inject,herath,1322,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_2130_faithful,herath,2130,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2130_flip,herath,2130,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2130_inject,herath,2130,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_herath_738_faithful,herath,738,faithful,True,"{""assessment_design"": ""negative""}",1,1.0,1.0,True
+v7_herath_738_flip,herath,738,flip,False,"{""assessment_design"": ""positive""}",1,1.0,0.0,False
+v7_herath_738_inject,herath,738,inject,False,"{""assessment_design"": ""negative"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_1204_faithful,herath,1204,faithful,True,"{""lecturer_quality"": ""positive"", ""organization"": ""neutral""}",2,0.5,0.5,False
+v7_herath_1204_flip,herath,1204,flip,False,"{""lecturer_quality"": ""negative"", ""organization"": ""negative""}",2,0.5,0.0,False
+v7_herath_1204_inject,herath,1204,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""neutral"", ""overall_experience"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_609_faithful,herath,609,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive"", ""workload"": ""positive""}",4,0.5,0.5,False
+v7_herath_609_flip,herath,609,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""grading_transparency"": ""negative"", ""workload"": ""negative""}",4,1.0,0.0,False
+v7_herath_609_inject,herath,609,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive"", ""workload"": ""positive"", ""organization"": ""positive""}",5,0.4,0.2,False
+v7_herath_1724_faithful,herath,1724,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_herath_1724_flip,herath,1724,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_herath_1724_inject,herath,1724,inject,False,"{""overall_experience"": ""negative"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_herath_2386_faithful,herath,2386,faithful,True,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_2386_flip,herath,2386,flip,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.0,False
+v7_herath_2386_inject,herath,2386,inject,False,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""negative"", ""accessibility"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_533_faithful,herath,533,faithful,True,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_533_flip,herath,533,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_533_inject,herath,533,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_herath_422_faithful,herath,422,faithful,True,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""neutral""}",2,1.0,0.5,False
+v7_herath_422_flip,herath,422,flip,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,0.0,False
+v7_herath_422_inject,herath,422,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""neutral"", ""assessment_design"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_2131_faithful,herath,2131,faithful,True,"{""organization"": ""positive"", ""materials"": ""positive"", ""lecturer_quality"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2131_flip,herath,2131,flip,False,"{""organization"": ""negative"", ""materials"": ""negative"", ""lecturer_quality"": ""negative""}",3,0.3333333333333333,0.0,False
+v7_herath_2131_inject,herath,2131,inject,False,"{""organization"": ""positive"", ""materials"": ""positive"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive""}",4,0.5,0.5,False
+v7_herath_1048_faithful,herath,1048,faithful,True,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_1048_flip,herath,1048,flip,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_herath_1048_inject,herath,1048,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2236_faithful,herath,2236,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2236_flip,herath,2236,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2236_inject,herath,2236,inject,False,"{""lecturer_quality"": ""neutral"", ""exam_fairness"": ""negative""}",2,0.0,0.0,False
+v7_herath_222_faithful,herath,222,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_222_flip,herath,222,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_222_inject,herath,222,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_herath_2159_faithful,herath,2159,faithful,True,"{""organization"": ""positive""}",1,1.0,0.0,False
+v7_herath_2159_flip,herath,2159,flip,False,"{""organization"": ""negative""}",1,1.0,1.0,True
+v7_herath_2159_inject,herath,2159,inject,False,"{""organization"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_1545_faithful,herath,1545,faithful,True,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_1545_flip,herath,1545,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_1545_inject,herath,1545,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,0.5,0.5,False
+v7_herath_2637_faithful,herath,2637,faithful,True,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2637_flip,herath,2637,flip,False,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_2637_inject,herath,2637,inject,False,"{""organization"": ""negative"", ""assessment_design"": ""positive""}",2,0.5,0.0,False
+v7_herath_748_faithful,herath,748,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_748_flip,herath,748,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_748_inject,herath,748,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_1861_faithful,herath,1861,faithful,True,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""neutral""}",2,0.5,0.0,False
+v7_herath_1861_flip,herath,1861,flip,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,1.0,True
+v7_herath_1861_inject,herath,1861,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""neutral"", ""grading_transparency"": ""negative""}",3,0.3333333333333333,0.0,False
+v7_herath_200_faithful,herath,200,faithful,True,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_200_flip,herath,200,flip,False,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_200_inject,herath,200,inject,False,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""negative""}",2,0.0,0.0,False
+v7_herath_1347_faithful,herath,1347,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1347_flip,herath,1347,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1347_inject,herath,1347,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""negative""}",2,0.5,0.5,False
+v7_herath_1873_faithful,herath,1873,faithful,True,"{""assessment_design"": ""neutral"", ""exam_fairness"": ""neutral""}",2,0.5,0.5,False
+v7_herath_1873_flip,herath,1873,flip,False,"{""assessment_design"": ""negative"", ""exam_fairness"": ""negative""}",2,0.5,0.0,False
+v7_herath_1873_inject,herath,1873,inject,False,"{""assessment_design"": ""neutral"", ""exam_fairness"": ""neutral"", ""accessibility"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_2588_faithful,herath,2588,faithful,True,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2588_flip,herath,2588,flip,False,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_2588_inject,herath,2588,inject,False,"{""organization"": ""negative"", ""workload"": ""negative""}",2,0.0,0.0,False
+v7_herath_1097_faithful,herath,1097,faithful,True,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_herath_1097_flip,herath,1097,flip,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,0.0,False
+v7_herath_1097_inject,herath,1097,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""accessibility"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_1612_faithful,herath,1612,faithful,True,"{""lecturer_quality"": ""neutral""}",1,1.0,0.0,False
+v7_herath_1612_flip,herath,1612,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1612_inject,herath,1612,inject,False,"{""lecturer_quality"": ""neutral"", ""accessibility"": ""negative""}",2,0.5,0.0,False
+v7_herath_406_faithful,herath,406,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_406_flip,herath,406,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_406_inject,herath,406,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""positive""}",2,0.5,0.5,False
+v7_herath_2716_faithful,herath,2716,faithful,True,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_2716_flip,herath,2716,flip,False,"{""materials"": ""positive""}",1,0.0,0.0,False
+v7_herath_2716_inject,herath,2716,inject,False,"{""materials"": ""negative"", ""assessment_design"": ""negative""}",2,1.0,1.0,True
+v7_herath_373_faithful,herath,373,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_373_flip,herath,373,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_373_inject,herath,373,inject,False,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""positive""}",2,0.5,0.5,False
+v7_herath_2311_faithful,herath,2311,faithful,True,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_2311_flip,herath,2311,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2311_inject,herath,2311,inject,False,"{""organization"": ""positive"", ""exam_fairness"": ""positive""}",2,0.0,0.0,False
+v7_herath_1032_faithful,herath,1032,faithful,True,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""positive"", ""grading_transparency"": ""neutral""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_1032_flip,herath,1032,flip,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_1032_inject,herath,1032,inject,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""positive"", ""grading_transparency"": ""neutral"", ""organization"": ""negative""}",4,1.0,0.75,False
+v7_herath_789_faithful,herath,789,faithful,True,"{""lecturer_quality"": ""neutral""}",1,1.0,0.0,False
+v7_herath_789_flip,herath,789,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_789_inject,herath,789,inject,False,"{""lecturer_quality"": ""neutral"", ""workload"": ""negative""}",2,0.5,0.0,False
+v7_herath_762_faithful,herath,762,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_herath_762_flip,herath,762,flip,False,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_herath_762_inject,herath,762,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_1071_faithful,herath,1071,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_1071_flip,herath,1071,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_1071_inject,herath,1071,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""positive""}",2,0.5,0.5,False
+v7_herath_2393_faithful,herath,2393,faithful,True,"{""organization"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2393_flip,herath,2393,flip,False,"{""organization"": ""negative""}",1,1.0,1.0,True
+v7_herath_2393_inject,herath,2393,inject,False,"{""organization"": ""neutral"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_herath_2464_faithful,herath,2464,faithful,True,"{""materials"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2464_flip,herath,2464,flip,False,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_2464_inject,herath,2464,inject,False,"{""materials"": ""neutral"", ""grading_transparency"": ""positive""}",2,0.5,0.0,False
+v7_herath_2597_faithful,herath,2597,faithful,True,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2597_flip,herath,2597,flip,False,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_2597_inject,herath,2597,inject,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,0.0,0.0,False
+v7_herath_578_faithful,herath,578,faithful,True,"{""overall_experience"": ""neutral""}",1,1.0,0.0,False
+v7_herath_578_flip,herath,578,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_herath_578_inject,herath,578,inject,False,"{""overall_experience"": ""neutral"", ""accessibility"": ""negative""}",2,0.5,0.0,False
+v7_herath_2230_faithful,herath,2230,faithful,True,"{""materials"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2230_flip,herath,2230,flip,False,"{""materials"": ""negative""}",1,1.0,0.0,False
+v7_herath_2230_inject,herath,2230,inject,False,"{""materials"": ""neutral"", ""grading_transparency"": ""positive""}",2,0.5,0.0,False
+v7_herath_2238_faithful,herath,2238,faithful,True,"{""organization"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_herath_2238_flip,herath,2238,flip,False,"{""organization"": ""negative"", ""materials"": ""negative""}",2,0.0,0.0,False
+v7_herath_2238_inject,herath,2238,inject,False,"{""organization"": ""positive"", ""materials"": ""positive"", ""workload"": ""negative""}",3,0.3333333333333333,0.0,False
+v7_herath_2563_faithful,herath,2563,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2563_flip,herath,2563,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2563_inject,herath,2563,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_herath_34_faithful,herath,34,faithful,True,"{""overall_experience"": ""positive"", ""materials"": ""neutral""}",2,1.0,0.5,False
+v7_herath_34_flip,herath,34,flip,False,"{""overall_experience"": ""negative"", ""materials"": ""negative""}",2,1.0,0.5,False
+v7_herath_34_inject,herath,34,inject,False,"{""overall_experience"": ""positive"", ""materials"": ""neutral"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_534_faithful,herath,534,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_534_flip,herath,534,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_534_inject,herath,534,inject,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",2,0.5,0.5,False
+v7_herath_2467_faithful,herath,2467,faithful,True,"{""materials"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2467_flip,herath,2467,flip,False,"{""materials"": ""negative""}",1,0.0,0.0,False
+v7_herath_2467_inject,herath,2467,inject,False,"{""materials"": ""neutral"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_1706_faithful,herath,1706,faithful,True,"{""lecturer_quality"": ""neutral"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_herath_1706_flip,herath,1706,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,0.5,False
+v7_herath_1706_inject,herath,1706,inject,False,"{""lecturer_quality"": ""neutral"", ""overall_experience"": ""negative"", ""organization"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_herath_2696_faithful,herath,2696,faithful,True,"{""materials"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2696_flip,herath,2696,flip,False,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_2696_inject,herath,2696,inject,False,"{""materials"": ""neutral"", ""organization"": ""negative""}",2,0.5,0.0,False
+v7_herath_2608_faithful,herath,2608,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2608_flip,herath,2608,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2608_inject,herath,2608,inject,False,"{""lecturer_quality"": ""neutral"", ""overall_experience"": ""negative""}",2,0.5,0.5,False
+v7_herath_2642_faithful,herath,2642,faithful,True,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2642_flip,herath,2642,flip,False,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_2642_inject,herath,2642,inject,False,"{""lecturer_quality"": ""negative"", ""organization"": ""positive""}",2,0.5,0.0,False
+v7_herath_1508_faithful,herath,1508,faithful,True,"{""lecturer_quality"": ""neutral"", ""overall_experience"": ""positive""}",2,0.5,0.5,False
+v7_herath_1508_flip,herath,1508,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,0.5,0.0,False
+v7_herath_1508_inject,herath,1508,inject,False,"{""lecturer_quality"": ""neutral"", ""overall_experience"": ""positive"", ""workload"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_1163_faithful,herath,1163,faithful,True,"{""lecturer_quality"": ""positive"", ""workload"": ""negative""}",2,1.0,1.0,True
+v7_herath_1163_flip,herath,1163,flip,False,"{""lecturer_quality"": ""negative"", ""workload"": ""positive""}",2,1.0,0.0,False
+v7_herath_1163_inject,herath,1163,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""negative"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1127_faithful,herath,1127,faithful,True,"{""lecturer_quality"": ""negative"", ""materials"": ""negative"", ""assessment_design"": ""neutral""}",3,1.0,0.6666666666666666,False
+v7_herath_1127_flip,herath,1127,flip,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""assessment_design"": ""negative""}",3,1.0,0.3333333333333333,False
+v7_herath_1127_inject,herath,1127,inject,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative"", ""assessment_design"": ""neutral"", ""workload"": ""positive""}",4,0.75,0.5,False
+v7_herath_1282_faithful,herath,1282,faithful,True,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_herath_1282_flip,herath,1282,flip,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,0.5,0.0,False
+v7_herath_1282_inject,herath,1282,inject,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""positive"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2028_faithful,herath,2028,faithful,True,"{""organization"": ""neutral"", ""assessment_design"": ""neutral""}",2,0.5,0.0,False
+v7_herath_2028_flip,herath,2028,flip,False,"{""organization"": ""negative"", ""assessment_design"": ""negative""}",2,1.0,1.0,True
+v7_herath_2028_inject,herath,2028,inject,False,"{""organization"": ""neutral"", ""assessment_design"": ""neutral"", ""overall_experience"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_11_faithful,herath,11,faithful,True,"{""organization"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_11_flip,herath,11,flip,False,"{""organization"": ""negative"", ""assessment_design"": ""positive""}",2,0.5,0.0,False
+v7_herath_11_inject,herath,11,inject,False,"{""organization"": ""positive"", ""assessment_design"": ""negative"", ""grading_transparency"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_2176_faithful,herath,2176,faithful,True,"{""organization"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_herath_2176_flip,herath,2176,flip,False,"{""organization"": ""negative"", ""materials"": ""negative""}",2,0.5,0.0,False
+v7_herath_2176_inject,herath,2176,inject,False,"{""organization"": ""positive"", ""materials"": ""positive"", ""assessment_design"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_431_faithful,herath,431,faithful,True,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,1.0,True
+v7_herath_431_flip,herath,431,flip,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",2,1.0,0.0,False
+v7_herath_431_inject,herath,431,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative"", ""accessibility"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1802_faithful,herath,1802,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_herath_1802_flip,herath,1802,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_herath_1802_inject,herath,1802,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1122_faithful,herath,1122,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""assessment_design"": ""neutral""}",3,1.0,0.6666666666666666,False
+v7_herath_1122_flip,herath,1122,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""assessment_design"": ""negative""}",3,1.0,0.0,False
+v7_herath_1122_inject,herath,1122,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""assessment_design"": ""neutral"", ""organization"": ""positive""}",4,1.0,0.75,False
+v7_herath_0_faithful,herath,0,faithful,True,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_0_flip,herath,0,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_0_inject,herath,0,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.5,False
+v7_herath_1744_faithful,herath,1744,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_herath_1744_flip,herath,1744,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_herath_1744_inject,herath,1744,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_437_faithful,herath,437,faithful,True,"{""lecturer_quality"": ""positive"", ""organization"": ""neutral"", ""materials"": ""neutral""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_437_flip,herath,437,flip,False,"{""lecturer_quality"": ""negative"", ""organization"": ""negative"", ""materials"": ""negative""}",3,0.3333333333333333,0.0,False
+v7_herath_437_inject,herath,437,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""neutral"", ""materials"": ""neutral"", ""assessment_design"": ""negative""}",4,0.25,0.25,False
+v7_herath_2490_faithful,herath,2490,faithful,True,"{""organization"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2490_flip,herath,2490,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2490_inject,herath,2490,inject,False,"{""organization"": ""neutral"", ""exam_fairness"": ""negative""}",2,0.0,0.0,False
+v7_herath_628_faithful,herath,628,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_628_flip,herath,628,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_628_inject,herath,628,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""positive""}",2,0.5,0.5,False
+v7_herath_844_faithful,herath,844,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_844_flip,herath,844,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_844_inject,herath,844,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_herath_2041_faithful,herath,2041,faithful,True,"{""lecturer_quality"": ""positive"", ""materials"": ""positive""}",2,1.0,1.0,True
+v7_herath_2041_flip,herath,2041,flip,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative""}",2,1.0,0.0,False
+v7_herath_2041_inject,herath,2041,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_387_faithful,herath,387,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_387_flip,herath,387,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_387_inject,herath,387,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_314_faithful,herath,314,faithful,True,"{""materials"": ""neutral""}",1,1.0,1.0,True
+v7_herath_314_flip,herath,314,flip,False,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_314_inject,herath,314,inject,False,"{""materials"": ""neutral"", ""organization"": ""positive""}",2,0.5,0.0,False
+v7_herath_236_faithful,herath,236,faithful,True,"{""materials"": ""positive""}",1,1.0,1.0,True
+v7_herath_236_flip,herath,236,flip,False,"{""materials"": ""negative""}",1,1.0,0.0,False
+v7_herath_236_inject,herath,236,inject,False,"{""materials"": ""positive"", ""workload"": ""positive""}",2,0.5,0.5,False
+v7_herath_2682_faithful,herath,2682,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_herath_2682_flip,herath,2682,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_herath_2682_inject,herath,2682,inject,False,"{""overall_experience"": ""positive"", ""grading_transparency"": ""positive""}",2,0.5,0.5,False
+v7_herath_1233_faithful,herath,1233,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_1233_flip,herath,1233,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_herath_1233_inject,herath,1233,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2198_faithful,herath,2198,faithful,True,"{""lecturer_quality"": ""positive"", ""materials"": ""positive""}",2,1.0,1.0,True
+v7_herath_2198_flip,herath,2198,flip,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative""}",2,1.0,0.0,False
+v7_herath_2198_inject,herath,2198,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_492_faithful,herath,492,faithful,True,"{""materials"": ""neutral"", ""assessment_design"": ""neutral""}",2,1.0,1.0,True
+v7_herath_492_flip,herath,492,flip,False,"{""materials"": ""negative"", ""assessment_design"": ""negative""}",2,1.0,0.0,False
+v7_herath_492_inject,herath,492,inject,False,"{""materials"": ""neutral"", ""assessment_design"": ""neutral"", ""lecturer_quality"": ""negative""}",3,1.0,1.0,True
+v7_herath_2448_faithful,herath,2448,faithful,True,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2448_flip,herath,2448,flip,False,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_2448_inject,herath,2448,inject,False,"{""organization"": ""negative"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_herath_2013_faithful,herath,2013,faithful,True,"{""lecturer_quality"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2013_flip,herath,2013,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2013_inject,herath,2013,inject,False,"{""lecturer_quality"": ""neutral"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_herath_2206_faithful,herath,2206,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2206_flip,herath,2206,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2206_inject,herath,2206,inject,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive""}",2,0.5,0.5,False
+v7_herath_1889_faithful,herath,1889,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_1889_flip,herath,1889,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_1889_inject,herath,1889,inject,False,"{""lecturer_quality"": ""negative"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_herath_1866_faithful,herath,1866,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1866_flip,herath,1866,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1866_inject,herath,1866,inject,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",2,0.5,0.5,False
+v7_herath_2693_faithful,herath,2693,faithful,True,"{""organization"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2693_flip,herath,2693,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2693_inject,herath,2693,inject,False,"{""organization"": ""neutral"", ""exam_fairness"": ""negative""}",2,0.0,0.0,False
+v7_herath_183_faithful,herath,183,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_183_flip,herath,183,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_183_inject,herath,183,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_herath_872_faithful,herath,872,faithful,True,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_872_flip,herath,872,flip,False,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_872_inject,herath,872,inject,False,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""positive""}",2,0.0,0.0,False
+v7_herath_1490_faithful,herath,1490,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1490_flip,herath,1490,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1490_inject,herath,1490,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""negative""}",2,0.5,0.5,False
+v7_herath_645_faithful,herath,645,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_645_flip,herath,645,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_645_inject,herath,645,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""positive""}",2,0.5,0.5,False
+v7_herath_1102_faithful,herath,1102,faithful,True,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_herath_1102_flip,herath,1102,flip,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_herath_1102_inject,herath,1102,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_319_faithful,herath,319,faithful,True,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_319_flip,herath,319,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_319_inject,herath,319,inject,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive""}",2,0.5,0.5,False
+v7_herath_1059_faithful,herath,1059,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1059_flip,herath,1059,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1059_inject,herath,1059,inject,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_herath_2636_faithful,herath,2636,faithful,True,"{""overall_experience"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2636_flip,herath,2636,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_herath_2636_inject,herath,2636,inject,False,"{""overall_experience"": ""neutral"", ""lecturer_quality"": ""negative""}",2,0.5,0.0,False
+v7_herath_2053_faithful,herath,2053,faithful,True,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2053_flip,herath,2053,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_herath_2053_inject,herath,2053,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""accessibility"": ""negative""}",4,0.75,0.5,False
+v7_herath_2184_faithful,herath,2184,faithful,True,"{""organization"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2184_flip,herath,2184,flip,False,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_herath_2184_inject,herath,2184,inject,False,"{""organization"": ""neutral"", ""assessment_design"": ""negative""}",2,0.0,0.0,False
+v7_herath_887_faithful,herath,887,faithful,True,"{""lecturer_quality"": ""neutral""}",1,1.0,0.0,False
+v7_herath_887_flip,herath,887,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_887_inject,herath,887,inject,False,"{""lecturer_quality"": ""neutral"", ""grading_transparency"": ""positive""}",2,0.5,0.0,False
+v7_herath_2401_faithful,herath,2401,faithful,True,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_2401_flip,herath,2401,flip,False,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""positive""}",2,0.5,0.0,False
+v7_herath_2401_inject,herath,2401,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative"", ""workload"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_2399_faithful,herath,2399,faithful,True,"{""organization"": ""negative""}",1,1.0,1.0,True
+v7_herath_2399_flip,herath,2399,flip,False,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_herath_2399_inject,herath,2399,inject,False,"{""organization"": ""negative"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_herath_792_faithful,herath,792,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_792_flip,herath,792,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_792_inject,herath,792,inject,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive""}",2,0.5,0.5,False
+v7_herath_231_faithful,herath,231,faithful,True,"{""lecturer_quality"": ""positive"", ""materials"": ""positive""}",2,1.0,1.0,True
+v7_herath_231_flip,herath,231,flip,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative""}",2,1.0,0.0,False
+v7_herath_231_inject,herath,231,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""workload"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1975_faithful,herath,1975,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_herath_1975_flip,herath,1975,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_herath_1975_inject,herath,1975,inject,False,"{""overall_experience"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_herath_1553_faithful,herath,1553,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_herath_1553_flip,herath,1553,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_herath_1553_inject,herath,1553,inject,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_herath_1538_faithful,herath,1538,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1538_flip,herath,1538,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1538_inject,herath,1538,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_herath_1609_faithful,herath,1609,faithful,True,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""negative""}",2,0.5,0.5,False
+v7_herath_1609_flip,herath,1609,flip,False,"{""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive""}",2,0.0,0.0,False
+v7_herath_1609_inject,herath,1609,inject,False,"{""lecturer_quality"": ""negative"", ""grading_transparency"": ""negative"", ""organization"": ""negative""}",3,1.0,1.0,True
+v7_herath_1681_faithful,herath,1681,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1681_flip,herath,1681,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1681_inject,herath,1681,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_herath_1628_faithful,herath,1628,faithful,True,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_1628_flip,herath,1628,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_1628_inject,herath,1628,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",2,0.5,0.5,False
+v7_herath_831_faithful,herath,831,faithful,True,"{""lecturer_quality"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_831_flip,herath,831,flip,False,"{""lecturer_quality"": ""negative"", ""organization"": ""negative""}",2,0.5,0.0,False
+v7_herath_831_inject,herath,831,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""positive"", ""exam_fairness"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_1807_faithful,herath,1807,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1807_flip,herath,1807,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1807_inject,herath,1807,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",2,0.5,0.5,False
+v7_herath_1979_faithful,herath,1979,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1979_flip,herath,1979,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1979_inject,herath,1979,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",2,0.5,0.5,False
+v7_herath_2772_faithful,herath,2772,faithful,True,"{""materials"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2772_flip,herath,2772,flip,False,"{""materials"": ""negative""}",1,1.0,1.0,True
+v7_herath_2772_inject,herath,2772,inject,False,"{""materials"": ""neutral"", ""grading_transparency"": ""negative""}",2,0.5,0.0,False
+v7_herath_1920_faithful,herath,1920,faithful,True,"{""lecturer_quality"": ""positive"", ""organization"": ""negative""}",2,1.0,1.0,True
+v7_herath_1920_flip,herath,1920,flip,False,"{""lecturer_quality"": ""negative"", ""organization"": ""positive""}",2,1.0,0.0,False
+v7_herath_1920_inject,herath,1920,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""negative"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1475_faithful,herath,1475,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1475_flip,herath,1475,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1475_inject,herath,1475,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_herath_1820_faithful,herath,1820,faithful,True,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",2,1.0,1.0,True
+v7_herath_1820_flip,herath,1820,flip,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,0.0,False
+v7_herath_1820_inject,herath,1820,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_2756_faithful,herath,2756,faithful,True,"{""overall_experience"": ""negative"", ""assessment_design"": ""neutral"", ""lecturer_quality"": ""negative"", ""organization"": ""negative"", ""grading_transparency"": ""neutral"", ""accessibility"": ""neutral""}",6,0.6666666666666666,0.5,False
+v7_herath_2756_flip,herath,2756,flip,False,"{""overall_experience"": ""positive"", ""assessment_design"": ""negative"", ""lecturer_quality"": ""positive"", ""organization"": ""positive"", ""grading_transparency"": ""negative"", ""accessibility"": ""negative""}",6,0.6666666666666666,0.3333333333333333,False
+v7_herath_2756_inject,herath,2756,inject,False,"{""overall_experience"": ""negative"", ""assessment_design"": ""neutral"", ""lecturer_quality"": ""negative"", ""organization"": ""negative"", ""grading_transparency"": ""neutral"", ""accessibility"": ""neutral"", ""exam_fairness"": ""negative""}",7,0.5714285714285714,0.2857142857142857,False
+v7_herath_1414_faithful,herath,1414,faithful,True,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",2,1.0,1.0,True
+v7_herath_1414_flip,herath,1414,flip,False,"{""lecturer_quality"": ""negative"", ""assessment_design"": ""positive""}",2,1.0,0.5,False
+v7_herath_1414_inject,herath,1414,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""negative"", ""materials"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_366_faithful,herath,366,faithful,True,"{""grading_transparency"": ""negative"", ""lecturer_quality"": ""neutral""}",2,0.5,0.0,False
+v7_herath_366_flip,herath,366,flip,False,"{""grading_transparency"": ""positive"", ""lecturer_quality"": ""negative""}",2,0.5,0.0,False
+v7_herath_366_inject,herath,366,inject,False,"{""grading_transparency"": ""negative"", ""lecturer_quality"": ""neutral"", ""overall_experience"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_1113_faithful,herath,1113,faithful,True,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""negative""}",2,1.0,1.0,True
+v7_herath_1113_flip,herath,1113,flip,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""positive""}",2,1.0,0.0,False
+v7_herath_1113_inject,herath,1113,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""negative"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_herath_1594_faithful,herath,1594,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_1594_flip,herath,1594,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_1594_inject,herath,1594,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""negative""}",2,0.5,0.5,False
+v7_herath_2545_faithful,herath,2545,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_2545_flip,herath,2545,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_2545_inject,herath,2545,inject,False,"{""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_herath_2762_faithful,herath,2762,faithful,True,"{""lecturer_quality"": ""neutral""}",1,1.0,0.0,False
+v7_herath_2762_flip,herath,2762,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2762_inject,herath,2762,inject,False,"{""lecturer_quality"": ""neutral"", ""organization"": ""negative""}",2,0.5,0.5,False
+v7_herath_2755_faithful,herath,2755,faithful,True,"{""overall_experience"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_herath_2755_flip,herath,2755,flip,False,"{""overall_experience"": ""negative"", ""organization"": ""negative""}",2,0.5,0.0,False
+v7_herath_2755_inject,herath,2755,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""positive"", ""workload"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_herath_2824_faithful,herath,2824,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_2824_flip,herath,2824,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_2824_inject,herath,2824,inject,False,"{""lecturer_quality"": ""neutral"", ""grading_transparency"": ""negative""}",2,0.0,0.0,False
+v7_herath_642_faithful,herath,642,faithful,True,"{""lecturer_quality"": ""neutral""}",1,0.0,0.0,False
+v7_herath_642_flip,herath,642,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_642_inject,herath,642,inject,False,"{""lecturer_quality"": ""neutral"", ""grading_transparency"": ""negative""}",2,0.0,0.0,False
+v7_herath_776_faithful,herath,776,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_herath_776_flip,herath,776,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_herath_776_inject,herath,776,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_herath_826_faithful,herath,826,faithful,True,"{""overall_experience"": ""positive"", ""organization"": ""neutral"", ""lecturer_quality"": ""neutral""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_826_flip,herath,826,flip,False,"{""overall_experience"": ""negative"", ""organization"": ""negative"", ""lecturer_quality"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_herath_826_inject,herath,826,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""neutral"", ""lecturer_quality"": ""neutral"", ""exam_fairness"": ""negative""}",4,0.5,0.25,False
+v7_herath_704_faithful,herath,704,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_herath_704_flip,herath,704,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_herath_704_inject,herath,704,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_herath_188_faithful,herath,188,faithful,True,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_188_flip,herath,188,flip,False,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_188_inject,herath,188,inject,False,"{""lecturer_quality"": ""negative"", ""organization"": ""negative""}",2,0.0,0.0,False
+v7_herath_274_faithful,herath,274,faithful,True,"{""materials"": ""neutral"", ""lecturer_quality"": ""positive""}",2,1.0,0.5,False
+v7_herath_274_flip,herath,274,flip,False,"{""materials"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.5,0.5,False
+v7_herath_274_inject,herath,274,inject,False,"{""materials"": ""neutral"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_herath_1461_faithful,herath,1461,faithful,True,"{""lecturer_quality"": ""positive""}",1,0.0,0.0,False
+v7_herath_1461_flip,herath,1461,flip,False,"{""lecturer_quality"": ""negative""}",1,0.0,0.0,False
+v7_herath_1461_inject,herath,1461,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_1060_faithful,edurabsa,1060,faithful,True,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""organization"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1060_flip,edurabsa,1060,flip,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative"", ""organization"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_edurabsa_1060_inject,edurabsa,1060,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""organization"": ""positive"", ""accessibility"": ""positive""}",4,0.75,0.75,False
+v7_edurabsa_676_faithful,edurabsa,676,faithful,True,"{""exam_fairness"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_676_flip,edurabsa,676,flip,False,"{""exam_fairness"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_676_inject,edurabsa,676,inject,False,"{""exam_fairness"": ""positive"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_752_faithful,edurabsa,752,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_752_flip,edurabsa,752,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_752_inject,edurabsa,752,inject,False,"{""overall_experience"": ""positive"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_869_faithful,edurabsa,869,faithful,True,"{""organization"": ""neutral"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_869_flip,edurabsa,869,flip,False,"{""organization"": ""negative"", ""exam_fairness"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_869_inject,edurabsa,869,inject,False,"{""organization"": ""neutral"", ""exam_fairness"": ""negative"", ""overall_experience"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_896_faithful,edurabsa,896,faithful,True,"{""workload"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_896_flip,edurabsa,896,flip,False,"{""workload"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_896_inject,edurabsa,896,inject,False,"{""workload"": ""negative"", ""overall_experience"": ""positive"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_849_faithful,edurabsa,849,faithful,True,"{""workload"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_849_flip,edurabsa,849,flip,False,"{""workload"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_849_inject,edurabsa,849,inject,False,"{""workload"": ""negative"", ""overall_experience"": ""positive"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_2026_faithful,edurabsa,2026,faithful,True,"{""overall_experience"": ""negative"", ""accessibility"": ""negative"", ""lecturer_quality"": ""negative""}",3,1.0,1.0,True
+v7_edurabsa_2026_flip,edurabsa,2026,flip,False,"{""overall_experience"": ""positive"", ""accessibility"": ""positive"", ""lecturer_quality"": ""positive""}",3,1.0,0.0,False
+v7_edurabsa_2026_inject,edurabsa,2026,inject,False,"{""overall_experience"": ""negative"", ""accessibility"": ""negative"", ""lecturer_quality"": ""negative"", ""exam_fairness"": ""positive""}",4,0.75,0.75,False
+v7_edurabsa_1765_faithful,edurabsa,1765,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1765_flip,edurabsa,1765,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1765_inject,edurabsa,1765,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_640_faithful,edurabsa,640,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""positive"", ""materials"": ""positive"", ""workload"": ""positive""}",5,1.0,0.8,False
+v7_edurabsa_640_flip,edurabsa,640,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""exam_fairness"": ""negative"", ""materials"": ""negative"", ""workload"": ""negative""}",5,1.0,0.2,False
+v7_edurabsa_640_inject,edurabsa,640,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""positive"", ""materials"": ""positive"", ""workload"": ""positive"", ""assessment_design"": ""positive""}",6,1.0,0.8333333333333334,False
+v7_edurabsa_1156_faithful,edurabsa,1156,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_1156_flip,edurabsa,1156,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_1156_inject,edurabsa,1156,inject,False,"{""overall_experience"": ""negative"", ""grading_transparency"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1610_faithful,edurabsa,1610,faithful,True,"{""workload"": ""positive"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_1610_flip,edurabsa,1610,flip,False,"{""workload"": ""negative"", ""lecturer_quality"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_1610_inject,edurabsa,1610,inject,False,"{""workload"": ""positive"", ""lecturer_quality"": ""negative"", ""overall_experience"": ""positive""}",3,1.0,0.3333333333333333,False
+v7_edurabsa_962_faithful,edurabsa,962,faithful,True,"{""materials"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_962_flip,edurabsa,962,flip,False,"{""materials"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_962_inject,edurabsa,962,inject,False,"{""materials"": ""negative"", ""lecturer_quality"": ""negative"", ""organization"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1658_faithful,edurabsa,1658,faithful,True,"{""accessibility"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_1658_flip,edurabsa,1658,flip,False,"{""accessibility"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_1658_inject,edurabsa,1658,inject,False,"{""accessibility"": ""negative"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_45_faithful,edurabsa,45,faithful,True,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_45_flip,edurabsa,45,flip,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_45_inject,edurabsa,45,inject,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative"", ""assessment_design"": ""negative""}",3,1.0,1.0,True
+v7_edurabsa_1761_faithful,edurabsa,1761,faithful,True,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive"", ""workload"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_1761_flip,edurabsa,1761,flip,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative"", ""workload"": ""positive""}",3,0.6666666666666666,0.0,False
+v7_edurabsa_1761_inject,edurabsa,1761,inject,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive"", ""workload"": ""negative"", ""assessment_design"": ""positive""}",4,0.75,0.5,False
+v7_edurabsa_1049_faithful,edurabsa,1049,faithful,True,"{""workload"": ""positive""}",1,0.0,0.0,False
+v7_edurabsa_1049_flip,edurabsa,1049,flip,False,"{""workload"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_1049_inject,edurabsa,1049,inject,False,"{""workload"": ""positive"", ""lecturer_quality"": ""positive""}",2,0.0,0.0,False
+v7_edurabsa_2114_faithful,edurabsa,2114,faithful,True,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_2114_flip,edurabsa,2114,flip,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_2114_inject,edurabsa,2114,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1689_faithful,edurabsa,1689,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1689_flip,edurabsa,1689,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1689_inject,edurabsa,1689,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1645_faithful,edurabsa,1645,faithful,True,"{""accessibility"": ""positive""}",1,0.0,0.0,False
+v7_edurabsa_1645_flip,edurabsa,1645,flip,False,"{""accessibility"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_1645_inject,edurabsa,1645,inject,False,"{""accessibility"": ""positive"", ""assessment_design"": ""positive""}",2,0.0,0.0,False
+v7_edurabsa_1031_faithful,edurabsa,1031,faithful,True,"{""accessibility"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_1031_flip,edurabsa,1031,flip,False,"{""accessibility"": ""negative"", ""lecturer_quality"": ""negative"", ""materials"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_1031_inject,edurabsa,1031,inject,False,"{""accessibility"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""assessment_design"": ""positive""}",4,1.0,1.0,True
+v7_edurabsa_1365_faithful,edurabsa,1365,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1365_flip,edurabsa,1365,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1365_inject,edurabsa,1365,inject,False,"{""overall_experience"": ""positive"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1391_faithful,edurabsa,1391,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""materials"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_1391_flip,edurabsa,1391,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""materials"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_1391_inject,edurabsa,1391,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""materials"": ""positive"", ""exam_fairness"": ""negative""}",4,0.75,0.75,False
+v7_edurabsa_1852_faithful,edurabsa,1852,faithful,True,"{""exam_fairness"": ""negative"", ""overall_experience"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1852_flip,edurabsa,1852,flip,False,"{""exam_fairness"": ""positive"", ""overall_experience"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_1852_inject,edurabsa,1852,inject,False,"{""exam_fairness"": ""negative"", ""overall_experience"": ""negative"", ""materials"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_edurabsa_434_faithful,edurabsa,434,faithful,True,"{""overall_experience"": ""positive"", ""workload"": ""neutral""}",2,1.0,0.0,False
+v7_edurabsa_434_flip,edurabsa,434,flip,False,"{""overall_experience"": ""negative"", ""workload"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_434_inject,edurabsa,434,inject,False,"{""overall_experience"": ""positive"", ""workload"": ""neutral"", ""grading_transparency"": ""positive""}",3,1.0,0.0,False
+v7_edurabsa_1298_faithful,edurabsa,1298,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1298_flip,edurabsa,1298,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1298_inject,edurabsa,1298,inject,False,"{""overall_experience"": ""positive"", ""accessibility"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_327_faithful,edurabsa,327,faithful,True,"{""materials"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_327_flip,edurabsa,327,flip,False,"{""materials"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_327_inject,edurabsa,327,inject,False,"{""materials"": ""negative"", ""overall_experience"": ""positive"", ""assessment_design"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_483_faithful,edurabsa,483,faithful,True,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_483_flip,edurabsa,483,flip,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_483_inject,edurabsa,483,inject,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_287_faithful,edurabsa,287,faithful,True,"{""workload"": ""neutral""}",1,0.0,0.0,False
+v7_edurabsa_287_flip,edurabsa,287,flip,False,"{""workload"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_287_inject,edurabsa,287,inject,False,"{""workload"": ""neutral"", ""assessment_design"": ""positive""}",2,0.0,0.0,False
+v7_edurabsa_31_faithful,edurabsa,31,faithful,True,"{""overall_experience"": ""positive"", ""organization"": ""positive"", ""exam_fairness"": ""positive"", ""workload"": ""negative""}",4,1.0,0.75,False
+v7_edurabsa_31_flip,edurabsa,31,flip,False,"{""overall_experience"": ""negative"", ""organization"": ""negative"", ""exam_fairness"": ""negative"", ""workload"": ""positive""}",4,0.75,0.5,False
+v7_edurabsa_31_inject,edurabsa,31,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""positive"", ""exam_fairness"": ""positive"", ""workload"": ""negative"", ""grading_transparency"": ""negative""}",5,0.8,0.6,False
+v7_edurabsa_194_faithful,edurabsa,194,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_194_flip,edurabsa,194,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_194_inject,edurabsa,194,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_903_faithful,edurabsa,903,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_903_flip,edurabsa,903,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_903_inject,edurabsa,903,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_2071_faithful,edurabsa,2071,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""neutral""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_2071_flip,edurabsa,2071,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""workload"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_2071_inject,edurabsa,2071,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""neutral"", ""organization"": ""negative""}",4,0.5,0.5,False
+v7_edurabsa_147_faithful,edurabsa,147,faithful,True,"{""overall_experience"": ""neutral"", ""exam_fairness"": ""negative"", ""materials"": ""positive""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_147_flip,edurabsa,147,flip,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""positive"", ""materials"": ""negative""}",3,1.0,0.3333333333333333,False
+v7_edurabsa_147_inject,edurabsa,147,inject,False,"{""overall_experience"": ""neutral"", ""exam_fairness"": ""negative"", ""materials"": ""positive"", ""lecturer_quality"": ""negative""}",4,1.0,0.75,False
+v7_edurabsa_2106_faithful,edurabsa,2106,faithful,True,"{""workload"": ""neutral""}",1,0.0,0.0,False
+v7_edurabsa_2106_flip,edurabsa,2106,flip,False,"{""workload"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_2106_inject,edurabsa,2106,inject,False,"{""workload"": ""neutral"", ""grading_transparency"": ""negative""}",2,0.0,0.0,False
+v7_edurabsa_956_faithful,edurabsa,956,faithful,True,"{""materials"": ""negative"", ""exam_fairness"": ""negative"", ""overall_experience"": ""neutral""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_956_flip,edurabsa,956,flip,False,"{""materials"": ""positive"", ""exam_fairness"": ""positive"", ""overall_experience"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_956_inject,edurabsa,956,inject,False,"{""materials"": ""negative"", ""exam_fairness"": ""negative"", ""overall_experience"": ""neutral"", ""lecturer_quality"": ""negative""}",4,0.75,0.5,False
+v7_edurabsa_1029_faithful,edurabsa,1029,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1029_flip,edurabsa,1029,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1029_inject,edurabsa,1029,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1369_faithful,edurabsa,1369,faithful,True,"{""workload"": ""neutral""}",1,1.0,1.0,True
+v7_edurabsa_1369_flip,edurabsa,1369,flip,False,"{""workload"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_1369_inject,edurabsa,1369,inject,False,"{""workload"": ""neutral"", ""overall_experience"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_1697_faithful,edurabsa,1697,faithful,True,"{""organization"": ""negative"", ""materials"": ""negative"", ""overall_experience"": ""negative"", ""exam_fairness"": ""negative""}",4,1.0,1.0,True
+v7_edurabsa_1697_flip,edurabsa,1697,flip,False,"{""organization"": ""positive"", ""materials"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""positive""}",4,1.0,0.0,False
+v7_edurabsa_1697_inject,edurabsa,1697,inject,False,"{""organization"": ""negative"", ""materials"": ""negative"", ""overall_experience"": ""negative"", ""exam_fairness"": ""negative"", ""grading_transparency"": ""positive""}",5,0.8,0.8,False
+v7_edurabsa_1425_faithful,edurabsa,1425,faithful,True,"{""overall_experience"": ""negative"", ""workload"": ""negative"", ""materials"": ""negative""}",3,1.0,1.0,True
+v7_edurabsa_1425_flip,edurabsa,1425,flip,False,"{""overall_experience"": ""positive"", ""workload"": ""positive"", ""materials"": ""positive""}",3,1.0,0.0,False
+v7_edurabsa_1425_inject,edurabsa,1425,inject,False,"{""overall_experience"": ""negative"", ""workload"": ""negative"", ""materials"": ""negative"", ""grading_transparency"": ""positive""}",4,0.75,0.5,False
+v7_edurabsa_699_faithful,edurabsa,699,faithful,True,"{""overall_experience"": ""negative"", ""workload"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_699_flip,edurabsa,699,flip,False,"{""overall_experience"": ""positive"", ""workload"": ""negative""}",2,0.5,0.0,False
+v7_edurabsa_699_inject,edurabsa,699,inject,False,"{""overall_experience"": ""negative"", ""workload"": ""positive"", ""materials"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1841_faithful,edurabsa,1841,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1841_flip,edurabsa,1841,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1841_inject,edurabsa,1841,inject,False,"{""overall_experience"": ""positive"", ""materials"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_837_faithful,edurabsa,837,faithful,True,"{""workload"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_837_flip,edurabsa,837,flip,False,"{""workload"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_837_inject,edurabsa,837,inject,False,"{""workload"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_512_faithful,edurabsa,512,faithful,True,"{""overall_experience"": ""neutral""}",1,1.0,1.0,True
+v7_edurabsa_512_flip,edurabsa,512,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_512_inject,edurabsa,512,inject,False,"{""overall_experience"": ""neutral"", ""lecturer_quality"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_471_faithful,edurabsa,471,faithful,True,"{""workload"": ""neutral"", ""exam_fairness"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_471_flip,edurabsa,471,flip,False,"{""workload"": ""negative"", ""exam_fairness"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_471_inject,edurabsa,471,inject,False,"{""workload"": ""neutral"", ""exam_fairness"": ""positive"", ""grading_transparency"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_758_faithful,edurabsa,758,faithful,True,"{""workload"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_758_flip,edurabsa,758,flip,False,"{""workload"": ""negative"", ""overall_experience"": ""negative"", ""exam_fairness"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_758_inject,edurabsa,758,inject,False,"{""workload"": ""positive"", ""overall_experience"": ""positive"", ""exam_fairness"": ""positive"", ""lecturer_quality"": ""positive""}",4,0.75,0.75,False
+v7_edurabsa_347_faithful,edurabsa,347,faithful,True,"{""workload"": ""positive"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_347_flip,edurabsa,347,flip,False,"{""workload"": ""negative"", ""lecturer_quality"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_347_inject,edurabsa,347,inject,False,"{""workload"": ""positive"", ""lecturer_quality"": ""negative"", ""accessibility"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_1144_faithful,edurabsa,1144,faithful,True,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_1144_flip,edurabsa,1144,flip,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_1144_inject,edurabsa,1144,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""grading_transparency"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1377_faithful,edurabsa,1377,faithful,True,"{""workload"": ""neutral""}",1,1.0,0.0,False
+v7_edurabsa_1377_flip,edurabsa,1377,flip,False,"{""workload"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_1377_inject,edurabsa,1377,inject,False,"{""workload"": ""neutral"", ""materials"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_1568_faithful,edurabsa,1568,faithful,True,"{""accessibility"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1568_flip,edurabsa,1568,flip,False,"{""accessibility"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1568_inject,edurabsa,1568,inject,False,"{""accessibility"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_868_faithful,edurabsa,868,faithful,True,"{""overall_experience"": ""positive"", ""accessibility"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_868_flip,edurabsa,868,flip,False,"{""overall_experience"": ""negative"", ""accessibility"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_868_inject,edurabsa,868,inject,False,"{""overall_experience"": ""positive"", ""accessibility"": ""positive"", ""organization"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1131_faithful,edurabsa,1131,faithful,True,"{""workload"": ""neutral""}",1,1.0,1.0,True
+v7_edurabsa_1131_flip,edurabsa,1131,flip,False,"{""workload"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_1131_inject,edurabsa,1131,inject,False,"{""workload"": ""neutral"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1736_faithful,edurabsa,1736,faithful,True,"{""overall_experience"": ""positive"", ""workload"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_1736_flip,edurabsa,1736,flip,False,"{""overall_experience"": ""negative"", ""workload"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_1736_inject,edurabsa,1736,inject,False,"{""overall_experience"": ""positive"", ""workload"": ""negative"", ""assessment_design"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1923_faithful,edurabsa,1923,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1923_flip,edurabsa,1923,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1923_inject,edurabsa,1923,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1395_faithful,edurabsa,1395,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1395_flip,edurabsa,1395,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1395_inject,edurabsa,1395,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""assessment_design"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_2109_faithful,edurabsa,2109,faithful,True,"{""exam_fairness"": ""negative"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_2109_flip,edurabsa,2109,flip,False,"{""exam_fairness"": ""positive"", ""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_2109_inject,edurabsa,2109,inject,False,"{""exam_fairness"": ""negative"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""assessment_design"": ""positive""}",4,0.75,0.5,False
+v7_edurabsa_295_faithful,edurabsa,295,faithful,True,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_295_flip,edurabsa,295,flip,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_295_inject,edurabsa,295,inject,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative"", ""assessment_design"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_6_faithful,edurabsa,6,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_6_flip,edurabsa,6,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_6_inject,edurabsa,6,inject,False,"{""overall_experience"": ""negative"", ""assessment_design"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_757_faithful,edurabsa,757,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_757_flip,edurabsa,757,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_757_inject,edurabsa,757,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""organization"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1466_faithful,edurabsa,1466,faithful,True,"{""workload"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_1466_flip,edurabsa,1466,flip,False,"{""workload"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_1466_inject,edurabsa,1466,inject,False,"{""workload"": ""negative"", ""accessibility"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_1771_faithful,edurabsa,1771,faithful,True,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative"", ""accessibility"": ""positive"", ""workload"": ""negative"", ""overall_experience"": ""neutral""}",5,0.6,0.4,False
+v7_edurabsa_1771_flip,edurabsa,1771,flip,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive"", ""accessibility"": ""negative"", ""workload"": ""positive"", ""overall_experience"": ""negative""}",5,0.8,0.2,False
+v7_edurabsa_1771_inject,edurabsa,1771,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative"", ""accessibility"": ""positive"", ""workload"": ""negative"", ""overall_experience"": ""neutral"", ""organization"": ""positive""}",6,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_1787_faithful,edurabsa,1787,faithful,True,"{""workload"": ""positive""}",1,0.0,0.0,False
+v7_edurabsa_1787_flip,edurabsa,1787,flip,False,"{""workload"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_1787_inject,edurabsa,1787,inject,False,"{""workload"": ""positive"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1539_faithful,edurabsa,1539,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1539_flip,edurabsa,1539,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1539_inject,edurabsa,1539,inject,False,"{""lecturer_quality"": ""positive"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1507_faithful,edurabsa,1507,faithful,True,"{""exam_fairness"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1507_flip,edurabsa,1507,flip,False,"{""exam_fairness"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1507_inject,edurabsa,1507,inject,False,"{""exam_fairness"": ""positive"", ""overall_experience"": ""positive"", ""assessment_design"": ""negative""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_1015_faithful,edurabsa,1015,faithful,True,"{""overall_experience"": ""positive"", ""organization"": ""neutral"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1015_flip,edurabsa,1015,flip,False,"{""overall_experience"": ""negative"", ""organization"": ""negative"", ""exam_fairness"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_1015_inject,edurabsa,1015,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""neutral"", ""exam_fairness"": ""positive"", ""lecturer_quality"": ""negative""}",4,1.0,0.5,False
+v7_edurabsa_268_faithful,edurabsa,268,faithful,True,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_268_flip,edurabsa,268,flip,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_268_inject,edurabsa,268,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""workload"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_125_faithful,edurabsa,125,faithful,True,"{""accessibility"": ""positive"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_125_flip,edurabsa,125,flip,False,"{""accessibility"": ""negative"", ""lecturer_quality"": ""negative"", ""overall_experience"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_125_inject,edurabsa,125,inject,False,"{""accessibility"": ""positive"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""assessment_design"": ""positive""}",4,0.75,0.75,False
+v7_edurabsa_377_faithful,edurabsa,377,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_377_flip,edurabsa,377,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_377_inject,edurabsa,377,inject,False,"{""overall_experience"": ""positive"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1166_faithful,edurabsa,1166,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1166_flip,edurabsa,1166,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1166_inject,edurabsa,1166,inject,False,"{""overall_experience"": ""positive"", ""materials"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_231_faithful,edurabsa,231,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_231_flip,edurabsa,231,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_231_inject,edurabsa,231,inject,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1393_faithful,edurabsa,1393,faithful,True,"{""overall_experience"": ""positive"", ""accessibility"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1393_flip,edurabsa,1393,flip,False,"{""overall_experience"": ""negative"", ""accessibility"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1393_inject,edurabsa,1393,inject,False,"{""overall_experience"": ""positive"", ""accessibility"": ""positive"", ""assessment_design"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1775_faithful,edurabsa,1775,faithful,True,"{""workload"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1775_flip,edurabsa,1775,flip,False,"{""workload"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1775_inject,edurabsa,1775,inject,False,"{""workload"": ""positive"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1260_faithful,edurabsa,1260,faithful,True,"{""exam_fairness"": ""positive"", ""workload"": ""neutral""}",2,0.5,0.5,False
+v7_edurabsa_1260_flip,edurabsa,1260,flip,False,"{""exam_fairness"": ""negative"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1260_inject,edurabsa,1260,inject,False,"{""exam_fairness"": ""positive"", ""workload"": ""neutral"", ""accessibility"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_edurabsa_1674_faithful,edurabsa,1674,faithful,True,"{""accessibility"": ""positive"", ""overall_experience"": ""positive"", ""materials"": ""neutral""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_1674_flip,edurabsa,1674,flip,False,"{""accessibility"": ""negative"", ""overall_experience"": ""negative"", ""materials"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_1674_inject,edurabsa,1674,inject,False,"{""accessibility"": ""positive"", ""overall_experience"": ""positive"", ""materials"": ""neutral"", ""lecturer_quality"": ""positive""}",4,1.0,0.75,False
+v7_edurabsa_1116_faithful,edurabsa,1116,faithful,True,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""accessibility"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1116_flip,edurabsa,1116,flip,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""accessibility"": ""positive""}",3,0.6666666666666666,0.0,False
+v7_edurabsa_1116_inject,edurabsa,1116,inject,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""accessibility"": ""negative"", ""grading_transparency"": ""positive""}",4,0.75,0.75,False
+v7_edurabsa_1993_faithful,edurabsa,1993,faithful,True,"{""lecturer_quality"": ""negative"", ""accessibility"": ""negative"", ""organization"": ""negative""}",3,1.0,1.0,True
+v7_edurabsa_1993_flip,edurabsa,1993,flip,False,"{""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""organization"": ""positive""}",3,1.0,0.0,False
+v7_edurabsa_1993_inject,edurabsa,1993,inject,False,"{""lecturer_quality"": ""negative"", ""accessibility"": ""negative"", ""organization"": ""negative"", ""overall_experience"": ""negative""}",4,1.0,1.0,True
+v7_edurabsa_544_faithful,edurabsa,544,faithful,True,"{""accessibility"": ""positive""}",1,0.0,0.0,False
+v7_edurabsa_544_flip,edurabsa,544,flip,False,"{""accessibility"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_544_inject,edurabsa,544,inject,False,"{""accessibility"": ""positive"", ""grading_transparency"": ""negative""}",2,0.0,0.0,False
+v7_edurabsa_1161_faithful,edurabsa,1161,faithful,True,"{""overall_experience"": ""positive"", ""workload"": ""negative"", ""exam_fairness"": ""negative""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_1161_flip,edurabsa,1161,flip,False,"{""overall_experience"": ""negative"", ""workload"": ""positive"", ""exam_fairness"": ""positive""}",3,1.0,0.0,False
+v7_edurabsa_1161_inject,edurabsa,1161,inject,False,"{""overall_experience"": ""positive"", ""workload"": ""negative"", ""exam_fairness"": ""negative"", ""assessment_design"": ""negative""}",4,1.0,0.5,False
+v7_edurabsa_2024_faithful,edurabsa,2024,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_2024_flip,edurabsa,2024,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_2024_inject,edurabsa,2024,inject,False,"{""lecturer_quality"": ""negative"", ""workload"": ""negative""}",2,0.5,0.0,False
+v7_edurabsa_332_faithful,edurabsa,332,faithful,True,"{""overall_experience"": ""negative"", ""workload"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_332_flip,edurabsa,332,flip,False,"{""overall_experience"": ""positive"", ""workload"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_332_inject,edurabsa,332,inject,False,"{""overall_experience"": ""negative"", ""workload"": ""positive"", ""exam_fairness"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_edurabsa_708_faithful,edurabsa,708,faithful,True,"{""overall_experience"": ""positive"", ""exam_fairness"": ""neutral"", ""materials"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_708_flip,edurabsa,708,flip,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative"", ""materials"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_edurabsa_708_inject,edurabsa,708,inject,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""neutral"", ""materials"": ""positive"", ""lecturer_quality"": ""positive""}",4,0.5,0.5,False
+v7_edurabsa_1040_faithful,edurabsa,1040,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1040_flip,edurabsa,1040,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1040_inject,edurabsa,1040,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""assessment_design"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1905_faithful,edurabsa,1905,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""exam_fairness"": ""positive""}",4,0.5,0.5,False
+v7_edurabsa_1905_flip,edurabsa,1905,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""accessibility"": ""negative"", ""exam_fairness"": ""negative""}",4,0.5,0.0,False
+v7_edurabsa_1905_inject,edurabsa,1905,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""exam_fairness"": ""positive"", ""materials"": ""negative""}",5,0.8,0.6,False
+v7_edurabsa_397_faithful,edurabsa,397,faithful,True,"{""exam_fairness"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_397_flip,edurabsa,397,flip,False,"{""exam_fairness"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_397_inject,edurabsa,397,inject,False,"{""exam_fairness"": ""positive"", ""overall_experience"": ""negative"", ""workload"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_75_faithful,edurabsa,75,faithful,True,"{""lecturer_quality"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_75_flip,edurabsa,75,flip,False,"{""lecturer_quality"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_75_inject,edurabsa,75,inject,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1528_faithful,edurabsa,1528,faithful,True,"{""lecturer_quality"": ""negative"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1528_flip,edurabsa,1528,flip,False,"{""lecturer_quality"": ""positive"", ""workload"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_1528_inject,edurabsa,1528,inject,False,"{""lecturer_quality"": ""negative"", ""workload"": ""negative"", ""assessment_design"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_589_faithful,edurabsa,589,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_589_flip,edurabsa,589,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_589_inject,edurabsa,589,inject,False,"{""overall_experience"": ""negative"", ""grading_transparency"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_1870_faithful,edurabsa,1870,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1870_flip,edurabsa,1870,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1870_inject,edurabsa,1870,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""organization"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1259_faithful,edurabsa,1259,faithful,True,"{""overall_experience"": ""negative"", ""workload"": ""negative"", ""exam_fairness"": ""negative"", ""lecturer_quality"": ""negative"", ""materials"": ""neutral"", ""accessibility"": ""positive""}",6,1.0,0.6666666666666666,False
+v7_edurabsa_1259_flip,edurabsa,1259,flip,False,"{""overall_experience"": ""positive"", ""workload"": ""positive"", ""exam_fairness"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""negative"", ""accessibility"": ""negative""}",6,1.0,0.3333333333333333,False
+v7_edurabsa_1259_inject,edurabsa,1259,inject,False,"{""overall_experience"": ""negative"", ""workload"": ""negative"", ""exam_fairness"": ""negative"", ""lecturer_quality"": ""negative"", ""materials"": ""neutral"", ""accessibility"": ""positive"", ""assessment_design"": ""negative""}",7,1.0,0.7142857142857143,False
+v7_edurabsa_1710_faithful,edurabsa,1710,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1710_flip,edurabsa,1710,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1710_inject,edurabsa,1710,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1463_faithful,edurabsa,1463,faithful,True,"{""accessibility"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1463_flip,edurabsa,1463,flip,False,"{""accessibility"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1463_inject,edurabsa,1463,inject,False,"{""accessibility"": ""positive"", ""lecturer_quality"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1741_faithful,edurabsa,1741,faithful,True,"{""workload"": ""positive"", ""overall_experience"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_1741_flip,edurabsa,1741,flip,False,"{""workload"": ""negative"", ""overall_experience"": ""negative""}",2,0.5,0.0,False
+v7_edurabsa_1741_inject,edurabsa,1741,inject,False,"{""workload"": ""positive"", ""overall_experience"": ""positive"", ""organization"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_edurabsa_251_faithful,edurabsa,251,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_251_flip,edurabsa,251,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_251_inject,edurabsa,251,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""grading_transparency"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_392_faithful,edurabsa,392,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_392_flip,edurabsa,392,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_392_inject,edurabsa,392,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1452_faithful,edurabsa,1452,faithful,True,"{""exam_fairness"": ""neutral"", ""workload"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_1452_flip,edurabsa,1452,flip,False,"{""exam_fairness"": ""negative"", ""workload"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1452_inject,edurabsa,1452,inject,False,"{""exam_fairness"": ""neutral"", ""workload"": ""positive"", ""lecturer_quality"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_2123_faithful,edurabsa,2123,faithful,True,"{""exam_fairness"": ""neutral""}",1,1.0,1.0,True
+v7_edurabsa_2123_flip,edurabsa,2123,flip,False,"{""exam_fairness"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_2123_inject,edurabsa,2123,inject,False,"{""exam_fairness"": ""neutral"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_713_faithful,edurabsa,713,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_713_flip,edurabsa,713,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_713_inject,edurabsa,713,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""exam_fairness"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_83_faithful,edurabsa,83,faithful,True,"{""exam_fairness"": ""negative"", ""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_83_flip,edurabsa,83,flip,False,"{""exam_fairness"": ""positive"", ""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",3,0.6666666666666666,0.0,False
+v7_edurabsa_83_inject,edurabsa,83,inject,False,"{""exam_fairness"": ""negative"", ""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""organization"": ""negative""}",4,0.75,0.75,False
+v7_edurabsa_1706_faithful,edurabsa,1706,faithful,True,"{""lecturer_quality"": ""negative"", ""materials"": ""negative"", ""exam_fairness"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1706_flip,edurabsa,1706,flip,False,"{""lecturer_quality"": ""positive"", ""materials"": ""positive"", ""exam_fairness"": ""positive""}",3,1.0,0.0,False
+v7_edurabsa_1706_inject,edurabsa,1706,inject,False,"{""lecturer_quality"": ""negative"", ""materials"": ""negative"", ""exam_fairness"": ""negative"", ""organization"": ""positive""}",4,1.0,0.75,False
+v7_edurabsa_2025_faithful,edurabsa,2025,faithful,True,"{""workload"": ""positive"", ""overall_experience"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_2025_flip,edurabsa,2025,flip,False,"{""workload"": ""negative"", ""overall_experience"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_2025_inject,edurabsa,2025,inject,False,"{""workload"": ""positive"", ""overall_experience"": ""negative"", ""materials"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1791_faithful,edurabsa,1791,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1791_flip,edurabsa,1791,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1791_inject,edurabsa,1791,inject,False,"{""overall_experience"": ""positive"", ""accessibility"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_403_faithful,edurabsa,403,faithful,True,"{""overall_experience"": ""positive"", ""accessibility"": ""positive"", ""workload"": ""negative""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_403_flip,edurabsa,403,flip,False,"{""overall_experience"": ""negative"", ""accessibility"": ""negative"", ""workload"": ""positive""}",3,1.0,0.3333333333333333,False
+v7_edurabsa_403_inject,edurabsa,403,inject,False,"{""overall_experience"": ""positive"", ""accessibility"": ""positive"", ""workload"": ""negative"", ""grading_transparency"": ""positive""}",4,0.75,0.5,False
+v7_edurabsa_272_faithful,edurabsa,272,faithful,True,"{""workload"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_272_flip,edurabsa,272,flip,False,"{""workload"": ""positive""}",1,0.0,0.0,False
+v7_edurabsa_272_inject,edurabsa,272,inject,False,"{""workload"": ""negative"", ""assessment_design"": ""negative""}",2,0.0,0.0,False
+v7_edurabsa_1861_faithful,edurabsa,1861,faithful,True,"{""workload"": ""positive"", ""exam_fairness"": ""negative"", ""overall_experience"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_1861_flip,edurabsa,1861,flip,False,"{""workload"": ""negative"", ""exam_fairness"": ""positive"", ""overall_experience"": ""negative""}",3,1.0,0.3333333333333333,False
+v7_edurabsa_1861_inject,edurabsa,1861,inject,False,"{""workload"": ""positive"", ""exam_fairness"": ""negative"", ""overall_experience"": ""positive"", ""organization"": ""negative""}",4,0.75,0.75,False
+v7_edurabsa_437_faithful,edurabsa,437,faithful,True,"{""overall_experience"": ""positive"", ""workload"": ""negative"", ""exam_fairness"": ""negative"", ""organization"": ""negative"", ""materials"": ""negative""}",5,0.8,0.8,False
+v7_edurabsa_437_flip,edurabsa,437,flip,False,"{""overall_experience"": ""negative"", ""workload"": ""positive"", ""exam_fairness"": ""positive"", ""organization"": ""positive"", ""materials"": ""positive""}",5,1.0,0.0,False
+v7_edurabsa_437_inject,edurabsa,437,inject,False,"{""overall_experience"": ""positive"", ""workload"": ""negative"", ""exam_fairness"": ""negative"", ""organization"": ""negative"", ""materials"": ""negative"", ""grading_transparency"": ""negative""}",6,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_61_faithful,edurabsa,61,faithful,True,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_61_flip,edurabsa,61,flip,False,"{""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_61_inject,edurabsa,61,inject,False,"{""lecturer_quality"": ""negative"", ""exam_fairness"": ""negative"", ""grading_transparency"": ""negative""}",3,0.3333333333333333,0.3333333333333333,False
+v7_edurabsa_865_faithful,edurabsa,865,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_865_flip,edurabsa,865,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_865_inject,edurabsa,865,inject,False,"{""overall_experience"": ""positive"", ""materials"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_1221_faithful,edurabsa,1221,faithful,True,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""materials"": ""negative""}",3,1.0,1.0,True
+v7_edurabsa_1221_flip,edurabsa,1221,flip,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""materials"": ""positive""}",3,1.0,0.0,False
+v7_edurabsa_1221_inject,edurabsa,1221,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""materials"": ""negative"", ""grading_transparency"": ""positive""}",4,0.75,0.75,False
+v7_edurabsa_1368_faithful,edurabsa,1368,faithful,True,"{""overall_experience"": ""negative"", ""exam_fairness"": ""neutral""}",2,1.0,1.0,True
+v7_edurabsa_1368_flip,edurabsa,1368,flip,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1368_inject,edurabsa,1368,inject,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""neutral"", ""grading_transparency"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1845_faithful,edurabsa,1845,faithful,True,"{""workload"": ""neutral""}",1,1.0,0.0,False
+v7_edurabsa_1845_flip,edurabsa,1845,flip,False,"{""workload"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_1845_inject,edurabsa,1845,inject,False,"{""workload"": ""neutral"", ""exam_fairness"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_1050_faithful,edurabsa,1050,faithful,True,"{""lecturer_quality"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1050_flip,edurabsa,1050,flip,False,"{""lecturer_quality"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1050_inject,edurabsa,1050,inject,False,"{""lecturer_quality"": ""positive"", ""organization"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1862_faithful,edurabsa,1862,faithful,True,"{""accessibility"": ""positive"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""materials"": ""neutral""}",4,1.0,0.75,False
+v7_edurabsa_1862_flip,edurabsa,1862,flip,False,"{""accessibility"": ""negative"", ""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""materials"": ""negative""}",4,1.0,0.0,False
+v7_edurabsa_1862_inject,edurabsa,1862,inject,False,"{""accessibility"": ""positive"", ""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""materials"": ""neutral"", ""workload"": ""negative""}",5,1.0,0.6,False
+v7_edurabsa_1552_faithful,edurabsa,1552,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1552_flip,edurabsa,1552,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1552_inject,edurabsa,1552,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1634_faithful,edurabsa,1634,faithful,True,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_1634_flip,edurabsa,1634,flip,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_1634_inject,edurabsa,1634,inject,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""accessibility"": ""negative""}",3,1.0,1.0,True
+v7_edurabsa_886_faithful,edurabsa,886,faithful,True,"{""organization"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_886_flip,edurabsa,886,flip,False,"{""organization"": ""positive""}",1,0.0,0.0,False
+v7_edurabsa_886_inject,edurabsa,886,inject,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative""}",2,0.0,0.0,False
+v7_edurabsa_1198_faithful,edurabsa,1198,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_1198_flip,edurabsa,1198,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_1198_inject,edurabsa,1198,inject,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_598_faithful,edurabsa,598,faithful,True,"{""accessibility"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_598_flip,edurabsa,598,flip,False,"{""accessibility"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_598_inject,edurabsa,598,inject,False,"{""accessibility"": ""positive"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_1052_faithful,edurabsa,1052,faithful,True,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""exam_fairness"": ""positive"", ""overall_experience"": ""positive""}",5,0.8,0.8,False
+v7_edurabsa_1052_flip,edurabsa,1052,flip,False,"{""organization"": ""negative"", ""lecturer_quality"": ""negative"", ""accessibility"": ""negative"", ""exam_fairness"": ""negative"", ""overall_experience"": ""negative""}",5,0.8,0.0,False
+v7_edurabsa_1052_inject,edurabsa,1052,inject,False,"{""organization"": ""positive"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""exam_fairness"": ""positive"", ""overall_experience"": ""positive"", ""workload"": ""negative""}",6,0.8333333333333334,0.8333333333333334,False
+v7_edurabsa_197_faithful,edurabsa,197,faithful,True,"{""workload"": ""neutral"", ""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_197_flip,edurabsa,197,flip,False,"{""workload"": ""negative"", ""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",3,1.0,0.3333333333333333,False
+v7_edurabsa_197_inject,edurabsa,197,inject,False,"{""workload"": ""neutral"", ""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive""}",4,0.75,0.5,False
+v7_edurabsa_142_faithful,edurabsa,142,faithful,True,"{""overall_experience"": ""positive"", ""organization"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_142_flip,edurabsa,142,flip,False,"{""overall_experience"": ""negative"", ""organization"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_142_inject,edurabsa,142,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_2137_faithful,edurabsa,2137,faithful,True,"{""overall_experience"": ""positive"", ""workload"": ""neutral"", ""lecturer_quality"": ""positive""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_2137_flip,edurabsa,2137,flip,False,"{""overall_experience"": ""negative"", ""workload"": ""negative"", ""lecturer_quality"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_2137_inject,edurabsa,2137,inject,False,"{""overall_experience"": ""positive"", ""workload"": ""neutral"", ""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",4,0.75,0.5,False
+v7_edurabsa_1633_faithful,edurabsa,1633,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1633_flip,edurabsa,1633,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1633_inject,edurabsa,1633,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""organization"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_870_faithful,edurabsa,870,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_870_flip,edurabsa,870,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_870_inject,edurabsa,870,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_255_faithful,edurabsa,255,faithful,True,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_255_flip,edurabsa,255,flip,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative""}",2,0.5,0.0,False
+v7_edurabsa_255_inject,edurabsa,255,inject,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_731_faithful,edurabsa,731,faithful,True,"{""overall_experience"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_731_flip,edurabsa,731,flip,False,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_731_inject,edurabsa,731,inject,False,"{""overall_experience"": ""positive"", ""materials"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_549_faithful,edurabsa,549,faithful,True,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive"", ""materials"": ""neutral""}",3,1.0,0.3333333333333333,False
+v7_edurabsa_549_flip,edurabsa,549,flip,False,"{""overall_experience"": ""negative"", ""exam_fairness"": ""negative"", ""materials"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_549_inject,edurabsa,549,inject,False,"{""overall_experience"": ""positive"", ""exam_fairness"": ""positive"", ""materials"": ""neutral"", ""lecturer_quality"": ""negative""}",4,1.0,0.25,False
+v7_edurabsa_1454_faithful,edurabsa,1454,faithful,True,"{""overall_experience"": ""positive"", ""workload"": ""neutral"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive""}",4,1.0,0.75,False
+v7_edurabsa_1454_flip,edurabsa,1454,flip,False,"{""overall_experience"": ""negative"", ""workload"": ""negative"", ""lecturer_quality"": ""negative"", ""accessibility"": ""negative""}",4,1.0,0.25,False
+v7_edurabsa_1454_inject,edurabsa,1454,inject,False,"{""overall_experience"": ""positive"", ""workload"": ""neutral"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""exam_fairness"": ""positive""}",5,0.8,0.6,False
+v7_edurabsa_238_faithful,edurabsa,238,faithful,True,"{""accessibility"": ""positive""}",1,1.0,1.0,True
+v7_edurabsa_238_flip,edurabsa,238,flip,False,"{""accessibility"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_238_inject,edurabsa,238,inject,False,"{""accessibility"": ""positive"", ""grading_transparency"": ""positive""}",2,0.0,0.0,False
+v7_edurabsa_1997_faithful,edurabsa,1997,faithful,True,"{""materials"": ""neutral"", ""workload"": ""positive""}",2,1.0,0.0,False
+v7_edurabsa_1997_flip,edurabsa,1997,flip,False,"{""materials"": ""negative"", ""workload"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_1997_inject,edurabsa,1997,inject,False,"{""materials"": ""neutral"", ""workload"": ""positive"", ""organization"": ""positive""}",3,0.6666666666666666,0.0,False
+v7_edurabsa_501_faithful,edurabsa,501,faithful,True,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""organization"": ""positive"", ""accessibility"": ""positive""}",4,0.75,0.75,False
+v7_edurabsa_501_flip,edurabsa,501,flip,False,"{""lecturer_quality"": ""negative"", ""overall_experience"": ""negative"", ""organization"": ""negative"", ""accessibility"": ""negative""}",4,0.75,0.0,False
+v7_edurabsa_501_inject,edurabsa,501,inject,False,"{""lecturer_quality"": ""positive"", ""overall_experience"": ""positive"", ""organization"": ""positive"", ""accessibility"": ""positive"", ""assessment_design"": ""negative""}",5,0.6,0.6,False
+v7_edurabsa_778_faithful,edurabsa,778,faithful,True,"{""overall_experience"": ""positive"", ""accessibility"": ""positive"", ""lecturer_quality"": ""positive"", ""organization"": ""positive""}",4,1.0,1.0,True
+v7_edurabsa_778_flip,edurabsa,778,flip,False,"{""overall_experience"": ""negative"", ""accessibility"": ""negative"", ""lecturer_quality"": ""negative"", ""organization"": ""negative""}",4,0.75,0.0,False
+v7_edurabsa_778_inject,edurabsa,778,inject,False,"{""overall_experience"": ""positive"", ""accessibility"": ""positive"", ""lecturer_quality"": ""positive"", ""organization"": ""positive"", ""exam_fairness"": ""positive""}",5,0.6,0.6,False
+v7_edurabsa_788_faithful,edurabsa,788,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,0.0,False
+v7_edurabsa_788_flip,edurabsa,788,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_788_inject,edurabsa,788,inject,False,"{""overall_experience"": ""negative"", ""assessment_design"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_1184_faithful,edurabsa,1184,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""neutral""}",2,1.0,0.5,False
+v7_edurabsa_1184_flip,edurabsa,1184,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1184_inject,edurabsa,1184,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""neutral"", ""accessibility"": ""positive""}",3,0.6666666666666666,0.3333333333333333,False
+v7_edurabsa_1820_faithful,edurabsa,1820,faithful,True,"{""materials"": ""positive"", ""lecturer_quality"": ""negative""}",2,1.0,0.5,False
+v7_edurabsa_1820_flip,edurabsa,1820,flip,False,"{""materials"": ""negative"", ""lecturer_quality"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_1820_inject,edurabsa,1820,inject,False,"{""materials"": ""positive"", ""lecturer_quality"": ""negative"", ""organization"": ""negative""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_1313_faithful,edurabsa,1313,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_1313_flip,edurabsa,1313,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_1313_inject,edurabsa,1313,inject,False,"{""overall_experience"": ""negative"", ""accessibility"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_552_faithful,edurabsa,552,faithful,True,"{""workload"": ""positive""}",1,0.0,0.0,False
+v7_edurabsa_552_flip,edurabsa,552,flip,False,"{""workload"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_552_inject,edurabsa,552,inject,False,"{""workload"": ""positive"", ""assessment_design"": ""negative""}",2,0.0,0.0,False
+v7_edurabsa_266_faithful,edurabsa,266,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_266_flip,edurabsa,266,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_266_inject,edurabsa,266,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""exam_fairness"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1147_faithful,edurabsa,1147,faithful,True,"{""lecturer_quality"": ""positive"", ""workload"": ""positive""}",2,1.0,0.5,False
+v7_edurabsa_1147_flip,edurabsa,1147,flip,False,"{""lecturer_quality"": ""negative"", ""workload"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1147_inject,edurabsa,1147,inject,False,"{""lecturer_quality"": ""positive"", ""workload"": ""positive"", ""accessibility"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_155_faithful,edurabsa,155,faithful,True,"{""materials"": ""negative"", ""overall_experience"": ""negative"", ""workload"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_155_flip,edurabsa,155,flip,False,"{""materials"": ""positive"", ""overall_experience"": ""positive"", ""workload"": ""negative""}",3,0.3333333333333333,0.0,False
+v7_edurabsa_155_inject,edurabsa,155,inject,False,"{""materials"": ""negative"", ""overall_experience"": ""negative"", ""workload"": ""positive"", ""exam_fairness"": ""negative""}",4,0.5,0.5,False
+v7_edurabsa_1415_faithful,edurabsa,1415,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""organization"": ""positive""}",4,1.0,1.0,True
+v7_edurabsa_1415_flip,edurabsa,1415,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""accessibility"": ""negative"", ""organization"": ""negative""}",4,0.75,0.0,False
+v7_edurabsa_1415_inject,edurabsa,1415,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""accessibility"": ""positive"", ""organization"": ""positive"", ""exam_fairness"": ""positive""}",5,0.8,0.8,False
+v7_edurabsa_1389_faithful,edurabsa,1389,faithful,True,"{""workload"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1389_flip,edurabsa,1389,flip,False,"{""workload"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1389_inject,edurabsa,1389,inject,False,"{""workload"": ""positive"", ""overall_experience"": ""positive"", ""grading_transparency"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1188_faithful,edurabsa,1188,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1188_flip,edurabsa,1188,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1188_inject,edurabsa,1188,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""assessment_design"": ""positive""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_472_faithful,edurabsa,472,faithful,True,"{""exam_fairness"": ""positive"", ""workload"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_472_flip,edurabsa,472,flip,False,"{""exam_fairness"": ""negative"", ""workload"": ""negative""}",2,0.5,0.0,False
+v7_edurabsa_472_inject,edurabsa,472,inject,False,"{""exam_fairness"": ""positive"", ""workload"": ""positive"", ""accessibility"": ""positive""}",3,0.3333333333333333,0.3333333333333333,False
+v7_edurabsa_462_faithful,edurabsa,462,faithful,True,"{""accessibility"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_462_flip,edurabsa,462,flip,False,"{""accessibility"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_462_inject,edurabsa,462,inject,False,"{""accessibility"": ""negative"", ""organization"": ""positive""}",2,0.5,0.5,False
+v7_edurabsa_1908_faithful,edurabsa,1908,faithful,True,"{""workload"": ""positive"", ""organization"": ""positive""}",2,0.0,0.0,False
+v7_edurabsa_1908_flip,edurabsa,1908,flip,False,"{""workload"": ""negative"", ""organization"": ""negative""}",2,0.0,0.0,False
+v7_edurabsa_1908_inject,edurabsa,1908,inject,False,"{""workload"": ""positive"", ""organization"": ""positive"", ""overall_experience"": ""negative""}",3,0.3333333333333333,0.0,False
+v7_edurabsa_1306_faithful,edurabsa,1306,faithful,True,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""positive""}",3,1.0,1.0,True
+v7_edurabsa_1306_flip,edurabsa,1306,flip,False,"{""overall_experience"": ""negative"", ""lecturer_quality"": ""negative"", ""workload"": ""negative""}",3,1.0,0.0,False
+v7_edurabsa_1306_inject,edurabsa,1306,inject,False,"{""overall_experience"": ""positive"", ""lecturer_quality"": ""positive"", ""workload"": ""positive"", ""grading_transparency"": ""negative""}",4,0.75,0.75,False
+v7_edurabsa_1465_faithful,edurabsa,1465,faithful,True,"{""accessibility"": ""positive"", ""overall_experience"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1465_flip,edurabsa,1465,flip,False,"{""accessibility"": ""negative"", ""overall_experience"": ""negative""}",2,1.0,0.0,False
+v7_edurabsa_1465_inject,edurabsa,1465,inject,False,"{""accessibility"": ""positive"", ""overall_experience"": ""positive"", ""materials"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1538_faithful,edurabsa,1538,faithful,True,"{""overall_experience"": ""positive"", ""accessibility"": ""positive""}",2,1.0,1.0,True
+v7_edurabsa_1538_flip,edurabsa,1538,flip,False,"{""overall_experience"": ""negative"", ""accessibility"": ""negative""}",2,0.5,0.0,False
+v7_edurabsa_1538_inject,edurabsa,1538,inject,False,"{""overall_experience"": ""positive"", ""accessibility"": ""positive"", ""exam_fairness"": ""negative""}",3,0.6666666666666666,0.6666666666666666,False
+v7_edurabsa_1621_faithful,edurabsa,1621,faithful,True,"{""overall_experience"": ""positive"", ""organization"": ""negative""}",2,1.0,1.0,True
+v7_edurabsa_1621_flip,edurabsa,1621,flip,False,"{""overall_experience"": ""negative"", ""organization"": ""positive""}",2,0.5,0.0,False
+v7_edurabsa_1621_inject,edurabsa,1621,inject,False,"{""overall_experience"": ""positive"", ""organization"": ""negative"", ""lecturer_quality"": ""positive""}",3,1.0,0.6666666666666666,False
+v7_edurabsa_1810_faithful,edurabsa,1810,faithful,True,"{""accessibility"": ""positive""}",1,0.0,0.0,False
+v7_edurabsa_1810_flip,edurabsa,1810,flip,False,"{""accessibility"": ""negative""}",1,0.0,0.0,False
+v7_edurabsa_1810_inject,edurabsa,1810,inject,False,"{""accessibility"": ""positive"", ""overall_experience"": ""negative""}",2,0.5,0.5,False
+v7_edurabsa_414_faithful,edurabsa,414,faithful,True,"{""overall_experience"": ""negative""}",1,1.0,1.0,True
+v7_edurabsa_414_flip,edurabsa,414,flip,False,"{""overall_experience"": ""positive""}",1,1.0,0.0,False
+v7_edurabsa_414_inject,edurabsa,414,inject,False,"{""overall_experience"": ""negative"", ""materials"": ""negative""}",2,0.5,0.5,False

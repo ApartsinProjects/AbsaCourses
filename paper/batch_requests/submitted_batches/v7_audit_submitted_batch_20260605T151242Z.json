@@ -1,0 +1,14 @@
+{
+  "submitted_at_utc": "20260605T151242Z",
+  "prefix": "v7_audit",
+  "batch_id": "batch_6a22e769e67c819093478221502f97b4",
+  "status": "validating",
+  "endpoint": "/v1/responses",
+  "completion_window": "24h",
+  "input_file_id": "file-A7esih3eYxXtD1XLnyq2R3",
+  "output_file_id": null,
+  "error_file_id": null,
+  "request_file": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\batch_requests\\v7_audit_requests.jsonl",
+  "manifest_file": "E:\\Claude\\CourseABSA\\hopeful-kowalevski-04ee10\\paper\\batch_requests\\v7_audit_manifest.csv",
+  "model": "gpt-4.1-mini"
+}

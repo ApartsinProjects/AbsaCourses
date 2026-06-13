@@ -1,0 +1,51 @@
+{
+  "experiment": "v7_audit_vs_human_realtime",
+  "model": "gpt-4.1-mini",
+  "n_aspect_judgments": 2482,
+  "n_datasets": 2,
+  "datasets": [
+    "herath",
+    "edurabsa"
+  ],
+  "method": "real-time replay of 1200 perturbation-controlled requests (faithful/flip/inject)",
+  "per_aspect": {
+    "ALL": {
+      "n": 2482,
+      "acc": 0.776,
+      "precision": 0.879,
+      "recall": 0.694,
+      "f1": 0.776,
+      "kappa": 0.557
+    },
+    "herath": {
+      "n": 1396,
+      "acc": 0.749,
+      "precision": 0.869,
+      "recall": 0.636,
+      "f1": 0.735,
+      "kappa": 0.506
+    },
+    "edurabsa": {
+      "n": 1086,
+      "acc": 0.81,
+      "precision": 0.89,
+      "recall": 0.764,
+      "f1": 0.822,
+      "kappa": 0.621
+    }
+  },
+  "per_perturbation": {
+    "faithful_keep_rate": 0.687,
+    "flip_reject_rate": 0.886,
+    "inject_reject_rate": 0.867
+  },
+  "set_level": {
+    "ALL": {
+      "acc": 0.804,
+      "precision": 0.816,
+      "recall": 0.532,
+      "kappa": 0.517
+    }
+  },
+  "note": "per-aspect is the filter-aligned metric (filter audits each aspect); set-level conjunction is stricter."
+}
