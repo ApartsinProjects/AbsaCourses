@@ -13,64 +13,69 @@ def write(path: Path, text: str) -> None:
 
 def synthetic_generation_svg() -> str:
     return r"""
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="820" viewBox="0 0 1600 820" role="img" aria-label="Synthetic educational review generation pipeline">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-label="Synthetic educational review generation pipeline">
   <defs>
     <style>
       .bg { fill: #fcfbf7; }
       .frame { fill: #fffefe; stroke: #d8d3c9; stroke-width: 1.2; }
-      .label { font: 700 30px Georgia, "Times New Roman", serif; fill: #16324a; }
+      .label { font: 700 29px Georgia, "Times New Roman", serif; fill: #16324a; }
       .body { font: 17px Georgia, "Times New Roman", serif; fill: #31414f; }
-      .chip { font: 700 13px Arial, sans-serif; fill: #4d6277; letter-spacing: 0.08em; text-transform: uppercase; }
-      .arrow { stroke: #6a7886; stroke-width: 4; fill: none; marker-end: url(#arrow); }
-      .dashed { stroke-dasharray: 12 10; }
-      .panelA { fill: #edf3f7; stroke: #d7e2ea; stroke-width: 1.4; }
-      .panelB { fill: #f2f5ee; stroke: #dde4d5; stroke-width: 1.4; }
-      .panelC { fill: #f8f1e9; stroke: #eadbcc; stroke-width: 1.4; }
-      .panelD { fill: #edf4ee; stroke: #d5e3d7; stroke-width: 1.4; }
-      .side { fill: #f7f7f3; stroke: #ddd7cc; stroke-width: 1.2; }
+      .chip { font: 700 13px Arial, sans-serif; fill: #9a5a30; letter-spacing: 0.09em; }
+      .flow { stroke: #6a7886; stroke-width: 4; fill: none; marker-end: url(#arrow); stroke-linejoin: round; }
+      .fb { stroke: #b5703f; stroke-width: 3.4; fill: none; marker-end: url(#arrowfb); stroke-dasharray: 11 9; stroke-linejoin: round; }
+      .panelA { fill: #edf3f7; stroke: #cddbe6; stroke-width: 1.6; }
+      .panelB { fill: #f2f5ee; stroke: #d6e0cc; stroke-width: 1.6; }
+      .panelC { fill: #f8f1e9; stroke: #e6d3bf; stroke-width: 1.6; }
+      .panelD { fill: #edf4ee; stroke: #cfe0d2; stroke-width: 1.6; }
+      .fbbox { fill: #fbf2ea; stroke: #e3c4a8; stroke-width: 1.6; }
       .center { text-anchor: middle; }
     </style>
-    <marker id="arrow" markerWidth="10" markerHeight="10" refX="8" refY="5" orient="auto">
+    <marker id="arrow" markerWidth="11" markerHeight="11" refX="8.5" refY="5" orient="auto">
       <path d="M0,0 L10,5 L0,10 z" fill="#6a7886"/>
     </marker>
+    <marker id="arrowfb" markerWidth="11" markerHeight="11" refX="8.5" refY="5" orient="auto">
+      <path d="M0,0 L10,5 L0,10 z" fill="#b5703f"/>
+    </marker>
     <filter id="shadow" x="-10%" y="-10%" width="120%" height="120%">
-      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#d9d3ca" flood-opacity="0.28"/>
+      <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#d9d3ca" flood-opacity="0.26"/>
     </filter>
   </defs>
-  <rect class="bg" width="1600" height="820"/>
-  <rect x="34" y="34" width="1532" height="752" class="frame"/>
+  <rect class="bg" width="1600" height="760"/>
+  <rect x="34" y="34" width="1532" height="692" class="frame"/>
 
-  <rect x="116" y="180" width="320" height="132" rx="24" class="panelA" filter="url(#shadow)"/>
-  <text x="276" y="236" class="label center">Target labels</text>
-  <text x="276" y="274" class="body center">1-3 aspect sentiments</text>
+  <!-- input stream 1: target labels -->
+  <rect x="110" y="192" width="330" height="128" rx="22" class="panelA" filter="url(#shadow)"/>
+  <text x="275" y="248" class="label center">Target labels</text>
+  <text x="275" y="282" class="body center">1-3 aspect sentiments</text>
 
-  <rect x="116" y="416" width="320" height="132" rx="24" class="panelB" filter="url(#shadow)"/>
-  <text x="276" y="472" class="label center">Context state</text>
-  <text x="276" y="510" class="body center">course, student, style</text>
+  <!-- input stream 2: context state -->
+  <rect x="110" y="372" width="330" height="128" rx="22" class="panelB" filter="url(#shadow)"/>
+  <text x="275" y="428" class="label center">Context state</text>
+  <text x="275" y="462" class="body center">course, student, style</text>
 
-  <rect x="624" y="262" width="348" height="204" rx="26" class="panelC" filter="url(#shadow)"/>
-  <text x="798" y="330" class="label center">Stabilized prompt</text>
-  <text x="798" y="372" class="body center">labels + context + realism rule</text>
+  <!-- merge: stabilized prompt -->
+  <rect x="650" y="248" width="340" height="196" rx="24" class="panelC" filter="url(#shadow)"/>
+  <text x="820" y="332" class="label center">Stabilized prompt</text>
+  <text x="820" y="372" class="body center">labels + context + realism rule</text>
 
-  <rect x="1154" y="262" width="330" height="204" rx="26" class="panelD" filter="url(#shadow)"/>
-  <text x="1319" y="330" class="label center">Benchmark record</text>
-  <text x="1319" y="372" class="body center">review + labels + attributes</text>
+  <!-- output: benchmark record -->
+  <rect x="1150" y="248" width="330" height="196" rx="24" class="panelD" filter="url(#shadow)"/>
+  <text x="1315" y="332" class="label center">Benchmark record</text>
+  <text x="1315" y="372" class="body center">review + labels + attributes</text>
 
-  <path class="arrow" d="M436 246 C520 246, 540 304, 624 328"/>
-  <path class="arrow" d="M436 482 C520 482, 540 424, 624 400"/>
-  <path class="arrow" d="M972 364 L1154 364"/>
+  <!-- feedback: inter-cycle realism update -->
+  <rect x="650" y="560" width="340" height="92" rx="20" class="fbbox"/>
+  <text x="820" y="598" class="chip center">INTER-CYCLE UPDATE</text>
+  <text x="820" y="628" class="body center">realism loop revises prompt</text>
 
-  <rect x="650" y="612" width="296" height="80" rx="18" class="side"/>
-  <text x="798" y="644" class="chip center">Inter-cycle update</text>
-  <text x="798" y="673" class="body center">realism loop revises prompt</text>
-  <path class="arrow dashed" d="M1230 466 C1230 604, 930 604, 930 612"/>
-  <path class="arrow dashed" d="M650 612 C650 566, 700 514, 734 466"/>
-
-  <rect x="104" y="648" width="332" height="56" rx="16" class="side"/>
-  <text x="270" y="682" class="body center">separate supervision and variation</text>
-
-  <rect x="1148" y="648" width="342" height="56" rx="16" class="side"/>
-  <text x="1319" y="682" class="body center">export one review-level training row</text>
+  <!-- orthogonal comb-merge of the two input streams into the prompt -->
+  <path class="flow" d="M440 256 L545 256 L545 316 L644 316"/>
+  <path class="flow" d="M440 436 L545 436 L545 376 L644 376"/>
+  <!-- prompt -> record -->
+  <path class="flow" d="M990 346 L1144 346"/>
+  <!-- feedback loop (dashed): record -> update -> prompt -->
+  <path class="fb" d="M1315 444 L1315 606 L996 606"/>
+  <path class="fb" d="M820 560 L820 450"/>
 </svg>
 """
 
