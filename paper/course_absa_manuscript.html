@@ -677,7 +677,7 @@
       </p>
 
       <table>
-        <caption>Table 4. Exact corpus-level counts and ranges for the synthetic benchmark and the two real-data pools used in realism analysis and external transfer. The table provides the precise summary values that complement the broader visual distribution shown later in Figure 3.</caption>
+        <caption>Table 4. Exact corpus-level counts and ranges for the synthetic benchmark and the two real-data pools used in realism analysis and external transfer. The table provides the precise summary values that complement the broader visual distribution shown later in Figure A7.</caption>
         <thead>
           <tr>
             <th>Measure</th>
@@ -703,58 +703,12 @@
     <section>
       <h2>5. Results</h2>
       <p>
-        The results are presented in the same order as the paper's claim structure. We begin with the corpus itself, then report the main local benchmark, then the full-test GPT and real-data comparisons, and only afterward return to generator-quality diagnostics, focusing on label faithfulness and a faithfulness-aware filtering recipe. This ordering is intentional: the central claim concerns the value of the synthetic corpus as an educational ABSA benchmark resource, whereas faithfulness analysis explains the strengths and limits of the generation process. Corpus-scale output-control statistics and the three-cycle realism-validation procedure are generator diagnostics reported in full in the appendix.
+        The results are presented in the same order as the paper's claim structure. After mapping the reported analyses to their data and splits, we report the main local benchmark, then the full-test GPT and real-data comparisons, and only afterward return to generator-quality diagnostics, focusing on label faithfulness and a faithfulness-aware filtering recipe. This ordering is intentional: the central claim concerns the value of the synthetic corpus as an educational ABSA benchmark resource, whereas faithfulness analysis explains the strengths and limits of the generation process. The corpus profile and representative examples, corpus-scale output-control statistics, and the three-cycle realism-validation procedure are reported in full in the appendix as generator diagnostics.
       </p>
 
-      <figure>
-        <img src="outputs/figures/production_aspect_sentiment_heatmap.svg" alt="Aspect sentiment heatmap">
-        <figcaption>Figure 2. Aspect-level label support across the 10K / 20-aspect corpus. The heatmap shows polarity composition for each aspect, ordered by total support, and the companion bar panel shows the total number of labeled mentions per aspect.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="outputs/figures/production_dataset_profile.svg" alt="Corpus profile">
-        <figcaption>Figure 3. Corpus profile and diversity cues. The panels visualize the distributional shape of review length, aspect-count mixture, course coverage, and observed style cues, while Table 4 provides the corresponding exact summary values.</figcaption>
-      </figure>
-
-      <h3>5.1 Corpus Profile and Representative Examples</h3>
-      <p>
-        Figure 2 and Figure 3 establish the corpus-level structure before any model results are introduced. Figure 2 shows how label support is distributed across aspects and sentiment polarities, which makes it easier to distinguish heavily represented pedagogical dimensions from thinner parts of the schema. Figure 3 complements that view with review length, aspect-count mixture, course coverage, and style variation. Table 5 then gives a qualitative sense of how these distributions appear in actual review text. These examples are included to help the reader interpret the benchmark qualitatively, not as a substitute for aggregate model evidence.
-      </p>
+      <h3>5.1 Scope of Reported Analyses</h3>
       <table>
-        <caption>Table 5. Representative synthetic review snippets showing how aspect labels appear under different writing styles and pedagogical situations.</caption>
-        <thead>
-          <tr>
-            <th>Example type</th>
-            <th>Style</th>
-            <th>Aspect labels</th>
-            <th>Excerpt</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tradeoff-heavy</td>
-            <td>Neutral everyday prose</td>
-            <td><code>difficulty=positive</code>, <code>materials=positive</code></td>
-            <td>"I took Computer Networks mainly to fit my schedule ... the material felt accessible at times ... Dr. Chen’s delivery varies week to week ... the LMS was smooth, but feedback came too late to be useful."</td>
-          </tr>
-          <tr>
-            <td>Compressed complaint</td>
-            <td>Analytic but Simple</td>
-            <td><code>interest=negative</code></td>
-            <td>"I stuck with Cyber Security Basics only when I needed it ... the lead-in theory never clicked for me ... the few but heavy deadlines left me frustrated but still fair about the effort."</td>
-          </tr>
-          <tr>
-            <td>Pedagogical frustration</td>
-            <td>Analytic but Simple</td>
-            <td><code>assessment_design=negative</code>, <code>relevance=negative</code></td>
-            <td>"Data Structures felt like a required hurdle more than a doorway to real understanding ... the assessments were exhausting and overbearing ... even when I passed a task, I was not convinced it reflected useful learning."</td>
-          </tr>
-        </tbody>
-      </table>
-
-      <h3>5.2 Scope of Reported Analyses</h3>
-      <table>
-        <caption>Table 6. Evidence map for the reported analyses. Unlike Table 3, which organizes the method families, this table aligns each analysis block with its data source, split, and interpretive role in the study.</caption>
+        <caption>Table 5. Evidence map for the reported analyses. Unlike Table 3, which organizes the method families, this table aligns each analysis block with its data source, split, and interpretive role in the study.</caption>
         <thead>
           <tr>
             <th>Analysis block</th>
@@ -773,10 +727,10 @@
       </table>
 
       <p>
-        Table 6 therefore complements rather than repeats Table 3. Table 3 says which method families are executed, while Table 6 says what each analysis block is meant to establish, which split it uses, and how it should be interpreted alongside the main benchmark.
+        Table 5 therefore complements rather than repeats Table 3. Table 3 says which method families are executed, while Table 5 says what each analysis block is meant to establish, which split it uses, and how it should be interpreted alongside the main benchmark.
       </p>
 
-      <h3>5.3 Internal Benchmark on the 10K / 20-Aspect Corpus</h3>
+      <h3>5.2 Internal Benchmark on the 10K / 20-Aspect Corpus</h3>
       <p>
         The main benchmark uses the 10,000-review corpus with a strict 8,000/1,000/1,000 train-validation-test split. Seven local approaches are reported: TF-IDF, four two-step transformer encoders, and two joint encoders that predict aspect presence and polarity together. Among the untuned models, <code>bert-base-uncased</code> gives the strongest held-out detection, at macro balanced accuracy 0.623 and macro AUROC 0.681 (micro-F1 0.276, detected-aspect sentiment MSE 0.4959), followed by <code>distilbert-base-uncased</code> at balanced accuracy 0.621 (micro-F1 0.2691). The joint variants remain competitive but lower (<code>distilbert_joint</code> micro-F1 0.2524, <code>bert_joint</code> 0.2447), which supports the two-step decomposition as the clearest baseline family in this benchmark. We lead with balanced accuracy and threshold-free AUROC rather than micro-F1 because micro-F1 is a deliberately strict operating-point metric here: with one to three aspects per review among twenty mostly-absent labels, the trivial all-present baseline already scores 0.183 micro-F1, so the absolute level is compressed by the task structure and the measured label noise rather than by weak representations. Micro-F1 is retained throughout the tables as the standard comparable metric, but it is read alongside balanced accuracy and ranking quality, not alone.
       </p>
@@ -784,10 +738,10 @@
         Additional robustness analyses sharpen that picture. Across three seeds for TF-IDF, DistilBERT, and BERT, the highest mean detection score comes from BERT at \(0.2791 \pm 0.0140\) micro-F1, while DistilBERT remains the most stable model at \(0.2694 \pm 0.0005\). A modest lower-rate four-epoch BERT schedule further raises the held-out score to 0.2930 and lowers sentiment MSE to 0.4728, whereas the same change does not improve DistilBERT. Appendix A.9 reports the full seed-stability, joint-versus-two-step, and tuning tables and figures that support these observations.
       </p>
       <p>
-        Absolute scores remain moderate, which is itself informative. The benchmark covers 20 aspects across five pedagogical groups, includes subtle categories such as <code>feedback_quality</code>, <code>peer_interaction</code>, and <code>prerequisite_fit</code>, and allows one to three aspects per review across multiple writing styles and course contexts. The ranking also has a concrete error-profile interpretation. BERT and DistilBERT improve primarily by lifting recall above 0.43 while retaining enough precision to prevent indiscriminate overprediction. ALBERT and RoBERTa, by contrast, collapse to recall 1.000 at micro-F1 0.183, and the resulting false positives inflate downstream sentiment MSE to 0.577 and 0.684 respectively. In this sense, Table 7 shows that the benchmark rewards models that recover many aspect mentions without collapsing into broad positive prediction.
+        Absolute scores remain moderate, which is itself informative. The benchmark covers 20 aspects across five pedagogical groups, includes subtle categories such as <code>feedback_quality</code>, <code>peer_interaction</code>, and <code>prerequisite_fit</code>, and allows one to three aspects per review across multiple writing styles and course contexts. The ranking also has a concrete error-profile interpretation. BERT and DistilBERT improve primarily by lifting recall above 0.43 while retaining enough precision to prevent indiscriminate overprediction. ALBERT and RoBERTa, by contrast, collapse to recall 1.000 at micro-F1 0.183, and the resulting false positives inflate downstream sentiment MSE to 0.577 and 0.684 respectively. In this sense, Table 6 shows that the benchmark rewards models that recover many aspect mentions without collapsing into broad positive prediction.
       </p>
       <p>
-        Part of the moderate ceiling is a property of the labels rather than of the models. The held-out test split carries the same label faithfulness as the training corpus: under the full-corpus <code>gpt-4.1-mini</code> audit (Section 5.9), the 1,000-review held-out split has a mean per-row aspect-sentiment match rate of 0.58, statistically identical to the 0.58 of the full 10K. A held-out score is bounded by the faithfulness of the held-out labels, so a portion of the unrecovered detection F1 reflects test rows whose declared polarity is not visibly supported in the text rather than model limitation alone. This is directly measurable: re-scoring the trained <code>bert-base-uncased</code> detector on the faithful subset of the test split (the rows whose declared aspects are all supported) lifts micro-F1 from 0.277 (95% CI [0.270, 0.285]) on the full 1,000-review test set to 0.307 ([0.277, 0.337]) on the faithful subset, a paired gain of +0.030 (95% bootstrap CI [0.006, 0.054], higher in all four seeds). The model recovers labels more accurately exactly where the labels are faithful, which is the same signal the faithfulness-aware filtering in Section 5.9 exploits on the training side. The benchmark is therefore positioned as a controllable resource with an explicit, measurable label-noise level rather than as a saturated leaderboard.
+        Part of the moderate ceiling is a property of the labels rather than of the models. The held-out test split carries the same label faithfulness as the training corpus: under the full-corpus <code>gpt-4.1-mini</code> audit (Section 5.7), the 1,000-review held-out split has a mean per-row aspect-sentiment match rate of 0.58, statistically identical to the 0.58 of the full 10K. A held-out score is bounded by the faithfulness of the held-out labels, so a portion of the unrecovered detection F1 reflects test rows whose declared polarity is not visibly supported in the text rather than model limitation alone. This is directly measurable: re-scoring the trained <code>bert-base-uncased</code> detector on the faithful subset of the test split (the rows whose declared aspects are all supported) lifts micro-F1 from 0.277 (95% CI [0.270, 0.285]) on the full 1,000-review test set to 0.307 ([0.277, 0.337]) on the faithful subset, a paired gain of +0.030 (95% bootstrap CI [0.006, 0.054], higher in all four seeds). The model recovers labels more accurately exactly where the labels are faithful, which is the same signal the faithfulness-aware filtering in Section 5.7 exploits on the training side. The benchmark is therefore positioned as a controllable resource with an explicit, measurable label-noise level rather than as a saturated leaderboard.
       </p>
       <p>
         Three controls establish that this signal is genuine rather than an artifact of label frequencies. First, a label-permutation control, retraining with the text-to-label correspondence destroyed, collapses detection micro-F1 to 0.182 (95% CI [0.177, 0.187]), indistinguishable from the strongest trivial baseline (predict-all-present, 0.183) and 0.094 below the real-label 0.277; the recovered F1 thus comes from text that genuinely predicts the labels. Second, detection scales monotonically with training data, from 0.183 at 250 reviews to 0.285 at 8,000, increasing in every seed with no plateau. Third, the learned model clears every trivial floor (predict-all-present 0.183, predict-by-frequency 0.000, random-at-prevalence 0.101) by at least 0.093. Consistent with the label-noise account, restricting both training and test to faithful rows raises micro-F1 to 0.319 ([0.290, 0.348], +0.043 over the full corpus) at audit row-score 1.0 and 0.340 ([0.332, 0.348], +0.064) at row-score 0.5 or above.
@@ -796,11 +750,11 @@
         The additional diagnostics tell a fuller story than F1 alone. On the principal local comparison, BERT and DistilBERT are nearly tied in macro balanced accuracy at 0.6229 and 0.6207 respectively, while BERT now also holds the strongest untuned sentiment MSE and macro MCC. This is useful because the 20-aspect benchmark contains many negative label decisions per review, so balanced accuracy and specificity clarify whether a model is improving by recovering minority positives or merely by exploiting the dominant negatives. A threshold-free view confirms the same reading: on the 20-aspect held-out test set the BERT detector reaches a macro AUROC of 0.681 and a micro AUROC of 0.688, with per-aspect AUROC ranging from 0.54 to 0.83 (highest for lexically marked aspects such as <code>pacing</code> at 0.83 and <code>workload</code> at 0.81). Because AUROC is independent of the decision threshold and therefore of the noisy gold operating point, this shows the detector ranks aspect presence well above chance and that the moderate micro-F1 reflects thresholding and label noise rather than weak representations. Appendix A.10 reports these complementary diagnostics for the principal synthetic-benchmark, GPT-based, and mapped real-data comparisons.
       </p>
       <p>
-        Table 7 provides the exact values for the executed local benchmark. Figure 4 serves a different role: instead of repeating the table cell-by-cell, it visualizes the main trade-offs among detection quality, recall, runtime, and sentiment error. This separation is intentional so that the table remains the precise archival record while the figure highlights the comparative structure of the result space.
+        Table 6 provides the exact values for the executed local benchmark. Figure 2 serves a different role: instead of repeating the table cell-by-cell, it visualizes the main trade-offs among detection quality, recall, runtime, and sentiment error. This separation is intentional so that the table remains the precise archival record while the figure highlights the comparative structure of the result space.
       </p>
 
       <table>
-        <caption>Table 7. Main held-out test results on the 10K / 20-aspect synthetic benchmark, ranked by detection micro-F1.</caption>
+        <caption>Table 6. Main held-out test results on the 10K / 20-aspect synthetic benchmark, ranked by detection micro-F1.</caption>
         <thead>
           <tr>
             <th>Rank</th>
@@ -825,10 +779,10 @@
 
       <figure>
         <img src="outputs/figures/production_method_comparison.svg" alt="Benchmark comparison">
-        <figcaption>Figure 4. Local-benchmark trade-offs on the 10K / 20-aspect corpus. The left panel visualizes the cost-quality frontier using runtime, micro-F1, and sentiment MSE, while the right panel contrasts micro-F1 with micro-recall to show how some models gain coverage at the cost of more false positives.</figcaption>
+        <figcaption>Figure 2. Local-benchmark trade-offs on the 10K / 20-aspect corpus. The left panel visualizes the cost-quality frontier using runtime, micro-F1, and sentiment MSE, while the right panel contrasts micro-F1 with micro-recall to show how some models gain coverage at the cost of more false positives.</figcaption>
       </figure>
 
-      <h3>5.4 GPT-Based Inference Methods</h3>
+      <h3>5.3 GPT-Based Inference Methods</h3>
       <p>
         GPT-based ABSA inference is also evaluated as a full-test executed method family. Using OpenAI Batch mode with <code>gpt-5.2</code>, we ran zero-shot, fixed few-shot, diverse few-shot, and retrieval-based few-shot prompting over the entire 1,000-review held-out test split under the same structured output contract used throughout the benchmark. The strongest configuration is zero-shot structured prompting with a micro-F1 of 0.2519, followed closely by retrieval-based few-shot prompting at 0.2501, fixed few-shot at 0.2450, and diverse few-shot at 0.2374.
       </p>
@@ -836,7 +790,7 @@
         These GPT runs use the same gold label schema as the local benchmark but a different inference path. The batch job uses an exact-key sparse JSON contract so that outputs can only contain recognized aspect names and ternary sentiments, and all four variants achieved a parse success rate of 1.0 on the full test split. The zero-shot variant uses no demonstrations, the fixed few-shot variant uses three static labeled demonstrations from the synthetic training split, the diverse few-shot variant uses five demonstrations deliberately chosen to vary aspect count and tone, and retrieval-based few-shot prompting replaces static demonstrations with nearest-neighbor examples from the training split.
       </p>
       <table>
-        <caption>Table 8. Full-test GPT-based ABSA inference results under the same structured aspect-sentiment output contract used in the batch evaluation pipeline.</caption>
+        <caption>Table 7. Full-test GPT-based ABSA inference results under the same structured aspect-sentiment output contract used in the batch evaluation pipeline.</caption>
         <thead>
           <tr>
             <th>Approach</th>
@@ -854,50 +808,13 @@
         </tbody>
       </table>
       <p>
-        The ranking is informative in its own right. Under this strict sparse-schema contract, zero-shot prompting and retrieval-based few-shot prompting are the strongest GPT variants, which suggests that example selection matters but that a highly constrained zero-shot formulation is already competitive. Relative to the local benchmark, the full-test GPT runs outperform TF-IDF and both joint encoders while remaining below the strongest two-step transformers. This places batch GPT inference in a meaningful middle band of the benchmark rather than at the edges of the comparison space. Because <code>gpt-5.2</code> also serves as the strict faithfulness auditor (Section 5.8) and shares a provider family with the <code>gpt-5-nano</code> generator, these are reported as same-family reference baselines rather than independent external systems. Appendix A.6 records the configuration choices that distinguish the four GPT-based inference variants.
+        The ranking is informative in its own right. Under this strict sparse-schema contract, zero-shot prompting and retrieval-based few-shot prompting are the strongest GPT variants, which suggests that example selection matters but that a highly constrained zero-shot formulation is already competitive. Relative to the local benchmark, the full-test GPT runs outperform TF-IDF and both joint encoders while remaining below the strongest two-step transformers. This places batch GPT inference in a meaningful middle band of the benchmark rather than at the edges of the comparison space. Because <code>gpt-5.2</code> also serves as the strict faithfulness auditor (Section 5.6) and shares a provider family with the <code>gpt-5-nano</code> generator, these are reported as same-family reference baselines rather than independent external systems. Appendix A.6 records the configuration choices that distinguish the four GPT-based inference variants.
       </p>
       <p>
         The confusion-based diagnostics reinforce that interpretation. The strongest GPT variants reach macro balanced accuracy near 0.59 with macro specificity around 0.87, which indicates conservative but well-controlled prediction behavior: the batch prompts avoid broad overprediction, but they still miss many positive aspects that the stronger local encoders recover. In other words, GPT-based inference is competitive partly because it remains selective rather than because it dominates recall. Appendix A.10 includes these complementary values alongside the main F1-based ranking.
       </p>
 
-      <h3>5.5 Per-Aspect Behavior of the Best Model</h3>
-      <p>
-        The per-aspect profile of the best untuned model, BERT, is uneven in a way that matches the pedagogical complexity of the label space. Stronger aspect categories concentrate in the assessment-and-management and learning-demand blocks, especially <code>workload</code>, <code>grading_transparency</code>, <code>exam_fairness</code>, <code>pacing</code>, and <code>tooling_usability</code>. Harder categories cluster in the instructional-quality, learning-environment, and engagement blocks, including <code>peer_interaction</code>, <code>support</code>, <code>interest</code>, <code>feedback_quality</code>, and <code>clarity</code>, which likely require more implicit reasoning and weaker lexical cues. This pattern shows that the benchmark is not uniformly easy even when labels are known by construction. Figure 5 plots the per-aspect detection and sentiment profile, and Table 9 lists the strongest and weakest aspect categories.
-      </p>
-
-      <figure>
-        <img src="outputs/figures/production_best_model_per_aspect.svg" alt="Best-model per-aspect benchmark">
-        <figcaption>Figure 5. Per-aspect detection F1 and sentiment MSE for the best untuned local model, BERT, on the held-out test split. The figure separates the strongest and weakest aspect groups, making it easier to see where the benchmark remains lexically explicit versus pedagogically latent.</figcaption>
-      </figure>
-
-      <table>
-        <caption>Table 9. Strongest and weakest aspect categories for the best local model, showing where the benchmark is comparatively explicit or comparatively latent.</caption>
-        <thead>
-          <tr>
-            <th>Model</th>
-            <th>Group</th>
-            <th>Aspect</th>
-            <th>F1</th>
-            <th>Sentiment MSE</th>
-            <th>Precision</th>
-            <th>Recall</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>workload</code></td><td>0.5864</td><td>0.3727</td><td>0.6437</td><td>0.5385</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>grading_transparency</code></td><td>0.5513</td><td>0.5838</td><td>0.8958</td><td>0.3981</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>exam_fairness</code></td><td>0.5316</td><td>0.3735</td><td>0.7500</td><td>0.4118</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>pacing</code></td><td>0.5093</td><td>0.3199</td><td>0.5000</td><td>0.5189</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>tooling_usability</code></td><td>0.4873</td><td>0.4892</td><td>0.5333</td><td>0.4486</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>clarity</code></td><td>0.2006</td><td>0.5926</td><td>0.1166</td><td>0.7172</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>feedback_quality</code></td><td>0.1961</td><td>0.5917</td><td>0.1117</td><td>0.8049</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>interest</code></td><td>0.1814</td><td>0.5322</td><td>0.1114</td><td>0.4889</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>support</code></td><td>0.1805</td><td>0.6977</td><td>0.1049</td><td>0.6458</td></tr>
-          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>peer_interaction</code></td><td>0.1385</td><td>0.8416</td><td>0.3913</td><td>0.0841</td></tr>
-        </tbody>
-      </table>
-
-      <h3>5.6 External Validation on a Mapped Real Student-Feedback Dataset</h3>
+      <h3>5.4 External Validation on a Mapped Real Student-Feedback Dataset</h3>
       <p>
         The study also includes one external validation on the annotated student-feedback dataset of Herath et al. [11]. We conservatively mapped the original annotation scheme to the subset of our pedagogical schema with defensible correspondence, yielding a 9-aspect overlap consisting of <code>accessibility</code>, <code>assessment_design</code>, <code>exam_fairness</code>, <code>grading_transparency</code>, <code>lecturer_quality</code>, <code>materials</code>, <code>organization</code>, <code>overall_experience</code>, and <code>workload</code>. This produced 2,829 mapped real reviews, which were used purely as an external evaluation set: no real reviews were used during synthetic training, validation-threshold calibration, or prompt refinement.
       </p>
@@ -905,7 +822,7 @@
         The transfer result is encouraging and should be read as a focused external validation. On this overlap benchmark, <code>bert-base-uncased</code> achieved the strongest detection micro-F1 at 0.4593, followed by <code>distilbert-base-uncased</code> at 0.4156 and <code>tfidf_two_step</code> at 0.3740. DistilBERT produced the lowest detected-aspect sentiment MSE at 0.3888, slightly better than BERT's 0.3990. These numbers are materially stronger than the internal 20-aspect benchmark scores, which is plausible because the external test covers fewer aspects, includes a dominant <code>lecturer_quality</code> signal, and uses a conservative overlap mapping rather than the full pedagogical schema. The result therefore supports partial synthetic-to-real transfer on one mapped educational annotation space.
       </p>
       <p>
-        To interpret that result more carefully, we also ran an overlap-matched internal comparison using the same 9 aspects on the synthetic corpus. On that overlap slice, BERT rises from 0.3869 micro-F1 internally to 0.4811 on the mapped real set, DistilBERT rises from 0.3809 to 0.4156, and TF-IDF stays roughly flat at 0.3811 versus 0.3740. This pattern indicates that the mapped real benchmark is shaped by the conservative overlap definition and by strong support for externally visible categories such as <code>lecturer_quality</code>, rather than by a uniform domain-shift penalty. Accordingly, the real-data result is best interpreted as a constrained overlap evaluation that demonstrates compatibility between the synthetic supervision scheme and one real educational annotation space. Table 11 and Figure 7 make this comparison explicit side by side, while Appendix A.4 lists the overlap counts and label balance and Appendix A.5 expands the result into a per-aspect transfer view.
+        To interpret that result more carefully, we also ran an overlap-matched internal comparison using the same 9 aspects on the synthetic corpus. On that overlap slice, BERT rises from 0.3869 micro-F1 internally to 0.4811 on the mapped real set, DistilBERT rises from 0.3809 to 0.4156, and TF-IDF stays roughly flat at 0.3811 versus 0.3740. This pattern indicates that the mapped real benchmark is shaped by the conservative overlap definition and by strong support for externally visible categories such as <code>lecturer_quality</code>, rather than by a uniform domain-shift penalty. Accordingly, the real-data result is best interpreted as a constrained overlap evaluation that demonstrates compatibility between the synthetic supervision scheme and one real educational annotation space. Table 9 and Figure 4 make this comparison explicit side by side, while Appendix A.4 lists the overlap counts and label balance and Appendix A.5 expands the result into a per-aspect transfer view.
       </p>
       <p>
         The same comparison becomes more interpretable when balanced metrics are included. On the mapped real benchmark, BERT achieves the strongest macro balanced accuracy among the compared transfer models at 0.5925, slightly above DistilBERT at 0.5778 and clearly above TF-IDF at 0.5403. This supports the main transfer conclusion from another angle: the best synthetic-trained encoder is not merely matching the real overlap through dominant negative decisions, but is retaining a stronger balance between sensitivity and specificity across the nine mapped aspects. Appendix A.10 reports these values explicitly.
@@ -918,7 +835,7 @@
       </p>
 
       <table>
-        <caption>Table 10. Exact synthetic-to-real transfer scores on the mapped Herath benchmark over the conservative nine-aspect overlap. The table gives the precise model values, while Figure 6 adds the overlap-support context needed to interpret them.</caption>
+        <caption>Table 8. Exact synthetic-to-real transfer scores on the mapped Herath benchmark over the conservative nine-aspect overlap. The table gives the precise model values, while Figure 3 adds the overlap-support context needed to interpret them.</caption>
         <thead>
           <tr>
             <th>Rank</th>
@@ -940,16 +857,16 @@
 
       <figure>
         <img src="outputs/figures/real_transfer_overview.svg" alt="External validation on mapped real student feedback">
-        <figcaption>Figure 6. External validation on mapped real student feedback. The left panel provides overlap-support context from the mapped Herath corpus, while the center and right panels visualize the transfer scores reported exactly in Table 10. The figure supports a partial-transfer claim only for the conservative 9-aspect overlap.</figcaption>
+        <figcaption>Figure 3. External validation on mapped real student feedback. The left panel provides overlap-support context from the mapped Herath corpus, while the center and right panels visualize the transfer scores reported exactly in Table 8. The figure supports a partial-transfer claim only for the conservative 9-aspect overlap.</figcaption>
       </figure>
 
       <figure>
         <img src="outputs/figures/overlap_internal_vs_external_f1.svg" alt="Overlap-matched internal versus external comparison">
-        <figcaption>Figure 7. Overlap-matched internal versus external comparison on the same nine aspects. The absence of a uniform external drop indicates that the mapped real benchmark is partly shaped by overlap support and aspect composition rather than only by domain shift.</figcaption>
+        <figcaption>Figure 4. Overlap-matched internal versus external comparison on the same nine aspects. The absence of a uniform external drop indicates that the mapped real benchmark is partly shaped by overlap support and aspect composition rather than only by domain shift.</figcaption>
       </figure>
 
       <table>
-        <caption>Table 11. Side-by-side comparison on the shared nine-aspect space, contrasting the same models on the synthetic overlap test split and the mapped real-data benchmark.</caption>
+        <caption>Table 9. Side-by-side comparison on the shared nine-aspect space, contrasting the same models on the synthetic overlap test split and the mapped real-data benchmark.</caption>
         <thead>
           <tr>
             <th>Approach</th>
@@ -967,40 +884,17 @@
         </tbody>
       </table>
 
-      <table>
-        <caption>Table 12. Prior real-data educational sentiment results included for context; the final column states how directly each study compares to the present benchmark.</caption>
-        <thead>
-          <tr>
-            <th>Study</th>
-            <th>Setting</th>
-            <th>Reported metric</th>
-            <th>Task</th>
-            <th>Comparability to this study</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td>Welch and Mihalcea [7]</td><td>Real student comments with automatically extracted entities</td><td>F1 = 0.586</td><td>Targeted sentiment toward courses and instructors</td><td>Low; entity-targeted sentiment is narrower than review-level 20-aspect ABSA</td></tr>
-          <tr><td>Welch and Mihalcea [7]</td><td>Real student comments with ground-truth entities</td><td>F1 = 0.695</td><td>Targeted sentiment with gold entities</td><td>Low; useful upper-bound reference, but not a directly matched benchmark</td></tr>
-          <tr><td>Herath et al. [11]</td><td>Real student feedback baseline</td><td>F1 = 0.750</td><td>Aspect-level sentiment analysis</td><td>Medium; closest real educational sentiment benchmark, but different label unit and task structure</td></tr>
-          <tr><td>Herath et al. [11]</td><td>Real student feedback best tree-based ALSC</td><td>F1 = 0.710</td><td>Aspect-level sentiment classification with FT-RoBERTa induced RGAT</td><td>Medium; stronger educational baseline under their own annotation protocol</td></tr>
-          <tr><td>This study</td><td>Mapped Herath overlap after synthetic training</td><td>micro-F1 = 0.4593</td><td>Synthetic-to-real transfer on a 9-aspect overlap</td><td>Medium; the closest comparison here because it uses real educational reviews, but it still depends on conservative aspect mapping</td></tr>
-        </tbody>
-      </table>
-      <p>
-        Table 12 is included to prevent overinterpretation of the transfer result. Our mapped-overlap score should not be read as “worse than Herath” or “better than Welch” in any simple leaderboard sense, because the task definitions differ substantially. Welch and Mihalcea study targeted sentiment toward extracted course or instructor entities, while Herath et al. evaluate aspect-level sentiment under their own annotation structure. The most defensible reading is narrower: the reported result shows that models trained only on the synthetic corpus recover some real educational signal on one mapped real benchmark, but the paper does not yet claim parity with prior real-data educational sentiment systems under their native tasks.
-      </p>
-
-      <h3>5.7 Corpus-Scale Generation Diagnostics</h3>
+      <h3>5.5 Corpus-Scale Generation Diagnostics</h3>
       <p>
         The next two subsections return from downstream model behavior to generator quality: first the model-assisted label-faithfulness audit, then a faithfulness-aware filtering recipe that turns that audit into a training-data selection method. Corpus-scale output-control statistics (Appendix A.14) and the three-cycle realism-validation procedure (Appendix A.13) are reported separately as generator diagnostics.
       </p>
 
-      <h3>5.8 Model-Assisted Label-Faithfulness Audit</h3>
+      <h3>5.6 Model-Assisted Label-Faithfulness Audit</h3>
       <p>
-        A complementary label-faithfulness analysis asks whether generated reviews visibly express the aspect-sentiment labels they were assigned, not only whether the text looks realistic. We therefore ran a conservative model-assisted audit with <code>gpt-5.2</code> as a strict checker over two samples: 250 reviews from the 10K corpus and all 25 reviews from the pilot sample. For each review, the auditor received the raw text and declared aspect sentiments, then judged whether each declared aspect was supported in the text and whether the polarity matched. Table 13 reports the resulting aspect-support and sentiment-match rates.
+        A complementary label-faithfulness analysis asks whether generated reviews visibly express the aspect-sentiment labels they were assigned, not only whether the text looks realistic. We therefore ran a conservative model-assisted audit with <code>gpt-5.2</code> as a strict checker over two samples: 250 reviews from the 10K corpus and all 25 reviews from the pilot sample. For each review, the auditor received the raw text and declared aspect sentiments, then judged whether each declared aspect was supported in the text and whether the polarity matched. Table 10 reports the resulting aspect-support and sentiment-match rates.
       </p>
       <table>
-        <caption>Table 13. Model-assisted label-faithfulness audit showing how often declared aspects and polarities are visibly supported in generated text.</caption>
+        <caption>Table 10. Model-assisted label-faithfulness audit showing how often declared aspects and polarities are visibly supported in generated text.</caption>
         <thead>
           <tr>
             <th>Split</th>
@@ -1022,15 +916,15 @@
         These results make the character of the corpus clearer. Many declared aspects are visibly present in the text, but polarity faithfulness is weaker, especially at full-corpus scale. At the same time, the larger 250-review audit is more favorable than the earlier smaller probe, which suggests that the benchmark preserves declared aspect presence more consistently than the harsher initial sample implied, even though polarity drift remains substantial. The benchmark is therefore strongest as a controllable and useful educational ABSA resource whose labels remain informative but imperfect. This interpretation supports benchmarking and method comparison while also motivating future filtering or post-generation verification. Appendix A.8 retains the detailed audit table for direct comparison with later regenerated versions of the corpus.
       </p>
 
-      <h3>5.9 Faithfulness-Aware Filtering of the Training Corpus</h3>
+      <h3>5.7 Faithfulness-Aware Filtering of the Training Corpus</h3>
       <p>
-        The 250-row audit in Section 5.8 reports a corpus-level aspect-sentiment match rate of 0.42 as a generator diagnostic. To turn that diagnostic into a method-level result, we extended the audit to the full 10,000-review corpus using a cost-matched judge (<code>gpt-4.1-mini</code>, calibrated against the <code>gpt-5.2</code> audit on the original 250 rows at per-aspect support agreement 0.874 and per-aspect sentiment-match agreement 0.790). For each row we recorded the fraction of declared aspects whose polarity is supported by the text, producing a per-row faithfulness score with a heavily quantized distribution: 22.2% of rows scored 0.00, 11.1% 0.33, 18.2% 0.50, 11.0% 0.67, and 37.5% 1.00. This per-row score averages 0.58, higher than the 0.42 aspect-sentiment-match rate reported in Section 5.8 because it is a per-row mean under the more lenient cost-matched <code>gpt-4.1-mini</code> judge rather than a per-aspect rate under the stricter <code>gpt-5.2</code> auditor; the two judges agree on 79% of per-aspect sentiment decisions.
+        The 250-row audit in Section 5.6 reports a corpus-level aspect-sentiment match rate of 0.42 as a generator diagnostic. To turn that diagnostic into a method-level result, we extended the audit to the full 10,000-review corpus using a cost-matched judge (<code>gpt-4.1-mini</code>, calibrated against the <code>gpt-5.2</code> audit on the original 250 rows at per-aspect support agreement 0.874 and per-aspect sentiment-match agreement 0.790). For each row we recorded the fraction of declared aspects whose polarity is supported by the text, producing a per-row faithfulness score with a heavily quantized distribution: 22.2% of rows scored 0.00, 11.1% 0.33, 18.2% 0.50, 11.0% 0.67, and 37.5% 1.00. This per-row score averages 0.58, higher than the 0.42 aspect-sentiment-match rate reported in Section 5.6 because it is a per-row mean under the more lenient cost-matched <code>gpt-4.1-mini</code> judge rather than a per-aspect rate under the stricter <code>gpt-5.2</code> auditor; the two judges agree on 79% of per-aspect sentiment decisions.
       </p>
       <p>
-        We then partitioned the corpus into five training subsets: the highest-scoring 25% (<code>top25</code>, n = 2,500, all rows with row-score 1.00), the highest-scoring 50% (<code>top50</code>, n = 5,000), the full corpus (<code>full</code>, n = 10,000), the lowest-scoring 25% (<code>bot25</code>, n = 2,500), and a uniform-random 5,000-row sample (<code>random_5k</code>) that controls for training size. We trained BERT-base-uncased and DistilBERT-base-uncased on each bucket using the calibrated Section 5.3 recipe and evaluated each resulting model on two transfer targets: the same 9-aspect mapped Herath benchmark used in Section 5.6, and the EduRABSA 7-aspect mapping of the Hua et al. educational-review corpus (5,651 English course-and-staff reviews from RateMyProfessor, Waterloo, and Exeter). To separate effect from seed variance, every (bucket, architecture, target) configuration was retrained at eight random seeds (17, 23, 41, 42, 53, 89, 101, 137) on Modal A10G, with results aggregated across seeds.
+        We then partitioned the corpus into five training subsets: the highest-scoring 25% (<code>top25</code>, n = 2,500, all rows with row-score 1.00), the highest-scoring 50% (<code>top50</code>, n = 5,000), the full corpus (<code>full</code>, n = 10,000), the lowest-scoring 25% (<code>bot25</code>, n = 2,500), and a uniform-random 5,000-row sample (<code>random_5k</code>) that controls for training size. We trained BERT-base-uncased and DistilBERT-base-uncased on each bucket using the calibrated Section 5.2 recipe and evaluated each resulting model on two transfer targets: the same 9-aspect mapped Herath benchmark used in Section 5.4, and the EduRABSA 7-aspect mapping of the Hua et al. educational-review corpus (5,651 English course-and-staff reviews from RateMyProfessor, Waterloo, and Exeter). To separate effect from seed variance, every (bucket, architecture, target) configuration was retrained at eight random seeds (17, 23, 41, 42, 53, 89, 101, 137) on Modal A10G, with results aggregated across seeds.
       </p>
       <table>
-        <caption>Table 14. Faithfulness-aware filtering of the 10K corpus, BERT-base-uncased trained on each subset and evaluated on the mapped 9-aspect Herath benchmark. Mean over eight seeds with 95% bootstrap CI in brackets. Sentiment MSE is computed on aspects the detector identified as present.</caption>
+        <caption>Table 11. Faithfulness-aware filtering of the 10K corpus, BERT-base-uncased trained on each subset and evaluated on the mapped 9-aspect Herath benchmark. Mean over eight seeds with 95% bootstrap CI in brackets. Sentiment MSE is computed on aspects the detector identified as present.</caption>
         <thead>
           <tr>
             <th>Bucket</th>
@@ -1049,13 +943,13 @@
         </tbody>
       </table>
       <p>
-        Two findings carry the experiment, stated as paired bucket-versus-baseline differences whose 95% bootstrap CI over eight seeds excludes zero. First, at fixed training size, filtering reduces sentiment-polarity error on aspects the detector identified as present: the <code>top50</code> subset cuts sentiment MSE by 0.054 relative to the size-matched random sample (<code>top50 − random_5k</code> mean <code>−0.054</code>, 95% bootstrap CI <code>[−0.090, −0.020]</code>, <code>top50</code> wins in 7 of 8 seeds). The effect replicates on DistilBERT-base-uncased at the same scale (<code>top50 − random_5k</code> mean <code>−0.063</code>, CI <code>[−0.138, −0.002]</code>, 6 of 8 seeds), so the filtering signal is architecture-general rather than BERT-specific. Second, the negative-control <code>bot25</code> bucket collapses on the same metric across both architectures and both transfer targets: on BERT-Herath <code>bot25 − full</code> = +0.358 [+0.295, +0.436] (0/8 seeds), on DistilBERT-Herath +0.341 [+0.271, +0.422] (0/8), on BERT-EduRABSA +0.416 [+0.342, +0.480] (0/8), and on DistilBERT-EduRABSA +0.371 [+0.328, +0.411] (0/8). The audit score discriminates informative training rows from uninformative ones at both ends of the distribution, on both architectures, and on both transfer targets, across all 32 (bucket, architecture, target, seed) configurations of the negative control. The size-matched filtering gain is specific to sentiment-polarity fidelity, the metric most sensitive to label faithfulness; on detection (macro balanced accuracy, Table 14) the audit score's effect is concentrated at the unfaithful end, where the <code>bot25</code> bucket alone drops to 0.522.
+        Two findings carry the experiment, stated as paired bucket-versus-baseline differences whose 95% bootstrap CI over eight seeds excludes zero. First, at fixed training size, filtering reduces sentiment-polarity error on aspects the detector identified as present: the <code>top50</code> subset cuts sentiment MSE by 0.054 relative to the size-matched random sample (<code>top50 − random_5k</code> mean <code>−0.054</code>, 95% bootstrap CI <code>[−0.090, −0.020]</code>, <code>top50</code> wins in 7 of 8 seeds). The effect replicates on DistilBERT-base-uncased at the same scale (<code>top50 − random_5k</code> mean <code>−0.063</code>, CI <code>[−0.138, −0.002]</code>, 6 of 8 seeds), so the filtering signal is architecture-general rather than BERT-specific. Second, the negative-control <code>bot25</code> bucket collapses on the same metric across both architectures and both transfer targets: on BERT-Herath <code>bot25 − full</code> = +0.358 [+0.295, +0.436] (0/8 seeds), on DistilBERT-Herath +0.341 [+0.271, +0.422] (0/8), on BERT-EduRABSA +0.416 [+0.342, +0.480] (0/8), and on DistilBERT-EduRABSA +0.371 [+0.328, +0.411] (0/8). The audit score discriminates informative training rows from uninformative ones at both ends of the distribution, on both architectures, and on both transfer targets, across all 32 (bucket, architecture, target, seed) configurations of the negative control. The size-matched filtering gain is specific to sentiment-polarity fidelity, the metric most sensitive to label faithfulness; on detection (macro balanced accuracy, Table 11) the audit score's effect is concentrated at the unfaithful end, where the <code>bot25</code> bucket alone drops to 0.522.
       </p>
       <p>
         Because the sentiment MSE is computed only on aspects each model detected, we checked that the contrasts are not an artifact of different detection sets across buckets. They run, if anything, against the effect. At fixed training size, <code>top50</code> detects <em>fewer</em> aspects than the random sample (BERT-Herath micro-recall 0.371 vs 0.438) yet still has the lower sentiment MSE, so its win does not come from scoring an easier or larger set. The <code>bot25</code> control is the reverse: it degenerates into a high-recall, low-precision detector (micro-recall 0.793 vs the full corpus's 0.380) and nonetheless records the worst sentiment MSE. The sentiment-MSE differences therefore track label faithfulness, not how many or which aspects each model chose to score.
       </p>
       <table>
-        <caption>Table 15. Cross-architecture and cross-target replication of the Section 5.9 contrasts. Paired bucket-versus-baseline differences in sentiment MSE on the detector's predicted aspects, mean over eight seeds with 95% bootstrap CI. The <code>top50 − random_5k</code> contrast is reported on the architecture-replication row (DistilBERT-Herath) where the experiment is set up to test size-controlled filtering at the same scale as BERT-Herath; on EduRABSA the size-controlled comparison is reserved for the bot25 negative control.</caption>
+        <caption>Table 12. Cross-architecture and cross-target replication of the Section 5.7 contrasts. Paired bucket-versus-baseline differences in sentiment MSE on the detector's predicted aspects, mean over eight seeds with 95% bootstrap CI. The <code>top50 − random_5k</code> contrast is reported on the architecture-replication row (DistilBERT-Herath) where the experiment is set up to test size-controlled filtering at the same scale as BERT-Herath; on EduRABSA the size-controlled comparison is reserved for the bot25 negative control.</caption>
         <thead>
           <tr>
             <th>Architecture</th>
@@ -1073,10 +967,10 @@
       </table>
       <figure>
         <img src="outputs/figures/phase_e_headline.svg" alt="Faithfulness-aware filtering reduces sentiment-polarity error across two architectures and two transfer targets">
-        <figcaption>Figure 8. Faithfulness-aware filtering on the 10K synthetic corpus, evaluated across two transfer targets and two BERT-family architectures (n = 8 random seeds per condition, 95% bootstrap CI; lower is better). The <code>bot25</code> bucket fails on every condition, confirming the audit score is informative at the unfavorable end of the distribution. The <code>top50</code> bucket beats the size-matched random sample on both Herath transfer conditions, and matches the full corpus while training on half the data.</figcaption>
+        <figcaption>Figure 5. Faithfulness-aware filtering on the 10K synthetic corpus, evaluated across two transfer targets and two BERT-family architectures (n = 8 random seeds per condition, 95% bootstrap CI; lower is better). The <code>bot25</code> bucket fails on every condition, confirming the audit score is informative at the unfavorable end of the distribution. The <code>top50</code> bucket beats the size-matched random sample on both Herath transfer conditions, and matches the full corpus while training on half the data.</figcaption>
       </figure>
       <p>
-        Table 15 collects these paired contrasts across both architectures and both transfer targets, and Figure 8 visualizes all conditions. Practically, the result is that the audit score in Section 5.8 is an actionable filter for downstream training. Discarding the bottom 50% of the corpus by faithfulness score matches the full-corpus sentiment-MSE level at half the training cost on Herath, and the recipe transfers to a smaller distilled architecture without loss. Discarding the bottom 25% is decisively the wrong move: that bucket is an active liability for sentiment polarity on every (architecture, target) condition we tested, with sentiment MSE 0.34 to 0.42 above the full corpus.
+        Table 12 collects these paired contrasts across both architectures and both transfer targets, and Figure 5 visualizes all conditions. Practically, the result is that the audit score in Section 5.6 is an actionable filter for downstream training. Discarding the bottom 50% of the corpus by faithfulness score matches the full-corpus sentiment-MSE level at half the training cost on Herath, and the recipe transfers to a smaller distilled architecture without loss. Discarding the bottom 25% is decisively the wrong move: that bucket is an active liability for sentiment polarity on every (architecture, target) condition we tested, with sentiment MSE 0.34 to 0.42 above the full corpus.
       </p>
       <p>
         We additionally cross-checked that the bucketing is not specific to the chosen audit judge by re-auditing the original 250-row calibration sample with three independent cost-matched judges across two providers. Per-aspect agreement against the GPT-5.2 audit converges for all three: gpt-4.1-mini at 0.874 support / 0.790 sentiment-match, gpt-4o-mini at 0.845 / 0.715, and Claude 3.5 Haiku (via OpenRouter) at 0.817 / 0.678. The audit-derived buckets are therefore robust to the choice of cost-matched judge. Using an LLM as a label auditor is consistent with evidence that LLM annotators can rival or exceed crowd workers on annotation tasks [35]; because LLM judges also carry documented biases [36], we control for them with the cross-provider agreement here and with the human-label validation below.
@@ -1085,11 +979,11 @@
         Two properties make this filtering result robust to the audit being a model rather than ground truth. First, the audit score is validated behaviorally, not by judge agreement alone: the <code>bot25</code> bucket is defined purely as the rows the audit scored lowest, and training on it degrades transfer on every architecture and target above, so low-audit rows are demonstrably worse training data regardless of whether any single verdict matches a human label. Second, because the same model family both generates and audits the corpus, the score is best read as an LLM-audit signal that is useful for training-row selection rather than as a measurement of ground-truth faithfulness; the cross-provider agreement above bounds single-judge bias, and the audit additionally reproduces human faithfulness labels on annotated data, as we show next.
       </p>
       <p>
-        We close the loop by validating the audit directly against human labels. From the two human-annotated corpora (Herath and EduRABSA) we build 1,200 perturbation-controlled label variants: each sampled review carries a <em>faithful</em> variant with its human gold labels, a polarity-<em>flipped</em> variant, and an aspect-<em>injected</em> variant, and the Section 5.8 audit scores all three. The right comparison is per aspect, because the filter audits each declared aspect independently. Across 2,482 aspect-label decisions the audit reproduces the human judgment at Cohen's kappa 0.56 (moderate agreement on the Landis-Koch scale; precision 0.88, accuracy 0.78): it retains 0.69 of genuinely faithful aspects, rejects 0.89 of polarity-flipped aspects, and rejects 0.87 of injected absent aspects, with agreement higher on EduRABSA (kappa 0.62) than on Herath (kappa 0.51). The audit that drives the filter therefore tracks human faithfulness judgments on real annotated data, not only the verdicts of other LLM judges, and its precision means a label it accepts as faithful agrees with the human annotation 88% of the time.
+        We close the loop by validating the audit directly against human labels. From the two human-annotated corpora (Herath and EduRABSA) we build 1,200 perturbation-controlled label variants: each sampled review carries a <em>faithful</em> variant with its human gold labels, a polarity-<em>flipped</em> variant, and an aspect-<em>injected</em> variant, and the Section 5.6 audit scores all three. The right comparison is per aspect, because the filter audits each declared aspect independently. Across 2,482 aspect-label decisions the audit reproduces the human judgment at Cohen's kappa 0.56 (moderate agreement on the Landis-Koch scale; precision 0.88, accuracy 0.78): it retains 0.69 of genuinely faithful aspects, rejects 0.89 of polarity-flipped aspects, and rejects 0.87 of injected absent aspects, with agreement higher on EduRABSA (kappa 0.62) than on Herath (kappa 0.51). The audit that drives the filter therefore tracks human faithfulness judgments on real annotated data, not only the verdicts of other LLM judges, and its precision means a label it accepts as faithful agrees with the human annotation 88% of the time.
       </p>
 
       <div class="review-box">
-        <h3>5.10 Overall Interpretation</h3>
+        <h3>5.8 Overall Interpretation</h3>
         <p>
         Taken together, the study presents a coherent account of controlled synthetic supervision for educational ABSA: corpus characterization, qualitative examples, a documented ABSA modeling pipeline, calibrated 20-aspect discriminative baselines, a mapped 9-aspect synthetic-to-real evaluation on annotated student feedback, and a three-cycle realism study. The evidence supports internal learnability on synthetic reviews, informative differences among modeling choices, partial transfer to one real educational corpus, and a faithfulness-aware filtering recipe that retains the top-50% of the corpus by audit score to reduce sentiment-polarity error on transferred aspects.
         </p>
@@ -1107,7 +1001,7 @@
 
       <h3>6.1 Limitations</h3>
       <p>
-        Five limitations remain central. First, external validation uses two real educational corpora (Herath 9-aspect, EduRABSA 7-aspect) and conservative aspect overlaps, so broader claims about the entire 20-aspect schema still require additional real-data tests. Second, the realism-validation analysis is conducted with LLM judges and improves prompt quality without establishing statistical indistinguishability from real reviews; the label-faithfulness audit is validated three ways (a behavioral negative control, cross-provider judge agreement, and direct agreement with human labels at Cohen's kappa 0.56 on two annotated corpora, Section 5.9), and human re-annotation across the full 20-aspect schema remains the natural extension. Third, the 10K dataset is usable but not perfectly controlled, because a nontrivial share of rows reached the output-token cap and weakened length-band adherence at scale. Fourth, downstream training on the 10K corpus benefits from the Section 5.9 top-50% faithfulness filter (validated across two BERT-family architectures and both transfer targets); the audit score is the validated way to select training rows for sentiment-polarity fidelity on transferred aspects. Fifth, the GPT-based comparison now covers a full-test <code>gpt-5.2</code> benchmark, but it still represents one provider model and one structured prompting family rather than the full space of proprietary LLM baselines.
+        Five limitations remain central. First, external validation uses two real educational corpora (Herath 9-aspect, EduRABSA 7-aspect) and conservative aspect overlaps, so broader claims about the entire 20-aspect schema still require additional real-data tests. Second, the realism-validation analysis is conducted with LLM judges and improves prompt quality without establishing statistical indistinguishability from real reviews; the label-faithfulness audit is validated three ways (a behavioral negative control, cross-provider judge agreement, and direct agreement with human labels at Cohen's kappa 0.56 on two annotated corpora, Section 5.7), and human re-annotation across the full 20-aspect schema remains the natural extension. Third, the 10K dataset is usable but not perfectly controlled, because a nontrivial share of rows reached the output-token cap and weakened length-band adherence at scale. Fourth, downstream training on the 10K corpus benefits from the Section 5.7 top-50% faithfulness filter (validated across two BERT-family architectures and both transfer targets); the audit score is the validated way to select training rows for sentiment-polarity fidelity on transferred aspects. Fifth, the GPT-based comparison now covers a full-test <code>gpt-5.2</code> benchmark, but it still represents one provider model and one structured prompting family rather than the full space of proprietary LLM baselines.
       </p>
       <p>
         These limitations help define the next stage of work rather than undercut the contribution of the study. The reported evidence supports a resource-and-benchmark study with meaningful generator validation, informative internal comparisons, and a first mapped real-data check.
@@ -1134,7 +1028,7 @@
         Fourth, it supports <em>instructor-level reflective practice</em>. Aspect-tagged feedback enables individualised end-of-term debriefs (a mathematics instructor receives a summary highlighting <code>clarity</code> and <code>pacing</code> trends across their own sections rather than program-level averages) and feeds faculty-development workshops with concrete patterns rather than anecdotes. Used this way, the model becomes part of formative review rather than summative evaluation, and noise on individual labels matters less than the aggregate pattern across many comments.
       </p>
       <p>
-        None of these uses presume that synthetic supervision replaces human annotation. The label-faithfulness audit constrains them directly: with overall aspect-sentiment match at 0.42 on a 250-review sample, the corpus should be treated as a noisy training resource rather than as a calibrated ground truth. Practical guidance follows. For the model-bootstrapping and stress-testing workflows, the noise is tolerable because outputs are aggregated and the resource serves model development rather than the final classifier; the institution always fine-tunes on local data before deployment. For the longitudinal-monitoring and reflective-practice workflows, deployments built on top of the corpus should be checked against locally adjudicated examples, and the faithfulness-aware filtering result reported in Section 5.9 should be applied: retaining the top 50% of the corpus by audit score reduces sentiment-polarity error on transferred aspects at half the training cost. In governance terms, the resource is appropriate for low-stakes, aggregate, formative-feedback workflows and inappropriate for high-stakes personnel decisions about instructors without human-in-the-loop review, a documented appeals process, and local institutional approval.
+        None of these uses presume that synthetic supervision replaces human annotation. The label-faithfulness audit constrains them directly: with overall aspect-sentiment match at 0.42 on a 250-review sample, the corpus should be treated as a noisy training resource rather than as a calibrated ground truth. Practical guidance follows. For the model-bootstrapping and stress-testing workflows, the noise is tolerable because outputs are aggregated and the resource serves model development rather than the final classifier; the institution always fine-tunes on local data before deployment. For the longitudinal-monitoring and reflective-practice workflows, deployments built on top of the corpus should be checked against locally adjudicated examples, and the faithfulness-aware filtering result reported in Section 5.7 should be applied: retaining the top 50% of the corpus by audit score reduces sentiment-polarity error on transferred aspects at half the training cost. In governance terms, the resource is appropriate for low-stakes, aggregate, formative-feedback workflows and inappropriate for high-stakes personnel decisions about instructors without human-in-the-loop review, a documented appeals process, and local institutional approval.
       </p>
 
       <h3>6.3 Ethics Statement</h3>
@@ -1309,7 +1203,7 @@ Return only the review text.</pre></td>
         Table A4 documents the conservative overlap used for external validation against the Herath student-feedback corpus. The mapped real benchmark is intentionally narrower than the full 20-aspect schema, because only defensible correspondences were retained.
       </p>
       <table>
-        <caption>Table A4. Exact support and polarity balance for the nine overlap aspects retained in the mapped Herath benchmark. This appendix table preserves the full counts behind the lighter overlap context summarized in Figure 6.</caption>
+        <caption>Table A4. Exact support and polarity balance for the nine overlap aspects retained in the mapped Herath benchmark. This appendix table preserves the full counts behind the lighter overlap context summarized in Figure 3.</caption>
         <thead>
           <tr>
             <th>Aspect</th>
@@ -1343,10 +1237,10 @@ Return only the review text.</pre></td>
 
       <h3>A.6 GPT-Based Inference Configuration Details</h3>
       <p>
-        Table A5 complements Table 8 by documenting the configuration differences behind the four GPT-based inference variants rather than repeating the same held-out scores. All four methods used the same exact-key sparse JSON contract and achieved parse success of 1.00 on the full 1,000-review test split.
+        Table A5 complements Table 7 by documenting the configuration differences behind the four GPT-based inference variants rather than repeating the same held-out scores. All four methods used the same exact-key sparse JSON contract and achieved parse success of 1.00 on the full 1,000-review test split.
       </p>
       <table>
-        <caption>Table A5. Configuration details for the GPT-based inference methods reported in Table 8.</caption>
+        <caption>Table A5. Configuration details for the GPT-based inference methods reported in Table 7.</caption>
         <thead>
           <tr>
             <th>Approach</th>
@@ -1418,7 +1312,7 @@ Return only the review text.</pre></td>
 
       <h3>A.9 Additional Local-Benchmark Robustness Analyses</h3>
       <p>
-        Tables A8-A10 and Figures A3-A4 collect the robustness analyses cited in Section 5.3. They show how the two-step and joint formulations compare directly, how stable the strongest local models are across three seeds, and how a modest training-budget change affects BERT and DistilBERT.
+        Tables A8-A10 and Figures A3-A4 collect the robustness analyses cited in Section 5.2. They show how the two-step and joint formulations compare directly, how stable the strongest local models are across three seeds, and how a modest training-budget change affects BERT and DistilBERT.
       </p>
       <table>
         <caption>Table A8. Joint-versus-two-step comparison on the held-out synthetic benchmark.</caption>
@@ -1546,7 +1440,7 @@ Return only the review text.</pre></td>
         <li>Compact model-assisted audits of aspect support and sentiment consistency on both stable-prompt samples and the full dataset.</li>
       </ul>
       <p>
-        We also ran compact model-assisted auxiliary audits with <code>gpt-5.2</code>. On 30 synthetic reviews generated directly from the corpus-generation prompt, all declared aspects were judged to be textually supported (\(1.0000\) support rates at both the aspect and review level), while exact sentiment agreement was lower (\(0.7377\) at the aspect level and \(0.5333\) at the full-review level). This prompt-level result should be read together with the harsher full-dataset audit reported in Section 5.8: the combination suggests that target aspect presence can be preserved under the generation prompt, but large-scale generation still introduces substantial label-faithfulness drift, especially for sentiment polarity. Together these diagnostics justify treating realism and faithfulness checks as generator audits rather than as evidence that the 10K corpus is a synthetic gold standard.
+        We also ran compact model-assisted auxiliary audits with <code>gpt-5.2</code>. On 30 synthetic reviews generated directly from the corpus-generation prompt, all declared aspects were judged to be textually supported (\(1.0000\) support rates at both the aspect and review level), while exact sentiment agreement was lower (\(0.7377\) at the aspect level and \(0.5333\) at the full-review level). This prompt-level result should be read together with the harsher full-dataset audit reported in Section 5.6: the combination suggests that target aspect presence can be preserved under the generation prompt, but large-scale generation still introduces substantial label-faithfulness drift, especially for sentiment polarity. Together these diagnostics justify treating realism and faithfulness checks as generator audits rather than as evidence that the 10K corpus is a synthetic gold standard.
       </p>
 
       <h3>A.13 Three-Cycle Realism-Validation Results</h3>
@@ -1584,10 +1478,115 @@ Return only the review text.</pre></td>
         The full dataset is large enough to support a realistic internal benchmark, and it also reveals how output control behaves at scale. All 10,000 rows returned usable review text and no duplicates were detected. At the same time, 841 rows were marked incomplete because they reached the output-token cap, and overall length-band adherence settled at 0.6819 over the full corpus. The resulting dataset is therefore broad and usable while still leaving room for stronger long-form control in later releases.
       </p>
       <p>
-        This behavior does not invalidate the benchmark, because every row still contains the target labels and usable text, and the train-validation-test pipeline runs cleanly on the assembled corpus. It does, however, matter for interpretation: stronger long-form length control would further improve the controllability of future releases. Figure 3 makes this visible directly by combining length, aspect-count, course, and style evidence in one place.
+        This behavior does not invalidate the benchmark, because every row still contains the target labels and usable text, and the train-validation-test pipeline runs cleanly on the assembled corpus. It does, however, matter for interpretation: stronger long-form length control would further improve the controllability of future releases. Figure A7 makes this visible directly by combining length, aspect-count, course, and style evidence in one place.
       </p>
 
-    </section>
+    
+<figure>
+        <img src="outputs/figures/production_aspect_sentiment_heatmap.svg" alt="Aspect sentiment heatmap">
+        <figcaption>Figure A6. Aspect-level label support across the 10K / 20-aspect corpus. The heatmap shows polarity composition for each aspect, ordered by total support, and the companion bar panel shows the total number of labeled mentions per aspect.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="outputs/figures/production_dataset_profile.svg" alt="Corpus profile">
+        <figcaption>Figure A7. Corpus profile and diversity cues. The panels visualize the distributional shape of review length, aspect-count mixture, course coverage, and observed style cues, while Table 4 provides the corresponding exact summary values.</figcaption>
+      </figure>
+
+      <h3>A.15 Corpus Profile and Representative Examples</h3>
+      <p>
+        Figure A6 and Figure A7 establish the corpus-level structure before any model results are introduced. Figure A6 shows how label support is distributed across aspects and sentiment polarities, which makes it easier to distinguish heavily represented pedagogical dimensions from thinner parts of the schema. Figure A7 complements that view with review length, aspect-count mixture, course coverage, and style variation. Table A13 then gives a qualitative sense of how these distributions appear in actual review text. These examples are included to help the reader interpret the benchmark qualitatively, not as a substitute for aggregate model evidence.
+      </p>
+      <table>
+        <caption>Table A13. Representative synthetic review snippets showing how aspect labels appear under different writing styles and pedagogical situations.</caption>
+        <thead>
+          <tr>
+            <th>Example type</th>
+            <th>Style</th>
+            <th>Aspect labels</th>
+            <th>Excerpt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tradeoff-heavy</td>
+            <td>Neutral everyday prose</td>
+            <td><code>difficulty=positive</code>, <code>materials=positive</code></td>
+            <td>"I took Computer Networks mainly to fit my schedule ... the material felt accessible at times ... Dr. Chen’s delivery varies week to week ... the LMS was smooth, but feedback came too late to be useful."</td>
+          </tr>
+          <tr>
+            <td>Compressed complaint</td>
+            <td>Analytic but Simple</td>
+            <td><code>interest=negative</code></td>
+            <td>"I stuck with Cyber Security Basics only when I needed it ... the lead-in theory never clicked for me ... the few but heavy deadlines left me frustrated but still fair about the effort."</td>
+          </tr>
+          <tr>
+            <td>Pedagogical frustration</td>
+            <td>Analytic but Simple</td>
+            <td><code>assessment_design=negative</code>, <code>relevance=negative</code></td>
+            <td>"Data Structures felt like a required hurdle more than a doorway to real understanding ... the assessments were exhausting and overbearing ... even when I passed a task, I was not convinced it reflected useful learning."</td>
+          </tr>
+        </tbody>
+      </table>
+<h3>A.16 Per-Aspect Behavior of the Best Model</h3>
+      <p>
+        The per-aspect profile of the best untuned model, BERT, is uneven in a way that matches the pedagogical complexity of the label space. Stronger aspect categories concentrate in the assessment-and-management and learning-demand blocks, especially <code>workload</code>, <code>grading_transparency</code>, <code>exam_fairness</code>, <code>pacing</code>, and <code>tooling_usability</code>. Harder categories cluster in the instructional-quality, learning-environment, and engagement blocks, including <code>peer_interaction</code>, <code>support</code>, <code>interest</code>, <code>feedback_quality</code>, and <code>clarity</code>, which likely require more implicit reasoning and weaker lexical cues. This pattern shows that the benchmark is not uniformly easy even when labels are known by construction. Figure A8 plots the per-aspect detection and sentiment profile, and Table A14 lists the strongest and weakest aspect categories.
+      </p>
+
+      <figure>
+        <img src="outputs/figures/production_best_model_per_aspect.svg" alt="Best-model per-aspect benchmark">
+        <figcaption>Figure A8. Per-aspect detection F1 and sentiment MSE for the best untuned local model, BERT, on the held-out test split. The figure separates the strongest and weakest aspect groups, making it easier to see where the benchmark remains lexically explicit versus pedagogically latent.</figcaption>
+      </figure>
+
+      <table>
+        <caption>Table A14. Strongest and weakest aspect categories for the best local model, showing where the benchmark is comparatively explicit or comparatively latent.</caption>
+        <thead>
+          <tr>
+            <th>Model</th>
+            <th>Group</th>
+            <th>Aspect</th>
+            <th>F1</th>
+            <th>Sentiment MSE</th>
+            <th>Precision</th>
+            <th>Recall</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>workload</code></td><td>0.5864</td><td>0.3727</td><td>0.6437</td><td>0.5385</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>grading_transparency</code></td><td>0.5513</td><td>0.5838</td><td>0.8958</td><td>0.3981</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>exam_fairness</code></td><td>0.5316</td><td>0.3735</td><td>0.7500</td><td>0.4118</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>pacing</code></td><td>0.5093</td><td>0.3199</td><td>0.5000</td><td>0.5189</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>top-5</td><td><code>tooling_usability</code></td><td>0.4873</td><td>0.4892</td><td>0.5333</td><td>0.4486</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>clarity</code></td><td>0.2006</td><td>0.5926</td><td>0.1166</td><td>0.7172</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>feedback_quality</code></td><td>0.1961</td><td>0.5917</td><td>0.1117</td><td>0.8049</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>interest</code></td><td>0.1814</td><td>0.5322</td><td>0.1114</td><td>0.4889</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>support</code></td><td>0.1805</td><td>0.6977</td><td>0.1049</td><td>0.6458</td></tr>
+          <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>peer_interaction</code></td><td>0.1385</td><td>0.8416</td><td>0.3913</td><td>0.0841</td></tr>
+        </tbody>
+      </table>
+<h3>A.17 Prior Real-Data Educational Sentiment Results in Context</h3>
+<table>
+        <caption>Table A15. Prior real-data educational sentiment results included for context; the final column states how directly each study compares to the present benchmark.</caption>
+        <thead>
+          <tr>
+            <th>Study</th>
+            <th>Setting</th>
+            <th>Reported metric</th>
+            <th>Task</th>
+            <th>Comparability to this study</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Welch and Mihalcea [7]</td><td>Real student comments with automatically extracted entities</td><td>F1 = 0.586</td><td>Targeted sentiment toward courses and instructors</td><td>Low; entity-targeted sentiment is narrower than review-level 20-aspect ABSA</td></tr>
+          <tr><td>Welch and Mihalcea [7]</td><td>Real student comments with ground-truth entities</td><td>F1 = 0.695</td><td>Targeted sentiment with gold entities</td><td>Low; useful upper-bound reference, but not a directly matched benchmark</td></tr>
+          <tr><td>Herath et al. [11]</td><td>Real student feedback baseline</td><td>F1 = 0.750</td><td>Aspect-level sentiment analysis</td><td>Medium; closest real educational sentiment benchmark, but different label unit and task structure</td></tr>
+          <tr><td>Herath et al. [11]</td><td>Real student feedback best tree-based ALSC</td><td>F1 = 0.710</td><td>Aspect-level sentiment classification with FT-RoBERTa induced RGAT</td><td>Medium; stronger educational baseline under their own annotation protocol</td></tr>
+          <tr><td>This study</td><td>Mapped Herath overlap after synthetic training</td><td>micro-F1 = 0.4593</td><td>Synthetic-to-real transfer on a 9-aspect overlap</td><td>Medium; the closest comparison here because it uses real educational reviews, but it still depends on conservative aspect mapping</td></tr>
+        </tbody>
+      </table>
+      <p>
+        Table A15 is included to prevent overinterpretation of the transfer result. Our mapped-overlap score should not be read as “worse than Herath” or “better than Welch” in any simple leaderboard sense, because the task definitions differ substantially. Welch and Mihalcea study targeted sentiment toward extracted course or instructor entities, while Herath et al. evaluate aspect-level sentiment under their own annotation structure. The most defensible reading is narrower: the reported result shows that models trained only on the synthetic corpus recover some real educational signal on one mapped real benchmark, but the paper does not yet claim parity with prior real-data educational sentiment systems under their native tasks.
+      </p>
+</section>
 
     <section>
       <h2>Bibliography</h2>
