@@ -30,36 +30,36 @@
   <rect x="34" y="34" width="1532" height="692" class="frame"/>
 
   <!-- input stream 1: target labels -->
-  <rect x="110" y="192" width="330" height="128" rx="22" class="panelA" filter="url(#shadow)"/>
-  <text x="275" y="248" class="label center">Target labels</text>
-  <text x="275" y="282" class="body center">1-3 aspect sentiments</text>
+  <rect x="105" y="170" width="340" height="130" rx="22" class="panelA" filter="url(#shadow)"/>
+  <text x="275" y="227" class="label center">Target labels</text>
+  <text x="275" y="261" class="body center">1-3 aspect sentiments</text>
 
   <!-- input stream 2: context state -->
-  <rect x="110" y="372" width="330" height="128" rx="22" class="panelB" filter="url(#shadow)"/>
-  <text x="275" y="428" class="label center">Context state</text>
-  <text x="275" y="462" class="body center">course, student, style</text>
+  <rect x="105" y="400" width="340" height="130" rx="22" class="panelB" filter="url(#shadow)"/>
+  <text x="275" y="457" class="label center">Context state</text>
+  <text x="275" y="491" class="body center">course, student, style</text>
 
   <!-- merge: stabilized prompt -->
-  <rect x="650" y="248" width="340" height="196" rx="24" class="panelC" filter="url(#shadow)"/>
-  <text x="820" y="332" class="label center">Stabilized prompt</text>
-  <text x="820" y="372" class="body center">labels + context + realism rule</text>
+  <rect x="630" y="285" width="340" height="130" rx="22" class="panelC" filter="url(#shadow)"/>
+  <text x="800" y="342" class="label center">Stabilized prompt</text>
+  <text x="800" y="376" class="body center">labels + context + realism rule</text>
 
   <!-- output: benchmark record -->
-  <rect x="1150" y="248" width="330" height="196" rx="24" class="panelD" filter="url(#shadow)"/>
-  <text x="1315" y="332" class="label center">Benchmark record</text>
-  <text x="1315" y="372" class="body center">review + labels + attributes</text>
+  <rect x="1135" y="285" width="340" height="130" rx="22" class="panelD" filter="url(#shadow)"/>
+  <text x="1305" y="342" class="label center">Benchmark record</text>
+  <text x="1305" y="376" class="body center">review + labels + attributes</text>
 
   <!-- feedback: inter-cycle realism update -->
-  <rect x="650" y="560" width="340" height="92" rx="20" class="fbbox"/>
-  <text x="820" y="598" class="chip center">INTER-CYCLE UPDATE</text>
-  <text x="820" y="628" class="body center">realism loop revises prompt</text>
+  <rect x="630" y="560" width="340" height="130" rx="22" class="fbbox"/>
+  <text x="800" y="617" class="label center">Inter-cycle update</text>
+  <text x="800" y="651" class="body center">realism loop revises prompt</text>
 
   <!-- orthogonal comb-merge of the two input streams into the prompt -->
-  <path class="flow" d="M440 256 L545 256 L545 316 L644 316"/>
-  <path class="flow" d="M440 436 L545 436 L545 376 L644 376"/>
+  <path class="flow" d="M445 235 L545 235 L545 320 L626 320"/>
+  <path class="flow" d="M445 465 L545 465 L545 380 L626 380"/>
   <!-- prompt -> record -->
-  <path class="flow" d="M990 346 L1144 346"/>
+  <path class="flow" d="M970 350 L1131 350"/>
   <!-- feedback loop (dashed): record -> update -> prompt -->
-  <path class="fb" d="M1315 444 L1315 606 L996 606"/>
-  <path class="fb" d="M820 560 L820 450"/>
+  <path class="fb" d="M1305 415 L1305 625 L974 625"/>
+  <path class="fb" d="M800 560 L800 419"/>
 </svg>
