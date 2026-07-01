@@ -39,6 +39,7 @@ def run_one(df, aspects, seed, eng):
     from torch.utils.data import DataLoader
     dl = DataLoader(eng.DetectionDataset(te, tok, aspects, cfg.max_len), batch_size=cfg.batch_size, shuffle=False)
     probs, true = eng.collect_detection(det, dl, cfg.device)
+    true = np.asarray(true).astype(int)  # collect_detection returns float targets; bitwise ops need int
     thr_vec = np.array([thr[a] for a in aspects], dtype=np.float32)
     preds = (probs >= thr_vec).astype(int)
     tp = int((preds & true).sum()); fp = int((preds & (1 - true)).sum()); fn = int(((1 - preds) & true).sum())
