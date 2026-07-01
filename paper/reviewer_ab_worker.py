@@ -457,7 +457,8 @@ def _restrict_aspects(df: pd.DataFrame, keep: list) -> pd.DataFrame:
     return out.reset_index(drop=True)
 
 
-def run_experiment_b5(corpus_path: Path, herath_mapped_jsonl: Path, seed: int, out_dir: Path) -> dict:
+def run_experiment_b5(corpus_path: Path, herath_mapped_jsonl: Path, seed: int, out_dir: Path,
+                      real_train_n: int = None) -> dict:
     """9-aspect synth->real fine-tune. (1) Pretrain a 9-aspect detection head on the synthetic
     train split (9-aspect labels). (2) Fine-tune the SAME head on the real-Herath train split
     (mode B's real-train/real-test split + seed). (3) Eval on real-Herath test, 9-aspect micro-F1.
@@ -498,6 +499,12 @@ def run_experiment_b5(corpus_path: Path, herath_mapped_jsonl: Path, seed: int, o
     n_calib = max(1, int(round(len(rest_idx) * 0.125)))
     calib_idx = np.sort(rest_idx[:n_calib])
     train_idx = np.sort(rest_idx[n_calib:])
+    # RC5 (min-N fine-tuning curve): optionally subsample the real-train set to N rows,
+    # seeded and deterministic, leaving calib/test untouched. None => full train (original B5).
+    if real_train_n and int(real_train_n) < len(train_idx):
+        train_idx = np.sort(np.random.default_rng(seed + 5000).choice(
+            train_idx, size=int(real_train_n), replace=False))
+        eng.log_event(f"[B5 seed={seed}] RC5 subsample real train -> n={len(train_idx)} (requested {real_train_n})")
     real_train = _restrict_aspects(real_df.iloc[train_idx].reset_index(drop=True), aspects)
     real_calib = _restrict_aspects(real_df.iloc[calib_idx].reset_index(drop=True), aspects)
     real_test = _restrict_aspects(real_df.iloc[test_idx].reset_index(drop=True), aspects)
@@ -701,6 +708,7 @@ def main() -> None:
     p.add_argument("--corpus-path", default="/app/data/generated_reviews_10k.jsonl")
     p.add_argument("--scores-csv", default="/app/data/at_scale_per_row_scores.csv")
     p.add_argument("--herath-mapped-jsonl", default="/app/data/herath_mapped_real_reviews_2829.jsonl")
+    p.add_argument("--real-train-n", type=int, default=None, help="RC5: subsample real-train to N rows (B5 only)")
     args = p.parse_args()
 
     eng.configure_console_encoding()
@@ -718,7 +726,8 @@ def main() -> None:
     elif args.experiment == "V4":
         res = run_experiment_v4(Path(args.corpus_path), Path(args.scores_csv), args.seed, out_dir)
     elif args.experiment == "B5":
-        res = run_experiment_b5(Path(args.corpus_path), Path(args.herath_mapped_jsonl), args.seed, out_dir)
+        res = run_experiment_b5(Path(args.corpus_path), Path(args.herath_mapped_jsonl), args.seed, out_dir,
+                                real_train_n=args.real_train_n)
     else:
         raise ValueError(args.experiment)
     res["elapsed_seconds"] = round(time.time() - t0, 1)
