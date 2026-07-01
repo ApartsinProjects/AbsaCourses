@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Response to Reviewer 1 (Cycle 1): A Controlled Synthetic Benchmark for Educational ABSA</title>
+<style>
+  :root{ --ink:#111418; --soft:#2c3138; --muted:#5a626c; --accent:#14385c; --ok:#2f6b43; --rule:#d1d4d8; --paper:#fffdfa; }
+  html{ background:#f3f0e8; }
+  body{ margin:0; color:var(--ink); background:#f3f0e8;
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    line-height:1.55; font-size:11.3pt; }
+  .sheet{ max-width:760px; margin:32px auto; background:var(--paper); padding:52px 58px 60px; box-shadow:0 8px 30px rgba(17,20,24,0.08); }
+  h1{ font-size:17pt; font-weight:600; margin:0 0 2px; }
+  .venue{ color:var(--muted); font-size:10pt; margin:0 0 22px; }
+  p{ margin:0 0 10px; text-align:justify; hyphens:auto; }
+  .lede{ margin-bottom:16px; }
+  .rc{ margin:20px 0; padding:14px 16px; border:1px solid var(--rule); background:#fff; border-left:3px solid var(--accent); }
+  .rc h2{ font-size:11.5pt; font-weight:700; color:var(--accent); margin:0 0 8px; }
+  .req{ color:var(--soft); font-style:italic; margin:0 0 8px; }
+  .resp b.tag{ color:var(--ok); font-style:normal; }
+  .loc{ display:inline-block; margin-top:4px; font-size:9.5pt; color:var(--muted); }
+  code{ font-family:"Courier New",monospace; font-size:0.9em; }
+  a.backlink{ position:fixed; top:16px; right:16px; z-index:1000; display:inline-flex; align-items:center; gap:7px; padding:8px 14px; background:#174b63; color:#fff; font-family:Cambria,Georgia,serif; font-size:0.92rem; text-decoration:none; border-radius:8px; box-shadow:0 6px 18px rgba(17,45,58,0.25); }
+  a.backlink:hover{ background:#11607f; }
+  .footer{ margin-top:24px; font-size:9pt; color:var(--muted); border-top:1px solid var(--rule); padding-top:12px; }
+  @media print{ a.backlink{ display:none; } html,body{ background:#fff; } .sheet{ box-shadow:none; margin:0; } }
+  @media (max-width:680px){ a.backlink{ position:static; margin:12px; } .sheet{ padding:32px 22px; } }
+</style>
+</head>
+<body>
+  <a class="backlink" href="course_absa_manuscript.html" title="Open the revised manuscript">&#8599; View the paper</a>
+  <div class="sheet">
+    <h1>Response to Reviewer 1 &middot; Cycle 1</h1>
+    <p class="venue">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis (TMLR)</p>
+
+    <p class="lede">We thank the reviewer for the careful and constructive report. We have addressed all five requested changes; each is answered below with the specific evidence added and its location in the revised manuscript. New measurements were run for the first, second, and fifth points; the third and fourth are additions to the text.</p>
+
+    <div class="rc">
+      <h2>1. Relationship between generator and auditor (circularity)</h2>
+      <p class="req">Requested: the generator and auditors share a provider family; more explicitly discuss whether the audit detects same-family latent patterns rather than true textual faithfulness.</p>
+      <p class="resp"><b class="tag">Done, with a new experiment.</b> We repeated the human-validation of the audit with a fully independent model family, Google <code>gemini-2.5-flash</code>, scoring the identical 1,200 perturbation-controlled variants (faithful / polarity-flipped / aspect-injected) over the two human-annotated corpora. Gemini agrees with the human labels at Cohen's kappa 0.62 (precision 0.89), matching and slightly exceeding the same-family GPT auditor (kappa 0.56). A model with no shared provenance with the <code>gpt-5-nano</code> generator therefore reproduces the human faithfulness judgments at least as well, so the signal is human-grounded rather than an artifact of the generator's own family. We also added an explicit statement of this concern and its resolution as a limitation.</p>
+      <span class="loc">Section 5.7 (new paragraph); Section 6.1, limitation 2.</span>
+    </div>
+
+    <div class="rc">
+      <h2>2. The 841 incomplete rows</h2>
+      <p class="req">Requested: analyze whether the output-token-capped rows are distributed differently across aspects/sentiment, and whether excluding them changes benchmark results.</p>
+      <p class="resp"><b class="tag">Done, with a new analysis and re-run.</b> We recovered the exact 841 rows by joining the generation batch output's per-row API status to the corpus. They are modestly different from complete rows: shorter (mean 100 vs 119 words) and carrying fewer aspects (a 0.07 vs 0.33 share of three-aspect reviews), with a comparable sentiment mix. Retraining the detection benchmark with these rows excluded (three seeds) leaves the held-out result essentially unchanged, micro-F1 0.264 vs 0.275 and macro balanced accuracy 0.613 vs 0.619, a small difference consistent with the roughly 8% smaller training set rather than a systematic bias. The benchmark is robust to their inclusion.</p>
+      <span class="loc">Section 3.6; Appendix A.18 and Table A16.</span>
+    </div>
+
+    <div class="rc">
+      <h2>3. Broader discussion of emerging methods</h2>
+      <p class="req">Requested: acknowledge recent LLM-prompting and related methods, including the two named papers.</p>
+      <p class="resp"><b class="tag">Done.</b> We added a sentence to Related Work situating the work against recent modeling advances, citing the reviewer's two references, multimodal sarcasm perception in vision-language models [39] and set-matching for generalized category discovery [40], and noting that our contribution is orthogonal to these, targeting the data-quality control of LLM-supervised labels rather than a new model or task.</p>
+      <span class="loc">Section 2 (Related Work); references [39], [40].</span>
+    </div>
+
+    <div class="rc">
+      <h2>4. Transfer limits</h2>
+      <p class="req">Requested: state more prominently what practitioners should not conclude, that the full 20-aspect schema lacks real validation and high-stakes decisions require human-in-the-loop review.</p>
+      <p class="resp"><b class="tag">Done.</b> We strengthened the first limitation to say explicitly that the transfer results do not validate the full schema: only 9 of the 20 aspects are externally checked, synthetic-only training recovers about 60% of a real-trained model, and any high-stakes or personnel decision requires human-in-the-loop review rather than reliance on the eleven aspects that have no real-data validation.</p>
+      <span class="loc">Section 6.1, limitation 1.</span>
+    </div>
+
+    <div class="rc">
+      <h2>5. Practitioner roadmap</h2>
+      <p class="req">Requested: concrete guidance on minimum fine-tuning data size, expected performance degradation, and monitoring.</p>
+      <p class="resp"><b class="tag">Done, with a new experiment.</b> We ran a fine-tuning-size sweep: a synthetic-pretrained detector fine-tuned on subsampled real reviews reaches micro-F1 0.58 at 100 reviews, 0.70 at 500, 0.74 at 1,000, and 0.77 at the full real set (matching real-only training, 0.767). From this we added concrete guidance: roughly 250 to 500 locally labeled reviews capture most of the benefit and are a realistic departmental budget; the synthetic pretrain reaches real-only quality with about half the real data; a deployment should expect the curve's micro-F1 for its own N and be monitored against a held-out locally adjudicated slice, re-checked when the feedback distribution shifts.</p>
+      <span class="loc">Section 6.2 (new roadmap paragraph and Figure 6).</span>
+    </div>
+
+    <p style="margin-top:18px;">We believe these revisions address the report in full, and we are grateful for feedback that measurably strengthened the paper. We are happy to provide any further detail.</p>
+    <p>Sincerely,<br>The authors</p>
+
+    <p class="footer">All new experiments (cross-family Gemini audit, incomplete-row analysis and exclude-and-rerun, fine-tuning-size sweep) are reproducible from the released code; raw per-seed results are in the repository.</p>
+  </div>
+</body>
+</html>
