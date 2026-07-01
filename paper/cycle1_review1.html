@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Cycle 1, Review 1: A Controlled Synthetic Benchmark for Educational ABSA</title>
+<style>
+  :root{ --ink:#111418; --soft:#2c3138; --muted:#5a626c; --accent:#14385c; --rule:#d1d4d8; --paper:#fffdfa; }
+  html{ background:#f3f0e8; }
+  body{ margin:0; color:var(--ink); background:#f3f0e8;
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    line-height:1.55; font-size:11.4pt; }
+  .sheet{ max-width:740px; margin:32px auto; background:var(--paper);
+    padding:52px 58px 60px; box-shadow:0 8px 30px rgba(17,20,24,0.08); }
+  h1{ font-size:17pt; font-weight:600; margin:0 0 2px; }
+  .venue{ color:var(--muted); font-size:10pt; margin:0 0 24px; }
+  .meta{ font-size:10pt; color:var(--soft); margin:0 0 24px; }
+  .meta b{ color:var(--ink); }
+  h2{ font-size:12pt; font-weight:700; color:var(--accent); margin:26px 0 12px;
+    border-bottom:1px solid var(--rule); padding-bottom:6px; }
+  ol.changes{ margin:0; padding-left:0; list-style:none; counter-reset:rc; }
+  ol.changes > li{ counter-increment:rc; margin:0 0 18px; padding-left:42px; position:relative; }
+  ol.changes > li::before{ content:counter(rc); position:absolute; left:0; top:0;
+    width:27px; height:27px; border-radius:50%; background:var(--accent); color:#fff;
+    font-family:Cambria,Georgia,serif; font-size:12pt; font-weight:700;
+    display:flex; align-items:center; justify-content:center; }
+  ol.changes .rc-title{ font-weight:700; color:var(--ink); }
+  p{ margin:0 0 10px; text-align:justify; hyphens:auto; }
+  a.backlink{ position:fixed; top:16px; right:16px; z-index:1000;
+    display:inline-flex; align-items:center; gap:7px; padding:8px 14px;
+    background:#174b63; color:#fff; font-family:Cambria,Georgia,serif; font-size:0.92rem;
+    text-decoration:none; border-radius:8px; box-shadow:0 6px 18px rgba(17,45,58,0.25);
+    transition:background .15s ease, transform .15s ease; }
+  a.backlink:hover{ background:#11607f; transform:translateY(-1px); color:#fff; }
+  .footer{ margin-top:28px; font-size:9pt; color:var(--muted); border-top:1px solid var(--rule); padding-top:12px; }
+  @media print{ a.backlink{ display:none; } html,body{ background:#fff; } .sheet{ box-shadow:none; margin:0; } }
+  @media (max-width:680px){ a.backlink{ position:static; display:inline-flex; margin:12px; } .sheet{ padding:32px 22px; } }
+</style>
+</head>
+<body>
+  <a class="backlink" href="course_absa_manuscript.html" title="Open the manuscript">&#8599; View the paper</a>
+  <div class="sheet">
+    <h1>Review Cycle 1 &middot; Reviewer 1</h1>
+    <p class="venue">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis &mdash; TMLR</p>
+
+    <p class="meta">
+      <b>Manuscript:</b> A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis<br>
+      <b>Round:</b> Cycle 1, Reviewer 1<br>
+      <b>Recorded:</b> 13 June 2026
+    </p>
+
+    <h2>Requested Changes</h2>
+    <ol class="changes">
+      <li>
+        <span class="rc-title">Clarify the relationship between generator and auditor.</span>
+        The paper uses GPT-5-nano as generator and GPT-5.2/gpt-4.1-mini as auditor, both from the
+        same provider family. While cross-provider and human validation help, the paper should more
+        explicitly discuss potential circularity&mdash;is the audit simply detecting patterns from the
+        same model family's latent space rather than true textual faithfulness? A dedicated discussion
+        of this limitation is needed.
+      </li>
+      <li>
+        <span class="rc-title">Address the 841 incomplete rows.</span>
+        The paper notes 841 rows hit the output-token cap but doesn't fully discuss whether this creates
+        systematic bias (e.g., shorter reviews having different aspect distributions or sentiment profiles
+        than longer ones). Add an analysis of whether these incomplete rows are distributed across aspect
+        categories and whether excluding them changes benchmark results.
+      </li>
+      <li>
+        <span class="rc-title">A broader discussion.</span>
+        The article mentions LLM prompts, many novel articles and methods have emerged in this field at
+        present, including <em>Seeing Sarcasm Through Different Eyes: Analyzing Multimodal Sarcasm
+        Perception in Large Vision-Language Models</em> and <em>Exploiting the Relationship within the
+        Unlabelled Samples by Set Matching for Generalized Category Discovery</em>.
+      </li>
+      <li>
+        <span class="rc-title">Strengthen the discussion of transfer limits.</span>
+        The real-data transfer uses only 9 of 20 aspects, and performance is ~60% of real-trained models.
+        The paper should more prominently state what practitioners should not conclude&mdash;specifically,
+        that the full 20-aspect schema lacks real validation and that high-stakes decisions require
+        human-in-the-loop review.
+      </li>
+      <li>
+        <span class="rc-title">Add a clearer practitioner roadmap.</span>
+        Given the moderate faithfulness rates (0.42 sentiment-match), provide concrete, actionable
+        guidance for institutions that might adopt this resource: minimum fine-tuning data size, expected
+        performance degradation on their own data, and monitoring requirements.
+      </li>
+    </ol>
+
+    <p class="footer">Reviewer feedback recorded verbatim for the Cycle 1 revision pass.</p>
+  </div>
+</body>
+</html>
