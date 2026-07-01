@@ -21,5 +21,12 @@ overall_experience under ~0.7-0.8x). The cap truncated later aspect declarations
 **Artifacts:** `paper/outputs/rc2_incomplete_row_ids.json` (the exact 841 sample
 ids = exclusion set), `paper/outputs/rc2_incomplete_analysis.json` (distributions).
 
-**Status:** part 1 (distribution) DONE. Part 2 (exclude-and-rerun benchmark on the
-9159 complete rows, multi-seed, vs full-corpus) pending — uses the saved exclusion set.
+**Part 2 (exclude-and-rerun, 3 seeds, BERT detection):** full (10,000) micro-F1
+0.275 +/- 0.003, macro bal-acc 0.619; complete-only (9,159) micro-F1 0.264 +/- 0.007,
+bal-acc 0.613; delta -0.011 / -0.006. The full baseline reproduces the paper (0.275
+~ 0.276). Excluding the 841 does NOT materially change the benchmark; the small drop
+tracks the ~8% smaller train set (and is inconsistent across seeds), so the reported
+results are robust to the incomplete rows. Artifacts: outputs/rc2_exclude_rerun_per_seed.csv,
+outputs/rc2_exclude_rerun_summary.json. Driver: rc2_exclude_rerun.py.
+
+**Status:** DONE (parts 1 and 2).

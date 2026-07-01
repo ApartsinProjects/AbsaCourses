@@ -1,0 +1,28 @@
+{
+  "full": {
+    "micro_f1_mean": 0.2749,
+    "micro_f1_std": 0.0031,
+    "bal_acc_mean": 0.6193,
+    "bal_acc_std": 0.0032,
+    "seeds": [
+      42,
+      17,
+      23
+    ]
+  },
+  "complete_only": {
+    "micro_f1_mean": 0.2636,
+    "micro_f1_std": 0.007,
+    "bal_acc_mean": 0.613,
+    "bal_acc_std": 0.0015,
+    "seeds": [
+      42,
+      17,
+      23
+    ]
+  },
+  "delta_complete_minus_full": {
+    "micro_f1": -0.0113,
+    "bal_acc": -0.0063
+  }
+}

@@ -1,0 +1,7 @@
+micro_f1,macro_balanced_accuracy,n_test,condition,seed,n_train_corpus
+0.276,0.6229,1000,full,42,10000
+0.2706,0.6151,1000,full,17,10000
+0.278,0.62,1000,full,23,10000
+0.2571,0.6122,915,complete_only,42,9159
+0.2733,0.6151,915,complete_only,17,9159
+0.2603,0.6117,915,complete_only,23,9159
