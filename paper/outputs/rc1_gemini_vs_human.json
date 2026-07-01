@@ -1,0 +1,36 @@
+{
+  "model": "google/gemini-2.5-flash",
+  "n_scored_requests": 1200,
+  "n_aspect_decisions": 2482,
+  "per_aspect": {
+    "ALL": {
+      "n": 2482,
+      "kappa": 0.623,
+      "precision": 0.892,
+      "recall": 0.752,
+      "f1": 0.816,
+      "accuracy": 0.81
+    },
+    "herath": {
+      "n": 1396,
+      "kappa": 0.583,
+      "precision": 0.889,
+      "recall": 0.702,
+      "f1": 0.784,
+      "accuracy": 0.789
+    },
+    "edurabsa": {
+      "n": 1086,
+      "kappa": 0.674,
+      "precision": 0.894,
+      "recall": 0.814,
+      "f1": 0.852,
+      "accuracy": 0.838
+    }
+  },
+  "per_perturbation": {
+    "faithful_keep": 0.742,
+    "flip_reject": 0.905,
+    "inject_reject": 0.848
+  }
+}
