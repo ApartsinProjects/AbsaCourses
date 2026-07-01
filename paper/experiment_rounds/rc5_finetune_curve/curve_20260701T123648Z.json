@@ -1,0 +1,72 @@
+[
+  {
+    "seed": 42,
+    "real_train_n": 100,
+    "n_real_train": 100,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 17,
+    "real_train_n": 100,
+    "n_real_train": 100,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 42,
+    "real_train_n": 250,
+    "n_real_train": 250,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 17,
+    "real_train_n": 250,
+    "n_real_train": 250,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 42,
+    "real_train_n": 500,
+    "n_real_train": 500,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 17,
+    "real_train_n": 500,
+    "n_real_train": 500,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 42,
+    "real_train_n": 1000,
+    "n_real_train": 1000,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 17,
+    "real_train_n": 1000,
+    "n_real_train": 1000,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 42,
+    "real_train_n": null,
+    "n_real_train": 1980,
+    "micro_f1": null,
+    "ok": true
+  },
+  {
+    "seed": 17,
+    "real_train_n": null,
+    "n_real_train": 1980,
+    "micro_f1": null,
+    "ok": true
+  }
+]

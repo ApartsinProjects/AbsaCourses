@@ -1,0 +1,522 @@
+[
+  {
+    "run_name": "B5_n100_seed42",
+    "seed": 42,
+    "real_train_n": 100,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 368.3,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 42,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 100,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.4069364161849711,
+        "micro_recall": 0.81199538638985,
+        "micro_f1": 0.542164035425491,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.542164035425491,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.2251,
+      "delta_over_synth_only": 0.0829,
+      "thresholds": {
+        "accessibility": 0.35,
+        "assessment_design": 0.39999999999999997,
+        "exam_fairness": 0.44999999999999996,
+        "grading_transparency": 0.6,
+        "lecturer_quality": 0.5499999999999999,
+        "materials": 0.39999999999999997,
+        "organization": 0.5499999999999999,
+        "overall_experience": 0.39999999999999997,
+        "workload": 0.7999999999999999
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 361.9
+    }
+  },
+  {
+    "run_name": "B5_n100_seed17",
+    "seed": 17,
+    "real_train_n": 100,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 367.5,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 17,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 100,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.5424448217317487,
+        "micro_recall": 0.7361751152073732,
+        "micro_f1": 0.624633431085044,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.624633431085044,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.1427,
+      "delta_over_synth_only": 0.1653,
+      "thresholds": {
+        "accessibility": 0.39999999999999997,
+        "assessment_design": 0.6,
+        "exam_fairness": 0.5499999999999999,
+        "grading_transparency": 0.7999999999999999,
+        "lecturer_quality": 0.49999999999999994,
+        "materials": 0.5499999999999999,
+        "organization": 0.5499999999999999,
+        "overall_experience": 0.49999999999999994,
+        "workload": 0.7999999999999999
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 360.6
+    }
+  },
+  {
+    "run_name": "B5_n250_seed42",
+    "seed": 42,
+    "real_train_n": 250,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 377.9,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 42,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 250,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.5699570815450644,
+        "micro_recall": 0.7658592848904268,
+        "micro_f1": 0.6535433070866141,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.6535433070866141,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.1138,
+      "delta_over_synth_only": 0.1942,
+      "thresholds": {
+        "accessibility": 0.6,
+        "assessment_design": 0.7999999999999999,
+        "exam_fairness": 0.7999999999999999,
+        "grading_transparency": 0.75,
+        "lecturer_quality": 0.5499999999999999,
+        "materials": 0.65,
+        "organization": 0.6,
+        "overall_experience": 0.44999999999999996,
+        "workload": 0.44999999999999996
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 370.3
+    }
+  },
+  {
+    "run_name": "B5_n250_seed17",
+    "seed": 17,
+    "real_train_n": 250,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 379.2,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 17,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 250,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.5384615384615384,
+        "micro_recall": 0.7419354838709677,
+        "micro_f1": 0.624031007751938,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.624031007751938,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.1433,
+      "delta_over_synth_only": 0.1647,
+      "thresholds": {
+        "accessibility": 0.25,
+        "assessment_design": 0.49999999999999994,
+        "exam_fairness": 0.25,
+        "grading_transparency": 0.7,
+        "lecturer_quality": 0.3,
+        "materials": 0.35,
+        "organization": 0.75,
+        "overall_experience": 0.6,
+        "workload": 0.85
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 371.5
+    }
+  },
+  {
+    "run_name": "B5_n500_seed42",
+    "seed": 42,
+    "real_train_n": 500,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 428.5,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 42,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 500,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.626253418413856,
+        "micro_recall": 0.7923875432525952,
+        "micro_f1": 0.6995926680244399,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.6995926680244399,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.0677,
+      "delta_over_synth_only": 0.2403,
+      "thresholds": {
+        "accessibility": 0.2,
+        "assessment_design": 0.7999999999999999,
+        "exam_fairness": 0.85,
+        "grading_transparency": 0.9,
+        "lecturer_quality": 0.49999999999999994,
+        "materials": 0.49999999999999994,
+        "organization": 0.5499999999999999,
+        "overall_experience": 0.44999999999999996,
+        "workload": 0.85
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 394.3
+    }
+  },
+  {
+    "run_name": "B5_n500_seed17",
+    "seed": 17,
+    "real_train_n": 500,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 393.5,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 17,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 500,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.5955334987593052,
+        "micro_recall": 0.8294930875576036,
+        "micro_f1": 0.693307655272027,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.693307655272027,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.074,
+      "delta_over_synth_only": 0.234,
+      "thresholds": {
+        "accessibility": 0.6,
+        "assessment_design": 0.75,
+        "exam_fairness": 0.5499999999999999,
+        "grading_transparency": 0.5499999999999999,
+        "lecturer_quality": 0.3,
+        "materials": 0.39999999999999997,
+        "organization": 0.6,
+        "overall_experience": 0.44999999999999996,
+        "workload": 0.65
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 378.3
+    }
+  },
+  {
+    "run_name": "B5_n1000_seed42",
+    "seed": 42,
+    "real_train_n": 1000,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 334.8,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 42,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 1000,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.7162592986184909,
+        "micro_recall": 0.7773933102652826,
+        "micro_f1": 0.745575221238938,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.745575221238938,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.0217,
+      "delta_over_synth_only": 0.2863,
+      "thresholds": {
+        "accessibility": 0.7999999999999999,
+        "assessment_design": 0.85,
+        "exam_fairness": 0.65,
+        "grading_transparency": 0.95,
+        "lecturer_quality": 0.39999999999999997,
+        "materials": 0.44999999999999996,
+        "organization": 0.65,
+        "overall_experience": 0.7,
+        "workload": 0.95
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 323.1
+    }
+  },
+  {
+    "run_name": "B5_n1000_seed17",
+    "seed": 17,
+    "real_train_n": 1000,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 424.0,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 17,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 1000,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.6848906560636183,
+        "micro_recall": 0.793778801843318,
+        "micro_f1": 0.7353255069370331,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.7353255069370331,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.032,
+      "delta_over_synth_only": 0.276,
+      "thresholds": {
+        "accessibility": 0.35,
+        "assessment_design": 0.75,
+        "exam_fairness": 0.49999999999999994,
+        "grading_transparency": 0.5499999999999999,
+        "lecturer_quality": 0.39999999999999997,
+        "materials": 0.7,
+        "organization": 0.75,
+        "overall_experience": 0.65,
+        "workload": 0.95
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 398.4
+    }
+  },
+  {
+    "run_name": "B5_nfull_seed42",
+    "seed": 42,
+    "real_train_n": null,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 462.3,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 42,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 1980,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.716012084592145,
+        "micro_recall": 0.8200692041522492,
+        "micro_f1": 0.7645161290322581,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.7645161290322581,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": -0.0028,
+      "delta_over_synth_only": 0.3052,
+      "thresholds": {
+        "accessibility": 0.65,
+        "assessment_design": 0.75,
+        "exam_fairness": 0.85,
+        "grading_transparency": 0.85,
+        "lecturer_quality": 0.3,
+        "materials": 0.7,
+        "organization": 0.9,
+        "overall_experience": 0.7,
+        "workload": 0.9
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 436.7
+    }
+  },
+  {
+    "run_name": "B5_nfull_seed17",
+    "seed": 17,
+    "real_train_n": null,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 366.4,
+    "headline": {
+      "experiment": "B5_synth_to_real_finetune",
+      "seed": 17,
+      "n_aspects": 9,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_syn_train": 8000,
+      "n_real_train": 1980,
+      "n_real_calib": 283,
+      "n_real_test": 566,
+      "synth_to_real_real_test": {
+        "micro_precision": 0.7306910569105691,
+        "micro_recall": 0.8283410138248848,
+        "micro_f1": 0.7764578833693304,
+        "n_rows": 566
+      },
+      "synth_to_real_micro_f1": 0.7764578833693304,
+      "reference_synthetic_only_transfer_micro_f1": 0.4593,
+      "reference_real_only_training_micro_f1": 0.7673,
+      "delta_over_real_only": 0.0092,
+      "delta_over_synth_only": 0.3172,
+      "thresholds": {
+        "accessibility": 0.49999999999999994,
+        "assessment_design": 0.6,
+        "exam_fairness": 0.7,
+        "grading_transparency": 0.49999999999999994,
+        "lecturer_quality": 0.35,
+        "materials": 0.65,
+        "organization": 0.85,
+        "overall_experience": 0.5499999999999999,
+        "workload": 0.95
+      },
+      "interpretation": "synth->real >= real-only => transfer helps the small ~2k real set",
+      "elapsed_seconds": 354.8
+    }
+  }
+]

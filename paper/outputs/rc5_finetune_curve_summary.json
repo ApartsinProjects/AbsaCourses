@@ -1,0 +1,34 @@
+{
+  "curve_by_real_train_n": {
+    "100": {
+      "n_seeds": 2,
+      "micro_f1_mean": 0.5834,
+      "micro_f1_std": 0.0412
+    },
+    "250": {
+      "n_seeds": 2,
+      "micro_f1_mean": 0.6387,
+      "micro_f1_std": 0.0147
+    },
+    "500": {
+      "n_seeds": 2,
+      "micro_f1_mean": 0.6964,
+      "micro_f1_std": 0.0031
+    },
+    "1000": {
+      "n_seeds": 2,
+      "micro_f1_mean": 0.7405,
+      "micro_f1_std": 0.0052
+    },
+    "1980": {
+      "n_seeds": 2,
+      "micro_f1_mean": 0.7705,
+      "micro_f1_std": 0.006
+    }
+  },
+  "references": {
+    "synthetic_only_transfer": 0.4593,
+    "real_only_training": 0.7673,
+    "synth_pretrain_full_finetune_paper": 0.784
+  }
+}
