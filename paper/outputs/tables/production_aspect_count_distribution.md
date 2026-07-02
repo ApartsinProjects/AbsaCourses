@@ -1,0 +1,5 @@
+| aspects_per_review | review_count |
+| --- | --- |
+| 1 | 3032 |
+| 2 | 3917 |
+| 3 | 3051 |

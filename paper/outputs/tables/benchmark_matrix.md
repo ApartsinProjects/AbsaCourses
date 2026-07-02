@@ -1,0 +1,17 @@
+# Benchmark Matrix
+
+| Group | Approach ID | Backbone | Formulation | Dataset scope | Splits / seeds | Calibration | Metrics | Status | Notes |
+|---|---|---|---|---|---|---|---|---|---|
+| Classical | `tfidf_two_step` | TF-IDF + linear heads | Two-step | Production `10K / 20`-aspect corpus | `8000/1000/1000`, seed `42` | Held-out threshold sweep | micro/macro F1, detected-aspect MSE | Executed | Current reproducible non-neural reference |
+| Encoder | `distilbert_two_step` | `distilbert-base-uncased` | Two-step | Production `10K / 20`-aspect corpus | `8000/1000/1000`, seed `42` | Held-out threshold sweep | micro/macro F1, detected-aspect MSE | Executed | Best production model in the current benchmark |
+| Encoder | `bert_two_step` | `bert-base-uncased` | Two-step | Production `10K / 20`-aspect corpus | `8000/1000/1000`, seed `42` | Held-out threshold sweep | micro/macro F1, detected-aspect MSE | Executed | Strong comparative transformer baseline |
+| Encoder | `albert_two_step` | `albert-base-v2` | Two-step | Production `10K / 20`-aspect corpus | `8000/1000/1000`, seed `42` | Held-out threshold sweep | micro/macro F1, detected-aspect MSE | Executed | Lower-performing but fully executed encoder baseline |
+| Encoder | `roberta_two_step` | `roberta-base` | Two-step | Production `10K / 20`-aspect corpus | `8000/1000/1000`, seed `42` | Held-out threshold sweep | micro/macro F1, detected-aspect MSE | Executed | Slower comparative encoder baseline |
+| Encoder | `bert_joint` | `bert-base-uncased` | Single-stage joint | Production `10K / 20`-aspect corpus | `8000/1000/1000`, seed `42` | Optional joint thresholds | micro/macro F1, detected-aspect MSE | Executed | Joint prediction baseline for decomposition comparison |
+| Encoder | `distilbert_joint` | `distilbert-base-uncased` | Single-stage joint | Production `10K / 20`-aspect corpus | `8000/1000/1000`, seed `42` | Optional joint thresholds | micro/macro F1, detected-aspect MSE | Executed | Compact joint encoder baseline |
+| LLM | `llm_zero_shot` | `gpt-5.2` batch | Structured generation | Production `10K / 20`-aspect corpus | Full `1000`-review test split, no training | None | micro/macro F1, detected-aspect MSE | Executed | Strongest full-test GPT baseline in the current paper |
+| LLM | `llm_few_shot_fixed` | `gpt-5.2` batch | Structured generation | Production `10K / 20`-aspect corpus | Full `1000`-review test split, fixed demos | None | micro/macro F1, detected-aspect MSE | Executed | Static-demonstration comparison point |
+| LLM | `llm_few_shot_diverse` | `gpt-5.2` batch | Structured generation | Production `10K / 20`-aspect corpus | Full `1000`-review test split, diverse demos | None | micro/macro F1, detected-aspect MSE | Executed | Diversity-aware prompt baseline |
+| LLM | `llm_retrieval_few_shot` | `gpt-5.2` batch | Structured generation | Production `10K / 20`-aspect corpus | Full `1000`-review test split, retrieved demos | None | micro/macro F1, detected-aspect MSE | Executed | Retrieval-aware prompt baseline |
+| LLM | `llm_two_pass` | OpenAI-compatible generative model | Detect then sentiment | Production `10K / 20`-aspect corpus | Shared test set only | None | micro/macro F1, detected-aspect MSE | Implemented, not reported | Mirrors the supervised two-step decomposition |
+| LLM | `llm_aspect_by_aspect` | OpenAI-compatible generative model | Per-aspect prompting | Production `10K / 20`-aspect corpus | Shared test set only | None | micro/macro F1, detected-aspect MSE | Implemented, not reported | Higher-cost diagnostic baseline |

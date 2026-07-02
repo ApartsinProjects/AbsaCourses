@@ -1,0 +1,8 @@
+| approach | eval_split | micro_f1 | macro_f1 | micro_recall | sentiment_mse_detected | n_reviews |
+| --- | --- | --- | --- | --- | --- | --- |
+| tfidf_two_step | synthetic_overlap_test | 0.3811 | 0.3871 | 0.4564 | 0.6519 | 686 |
+| tfidf_two_step | real_herath_mapped | 0.3740 | 0.2303 | 0.4017 | 0.7019 | 2829 |
+| distilbert-base-uncased | synthetic_overlap_test | 0.3809 | 0.4184 | 0.5959 | 0.4811 | 686 |
+| distilbert-base-uncased | real_herath_mapped | 0.4156 | 0.3515 | 0.6764 | 0.3888 | 2829 |
+| bert-base-uncased | synthetic_overlap_test | 0.3869 | 0.4187 | 0.5523 | 0.5169 | 686 |
+| bert-base-uncased | real_herath_mapped | 0.4811 | 0.3172 | 0.6235 | 0.3914 | 2829 |

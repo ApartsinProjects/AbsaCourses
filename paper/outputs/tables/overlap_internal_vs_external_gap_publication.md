@@ -1,0 +1,5 @@
+| approach | synthetic_overlap_f1 | real_overlap_f1 | f1_gap_real_minus_synth | synthetic_overlap_mse | real_overlap_mse |
+| --- | --- | --- | --- | --- | --- |
+| bert-base-uncased | 0.3869 | 0.4811 | 0.0942 | 0.5169 | 0.3914 |
+| distilbert-base-uncased | 0.3809 | 0.4156 | 0.0346 | 0.4811 | 0.3888 |
+| tfidf_two_step | 0.3811 | 0.3740 | -0.0071 | 0.6519 | 0.7019 |

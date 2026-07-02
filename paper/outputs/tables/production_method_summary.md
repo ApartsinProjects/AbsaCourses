@@ -1,0 +1,7 @@
+| approach | micro_precision | micro_recall | micro_f1 | macro_f1 | sentiment_mse_detected | elapsed_seconds |
+| --- | --- | --- | --- | --- | --- | --- |
+| distilbert-base-uncased | 0.1779 | 0.5221 | 0.2653 | 0.3000 | 0.5044 | 833.8 |
+| bert-base-uncased | 0.1796 | 0.5002 | 0.2643 | 0.2941 | 0.5270 | 1376.7 |
+| tfidf_two_step | 0.2051 | 0.3696 | 0.2638 | 0.2714 | 0.6830 | 8.2 |
+| albert-base-v2 | 0.1019 | 0.6582 | 0.1765 | 0.1202 | 0.6906 | 1383.5 |
+| roberta-base | 0.0968 | 0.4327 | 0.1582 | 0.0794 | 0.6835 | 2961.2 |

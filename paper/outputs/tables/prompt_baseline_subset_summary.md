@@ -1,0 +1,5 @@
+| variant | micro_f1 | macro_f1 | micro_recall | sentiment_mse |
+| --- | --- | --- | --- | --- |
+| zero-shot | 0.2391 | 0.2168 | 0.2931 | 0.6486 |
+| few-shot-diverse | 0.2280 | 0.2172 | 0.2792 | 0.6950 |
+| few-shot | 0.2074 | 0.1774 | 0.2455 | 0.4597 |

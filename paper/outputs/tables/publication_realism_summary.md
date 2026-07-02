@@ -1,0 +1,5 @@
+| cycle | judge_accuracy | mean_confusion | mean_entropy_bits | binomial_p_value | editor_triggered |
+| --- | --- | --- | --- | --- | --- |
+| rich_attributes_baseline | 0.5167 | 0.5737 | 0.6912 | 0.8974 | True |
+| reduce_synthetic_signatures | 0.4333 | 0.6417 | 0.7020 | 0.3663 | True |
+| messier_realism | 0.4333 | 0.6430 | 0.7068 | 0.3663 | False |

@@ -1,0 +1,7 @@
+| Study | Setting | Reported metric | Task | Comparability to this paper | Main takeaway |
+| --- | --- | --- | --- | --- | --- |
+| Welch and Mihalcea (2016) | Real student comments with automatically extracted course/instructor entities | F1 = 0.586 | Targeted sentiment on extracted entities | Low | Real educational sentiment on authentic comments is feasible, but the task differs from our review-level 20-aspect ABSA setup. |
+| Welch and Mihalcea (2016) | Real student comments with ground-truth entities | F1 = 0.695 | Targeted sentiment with gold entities | Low | Upper-bound targeted-sentiment result shows the impact of removing entity-extraction errors. |
+| Herath et al. (2022) | Real student feedback corpus baseline | F1 = 0.750 | Aspect-level sentiment analysis | Medium | Closest real educational sentiment benchmark, but still not directly aligned to our review-level mapped-overlap evaluation. |
+| Herath et al. (2022) | Real student feedback corpus best tree-based ALSC | F1 = 0.710 | Aspect-level sentiment classification with FT-RoBERTa induced RGAT | Medium | Strong real-data educational baseline under their annotation structure. |
+| This paper | Real mapped Herath overlap after synthetic training | micro-F1 = 0.4593 | Synthetic-to-real transfer on 9 mapped aspects | Medium | Shows partial transfer from synthetic supervision to one real educational corpus without claiming task equivalence. |

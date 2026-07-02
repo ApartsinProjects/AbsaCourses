@@ -1,0 +1,4 @@
+| approach | baseline_micro_f1 | tuned_micro_f1 | delta_micro_f1 | baseline_sentiment_mse | tuned_sentiment_mse | delta_sentiment_mse |
+| --- | --- | --- | --- | --- | --- | --- |
+| bert-base-uncased | 0.265765144197599 | 0.2930117062788223 | 0.02724656208122328 | 0.5269919024018559 | 0.4727574095521283 | -0.05423449284972759 |
+| distilbert-base-uncased | 0.2691456396635679 | 0.2682706766917293 | -0.0008749629718385887 | 0.504404404689796 | 0.5238647661608221 | 0.019460361471026144 |

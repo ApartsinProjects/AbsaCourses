@@ -1,0 +1,12 @@
+| model | group | aspect | f1 | mse | precision | recall |
+| --- | --- | --- | --- | --- | --- | --- |
+| bert-base-uncased | top_5_f1 | workload | 0.5864 | 0.3727 | 0.6437 | 0.5385 |
+| bert-base-uncased | top_5_f1 | grading_transparency | 0.5513 | 0.5838 | 0.8958 | 0.3981 |
+| bert-base-uncased | top_5_f1 | exam_fairness | 0.5316 | 0.3735 | 0.7500 | 0.4118 |
+| bert-base-uncased | top_5_f1 | pacing | 0.5093 | 0.3199 | 0.5000 | 0.5189 |
+| bert-base-uncased | top_5_f1 | tooling_usability | 0.4873 | 0.4892 | 0.5333 | 0.4486 |
+| bert-base-uncased | bottom_5_f1 | clarity | 0.2006 | 0.5926 | 0.1166 | 0.7172 |
+| bert-base-uncased | bottom_5_f1 | feedback_quality | 0.1961 | 0.5917 | 0.1117 | 0.8049 |
+| bert-base-uncased | bottom_5_f1 | interest | 0.1814 | 0.5322 | 0.1114 | 0.4889 |
+| bert-base-uncased | bottom_5_f1 | support | 0.1805 | 0.6977 | 0.1049 | 0.6458 |
+| bert-base-uncased | bottom_5_f1 | peer_interaction | 0.1385 | 0.8416 | 0.3913 | 0.0841 |

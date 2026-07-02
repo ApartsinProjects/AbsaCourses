@@ -1,0 +1,11 @@
+| aspect | review_count | positive | neutral | negative |
+| --- | --- | --- | --- | --- |
+| lecturer_quality | 2190 | 1402 | 398 | 390 |
+| overall_experience | 557 | 395 | 61 | 101 |
+| organization | 477 | 266 | 155 | 56 |
+| materials | 390 | 137 | 194 | 59 |
+| assessment_design | 235 | 83 | 100 | 52 |
+| exam_fairness | 184 | 29 | 97 | 58 |
+| grading_transparency | 146 | 49 | 66 | 31 |
+| workload | 75 | 12 | 21 | 42 |
+| accessibility | 35 | 11 | 12 | 12 |
