@@ -78,3 +78,6 @@ paper/outputs/n2_judge.jsonl
 paper/outputs/n3_gen_*.jsonl
 paper/outputs/n3_audit_*.jsonl
 paper/outputs/*_run.log
+
+paper/outputs/n6b_pred_*.jsonl
+paper/outputs/n6b_run.log

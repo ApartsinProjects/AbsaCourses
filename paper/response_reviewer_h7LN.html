@@ -81,14 +81,14 @@
     <div class="rc">
       <h2>7. Formatting of Figure 1, Table 5, Figure A2, Figure A3</h2>
       <p class="req">Requested: refine the formatting of these items.</p>
-      <p class="resp"><b class="tag">Done.</b> Figures A2 and A3 were re-rendered with larger, selectable text and cleaner axes (the previous versions baked labels into glyph paths, which caused the small-text appearance). Figure 1 was redrawn with uniform boxes, uniform title and subtitle fonts, and straight orthogonal arrows. Table 5 was reviewed for column alignment and interpretive clarity against Table 3.</p>
+      <p class="resp"><b class="tag">Done.</b> Figures A2 and A3 were re-rendered with larger, selectable text and cleaner axes (the previous versions baked labels into glyph paths, which caused the small-text appearance). Figure 1 was redrawn with uniform boxes, uniform title and subtitle fonts, and straight orthogonal arrows. Table 5 was restructured with concise, scannable cells (replacing the prose-heavy originals) and brought up to date, adding the second transfer corpus, the multi-family prompted baseline, and a generator/output-control robustness row.</p>
       <span class="loc">Figure 1; Table 5; Figures A2 and A3.</span>
     </div>
 
     <div class="rc">
       <h2>8. Broader impact: narrow scope (32 OMSCS, 2,829 Herath)</h2>
       <p class="req">Requested: the real reference data are small and drawn from a narrow domain, so conclusions apply to a narrow scope.</p>
-      <p class="resp"><b class="tag">Addressed and scoped.</b> External validation already uses two independent real educational corpora with different schemas (Herath, 9-aspect; EduRABSA, 7-aspect), not a single source, and the transfer results hold on both. We state explicitly that broader claims about the full 20-aspect schema require additional real-data tests, and that high-stakes decisions require human-in-the-loop review. We agree the perceptual-realism reference pool is small and have kept its role strictly diagnostic; enlarging it with additional public feedback sources is a documented next step.</p>
+      <p class="resp"><b class="tag">Clarified and scoped.</b> The 32 OMSCS reviews are not the benchmark's real-data scope; they are only the blinded reference pool for the realism-judge loop, never used for training or evaluation, and that pool is freely enlargeable from public sources (thousands of RateMyProfessor comments are available). The actual external evaluation uses two independent annotated real corpora under two different annotation schemes: Herath et al. (2,829 reviews, 9-aspect overlap) and EduRABSA (7-aspect overlap), so the transfer evidence rests on thousands of real reviews across two schemes, not on 32 reviews. We revised the text so this distinction is explicit, and we continue to state that broader claims about the full 20-aspect schema require additional real-data tests and that high-stakes decisions require human-in-the-loop review.</p>
       <span class="loc">Section 6.1 (limitations 1 and 2); Section 5 (external validation).</span>
     </div>
 
