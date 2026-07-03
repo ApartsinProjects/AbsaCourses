@@ -1,0 +1,26 @@
+{
+  "SYNTHETIC": {
+    "n": 6485,
+    "all_same": 0.218,
+    "all_pos": 0.074,
+    "mixed_posneg": 0.326
+  },
+  "Herath": {
+    "n": 1061,
+    "all_same": 0.498,
+    "all_pos": 0.348,
+    "mixed_posneg": 0.128
+  },
+  "EduRABSA": {
+    "n": 3466,
+    "all_same": 0.623,
+    "all_pos": 0.422,
+    "mixed_posneg": 0.236
+  },
+  "OATS": {
+    "n": 1404,
+    "all_same": 0.724,
+    "all_pos": 0.637,
+    "mixed_posneg": 0.219
+  }
+}
