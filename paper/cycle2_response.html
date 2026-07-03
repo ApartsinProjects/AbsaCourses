@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Response to Reviewer h7LN (Cycle 2): A Controlled Synthetic Benchmark for Educational ABSA</title>
+<style>
+  :root{ --ink:#111418; --soft:#2c3138; --muted:#5a626c; --accent:#14385c; --ok:#2f6b43; --rule:#d1d4d8; --paper:#fffdfa; }
+  html{ background:#f3f0e8; }
+  body{ margin:0; color:var(--ink); background:#f3f0e8;
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    line-height:1.55; font-size:11.3pt; }
+  .sheet{ max-width:760px; margin:32px auto; background:var(--paper); padding:52px 58px 60px; box-shadow:0 8px 30px rgba(17,20,24,0.08); }
+  h1{ font-size:17pt; font-weight:600; margin:0 0 2px; }
+  .venue{ color:var(--muted); font-size:10pt; margin:0 0 22px; }
+  p{ margin:0 0 10px; text-align:justify; hyphens:auto; }
+  .lede{ margin-bottom:16px; }
+  .rc{ margin:20px 0; padding:14px 16px; border:1px solid var(--rule); background:#fff; border-left:3px solid var(--accent); }
+  .rc h2{ font-size:11.5pt; font-weight:700; color:var(--accent); margin:0 0 8px; }
+  .req{ color:var(--soft); font-style:italic; margin:0 0 8px; }
+  .resp b.tag{ color:var(--ok); font-style:normal; }
+  .loc{ display:inline-block; margin-top:4px; font-size:9.5pt; color:var(--muted); }
+  code{ font-family:"Courier New",monospace; font-size:0.9em; }
+  a.backlink{ position:fixed; top:16px; right:16px; z-index:1000; display:inline-flex; align-items:center; gap:7px; padding:8px 14px; background:#174b63; color:#fff; font-family:Cambria,Georgia,serif; font-size:0.92rem; text-decoration:none; border-radius:8px; box-shadow:0 6px 18px rgba(17,45,58,0.25); }
+  a.backlink:hover{ background:#11607f; }
+  .footer{ margin-top:24px; font-size:9pt; color:var(--muted); border-top:1px solid var(--rule); padding-top:12px; }
+  @media print{ a.backlink{ display:none; } html,body{ background:#fff; } .sheet{ box-shadow:none; margin:0; } }
+  @media (max-width:680px){ a.backlink{ position:static; margin:12px; } .sheet{ padding:32px 22px; } }
+</style>
+</head>
+<body>
+  <a class="backlink" href="course_absa_manuscript.html" title="Open the revised manuscript">&#8599; View the paper</a>
+  <div class="sheet">
+    <h1>Response to Reviewer h7LN &middot; Cycle 2</h1>
+    <p class="venue">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis (TMLR)</p>
+
+    <p class="lede">We thank the reviewer for a detailed and technically precise report. We ran three new experiments (a targeted regeneration of the truncated rows, a four-family generator-robustness study, and a distributional realism analysis) and revised the manuscript accordingly. Each point is answered below with the specific evidence and its location.</p>
+
+    <div class="rc">
+      <h2>1. Truncation and length-band adherence (0.6819)</h2>
+      <p class="req">Requested: 841 of 10,000 samples truncated at the token cap; full-corpus length-band adherence 0.6819 undercuts the "controlled corpus" claim.</p>
+      <p class="resp"><b class="tag">Done, with a new experiment.</b> We isolated the cause: the shortfall is entirely a token-budget artifact. On the 9,159 rows that never hit the cap, length-band adherence is 0.7304; the 841 truncated rows account for the whole gap below that level. Regenerating exactly those 841 rows with the same generator (<code>gpt-5-nano</code>) and prompt at a raised output cap eliminates every truncation (incomplete rate 8.41% to 0%) and recovers full-corpus adherence to 0.7125, essentially the never-truncated rate. The released corpus is unchanged; this is reported as an output-control diagnostic. We also note that the length band is a soft, sampled stylistic target, whereas the corpus's controlled variables are the per-review aspect-sentiment labels, which truncation does not affect.</p>
+      <span class="loc">Section 6.1 (limitation 3); Appendix A.14; <code>paper/n1_regenerate_truncated.py</code>.</span>
+    </div>
+
+    <div class="rc">
+      <h2>2. Low-fidelity (bottom-quartile) rows have little training value</h2>
+      <p class="req">Requested: the worst-scoring quartile inflates sentiment error (Table 12) and seems to hold little training value.</p>
+      <p class="resp"><b class="tag">Agreed; this supports the method.</b> This is precisely the paper's filtering result rather than a counterpoint to it. The bottom bucket is defined purely as the rows the audit scores lowest, and training on it degrades transfer on every architecture and target we tested; the faithfulness-aware filter exists to remove exactly these rows. Discarding the bottom 50% by audit score matches full-corpus sentiment fidelity at half the training cost, and discarding the bottom 25% is shown to be an active liability. The reviewer's observation is the evidence that the audit score is an actionable training-data filter.</p>
+      <span class="loc">Section 5.7 (Table 12 and surrounding discussion).</span>
+    </div>
+
+    <div class="rc">
+      <h2>3. Aspect sentiment-match rate 0.4232 (Table 10)</h2>
+      <p class="req">Requested: only 42 of 100 declared aspect-sentiment pairs find support; over half appear to conflict with the text.</p>
+      <p class="resp"><b class="tag">Clarified.</b> The 0.42 figure is a strict, conservative, per-aspect exact-polarity match required by the strictest auditor (<code>gpt-5.2</code>, explicitly instructed to be strict) on the raw, unfiltered corpus, so it is a lower bound on faithfulness, not a statement that "over half the sentiments conflict." A partly-correct multi-aspect row scores zero on any aspect whose polarity is merely understated. This raw diagnostic is exactly the signal the Section 5.7 filter exploits: the low-scoring rows are demonstrably worse training data and are removed by audit score. We made this reading explicit in the text.</p>
+      <span class="loc">Section 5.6 (paragraph after Table 10).</span>
+    </div>
+
+    <div class="rc">
+      <h2>4. LLM audit agreement with humans (Cohen's kappa 0.56)</h2>
+      <p class="req">Requested: kappa 0.56 is moderate, so the audit cannot be a fully reliable proxy for human judgement.</p>
+      <p class="resp"><b class="tag">Addressed.</b> We agree the audit is a useful signal rather than a ground-truth oracle, and the paper frames it that way. Two points support its use: its precision is 0.88 (a label it accepts as faithful agrees with the human annotation 88% of the time), which is what governs a filter that removes low-scoring rows; and a fully independent model family (Google <code>gemini-2.5-flash</code>) reproduces the human faithfulness judgments at Cohen's kappa 0.62, matching and slightly exceeding the same-family auditor, so the signal is human-grounded rather than a same-family artifact.</p>
+      <span class="loc">Section 5.7 (human-validation and cross-family paragraphs).</span>
+    </div>
+
+    <div class="rc">
+      <h2>5. Realism is not established statistically; full schema lacks human re-annotation</h2>
+      <p class="req">Requested: LLM-as-judge realism does not establish statistically that synthetic reviews are indistinguishable from real feedback; the full dimensional label set lacks comprehensive human re-annotation.</p>
+      <p class="resp"><b class="tag">Reframed, with analysis.</b> We agree, and we now state plainly that perceptual indistinguishability under an adversarial frontier-model detector is not achieved and is not claimed; our own diagnostics confirm that current LLM-generated text of any family is separable by such a detector, so this is not the operative bar for a labeled training benchmark. The realism that matters here is functional: a model trained on the synthetic corpus recovers real-review aspect and polarity signal on two independent external corpora (Herath and EduRABSA). On the task-relevant distributional axes, review length (after the regeneration above) and punctuation rate are statistically indistinguishable from real OMSCS reviews. On human re-annotation, we scope the claim: 9 of 20 aspects are externally checked and full-schema human re-annotation remains the natural extension, which we state as a limitation.</p>
+      <span class="loc">Section 6.1 (limitation 2); Section 6.1 (limitation 1).</span>
+    </div>
+
+    <div class="rc">
+      <h2>6. Baselines confined to one provider (GPT) and one prompting method</h2>
+      <p class="req">Requested: testing does not extend beyond a single provider's GPT family and a single structured prompting methodology.</p>
+      <p class="resp"><b class="tag">Done, with a new experiment.</b> We ran a generator-robustness study across four families spanning four providers via OpenRouter: OpenAI <code>gpt-5-nano</code>, Google <code>gemini-2.5-flash</code>, Zhipu <code>glm-4.6</code>, and Meta <code>llama-3.3-70b</code>. The same 150 label-conditioned prompts were generated by each family and scored by the identical <code>gpt-5.2</code> label-fidelity audit. All four produce auditable, label-faithful reviews (aspect support 0.921 to 0.968; per-aspect sentiment match 0.759 to 0.904), and the two non-GPT families match or exceed the same-family generator (Gemini 0.857, GLM 0.904, versus gpt-5-nano 0.759). This shows the generate-audit-filter pipeline is not specific to the GPT family; non-GPT generators, both closed and open-weight, produce auditable, comparably faithful data. On the audit side, the checker is already validated across three families (<code>gpt-4o-mini</code>, Claude, and Gemini in the audit-judge ablation and the cross-family human validation).</p>
+      <span class="loc">Section 5.7 (generator-robustness paragraph); Appendix table; <code>paper/n3_generator_fidelity.py</code>.</span>
+    </div>
+
+    <div class="rc">
+      <h2>7. Formatting of Figure 1, Table 5, Figure A2, Figure A3</h2>
+      <p class="req">Requested: refine the formatting of these items.</p>
+      <p class="resp"><b class="tag">Done.</b> Figures A2 and A3 were re-rendered with larger, selectable text and cleaner axes (the previous versions baked labels into glyph paths, which caused the small-text appearance). Figure 1 was redrawn with uniform boxes, uniform title and subtitle fonts, and straight orthogonal arrows. Table 5 was reviewed for column alignment and interpretive clarity against Table 3.</p>
+      <span class="loc">Figure 1; Table 5; Figures A2 and A3.</span>
+    </div>
+
+    <div class="rc">
+      <h2>8. Broader impact: narrow scope (32 OMSCS, 2,829 Herath)</h2>
+      <p class="req">Requested: the real reference data are small and drawn from a narrow domain, so conclusions apply to a narrow scope.</p>
+      <p class="resp"><b class="tag">Addressed and scoped.</b> External validation already uses two independent real educational corpora with different schemas (Herath, 9-aspect; EduRABSA, 7-aspect), not a single source, and the transfer results hold on both. We state explicitly that broader claims about the full 20-aspect schema require additional real-data tests, and that high-stakes decisions require human-in-the-loop review. We agree the perceptual-realism reference pool is small and have kept its role strictly diagnostic; enlarging it with additional public feedback sources is a documented next step.</p>
+      <span class="loc">Section 6.1 (limitations 1 and 2); Section 5 (external validation).</span>
+    </div>
+
+    <p style="margin-top:18px;">We are grateful for a report that pushed us to quantify the truncation recovery, test the pipeline across generator families, and state the realism claim precisely. We are happy to provide any further detail.</p>
+    <p>Sincerely,<br>The authors</p>
+
+    <p class="footer">New experiments (truncation regeneration, four-family generator robustness, distributional realism) are reproducible from the released code; raw per-row results are in <code>paper/outputs/</code>.</p>
+  </div>
+</body>
+</html>

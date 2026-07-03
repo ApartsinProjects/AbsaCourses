@@ -1,0 +1,56 @@
+{
+  "judge": "openai/gpt-5.4",
+  "n_prompts": 150,
+  "real_false_synthetic_rate": 0.15,
+  "per_source": {
+    "gpt5nano_clean": {
+      "n": 6,
+      "labeled_synthetic_rate": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "gemini_flash": {
+      "n": 6,
+      "labeled_synthetic_rate": 0.8333,
+      "ci95": [
+        0.5,
+        1.0
+      ]
+    },
+    "glm_46": {
+      "n": 6,
+      "labeled_synthetic_rate": 0.6667,
+      "ci95": [
+        0.3333,
+        1.0
+      ]
+    },
+    "llama33_70b": {
+      "n": 6,
+      "labeled_synthetic_rate": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "cycle0_orig": {
+      "n": 126,
+      "labeled_synthetic_rate": 1.0,
+      "ci95": [
+        1.0,
+        1.0
+      ]
+    },
+    "real": {
+      "n": 200,
+      "labeled_synthetic_rate": 0.15,
+      "ci95": [
+        0.1,
+        0.205
+      ]
+    }
+  },
+  "note": "cycle0_orig is the published contaminated set (truncation/nan); others are clean regenerations."
+}

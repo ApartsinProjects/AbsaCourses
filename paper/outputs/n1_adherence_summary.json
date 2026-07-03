@@ -1,0 +1,16 @@
+{
+  "model": "openai/gpt-5-nano",
+  "cap_tokens": 900,
+  "n_targeted": 841,
+  "n_regenerated_ok": 841,
+  "n_errors": 0,
+  "adherence_841_before": 0.1534,
+  "adherence_841_after": 0.5172,
+  "mean_wc_before": 100.0,
+  "mean_wc_after": 94.1,
+  "overall_adherence_before": 0.6819,
+  "overall_adherence_after": 0.7125,
+  "complete_row_adherence": 0.7304,
+  "incomplete_rate_before": 0.0841,
+  "incomplete_rate_after": 0.0
+}

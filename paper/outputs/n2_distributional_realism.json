@@ -1,0 +1,139 @@
+{
+  "n_synth": 1200,
+  "n_real_total": 2745,
+  "n_real_omscs_baseline": 200,
+  "n_real_kaggle_rmp": 2547,
+  "axes_vs_real_pool": {
+    "word_count": {
+      "real_mean": 35.478,
+      "synth_mean": 105.265,
+      "mwu_p": 0.0,
+      "ks_stat": 0.805,
+      "cliffs_delta": 0.8793,
+      "effect": "large"
+    },
+    "ttr": {
+      "real_mean": 0.887,
+      "synth_mean": 0.789,
+      "mwu_p": 1.39e-197,
+      "ks_stat": 0.5461,
+      "cliffs_delta": -0.5967,
+      "effect": "large"
+    },
+    "mean_word_len": {
+      "real_mean": 4.512,
+      "synth_mean": 4.565,
+      "mwu_p": 7.87e-18,
+      "ks_stat": 0.3255,
+      "cliffs_delta": 0.1719,
+      "effect": "small"
+    },
+    "words_per_sentence": {
+      "real_mean": 11.459,
+      "synth_mean": 26.826,
+      "mwu_p": 0.0,
+      "ks_stat": 0.8128,
+      "cliffs_delta": 0.899,
+      "effect": "large"
+    },
+    "flesch": {
+      "real_mean": 59.033,
+      "synth_mean": 44.488,
+      "mwu_p": 3.58e-153,
+      "ks_stat": 0.5241,
+      "cliffs_delta": -0.5268,
+      "effect": "large"
+    },
+    "exclaim_per_100w": {
+      "real_mean": 1.997,
+      "synth_mean": 0.0,
+      "mwu_p": 8.01e-48,
+      "ks_stat": 0.1574,
+      "cliffs_delta": -0.1574,
+      "effect": "small"
+    },
+    "comma_per_100w": {
+      "real_mean": 2.565,
+      "synth_mean": 5.665,
+      "mwu_p": 4.24e-265,
+      "ks_stat": 0.6831,
+      "cliffs_delta": 0.6692,
+      "effect": "large"
+    },
+    "upper_ratio": {
+      "real_mean": 0.031,
+      "synth_mean": 0.018,
+      "mwu_p": 6.79e-25,
+      "ks_stat": 0.3103,
+      "cliffs_delta": -0.2058,
+      "effect": "small"
+    }
+  },
+  "axes_vs_omscs_baseline_only": {
+    "word_count": {
+      "real_mean": 157.86,
+      "synth_mean": 105.265,
+      "mwu_p": 0.0126,
+      "ks_stat": 0.2075,
+      "cliffs_delta": -0.1101,
+      "effect": "negligible"
+    },
+    "ttr": {
+      "real_mean": 0.694,
+      "synth_mean": 0.789,
+      "mwu_p": 3.1e-34,
+      "ks_stat": 0.4942,
+      "cliffs_delta": 0.5382,
+      "effect": "large"
+    },
+    "mean_word_len": {
+      "real_mean": 4.459,
+      "synth_mean": 4.565,
+      "mwu_p": 3.69e-07,
+      "ks_stat": 0.2142,
+      "cliffs_delta": 0.2243,
+      "effect": "small"
+    },
+    "words_per_sentence": {
+      "real_mean": 16.49,
+      "synth_mean": 26.826,
+      "mwu_p": 6.95e-74,
+      "ks_stat": 0.6667,
+      "cliffs_delta": 0.8021,
+      "effect": "large"
+    },
+    "flesch": {
+      "real_mean": 55.184,
+      "synth_mean": 44.488,
+      "mwu_p": 2.15e-37,
+      "ks_stat": 0.4258,
+      "cliffs_delta": -0.5637,
+      "effect": "large"
+    },
+    "exclaim_per_100w": {
+      "real_mean": 0.162,
+      "synth_mean": 0.0,
+      "mwu_p": 4.7e-35,
+      "ks_stat": 0.125,
+      "cliffs_delta": -0.125,
+      "effect": "negligible"
+    },
+    "comma_per_100w": {
+      "real_mean": 3.469,
+      "synth_mean": 5.665,
+      "mwu_p": 3.23e-43,
+      "ks_stat": 0.5358,
+      "cliffs_delta": 0.608,
+      "effect": "large"
+    },
+    "upper_ratio": {
+      "real_mean": 0.024,
+      "synth_mean": 0.018,
+      "mwu_p": 9.9e-19,
+      "ks_stat": 0.3633,
+      "cliffs_delta": -0.3898,
+      "effect": "medium"
+    }
+  },
+  "indistinguishable_axes_negligible_effect": []
+}

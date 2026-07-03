@@ -70,3 +70,11 @@ paper/batch_results/
 paper/generated_datasets/
 paper/archive/
 paper/benchmark_outputs/
+
+# Cycle-2 intermediate generation/audit caches (regenerable; summaries + evidence tracked)
+paper/outputs/n2_gen_*.jsonl
+paper/outputs/n2_tuned_*.jsonl
+paper/outputs/n2_judge.jsonl
+paper/outputs/n3_gen_*.jsonl
+paper/outputs/n3_audit_*.jsonl
+paper/outputs/*_run.log

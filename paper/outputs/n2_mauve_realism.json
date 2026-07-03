@@ -1,0 +1,9 @@
+{
+  "n_per_side": 400,
+  "mauve_real_vs_synth": 0.0881,
+  "mauve_real_vs_real_upperbound": 0.7562,
+  "mauve_real_vs_kaggle_rmp_crossdomain": 0.3892,
+  "n_synth": 400,
+  "n_real": 400,
+  "n_kaggle": 400
+}
