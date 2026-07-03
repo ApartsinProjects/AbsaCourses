@@ -47,4 +47,22 @@ synth-OMSCS 0.262 -> 0.245 (effect -0.017, negligible); real-real 0.030 -> 0.029
 ceiling ~0.96. The synth-real distributional gap is NOT entity/topic-driven; it is
 genuine style. Added a robustness clause to limitation 2.
 
-**Status:** realism-depth + scrubbing DONE and folded; OATS/domain framing pending user.
+## Sentence-vs-review + assembled-real control (CORRECTED mechanism)
+- Sentence-level judge: synth-detect 0.367, real-FP 0.16, accuracy 0.603 (vs review
+  0.975 / 0.15 / 0.93). Individual synthetic sentences near-indistinguishable.
+- INITIAL claim (wrong): tell = uniform multi-aspect coverage / document assembly.
+- Assembled-real control (n2_assembled_real.py): real OMSCS sentences, same course,
+  assembled into multi-aspect docs (63w) -> judged synthetic only 0.192 (~ real 0.15).
+  => REFUTES the assembly hypothesis. Assembly/coverage/incoherence do NOT trigger it.
+- CORRECTED mechanism: weak per-sentence synthetic signal (0.37 vs 0.15 floor)
+  ACCUMULATES across a full generated review to 0.975. Real sentences lack it.
+  Ladder: real 0.15 < assembled-real 0.19 < synth-sentence 0.37 < synth-review 0.975.
+- Fixed A.23 + Table A21 + limitation 2 + response #5a (had committed the wrong
+  mechanism; corrected). Conclusion unchanged and better supported: sentence-level
+  realism present; detectability is cumulative review-level style, orthogonal to labels.
+
+## Not pursued (data/ceiling limited)
+- Aspect-level "which aspect is most unrealistic": review judge at ceiling (0.975),
+  no variance; and the tell is general cumulative style, not aspect-specific. Marginal.
+
+**Status:** realism-depth + assembled-real control DONE and folded (mechanism corrected).
