@@ -1,0 +1,12 @@
+{
+  "n_synth": 150,
+  "n_real": 150,
+  "synth_detection_rate": 0.367,
+  "real_false_synth_rate": 0.16,
+  "overall_accuracy": 0.603,
+  "review_level_reference": {
+    "synth_detection": 0.975,
+    "real_fp": 0.15,
+    "accuracy": 0.93
+  }
+}
