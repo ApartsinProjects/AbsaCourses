@@ -65,4 +65,27 @@ genuine style. Added a robustness clause to limitation 2.
 - Aspect-level "which aspect is most unrealistic": review judge at ceiling (0.975),
   no variance; and the tell is general cumulative style, not aspect-specific. Marginal.
 
-**Status:** realism-depth + assembled-real control DONE and folded (mechanism corrected).
+## DATA-INTEGRITY BUG + CORRECTION (important)
+The transfer harness writes loaded real data to a FIXED path
+paper/real_transfer/herath_mapped_real_reviews.jsonl (line 406), so the
+M-ABSA/OATS/EduRABSA transfer runs OVERWROTE the Herath cache with their own data.
+The file is untracked/generated (never in git). Consequence:
+- The sentence-MAUVE "OMSCS vs Herath = 0.03" was computed on the corrupted cache
+  (non-Herath content). Recomputed on the CORRECT Herath file: 0.626.
+- => the favorable paper claim "synthetic (0.23) closer to OMSCS than two real
+  corpora (0.03) are to each other" was FALSE and is REMOVED. Correct: OMSCS-Herath
+  0.63 > OMSCS-synth 0.23, i.e. synthetic IS more distinguishable than real-real.
+  Fixed limitation 2 + response #5a to the honest version (pool-level separable).
+- UNAFFECTED (used OMSCS+synthetic, never the Herath cache): sentence-level judge
+  (60% acc), assembled-real control (0.19), OMSCS-vs-synth MAUVE 0.23, scrubbing.
+  Herath transfer 0.4811 (committed text) unaffected. Herath median-20-words correct.
+Fix: regenerated correct Herath (2829 rows) from XMI; gitignored the cache path.
+Root cause to fix upstream: harness should write source-specific filenames.
+
+## Corrected real aspects-per-review (clean files)
+Synthetic mean 2.03 (71% multi); Herath 1.52 (38% multi); OATS review 2.53 (84% multi);
+M-ABSA sentence 1.14 (12% multi). Real REVIEWS are multi-aspect (OATS > synthetic);
+only sentence-level benchmarks are single-aspect. So synthetic multi-aspect is realistic
+for reviews; the 'real is single-aspect' impression is a sentence-annotation artifact.
+
+**Status:** realism-depth DONE; MAUVE-corruption CORRECTED and paper fixed.

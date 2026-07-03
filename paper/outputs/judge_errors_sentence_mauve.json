@@ -51,7 +51,8 @@
     "n_per_side": 1000,
     "oms_vs_synth_sent": 0.2336,
     "oms_vs_oms_upper": 0.9771,
-    "oms_vs_herath_crossreal": 0.0267,
-    "herath_vs_synth_sent": 0.0093
+    "oms_vs_herath_crossreal": 0.6257,
+    "herath_vs_synth_sent": "INVALID_corrupted_file_see_note",
+    "_note": "oms_vs_herath recomputed on corrected Herath file = 0.6257 (was 0.027 on corrupted cache)"
   }
 }
