@@ -1,0 +1,41 @@
+{
+  "bins": [
+    {
+      "bin": "<=15",
+      "n_decisions": 512,
+      "mean_words": 10.2,
+      "kappa_gpt": 0.5101,
+      "kappa_gemini": 0.5469
+    },
+    {
+      "bin": "16-25",
+      "n_decisions": 553,
+      "mean_words": 21.0,
+      "kappa_gpt": 0.5098,
+      "kappa_gemini": 0.5618
+    },
+    {
+      "bin": "26-40",
+      "n_decisions": 472,
+      "mean_words": 30.5,
+      "kappa_gpt": 0.6259,
+      "kappa_gemini": 0.7078
+    },
+    {
+      "bin": "41-70",
+      "n_decisions": 696,
+      "mean_words": 55.7,
+      "kappa_gpt": 0.6386,
+      "kappa_gemini": 0.7357
+    },
+    {
+      "bin": "71+",
+      "n_decisions": 249,
+      "mean_words": 145.2,
+      "kappa_gpt": 0.3848,
+      "kappa_gemini": 0.4293
+    }
+  ],
+  "spearman_len_vs_kappa_gpt": -0.1,
+  "spearman_len_vs_kappa_gemini": 0.0
+}
