@@ -1,0 +1,10 @@
+{
+  "synth_kept_n": 9159,
+  "synth_kept_median": 122.0,
+  "synth_kept_mean": 118.8,
+  "omscs_median": 104.0,
+  "omscs_mean": 157.4,
+  "omscs_p10": 42.900000000000006,
+  "omscs_p90": 311.2,
+  "kept_within_omscs_p10p90": 0.924
+}
