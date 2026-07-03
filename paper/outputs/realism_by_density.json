@@ -1,0 +1,56 @@
+{
+  "n": 149,
+  "by_density": [
+    {
+      "lo": 0.0021,
+      "hi": 0.0052,
+      "det": 1.0,
+      "n": 29,
+      "mean_words": 290.3
+    },
+    {
+      "lo": 0.0052,
+      "hi": 0.0084,
+      "det": 1.0,
+      "n": 30,
+      "mean_words": 233.2
+    },
+    {
+      "lo": 0.0084,
+      "hi": 0.0115,
+      "det": 0.9333,
+      "n": 30,
+      "mean_words": 216.9
+    },
+    {
+      "lo": 0.0115,
+      "hi": 0.0167,
+      "det": 1.0,
+      "n": 30,
+      "mean_words": 205.2
+    },
+    {
+      "lo": 0.0167,
+      "hi": 0.4,
+      "det": 0.9667,
+      "n": 30,
+      "mean_words": 96.4
+    }
+  ],
+  "spearman_density_det": -0.0444,
+  "spearman_p": 0.59,
+  "by_nasp_length": {
+    "1": {
+      "shorter_det": 1.0,
+      "longer_det": 1.0
+    },
+    "2": {
+      "shorter_det": 1.0,
+      "longer_det": 0.963
+    },
+    "3": {
+      "shorter_det": 0.96,
+      "longer_det": 0.9565
+    }
+  }
+}

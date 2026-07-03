@@ -1,0 +1,13 @@
+{
+  "raw": {
+    "oms_vs_synth": 0.2622,
+    "oms_vs_oms_ceiling": 0.9602,
+    "oms_vs_herath_realreal": 0.0302
+  },
+  "scrubbed": {
+    "oms_vs_synth": 0.2452,
+    "oms_vs_oms_ceiling": 0.9613,
+    "oms_vs_herath_realreal": 0.0294
+  },
+  "scrub_effect_synth": -0.017
+}

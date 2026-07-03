@@ -1,0 +1,57 @@
+{
+  "judge_errors": {
+    "real_fp_by_length": [
+      {
+        "lo": 25,
+        "hi": 64,
+        "fp": 0.28,
+        "n": 50
+      },
+      {
+        "lo": 64,
+        "hi": 104,
+        "fp": 0.1,
+        "n": 50
+      },
+      {
+        "lo": 104,
+        "hi": 202,
+        "fp": 0.16,
+        "n": 50
+      },
+      {
+        "lo": 202,
+        "hi": 2207,
+        "fp": 0.06,
+        "n": 50
+      }
+    ],
+    "spearman_len_fp": -0.218,
+    "p": 0.00192,
+    "synthetic_misses": [
+      {
+        "src": "gemini_flash",
+        "wc": 302,
+        "nasp": 3
+      },
+      {
+        "src": "glm_46",
+        "wc": 234,
+        "nasp": 2
+      },
+      {
+        "src": "glm_46",
+        "wc": 148,
+        "nasp": 3
+      }
+    ],
+    "n_synth_judged": 150
+  },
+  "sentence_mauve": {
+    "n_per_side": 1000,
+    "oms_vs_synth_sent": 0.2336,
+    "oms_vs_oms_upper": 0.9771,
+    "oms_vs_herath_crossreal": 0.0267,
+    "herath_vs_synth_sent": 0.0093
+  }
+}
