@@ -1,0 +1,20 @@
+{
+  "herath": {
+    "n_real": 2829,
+    "n_aspects": 9,
+    "correlated_gold_sent_mse": 0.4726,
+    "correlated_n_train": 1091,
+    "original_gold_sent_mse": 0.5728,
+    "original_n_train": 1093,
+    "delta_mse": -0.1002
+  },
+  "oats": {
+    "n_real": 1680,
+    "n_aspects": 11,
+    "correlated_gold_sent_mse": 0.4527,
+    "correlated_n_train": 1239,
+    "original_gold_sent_mse": 0.513,
+    "original_n_train": 1233,
+    "delta_mse": -0.0603
+  }
+}

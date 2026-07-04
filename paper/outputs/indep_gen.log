@@ -1,0 +1,2 @@
+[indepgen] 2000 prompts (conc=8)
+[indepgen] generated 2000/2000; multi all-same-polarity=0.26 (should be ~0.22 like original) -> E:\Projects\Submitted\CourseABSA\paper\outputs\exp_indep_gen.jsonl

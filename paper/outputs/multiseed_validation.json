@@ -1,0 +1,17 @@
+{
+  "seeds": [],
+  "A28_windowing": {
+    "oats_whole": [
+      0.2754
+    ],
+    "oats_windowed": [
+      0.4219
+    ],
+    "oats_delta": [
+      0.1465
+    ]
+  },
+  "exp2_sentence": {},
+  "exp4_polarity": {},
+  "exp5_structure": {}
+}

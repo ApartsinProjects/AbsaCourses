@@ -1,0 +1,47 @@
+{
+  "herath": {
+    "review_trained": {
+      "micro_f1": 0.3268,
+      "sent_mse": 0.3645,
+      "n_train": 5495
+    },
+    "sentence_trained": {
+      "micro_f1": 0.4483,
+      "sent_mse": 0.5183,
+      "n_train": 7153
+    },
+    "delta_micro_f1": 0.1215,
+    "delta_sent_mse": 0.1538,
+    "n_real": 2829
+  },
+  "m_absa": {
+    "review_trained": {
+      "micro_f1": 0.3664,
+      "sent_mse": 0.4526,
+      "n_train": 6146
+    },
+    "sentence_trained": {
+      "micro_f1": 0.4699,
+      "sent_mse": 0.415,
+      "n_train": 8192
+    },
+    "delta_micro_f1": 0.1035,
+    "delta_sent_mse": -0.0376,
+    "n_real": 1732
+  },
+  "oats": {
+    "review_trained": {
+      "micro_f1": 0.4475,
+      "sent_mse": 0.3999,
+      "n_train": 6146
+    },
+    "sentence_trained": {
+      "micro_f1": 0.2641,
+      "sent_mse": 0.4958,
+      "n_train": 8192
+    },
+    "delta_micro_f1": -0.1834,
+    "delta_sent_mse": 0.0959,
+    "n_real": 1680
+  }
+}

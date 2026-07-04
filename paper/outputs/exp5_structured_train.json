@@ -1,0 +1,19 @@
+{
+  "structured": {
+    "n_train": 1544,
+    "whole_micro_f1": 0.4685,
+    "windowed_micro_f1": 0.4593,
+    "whole_sent_mse": 0.246,
+    "windowed_sent_mse": 0.3887
+  },
+  "original": {
+    "n_train": 1233,
+    "whole_micro_f1": 0.3985,
+    "windowed_micro_f1": 0.4691,
+    "whole_sent_mse": 0.7401,
+    "windowed_sent_mse": 0.863
+  },
+  "delta_whole_f1": 0.07,
+  "delta_windowed_f1": -0.0098,
+  "delta_whole_sent_mse": -0.4941
+}

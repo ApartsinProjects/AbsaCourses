@@ -1,0 +1,23 @@
+{
+  "herath": {
+    "micro_precision": 0.468199784405318,
+    "micro_recall": 0.30380041967824667,
+    "micro_f1": 0.3684954751131222,
+    "sentiment_mse_detected": 0.31304154803364687,
+    "n_real": 2829
+  },
+  "m_absa": {
+    "micro_precision": 0.6078900179318589,
+    "micro_recall": 0.5151975683890577,
+    "micro_f1": 0.5577186728818206,
+    "sentiment_mse_detected": 0.5479230850902764,
+    "n_real": 1732
+  },
+  "oats": {
+    "micro_precision": 0.39210526315789473,
+    "micro_recall": 0.17550058892815076,
+    "micro_f1": 0.24247355573637103,
+    "sentiment_mse_detected": 0.37961810981264077,
+    "n_real": 1680
+  }
+}

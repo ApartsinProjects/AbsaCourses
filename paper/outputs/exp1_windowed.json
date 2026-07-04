@@ -1,0 +1,44 @@
+{
+  "oats": {
+    "target": "oats",
+    "approach": "bert-base-uncased",
+    "smoke": false,
+    "n_real_reviews": 1680,
+    "n_aspects": 11,
+    "whole_doc": {
+      "micro_precision": 0.3014005602240896,
+      "micro_recall": 0.25347467608951707,
+      "micro_f1": 0.27536788227767117,
+      "sentiment_mse_detected": 0.4456227595996415
+    },
+    "windowed": {
+      "micro_precision": 0.3278924001044659,
+      "micro_recall": 0.5915194346289753,
+      "micro_f1": 0.42191044274552636,
+      "sentiment_mse_detected": 0.511501293115614,
+      "n_sentences": 8180
+    },
+    "delta_micro_f1": 0.1465
+  },
+  "herath": {
+    "target": "herath",
+    "approach": "bert-base-uncased",
+    "smoke": false,
+    "n_real_reviews": 2829,
+    "n_aspects": 9,
+    "whole_doc": {
+      "micro_precision": 0.3328498912255257,
+      "micro_recall": 0.3210538587083236,
+      "micro_f1": 0.3268454782815096,
+      "sentiment_mse_detected": 0.36454912733677514
+    },
+    "windowed": {
+      "micro_precision": 0.2839838492597577,
+      "micro_recall": 0.3935649335509443,
+      "micro_f1": 0.32991302648294735,
+      "sentiment_mse_detected": 0.4430562697070877,
+      "n_sentences": 6055
+    },
+    "delta_micro_f1": 0.0031
+  }
+}

@@ -1,0 +1,144 @@
+{
+  "partA_stratified_prior_corrected": {
+    "per_stratum": {
+      "single": {
+        "n": 305,
+        "det_micro_f1": 0.1782,
+        "gold_sent_mse": 0.4725
+      },
+      "consistent": {
+        "n": 148,
+        "det_micro_f1": 0.2936,
+        "gold_sent_mse": 0.3994
+      },
+      "mixed": {
+        "n": 547,
+        "det_micro_f1": 0.3162,
+        "gold_sent_mse": 0.5962
+      }
+    },
+    "real_stratum_dist": {
+      "single": 0.3895131744435315,
+      "consistent": 0.39299803277179934,
+      "mixed": 0.2174887927846692
+    },
+    "synth_stratum_dist": {
+      "single": 0.305,
+      "consistent": 0.148,
+      "mixed": 0.547
+    },
+    "raw": {
+      "det_micro_f1": 0.276,
+      "gold_sent_mse": 0.5455
+    },
+    "prior_corrected_to_real": {
+      "det_micro_f1": 0.2588,
+      "gold_sent_mse": 0.4749,
+      "weights": {
+        "single": 1.277,
+        "consistent": 2.655,
+        "mixed": 0.398
+      },
+      "ess": 614.0,
+      "n": 1000
+    }
+  },
+  "partB_cooccurrence": {
+    "synthetic": {
+      "n_reviews": 1000,
+      "n_pairs_with_support": 79,
+      "log_lift_std": 0.193,
+      "log_lift_mean": -0.081,
+      "frac_pairs_lift_gt_1p5": 0.0,
+      "frac_pairs_lift_lt_0p67": 0.0,
+      "top_over": [
+        "difficulty+grading_transparency=1.46",
+        "accessibility+feedback_quality=1.46",
+        "exam_fairness+support=1.43",
+        "exam_fairness+prerequisite_fit=1.31",
+        "difficulty+prerequisite_fit=1.30",
+        "interest+materials=1.30"
+      ],
+      "top_under": [
+        "clarity+overall_experience=0.69",
+        "grading_transparency+peer_interaction=0.69",
+        "grading_transparency+tooling_usability=0.69",
+        "pacing+peer_interaction=0.71",
+        "assessment_design+workload=0.71",
+        "overall_experience+practical_application=0.71"
+      ]
+    },
+    "herath": {
+      "n_reviews": 2829,
+      "n_pairs_with_support": 29,
+      "log_lift_std": 0.474,
+      "log_lift_mean": 0.072,
+      "frac_pairs_lift_gt_1p5": 0.172,
+      "frac_pairs_lift_lt_0p67": 0.138,
+      "top_over": [
+        "assessment_design+exam_fairness=3.21",
+        "exam_fairness+grading_transparency=2.84",
+        "assessment_design+grading_transparency=2.39",
+        "assessment_design+workload=1.93",
+        "accessibility+materials=1.87",
+        "assessment_design+materials=1.39"
+      ],
+      "top_under": [
+        "grading_transparency+materials=0.45",
+        "grading_transparency+organization=0.53",
+        "lecturer_quality+organization=0.63",
+        "exam_fairness+organization=0.64",
+        "lecturer_quality+workload=0.69",
+        "accessibility+lecturer_quality=0.70"
+      ]
+    },
+    "edurabsa": {
+      "n_reviews": 5584,
+      "n_pairs_with_support": 21,
+      "log_lift_std": 0.297,
+      "log_lift_mean": -0.097,
+      "frac_pairs_lift_gt_1p5": 0.048,
+      "frac_pairs_lift_lt_0p67": 0.143,
+      "top_over": [
+        "materials+organization=1.63",
+        "accessibility+lecturer_quality=1.38",
+        "exam_fairness+materials=1.36",
+        "exam_fairness+organization=1.34",
+        "exam_fairness+workload=1.11",
+        "organization+workload=1.08"
+      ],
+      "top_under": [
+        "accessibility+materials=0.53",
+        "accessibility+workload=0.54",
+        "accessibility+organization=0.58",
+        "accessibility+exam_fairness=0.67",
+        "lecturer_quality+workload=0.73",
+        "lecturer_quality+organization=0.80"
+      ]
+    },
+    "oats": {
+      "n_reviews": 1680,
+      "n_pairs_with_support": 45,
+      "log_lift_std": 0.302,
+      "log_lift_mean": 0.018,
+      "frac_pairs_lift_gt_1p5": 0.111,
+      "frac_pairs_lift_lt_0p67": 0.044,
+      "top_over": [
+        "materials+organization=2.92",
+        "clarity+organization=2.28",
+        "assessment_design+grading_transparency=1.90",
+        "assessment_design+workload=1.71",
+        "support+workload=1.56",
+        "assessment_design+clarity=1.38"
+      ],
+      "top_under": [
+        "grading_transparency+lecturer_quality=0.63",
+        "difficulty+support=0.64",
+        "lecturer_quality+workload=0.71",
+        "difficulty+materials=0.72",
+        "relevance+workload=0.75",
+        "difficulty+relevance=0.79"
+      ]
+    }
+  }
+}

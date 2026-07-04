@@ -1,0 +1,16 @@
+{
+  "model": "textattack/bert-base-uncased-MNLI",
+  "epochs": 6,
+  "herath": {
+    "micro_precision": 0.1685,
+    "micro_recall": 1.0,
+    "micro_f1": 0.2883,
+    "n_real": 2829
+  },
+  "m_absa": {
+    "micro_precision": 0.1036,
+    "micro_recall": 1.0,
+    "micro_f1": 0.1878,
+    "n_real": 1732
+  }
+}

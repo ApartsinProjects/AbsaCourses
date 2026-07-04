@@ -1,0 +1,2 @@
+[exp4gen] 2000 prompts (conc=8); disposition mix={'positive': 0.52, 'negative': 0.12, 'mixed': 0.36}
+[exp4gen] generated 2000/2000; multi-aspect all-same-polarity=0.51 (target ~0.6; original synthetic 0.22) -> E:\Projects\Submitted\CourseABSA\paper\outputs\exp4_correlated_gen.jsonl
