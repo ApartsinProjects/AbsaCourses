@@ -81,3 +81,4 @@ paper/outputs/*_run.log
 
 paper/outputs/n6b_pred_*.jsonl
 paper/outputs/n6b_run.log
+paper/_mathml.html
