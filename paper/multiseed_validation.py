@@ -121,6 +121,11 @@ def equal_pools(dfA, dfB, aspects, seed):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    ap.add_argument("--seeds", default=",".join(str(s) for s in SEEDS),
+                    help="comma-separated seeds to run this invocation (fresh process per seed clears GPU memory)")
+    run_seeds = [int(s) for s in ap.parse_args().seeds.split(",")]
     cfg = Config()
     # synth (the paper's 10k corpus) is used ONLY for windowing (single model) and exp2
     # (review vs sentence, both arms share this source) -> no cross-corpus confound there.
@@ -140,7 +145,7 @@ def main():
         res[bucket].setdefault(key, []).append(round(val, 4))
         OUT.write_text(json.dumps(res, indent=2))
 
-    for seed in SEEDS:
+    for seed in run_seeds:
         if seed in res["seeds"]:
             print(f"[ms] seed {seed} already done, skip", flush=True); continue
         cfg.seed = seed; set_seed(seed)
