@@ -100,3 +100,22 @@ N-matched, so the synthetic std is inflated (conservative: understates the real-
 gap). The multiseed exp5 contrast IS N-matched (structured 0.462 vs indep 0.225 at n=2000),
 so that comparison is clean. TODO before finalizing: recompute A.26 Table A24 at matched N
 (subsample all corpora to a common N) so the descriptive claim is airtight.
+
+### 2026-07-04 FINALIZED on 3-seed validation (A.26/A.27/A.28 rewritten)
+Kept only claims with consistently-signed paired deltas across seeds 17/23/42:
+- A.26 Co-occurrence: rewritten to matched-N (1,680) log-lift std -> synthetic 0.228,
+  Herath 0.473, EduRABSA 0.297, OATS 0.302. Honest "real but uneven" gap (strong Herath,
+  modest MOOC); dropped the inflated "0.19 / 0% pairs / no structure" single-N claim.
+- A.27 -> "Correlated-Polarity Generation Improves Sentiment Transfer": Exp4 only, 3-seed
+  paired MSE delta OATS -0.231+/-0.117, Herath -0.157+/-0.114 (negative every seed).
+  Dropped the Exp5 co-occurrence-raises-detection claim (not robust).
+- A.28 -> "Sentence-Level Training Improves Transfer to Sentence-Level Targets": REPLACES
+  the windowing section. Exp2 3-seed paired F1 delta M-ABSA +0.211+/-0.061,
+  Herath +0.039+/-0.012; differential (helps sentence targets, not review-level OATS)
+  rules out data-quantity. Windowing DROPPED (mean +0.081+/-0.061, ~1.3 sigma, a seed-42
+  fluke made single-seed look like +0.147).
+- Section 6.1 pointers updated: limitation 1 -> sentence-level training (not windowing);
+  limitation 2 -> polarity remedy robust, co-occurrence explicitly noted as no reliable gain.
+Integrity: table refs A24-A26 resolve, A.27 forward-ref intact, no new em-dashes, backup preserved.
+Net: two robust NEW wins reach the paper (Exp2 sentence-training, Exp4 correlated polarity);
+windowing + Exp5-detection honestly dropped as not surviving multi-seed.
