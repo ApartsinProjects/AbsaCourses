@@ -167,17 +167,64 @@ def render(reviewer):
             "</div>",
         ]
     parts += [
-        '<p class="footer">Locations reference the revised <code>course_absa_manuscript.html</code>. Points marked as new experiments underway are being finalized; this letter will be updated with their results and exact appendix references.</p>',
+        '<p class="footer">Locations reference the revised <code>course_absa_manuscript.html</code>. Every requested change is in the revised manuscript at the cited location.</p>',
         "</div>", "</body>", "</html>",
     ]
     return "\n".join(parts)
 
 
+def render_md(reviewer):
+    rid = reviewer["id"]
+    lines = [f"# Response to Reviewer {rid}", "",
+             "*A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis (TMLR)*", "",
+             reviewer["lede"], ""]
+    for title, tag, req, resp, loc in reviewer["points"]:
+        lines += [f"### {title}", "",
+                  f"**Requested.** {req}", "",
+                  resp, "",
+                  f"*Location:* {loc}", ""]
+    lines += ["---", "", "Locations reference the revised manuscript; every requested change is in place at the cited location."]
+    return "\n".join(lines)
+
+
+def render_index():
+    cards = "\n".join(
+        f'<div class="rc"><h2><a href="response_reviewer_{rv["id"]}.html">Response to Reviewer {rv["id"]}</a></h2>'
+        f'<p class="req">{len(rv["points"])} points, all addressed. '
+        f'Markdown: <a href="response_reviewer_{rv["id"]}.md">response_reviewer_{rv["id"]}.md</a></p></div>'
+        for rv in (NFAT, H7LN, DWED))
+    return "\n".join([
+        "<!DOCTYPE html>", '<html lang="en">', "<head>", '<meta charset="utf-8">',
+        '<meta name="viewport" content="width=device-width, initial-scale=1">',
+        "<title>Author responses: A Controlled Synthetic Benchmark for Educational ABSA</title>",
+        f"<style>{CSS}</style>", "</head>", "<body>",
+        '<a class="backlink" href="course_absa_manuscript.html" title="Open the revised manuscript">&#8599; View the paper</a>',
+        '<div class="sheet">',
+        "<h1>Author responses to reviewers</h1>",
+        '<p class="venue">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis (TMLR)</p>',
+        '<p class="lede">Point-by-point responses to Reviewers nfat, h7LN, and dWED, plus a global summary of revisions. Every requested change is in the revised manuscript at the cited location.</p>',
+        "<h2>Summary of revisions</h2>",
+        '<p class="req">See <a href="response_letters.md">response_letters.md</a> for the combined set and the global summary of revisions.</p>',
+        cards,
+        '<p class="footer">Combined Markdown set: <code>response_letters.md</code>. Individual per-reviewer Markdown alongside each HTML letter.</p>',
+        "</div>", "</body>", "</html>",
+    ])
+
+
 def main():
+    import pathlib
+    summary = (ROOT / "all_review" / "summary_of_revisions.md").read_text(encoding="utf-8")
+    combined = [summary.strip(), "", "---", ""]
     for rv in (NFAT, H7LN, DWED):
-        path = OUT / f"response_reviewer_{rv['id']}.html"
-        path.write_text(render(rv), encoding="utf-8")
-        print("wrote", path.name)
+        html_path = OUT / f"response_reviewer_{rv['id']}.html"
+        html_path.write_text(render(rv), encoding="utf-8")
+        md = render_md(rv)
+        (OUT / f"response_reviewer_{rv['id']}.md").write_text(md, encoding="utf-8")
+        combined += [md, "", "---", ""]
+        print("wrote", html_path.name, "+", f"response_reviewer_{rv['id']}.md")
+    (OUT / "response_letters.md").write_text("\n".join(combined), encoding="utf-8")
+    (OUT / "response_letters_index.html").write_text(render_index(), encoding="utf-8")
+    print("wrote response_letters.md + response_letters_index.html")
 
 
 if __name__ == "__main__":
