@@ -115,7 +115,7 @@ def plot_real_transfer_overview(summary: pd.DataFrame, overlap: pd.DataFrame) ->
     axes[1].hlines(y_results, 0, results["micro_f1"], color="#315c88", linewidth=2.2)
     axes[1].scatter(results["micro_f1"], y_results, color="#315c88", s=70, zorder=3)
     axes[1].set_yticks(y_results, results["approach"])
-    axes[1].set_xlim(0.34, 0.49)
+    axes[1].set_xlim(0.28, 0.44)
     axes[1].set_xlabel("Micro-F1")
     for yi, val in zip(y_results, results["micro_f1"]):
         axes[1].text(float(val) + 0.003, yi, f"{float(val):.3f}", va="center", fontsize=8)
