@@ -1,0 +1,29 @@
+{
+  "signature": {
+    "script": "absa_model_comparison.py",
+    "data_path": "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+    "approaches": [
+      "bert_joint"
+    ],
+    "include_openai": false,
+    "openai_model": "gpt-5.2",
+    "openai_variants": [
+      "zero-shot",
+      "few-shot",
+      "few-shot-diverse",
+      "retrieval-few-shot",
+      "two-pass",
+      "aspect-by-aspect"
+    ],
+    "openai_test_limit": 25,
+    "epochs_detection": 3,
+    "epochs_sentiment": 3,
+    "batch_size": 8,
+    "max_len": 192,
+    "lr": 3e-05,
+    "seed": 3
+  },
+  "created_at_utc": "2026-04-04T09:32:10.929230+00:00",
+  "updated_at_utc": "2026-04-04T09:32:10.929240+00:00",
+  "completed": {}
+}

@@ -1,0 +1,11 @@
+{
+  "model": "gpt-5.2",
+  "sample_size_reviews": 250,
+  "sample_size_declared_aspects": 501,
+  "aspect_supported_rate": 0.7705,
+  "aspect_sentiment_match_rate": 0.4232,
+  "row_full_support_rate": 0.592,
+  "row_full_sentiment_match_rate": 0.212,
+  "manifest_path": "E:\\Projects\\CourseABSA\\paper\\batch_requests\\faithfulness_audit_r3_250_manifest.csv",
+  "results_path": "E:\\Projects\\CourseABSA\\paper\\batch_results\\batch_69d0c18809588190ac07da33a808d0a3_output.jsonl"
+}

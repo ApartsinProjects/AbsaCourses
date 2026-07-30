@@ -76,7 +76,7 @@ We thank Reviewer dWED for the careful and generous review and for the construct
 [DONE] Both are cited. *Location:* References.
 
 **D4. Strengthen the transfer-limits statement.**
-[DONE] §6.1 states that 9 of 20 aspects are externally validated, that synthetic-only training recovers about 60% of a real-trained model, that the full schema is not yet externally validated, and that high-stakes use requires human-in-the-loop review. *Location:* §6.1.
+[DONE] §6.1 states that 9 of 20 aspects are externally validated, that synthetic-only training recovers about half of a real-trained model (micro-F1 0.402 versus 0.767 across five seeds), that the full schema is not yet externally validated, and that high-stakes use requires human-in-the-loop review. *Location:* §6.1.
 
 **D5. Give a practitioner roadmap.**
 [DONE] §6.2 provides a fine-tuning-size curve: roughly 250-500 local reviews capture most of the benefit, the synthetic pretrain reaches real-only quality with about half the real data, practitioners should expect the Figure 6 curve rather than internal-benchmark numbers, and should monitor against a held-out locally-adjudicated slice with re-checks on distribution shift. *Location:* §6.2, Figure 6.

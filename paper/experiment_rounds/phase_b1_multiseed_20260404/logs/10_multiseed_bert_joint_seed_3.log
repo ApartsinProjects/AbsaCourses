@@ -1,0 +1,12 @@
+[2026-04-04T09:31:58.763758+00:00] START python E:\Projects\CourseABSA\paper\absa_model_comparison.py --data-path E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl --approaches bert_joint --no-write-latest --epochs-detection 3 --epochs-sentiment 3 --seed 3
+[2026-04-04T09:32:10.928193+00:00] Benchmark start: data=E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl device=cuda seed=3 approaches=['bert_joint'] epochs_detection=3 epochs_sentiment=3 batch_size=8 max_len=192 lr=3e-05
+[2026-04-04T09:32:10.928376+00:00] Detailed log file -> E:\Projects\CourseABSA\paper\benchmark_outputs\logs\benchmark_20260404T093210Z.log
+[2026-04-04T09:32:10.930372+00:00] Resume checkpoint -> E:\Projects\CourseABSA\paper\experiment_rounds\phase_b1_multiseed_20260404\logs\10_multiseed_bert_joint_seed_3.resume.json
+[2026-04-04T09:32:13.124593+00:00] Dataset loaded: rows=10000 train=8000 calib=1000 test=1000 aspects=20
+[2026-04-04T09:32:13.125020+00:00] Dispatching approach -> bert_joint
+[2026-04-04T09:32:13.125059+00:00] [bert_joint] joint approach start
+[2026-04-04T09:32:13.125676+00:00] [bert_joint:joint] acquired GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-04-04T09:32:22.792997+00:00] [bert_joint] joint training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-04-04T09:36:32.791027+00:00] [bert_joint] joint epoch 1/3: train_det_loss=1.2481 train_sent_loss=0.6481 val_macro_f1=0.1880 val_mse=0.5954 selection_score=-0.4073 best_score=-0.4073 patience=0 epoch_seconds=250.0
+[2026-04-04T09:41:09.734118+00:00] [bert_joint] joint epoch 2/3: train_det_loss=1.1868 train_sent_loss=0.5314 val_macro_f1=0.2709 val_mse=0.5273 selection_score=-0.2564 best_score=-0.2564 patience=0 epoch_seconds=276.6

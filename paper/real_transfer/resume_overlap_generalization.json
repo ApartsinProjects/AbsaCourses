@@ -1,0 +1,79 @@
+{
+  "signature": {
+    "script": "evaluate_overlap_generalization.py",
+    "synthetic_path": "E:\\Projects\\Submitted\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+    "herath_root": "E:\\Projects\\Submitted\\CourseABSA\\external_data\\Student_feedback_analysis_dataset\\Annotated Student Feedback Data",
+    "approaches": [
+      "tfidf_two_step",
+      "distilbert-base-uncased",
+      "bert-base-uncased"
+    ],
+    "epochs_detection": 3,
+    "epochs_sentiment": 3,
+    "batch_size": 8,
+    "max_len": 192,
+    "lr": 3e-05,
+    "seed": 42
+  },
+  "created_at_utc": "2026-07-30T09:47:58.765315+00:00",
+  "updated_at_utc": "2026-07-30T09:48:07.574365+00:00",
+  "completed": {
+    "approach::tfidf_two_step": {
+      "summary_rows": [
+        {
+          "approach": "tfidf_two_step",
+          "micro_precision": 0.287732819524727,
+          "micro_recall": 0.4880174291938998,
+          "micro_f1": 0.362020202020202,
+          "macro_precision": 0.3956560162506147,
+          "macro_recall": 0.4860973944824695,
+          "macro_f1": 0.3968171964762814,
+          "macro_balanced_accuracy": 0.6376723543877189,
+          "macro_specificity": 0.7892473142929679,
+          "macro_mcc": 0.27858989044580024,
+          "label_accuracy": 0.7442500809847749,
+          "subset_accuracy": 0.06705539358600583,
+          "samples_f1": 0.3562890462307372,
+          "samples_jaccard": 0.27344509232264336,
+          "sentiment_mse_detected": 0.6519335828856835,
+          "elapsed_seconds": 2.4,
+          "eval_split": "synthetic_overlap_test",
+          "n_reviews": 686,
+          "n_aspects": 9,
+          "generalization_gap_f1": 0.016198787561083616
+        },
+        {
+          "approach": "tfidf_two_step",
+          "micro_precision": 0.32693288020390826,
+          "micro_recall": 0.4485894147820005,
+          "micro_f1": 0.37821898958128564,
+          "macro_precision": 0.3184577179424744,
+          "macro_recall": 0.281402088697867,
+          "macro_f1": 0.24361412798689994,
+          "macro_balanced_accuracy": 0.54027664232628,
+          "macro_specificity": 0.7991511959546931,
+          "macro_mcc": 0.1162206837536553,
+          "label_accuracy": 0.7515415733867483,
+          "subset_accuracy": 0.06504065040650407,
+          "samples_f1": 0.3600290640587565,
+          "samples_jaccard": 0.2746439933343433,
+          "sentiment_mse_detected": 0.7019465004476529,
+          "elapsed_seconds": 2.2,
+          "eval_split": "real_herath_mapped",
+          "n_reviews": 2829,
+          "n_aspects": 9,
+          "generalization_gap_f1": 0.016198787561083616
+        }
+      ],
+      "synthetic_per_aspect_path": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_overlap_generalization.tfidf_two_step.synthetic_per_aspect.csv",
+      "real_per_aspect_path": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_overlap_generalization.tfidf_two_step.real_per_aspect.csv",
+      "artifact_paths": {
+        "synthetic_sample_predictions": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_overlap_generalization.tfidf_two_step.synthetic_sample_predictions.jsonl",
+        "synthetic_thresholds": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_overlap_generalization.tfidf_two_step.synthetic_thresholds.json",
+        "real_sample_predictions": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_overlap_generalization.tfidf_two_step.real_sample_predictions.jsonl",
+        "real_thresholds": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_overlap_generalization.tfidf_two_step.real_thresholds.json"
+      },
+      "completed_at_utc": "2026-07-30T09:48:07.574355+00:00"
+    }
+  }
+}

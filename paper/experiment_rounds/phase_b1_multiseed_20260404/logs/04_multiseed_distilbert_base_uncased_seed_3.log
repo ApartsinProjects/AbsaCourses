@@ -1,0 +1,29 @@
+[2026-04-04T07:45:18.367548+00:00] START python E:\Projects\CourseABSA\paper\absa_model_comparison.py --data-path E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl --approaches distilbert-base-uncased --no-write-latest --epochs-detection 3 --epochs-sentiment 3 --seed 3
+[2026-04-04T07:45:25.930542+00:00] Benchmark start: data=E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl device=cuda seed=3 approaches=['distilbert-base-uncased'] epochs_detection=3 epochs_sentiment=3 batch_size=8 max_len=192 lr=3e-05
+[2026-04-04T07:45:25.930638+00:00] Detailed log file -> E:\Projects\CourseABSA\paper\benchmark_outputs\logs\benchmark_20260404T074525Z.log
+[2026-04-04T07:45:25.931675+00:00] Resume checkpoint -> E:\Projects\CourseABSA\paper\experiment_rounds\phase_b1_multiseed_20260404\logs\04_multiseed_distilbert_base_uncased_seed_3.resume.json
+[2026-04-04T07:45:27.684478+00:00] Dataset loaded: rows=10000 train=8000 calib=1000 test=1000 aspects=20
+[2026-04-04T07:45:27.684791+00:00] Dispatching approach -> distilbert-base-uncased
+[2026-04-04T07:45:27.684829+00:00] [distilbert-base-uncased] transformer approach start
+[2026-04-04T07:45:27.685197+00:00] [distilbert-base-uncased:detection] acquired GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-04-04T07:45:36.343064+00:00] [distilbert-base-uncased] detection training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-04-04T07:47:30.422546+00:00] [distilbert-base-uncased] detection epoch 1/3: train_loss=1.2035 val_micro_f1=0.2365 val_macro_f1=0.2782 best_macro_f1=0.2782 patience=0 epoch_seconds=114.1
+[2026-04-04T07:49:24.874747+00:00] [distilbert-base-uncased] detection epoch 2/3: train_loss=1.1140 val_micro_f1=0.2557 val_macro_f1=0.2852 best_macro_f1=0.2852 patience=0 epoch_seconds=114.4
+[2026-04-04T07:51:25.842833+00:00] [distilbert-base-uncased] detection epoch 3/3: train_loss=1.0550 val_micro_f1=0.2643 val_macro_f1=0.2865 best_macro_f1=0.2865 patience=0 epoch_seconds=120.9
+[2026-04-04T07:51:26.006424+00:00] [distilbert-base-uncased] detection training complete: best_macro_f1=0.2865
+[2026-04-04T07:51:26.016040+00:00] [distilbert-base-uncased:detection] released GPU training lock
+[2026-04-04T07:51:26.016440+00:00] [distilbert-base-uncased:sentiment] acquired GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-04T07:51:27.787206+00:00] [distilbert-base-uncased] sentiment training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-04-04T07:53:46.391438+00:00] [distilbert-base-uncased] sentiment epoch 1/3: train_loss=0.6765 val_mse=0.6188 best_val_mse=0.6188 patience=0 epoch_seconds=138.6
+[2026-04-04T07:56:01.655572+00:00] [distilbert-base-uncased] sentiment epoch 2/3: train_loss=0.5765 val_mse=0.5668 best_val_mse=0.5668 patience=0 epoch_seconds=135.2
+[2026-04-04T07:57:56.357474+00:00] [distilbert-base-uncased] sentiment epoch 3/3: train_loss=0.4845 val_mse=0.5684 best_val_mse=0.5668 patience=0 epoch_seconds=114.6
+[2026-04-04T07:57:56.415436+00:00] [distilbert-base-uncased] sentiment training complete: best_val_mse=0.5668
+[2026-04-04T07:57:56.422011+00:00] [distilbert-base-uncased:sentiment] released GPU training lock
+[2026-04-04T07:58:01.331493+00:00] [distilbert-base-uncased] calibrated 20 thresholds
+[2026-04-04T07:58:10.258484+00:00] [distilbert-base-uncased] transformer approach complete: micro_f1=0.2859 macro_f1=0.3422 sentiment_mse=0.5469 elapsed=762.6s
+Completed distilbert-base-uncased: micro_f1=0.2859, sentiment_mse=0.5469
+[2026-04-04T07:58:10.403024+00:00] Archived run bundle -> E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260404T075810Z
+Saved benchmark outputs to E:\Projects\CourseABSA\paper\benchmark_outputs and archived run to E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260404T075810Z
+
+[2026-04-04T07:58:18.420138+00:00] END exit_code=0 elapsed_seconds=780.1

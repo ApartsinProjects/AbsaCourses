@@ -1,0 +1,8 @@
+rank,approach,micro_f1,macro_f1,micro_recall,sentiment_mse_detected,runtime_min
+1,bert-base-uncased,0.2760,0.3364,0.4396,0.4959,21.8633
+2,distilbert-base-uncased,0.2691,0.3376,0.4531,0.5044,15.9483
+3,distilbert_joint,0.2524,0.3248,0.4719,0.5428,6.2883
+4,bert_joint,0.2447,0.3208,0.5122,0.5288,11.5750
+5,tfidf_two_step,0.2326,0.2867,0.4595,0.6830,0.0950
+6,albert-base-v2,0.1829,0.1828,1.0000,0.5773,22.3250
+7,roberta-base,0.1829,0.1828,1.0000,0.6838,22.1900

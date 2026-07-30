@@ -1,0 +1,22 @@
+[2026-04-03T17:37:34.159062+00:00] START python E:\Projects\CourseABSA\paper\absa_model_comparison.py --data-path E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl --approaches bert_joint --no-write-latest --epochs-detection 3 --epochs-sentiment 3 --seed 42
+[2026-04-03T17:37:41.128898+00:00] Benchmark start: data=E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl device=cuda seed=42 approaches=['bert_joint'] epochs_detection=3 epochs_sentiment=3 batch_size=8 max_len=192 lr=3e-05
+[2026-04-03T17:37:41.128999+00:00] Detailed log file -> E:\Projects\CourseABSA\paper\benchmark_outputs\logs\benchmark_20260403T173741Z.log
+[2026-04-03T17:37:41.130087+00:00] Resume checkpoint -> E:\Projects\CourseABSA\paper\experiment_rounds\phase_a_benchmark_20260403\logs\04_phase_a_bert_joint.resume.json
+[2026-04-03T17:37:42.765404+00:00] Dataset loaded: rows=10000 train=8000 calib=1000 test=1000 aspects=20
+[2026-04-03T17:37:42.765729+00:00] Dispatching approach -> bert_joint
+[2026-04-03T17:37:42.765760+00:00] [bert_joint] joint approach start
+[2026-04-03T17:37:42.766123+00:00] [bert_joint:joint] acquired GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-04-03T17:37:50.757314+00:00] [bert_joint] joint training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-04-03T17:41:31.604127+00:00] [bert_joint] joint epoch 1/3: train_det_loss=1.2487 train_sent_loss=0.6610 val_macro_f1=0.1620 val_mse=0.5961 selection_score=-0.4340 best_score=-0.4340 patience=0 epoch_seconds=220.8
+[2026-04-03T17:45:12.235887+00:00] [bert_joint] joint epoch 2/3: train_det_loss=1.2082 train_sent_loss=0.5560 val_macro_f1=0.2531 val_mse=0.5429 selection_score=-0.2898 best_score=-0.2898 patience=0 epoch_seconds=220.5
+[2026-04-03T17:48:53.006726+00:00] [bert_joint] joint epoch 3/3: train_det_loss=1.1395 train_sent_loss=0.4528 val_macro_f1=0.2888 val_mse=0.5315 selection_score=-0.2427 best_score=-0.2427 patience=0 epoch_seconds=220.7
+[2026-04-03T17:48:53.181904+00:00] [bert_joint] joint training complete: best_score=-0.2427
+[2026-04-03T17:48:53.188941+00:00] [bert_joint:joint] released GPU training lock
+[2026-04-03T17:49:01.449065+00:00] [bert_joint] calibrated 20 joint thresholds
+[2026-04-03T17:49:17.312298+00:00] [bert_joint] joint approach complete: micro_f1=0.2447 macro_f1=0.3208 sentiment_mse=0.5288 elapsed=694.5s
+Completed bert_joint: micro_f1=0.2447, sentiment_mse=0.5288
+[2026-04-03T17:49:17.469905+00:00] Archived run bundle -> E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260403T174917Z
+Saved benchmark outputs to E:\Projects\CourseABSA\paper\benchmark_outputs and archived run to E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260403T174917Z
+
+[2026-04-03T17:49:34.204442+00:00] END exit_code=0 elapsed_seconds=720.0

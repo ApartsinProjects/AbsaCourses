@@ -1,0 +1,73 @@
+{
+  "submitted_at_utc": "2026-04-04T13:57:47.086251+00:00",
+  "sharded": true,
+  "endpoint": "/v1/responses",
+  "completion_window": "24h",
+  "request_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\requests.jsonl",
+  "manifest_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\manifest.csv",
+  "model": "gpt-5-nano",
+  "request_count": 200,
+  "max_requests_per_batch": 50,
+  "shards": [
+    {
+      "submitted_at_utc": "2026-04-04T13:57:43.019524+00:00",
+      "batch_id": "batch_69d118d6d6808190a49957f075b2186f",
+      "status": "validating",
+      "endpoint": "/v1/responses",
+      "completion_window": "24h",
+      "input_file_id": "file-8aQUPZLx5k6ceNHvEBgFje",
+      "output_file_id": null,
+      "error_file_id": null,
+      "request_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\shards\\shard_001\\requests.jsonl",
+      "manifest_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\shards\\shard_001\\manifest.csv",
+      "model": "gpt-5-nano",
+      "request_count": 50,
+      "shard_index": 1
+    },
+    {
+      "submitted_at_utc": "2026-04-04T13:57:44.471446+00:00",
+      "batch_id": "batch_69d118d850c48190a551328f4ca3d1ab",
+      "status": "validating",
+      "endpoint": "/v1/responses",
+      "completion_window": "24h",
+      "input_file_id": "file-Dg1JEN2t5bPjzHrfEVpCMd",
+      "output_file_id": null,
+      "error_file_id": null,
+      "request_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\shards\\shard_002\\requests.jsonl",
+      "manifest_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\shards\\shard_002\\manifest.csv",
+      "model": "gpt-5-nano",
+      "request_count": 50,
+      "shard_index": 2
+    },
+    {
+      "submitted_at_utc": "2026-04-04T13:57:46.156176+00:00",
+      "batch_id": "batch_69d118d9f648819096827901736015fc",
+      "status": "validating",
+      "endpoint": "/v1/responses",
+      "completion_window": "24h",
+      "input_file_id": "file-GUAh6wdGj7t9URyxBGXH5V",
+      "output_file_id": null,
+      "error_file_id": null,
+      "request_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\shards\\shard_003\\requests.jsonl",
+      "manifest_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\shards\\shard_003\\manifest.csv",
+      "model": "gpt-5-nano",
+      "request_count": 50,
+      "shard_index": 3
+    },
+    {
+      "submitted_at_utc": "2026-04-04T13:57:47.085281+00:00",
+      "batch_id": "batch_69d118daef008190a7dc58c7d3949e54",
+      "status": "validating",
+      "endpoint": "/v1/responses",
+      "completion_window": "24h",
+      "input_file_id": "file-LBH7cvEyjuEXL9YU5GAynf",
+      "output_file_id": null,
+      "error_file_id": null,
+      "request_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\shards\\shard_004\\requests.jsonl",
+      "manifest_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle1_20260404T135722Z\\shards\\shard_004\\manifest.csv",
+      "model": "gpt-5-nano",
+      "request_count": 50,
+      "shard_index": 4
+    }
+  ]
+}

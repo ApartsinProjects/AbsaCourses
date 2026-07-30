@@ -1,0 +1,15 @@
+[2026-04-04T07:44:58.357800+00:00] START python E:\Projects\CourseABSA\paper\absa_model_comparison.py --data-path E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl --approaches tfidf_two_step --no-write-latest --epochs-detection 3 --epochs-sentiment 3 --seed 23
+[2026-04-04T07:45:06.074622+00:00] Benchmark start: data=E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl device=cuda seed=23 approaches=['tfidf_two_step'] epochs_detection=3 epochs_sentiment=3 batch_size=8 max_len=192 lr=3e-05
+[2026-04-04T07:45:06.074737+00:00] Detailed log file -> E:\Projects\CourseABSA\paper\benchmark_outputs\logs\benchmark_20260404T074506Z.log
+[2026-04-04T07:45:06.075843+00:00] Resume checkpoint -> E:\Projects\CourseABSA\paper\experiment_rounds\phase_b1_multiseed_20260404\logs\03_multiseed_tfidf_two_step_seed_23.resume.json
+[2026-04-04T07:45:07.960896+00:00] Dataset loaded: rows=10000 train=8000 calib=1000 test=1000 aspects=20
+[2026-04-04T07:45:07.961208+00:00] Dispatching approach -> tfidf_two_step
+[2026-04-04T07:45:07.961247+00:00] [tfidf_two_step] start classical two-step fit: train=8000 calib=1000 test=1000 aspects=20
+[2026-04-04T07:45:12.994977+00:00] [tfidf_two_step] vectorizer + models fit complete
+[2026-04-04T07:45:13.900425+00:00] [tfidf_two_step] calibrated 20 thresholds
+[2026-04-04T07:45:14.032567+00:00] [tfidf_two_step] finished classical two-step: micro_f1=0.2441 macro_f1=0.2796 sentiment_mse=0.6933 elapsed=6.1s
+Completed tfidf_two_step: micro_f1=0.2441, sentiment_mse=0.6933
+[2026-04-04T07:45:14.382466+00:00] Archived run bundle -> E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260404T074514Z
+Saved benchmark outputs to E:\Projects\CourseABSA\paper\benchmark_outputs and archived run to E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260404T074514Z
+
+[2026-04-04T07:45:18.366236+00:00] END exit_code=0 elapsed_seconds=20.0

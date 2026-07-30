@@ -1,0 +1,162 @@
+{
+  "round_id": "phase_a_benchmark_20260403",
+  "title": "Phase A calibrated local benchmark rerun",
+  "purpose": "Run the seven local benchmark approaches as individual resumable tasks to refresh the main benchmark evidence under the corrected evaluation stack.",
+  "stop_on_failure": true,
+  "batches": [
+    {
+      "id": "phase_a_tfidf_two_step",
+      "title": "TF-IDF calibrated rerun",
+      "purpose": "Run the Phase A trust-repair benchmark rerun for tfidf_two_step on the 10K / 20-aspect corpus.",
+      "workdir": "E:\\Projects\\CourseABSA",
+      "log_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\01_phase_a_tfidf_two_step.log",
+      "command": [
+        "python",
+        "E:\\Projects\\CourseABSA\\paper\\absa_model_comparison.py",
+        "--data-path",
+        "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+        "--approaches",
+        "tfidf_two_step",
+        "--no-write-latest",
+        "--epochs-detection",
+        "3",
+        "--epochs-sentiment",
+        "3",
+        "--seed",
+        "42"
+      ]
+    },
+    {
+      "id": "phase_a_distilbert_base_uncased",
+      "title": "DistilBERT calibrated rerun",
+      "purpose": "Run the Phase A trust-repair benchmark rerun for distilbert-base-uncased on the 10K / 20-aspect corpus.",
+      "workdir": "E:\\Projects\\CourseABSA",
+      "log_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\02_phase_a_distilbert_base_uncased.log",
+      "command": [
+        "python",
+        "E:\\Projects\\CourseABSA\\paper\\absa_model_comparison.py",
+        "--data-path",
+        "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+        "--approaches",
+        "distilbert-base-uncased",
+        "--no-write-latest",
+        "--epochs-detection",
+        "3",
+        "--epochs-sentiment",
+        "3",
+        "--seed",
+        "42"
+      ]
+    },
+    {
+      "id": "phase_a_bert_base_uncased",
+      "title": "BERT calibrated rerun",
+      "purpose": "Run the Phase A trust-repair benchmark rerun for bert-base-uncased on the 10K / 20-aspect corpus.",
+      "workdir": "E:\\Projects\\CourseABSA",
+      "log_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\03_phase_a_bert_base_uncased.log",
+      "command": [
+        "python",
+        "E:\\Projects\\CourseABSA\\paper\\absa_model_comparison.py",
+        "--data-path",
+        "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+        "--approaches",
+        "bert-base-uncased",
+        "--no-write-latest",
+        "--epochs-detection",
+        "3",
+        "--epochs-sentiment",
+        "3",
+        "--seed",
+        "42"
+      ]
+    },
+    {
+      "id": "phase_a_bert_joint",
+      "title": "BERT joint calibrated rerun",
+      "purpose": "Run the Phase A trust-repair benchmark rerun for bert_joint on the 10K / 20-aspect corpus.",
+      "workdir": "E:\\Projects\\CourseABSA",
+      "log_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\04_phase_a_bert_joint.log",
+      "command": [
+        "python",
+        "E:\\Projects\\CourseABSA\\paper\\absa_model_comparison.py",
+        "--data-path",
+        "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+        "--approaches",
+        "bert_joint",
+        "--no-write-latest",
+        "--epochs-detection",
+        "3",
+        "--epochs-sentiment",
+        "3",
+        "--seed",
+        "42"
+      ]
+    },
+    {
+      "id": "phase_a_distilbert_joint",
+      "title": "DistilBERT joint calibrated rerun",
+      "purpose": "Run the Phase A trust-repair benchmark rerun for distilbert_joint on the 10K / 20-aspect corpus.",
+      "workdir": "E:\\Projects\\CourseABSA",
+      "log_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\05_phase_a_distilbert_joint.log",
+      "command": [
+        "python",
+        "E:\\Projects\\CourseABSA\\paper\\absa_model_comparison.py",
+        "--data-path",
+        "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+        "--approaches",
+        "distilbert_joint",
+        "--no-write-latest",
+        "--epochs-detection",
+        "3",
+        "--epochs-sentiment",
+        "3",
+        "--seed",
+        "42"
+      ]
+    },
+    {
+      "id": "phase_a_roberta_base",
+      "title": "RoBERTa calibrated rerun",
+      "purpose": "Run the Phase A trust-repair benchmark rerun for roberta-base on the 10K / 20-aspect corpus.",
+      "workdir": "E:\\Projects\\CourseABSA",
+      "log_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\06_phase_a_roberta_base.log",
+      "command": [
+        "python",
+        "E:\\Projects\\CourseABSA\\paper\\absa_model_comparison.py",
+        "--data-path",
+        "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+        "--approaches",
+        "roberta-base",
+        "--no-write-latest",
+        "--epochs-detection",
+        "3",
+        "--epochs-sentiment",
+        "3",
+        "--seed",
+        "42"
+      ]
+    },
+    {
+      "id": "phase_a_albert_base_v2",
+      "title": "ALBERT calibrated rerun",
+      "purpose": "Run the Phase A trust-repair benchmark rerun for albert-base-v2 on the 10K / 20-aspect corpus.",
+      "workdir": "E:\\Projects\\CourseABSA",
+      "log_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\07_phase_a_albert_base_v2.log",
+      "command": [
+        "python",
+        "E:\\Projects\\CourseABSA\\paper\\absa_model_comparison.py",
+        "--data-path",
+        "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+        "--approaches",
+        "albert-base-v2",
+        "--no-write-latest",
+        "--epochs-detection",
+        "3",
+        "--epochs-sentiment",
+        "3",
+        "--seed",
+        "42"
+      ]
+    }
+  ]
+}

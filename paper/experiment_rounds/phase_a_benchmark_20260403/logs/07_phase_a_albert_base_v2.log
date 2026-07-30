@@ -1,0 +1,30 @@
+[2026-04-03T18:18:54.311707+00:00] START python E:\Projects\CourseABSA\paper\absa_model_comparison.py --data-path E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl --approaches albert-base-v2 --no-write-latest --epochs-detection 3 --epochs-sentiment 3 --seed 42
+[2026-04-03T18:19:01.507272+00:00] Benchmark start: data=E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl device=cuda seed=42 approaches=['albert-base-v2'] epochs_detection=3 epochs_sentiment=3 batch_size=8 max_len=192 lr=3e-05
+[2026-04-03T18:19:01.507379+00:00] Detailed log file -> E:\Projects\CourseABSA\paper\benchmark_outputs\logs\benchmark_20260403T181901Z.log
+[2026-04-03T18:19:01.508910+00:00] Resume checkpoint -> E:\Projects\CourseABSA\paper\experiment_rounds\phase_a_benchmark_20260403\logs\07_phase_a_albert_base_v2.resume.json
+[2026-04-03T18:19:03.505478+00:00] Dataset loaded: rows=10000 train=8000 calib=1000 test=1000 aspects=20
+[2026-04-03T18:19:03.505801+00:00] Dispatching approach -> albert-base-v2
+[2026-04-03T18:19:03.505851+00:00] [albert-base-v2] transformer approach start
+[2026-04-03T18:19:03.515502+00:00] [albert-base-v2:detection] acquired GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-04-03T18:19:12.389224+00:00] [albert-base-v2] detection training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-04-03T18:22:49.320495+00:00] [albert-base-v2] detection epoch 1/3: train_loss=1.2556 val_micro_f1=0.1757 val_macro_f1=0.1196 best_macro_f1=0.1196 patience=0 epoch_seconds=216.9
+[2026-04-03T18:26:25.734013+00:00] [albert-base-v2] detection epoch 2/3: train_loss=1.2495 val_micro_f1=0.1576 val_macro_f1=0.0718 best_macro_f1=0.1196 patience=0 epoch_seconds=216.4
+[2026-04-03T18:30:02.079968+00:00] [albert-base-v2] detection epoch 3/3: train_loss=1.2493 val_micro_f1=0.1760 val_macro_f1=0.1117 best_macro_f1=0.1196 patience=1 epoch_seconds=216.3
+[2026-04-03T18:30:02.080020+00:00] [albert-base-v2] detection early stop at epoch 3
+[2026-04-03T18:30:02.089498+00:00] [albert-base-v2] detection training complete: best_macro_f1=0.1196
+[2026-04-03T18:30:02.095926+00:00] [albert-base-v2:detection] released GPU training lock
+[2026-04-03T18:30:02.096242+00:00] [albert-base-v2:sentiment] acquired GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T18:30:03.521782+00:00] [albert-base-v2] sentiment training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-04-03T18:33:40.524568+00:00] [albert-base-v2] sentiment epoch 1/3: train_loss=0.6801 val_mse=0.6380 best_val_mse=0.6380 patience=0 epoch_seconds=217.0
+[2026-04-03T18:37:17.589433+00:00] [albert-base-v2] sentiment epoch 2/3: train_loss=0.6027 val_mse=0.5928 best_val_mse=0.5928 patience=0 epoch_seconds=217.1
+[2026-04-03T18:40:54.538496+00:00] [albert-base-v2] sentiment epoch 3/3: train_loss=0.5644 val_mse=0.5731 best_val_mse=0.5731 patience=0 epoch_seconds=216.9
+[2026-04-03T18:40:54.556965+00:00] [albert-base-v2] sentiment training complete: best_val_mse=0.5731
+[2026-04-03T18:40:54.564002+00:00] [albert-base-v2:sentiment] released GPU training lock
+[2026-04-03T18:41:04.287802+00:00] [albert-base-v2] calibrated 20 thresholds
+[2026-04-03T18:41:23.005437+00:00] [albert-base-v2] transformer approach complete: micro_f1=0.1829 macro_f1=0.1828 sentiment_mse=0.5773 elapsed=1339.5s
+Completed albert-base-v2: micro_f1=0.1829, sentiment_mse=0.5773
+[2026-04-03T18:41:23.175823+00:00] Archived run bundle -> E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260403T184123Z
+Saved benchmark outputs to E:\Projects\CourseABSA\paper\benchmark_outputs and archived run to E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260403T184123Z
+
+[2026-04-03T18:41:34.381064+00:00] END exit_code=0 elapsed_seconds=1360.1

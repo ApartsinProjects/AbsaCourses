@@ -1,0 +1,128 @@
+{
+  "none_20_aspects": {
+    "accessibility": [
+      "accessibility"
+    ],
+    "assessment_design": [
+      "assessment_design"
+    ],
+    "clarity": [
+      "clarity"
+    ],
+    "difficulty": [
+      "difficulty"
+    ],
+    "exam_fairness": [
+      "exam_fairness"
+    ],
+    "feedback_quality": [
+      "feedback_quality"
+    ],
+    "grading_transparency": [
+      "grading_transparency"
+    ],
+    "interest": [
+      "interest"
+    ],
+    "lecturer_quality": [
+      "lecturer_quality"
+    ],
+    "materials": [
+      "materials"
+    ],
+    "organization": [
+      "organization"
+    ],
+    "overall_experience": [
+      "overall_experience"
+    ],
+    "pacing": [
+      "pacing"
+    ],
+    "peer_interaction": [
+      "peer_interaction"
+    ],
+    "practical_application": [
+      "practical_application"
+    ],
+    "prerequisite_fit": [
+      "prerequisite_fit"
+    ],
+    "relevance": [
+      "relevance"
+    ],
+    "support": [
+      "support"
+    ],
+    "tooling_usability": [
+      "tooling_usability"
+    ],
+    "workload": [
+      "workload"
+    ]
+  },
+  "pedagogical": {
+    "instructional_quality": [
+      "clarity",
+      "lecturer_quality",
+      "materials",
+      "feedback_quality"
+    ],
+    "assessment_course_management": [
+      "assessment_design",
+      "exam_fairness",
+      "grading_transparency",
+      "organization",
+      "tooling_usability"
+    ],
+    "learning_demand_readiness": [
+      "difficulty",
+      "workload",
+      "pacing",
+      "prerequisite_fit"
+    ],
+    "learning_environment": [
+      "support",
+      "accessibility",
+      "peer_interaction"
+    ],
+    "engagement_value": [
+      "relevance",
+      "interest",
+      "practical_application",
+      "overall_experience"
+    ]
+  },
+  "confusion_regularized": {
+    "teaching_content": [
+      "clarity",
+      "lecturer_quality",
+      "materials",
+      "relevance",
+      "practical_application"
+    ],
+    "assessment_structure": [
+      "assessment_design",
+      "exam_fairness",
+      "grading_transparency",
+      "organization"
+    ],
+    "demand_readiness": [
+      "difficulty",
+      "workload",
+      "pacing",
+      "prerequisite_fit"
+    ],
+    "support_friction": [
+      "support",
+      "accessibility",
+      "peer_interaction",
+      "feedback_quality",
+      "tooling_usability"
+    ],
+    "global_engagement": [
+      "interest",
+      "overall_experience"
+    ]
+  }
+}

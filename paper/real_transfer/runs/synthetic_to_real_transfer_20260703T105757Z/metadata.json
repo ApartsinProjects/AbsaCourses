@@ -1,0 +1,31 @@
+{
+  "created_at_utc": "2026-07-03T10:57:57.127683+00:00",
+  "synthetic_path": "E:\\Projects\\Submitted\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+  "herath_root": "E:\\Projects\\Submitted\\CourseABSA\\external_data\\Student_feedback_analysis_dataset\\Annotated Student Feedback Data",
+  "approaches": [
+    "tfidf_two_step"
+  ],
+  "epochs_detection": 3,
+  "epochs_sentiment": 3,
+  "batch_size": 8,
+  "max_len": 192,
+  "lr": 3e-05,
+  "seed": 42,
+  "n_real_reviews": 1680,
+  "n_overlap_aspects": 11,
+  "artifact_policy": {
+    "sample_predictions": true,
+    "detection_probabilities": true,
+    "detection_logits": true,
+    "sentiment_prediction_values": true,
+    "checkpoint_artifact_mirror": true
+  },
+  "files": {
+    "summary": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\runs\\synthetic_to_real_transfer_20260703T105757Z\\summary.csv",
+    "per_aspect": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\runs\\synthetic_to_real_transfer_20260703T105757Z\\per_aspect.csv",
+    "artifact_dir": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\runs\\synthetic_to_real_transfer_20260703T105757Z\\artifacts",
+    "latest_summary": "",
+    "latest_per_aspect": ""
+  },
+  "write_latest": false
+}

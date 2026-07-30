@@ -1,0 +1,154 @@
+{
+  "gpt5nano": {
+    "slug": "openai/gpt-5-nano",
+    "n_synth": 20,
+    "n_real": 200,
+    "n_indistinguishable": 2,
+    "indistinguishable_axes": [
+      "exclaim_per_100w",
+      "upper_ratio"
+    ],
+    "axes": {
+      "word_count": {
+        "real_mean": 157.86,
+        "synth_mean": 284.0,
+        "mwu_p": 1.15e-07,
+        "ks_stat": 0.705,
+        "cliffs_delta": 0.7197,
+        "effect": "large"
+      },
+      "ttr": {
+        "real_mean": 0.694,
+        "synth_mean": 0.607,
+        "mwu_p": 0.000158,
+        "ks_stat": 0.555,
+        "cliffs_delta": -0.513,
+        "effect": "large"
+      },
+      "mean_word_len": {
+        "real_mean": 4.459,
+        "synth_mean": 4.324,
+        "mwu_p": 0.0216,
+        "ks_stat": 0.34,
+        "cliffs_delta": -0.312,
+        "effect": "small"
+      },
+      "words_per_sentence": {
+        "real_mean": 16.49,
+        "synth_mean": 12.237,
+        "mwu_p": 4.6e-05,
+        "ks_stat": 0.595,
+        "cliffs_delta": -0.5532,
+        "effect": "large"
+      },
+      "flesch": {
+        "real_mean": 55.184,
+        "synth_mean": 66.19,
+        "mwu_p": 3.48e-06,
+        "ks_stat": 0.56,
+        "cliffs_delta": 0.63,
+        "effect": "large"
+      },
+      "exclaim_per_100w": {
+        "real_mean": 0.162,
+        "synth_mean": 0.0,
+        "mwu_p": 0.0953,
+        "ks_stat": 0.125,
+        "cliffs_delta": -0.125,
+        "effect": "negligible"
+      },
+      "comma_per_100w": {
+        "real_mean": 3.469,
+        "synth_mean": 4.763,
+        "mwu_p": 0.00571,
+        "ks_stat": 0.4,
+        "cliffs_delta": 0.375,
+        "effect": "medium"
+      },
+      "upper_ratio": {
+        "real_mean": 0.024,
+        "synth_mean": 0.024,
+        "mwu_p": 0.717,
+        "ks_stat": 0.315,
+        "cliffs_delta": 0.0495,
+        "effect": "negligible"
+      }
+    }
+  },
+  "llama33_70b": {
+    "slug": "meta-llama/llama-3.3-70b-instruct",
+    "n_synth": 20,
+    "n_real": 200,
+    "n_indistinguishable": 2,
+    "indistinguishable_axes": [
+      "word_count",
+      "exclaim_per_100w"
+    ],
+    "axes": {
+      "word_count": {
+        "real_mean": 157.86,
+        "synth_mean": 111.4,
+        "mwu_p": 0.825,
+        "ks_stat": 0.335,
+        "cliffs_delta": 0.0303,
+        "effect": "negligible"
+      },
+      "ttr": {
+        "real_mean": 0.694,
+        "synth_mean": 0.743,
+        "mwu_p": 0.0396,
+        "ks_stat": 0.345,
+        "cliffs_delta": 0.2795,
+        "effect": "small"
+      },
+      "mean_word_len": {
+        "real_mean": 4.459,
+        "synth_mean": 4.333,
+        "mwu_p": 0.0289,
+        "ks_stat": 0.34,
+        "cliffs_delta": -0.2967,
+        "effect": "small"
+      },
+      "words_per_sentence": {
+        "real_mean": 16.49,
+        "synth_mean": 6.151,
+        "mwu_p": 3.19e-13,
+        "ks_stat": 0.95,
+        "cliffs_delta": -0.989,
+        "effect": "large"
+      },
+      "flesch": {
+        "real_mean": 55.184,
+        "synth_mean": 72.318,
+        "mwu_p": 4.29e-10,
+        "ks_stat": 0.78,
+        "cliffs_delta": 0.8475,
+        "effect": "large"
+      },
+      "exclaim_per_100w": {
+        "real_mean": 0.162,
+        "synth_mean": 0.0,
+        "mwu_p": 0.0953,
+        "ks_stat": 0.125,
+        "cliffs_delta": -0.125,
+        "effect": "negligible"
+      },
+      "comma_per_100w": {
+        "real_mean": 3.469,
+        "synth_mean": 0.0,
+        "mwu_p": 1.52e-10,
+        "ks_stat": 0.865,
+        "cliffs_delta": -0.865,
+        "effect": "large"
+      },
+      "upper_ratio": {
+        "real_mean": 0.024,
+        "synth_mean": 0.04,
+        "mwu_p": 9.48e-07,
+        "ks_stat": 0.655,
+        "cliffs_delta": 0.6655,
+        "effect": "large"
+      }
+    }
+  }
+}

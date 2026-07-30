@@ -1,0 +1,456 @@
+custom_id,cycle_id,course_code,aspect_labels,attributes,generation_prompt,prompt_source
+synthetic_cycle_0__0,0,CS-6200,"{""difficulty"": ""positive"", ""materials"": ""positive""}","{""course_name"": ""Graduate Introduction to Operating Systems"", ""grade_band"": ""failed and still has mixed feelings about the course"", ""motivation_for_taking_course"": ""fit the schedule more than the interests"", ""course_level"": ""introductory service course"", ""lecturer_name"": ""Dr. Chen"", ""instruction_delivery"": ""teaching feels uneven week to week"", ""platform_and_tooling"": ""the LMS and submission flow are smooth"", ""collaboration_structure"": ""the course works better if you have a study group"", ""feedback_timing"": ""feedback is sparse until it is too late"", ""review_length_band"": ""detailed review with one dominant complaint"", ""formality_level"": ""neutral everyday prose"", ""recommendation_stance"": ""not sure whether to recommend"", ""comparison_frame"": ""compares it to another course from the same term"", ""contradiction_pattern"": ""assessment was fair but still exhausting"", ""review_shape"": ""lists tradeoffs rather than a single conclusion"", ""course_code"": ""CS-6200"", ""course_title"": ""Graduate Introduction to Operating Systems"", ""specificity_markers"": ""references debugging, systems assignments, or staying up late before deadlines"", ""__aspect_lines__"": ""- difficulty: positive\n- materials: positive""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- difficulty: positive
+- materials: positive
+
+Target attributes:
+- course_name: Graduate Introduction to Operating Systems
+- grade_band: failed and still has mixed feelings about the course
+- motivation_for_taking_course: fit the schedule more than the interests
+- course_level: introductory service course
+- lecturer_name: Dr. Chen
+- instruction_delivery: teaching feels uneven week to week
+- platform_and_tooling: the LMS and submission flow are smooth
+- collaboration_structure: the course works better if you have a study group
+- feedback_timing: feedback is sparse until it is too late
+- review_length_band: detailed review with one dominant complaint
+- formality_level: neutral everyday prose
+- recommendation_stance: not sure whether to recommend
+- comparison_frame: compares it to another course from the same term
+- contradiction_pattern: assessment was fair but still exhausting
+- review_shape: lists tradeoffs rather than a single conclusion
+- course_code: CS-6200
+- course_title: Graduate Introduction to Operating Systems
+- specificity_markers: references debugging, systems assignments, or staying up late before deadlines
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__1,0,CS-6200,"{""feedback_quality"": ""positive""}","{""course_name"": ""Graduate Introduction to Operating Systems"", ""semester_stage"": ""last semester before graduation"", ""student_background"": ""strong coding background but weak theory"", ""course_level"": ""required course for the track"", ""grade_band"": ""failed and still has mixed feelings about the course"", ""instruction_delivery"": ""conceptual explanations are strong but examples are thin"", ""administrative_friction"": ""policies are fine but communication is sloppy"", ""assessment_profile"": ""few assessments but each one matters a lot"", ""feedback_timing"": ""feedback quality varies a lot by assignment"", ""emotional_temperature"": ""mostly calm"", ""review_length_band"": ""compact but informative review"", ""writing_style"": ""analytic but simple"", ""review_shape"": ""wanders slightly before landing the point"", ""natural_noise"": ""one colloquial phrase but not many"", ""memory_anchor"": ""recalls an early confusion that shaped the rest of the term"", ""course_code"": ""CS-6200"", ""course_title"": ""Graduate Introduction to Operating Systems"", ""specificity_markers"": ""mentions lectures, project specs, or office hours in a systems-course context"", ""__aspect_lines__"": ""- feedback_quality: positive""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- feedback_quality: positive
+
+Target attributes:
+- course_name: Graduate Introduction to Operating Systems
+- semester_stage: last semester before graduation
+- student_background: strong coding background but weak theory
+- course_level: required course for the track
+- grade_band: failed and still has mixed feelings about the course
+- instruction_delivery: conceptual explanations are strong but examples are thin
+- administrative_friction: policies are fine but communication is sloppy
+- assessment_profile: few assessments but each one matters a lot
+- feedback_timing: feedback quality varies a lot by assignment
+- emotional_temperature: mostly calm
+- review_length_band: compact but informative review
+- writing_style: analytic but simple
+- review_shape: wanders slightly before landing the point
+- natural_noise: one colloquial phrase but not many
+- memory_anchor: recalls an early confusion that shaped the rest of the term
+- course_code: CS-6200
+- course_title: Graduate Introduction to Operating Systems
+- specificity_markers: mentions lectures, project specs, or office hours in a systems-course context
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__2,0,CS-6200,"{""relevance"": ""positive"", ""assessment_design"": ""negative"", ""peer_interaction"": ""positive""}","{""course_name"": ""Graduate Introduction to Operating Systems"", ""grade_band"": ""barely passed after struggling most of the term"", ""lecturer_name"": ""Dr. Miller"", ""motivation_for_taking_course"": ""heard it was useful for industry work"", ""semester_stage"": ""middle of a heavy semester"", ""prerequisite_fit"": ""assumes more prior knowledge than advertised"", ""collaboration_structure"": ""peer discussion helps more than the official materials"", ""assessment_profile"": ""report-heavy and time-consuming"", ""instruction_delivery"": ""conceptual explanations are strong but examples are thin"", ""writing_style"": ""short fragmented remarks"", ""emotional_temperature"": ""tired and resigned"", ""recommendation_stance"": ""would recommend only with preparation"", ""memory_anchor"": ""recalls an early confusion that shaped the rest of the term"", ""time_pressure_context"": ""managed it alongside full-time work"", ""comparison_frame"": ""judges it against expectations rather than another course"", ""course_code"": ""CS-6200"", ""course_title"": ""Graduate Introduction to Operating Systems"", ""specificity_markers"": ""mentions projects, kernel concepts, or implementation-heavy weeks"", ""__aspect_lines__"": ""- relevance: positive\n- assessment_design: negative\n- peer_interaction: positive""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- relevance: positive
+- assessment_design: negative
+- peer_interaction: positive
+
+Target attributes:
+- course_name: Graduate Introduction to Operating Systems
+- grade_band: barely passed after struggling most of the term
+- lecturer_name: Dr. Miller
+- motivation_for_taking_course: heard it was useful for industry work
+- semester_stage: middle of a heavy semester
+- prerequisite_fit: assumes more prior knowledge than advertised
+- collaboration_structure: peer discussion helps more than the official materials
+- assessment_profile: report-heavy and time-consuming
+- instruction_delivery: conceptual explanations are strong but examples are thin
+- writing_style: short fragmented remarks
+- emotional_temperature: tired and resigned
+- recommendation_stance: would recommend only with preparation
+- memory_anchor: recalls an early confusion that shaped the rest of the term
+- time_pressure_context: managed it alongside full-time work
+- comparison_frame: judges it against expectations rather than another course
+- course_code: CS-6200
+- course_title: Graduate Introduction to Operating Systems
+- specificity_markers: mentions projects, kernel concepts, or implementation-heavy weeks
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__3,0,CS-6250,"{""grading_transparency"": ""negative""}","{""course_name"": ""Computer Networks"", ""attendance_pattern"": ""mostly relied on recordings and notes"", ""lecturer_name"": ""Prof. Rios"", ""student_background"": ""strong coding background but weak theory"", ""grade_band"": ""A after a curve"", ""instruction_delivery"": ""slides are serviceable but not memorable"", ""platform_and_tooling"": ""tooling problems make deadline weeks worse"", ""prerequisite_fit"": ""assumes more prior knowledge than advertised"", ""collaboration_structure"": ""collaboration expectations feel unclear"", ""specificity_level"": ""includes one detailed pain point"", ""recommendation_stance"": ""would recommend broadly"", ""formality_level"": ""informal and conversational"", ""memory_anchor"": ""anchors the review in a late-semester turning point"", ""comparison_frame"": ""compares it to an easier prerequisite"", ""contradiction_pattern"": ""course felt useful but not enjoyable"", ""course_code"": ""CS-6250"", ""course_title"": ""Computer Networks"", ""specificity_markers"": ""references traces, protocols, or networking assignments in a course-safe way"", ""__aspect_lines__"": ""- grading_transparency: negative""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- grading_transparency: negative
+
+Target attributes:
+- course_name: Computer Networks
+- attendance_pattern: mostly relied on recordings and notes
+- lecturer_name: Prof. Rios
+- student_background: strong coding background but weak theory
+- grade_band: A after a curve
+- instruction_delivery: slides are serviceable but not memorable
+- platform_and_tooling: tooling problems make deadline weeks worse
+- prerequisite_fit: assumes more prior knowledge than advertised
+- collaboration_structure: collaboration expectations feel unclear
+- specificity_level: includes one detailed pain point
+- recommendation_stance: would recommend broadly
+- formality_level: informal and conversational
+- memory_anchor: anchors the review in a late-semester turning point
+- comparison_frame: compares it to an easier prerequisite
+- contradiction_pattern: course felt useful but not enjoyable
+- course_code: CS-6250
+- course_title: Computer Networks
+- specificity_markers: references traces, protocols, or networking assignments in a course-safe way
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__4,0,CS-6250,"{""difficulty"": ""negative""}","{""course_name"": ""Computer Networks"", ""grade_band"": ""solid B and felt it matched the effort"", ""lecturer_name"": ""Prof. Haddad"", ""course_level"": ""mid-program core course"", ""study_context"": ""had enough time but inconsistent motivation"", ""assessment_profile"": ""project-heavy with high-stakes exams"", ""feedback_timing"": ""feedback comes quickly enough to adjust"", ""support_channel_experience"": ""email support is slow when deadlines hit"", ""administrative_friction"": ""tooling setup is frustrating"", ""emotional_temperature"": ""mixed and conflicted"", ""writing_style"": ""casual and compressed"", ""formality_level"": ""informal and conversational"", ""memory_anchor"": ""mentions a concrete office-hours or forum interaction"", ""time_pressure_context"": ""managed it alongside full-time work"", ""review_shape"": ""wanders slightly before landing the point"", ""course_code"": ""CS-6250"", ""course_title"": ""Computer Networks"", ""specificity_markers"": ""mentions forum clarifications, lectures, or exam prep in a networking-course context"", ""__aspect_lines__"": ""- difficulty: negative""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- difficulty: negative
+
+Target attributes:
+- course_name: Computer Networks
+- grade_band: solid B and felt it matched the effort
+- lecturer_name: Prof. Haddad
+- course_level: mid-program core course
+- study_context: had enough time but inconsistent motivation
+- assessment_profile: project-heavy with high-stakes exams
+- feedback_timing: feedback comes quickly enough to adjust
+- support_channel_experience: email support is slow when deadlines hit
+- administrative_friction: tooling setup is frustrating
+- emotional_temperature: mixed and conflicted
+- writing_style: casual and compressed
+- formality_level: informal and conversational
+- memory_anchor: mentions a concrete office-hours or forum interaction
+- time_pressure_context: managed it alongside full-time work
+- review_shape: wanders slightly before landing the point
+- course_code: CS-6250
+- course_title: Computer Networks
+- specificity_markers: mentions forum clarifications, lectures, or exam prep in a networking-course context
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__5,0,CS-6250,"{""accessibility"": ""negative""}","{""course_name"": ""Computer Networks"", ""student_background"": ""returning student who feels rusty"", ""lecturer_name"": ""Prof. Haddad"", ""motivation_for_taking_course"": ""fit the schedule more than the interests"", ""semester_stage"": ""summer term with compressed pacing"", ""instruction_delivery"": ""conceptual explanations are strong but examples are thin"", ""platform_and_tooling"": ""the LMS and submission flow are smooth"", ""collaboration_structure"": ""the course works better if you have a study group"", ""assessment_profile"": ""assessment mix feels mismatched with lectures"", ""emotional_temperature"": ""mostly calm"", ""recommendation_stance"": ""would recommend broadly"", ""formality_level"": ""informal and conversational"", ""natural_noise"": ""one colloquial phrase but not many"", ""review_shape"": ""starts with a general verdict then gets specific"", ""comparison_frame"": ""compares it to another course from the same term"", ""course_code"": ""CS-6250"", ""course_title"": ""Computer Networks"", ""specificity_markers"": ""references traces, protocols, or networking assignments in a course-safe way"", ""__aspect_lines__"": ""- accessibility: negative""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- accessibility: negative
+
+Target attributes:
+- course_name: Computer Networks
+- student_background: returning student who feels rusty
+- lecturer_name: Prof. Haddad
+- motivation_for_taking_course: fit the schedule more than the interests
+- semester_stage: summer term with compressed pacing
+- instruction_delivery: conceptual explanations are strong but examples are thin
+- platform_and_tooling: the LMS and submission flow are smooth
+- collaboration_structure: the course works better if you have a study group
+- assessment_profile: assessment mix feels mismatched with lectures
+- emotional_temperature: mostly calm
+- recommendation_stance: would recommend broadly
+- formality_level: informal and conversational
+- natural_noise: one colloquial phrase but not many
+- review_shape: starts with a general verdict then gets specific
+- comparison_frame: compares it to another course from the same term
+- course_code: CS-6250
+- course_title: Computer Networks
+- specificity_markers: references traces, protocols, or networking assignments in a course-safe way
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__6,0,CS-6400,"{""interest"": ""positive"", ""grading_transparency"": ""negative""}","{""course_name"": ""Database Systems Concepts and Design"", ""student_background"": ""strong coding background but weak theory"", ""attendance_pattern"": ""kept up with nearly every lecture"", ""study_context"": ""fit study around short evening sessions"", ""motivation_for_taking_course"": ""heard it was useful for industry work"", ""collaboration_structure"": ""mostly individual work with little peer dependency"", ""administrative_friction"": ""grading rubric feels vague"", ""platform_and_tooling"": ""tool setup takes too much effort for the learning payoff"", ""assessment_profile"": ""few assessments but each one matters a lot"", ""formality_level"": ""neutral everyday prose"", ""writing_style"": ""plainspoken and direct"", ""emotional_temperature"": ""mixed and conflicted"", ""time_pressure_context"": ""managed it alongside full-time work"", ""natural_noise"": ""one colloquial phrase but not many"", ""memory_anchor"": ""recalls an early confusion that shaped the rest of the term"", ""course_code"": ""CS-6400"", ""course_title"": ""Database Systems Concepts and Design"", ""specificity_markers"": ""mentions schema work, projects, or database-design assignments"", ""__aspect_lines__"": ""- interest: positive\n- grading_transparency: negative""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- interest: positive
+- grading_transparency: negative
+
+Target attributes:
+- course_name: Database Systems Concepts and Design
+- student_background: strong coding background but weak theory
+- attendance_pattern: kept up with nearly every lecture
+- study_context: fit study around short evening sessions
+- motivation_for_taking_course: heard it was useful for industry work
+- collaboration_structure: mostly individual work with little peer dependency
+- administrative_friction: grading rubric feels vague
+- platform_and_tooling: tool setup takes too much effort for the learning payoff
+- assessment_profile: few assessments but each one matters a lot
+- formality_level: neutral everyday prose
+- writing_style: plainspoken and direct
+- emotional_temperature: mixed and conflicted
+- time_pressure_context: managed it alongside full-time work
+- natural_noise: one colloquial phrase but not many
+- memory_anchor: recalls an early confusion that shaped the rest of the term
+- course_code: CS-6400
+- course_title: Database Systems Concepts and Design
+- specificity_markers: mentions schema work, projects, or database-design assignments
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__7,0,CS-6400,"{""workload"": ""positive"", ""practical_application"": ""positive"", ""grading_transparency"": ""positive""}","{""course_name"": ""Database Systems Concepts and Design"", ""semester_stage"": ""summer term with compressed pacing"", ""attendance_pattern"": ""used the materials selectively when needed"", ""study_context"": ""balanced it with multiple demanding courses"", ""motivation_for_taking_course"": ""fit the schedule more than the interests"", ""assessment_profile"": ""report-heavy and time-consuming"", ""instruction_delivery"": ""conceptual explanations are strong but examples are thin"", ""administrative_friction"": ""feedback arrives too late to help"", ""platform_and_tooling"": ""the software stack is rough at first but manageable later"", ""specificity_level"": ""stays general with only one anchor detail"", ""review_length_band"": ""compact but informative review"", ""recommendation_stance"": ""would recommend only with preparation"", ""contradiction_pattern"": ""would not take it again even though it helped"", ""natural_noise"": ""minor lowercase or punctuation looseness"", ""review_shape"": ""lists tradeoffs rather than a single conclusion"", ""course_code"": ""CS-6400"", ""course_title"": ""Database Systems Concepts and Design"", ""specificity_markers"": ""mentions schema work, projects, or database-design assignments"", ""__aspect_lines__"": ""- workload: positive\n- practical_application: positive\n- grading_transparency: positive""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- workload: positive
+- practical_application: positive
+- grading_transparency: positive
+
+Target attributes:
+- course_name: Database Systems Concepts and Design
+- semester_stage: summer term with compressed pacing
+- attendance_pattern: used the materials selectively when needed
+- study_context: balanced it with multiple demanding courses
+- motivation_for_taking_course: fit the schedule more than the interests
+- assessment_profile: report-heavy and time-consuming
+- instruction_delivery: conceptual explanations are strong but examples are thin
+- administrative_friction: feedback arrives too late to help
+- platform_and_tooling: the software stack is rough at first but manageable later
+- specificity_level: stays general with only one anchor detail
+- review_length_band: compact but informative review
+- recommendation_stance: would recommend only with preparation
+- contradiction_pattern: would not take it again even though it helped
+- natural_noise: minor lowercase or punctuation looseness
+- review_shape: lists tradeoffs rather than a single conclusion
+- course_code: CS-6400
+- course_title: Database Systems Concepts and Design
+- specificity_markers: mentions schema work, projects, or database-design assignments
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__8,0,CS-6400,"{""tooling_usability"": ""positive""}","{""course_name"": ""Database Systems Concepts and Design"", ""course_level"": ""introductory service course"", ""lecturer_name"": ""Prof. Cohen"", ""study_context"": ""fit study around short evening sessions"", ""semester_stage"": ""first semester in the program"", ""administrative_friction"": ""policies are fine but communication is sloppy"", ""feedback_timing"": ""feedback comes quickly enough to adjust"", ""collaboration_structure"": ""collaboration expectations feel unclear"", ""assessment_profile"": ""assessment mix feels mismatched with lectures"", ""recommendation_stance"": ""cannot recommend despite some value"", ""formality_level"": ""neutral everyday prose"", ""hedging_level"": ""frequently unsure"", ""natural_noise"": ""slight repetition from frustration"", ""contradiction_pattern"": ""course felt useful but not enjoyable"", ""time_pressure_context"": ""the deadlines stacked up unexpectedly"", ""course_code"": ""CS-6400"", ""course_title"": ""Database Systems Concepts and Design"", ""specificity_markers"": ""references SQL, project coordination, or database tooling in a course-safe way"", ""__aspect_lines__"": ""- tooling_usability: positive""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- tooling_usability: positive
+
+Target attributes:
+- course_name: Database Systems Concepts and Design
+- course_level: introductory service course
+- lecturer_name: Prof. Cohen
+- study_context: fit study around short evening sessions
+- semester_stage: first semester in the program
+- administrative_friction: policies are fine but communication is sloppy
+- feedback_timing: feedback comes quickly enough to adjust
+- collaboration_structure: collaboration expectations feel unclear
+- assessment_profile: assessment mix feels mismatched with lectures
+- recommendation_stance: cannot recommend despite some value
+- formality_level: neutral everyday prose
+- hedging_level: frequently unsure
+- natural_noise: slight repetition from frustration
+- contradiction_pattern: course felt useful but not enjoyable
+- time_pressure_context: the deadlines stacked up unexpectedly
+- course_code: CS-6400
+- course_title: Database Systems Concepts and Design
+- specificity_markers: references SQL, project coordination, or database tooling in a course-safe way
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__9,0,CS-7641,"{""workload"": ""positive"", ""difficulty"": ""positive"", ""practical_application"": ""positive""}","{""course_name"": ""Machine Learning"", ""lecturer_name"": ""Prof. Haddad"", ""semester_stage"": ""last semester before graduation"", ""grade_band"": ""solid B and felt it matched the effort"", ""course_level"": ""required course for the track"", ""feedback_timing"": ""feedback comes quickly enough to adjust"", ""platform_and_tooling"": ""tooling problems make deadline weeks worse"", ""prerequisite_fit"": ""starts accessible but ramps up sharply"", ""collaboration_structure"": ""mostly individual work with little peer dependency"", ""emotional_temperature"": ""mostly calm"", ""hedging_level"": ""mildly hedged"", ""writing_style"": ""analytic but simple"", ""contradiction_pattern"": ""course felt useful but not enjoyable"", ""comparison_frame"": ""compares it to another course from the same term"", ""natural_noise"": ""one colloquial phrase but not many"", ""course_code"": ""CS-7641"", ""course_title"": ""Machine Learning"", ""specificity_markers"": ""mentions confusion around expectations, writeups, or grading in an ML-course context"", ""__aspect_lines__"": ""- workload: positive\n- difficulty: positive\n- practical_application: positive""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- workload: positive
+- difficulty: positive
+- practical_application: positive
+
+Target attributes:
+- course_name: Machine Learning
+- lecturer_name: Prof. Haddad
+- semester_stage: last semester before graduation
+- grade_band: solid B and felt it matched the effort
+- course_level: required course for the track
+- feedback_timing: feedback comes quickly enough to adjust
+- platform_and_tooling: tooling problems make deadline weeks worse
+- prerequisite_fit: starts accessible but ramps up sharply
+- collaboration_structure: mostly individual work with little peer dependency
+- emotional_temperature: mostly calm
+- hedging_level: mildly hedged
+- writing_style: analytic but simple
+- contradiction_pattern: course felt useful but not enjoyable
+- comparison_frame: compares it to another course from the same term
+- natural_noise: one colloquial phrase but not many
+- course_code: CS-7641
+- course_title: Machine Learning
+- specificity_markers: mentions confusion around expectations, writeups, or grading in an ML-course context
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__10,0,CS-7641,"{""clarity"": ""negative"", ""workload"": ""negative""}","{""course_name"": ""Machine Learning"", ""course_level"": ""mid-program core course"", ""study_context"": ""fit study around short evening sessions"", ""grade_band"": ""failed and still has mixed feelings about the course"", ""semester_stage"": ""summer term with compressed pacing"", ""assessment_profile"": ""assessment mix feels mismatched with lectures"", ""platform_and_tooling"": ""the LMS and submission flow are smooth"", ""collaboration_structure"": ""peer discussion helps more than the official materials"", ""instruction_delivery"": ""teaching feels uneven week to week"", ""recommendation_stance"": ""would recommend only with preparation"", ""emotional_temperature"": ""mostly calm"", ""specificity_level"": ""includes one detailed pain point"", ""contradiction_pattern"": ""liked the instructor but disliked the grading"", ""review_shape"": ""starts with one complaint and later softens it"", ""memory_anchor"": ""mentions one memorable exam or assignment week"", ""course_code"": ""CS-7641"", ""course_title"": ""Machine Learning"", ""specificity_markers"": ""references lectures, assignments, or project pressure in a machine-learning-course context"", ""__aspect_lines__"": ""- clarity: negative\n- workload: negative""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- clarity: negative
+- workload: negative
+
+Target attributes:
+- course_name: Machine Learning
+- course_level: mid-program core course
+- study_context: fit study around short evening sessions
+- grade_band: failed and still has mixed feelings about the course
+- semester_stage: summer term with compressed pacing
+- assessment_profile: assessment mix feels mismatched with lectures
+- platform_and_tooling: the LMS and submission flow are smooth
+- collaboration_structure: peer discussion helps more than the official materials
+- instruction_delivery: teaching feels uneven week to week
+- recommendation_stance: would recommend only with preparation
+- emotional_temperature: mostly calm
+- specificity_level: includes one detailed pain point
+- contradiction_pattern: liked the instructor but disliked the grading
+- review_shape: starts with one complaint and later softens it
+- memory_anchor: mentions one memorable exam or assignment week
+- course_code: CS-7641
+- course_title: Machine Learning
+- specificity_markers: references lectures, assignments, or project pressure in a machine-learning-course context
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0
+synthetic_cycle_0__11,0,CS-7641,"{""organization"": ""positive"", ""exam_fairness"": ""positive"", ""support"": ""negative""}","{""course_name"": ""Machine Learning"", ""course_level"": ""mid-program core course"", ""semester_stage"": ""last semester before graduation"", ""motivation_for_taking_course"": ""needed for a specialization"", ""grade_band"": ""A after a curve"", ""collaboration_structure"": ""group work adds value when the team functions well"", ""platform_and_tooling"": ""platform quirks create avoidable stress"", ""assessment_profile"": ""report-heavy and time-consuming"", ""administrative_friction"": ""tooling setup is frustrating"", ""hedging_level"": ""confident and decisive"", ""emotional_temperature"": ""frustrated but fair"", ""review_length_band"": ""detailed review with one dominant complaint"", ""contradiction_pattern"": ""course felt useful but not enjoyable"", ""memory_anchor"": ""anchors the review in a late-semester turning point"", ""review_shape"": ""wanders slightly before landing the point"", ""course_code"": ""CS-7641"", ""course_title"": ""Machine Learning"", ""specificity_markers"": ""mentions confusion around expectations, writeups, or grading in an ML-course context"", ""__aspect_lines__"": ""- organization: positive\n- exam_fairness: positive\n- support: negative""}","You are writing one realistic student course review for research validation.
+The review must feel like a naturally written student comment rather than a labeled synthetic sample.
+
+Target aspect polarities (binary_positive_negative):
+- organization: positive
+- exam_fairness: positive
+- support: negative
+
+Target attributes:
+- course_name: Machine Learning
+- course_level: mid-program core course
+- semester_stage: last semester before graduation
+- motivation_for_taking_course: needed for a specialization
+- grade_band: A after a curve
+- collaboration_structure: group work adds value when the team functions well
+- platform_and_tooling: platform quirks create avoidable stress
+- assessment_profile: report-heavy and time-consuming
+- administrative_friction: tooling setup is frustrating
+- hedging_level: confident and decisive
+- emotional_temperature: frustrated but fair
+- review_length_band: detailed review with one dominant complaint
+- contradiction_pattern: course felt useful but not enjoyable
+- memory_anchor: anchors the review in a late-semester turning point
+- review_shape: wanders slightly before landing the point
+- course_code: CS-7641
+- course_title: Machine Learning
+- specificity_markers: mentions confusion around expectations, writeups, or grading in an ML-course context
+
+Requirements:
+- Keep the review first-person and specific.
+- Do not mention aspect labels or polarity labels explicitly.
+- Do not force a tidy conclusion.
+- Do not cover every aspect with the same level of detail.
+- Let at least one point feel incidental rather than checklist-driven.
+- Do not neutralize a target aspect: each listed aspect should read as clearly positive or clearly negative in context.
+- It is acceptable for the overall review tone to be mixed, but each target aspect polarity must stay recoverable from the text.
+- Additional cycle instruction: Write a realistic first-person course review with uneven detail. Avoid textbook sentiment wording, avoid obvious label leakage, and keep the tone consistent with the sampled student persona. Each target aspect should be expressed clearly enough that a reader can recover a positive or negative stance from the text.
+
+Return only the review text.",initial_cycle_0

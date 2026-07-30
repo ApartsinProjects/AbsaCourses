@@ -1,0 +1,354 @@
+{
+  "polarity_mode": "binary_positive_negative",
+  "supported_sentiments": [
+    "positive",
+    "negative"
+  ],
+  "schema": {
+    "core_context": {
+      "course_name": [
+        "Linear Algebra",
+        "Computer Networks",
+        "Data Structures",
+        "Operating Systems",
+        "Machine Learning",
+        "Cyber Security Basics",
+        "Database Systems",
+        "Calculus II"
+      ],
+      "course_level": [
+        "introductory service course",
+        "mid-program core course",
+        "advanced elective",
+        "required course for the track"
+      ],
+      "semester_stage": [
+        "first semester in the program",
+        "middle of a heavy semester",
+        "last semester before graduation",
+        "summer term with compressed pacing"
+      ],
+      "grade_band": [
+        "A after a curve",
+        "solid B and felt it matched the effort",
+        "C and unsure whether it reflected understanding",
+        "barely passed after struggling most of the term",
+        "failed and still has mixed feelings about the course"
+      ],
+      "student_background": [
+        "strong coding background but weak theory",
+        "comfortable with proofs but not systems work",
+        "full-time job and limited weekly study time",
+        "returning student who feels rusty",
+        "new to the discipline and learning the basics"
+      ],
+      "lecturer_name": [
+        "Dr. Chen",
+        "Prof. Alvarez",
+        "Dr. Singh",
+        "Prof. Cohen",
+        "Dr. Park",
+        "Prof. Haddad",
+        "Dr. Miller",
+        "Prof. Rios"
+      ],
+      "motivation_for_taking_course": [
+        "required for the degree",
+        "needed for a specialization",
+        "heard it was useful for industry work",
+        "fit the schedule more than the interests",
+        "genuine curiosity about the topic"
+      ],
+      "attendance_pattern": [
+        "kept up with nearly every lecture",
+        "mostly relied on recordings and notes",
+        "fell behind and caught up around deadlines",
+        "used the materials selectively when needed",
+        "started engaged but attendance faded mid-semester"
+      ],
+      "study_context": [
+        "took it alongside a full-time job",
+        "balanced it with multiple demanding courses",
+        "made it the main focus course that term",
+        "fit study around short evening sessions",
+        "had enough time but inconsistent motivation"
+      ]
+    },
+    "assessment_and_teaching": {
+      "assessment_profile": [
+        "project-heavy with high-stakes exams",
+        "assignment-heavy with frequent deadlines",
+        "few assessments but each one matters a lot",
+        "report-heavy and time-consuming",
+        "assessment mix feels mismatched with lectures"
+      ],
+      "instruction_delivery": [
+        "clear lectures with decent pacing",
+        "recorded lectures are useful but dry",
+        "conceptual explanations are strong but examples are thin",
+        "slides are serviceable but not memorable",
+        "teaching feels uneven week to week"
+      ],
+      "support_channel_experience": [
+        "TAs are responsive and practical",
+        "forums are helpful but sometimes dismissive",
+        "email support is slow when deadlines hit",
+        "office hours rescue the course",
+        "students help each other more than staff do"
+      ],
+      "administrative_friction": [
+        "grading rubric feels vague",
+        "instructions leave too much interpretation",
+        "tooling setup is frustrating",
+        "feedback arrives too late to help",
+        "policies are fine but communication is sloppy"
+      ],
+      "feedback_timing": [
+        "feedback comes quickly enough to adjust",
+        "feedback is sparse until it is too late",
+        "grading comments are detailed but delayed",
+        "scores arrive fast but explanations are thin",
+        "feedback quality varies a lot by assignment"
+      ],
+      "prerequisite_fit": [
+        "assumes more prior knowledge than advertised",
+        "builds well on the stated prerequisites",
+        "starts accessible but ramps up sharply",
+        "works best if you already know adjacent material",
+        "fills prerequisite gaps better than expected"
+      ],
+      "collaboration_structure": [
+        "mostly individual work with little peer dependency",
+        "group work adds value when the team functions well",
+        "peer discussion helps more than the official materials",
+        "collaboration expectations feel unclear",
+        "the course works better if you have a study group"
+      ],
+      "platform_and_tooling": [
+        "the LMS and submission flow are smooth",
+        "platform quirks create avoidable stress",
+        "the software stack is rough at first but manageable later",
+        "tool setup takes too much effort for the learning payoff",
+        "tooling problems make deadline weeks worse"
+      ]
+    },
+    "linguistic_diversity": {
+      "writing_style": [
+        "casual and compressed",
+        "plainspoken and direct",
+        "analytic but simple",
+        "rant-like and emotional",
+        "hesitant and second-guessing",
+        "short fragmented remarks"
+      ],
+      "emotional_temperature": [
+        "mostly calm",
+        "frustrated but fair",
+        "tired and resigned",
+        "genuinely enthusiastic",
+        "mixed and conflicted"
+      ],
+      "hedging_level": [
+        "confident and decisive",
+        "mildly hedged",
+        "frequently unsure",
+        "changes opinion mid-review"
+      ],
+      "specificity_level": [
+        "mentions concrete assignments or exams",
+        "references forums, office hours, or TAs",
+        "includes one detailed pain point",
+        "stays general with only one anchor detail"
+      ],
+      "recommendation_stance": [
+        "would recommend broadly",
+        "would recommend only with preparation",
+        "cannot recommend despite some value",
+        "not sure whether to recommend"
+      ],
+      "review_length_band": [
+        "very short comment",
+        "compact but informative review",
+        "mid-length reflective review",
+        "detailed review with one dominant complaint"
+      ],
+      "formality_level": [
+        "informal and conversational",
+        "neutral everyday prose",
+        "fairly polished and careful",
+        "mixed academic and casual phrasing"
+      ]
+    },
+    "realism_controls": {
+      "review_shape": [
+        "starts with a general verdict then gets specific",
+        "starts with one complaint and later softens it",
+        "lists tradeoffs rather than a single conclusion",
+        "wanders slightly before landing the point"
+      ],
+      "natural_noise": [
+        "minor lowercase or punctuation looseness",
+        "slight repetition from frustration",
+        "one colloquial phrase but not many",
+        "clean prose with small informal touches"
+      ],
+      "contradiction_pattern": [
+        "learned a lot but disliked the experience",
+        "liked the instructor but disliked the grading",
+        "course felt useful but not enjoyable",
+        "assessment was fair but still exhausting",
+        "would not take it again even though it helped"
+      ],
+      "time_pressure_context": [
+        "took it with another hard class",
+        "managed it alongside full-time work",
+        "had a rough mid-semester crunch",
+        "the deadlines stacked up unexpectedly",
+        "time pressure was manageable most weeks"
+      ],
+      "comparison_frame": [
+        "compares it to an easier prerequisite",
+        "compares it to another course from the same term",
+        "judges it against expectations rather than another course",
+        "avoids explicit comparison and stays course-specific"
+      ],
+      "memory_anchor": [
+        "mentions one memorable exam or assignment week",
+        "mentions a concrete office-hours or forum interaction",
+        "anchors the review in a late-semester turning point",
+        "recalls an early confusion that shaped the rest of the term"
+      ]
+    }
+  },
+  "current_release_aspects": [
+    "difficulty",
+    "clarity",
+    "workload",
+    "lecturer_quality",
+    "exam_fairness",
+    "relevance",
+    "interest",
+    "support",
+    "materials",
+    "overall_experience"
+  ],
+  "proposed_extended_aspects": {
+    "difficulty": "Conceptual or technical challenge of the course.",
+    "clarity": "How understandable the teaching and explanations feel.",
+    "workload": "Amount of sustained effort required across the term.",
+    "lecturer_quality": "Perceived quality of the lecturer or lead instructor.",
+    "exam_fairness": "Whether exams feel aligned and fair.",
+    "relevance": "Perceived usefulness to the program or future goals.",
+    "interest": "Level of engagement or curiosity the course creates.",
+    "support": "Quality of help from instructor, TAs, or forums.",
+    "materials": "Usefulness of slides, notes, readings, and resources.",
+    "overall_experience": "Global student impression after tradeoffs.",
+    "feedback_quality": "Usefulness and timeliness of feedback on student work.",
+    "assessment_design": "Alignment and structure of assignments, projects, and exams.",
+    "pacing": "Whether the course tempo and weekly rhythm are manageable.",
+    "organization": "Administrative clarity, course structure, and coordination.",
+    "practical_application": "Connection to real-world practice or authentic tasks.",
+    "tooling_usability": "Friction or support created by LMS, submission systems, and required software.",
+    "accessibility": "Perceived accessibility and inclusiveness of materials, pace, and course participation.",
+    "grading_transparency": "How clearly grading criteria, rubrics, and score interpretation are communicated.",
+    "peer_interaction": "Whether peer discussion, teamwork, and class community help or hinder learning.",
+    "prerequisite_fit": "How well the course matches the advertised prerequisite level and student preparation."
+  },
+  "attribute_parameter_summary": {
+    "core_context": {
+      "course_name": 8,
+      "course_level": 4,
+      "semester_stage": 4,
+      "grade_band": 5,
+      "student_background": 5,
+      "lecturer_name": 8,
+      "motivation_for_taking_course": 5,
+      "attendance_pattern": 5,
+      "study_context": 5
+    },
+    "assessment_and_teaching": {
+      "assessment_profile": 5,
+      "instruction_delivery": 5,
+      "support_channel_experience": 5,
+      "administrative_friction": 5,
+      "feedback_timing": 5,
+      "prerequisite_fit": 5,
+      "collaboration_structure": 5,
+      "platform_and_tooling": 5
+    },
+    "linguistic_diversity": {
+      "writing_style": 6,
+      "emotional_temperature": 5,
+      "hedging_level": 4,
+      "specificity_level": 4,
+      "recommendation_stance": 4,
+      "review_length_band": 4,
+      "formality_level": 4
+    },
+    "realism_controls": {
+      "review_shape": 4,
+      "natural_noise": 4,
+      "contradiction_pattern": 5,
+      "time_pressure_context": 5,
+      "comparison_frame": 4,
+      "memory_anchor": 4
+    }
+  },
+  "empirical_aspect_count_distribution": {
+    "1": 0.3,
+    "2": 0.4,
+    "3": 0.3
+  },
+  "recommended_sampling_rule": {
+    "aspect_count": "Sample 1, 2, or 3 aspects using the fixed binary-polarity distribution for the new generation cycle.",
+    "current_distribution": {
+      "1": 0.3,
+      "2": 0.4,
+      "3": 0.3
+    },
+    "practical_override": {
+      "1": 0.3,
+      "2": 0.4,
+      "3": 0.3
+    }
+  },
+  "nuance_sampling_policy": {
+    "core_context": {
+      "required": [
+        "course_name"
+      ],
+      "sample_size": 5
+    },
+    "assessment_and_teaching": {
+      "required": [],
+      "sample_size": 4
+    },
+    "linguistic_diversity": {
+      "required": [],
+      "sample_size": 3
+    },
+    "realism_controls": {
+      "required": [],
+      "sample_size": 3
+    }
+  },
+  "protocol_review": {
+    "diversity_strengths": [
+      "The schema now varies student background, motivation, assessment structure, support experience, hedging, contradiction patterns, and recommendation stance.",
+      "The sampled attributes create broader lexical and situational diversity than style plus grade alone.",
+      "Only a subset of nuance attributes is surfaced per prompt so reviews do not read like exhaustive templates."
+    ],
+    "realism_strengths": [
+      "The schema includes grounded friction, time pressure, and contradiction patterns that mimic real student reviews.",
+      "The prompt explicitly discourages checklist structure and over-balanced summaries."
+    ],
+    "aspect_extension_rationale": [
+      "The proposed next-generation inventory separates feedback quality, pacing, organization, assessment design, tooling usability, accessibility, grading transparency, peer interaction, and prerequisite fit from generic overall experience.",
+      "Those extra aspects are pedagogically actionable and reduce the collapse of distinct student concerns into a single broad sentiment label."
+    ],
+    "remaining_risks": [
+      "Without live OpenAI prompt-debug cycles, some attribute combinations may still generate overly tidy reviews.",
+      "Human validation and synthetic-vs-real discrimination remain necessary for external realism claims."
+    ]
+  }
+}

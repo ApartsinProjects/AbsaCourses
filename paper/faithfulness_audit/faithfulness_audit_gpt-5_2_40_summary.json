@@ -1,0 +1,9 @@
+{
+  "model": "gpt-5.2",
+  "sample_size_reviews": 40,
+  "sample_size_declared_aspects": 80,
+  "aspect_supported_rate": 0.6125,
+  "aspect_sentiment_match_rate": 0.5375,
+  "row_full_support_rate": 0.45,
+  "row_full_sentiment_match_rate": 0.35
+}

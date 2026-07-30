@@ -1,0 +1,38 @@
+[2026-04-03T16:58:53.994911+00:00] START python E:\Projects\CourseABSA\paper\absa_model_comparison.py --data-path E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl --approaches distilbert-base-uncased --no-write-latest --epochs-detection 3 --epochs-sentiment 3 --seed 42
+[2026-04-03T16:59:01.305219+00:00] Benchmark start: data=E:\Projects\CourseABSA\paper\generated_datasets\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl device=cuda seed=42 approaches=['distilbert-base-uncased'] epochs_detection=3 epochs_sentiment=3 batch_size=8 max_len=192 lr=3e-05
+[2026-04-03T16:59:01.305315+00:00] Detailed log file -> E:\Projects\CourseABSA\paper\benchmark_outputs\logs\benchmark_20260403T165901Z.log
+[2026-04-03T16:59:01.306392+00:00] Resume checkpoint -> E:\Projects\CourseABSA\paper\experiment_rounds\phase_a_benchmark_20260403\logs\02_phase_a_distilbert_base_uncased.resume.json
+[2026-04-03T16:59:02.954563+00:00] Dataset loaded: rows=10000 train=8000 calib=1000 test=1000 aspects=20
+[2026-04-03T16:59:02.955011+00:00] Dispatching approach -> distilbert-base-uncased
+[2026-04-03T16:59:02.955046+00:00] [distilbert-base-uncased] transformer approach start
+[2026-04-03T16:59:02.955261+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T16:59:32.956669+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:00:02.958026+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:00:32.960113+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:01:02.964749+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:01:32.966367+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:02:02.968192+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:02:32.969424+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:03:02.970929+00:00] [distilbert-base-uncased:detection] waiting for GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:03:12.971842+00:00] [distilbert-base-uncased:detection] acquired GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-04-03T17:03:24.195777+00:00] [distilbert-base-uncased] detection training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-04-03T17:05:17.527679+00:00] [distilbert-base-uncased] detection epoch 1/3: train_loss=1.2091 val_micro_f1=0.2359 val_macro_f1=0.2665 best_macro_f1=0.2665 patience=0 epoch_seconds=113.3
+[2026-04-03T17:07:10.470830+00:00] [distilbert-base-uncased] detection epoch 2/3: train_loss=1.1171 val_micro_f1=0.2692 val_macro_f1=0.3024 best_macro_f1=0.3024 patience=0 epoch_seconds=112.9
+[2026-04-03T17:09:03.724344+00:00] [distilbert-base-uncased] detection epoch 3/3: train_loss=1.0554 val_micro_f1=0.2739 val_macro_f1=0.2892 best_macro_f1=0.3024 patience=0 epoch_seconds=113.2
+[2026-04-03T17:09:03.775049+00:00] [distilbert-base-uncased] detection training complete: best_macro_f1=0.3024
+[2026-04-03T17:09:03.781542+00:00] [distilbert-base-uncased:detection] released GPU training lock
+[2026-04-03T17:09:03.781860+00:00] [distilbert-base-uncased:sentiment] acquired GPU training lock -> E:\Projects\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+[2026-04-03T17:09:05.263977+00:00] [distilbert-base-uncased] sentiment training start: train_rows=8000 val_rows=1000 epochs=3 batch_size=8 device=cuda
+[2026-04-03T17:10:58.900378+00:00] [distilbert-base-uncased] sentiment epoch 1/3: train_loss=0.6632 val_mse=0.5913 best_val_mse=0.5913 patience=0 epoch_seconds=113.6
+[2026-04-03T17:12:52.529334+00:00] [distilbert-base-uncased] sentiment epoch 2/3: train_loss=0.5669 val_mse=0.5637 best_val_mse=0.5637 patience=0 epoch_seconds=113.6
+[2026-04-03T17:14:46.134796+00:00] [distilbert-base-uncased] sentiment epoch 3/3: train_loss=0.4784 val_mse=0.5467 best_val_mse=0.5467 patience=0 epoch_seconds=113.5
+[2026-04-03T17:14:46.239529+00:00] [distilbert-base-uncased] sentiment training complete: best_val_mse=0.5467
+[2026-04-03T17:14:46.246839+00:00] [distilbert-base-uncased:sentiment] released GPU training lock
+[2026-04-03T17:14:51.074300+00:00] [distilbert-base-uncased] calibrated 20 thresholds
+[2026-04-03T17:14:59.806177+00:00] [distilbert-base-uncased] transformer approach complete: micro_f1=0.2691 macro_f1=0.3376 sentiment_mse=0.5044 elapsed=956.9s
+Completed distilbert-base-uncased: micro_f1=0.2691, sentiment_mse=0.5044
+[2026-04-03T17:14:59.954840+00:00] Archived run bundle -> E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260403T171459Z
+Saved benchmark outputs to E:\Projects\CourseABSA\paper\benchmark_outputs and archived run to E:\Projects\CourseABSA\paper\benchmark_outputs\runs\benchmark_full_20260403T171459Z
+
+[2026-04-03T17:15:14.046933+00:00] END exit_code=0 elapsed_seconds=980.1

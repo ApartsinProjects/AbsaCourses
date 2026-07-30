@@ -1,0 +1,12 @@
+{
+  "revised_instruction": "Write one complete, natural-sounding first-person student course review. The review must end cleanly with a full sentence and contain no placeholder text, nulls, meta-comments, or cut-off fragments. Sound like a casual student reflecting on what actually happened in the class, not like a rubric or balanced pros/cons summary. Include 2-3 specific course-grounded details such as a named assignment, exam, project, policy, tool, classroom moment, or instructor habit so the review feels tied to one real course. Do not mechanically march through categories like pacing, feedback, grading, and collaboration. Keep the tone slightly uneven and personal, with one or two standout experiences rather than polished coverage of everything. Express each target aspect clearly enough that its polarity is recoverable as either positive or negative from the review text, without using explicit sentiment labels.",
+  "change_summary": [
+    "Added a hard requirement for complete reviews with clean full-sentence endings",
+    "Explicitly banned placeholder/null outputs, meta-comments, and truncated fragments",
+    "Shifted the style target from polished summary prose to casual lived-experience reflection",
+    "Required 2-3 concrete course-specific details or incidents for grounding",
+    "Discouraged checklist/rubric sequencing and repeated balanced pros/cons structure",
+    "Preserved explicit recoverability of binary aspect polarity without label leakage"
+  ],
+  "rationale": "The revision directly targets the observed synthetic cues: truncation is addressed by requiring a clean full-sentence ending; invalid outputs are prevented by banning placeholders and null text; generic, polished, template-like reviews are countered by emphasizing casual first-person reflection and uneven personal detail; weak realism is reduced by requiring 2-3 specific course-linked details; and formulaic ABSA-style category marching is discouraged to avoid checklist artifacts while still keeping aspect polarity recoverable."
+}

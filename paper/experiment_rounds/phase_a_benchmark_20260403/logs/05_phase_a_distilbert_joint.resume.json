@@ -1,0 +1,59 @@
+{
+  "signature": {
+    "script": "absa_model_comparison.py",
+    "data_path": "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+    "approaches": [
+      "distilbert_joint"
+    ],
+    "include_openai": false,
+    "openai_model": "gpt-5.2",
+    "openai_variants": [
+      "zero-shot",
+      "few-shot",
+      "few-shot-diverse",
+      "retrieval-few-shot",
+      "two-pass",
+      "aspect-by-aspect"
+    ],
+    "openai_test_limit": 25,
+    "epochs_detection": 3,
+    "epochs_sentiment": 3,
+    "batch_size": 8,
+    "max_len": 192,
+    "lr": 3e-05,
+    "seed": 42
+  },
+  "created_at_utc": "2026-04-03T17:49:41.074313+00:00",
+  "updated_at_utc": "2026-04-03T17:56:00.074226+00:00",
+  "completed": {
+    "approach::distilbert_joint": {
+      "kind": "approach",
+      "summary": {
+        "approach": "distilbert_joint",
+        "micro_precision": 0.1722887196227784,
+        "micro_recall": 0.4719324391455539,
+        "micro_f1": 0.252424604756211,
+        "macro_precision": 0.4011565241450489,
+        "macro_recall": 0.4788303104432342,
+        "macro_f1": 0.32483043995977007,
+        "macro_balanced_accuracy": 0.6130696436185508,
+        "macro_specificity": 0.7473089767938674,
+        "macro_mcc": 0.26087851114333577,
+        "label_accuracy": 0.71865,
+        "subset_accuracy": 0.005,
+        "samples_f1": 0.2668133644133644,
+        "samples_jaccard": 0.17327424242424241,
+        "sentiment_mse_detected": 0.5427563897803643,
+        "elapsed_seconds": 377.3
+      },
+      "per_aspect_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\05_phase_a_distilbert_joint.resume.distilbert_joint.per_aspect.csv",
+      "artifact_paths": {
+        "sample_predictions": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\05_phase_a_distilbert_joint.resume.distilbert_joint.sample_predictions.jsonl",
+        "thresholds": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_a_benchmark_20260403\\logs\\05_phase_a_distilbert_joint.resume.distilbert_joint.thresholds.json"
+      },
+      "completed_at_utc": "2026-04-03T17:56:00.074216+00:00"
+    }
+  },
+  "final_run_dir": "E:\\Projects\\CourseABSA\\paper\\benchmark_outputs\\runs\\benchmark_full_20260403T175600Z",
+  "finalized_at_utc": "2026-04-03T17:56:00.148279+00:00"
+}

@@ -1,0 +1,56 @@
+C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\torch\cuda\__init__.py:65: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2026-07-30T09:47:58.766034+00:00] Detailed log file -> E:\Projects\Submitted\CourseABSA\paper\benchmark_outputs\logs\overlap_generalization_20260730T094758Z.log
+[2026-07-30T09:47:58.766157+00:00] Resume checkpoint -> E:\Projects\Submitted\CourseABSA\paper\real_transfer\resume_overlap_generalization.json
+[2026-07-30T09:48:02.337598+00:00] [tfidf_two_step] overlap comparison start
+[2026-07-30T09:48:02.337938+00:00] [tfidf_two_step] start classical two-step fit: train=5495 calib=686 test=686 aspects=9
+[2026-07-30T09:48:04.187659+00:00] [tfidf_two_step] vectorizer + models fit complete
+[2026-07-30T09:48:04.641162+00:00] [tfidf_two_step] calibrated 9 thresholds
+[2026-07-30T09:48:04.711185+00:00] [tfidf_two_step] finished classical two-step: micro_f1=0.3620 macro_f1=0.3968 sentiment_mse=0.6519 elapsed=2.4s
+[2026-07-30T09:48:04.809492+00:00] [tfidf_two_step] start classical two-step fit: train=5495 calib=686 test=2829 aspects=9
+[2026-07-30T09:48:06.542618+00:00] [tfidf_two_step] vectorizer + models fit complete
+[2026-07-30T09:48:06.958708+00:00] [tfidf_two_step] calibrated 9 thresholds
+[2026-07-30T09:48:07.050005+00:00] [tfidf_two_step] finished classical two-step: micro_f1=0.3782 macro_f1=0.2436 sentiment_mse=0.7019 elapsed=2.2s
+[2026-07-30T09:48:07.574770+00:00] [tfidf_two_step] overlap comparison complete: synthetic_micro_f1=0.3620 real_micro_f1=0.3782
+[2026-07-30T09:48:07.574802+00:00] [distilbert-base-uncased] overlap comparison start
+[2026-07-30T09:48:07.575038+00:00] [distilbert-base-uncased:detection] acquired GPU training lock -> E:\Projects\Submitted\CourseABSA\paper\benchmark_outputs\gpu_training.lock
+Warning: You are sending unauthenticated requests to the HF Hub. Please set a HF_TOKEN to enable higher rate limits and faster downloads.
+[2026-07-30T09:48:11.296872+00:00] [distilbert-base-uncased:detection] released GPU training lock
+Traceback (most recent call last):
+  File "E:\Projects\Submitted\CourseABSA\paper\evaluate_overlap_generalization.py", line 279, in <module>
+    main()
+    ~~~~^^
+  File "E:\Projects\Submitted\CourseABSA\paper\evaluate_overlap_generalization.py", line 150, in main
+    det_model, det_tokenizer = train_detection(approach, synth_train, synth_val, aspects, cfg)
+                               ~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Submitted\CourseABSA\paper\absa_model_comparison.py", line 1010, in train_detection
+    model = DetectionModel(model_name, len(aspects)).to(cfg.device)
+            ~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "E:\Projects\Submitted\CourseABSA\paper\absa_model_comparison.py", line 700, in __init__
+    self.backbone = TransformerBackbone(model_name)
+                    ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "E:\Projects\Submitted\CourseABSA\paper\absa_model_comparison.py", line 681, in __init__
+    self.encoder = AutoModel.from_pretrained(model_name)
+                   ~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^
+  File "C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\transformers\models\auto\auto_factory.py", line 374, in from_pretrained
+    return model_class.from_pretrained(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        pretrained_model_name_or_path, *model_args, config=config, **hub_kwargs, **kwargs
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\transformers\modeling_utils.py", line 4021, in from_pretrained
+    config, dtype = _get_dtype(
+                    ~~~~~~~~~~^
+        dtype, checkpoint_files, config, sharded_metadata, state_dict, weights_only, hf_quantizer
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\transformers\modeling_utils.py", line 786, in _get_dtype
+    state_dict = load_state_dict(
+        checkpoint_files[0], map_location="meta", weights_only=weights_only
+    )
+  File "C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\transformers\modeling_utils.py", line 302, in load_state_dict
+    with safe_open(checkpoint_file, framework="pt") as f:
+         ~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+OSError: The paging file is too small for this operation to complete. (os error 1455)

@@ -1,0 +1,7 @@
+{
+  "prefix": "faithfulness_audit_r3_250",
+  "batch_id": "batch_69d0c18809588190ac07da33a808d0a3",
+  "status": "completed",
+  "results_path": "E:\\Projects\\CourseABSA\\paper\\batch_results\\batch_69d0c18809588190ac07da33a808d0a3_output.jsonl",
+  "manifest_path": "E:\\Projects\\CourseABSA\\paper\\batch_requests\\faithfulness_audit_r3_250_manifest.csv"
+}

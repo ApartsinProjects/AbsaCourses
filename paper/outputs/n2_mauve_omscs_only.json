@@ -1,0 +1,6 @@
+{
+  "n_omscs": 200,
+  "n_synth": 200,
+  "mauve_omscs_vs_synth_FULLREVIEW": 0.1991,
+  "mauve_omscs_vs_omscs_upperbound": 0.9808
+}

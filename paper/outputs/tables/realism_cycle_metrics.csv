@@ -1,0 +1,4 @@
+cycle_id,cycle_name,run_id,n_judge_questions,judge_item_accuracy,mean_judge_confidence,mean_confusion,mean_entropy_bits,chance_confusion_pct,binomial_p_value_vs_chance,wilson_95ci_low,wilson_95ci_high,equivalent_to_chance_within_margin,correctly_detected_synthetic_count,editor_triggered,source_path
+0,rich_attributes_baseline,cycle0_n30_20260331T143508Z,60,0.5167,80.98,0.5737,0.6912,96.67,0.897422,0.3931,0.6382,False,5,True,E:\Projects\CourseABSA\paper\validation\prompt_debug_cycle0_n30_20260331T143508Z_summary.json
+1,reduce_synthetic_signatures,cycle1_n30_20260331T144643Z,60,0.4333,80.45,0.6417,0.702,86.67,0.366294,0.3157,0.559,False,1,True,E:\Projects\CourseABSA\paper\validation\prompt_debug_cycle1_n30_20260331T144643Z_summary.json
+2,messier_realism,cycle2_n30_20260331T145717Z,60,0.4333,80.3,0.643,0.7068,86.67,0.366294,0.3157,0.559,False,0,False,E:\Projects\CourseABSA\paper\validation\prompt_debug_cycle2_n30_20260331T145717Z_summary.json

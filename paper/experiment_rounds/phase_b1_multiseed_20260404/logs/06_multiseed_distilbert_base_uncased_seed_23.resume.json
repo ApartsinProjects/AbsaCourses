@@ -1,0 +1,59 @@
+{
+  "signature": {
+    "script": "absa_model_comparison.py",
+    "data_path": "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+    "approaches": [
+      "distilbert-base-uncased"
+    ],
+    "include_openai": false,
+    "openai_model": "gpt-5.2",
+    "openai_variants": [
+      "zero-shot",
+      "few-shot",
+      "few-shot-diverse",
+      "retrieval-few-shot",
+      "two-pass",
+      "aspect-by-aspect"
+    ],
+    "openai_test_limit": 25,
+    "epochs_detection": 3,
+    "epochs_sentiment": 3,
+    "batch_size": 8,
+    "max_len": 192,
+    "lr": 3e-05,
+    "seed": 23
+  },
+  "created_at_utc": "2026-04-04T08:10:45.761896+00:00",
+  "updated_at_utc": "2026-04-04T08:23:26.986351+00:00",
+  "completed": {
+    "approach::distilbert-base-uncased": {
+      "kind": "approach",
+      "summary": {
+        "approach": "distilbert-base-uncased",
+        "micro_precision": 0.20302874743326488,
+        "micro_recall": 0.39868951612903225,
+        "micro_f1": 0.26904761904761904,
+        "macro_precision": 0.45917982697815785,
+        "macro_recall": 0.40230715376613346,
+        "macro_f1": 0.3357373906258211,
+        "macro_balanced_accuracy": 0.6150647356165282,
+        "macro_specificity": 0.827822317466923,
+        "macro_mcc": 0.28500699943322894,
+        "label_accuracy": 0.7851,
+        "subset_accuracy": 0.027,
+        "samples_f1": 0.29601507936507937,
+        "samples_jaccard": 0.20571507936507935,
+        "sentiment_mse_detected": 0.5551112407695241,
+        "elapsed_seconds": 759.4
+      },
+      "per_aspect_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_b1_multiseed_20260404\\logs\\06_multiseed_distilbert_base_uncased_seed_23.resume.distilbert-base-uncased.per_aspect.csv",
+      "artifact_paths": {
+        "sample_predictions": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_b1_multiseed_20260404\\logs\\06_multiseed_distilbert_base_uncased_seed_23.resume.distilbert-base-uncased.sample_predictions.jsonl",
+        "thresholds": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_b1_multiseed_20260404\\logs\\06_multiseed_distilbert_base_uncased_seed_23.resume.distilbert-base-uncased.thresholds.json"
+      },
+      "completed_at_utc": "2026-04-04T08:23:26.986338+00:00"
+    }
+  },
+  "final_run_dir": "E:\\Projects\\CourseABSA\\paper\\benchmark_outputs\\runs\\benchmark_full_20260404T082326Z",
+  "finalized_at_utc": "2026-04-04T08:23:27.060036+00:00"
+}

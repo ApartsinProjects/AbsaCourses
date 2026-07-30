@@ -74,8 +74,8 @@
 <div class="rc">
 <h2>7. Rule out generator-specific split effects</h2>
 <p class="req">Requested: Random splits from the same generator and prompt may reward generator-specific patterns.</p>
-<p class="resp"><b class="tag">Clarified, with a new control.</b> The learnable signal is not a single generator's artifact: regenerating and auditing with three independent model families reproduces the label fidelity, and a held-out-generator transfer check evaluates a detector trained on one generator's data on other generators' data. An overlap-generalization analysis further separates aspect-composition effects from domain shift.</p>
-<span class="loc">Appendix A.19; Appendix A.24.</span>
+<p class="resp"><b class="tag">Clarified, with a new control.</b> The learnable signal is not a single generator's artifact: regenerating and auditing with three independent model families reproduces the label fidelity, and a held-out-generator transfer check (Appendix A.31) shows a detector trained on one generator's data transfers to other generators' data without collapse. An overlap-generalization analysis further separates aspect-composition effects from domain shift.</p>
+<span class="loc">Appendix A.19, A.24, A.31.</span>
 </div>
 <p class="footer">Locations reference the revised <code>course_absa_manuscript.html</code>. Points marked as new experiments underway are being finalized; this letter will be updated with their results and exact appendix references.</p>
 </div>

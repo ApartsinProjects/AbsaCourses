@@ -1,0 +1,50 @@
+{
+  "signature": {
+    "script": "evaluate_synthetic_to_real_transfer.py",
+    "synthetic_path": "E:\\Projects\\Submitted\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+    "herath_root": "E:\\Projects\\Submitted\\CourseABSA\\external_data\\Student_feedback_analysis_dataset\\Annotated Student Feedback Data",
+    "approaches": [
+      "bert-base-uncased"
+    ],
+    "epochs_detection": 3,
+    "epochs_sentiment": 3,
+    "batch_size": 8,
+    "max_len": 192,
+    "lr": 3e-05,
+    "seed": 42
+  },
+  "created_at_utc": "2026-07-03T10:58:33.739014+00:00",
+  "updated_at_utc": "2026-07-03T11:16:51.126734+00:00",
+  "completed": {
+    "approach::bert-base-uncased": {
+      "summary": {
+        "approach": "bert-base-uncased",
+        "micro_precision": 0.3014005602240896,
+        "micro_recall": 0.25347467608951707,
+        "micro_f1": 0.27536788227767117,
+        "macro_precision": 0.42563741516676146,
+        "macro_recall": 0.30642128125771306,
+        "macro_f1": 0.24566578967030092,
+        "macro_balanced_accuracy": 0.5707063162554832,
+        "macro_specificity": 0.8349913512532532,
+        "macro_mcc": 0.16152151624826647,
+        "label_accuracy": 0.6935606060606061,
+        "subset_accuracy": 0.006547619047619048,
+        "samples_f1": 0.24883172713529858,
+        "samples_jaccard": 0.16890022675736963,
+        "sentiment_mse_detected": 0.44562263747777126,
+        "eval_split": "real_herath_mapped",
+        "n_real_reviews": 1680,
+        "n_overlap_aspects": 11
+      },
+      "per_aspect_path": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_real_transfer.bert-base-uncased.per_aspect.csv",
+      "artifact_paths": {
+        "sample_predictions": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_real_transfer.bert-base-uncased.sample_predictions.jsonl",
+        "thresholds": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\resume_real_transfer.bert-base-uncased.thresholds.json"
+      },
+      "completed_at_utc": "2026-07-03T11:16:51.126723+00:00"
+    }
+  },
+  "final_run_dir": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\runs\\synthetic_to_real_transfer_20260703T113646Z",
+  "finalized_at_utc": "2026-07-03T11:36:46.810646+00:00"
+}

@@ -1,0 +1,15 @@
+{
+  "polled_at_utc": "2026-04-04T13:42:43.941241+00:00",
+  "batch_id": "batch_69d11478ec208190b97c62d1010f2446",
+  "status": "completed",
+  "input_file_id": "file-U8ttbDAwL99TDRf55XBPbh",
+  "output_file_id": "file-KhVs27kLWFhv6HnbuHizah",
+  "error_file_id": null,
+  "request_counts": {
+    "completed": 50,
+    "failed": 0,
+    "total": 50
+  },
+  "shard_index": 2,
+  "request_count": 50
+}

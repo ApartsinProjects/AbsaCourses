@@ -1,0 +1,556 @@
+{
+  "bert_top_confusion_pairs_by_cooccurring_fp": [
+    {
+      "gold_missed": "peer_interaction",
+      "wrong_predicted": "overall_experience",
+      "count": 63
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "wrong_predicted": "interest",
+      "count": 61
+    },
+    {
+      "gold_missed": "organization",
+      "wrong_predicted": "interest",
+      "count": 61
+    },
+    {
+      "gold_missed": "organization",
+      "wrong_predicted": "overall_experience",
+      "count": 58
+    },
+    {
+      "gold_missed": "materials",
+      "wrong_predicted": "interest",
+      "count": 56
+    },
+    {
+      "gold_missed": "grading_transparency",
+      "wrong_predicted": "interest",
+      "count": 56
+    },
+    {
+      "gold_missed": "materials",
+      "wrong_predicted": "overall_experience",
+      "count": 56
+    },
+    {
+      "gold_missed": "practical_application",
+      "wrong_predicted": "overall_experience",
+      "count": 55
+    },
+    {
+      "gold_missed": "clarity",
+      "wrong_predicted": "interest",
+      "count": 55
+    },
+    {
+      "gold_missed": "grading_transparency",
+      "wrong_predicted": "overall_experience",
+      "count": 54
+    },
+    {
+      "gold_missed": "practical_application",
+      "wrong_predicted": "interest",
+      "count": 54
+    },
+    {
+      "gold_missed": "relevance",
+      "wrong_predicted": "interest",
+      "count": 53
+    },
+    {
+      "gold_missed": "clarity",
+      "wrong_predicted": "overall_experience",
+      "count": 52
+    },
+    {
+      "gold_missed": "lecturer_quality",
+      "wrong_predicted": "interest",
+      "count": 51
+    },
+    {
+      "gold_missed": "difficulty",
+      "wrong_predicted": "interest",
+      "count": 51
+    },
+    {
+      "gold_missed": "lecturer_quality",
+      "wrong_predicted": "overall_experience",
+      "count": 50
+    },
+    {
+      "gold_missed": "grading_transparency",
+      "wrong_predicted": "support",
+      "count": 50
+    },
+    {
+      "gold_missed": "prerequisite_fit",
+      "wrong_predicted": "interest",
+      "count": 49
+    },
+    {
+      "gold_missed": "exam_fairness",
+      "wrong_predicted": "interest",
+      "count": 49
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "wrong_predicted": "support",
+      "count": 48
+    }
+  ],
+  "bert_top_confusion_pairs_by_highest_wrong_probability": [
+    {
+      "gold_missed": "lecturer_quality",
+      "highest_wrong_aspect": "interest",
+      "count": 19
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "highest_wrong_aspect": "interest",
+      "count": 19
+    },
+    {
+      "gold_missed": "clarity",
+      "highest_wrong_aspect": "lecturer_quality",
+      "count": 19
+    },
+    {
+      "gold_missed": "prerequisite_fit",
+      "highest_wrong_aspect": "interest",
+      "count": 17
+    },
+    {
+      "gold_missed": "materials",
+      "highest_wrong_aspect": "interest",
+      "count": 17
+    },
+    {
+      "gold_missed": "clarity",
+      "highest_wrong_aspect": "interest",
+      "count": 16
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "highest_wrong_aspect": "lecturer_quality",
+      "count": 16
+    },
+    {
+      "gold_missed": "exam_fairness",
+      "highest_wrong_aspect": "interest",
+      "count": 16
+    },
+    {
+      "gold_missed": "feedback_quality",
+      "highest_wrong_aspect": "interest",
+      "count": 15
+    },
+    {
+      "gold_missed": "assessment_design",
+      "highest_wrong_aspect": "lecturer_quality",
+      "count": 14
+    },
+    {
+      "gold_missed": "organization",
+      "highest_wrong_aspect": "lecturer_quality",
+      "count": 14
+    },
+    {
+      "gold_missed": "grading_transparency",
+      "highest_wrong_aspect": "interest",
+      "count": 14
+    },
+    {
+      "gold_missed": "relevance",
+      "highest_wrong_aspect": "interest",
+      "count": 14
+    },
+    {
+      "gold_missed": "organization",
+      "highest_wrong_aspect": "interest",
+      "count": 14
+    },
+    {
+      "gold_missed": "practical_application",
+      "highest_wrong_aspect": "lecturer_quality",
+      "count": 14
+    },
+    {
+      "gold_missed": "difficulty",
+      "highest_wrong_aspect": "interest",
+      "count": 13
+    },
+    {
+      "gold_missed": "relevance",
+      "highest_wrong_aspect": "lecturer_quality",
+      "count": 13
+    },
+    {
+      "gold_missed": "assessment_design",
+      "highest_wrong_aspect": "interest",
+      "count": 13
+    },
+    {
+      "gold_missed": "feedback_quality",
+      "highest_wrong_aspect": "lecturer_quality",
+      "count": 13
+    },
+    {
+      "gold_missed": "practical_application",
+      "highest_wrong_aspect": "interest",
+      "count": 13
+    }
+  ],
+  "bert_most_missed_aspects": [
+    {
+      "aspect": "peer_interaction",
+      "misses": 89
+    },
+    {
+      "aspect": "grading_transparency",
+      "misses": 75
+    },
+    {
+      "aspect": "clarity",
+      "misses": 74
+    },
+    {
+      "aspect": "practical_application",
+      "misses": 71
+    },
+    {
+      "aspect": "difficulty",
+      "misses": 71
+    },
+    {
+      "aspect": "relevance",
+      "misses": 70
+    },
+    {
+      "aspect": "exam_fairness",
+      "misses": 70
+    },
+    {
+      "aspect": "organization",
+      "misses": 70
+    },
+    {
+      "aspect": "materials",
+      "misses": 68
+    },
+    {
+      "aspect": "tooling_usability",
+      "misses": 65
+    },
+    {
+      "aspect": "lecturer_quality",
+      "misses": 64
+    },
+    {
+      "aspect": "prerequisite_fit",
+      "misses": 63
+    },
+    {
+      "aspect": "feedback_quality",
+      "misses": 58
+    },
+    {
+      "aspect": "assessment_design",
+      "misses": 57
+    },
+    {
+      "aspect": "accessibility",
+      "misses": 55
+    }
+  ],
+  "bert_most_common_false_positive_aspects": [
+    {
+      "aspect": "interest",
+      "false_positive_count": 684
+    },
+    {
+      "aspect": "overall_experience",
+      "false_positive_count": 611
+    },
+    {
+      "aspect": "support",
+      "false_positive_count": 516
+    },
+    {
+      "aspect": "accessibility",
+      "false_positive_count": 280
+    },
+    {
+      "aspect": "feedback_quality",
+      "false_positive_count": 246
+    },
+    {
+      "aspect": "prerequisite_fit",
+      "false_positive_count": 163
+    },
+    {
+      "aspect": "difficulty",
+      "false_positive_count": 132
+    },
+    {
+      "aspect": "clarity",
+      "false_positive_count": 82
+    },
+    {
+      "aspect": "lecturer_quality",
+      "false_positive_count": 55
+    },
+    {
+      "aspect": "relevance",
+      "false_positive_count": 51
+    },
+    {
+      "aspect": "peer_interaction",
+      "false_positive_count": 45
+    },
+    {
+      "aspect": "pacing",
+      "false_positive_count": 37
+    },
+    {
+      "aspect": "workload",
+      "false_positive_count": 37
+    },
+    {
+      "aspect": "tooling_usability",
+      "false_positive_count": 29
+    },
+    {
+      "aspect": "practical_application",
+      "false_positive_count": 19
+    }
+  ],
+  "gpt54_top_confusion_pairs_by_cooccurring_fp": [
+    {
+      "gold_missed": "overall_experience",
+      "wrong_predicted": "tooling_usability",
+      "count": 44
+    },
+    {
+      "gold_missed": "accessibility",
+      "wrong_predicted": "tooling_usability",
+      "count": 42
+    },
+    {
+      "gold_missed": "overall_experience",
+      "wrong_predicted": "feedback_quality",
+      "count": 38
+    },
+    {
+      "gold_missed": "difficulty",
+      "wrong_predicted": "tooling_usability",
+      "count": 38
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "wrong_predicted": "tooling_usability",
+      "count": 36
+    },
+    {
+      "gold_missed": "relevance",
+      "wrong_predicted": "tooling_usability",
+      "count": 35
+    },
+    {
+      "gold_missed": "materials",
+      "wrong_predicted": "tooling_usability",
+      "count": 35
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "wrong_predicted": "support",
+      "count": 33
+    },
+    {
+      "gold_missed": "prerequisite_fit",
+      "wrong_predicted": "feedback_quality",
+      "count": 31
+    },
+    {
+      "gold_missed": "overall_experience",
+      "wrong_predicted": "support",
+      "count": 30
+    },
+    {
+      "gold_missed": "interest",
+      "wrong_predicted": "support",
+      "count": 30
+    },
+    {
+      "gold_missed": "difficulty",
+      "wrong_predicted": "feedback_quality",
+      "count": 30
+    },
+    {
+      "gold_missed": "lecturer_quality",
+      "wrong_predicted": "feedback_quality",
+      "count": 29
+    },
+    {
+      "gold_missed": "support",
+      "wrong_predicted": "feedback_quality",
+      "count": 29
+    },
+    {
+      "gold_missed": "relevance",
+      "wrong_predicted": "feedback_quality",
+      "count": 29
+    },
+    {
+      "gold_missed": "prerequisite_fit",
+      "wrong_predicted": "tooling_usability",
+      "count": 28
+    },
+    {
+      "gold_missed": "difficulty",
+      "wrong_predicted": "support",
+      "count": 28
+    },
+    {
+      "gold_missed": "materials",
+      "wrong_predicted": "feedback_quality",
+      "count": 28
+    },
+    {
+      "gold_missed": "lecturer_quality",
+      "wrong_predicted": "support",
+      "count": 28
+    },
+    {
+      "gold_missed": "lecturer_quality",
+      "wrong_predicted": "tooling_usability",
+      "count": 28
+    }
+  ],
+  "gpt54_most_missed_aspects": [
+    {
+      "aspect": "overall_experience",
+      "misses": 116
+    },
+    {
+      "aspect": "relevance",
+      "misses": 90
+    },
+    {
+      "aspect": "interest",
+      "misses": 86
+    },
+    {
+      "aspect": "accessibility",
+      "misses": 85
+    },
+    {
+      "aspect": "difficulty",
+      "misses": 85
+    },
+    {
+      "aspect": "peer_interaction",
+      "misses": 83
+    },
+    {
+      "aspect": "lecturer_quality",
+      "misses": 78
+    },
+    {
+      "aspect": "materials",
+      "misses": 75
+    },
+    {
+      "aspect": "organization",
+      "misses": 75
+    },
+    {
+      "aspect": "practical_application",
+      "misses": 73
+    },
+    {
+      "aspect": "prerequisite_fit",
+      "misses": 69
+    },
+    {
+      "aspect": "assessment_design",
+      "misses": 69
+    },
+    {
+      "aspect": "exam_fairness",
+      "misses": 66
+    },
+    {
+      "aspect": "clarity",
+      "misses": 64
+    },
+    {
+      "aspect": "support",
+      "misses": 64
+    }
+  ],
+  "gpt54_most_common_false_positive_aspects": [
+    {
+      "aspect": "tooling_usability",
+      "false_positive_count": 335
+    },
+    {
+      "aspect": "feedback_quality",
+      "false_positive_count": 333
+    },
+    {
+      "aspect": "support",
+      "false_positive_count": 273
+    },
+    {
+      "aspect": "workload",
+      "false_positive_count": 199
+    },
+    {
+      "aspect": "pacing",
+      "false_positive_count": 196
+    },
+    {
+      "aspect": "clarity",
+      "false_positive_count": 173
+    },
+    {
+      "aspect": "grading_transparency",
+      "false_positive_count": 151
+    },
+    {
+      "aspect": "prerequisite_fit",
+      "false_positive_count": 137
+    },
+    {
+      "aspect": "peer_interaction",
+      "false_positive_count": 101
+    },
+    {
+      "aspect": "assessment_design",
+      "false_positive_count": 89
+    },
+    {
+      "aspect": "lecturer_quality",
+      "false_positive_count": 68
+    },
+    {
+      "aspect": "practical_application",
+      "false_positive_count": 51
+    },
+    {
+      "aspect": "materials",
+      "false_positive_count": 50
+    },
+    {
+      "aspect": "organization",
+      "false_positive_count": 34
+    },
+    {
+      "aspect": "exam_fairness",
+      "false_positive_count": 25
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+aspect,description
+difficulty,Conceptual or technical challenge of the course.
+clarity,How understandable the teaching and explanations feel.
+workload,Amount of sustained effort required across the term.
+lecturer_quality,Perceived quality of the lecturer or lead instructor.
+exam_fairness,Whether exams feel aligned and fair.
+relevance,Perceived usefulness to the program or future goals.
+interest,Level of engagement or curiosity the course creates.
+support,"Quality of help from instructor, TAs, or forums."
+materials,"Usefulness of slides, notes, readings, and resources."
+overall_experience,Global student impression after tradeoffs.
+feedback_quality,Usefulness and timeliness of feedback on student work.
+assessment_design,"Alignment and structure of assignments, projects, and exams."
+pacing,Whether the course tempo and weekly rhythm are manageable.
+organization,"Administrative clarity, course structure, and coordination."
+practical_application,Connection to real-world practice or authentic tasks.
+tooling_usability,"Friction or support created by LMS, submission systems, and required software."
+accessibility,"Perceived accessibility and inclusiveness of materials, pace, and course participation."
+grading_transparency,"How clearly grading criteria, rubrics, and score interpretation are communicated."
+peer_interaction,"Whether peer discussion, teamwork, and class community help or hinder learning."
+prerequisite_fit,How well the course matches the advertised prerequisite level and student preparation.

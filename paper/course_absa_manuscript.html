@@ -870,7 +870,7 @@
 
       <figure>
         <img src="outputs/figures/real_transfer_overview.svg" alt="External validation on mapped real student feedback">
-        <figcaption>Figure 3. External validation on mapped real student feedback. The left panel provides overlap-support context from the mapped Herath corpus, while the center and right panels visualize the transfer scores reported exactly in Table 8. The figure supports a partial-transfer claim only for the conservative 9-aspect overlap.</figcaption>
+        <figcaption>Figure 3. External validation on mapped real student feedback. The left panel provides overlap-support context from the mapped Herath corpus, while the center and right panels visualize a representative single-seed run of the transfer scores; Table 8 reports the seed-averaged values, which are the numbers to read. The figure supports a partial-transfer claim only for the conservative 9-aspect overlap.</figcaption>
       </figure>
 
       <figure>
@@ -1009,10 +1009,7 @@
     <section>
       <h2>6. Discussion</h2>
       <p>
-        The results support interpreting the study as a synthetic educational ABSA benchmark together with a strong internal modeling analysis and two conservative external transfer checks (Herath and EduRABSA). The strongest evidence lies where those pieces connect directly: controlled generation produces aspect-labeled educational reviews, and a downstream ABSA pipeline tests whether those labels are learnable under a strict train-validation-test regime.
-      </p>
-      <p>
-        The study is therefore strongest as an investigation of dataset construction and internal learnability under synthetic supervision. Its value lies in offering a controllable benchmark resource for a domain where public aspect-labeled data remain scarce, together with a transparent account of how that benchmark connects to two real educational annotation spaces (Herath and EduRABSA).
+        The results support interpreting the study as a synthetic educational ABSA benchmark together with a strong internal modeling analysis and two conservative external transfer checks (Herath and EduRABSA). The strongest evidence lies where those pieces connect directly: controlled generation produces aspect-labeled educational reviews, and a downstream ABSA pipeline tests whether those labels are learnable under a strict train-validation-test regime. The study's value lies in offering a controllable benchmark resource for a domain where public aspect-labeled data remain scarce, together with a transparent account of how that benchmark connects to two real educational annotation spaces.
       </p>
 
       <h3>6.1 Limitations</h3>
@@ -1066,7 +1063,7 @@
     <section>
       <h2>7. Conclusion</h2>
       <p>
-        This study contributes a 10K synthetic educational ABSA corpus over a 20-aspect pedagogical schema, a documented generation protocol, and a benchmark setting that makes internal train-validation-test evaluation possible in a domain where public labeled data remain difficult to obtain. It also includes a conservative synthetic-to-real evaluation on mapped annotated student feedback, which supports partial transfer on a 9-aspect Herath overlap and a 7-aspect EduRABSA overlap, and generator validations that clarify how realism control and label faithfulness behave at corpus scale. Taken together, the evidence supports controlled synthetic supervision as a productive way to study educational ABSA and compare model families in a data-scarce domain. Consistent with the label-faithfulness audit (0.42 aspect-sentiment match, Section 5.7), the resource is best understood as openly reusable and reproducible but noisy synthetic supervision with a documented benchmark setting, rather than a gold-labeled corpus; its value is as a controlled instrument for model development that institutions fine-tune and validate on their own data before use, not as a calibrated ground truth.
+        This study contributes a 10K synthetic educational ABSA corpus over a 20-aspect pedagogical schema, a documented generation protocol, and a benchmark setting that makes internal train-validation-test evaluation possible in a domain where public labeled data remain difficult to obtain. It also includes a conservative synthetic-to-real evaluation on mapped annotated student feedback, which supports partial transfer on a 9-aspect Herath overlap and a 7-aspect EduRABSA overlap, and generator validations that clarify how realism control and label faithfulness behave at corpus scale. Taken together, the evidence supports controlled synthetic supervision as a productive way to study educational ABSA and compare model families in a data-scarce domain. Consistent with the label-faithfulness audit (0.42 aspect-sentiment match, Section 5.7), the resource is best understood as openly reusable and reproducible but noisy synthetic supervision with a documented benchmark setting, rather than a gold-labeled corpus; its value is as a controlled instrument for model development that institutions fine-tune and validate on their own data before use.
       </p>
       <p>
         Reproducibility: the generation artifacts, local benchmark outputs, and realism-study files are kept distinct throughout, so each reported number traces to its own artifact.

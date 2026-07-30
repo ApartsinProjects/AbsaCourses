@@ -1,0 +1,6 @@
+{
+  "seed_stability_best_mean_micro_f1": 0.27906444343548054,
+  "seed_stability_best_approach": "bert-base-uncased",
+  "best_joint_micro_f1": 0.2447187277474483,
+  "best_tuned_micro_f1": 0.2930117062788223
+}

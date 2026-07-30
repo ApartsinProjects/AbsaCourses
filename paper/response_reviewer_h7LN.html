@@ -56,13 +56,13 @@
 <div class="rc">
 <h2>4. The 841 token-capped rows</h2>
 <p class="req">Requested: 841 of 10,000 samples hit the token cap; full-corpus length-band adherence is 0.6819, so a substantial share falls outside the length bounds.</p>
-<p class="resp"><b class="tag">Done.</b> Regenerating exactly those rows at a higher cap eliminates the truncation and restores full-corpus length adherence. We further show the truncated rows are not systematically biased: their aspect distribution is not skewed (chi-square p=0.23, Cramer's V=0.034), their polarity distribution is negligibly different (V=0.020), and their audit faithfulness is statistically identical to the complete corpus (0.573 versus 0.577, p=0.76). They differ only in the mechanical ways (fewer aspects, shorter text), so excluding them does not change the benchmark.</p>
-<span class="loc">Appendix A.14.</span>
+<p class="resp"><b class="tag">Done.</b> Regenerating exactly those rows at a higher cap eliminates the truncation and restores full-corpus length adherence. We further show the truncated rows are not systematically biased: their aspect distribution is not skewed (chi-square p=0.23, Cramer's V=0.034, Appendix A.30), their polarity distribution is negligibly different (V=0.020), and their audit faithfulness is statistically identical to the complete corpus (0.573 versus 0.577, p=0.76). They differ only in the mechanical ways (fewer aspects, shorter text), so excluding them does not change the benchmark.</p>
+<span class="loc">Appendix A.14, A.30.</span>
 </div>
 <div class="rc">
 <h2>5. Bottom-quartile rows and training value</h2>
 <p class="req">Requested: The bottom 25% instances markedly inflate sentiment error (Table 12) and hold little training value.</p>
-<p class="resp"><b class="tag">Clarified.</b> This is the signal the filtering recipe exploits: the negative-control bottom quartile collapses on sentiment error across both architectures and both transfer targets (0 of 8 seeds recovering), which is why retaining the top 50% by audit score reduces error at half the training cost. The audit score discriminates informative from uninformative rows at both ends of the distribution.</p>
+<p class="resp"><b class="tag">Clarified.</b> This is the signal the filtering recipe exploits: the negative-control bottom quartile collapses on sentiment error across both architectures and both transfer targets (0 of 8 seeds recovering), which is why retaining the top 50% by audit score reduces error at half the training cost. A quartile dose-response confirms the effect is monotone across the whole distribution (Appendix A.32), so the audit score discriminates informative from uninformative rows at both ends.</p>
 <span class="loc">Section 5.7.</span>
 </div>
 <div class="rc">

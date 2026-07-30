@@ -1,0 +1,73 @@
+{
+  "polled_at_utc": "2026-04-04T13:42:46.894414+00:00",
+  "sharded": true,
+  "status": "completed",
+  "request_counts": {
+    "completed": 200,
+    "failed": 0,
+    "total": 200
+  },
+  "shard_count": 4,
+  "shards": [
+    {
+      "polled_at_utc": "2026-04-04T13:42:42.913768+00:00",
+      "batch_id": "batch_69d114779b4881908d312a87897fbad6",
+      "status": "completed",
+      "input_file_id": "file-4KKptLba9arxUrg1faTurb",
+      "output_file_id": "file-BnYgjHKSS6BAuUF15PoUZu",
+      "error_file_id": null,
+      "request_counts": {
+        "completed": 50,
+        "failed": 0,
+        "total": 50
+      },
+      "shard_index": 1,
+      "request_count": 50
+    },
+    {
+      "polled_at_utc": "2026-04-04T13:42:43.941241+00:00",
+      "batch_id": "batch_69d11478ec208190b97c62d1010f2446",
+      "status": "completed",
+      "input_file_id": "file-U8ttbDAwL99TDRf55XBPbh",
+      "output_file_id": "file-KhVs27kLWFhv6HnbuHizah",
+      "error_file_id": null,
+      "request_counts": {
+        "completed": 50,
+        "failed": 0,
+        "total": 50
+      },
+      "shard_index": 2,
+      "request_count": 50
+    },
+    {
+      "polled_at_utc": "2026-04-04T13:42:45.012578+00:00",
+      "batch_id": "batch_69d1147a098081909df4c5dd0bcd7141",
+      "status": "completed",
+      "input_file_id": "file-StrgkQkqCUSKPWdigbo3vx",
+      "output_file_id": "file-7LS7TFZdhidUk8ng1stAtg",
+      "error_file_id": null,
+      "request_counts": {
+        "completed": 50,
+        "failed": 0,
+        "total": 50
+      },
+      "shard_index": 3,
+      "request_count": 50
+    },
+    {
+      "polled_at_utc": "2026-04-04T13:42:46.134671+00:00",
+      "batch_id": "batch_69d1147b51188190b40349fe9ceeb6f0",
+      "status": "completed",
+      "input_file_id": "file-ALXhaRWCwKgGcbNGG7U4Ti",
+      "output_file_id": "file-LfnaLQEHy7eWr334DXyGv6",
+      "error_file_id": null,
+      "request_counts": {
+        "completed": 50,
+        "failed": 0,
+        "total": 50
+      },
+      "shard_index": 4,
+      "request_count": 50
+    }
+  ]
+}

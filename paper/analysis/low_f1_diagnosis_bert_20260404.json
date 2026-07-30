@@ -1,0 +1,313 @@
+{
+  "dataset": {
+    "rows": 10000,
+    "mean_words": 117.2,
+    "median_words": 108.0,
+    "aspect_labels_total": 20019,
+    "aspect_inventory_size": 20,
+    "aspects_per_row_mean": 2.002,
+    "aspects_per_row_distribution": {
+      "1": 3032,
+      "2": 3917,
+      "3": 3051
+    },
+    "duplicate_texts": 0,
+    "top_aspects": [
+      [
+        "exam_fairness",
+        1063
+      ],
+      [
+        "accessibility",
+        1052
+      ],
+      [
+        "organization",
+        1040
+      ],
+      [
+        "workload",
+        1028
+      ],
+      [
+        "overall_experience",
+        1020
+      ],
+      [
+        "grading_transparency",
+        1019
+      ],
+      [
+        "pacing",
+        1018
+      ],
+      [
+        "tooling_usability",
+        1016
+      ]
+    ],
+    "bottom_aspects": [
+      [
+        "relevance",
+        933
+      ],
+      [
+        "feedback_quality",
+        941
+      ],
+      [
+        "practical_application",
+        963
+      ],
+      [
+        "interest",
+        969
+      ],
+      [
+        "peer_interaction",
+        969
+      ],
+      [
+        "assessment_design",
+        979
+      ],
+      [
+        "clarity",
+        988
+      ],
+      [
+        "difficulty",
+        993
+      ]
+    ]
+  },
+  "predictions": {
+    "n_eval_rows": 1000,
+    "gold_positive_rate": 0.0992,
+    "pred_positive_rate": 0.1925,
+    "threshold_summary": {
+      "min": 0.45,
+      "max": 0.9,
+      "mean": 0.635,
+      "thresholds": {
+        "accessibility": 0.5,
+        "assessment_design": 0.7,
+        "clarity": 0.6,
+        "difficulty": 0.5,
+        "exam_fairness": 0.9,
+        "feedback_quality": 0.55,
+        "grading_transparency": 0.85,
+        "interest": 0.5,
+        "lecturer_quality": 0.75,
+        "materials": 0.7,
+        "organization": 0.65,
+        "overall_experience": 0.45,
+        "pacing": 0.65,
+        "peer_interaction": 0.75,
+        "practical_application": 0.75,
+        "prerequisite_fit": 0.5,
+        "relevance": 0.6,
+        "support": 0.45,
+        "tooling_usability": 0.7,
+        "workload": 0.65
+      }
+    },
+    "macro_ap": 0.3459,
+    "macro_auroc": 0.6756,
+    "oracle_k_micro_f1": 0.3347,
+    "oracle_k_samples_f1": 0.3313,
+    "most_overpredicted_aspects": [
+      {
+        "aspect": "interest",
+        "gold_rate": 0.101,
+        "pred_rate": 0.764,
+        "delta": 0.663
+      },
+      {
+        "aspect": "overall_experience",
+        "gold_rate": 0.1,
+        "pred_rate": 0.678,
+        "delta": 0.578
+      },
+      {
+        "aspect": "support",
+        "gold_rate": 0.096,
+        "pred_rate": 0.58,
+        "delta": 0.484
+      },
+      {
+        "aspect": "accessibility",
+        "gold_rate": 0.117,
+        "pred_rate": 0.342,
+        "delta": 0.225
+      },
+      {
+        "aspect": "feedback_quality",
+        "gold_rate": 0.09,
+        "pred_rate": 0.278,
+        "delta": 0.188
+      },
+      {
+        "aspect": "prerequisite_fit",
+        "gold_rate": 0.103,
+        "pred_rate": 0.203,
+        "delta": 0.1
+      },
+      {
+        "aspect": "grading_transparency",
+        "gold_rate": 0.105,
+        "pred_rate": 0.034,
+        "delta": -0.071
+      },
+      {
+        "aspect": "difficulty",
+        "gold_rate": 0.104,
+        "pred_rate": 0.165,
+        "delta": 0.061
+      }
+    ],
+    "weakest_aspects_by_ap": [
+      {
+        "aspect": "feedback_quality",
+        "average_precision": 0.114
+      },
+      {
+        "aspect": "overall_experience",
+        "average_precision": 0.115
+      },
+      {
+        "aspect": "support",
+        "average_precision": 0.1428
+      },
+      {
+        "aspect": "clarity",
+        "average_precision": 0.185
+      },
+      {
+        "aspect": "relevance",
+        "average_precision": 0.1908
+      },
+      {
+        "aspect": "interest",
+        "average_precision": 0.198
+      },
+      {
+        "aspect": "prerequisite_fit",
+        "average_precision": 0.2382
+      },
+      {
+        "aspect": "difficulty",
+        "average_precision": 0.2675
+      }
+    ],
+    "weakest_aspects_by_f1": [
+      {
+        "aspect": "relevance",
+        "f1": 0.1655
+      },
+      {
+        "aspect": "overall_experience",
+        "f1": 0.1722
+      },
+      {
+        "aspect": "feedback_quality",
+        "f1": 0.1739
+      },
+      {
+        "aspect": "interest",
+        "f1": 0.185
+      },
+      {
+        "aspect": "support",
+        "f1": 0.1893
+      },
+      {
+        "aspect": "clarity",
+        "f1": 0.1959
+      },
+      {
+        "aspect": "difficulty",
+        "f1": 0.2454
+      },
+      {
+        "aspect": "prerequisite_fit",
+        "f1": 0.2614
+      }
+    ],
+    "weakest_separation_aspects": [
+      {
+        "aspect": "overall_experience",
+        "positive_mean_prob": 0.4897,
+        "negative_mean_prob": 0.4799,
+        "separation": 0.0098
+      },
+      {
+        "aspect": "feedback_quality",
+        "positive_mean_prob": 0.5084,
+        "negative_mean_prob": 0.4912,
+        "separation": 0.0171
+      },
+      {
+        "aspect": "support",
+        "positive_mean_prob": 0.4708,
+        "negative_mean_prob": 0.4461,
+        "separation": 0.0247
+      },
+      {
+        "aspect": "interest",
+        "positive_mean_prob": 0.5727,
+        "negative_mean_prob": 0.541,
+        "separation": 0.0317
+      },
+      {
+        "aspect": "clarity",
+        "positive_mean_prob": 0.5205,
+        "negative_mean_prob": 0.48,
+        "separation": 0.0405
+      },
+      {
+        "aspect": "relevance",
+        "positive_mean_prob": 0.5317,
+        "negative_mean_prob": 0.4829,
+        "separation": 0.0487
+      },
+      {
+        "aspect": "accessibility",
+        "positive_mean_prob": 0.5165,
+        "negative_mean_prob": 0.4537,
+        "separation": 0.0628
+      },
+      {
+        "aspect": "prerequisite_fit",
+        "positive_mean_prob": 0.5067,
+        "negative_mean_prob": 0.4364,
+        "separation": 0.0703
+      }
+    ]
+  },
+  "faithfulness": {
+    "n_aspect_judgments": 501,
+    "aspect_supported_rate": 0.7705,
+    "aspect_sentiment_match_rate": 0.4232,
+    "weakest_support_aspects": {
+      "relevance": 0.25,
+      "exam_fairness": 0.6154,
+      "practical_application": 0.625,
+      "accessibility": 0.6333,
+      "lecturer_quality": 0.7273,
+      "prerequisite_fit": 0.7308,
+      "grading_transparency": 0.75,
+      "materials": 0.7857
+    },
+    "weakest_sentiment_match_aspects": {
+      "relevance": 0.2,
+      "grading_transparency": 0.25,
+      "pacing": 0.2667,
+      "prerequisite_fit": 0.3077,
+      "tooling_usability": 0.3667,
+      "interest": 0.4,
+      "feedback_quality": 0.4,
+      "accessibility": 0.4
+    }
+  }
+}

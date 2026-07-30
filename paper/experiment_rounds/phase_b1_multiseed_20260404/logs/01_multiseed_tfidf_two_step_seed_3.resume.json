@@ -1,0 +1,59 @@
+{
+  "signature": {
+    "script": "absa_model_comparison.py",
+    "data_path": "E:\\Projects\\CourseABSA\\paper\\generated_datasets\\batch_69cc15c483488190941478aa4e3a976d_generated_reviews.jsonl",
+    "approaches": [
+      "tfidf_two_step"
+    ],
+    "include_openai": false,
+    "openai_model": "gpt-5.2",
+    "openai_variants": [
+      "zero-shot",
+      "few-shot",
+      "few-shot-diverse",
+      "retrieval-few-shot",
+      "two-pass",
+      "aspect-by-aspect"
+    ],
+    "openai_test_limit": 25,
+    "epochs_detection": 3,
+    "epochs_sentiment": 3,
+    "batch_size": 8,
+    "max_len": 192,
+    "lr": 3e-05,
+    "seed": 3
+  },
+  "created_at_utc": "2026-04-04T07:44:10.803548+00:00",
+  "updated_at_utc": "2026-04-04T07:44:18.428607+00:00",
+  "completed": {
+    "approach::tfidf_two_step": {
+      "kind": "approach",
+      "summary": {
+        "approach": "tfidf_two_step",
+        "micro_precision": 0.16227144866385373,
+        "micro_recall": 0.4585196224540487,
+        "micro_f1": 0.2397091286845864,
+        "macro_precision": 0.2719094438524005,
+        "macro_recall": 0.46075878649140056,
+        "macro_f1": 0.28065921926503296,
+        "macro_balanced_accuracy": 0.5982012300305295,
+        "macro_specificity": 0.7356436735696585,
+        "macro_mcc": 0.18762408558873722,
+        "label_accuracy": 0.70725,
+        "subset_accuracy": 0.0,
+        "samples_f1": 0.23401007326007325,
+        "samples_jaccard": 0.1459049422799423,
+        "sentiment_mse_detected": 0.6699907463671603,
+        "elapsed_seconds": 5.6
+      },
+      "per_aspect_path": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_b1_multiseed_20260404\\logs\\01_multiseed_tfidf_two_step_seed_3.resume.tfidf_two_step.per_aspect.csv",
+      "artifact_paths": {
+        "sample_predictions": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_b1_multiseed_20260404\\logs\\01_multiseed_tfidf_two_step_seed_3.resume.tfidf_two_step.sample_predictions.jsonl",
+        "thresholds": "E:\\Projects\\CourseABSA\\paper\\experiment_rounds\\phase_b1_multiseed_20260404\\logs\\01_multiseed_tfidf_two_step_seed_3.resume.tfidf_two_step.thresholds.json"
+      },
+      "completed_at_utc": "2026-04-04T07:44:18.428596+00:00"
+    }
+  },
+  "final_run_dir": "E:\\Projects\\CourseABSA\\paper\\benchmark_outputs\\runs\\benchmark_full_20260404T074418Z",
+  "finalized_at_utc": "2026-04-04T07:44:18.512621+00:00"
+}

@@ -1,0 +1,23 @@
+C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\torch\cuda\__init__.py:65: FutureWarning: The pynvml package is deprecated. Please install nvidia-ml-py instead. If you did not install pynvml directly, please report this to the maintainers of the package that installed pynvml for you.
+  import pynvml  # type: ignore[import]
+[2026-07-03T11:36:45.017049+00:00] Detailed log file -> E:\Projects\Submitted\CourseABSA\paper\benchmark_outputs\logs\real_transfer_20260703T113645Z.log
+[2026-07-03T11:36:45.017149+00:00] Resume checkpoint -> E:\Projects\Submitted\CourseABSA\paper\real_transfer\resume_real_transfer.json
+[2026-07-03T11:36:46.119125+00:00] Loaded pre-mapped real JSONL (5584 rows) from ../external_data/EduRABSA_mapped/edurabsa_all_mapped.jsonl
+[2026-07-03T11:36:46.723418+00:00] [resume] restored bert-base-uncased transfer evaluation from checkpoint
+{
+  "real_jsonl": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\herath_mapped_real_reviews.jsonl",
+  "overlap_summary": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\herath_overlap_summary.csv",
+  "summary": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\synthetic_to_real_transfer_summary.csv",
+  "per_aspect": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\synthetic_to_real_transfer_per_aspect.csv",
+  "run_dir": "E:\\Projects\\Submitted\\CourseABSA\\paper\\real_transfer\\runs\\synthetic_to_real_transfer_20260703T113646Z",
+  "n_real_reviews": 5584,
+  "overlap_aspects": [
+    "accessibility",
+    "exam_fairness",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ]
+}

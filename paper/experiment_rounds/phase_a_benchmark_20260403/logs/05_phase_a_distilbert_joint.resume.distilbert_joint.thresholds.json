@@ -1,0 +1,22 @@
+{
+  "accessibility": 0.35,
+  "assessment_design": 0.7999999999999999,
+  "clarity": 0.44999999999999996,
+  "difficulty": 0.49999999999999994,
+  "exam_fairness": 0.7,
+  "feedback_quality": 0.44999999999999996,
+  "grading_transparency": 0.6,
+  "interest": 0.49999999999999994,
+  "lecturer_quality": 0.7,
+  "materials": 0.7999999999999999,
+  "organization": 0.7999999999999999,
+  "overall_experience": 0.44999999999999996,
+  "pacing": 0.7999999999999999,
+  "peer_interaction": 0.5499999999999999,
+  "practical_application": 0.65,
+  "prerequisite_fit": 0.44999999999999996,
+  "relevance": 0.5499999999999999,
+  "support": 0.5499999999999999,
+  "tooling_usability": 0.7,
+  "workload": 0.65
+}

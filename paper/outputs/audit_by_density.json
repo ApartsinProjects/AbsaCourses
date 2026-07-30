@@ -1,0 +1,112 @@
+{
+  "gpt-4.1-mini": {
+    "bins": [
+      {
+        "density_lo": 0.01,
+        "density_hi": 0.0357,
+        "n": 469,
+        "kappa": 0.513,
+        "mcc": 0.521,
+        "bal_acc": 0.762,
+        "recall": 0.702,
+        "specificity": 0.821
+      },
+      {
+        "density_lo": 0.0357,
+        "density_hi": 0.0541,
+        "n": 515,
+        "kappa": 0.603,
+        "mcc": 0.613,
+        "bal_acc": 0.807,
+        "recall": 0.736,
+        "specificity": 0.879
+      },
+      {
+        "density_lo": 0.0541,
+        "density_hi": 0.0741,
+        "n": 460,
+        "kappa": 0.629,
+        "mcc": 0.641,
+        "bal_acc": 0.822,
+        "recall": 0.748,
+        "specificity": 0.896
+      },
+      {
+        "density_lo": 0.0741,
+        "density_hi": 0.1111,
+        "n": 500,
+        "kappa": 0.485,
+        "mcc": 0.512,
+        "bal_acc": 0.753,
+        "recall": 0.621,
+        "specificity": 0.885
+      },
+      {
+        "density_lo": 0.1111,
+        "density_hi": 0.4,
+        "n": 538,
+        "kappa": 0.559,
+        "mcc": 0.584,
+        "bal_acc": 0.79,
+        "recall": 0.669,
+        "specificity": 0.911
+      }
+    ],
+    "spearman_density_kappa": -0.1
+  },
+  "gemini-2.5-flash": {
+    "bins": [
+      {
+        "density_lo": 0.01,
+        "density_hi": 0.0357,
+        "n": 469,
+        "kappa": 0.57,
+        "mcc": 0.574,
+        "bal_acc": 0.789,
+        "recall": 0.752,
+        "specificity": 0.826
+      },
+      {
+        "density_lo": 0.0357,
+        "density_hi": 0.0541,
+        "n": 515,
+        "kappa": 0.698,
+        "mcc": 0.706,
+        "bal_acc": 0.855,
+        "recall": 0.796,
+        "specificity": 0.913
+      },
+      {
+        "density_lo": 0.0541,
+        "density_hi": 0.0741,
+        "n": 460,
+        "kappa": 0.705,
+        "mcc": 0.711,
+        "bal_acc": 0.858,
+        "recall": 0.81,
+        "specificity": 0.906
+      },
+      {
+        "density_lo": 0.0741,
+        "density_hi": 0.1111,
+        "n": 500,
+        "kappa": 0.517,
+        "mcc": 0.536,
+        "bal_acc": 0.767,
+        "recall": 0.663,
+        "specificity": 0.872
+      },
+      {
+        "density_lo": 0.1111,
+        "density_hi": 0.4,
+        "n": 538,
+        "kappa": 0.628,
+        "mcc": 0.64,
+        "bal_acc": 0.822,
+        "recall": 0.745,
+        "specificity": 0.898
+      }
+    ],
+    "spearman_density_kappa": -0.1
+  }
+}

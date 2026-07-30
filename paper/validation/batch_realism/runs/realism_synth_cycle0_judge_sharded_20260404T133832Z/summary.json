@@ -1,0 +1,31 @@
+{
+  "run_dir": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\realism_synth_cycle0_judge_sharded_20260404T133832Z",
+  "n_reviews": 200,
+  "n_labeled_synthetic": 195,
+  "synthetic_labeled_synthetic_rate": 0.975,
+  "synthetic_labeled_real_rate": 0.025,
+  "prediction_label_entropy_bits": 0.1687,
+  "parse_failures": 4,
+  "top_synthetic_detection_justifications": [
+    "The review is unusually generic and polished, relying on broad course-review tropes rather than concrete details about CS-6200. It also ends abruptly at \"Feedback,\" which suggests truncation or generated/incomplete text rather than a naturally written review.",
+    "The review reads unusually polished and uniformly balanced in a generic way, with broad course-evaluation language but few specific, lived details about assignments or class experiences. It also ends abruptly at \"Still,\" which makes it feel artificially generated or stitched together rather than like a natural student review.",
+    "The review reads unusually polished and uniformly structured, with broad generic points but few concrete course-specific details. It also has AI-like phrasing such as balanced pros/cons throughout, and it ends abruptly mid-sentence, which makes it look generated or incomplete rather than a natural student review.",
+    "The review ends abruptly mid-sentence, which strongly suggests generated or artificially truncated text. It also reads as broadly polished and generic, with many vague complaints but few specific, grounded details beyond one textbook-sounding example.",
+    "The review ends abruptly mid-sentence, which strongly suggests it is incomplete or machine-generated. It also uses polished but generic phrasing with balanced sentiments and little concrete, personal detail beyond broad course structure.",
+    "The review feels unusually polished and rubric-like, touching multiple evaluation categories in a balanced way without many concrete, personal specifics. Phrases like \"dust off rusty gears\" and \"real-world traces and protocol abstractions\" read more like generated prose than natural student feedback, and the overall wording is generic despite sounding detailed.",
+    "The review reads unusually polished and uniformly balanced across many course aspects, with generic phrasing rather than concrete personal details. It also ends abruptly mid-thought (\"a bit formal in places\"), which strongly suggests generated or stitched text.",
+    "The review reads unusually generic and polished, with vague course-specific details (e.g., 'schema work tasks,' 'reports') instead of concrete experiences. It also ends abruptly with a trailing comma, which suggests generated or stitched text rather than a naturally finished review.",
+    "The review reads like a checklist of course-evaluation dimensions rather than a natural student account: it systematically covers tooling, teaching clarity, schedule fit, feedback speed, administration, communication, collaboration, and assessments in generic terms. It is also unusually polished and balanced, with little concrete course-specific detail beyond the course number/name and professor name.",
+    "The review is just \"nan,\" which appears to be a missing-data placeholder rather than an actual student-written course review.",
+    "The review reads unusually polished and generalized, with repeated high-level complaints but few concrete course-specific details beyond the course code. It also has a very balanced, formulaic structure and ends abruptly mid-sentence, which strongly suggests generated or artificially stitched text.",
+    "The review is unusually polished and generic, with balanced pros/cons that read templated rather than experiential. It lacks concrete course-specific details despite naming the course, and the abrupt cutoff mid-sentence strongly suggests generated or stitched text.",
+    "The review reads formulaic and systematically covers many course-evaluation dimensions in a generic way, with unusually even-handed phrasing and little concrete detail. It also ends abruptly mid-sentence (\"which matched\"), suggesting generated or stitched text rather than a naturally written complete review.",
+    "The review is just \"nan,\" which appears to be a missing-value placeholder rather than an actual written course review.",
+    "The review reads unusually polished and generic, with repetitive phrasing (for example, repeating the idea of staying up late before deadlines), broad claims that could fit many courses, and an odd meta-style comment about the 'mix of formal and casual phrasing' that sounds more like generated text than a natural student review.",
+    "The review reads overly polished and generic, with broad course-quality phrases but few concrete, personal details about CS-6250 specifically. It also ends abruptly mid-sentence ('Lectures, lab'), which suggests generated or artificially truncated text rather than a naturally written complete review.",
+    "The review reads unusually polished and generic, with broad statements that could fit many courses but very few concrete details about assignments, exams, or specific network topics. It also ends abruptly ('That worked'), which makes it look incomplete or machine-generated rather than like a naturally finished student review.",
+    "The review reads oddly generic despite naming a specific course, with awkward phrasing like \"interface between the lectures and the grading\" and \"learn things in this space.\" It also ends abruptly mid-sentence (\"The labs and the network\"), which makes it feel incomplete or machine-generated rather than a naturally finished",
+    "The review is just \"nan,\" which looks like a missing-value placeholder rather than an actual student-written course review.",
+    "The review reads formulaic and over-structured, with section-like headings embedded in a personal paragraph and broadly applicable comments rather than concrete course-specific details. The tone is uniformly polished and generalized, and the abrupt trailing 'Em' suggests generation or truncation artifacts."
+  ]
+}

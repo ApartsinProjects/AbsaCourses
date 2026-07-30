@@ -1,0 +1,9 @@
+{
+  "updated_at_utc": "2026-04-04T13:17:23.190485+00:00",
+  "stage": "prepare_real_baseline",
+  "status": "completed",
+  "n_rows": 24,
+  "request_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\smoke_realism_real_baseline_20260404T131718Z\\requests.jsonl",
+  "manifest_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\smoke_realism_real_baseline_20260404T131718Z\\manifest.csv",
+  "reviews_file": "E:\\Projects\\CourseABSA\\paper\\validation\\batch_realism\\runs\\smoke_realism_real_baseline_20260404T131718Z\\real_reviews.csv"
+}
