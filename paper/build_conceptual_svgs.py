@@ -13,12 +13,12 @@ def write(path: Path, text: str) -> None:
 
 def synthetic_generation_svg() -> str:
     return r"""
-<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="760" viewBox="0 0 1600 760" role="img" aria-label="Synthetic educational review generation pipeline">
+<svg xmlns="http://www.w3.org/2000/svg" width="1600" height="668" viewBox="0 0 1600 668" role="img" aria-label="Synthetic educational review generation pipeline">
   <defs>
     <style>
       .bg { fill: #fcfbf7; }
       .frame { fill: #fffefe; stroke: #d8d3c9; stroke-width: 1.2; }
-      .label { font: 700 29px Georgia, "Times New Roman", serif; fill: #16324a; }
+      .label { font: 700 32px Georgia, "Times New Roman", serif; fill: #16324a; }
       .body { font: 17px Georgia, "Times New Roman", serif; fill: #31414f; }
       .chip { font: 700 13px Arial, sans-serif; fill: #9a5a30; letter-spacing: 0.09em; }
       .flow { stroke: #6a7886; stroke-width: 4; fill: none; marker-end: url(#arrow); stroke-linejoin: round; }
@@ -40,42 +40,42 @@ def synthetic_generation_svg() -> str:
       <feDropShadow dx="0" dy="4" stdDeviation="7" flood-color="#d9d3ca" flood-opacity="0.26"/>
     </filter>
   </defs>
-  <rect class="bg" width="1600" height="760"/>
-  <rect x="34" y="34" width="1532" height="692" class="frame"/>
+  <rect class="bg" width="1600" height="668"/>
+  <rect x="34" y="34" width="1532" height="600" class="frame"/>
 
   <!-- input stream 1: target labels -->
-  <rect x="105" y="170" width="340" height="130" rx="22" class="panelA" filter="url(#shadow)"/>
-  <text x="275" y="227" class="label center">Target labels</text>
-  <text x="275" y="261" class="body center">1-3 aspect sentiments</text>
+  <rect x="105" y="74" width="340" height="130" rx="22" class="panelA" filter="url(#shadow)"/>
+  <text x="275" y="131" class="label center">Target labels</text>
+  <text x="275" y="165" class="body center">1-3 aspect sentiments</text>
 
   <!-- input stream 2: context state -->
-  <rect x="105" y="400" width="340" height="130" rx="22" class="panelB" filter="url(#shadow)"/>
-  <text x="275" y="457" class="label center">Context state</text>
-  <text x="275" y="491" class="body center">course, student, style</text>
+  <rect x="105" y="304" width="340" height="130" rx="22" class="panelB" filter="url(#shadow)"/>
+  <text x="275" y="361" class="label center">Context state</text>
+  <text x="275" y="395" class="body center">course, student, style</text>
 
   <!-- merge: stabilized prompt -->
-  <rect x="630" y="285" width="340" height="130" rx="22" class="panelC" filter="url(#shadow)"/>
-  <text x="800" y="342" class="label center">Stabilized prompt</text>
-  <text x="800" y="376" class="body center">labels + context + realism rule</text>
+  <rect x="630" y="189" width="340" height="130" rx="22" class="panelC" filter="url(#shadow)"/>
+  <text x="800" y="246" class="label center">Stabilized prompt</text>
+  <text x="800" y="280" class="body center">labels + context + realism rule</text>
 
   <!-- output: benchmark record -->
-  <rect x="1135" y="285" width="340" height="130" rx="22" class="panelD" filter="url(#shadow)"/>
-  <text x="1305" y="342" class="label center">Benchmark record</text>
-  <text x="1305" y="376" class="body center">review + labels + attributes</text>
+  <rect x="1135" y="189" width="340" height="130" rx="22" class="panelD" filter="url(#shadow)"/>
+  <text x="1305" y="246" class="label center">Benchmark record</text>
+  <text x="1305" y="280" class="body center">review + labels + attributes</text>
 
   <!-- feedback: inter-cycle realism update -->
-  <rect x="630" y="560" width="340" height="130" rx="22" class="fbbox"/>
-  <text x="800" y="617" class="label center">Inter-cycle update</text>
-  <text x="800" y="651" class="body center">realism loop revises prompt</text>
+  <rect x="630" y="464" width="340" height="130" rx="22" class="fbbox"/>
+  <text x="800" y="521" class="label center">Inter-cycle update</text>
+  <text x="800" y="555" class="body center">realism loop revises prompt</text>
 
   <!-- orthogonal comb-merge of the two input streams into the prompt -->
-  <path class="flow" d="M445 235 L545 235 L545 320 L626 320"/>
-  <path class="flow" d="M445 465 L545 465 L545 380 L626 380"/>
+  <path class="flow" d="M445 139 L545 139 L545 224 L626 224"/>
+  <path class="flow" d="M445 369 L545 369 L545 284 L626 284"/>
   <!-- prompt -> record -->
-  <path class="flow" d="M970 350 L1131 350"/>
+  <path class="flow" d="M970 254 L1131 254"/>
   <!-- feedback loop (dashed): record -> update -> prompt -->
-  <path class="fb" d="M1305 415 L1305 625 L974 625"/>
-  <path class="fb" d="M800 560 L800 419"/>
+  <path class="fb" d="M1305 319 L1305 529 L974 529"/>
+  <path class="fb" d="M800 464 L800 323"/>
 </svg>
 """
 

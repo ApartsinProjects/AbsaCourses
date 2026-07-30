@@ -12,9 +12,13 @@ ROOT = Path(__file__).resolve().parents[1]
 FIG = ROOT / "paper/outputs/figures"
 NAVY = "#14385c"
 TERRA = "#c1663f"
+# Embed glyph outlines as vector paths (svg.fonttype="path") so no downstream
+# SVG renderer can substitute a decorative fallback for the declared DejaVu Sans
+# family. This keeps numerals, tick labels, and axis text as a clean, standard
+# sans-serif everywhere (e.g. "Micro-F1" no longer renders as "Micro-FI").
 plt.rcParams.update({
     "font.size": 15, "font.family": "DejaVu Sans", "axes.edgecolor": "#5a626c",
-    "axes.linewidth": 1.0, "svg.fonttype": "none",
+    "axes.linewidth": 1.0, "svg.fonttype": "path",
 })
 
 
