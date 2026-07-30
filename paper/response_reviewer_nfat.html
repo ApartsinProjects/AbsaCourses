@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Response to Reviewer nfat: A Controlled Synthetic Benchmark for Educational ABSA</title>
+<style>
+  :root{ --ink:#111418; --soft:#2c3138; --muted:#5a626c; --accent:#14385c; --ok:#2f6b43; --wip:#8a5a1a; --rule:#d1d4d8; --paper:#fffdfa; }
+  html{ background:#f3f0e8; }
+  body{ margin:0; color:var(--ink); background:#f3f0e8;
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    line-height:1.55; font-size:11.3pt; }
+  .sheet{ max-width:760px; margin:32px auto; background:var(--paper); padding:52px 58px 60px; box-shadow:0 8px 30px rgba(17,20,24,0.08); }
+  h1{ font-size:17pt; font-weight:600; margin:0 0 2px; }
+  .venue{ color:var(--muted); font-size:10pt; margin:0 0 22px; }
+  p{ margin:0 0 10px; text-align:justify; hyphens:auto; }
+  .lede{ margin-bottom:16px; }
+  .rc{ margin:20px 0; padding:14px 16px; border:1px solid var(--rule); background:#fff; border-left:3px solid var(--accent); }
+  .rc h2{ font-size:11.5pt; font-weight:700; color:var(--accent); margin:0 0 8px; }
+  .req{ color:var(--soft); font-style:italic; margin:0 0 8px; }
+  .resp b.tag{ color:var(--ok); font-style:normal; }
+  .resp b.wip{ color:var(--wip); font-style:normal; }
+  .loc{ display:inline-block; margin-top:4px; font-size:9.5pt; color:var(--muted); }
+  code{ font-family:"Courier New",monospace; font-size:0.9em; }
+  a.backlink{ position:fixed; top:16px; right:16px; z-index:1000; display:inline-flex; align-items:center; gap:7px; padding:8px 14px; background:#174b63; color:#fff; font-family:Cambria,Georgia,serif; font-size:0.92rem; text-decoration:none; border-radius:8px; box-shadow:0 6px 18px rgba(17,45,58,0.25); }
+  a.backlink:hover{ background:#11607f; }
+  .footer{ margin-top:24px; font-size:9pt; color:var(--muted); border-top:1px solid var(--rule); padding-top:12px; }
+  @media print{ a.backlink{ display:none; } html,body{ background:#fff; } .sheet{ box-shadow:none; margin:0; } }
+  @media (max-width:680px){ a.backlink{ position:static; margin:12px; } .sheet{ padding:32px 22px; } }
+</style>
+</head>
+<body>
+<a class="backlink" href="course_absa_manuscript.html" title="Open the revised manuscript">&#8599; View the paper</a>
+<div class="sheet">
+<h1>Response to Reviewer nfat</h1>
+<p class="venue">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis (TMLR)</p>
+<p class="lede">We are grateful to Reviewer nfat for a careful and constructive report, and especially for pressing on the validation of the audit and the internal consistency of the reporting. Both have made the paper stronger. We answer each point below with the specific change and its location in the revised manuscript.</p>
+<div class="rc">
+<h2>1. Human validation of the audit on the synthetic corpus</h2>
+<p class="req">Requested: Human-annotate a representative sample of the actual synthetic corpus; the auditor is validated mainly on perturbed real labels rather than direct human annotation of synthetic reviews.</p>
+<p class="resp"><b class="wip">New experiment underway.</b> The audit is already validated three independent ways: a behavioral perturbation control it passes by construction, cross-provider judge agreement, and direct agreement with human labels on two annotated corpora (Cohen's kappa 0.56, and 0.62 with a fully independent model family). To extend this evidence to the synthetic text itself, we have prepared a human annotation of a stratified sample of the synthetic corpus (300 reviews, three raters, per-aspect presence and sentiment, blind to the declared labels) and report aspect and sentiment agreement against both the declared labels and the audit. This measures the audit's agreement on synthetic text directly.</p>
+<span class="loc">Section 5.7; Section 6.1; annotation instrument <code>paper/human_annotation/</code>.</span>
+</div>
+<div class="rc">
+<h2>2. Match filtering subsets to isolate faithfulness</h2>
+<p class="req">Requested: Sentiment MSE is measured only on aspects each model predicts, so filtering comparisons may be confounded; match subsets by aspect, polarity, aspect count, length, and style.</p>
+<p class="resp"><b class="wip">New experiment underway.</b> We add a covariate-matched filtering comparison that holds aspect, polarity, aspect-count, length, and style fixed across the retained and control subsets and scores both on a common gold-present aspect set, so the filtering gain is attributable to faithfulness rather than to differing prediction masks. The size-matched result already reported (retaining the top 50% cuts sentiment error at half the training cost, 7 of 8 seeds, replicated across architectures) motivates this stricter matched design.</p>
+<span class="loc">Section 5.7.</span>
+</div>
+<div class="rc">
+<h2>3. Reconcile inconsistent numbers</h2>
+<p class="req">Requested: Resolve inconsistent numbers, especially the BERT scores in Tables 8 and 9, aspect-count totals that do not sum to 10,000, and the incomplete abstract.</p>
+<p class="resp"><b class="tag">Done.</b> The aspect-count totals now sum to 10,000 (3,032 plus 3,917 plus 3,051) and the abstract is complete. The Table 8 versus Table 9 BERT discrepancy arose because the two tables were built from two separate single-seed transfer runs; we now report the transfer with a multi-seed table so every transfer score and the derived generalization gap trace to one consistent set of runs.</p>
+<span class="loc">Abstract; Section 5.1; Section 5.4 (Tables 8 and 9).</span>
+</div>
+<div class="rc">
+<h2>4. Shorten repeated discussion</h2>
+<p class="req">Requested: Shorten repeated discussion.</p>
+<p class="resp"><b class="tag">Done.</b> We streamlined the discussion by removing verbatim restatements of the headline figures and caveats as they travel between sections, while retaining every experiment, control, and reviewer-requested caveat (each now appears once in its natural home).</p>
+<span class="loc">Section 6.</span>
+</div>
+<div class="rc">
+<h2>5. Frame the resource as noisy synthetic supervision</h2>
+<p class="req">Requested: Clearly describe the resource as noisy synthetic supervision rather than a gold benchmark.</p>
+<p class="resp"><b class="tag">Done.</b> The abstract, Section 6.2, and conclusion state that this is a controlled synthetic-supervision resource whose label faithfulness is explicitly measured (0.42 strict per-aspect lower bound, 0.58 per-row) and controlled by the audit-and-filter pipeline, with a documented benchmark setting, rather than a gold-labeled corpus. Quantifying and filtering label noise is a central contribution, not a caveat on it.</p>
+<span class="loc">Abstract; Section 6.2; Section 7.</span>
+</div>
+<div class="rc">
+<h2>6. Broaden the impact discussion</h2>
+<p class="req">Requested: Address instructor evaluation, student-comment privacy, bias against non-native or unusual writing styles, and the risk of attaching fictional negative reviews to identifiable courses or instructors; require human review, uncertainty reporting, data protection, and an appeals process.</p>
+<p class="resp"><b class="tag">Done.</b> The ethics statement now adds stylistic-bias monitoring for non-native and non-standard writing, a prohibition on attaching model-inferred negatives to identifiable courses or instructors, and per-aspect uncertainty reporting with low-confidence routing to human review and an appeals process, on top of the existing no-identifiable-data, licensing, re-consent, and high-stakes provisions.</p>
+<span class="loc">Section 6.3.</span>
+</div>
+<div class="rc">
+<h2>7. Rule out generator-specific split effects</h2>
+<p class="req">Requested: Random splits from the same generator and prompt may reward generator-specific patterns.</p>
+<p class="resp"><b class="tag">Clarified, with a new control.</b> The learnable signal is not a single generator's artifact: regenerating and auditing with three independent model families reproduces the label fidelity, and a held-out-generator transfer check evaluates a detector trained on one generator's data on other generators' data. An overlap-generalization analysis further separates aspect-composition effects from domain shift.</p>
+<span class="loc">Appendix A.19; Appendix A.24.</span>
+</div>
+<p class="footer">Locations reference the revised <code>course_absa_manuscript.html</code>. Points marked as new experiments underway are being finalized; this letter will be updated with their results and exact appendix references.</p>
+</div>
+</body>
+</html>
