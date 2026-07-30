@@ -5,8 +5,8 @@ from __future__ import annotations
 import csv, random
 from pathlib import Path
 
-LONG_CSV = Path(r"E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\outputs\tables\phase_e_long.csv")
-FIG_DIR = Path(r"E:\Claude\CourseABSA\hopeful-kowalevski-04ee10\paper\outputs\figures")
+LONG_CSV = Path(__file__).resolve().parent / "paper" / "outputs" / "tables" / "phase_e_long.csv"
+FIG_DIR = Path(__file__).resolve().parent / "paper" / "outputs" / "figures"
 BUCKETS = ["top25","top50","full","bot25","random_5k"]
 DISPLAY = {"top25":"top-25%","top50":"top-50%","full":"full","bot25":"bot-25%","random_5k":"random-5k"}
 COLORS = {"top25":"#2c7fb8","top50":"#1a5b8a","full":"#7fcdbb","bot25":"#d7191c","random_5k":"#fdae61"}
@@ -26,6 +26,7 @@ def main():
     import matplotlib
     matplotlib.use("Agg")
     import matplotlib.pyplot as plt
+    plt.rcParams.update({"figure.facecolor":"white","axes.facecolor":"white","savefig.facecolor":"white","axes.grid":True,"grid.color":"#d9d9d9"})
 
     # Load long-format
     by = {}
@@ -34,7 +35,7 @@ def main():
             key = (r["arch"], r["target"], r["bucket"])
             by.setdefault(key, []).append(float(r["sentiment_mse_detected"]))
 
-    fig, axes = plt.subplots(2, 2, figsize=(11, 7.5))
+    fig, axes = plt.subplots(2, 2, figsize=(13.5, 9.5))
     panel_title = {
         ("bert-base-uncased","herath"):    "A. BERT-base on Herath transfer",
         ("bert-base-uncased","edurabsa"):  "B. BERT-base on EduRABSA transfer",
@@ -65,15 +66,16 @@ def main():
         ax.bar(labels, means, yerr=[err_lo, err_hi], color=colors, capsize=4)
         for x, (m, n) in enumerate(zip(means, ns)):
             if m > 0:
-                ax.text(x, m + 0.015, f"{m:.3f}", ha="center", va="bottom", fontsize=8.5)
+                ax.text(x, m + 0.015, f"{m:.3f}", ha="center", va="bottom", fontsize=11)
         full_m = means[BUCKETS.index("full")]
         if full_m > 0:
-            ax.axhline(full_m, color="#666", linestyle="--", linewidth=0.8)
+            ax.axhline(full_m, color="#666", linestyle="--", linewidth=1.0)
+            ax.text(len(BUCKETS)-0.5, full_m, " full corpus", color="#666", fontsize=10, va="bottom", ha="right")
         n_display = max(ns) if any(n > 0 for n in ns) else 0
-        ax.set_title(f"{panel_title[(arch,target)]}  (n={n_display} seeds)", fontsize=10)
+        ax.set_title(f"{panel_title[(arch,target)]}  (n={n_display} seeds)", fontsize=13)
         ax.set_ylabel("Sentiment MSE\n(lower = better)", fontsize=9)
         ax.set_ylim(0, max(0.95, max(ci_hi) + 0.05))
-        plt.setp(ax.get_xticklabels(), rotation=18, ha='right', fontsize=8.5)
+        plt.setp(ax.get_xticklabels(), rotation=18, ha='right', fontsize=12)
     fig.suptitle("Faithfulness-aware filtering reduces Herath and EduRABSA sentiment-polarity error\n(paired 95% bootstrap CI, two architectures × two transfer targets)", fontsize=11)
     plt.tight_layout(rect=[0, 0, 1, 0.96])
     for fmt in ("svg","png"):
