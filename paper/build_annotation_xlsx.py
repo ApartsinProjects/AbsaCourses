@@ -75,7 +75,7 @@ def write_rater_workbook(items, path, rater):
     ws = wb.active
     ws.title = "annotation"
     header = ["item_id", "review_text", "aspect_to_judge",
-              "aspect_present? (Yes/No)", "sentiment_if_present", "other_aspects_you_notice", "notes"]
+              "aspect_present? (Yes/No)", "sentiment_if_present"]
     ws.append(header)
     hfill = PatternFill("solid", fgColor="14385C")
     for c in range(1, len(header) + 1):
@@ -84,7 +84,7 @@ def write_rater_workbook(items, path, rater):
         cell.fill = hfill
         cell.alignment = Alignment(wrap_text=True, vertical="center")
     for it in items:
-        ws.append([it["item_id"], it["review_text"], it["aspect"], "", "", "", ""])
+        ws.append([it["item_id"], it["review_text"], it["aspect"], "", ""])
     # dropdowns
     n = len(items) + 1
     dv_present = DataValidation(type="list", formula1='"Yes,No"', allow_blank=True, showDropDown=False)
@@ -94,7 +94,7 @@ def write_rater_workbook(items, path, rater):
     dv_present.add(f"D2:D{n}")
     dv_sent.add(f"E2:E{n}")
     # widths + wrap
-    widths = {"A": 20, "B": 82, "C": 22, "D": 20, "E": 20, "F": 26, "G": 26}
+    widths = {"A": 20, "B": 82, "C": 22, "D": 20, "E": 20}
     for col, w in widths.items():
         ws.column_dimensions[col].width = w
     for row in ws.iter_rows(min_row=2, max_row=n):
@@ -111,8 +111,6 @@ def write_rater_workbook(items, path, rater):
         "2) sentiment_if_present -> if present, the student's sentiment toward that aspect",
         "   (positive / neutral / negative). Use 'unsure' only if genuinely ambiguous.",
         "   Leave blank if aspect_present? is No.",
-        "3) other_aspects_you_notice -> optional: list any aspect clearly present that is NOT the one asked.",
-        "4) notes -> optional.",
         "",
         "Judge only from the review text. You are NOT shown the intended label; that is deliberate.",
         "Use the dropdowns in columns D and E. Work top to bottom; the order is shuffled for you.",
