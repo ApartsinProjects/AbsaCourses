@@ -1,0 +1,346 @@
+{
+  "canonical_run": "benchmark_full_20260403T173714Z / bert-base-uncased",
+  "n_reviews_synthetic": 1000,
+  "n_reviews_herath": 1680,
+  "detection_synthetic_top_missed_by_fn_rate": [
+    {
+      "aspect": "peer_interaction",
+      "fn": 98,
+      "support": 107,
+      "fn_rate": 0.9159
+    },
+    {
+      "aspect": "prerequisite_fit",
+      "fn": 83,
+      "support": 97,
+      "fn_rate": 0.8557
+    },
+    {
+      "aspect": "difficulty",
+      "fn": 79,
+      "support": 95,
+      "fn_rate": 0.8316
+    },
+    {
+      "aspect": "practical_application",
+      "fn": 69,
+      "support": 96,
+      "fn_rate": 0.7188
+    },
+    {
+      "aspect": "organization",
+      "fn": 73,
+      "support": 106,
+      "fn_rate": 0.6887
+    },
+    {
+      "aspect": "materials",
+      "fn": 62,
+      "support": 94,
+      "fn_rate": 0.6596
+    },
+    {
+      "aspect": "assessment_design",
+      "fn": 71,
+      "support": 109,
+      "fn_rate": 0.6514
+    },
+    {
+      "aspect": "lecturer_quality",
+      "fn": 63,
+      "support": 101,
+      "fn_rate": 0.6238
+    }
+  ],
+  "detection_synthetic_top_overpredicted_by_fp": [
+    {
+      "aspect": "overall_experience",
+      "fp": 660,
+      "pred_pos": 755,
+      "fp_rate": 0.7475
+    },
+    {
+      "aspect": "clarity",
+      "fp": 538,
+      "pred_pos": 609,
+      "fp_rate": 0.5971
+    },
+    {
+      "aspect": "support",
+      "fp": 529,
+      "pred_pos": 591,
+      "fp_rate": 0.5852
+    },
+    {
+      "aspect": "feedback_quality",
+      "fp": 525,
+      "pred_pos": 591,
+      "fp_rate": 0.5719
+    },
+    {
+      "aspect": "interest",
+      "fp": 351,
+      "pred_pos": 395,
+      "fp_rate": 0.3857
+    },
+    {
+      "aspect": "accessibility",
+      "fp": 304,
+      "pred_pos": 349,
+      "fp_rate": 0.3348
+    },
+    {
+      "aspect": "relevance",
+      "fp": 252,
+      "pred_pos": 303,
+      "fp_rate": 0.2816
+    },
+    {
+      "aspect": "lecturer_quality",
+      "fp": 57,
+      "pred_pos": 95,
+      "fp_rate": 0.0634
+    }
+  ],
+  "detection_synthetic_worst_error_rate": [
+    {
+      "aspect": "overall_experience",
+      "error_rate": 0.682,
+      "fp": 660,
+      "fn": 22
+    },
+    {
+      "aspect": "clarity",
+      "error_rate": 0.566,
+      "fp": 538,
+      "fn": 28
+    },
+    {
+      "aspect": "support",
+      "error_rate": 0.563,
+      "fp": 529,
+      "fn": 34
+    },
+    {
+      "aspect": "feedback_quality",
+      "error_rate": 0.541,
+      "fp": 525,
+      "fn": 16
+    },
+    {
+      "aspect": "interest",
+      "error_rate": 0.397,
+      "fp": 351,
+      "fn": 46
+    },
+    {
+      "aspect": "accessibility",
+      "error_rate": 0.351,
+      "fp": 304,
+      "fn": 47
+    },
+    {
+      "aspect": "relevance",
+      "error_rate": 0.306,
+      "fp": 252,
+      "fn": 54
+    },
+    {
+      "aspect": "lecturer_quality",
+      "error_rate": 0.12,
+      "fp": 57,
+      "fn": 63
+    }
+  ],
+  "top_substitution_pairs_synthetic": [
+    {
+      "gold_missed": "peer_interaction",
+      "pred_spurious": "overall_experience",
+      "count": 69
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "pred_spurious": "clarity",
+      "count": 66
+    },
+    {
+      "gold_missed": "prerequisite_fit",
+      "pred_spurious": "overall_experience",
+      "count": 60
+    },
+    {
+      "gold_missed": "organization",
+      "pred_spurious": "overall_experience",
+      "count": 60
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "pred_spurious": "feedback_quality",
+      "count": 60
+    },
+    {
+      "gold_missed": "peer_interaction",
+      "pred_spurious": "support",
+      "count": 59
+    },
+    {
+      "gold_missed": "assessment_design",
+      "pred_spurious": "overall_experience",
+      "count": 56
+    },
+    {
+      "gold_missed": "organization",
+      "pred_spurious": "support",
+      "count": 52
+    },
+    {
+      "gold_missed": "practical_application",
+      "pred_spurious": "overall_experience",
+      "count": 52
+    },
+    {
+      "gold_missed": "organization",
+      "pred_spurious": "clarity",
+      "count": 51
+    },
+    {
+      "gold_missed": "difficulty",
+      "pred_spurious": "overall_experience",
+      "count": 51
+    },
+    {
+      "gold_missed": "assessment_design",
+      "pred_spurious": "feedback_quality",
+      "count": 50
+    }
+  ],
+  "sentiment_note": "Polarity derived by binning the continuous regression head at +/-0.5 (midpoint boundary between gold classes -1/0/+1). The dump's predicted_aspects string label is a display artifact that collapses to 'neutral' and is not used here.",
+  "sentiment_binning_threshold": 0.5,
+  "sentiment_confusion_synthetic": {
+    "negative": {
+      "negative": 131,
+      "neutral": 178,
+      "positive": 10
+    },
+    "neutral": {
+      "neutral": 155,
+      "positive": 19,
+      "negative": 28
+    },
+    "positive": {
+      "neutral": 209,
+      "positive": 148,
+      "negative": 7
+    }
+  },
+  "sentiment_accuracy_synthetic": 0.4904,
+  "sentiment_confusion_herath": {
+    "negative": {
+      "neutral": 190,
+      "positive": 56,
+      "negative": 26
+    },
+    "neutral": {
+      "neutral": 16,
+      "positive": 17
+    },
+    "positive": {
+      "positive": 665,
+      "neutral": 104,
+      "negative": 2
+    }
+  },
+  "sentiment_accuracy_herath": 0.6571,
+  "herath_top_missed_by_fn": [
+    {
+      "aspect": "organization",
+      "fn": 19,
+      "support": 19,
+      "fn_rate": 1.0
+    },
+    {
+      "aspect": "workload",
+      "fn": 138,
+      "support": 140,
+      "fn_rate": 0.9857
+    },
+    {
+      "aspect": "overall_experience",
+      "fn": 1402,
+      "support": 1480,
+      "fn_rate": 0.9473
+    },
+    {
+      "aspect": "assessment_design",
+      "fn": 308,
+      "support": 358,
+      "fn_rate": 0.8603
+    },
+    {
+      "aspect": "materials",
+      "fn": 302,
+      "support": 363,
+      "fn_rate": 0.832
+    },
+    {
+      "aspect": "difficulty",
+      "fn": 225,
+      "support": 288,
+      "fn_rate": 0.7812
+    },
+    {
+      "aspect": "lecturer_quality",
+      "fn": 480,
+      "support": 792,
+      "fn_rate": 0.6061
+    },
+    {
+      "aspect": "grading_transparency",
+      "fn": 27,
+      "support": 47,
+      "fn_rate": 0.5745
+    }
+  ],
+  "herath_top_overpredicted_by_fp": [
+    {
+      "aspect": "support",
+      "fp": 1048,
+      "fp_rate": 0.6633
+    },
+    {
+      "aspect": "relevance",
+      "fp": 524,
+      "fp_rate": 0.3522
+    },
+    {
+      "aspect": "clarity",
+      "fp": 509,
+      "fp_rate": 0.4193
+    },
+    {
+      "aspect": "difficulty",
+      "fp": 173,
+      "fp_rate": 0.1243
+    },
+    {
+      "aspect": "organization",
+      "fp": 61,
+      "fp_rate": 0.0367
+    },
+    {
+      "aspect": "assessment_design",
+      "fp": 57,
+      "fp_rate": 0.0431
+    },
+    {
+      "aspect": "lecturer_quality",
+      "fp": 52,
+      "fp_rate": 0.0586
+    },
+    {
+      "aspect": "materials",
+      "fp": 31,
+      "fp_rate": 0.0235
+    }
+  ]
+}

@@ -1,0 +1,134 @@
+{
+  "neutral->negative_syn": [
+    [
+      "Cyber Security Basics was my main focus this term, and while I’m comfortable with proofs, this course exposed gaps in practical systems work. The schedule felt heavy with frequent deadlines, and feedback often came late,",
+      "support",
+      -0.51
+    ],
+    [
+      "I took Operating Systems mainly out of curiosity, and I’ve got to say it felt like it was built for people who already live in the adjacent material, not someone starting from scratch. I’m comfortable with proofs, but th",
+      "accessibility",
+      -0.613
+    ],
+    [
+      "Calculus II mostly survived my first semester, but it felt like I was swimming in a sea of instructions that left a lot up to interpretation, which didn’t help since deadlines lined up with other tough courses and the em",
+      "overall_experience",
+      -0.535
+    ],
+    [
+      "Database Systems with Prof. Cohen was a solid required pick, but it dragged at times and felt exhausting even though the ideas were there. I came in with a strong coding background and a weak theory footing, so the conce",
+      "difficulty",
+      -0.669
+    ]
+  ],
+  "negative->neutral_syn": [
+    [
+      "Data Structures ended up being the main focus of my term, and I still feel like I trudged through it rather than grew from it. The lectures were solid in laying out the big ideas, but the examples barely sketched how to ",
+      "overall_experience",
+      -0.317
+    ],
+    [
+      "Operating Systems with Dr. Park felt like a mostly solo slog for me, since collaboration was minimal and the workload piled up, even though TAs were responsive and practical when I asked. The lectures never quite matched",
+      "clarity",
+      -0.476
+    ],
+    [
+      "Taking Data Structures with Dr. Chen mid‑semester of a super heavy stretch, I managed to squeak an A after a curve, but the exam fairness left me with a sour note—two of my friends swore the last question was graded diff",
+      "exam_fairness",
+      -0.379
+    ],
+    [
+      "Starting out I dreaded the constant deadlines in this intro ML course, and the slides felt serviceable but forgettable. I stuck with Dr. Chen’s office hours after a messy forum thread about the project, and peer discussi",
+      "overall_experience",
+      -0.176
+    ]
+  ],
+  "neutral->positive_syn": [
+    [
+      "In my last semester before graduating, I stuck with Computer Networks mostly through short evening sessions and managed to keep up with nearly every lecture, which helped when the assignments started piling up. The cours",
+      "relevance",
+      0.634
+    ],
+    [
+      "This summer course fit me in that I needed it for a specialization, and the prerequisites felt aligned with what I already knew, which helped me stay on track even though I fell behind a bit around deadlines. I did bette",
+      "interest",
+      0.525
+    ],
+    [
+      "Data Structures with Prof. Haddad was a solid choice since I needed it for the specialization, and I went in assuming I’d do fine on the basics. The design of the assessments felt fair and more insightful than I expected",
+      "workload",
+      0.749
+    ],
+    [
+      "I’m comfortable with proofs, but Database Systems pushed me in a direction I didn’t expect, and I felt the material was solidly organized, especially the conceptual explanations Dr. Singh gave. The examples felt a bit th",
+      "workload",
+      0.711
+    ]
+  ],
+  "positive->neutral_syn": [
+    [
+      "Data Structures had clear explanations and I kept up with almost every lecture, even with a full-time job tugging my time. The forums helped sometimes, but feedback varied by assignment, and despite the useful gaps it fi",
+      "clarity",
+      0.357
+    ],
+    [
+      "Sitting through Calculus II in the summer term felt like sprinting through a dense textbook with a stopwatch, and I knew I barely kept up most days. Prof. Alvarez is clearly trying to be clear, and I did appreciate that ",
+      "clarity",
+      -0.049
+    ],
+    [
+      "Taking Cyber Security Basics in my first semester while juggling a full-time job, I found Dr. Park's lectures reasonably clear and the coursework organized, though the fast-paced feedback came with a thin explanation tha",
+      "organization",
+      0.384
+    ],
+    [
+      "Calculus II with Dr. Park was sharper and tougher than I expected for an advanced elective, but the juggling with other demanding courses paid off and the difficulty felt earned. The pacing dragged around the midterm win",
+      "difficulty",
+      0.064
+    ]
+  ],
+  "negative->positive_syn": [
+    [
+      "In Database Systems, I scraped through midterm chaos with enough time but shaky motivation, and office hours rescued me more than once; still, the tool glitches and vague rubrics left deadlines feeling heavier than they ",
+      "interest",
+      0.513
+    ],
+    [
+      "Linear Algebra felt like it filled in some gaps from rusty refreshers, and I kept up with nearly every lecture in my first semester here. The exam setup was fair, but grading transparency left me guessing why a couple of",
+      "grading_transparency",
+      0.719
+    ],
+    [
+      "I’ll admit I expected more structure, but the peers saved it—we really hashed through the lab work together during those late evening sessions, and the quick Q&A with TAs actually helped. The exam felt fair yet exhaustin",
+      "exam_fairness",
+      0.707
+    ],
+    [
+      "Honestly, Cyber Security Basics was a mixed ride: I started off engaged, but my attendance faded as the semester dragged on and the workload piled up. I’m comfortable with proofs, not so much with system work, so the mat",
+      "practical_application",
+      0.616
+    ]
+  ],
+  "positive->negative_syn": [
+    [
+      "I took Database Systems in my last semester, basically because it was a degree requirement, and I’m glad I wasn’t surprised by how heavy the report workload turned out to be. Dr. Park is sharp, but the software stack we ",
+      "interest",
+      -0.554
+    ],
+    [
+      "Operating Systems became the main focus of my term, and I barely scraped through while juggling a full-time job, mostly living off recordings and notes because I couldn’t always sit in live lectures. The tooling was a co",
+      "tooling_usability",
+      -0.764
+    ],
+    [
+      "The Computer Networks course was a rough fit for me, since I’m comfy with proofs but not big on systems work, and the workload felt heavy even though most weeks the time pressure was manageable; office hours rescued me, ",
+      "overall_experience",
+      -0.629
+    ],
+    [
+      "Data Structures started off rough for me because it felt like the pacing was all over the place while I was deep in midterm chaos, and I found the lectures twice as fast as I could process them even though I have a solid",
+      "pacing",
+      -0.83
+    ]
+  ]
+}

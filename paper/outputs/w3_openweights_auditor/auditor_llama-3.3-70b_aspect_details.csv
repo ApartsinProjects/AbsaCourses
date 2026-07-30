@@ -1,0 +1,502 @@
+row_id,aspect,declared_sentiment,supported,sentiment_match,note
+0,workload,positive,True,True,"The review mentions the workload 'pushed me to stay on top of things', indicating a positive sentiment."
+0,organization,positive,True,True,The review states the organization was 'solid enough' and allowed reliance on weekly modules and clear deadlines.
+1,prerequisite_fit,neutral,False,False,"The review discusses the course timing and content, but not the prerequisites."
+2,prerequisite_fit,negative,True,True,Mention of being 'new to the discipline and a bit unsure about the prerequisites' supports the negative sentiment.
+2,grading_transparency,negative,True,True,Mention of 'instructions for assignments left a lot open to interpretation' and 'few assessments felt high-stakes' supports the negative sentiment.
+3,relevance,negative,True,False,"The review mentions the course leaves a practical sense of structuring problems, indicating some relevance."
+3,practical_application,neutral,True,False,"The review expresses frustration with the lack of concrete, reusable examples, but also mentions a 'practical sense of how to structure problems', indicating a more positive sentiment towards practical application than declared."
+4,prerequisite_fit,positive,True,False,"The review states the prerequisite 'starts accessible but ramps up sharply', which implies a mixed or negative experience, not a positive one."
+4,exam_fairness,negative,True,False,"The review states the exams 'felt fair in content', which implies a positive experience, but the declared label is negative."
+5,interest,negative,True,False,"The review expresses initial curiosity and a desire to learn, but also frustration and confusion, which doesn't entirely match a purely negative sentiment."
+6,assessment_design,positive,True,True,The review states the assessment design was 'fair and mostly spot on'.
+6,relevance,neutral,False,False,The review does not explicitly discuss the relevance of the course.
+7,interest,positive,True,True,The review mentions that 'the concepts clicked' indicating a positive interest in the course content.
+7,prerequisite_fit,neutral,False,False,The review does not mention anything related to whether the prerequisites fit or were appropriate for the course.
+8,workload,neutral,True,False,"The review mentions a 'heavy' workload and 'frequent deadlines', indicating a negative sentiment."
+8,tooling_usability,positive,True,False,"The review mentions 'platform quirks' and 'extra stress', indicating a negative sentiment."
+9,practical_application,negative,True,True,"The review mentions the 'practical payoff didn’t land as cleanly as I hoped', indicating a negative sentiment towards the practical application."
+10,grading_transparency,neutral,True,False,"The review expresses concern about grading being 'opaque', which indicates a negative sentiment."
+11,practical_application,positive,True,True,reviewer found applying vector spaces to real problems 'really useful'
+11,lecturer_quality,positive,False,False,reviewer mentions the lecturer by name but does not explicitly evaluate their quality
+11,exam_fairness,negative,False,False,"reviewer mentions assessments and pace, but does not explicitly discuss exam fairness"
+12,overall_experience,negative,True,False,review mentions challenges but also clear lectures and helpful peer discussions
+12,assessment_design,positive,False,False,"review mentions grading quirks, which implies issues with assessment design"
+13,organization,neutral,True,True,"The review mentions the course fit the student's study blocks, implying effective organization."
+13,support,negative,True,False,"The review states peer chats helped, but official readings and late feedback were issues, not entirely negative support."
+13,workload,positive,True,True,"The review describes the workload as 'doable', matching the positive sentiment."
+14,exam_fairness,positive,True,True,exams felt fair
+14,materials,neutral,True,False,"software stack started rough but got manageable, which is more positive than neutral"
+15,overall_experience,neutral,True,True,"The review describes a challenging experience with both positive and negative aspects, matching the neutral sentiment."
+15,practical_application,neutral,False,False,The review does not clearly discuss the practical application of the course material.
+15,relevance,neutral,False,False,The review does not mention the relevance of the course.
+16,overall_experience,neutral,True,True,"The review describes the course as 'fine enough', 'useful but not exactly enjoyable', which aligns with a neutral sentiment."
+17,clarity,neutral,False,False,The review mentions the material felt 'pretty dense' but does not explicitly discuss the clarity of the course.
+17,feedback_quality,positive,True,True,The review states the TAs were 'responsive and practical' which aligns with a positive sentiment.
+17,assessment_design,negative,True,True,"The review criticizes the 'heavy deadline load' and 'grading quirks', supporting a negative sentiment."
+18,interest,positive,True,True,"The student mentions the material sticks and a small victory kept them going, indicating genuine interest."
+18,feedback_quality,neutral,True,True,"The student mentions the communication around deadlines and expectations could be sloppy, which aligns with a neutral feedback quality."
+19,assessment_design,positive,True,False,"review mentions 'exhausting assessments', which implies a negative sentiment"
+19,materials,negative,True,True,"review describes the material as 'frustratingly dense', matching the negative sentiment"
+19,accessibility,positive,True,True,"review mentions 'smooth LMS flow', which implies a positive sentiment, but also mentions a 'short evening window' which could be negative; however, the overall tone suggests the accessibility was generally good"
+20,overall_experience,positive,True,True,"The review mentions both positive and negative experiences, but overall, the student seems satisfied with their grade and the instructor's teaching."
+20,exam_fairness,neutral,False,False,The review does not mention exam fairness.
+21,practical_application,negative,True,True,"The review mentions 'practical payoff felt pretty thin' and 'rough edges', indicating a negative sentiment towards practical application."
+21,workload,neutral,True,False,"The review mentions 'a two-hour task into half a day of chasing fixes', indicating a negative sentiment towards workload, which does not match the declared neutral sentiment."
+21,interest,neutral,False,False,"The review does not clearly express the student's interest in the course, making it difficult to determine the sentiment."
+22,accessibility,positive,True,True,The review mentions the material was 'more accessible than I expected'.
+23,relevance,positive,True,True,"The review states the course was a 'solid fit', indicating a positive sentiment towards its relevance."
+24,pacing,neutral,True,False,"The review mentions pacing could be 'too fast' or 'oddly slack', which indicates a negative sentiment, not neutral."
+24,clarity,neutral,False,False,"The review does not directly discuss the clarity of the course material, but mentions 'feedback quality varied a lot' and needing 'quick clarifications'."
+25,overall_experience,positive,True,True,"The review mentions that the lectures 'finally clicked' and the student learned from the course, indicating a positive experience."
+25,accessibility,neutral,False,False,The review does not explicitly discuss the accessibility of the course.
+25,materials,negative,True,False,"The review mentions that the 'tool setup took more effort than the payoff' and the 'rubric always felt vague', indicating a negative sentiment, but it also mentions that the 'weekly problem sets and a concrete project' were helpful."
+26,pacing,negative,True,True,The review describes the pace as 'brutal' and mentions sprinting through a compressed syllabus.
+26,assessment_design,neutral,True,False,"The review describes the grading as 'oddly capricious' and mentions a 'weird quiz format', indicating a negative sentiment."
+27,prerequisite_fit,positive,True,True,The review mentions 'the prerequisites fit me better than I expected'
+27,support,neutral,True,False,"The review mentions both positive and negative experiences with support, such as peer discussions helping and official materials being frustrating"
+28,interest,positive,True,True,The student mentions leaving with something usable and finding the discussion-heavy approach worth it.
+28,peer_interaction,positive,True,True,The student mentions that peer discussions helped a lot and they leaned on classmates for support.
+29,materials,neutral,False,False,The review does not mention course materials.
+29,feedback_quality,positive,True,True,The review mentions 'quick feedback' as helpful.
+30,tooling_usability,neutral,True,True,The review mentions 'the tools are usable' which aligns with a neutral sentiment.
+31,practical_application,positive,True,True,The review mentions 'hands-on bits' and 'practical payoff' indicating a positive sentiment towards practical application.
+31,peer_interaction,neutral,False,False,"The review does not mention peer interaction, making the declared neutral sentiment unsupported."
+32,difficulty,neutral,False,False,review mentions a 'heavy report-heavy workload' but does not clearly express the difficulty of the course content itself
+32,lecturer_quality,positive,False,False,review does not mention the lecturer's quality
+32,accessibility,negative,True,True,"review mentions 'tool setup was a slog' and 'limited staff help', indicating accessibility issues"
+33,accessibility,neutral,True,True,The review mentions the LMS and submission flow were 'smooth enough' which implies a neutral sentiment towards accessibility.
+33,support,negative,True,True,"The review expresses frustration with the course, such as struggling, vague grading rubric, and brutal pacing, which matches the declared negative sentiment towards support."
+34,exam_fairness,negative,False,False,The review mentions a 'big exam format switch' but does not explicitly discuss the fairness of the exam.
+35,relevance,neutral,False,False,review does not clearly discuss the relevance of the course
+35,assessment_design,neutral,True,False,"review mentions high-stakes exams and late feedback, indicating a negative sentiment"
+35,lecturer_quality,positive,True,False,"review mentions detailed feedback but also late feedback, indicating a mixed sentiment"
+36,organization,neutral,True,True,"The review mentions the course fitting the student's schedule, which implies a neutral sentiment towards organization."
+37,lecturer_quality,neutral,True,False,"The review mentions 'I liked the instructor', which indicates a positive sentiment, not neutral."
+37,prerequisite_fit,positive,True,False,"The review states 'The prerequisite fit starts accessible but ramps up sharply', which suggests a mixed sentiment, not entirely positive."
+37,peer_interaction,neutral,True,True,"The review mentions 'the peer interaction stayed mostly neutral', which matches the declared neutral sentiment."
+38,support,neutral,False,False,The review does not clearly express support as an aspect.
+38,pacing,neutral,True,False,"The review mentions pacing as 'clear and paced in a way that kept me from zoning out', which suggests a positive sentiment, not neutral."
+38,organization,positive,True,True,"The review mentions 'the pacing and organization did land some solid takeaways', which suggests a positive sentiment."
+39,clarity,neutral,True,False,"The review mentions both positive and negative comments about the instructor's explanations, but overall seems to lean towards a slightly negative sentiment due to the examples feeling 'thin'."
+39,tooling_usability,positive,True,False,"The review describes the tooling setup as 'rough enough to slow me down', indicating a negative sentiment."
+40,tooling_usability,positive,True,True,The review mentions the toolset being 'fairly usable' which aligns with a positive sentiment.
+41,assessment_design,neutral,True,False,"The review expresses concerns about the grading rubric, indicating a negative sentiment."
+41,lecturer_quality,positive,True,True,"The review mentions relying on office hours with Prof. Alvarez and the TA, implying positive interaction."
+42,practical_application,negative,True,True,"The review mentions 'busywork' and a lack of usable skills, indicating a negative sentiment towards practical application."
+42,exam_fairness,negative,True,True,"The review criticizes the exam week, specifically the thin explanations and vague rubric, indicating a negative sentiment towards exam fairness."
+42,lecturer_quality,negative,False,False,"The review does not explicitly mention the lecturer's quality, focusing instead on course structure and content."
+43,accessibility,positive,True,True,The review mentions 'accessibility here was real' and being able to follow lectures despite full-time work.
+43,materials,negative,True,True,The review states 'materials didn’t click for me' and describes some readings as 'thin or out of date'.
+43,assessment_design,negative,False,False,"The review discusses issues with feedback and deadlines, but does not clearly express sentiment about assessment design."
+44,difficulty,positive,False,False,review does not clearly express difficulty as positive
+44,pacing,neutral,True,False,"review describes pacing as 'decent', which is more positive than neutral"
+45,organization,neutral,False,False,"review mentions pace and deadlines, but not overall organization"
+45,lecturer_quality,positive,False,False,review does not explicitly mention lecturer quality
+46,tooling_usability,positive,True,True,The review mentions the toolset was 'pretty usable' which supports the positive sentiment.
+46,organization,positive,False,False,"The review does not clearly express a positive sentiment towards the course organization, instead mentioning pacing issues and a need for self-study."
+47,difficulty,neutral,False,False,review does not clearly express difficulty aspect
+47,organization,negative,True,True,review states 'the organization feels a bit messy'
+48,exam_fairness,negative,False,False,The review mentions 'high-stakes exams' but does not explicitly discuss fairness.
+48,support,positive,True,True,"The review mentions 'Scores came back quickly' and 'Prof. Cohen is clearly knowledgeable', indicating positive support."
+49,clarity,positive,True,False,"The review mentions the lectures helped connect prerequisites, but also describes the pace as rushed and the tool setup as tedious, which suggests mixed feelings about clarity."
+50,overall_experience,neutral,True,True,"The review expresses mixed feelings, which aligns with a neutral overall experience."
+50,feedback_quality,negative,True,False,"Although the review mentions 'quick feedback', it also states that the 'grading was a bit off', but the overall sentiment towards feedback seems more positive than negative due to the helpfulness of quick feedback."
+51,relevance,positive,True,True,The material felt relevant
+51,exam_fairness,negative,False,False,No mention of exam fairness
+51,tooling_usability,negative,True,False,"The LMS and submission flow were smooth enough, which is positive"
+52,lecturer_quality,neutral,True,True,The review mentions 'the lectures are helpful' which supports a neutral sentiment.
+52,clarity,negative,True,True,The review states 'the fast feedback with sparse explanations didn’t always clear up my confusion' which supports a negative sentiment.
+52,tooling_usability,neutral,False,False,The review does not mention tooling usability.
+53,practical_application,positive,True,True,The review mentions producing decent results on a small project.
+53,prerequisite_fit,positive,False,False,There is no mention of prerequisites in the review.
+53,difficulty,negative,True,True,The review describes the course as 'rough at first' and mentions failing it.
+54,support,negative,True,False,"The review mentions mixed experiences with support, including 'skimpy explanations' and 'dismissive' replies, but also 'helpful' forums."
+54,interest,positive,False,False,"The review does not clearly express interest in the course, but rather mentions taking it because it was required."
+55,difficulty,neutral,True,False,"review mentions pace hitting hard and assignments piling up, indicating a negative sentiment"
+55,accessibility,positive,True,True,review praises Prof. Rios' approachability and help with concrete questions
+56,clarity,negative,True,True,"The review mentions the course 'sharpened fast' and the student 'felt lost at first', indicating a negative sentiment towards clarity."
+56,practical_application,positive,True,True,"The review states that 'report-heavy work helped me see practical crypto/watchlist bits', showing a positive sentiment towards practical application."
+57,overall_experience,negative,True,False,"The review expresses both positive and negative sentiments, but overall it seems more mixed than purely negative."
+57,interest,positive,True,True,"The student mentions that 'the pure theory bits clicked pretty well' and 'the material felt somewhat useful', indicating a positive interest in the subject matter."
+58,lecturer_quality,neutral,True,True,"The review states the lecturer 'was fine', which aligns with a neutral sentiment."
+58,assessment_design,negative,True,True,"The review describes the assessment design as 'punitive' and states it 'didn’t align well', which supports a negative sentiment."
+59,feedback_quality,positive,True,True,The student appreciates how the forums helped when they got stuck.
+59,difficulty,positive,True,True,"The difficulty is described as feeling like progress, not punishment."
+60,peer_interaction,neutral,True,True,"The review mentions that the forums helped, which is a positive interaction with peers."
+60,tooling_usability,neutral,True,False,"The review states the software stack got smoother, but also mentions initial difficulty, which doesn't fully match the neutral sentiment."
+60,materials,positive,False,False,The review does not explicitly mention the course materials.
+61,peer_interaction,negative,True,False,"Review states peer discussion 'helped me more', indicating a positive sentiment."
+61,organization,positive,True,True,"Review explicitly states the course 'organized stuff well', matching the positive sentiment."
+61,feedback_quality,neutral,True,False,"Review mentions 'timing on grading comments felt slow', indicating a negative sentiment, not neutral."
+62,exam_fairness,negative,True,True,The review mentions exams felt 'like a trap' and 'not clearly aligned' which indicates a negative sentiment.
+62,interest,negative,True,True,The review states the student 'started off really into the idea' but then 'losing steam' which indicates an initial positive interest that turned negative.
+63,peer_interaction,positive,True,True,The TAs were quick to respond and gave practical tips.
+64,relevance,negative,True,True,"The student mentions taking the course mainly because it fit their schedule, implying the topic wasn't their primary interest."
+65,accessibility,positive,False,False,The review does not clearly express accessibility as an aspect.
+65,assessment_design,neutral,True,False,"The review mentions varying feedback quality and helpful but sometimes dismissive forums, which does not clearly match a neutral sentiment."
+66,organization,negative,True,True,The review mentions 'the organization felt scattered' and 'deadlines that moved around'.
+66,assessment_design,negative,True,True,The review states 'the design of assessments left me flipping between “this makes sense” and “how do we even stage this?”'.
+66,interest,negative,False,False,"The review does not clearly express the student's interest in the course, although it mentions the course was a 'rough ride' and they 'would not take it again'."
+67,difficulty,negative,True,True,reviewer mentions 'difficulty was tougher than I expected'
+67,prerequisite_fit,neutral,False,False,reviewer does not mention anything related to prerequisite fit
+68,practical_application,positive,True,True,"The review mentions 'practical applications' and how the material 'clicked' when working through a quick incident trace, indicating a positive sentiment."
+68,exam_fairness,negative,False,False,"The review does not explicitly mention exam fairness, but rather mentions concerns about the 'grading curve' and 'exact criteria', which is related but not directly about exam fairness."
+69,clarity,neutral,True,False,"The review states the lectures were 'clear enough to follow', which suggests a slightly positive sentiment, not neutral."
+69,lecturer_quality,negative,True,True,"The review criticizes the professor's explanations and grading comments, supporting the negative sentiment."
+69,exam_fairness,negative,False,False,"The review does not mention exam fairness, so the declared label is not supported."
+70,workload,positive,True,True,The review states the workload 'felt doable'.
+70,relevance,neutral,False,False,The review does not explicitly discuss the relevance of the course.
+70,feedback_quality,positive,True,True,The review mentions 'quick feedback' as a positive aspect.
+71,support,negative,True,False,"The review mentions issues with the course, but 'support' likely refers to instructor or TA support, which is described as responsive, contradicting the negative sentiment."
+71,peer_interaction,neutral,False,False,"The review does not clearly express peer interaction, making it difficult to assess the declared neutral sentiment."
+72,lecturer_quality,neutral,False,False,review does not mention lecturer quality
+72,pacing,neutral,False,False,"review mentions juggling work and courses, but does not clearly express pacing"
+73,peer_interaction,positive,True,False,"The review mentions collaboration expectations being fuzzy and juggling another hard course feeling chaotic, which suggests a negative experience with peer interaction."
+74,assessment_design,positive,True,False,"The review mentions 'heavy on assignments and tight deadlines' and 'vague' rubric, which suggests a negative sentiment."
+74,materials,neutral,True,True,"The review describes the slides as 'serviceable but never memorable', which aligns with a neutral sentiment."
+74,lecturer_quality,negative,True,False,"The review states that the delivery was 'mostly okay', which suggests a more neutral or mixed sentiment rather than a purely negative one."
+75,difficulty,negative,True,True,The review mentions the course being 'tougher than I expected'.
+75,organization,negative,False,False,"The review does not clearly express issues with the course organization, but rather with the student's time management and the timing of grading comments."
+76,interest,neutral,False,False,review does not clearly express interest in the course
+76,tooling_usability,negative,True,True,"review mentions platform quirks, login prompts, and quiz timer issues"
+77,difficulty,positive,True,True,"The review mentions that the course was 'in a way that pushed me to actually memorize and apply the core ideas instead of just following steps', indicating a positive difficulty."
+78,relevance,neutral,False,False,"review expresses frustration and mixed feelings about the course, but does not clearly discuss relevance"
+79,peer_interaction,neutral,True,True,"The review mentions difficulty with group collaboration and a vague collaboration structure, which aligns with a neutral sentiment."
+79,relevance,negative,True,True,"The review expresses struggle with motivation and rare moments of content clicking, which supports a negative sentiment towards relevance."
+79,support,neutral,True,False,"The review criticizes the explanations behind scores as thin and feedback coming too late, which suggests a negative sentiment towards support, not neutral."
+80,overall_experience,positive,True,True,The student recommends the course despite some criticisms.
+80,workload,positive,True,True,The student mentions the workload was 'manageable most weeks' and 'heavy' but appreciated the manageability.
+81,workload,neutral,True,False,"The review mentions a 'report-heavy workload' and 'deadlines weren’t so clustered', indicating a negative sentiment."
+81,materials,positive,True,False,"The review describes the recorded lectures as 'pretty dry', indicating a negative sentiment, despite some positive utility."
+81,pacing,positive,True,False,"The review mentions 'stress I wasn’t expecting', 'deadlines weren’t so clustered', and 'workload stacked up fast', indicating a negative sentiment."
+82,assessment_design,negative,True,True,The student mentions being 'still uncertain' about it.
+82,prerequisite_fit,neutral,False,False,The review does not discuss the student's fit with the prerequisites.
+83,exam_fairness,negative,True,False,"The review states the exam 'felt fair in its wording', but expresses frustration with the grading and question mapping, indicating a negative sentiment, however the negative sentiment is not solely due to the fairness of the exam."
+83,feedback_quality,positive,True,False,"The review states the feedback 'felt positive when it came to clarity and focus', but also mentions that the notes often seemed out of sync, indicating a mixed sentiment rather than purely positive."
+84,support,negative,True,False,"The review mentions both positive and negative experiences, but the overall tone suggests a willingness to recommend, contradicting the declared negative sentiment."
+85,tooling_usability,negative,False,False,The review does not mention tooling usability.
+85,peer_interaction,positive,True,False,The review mentions both positive (quick replies) and negative (dismissive) aspects of peer interaction.
+86,pacing,negative,True,True,"The review mentions 'this term's rhythm stacked on my full-time job' and 'week 7's weird deadline pattern', indicating a negative pacing experience."
+86,practical_application,positive,True,True,"The review states 'The TAs were surprisingly practical and responsive', showing a positive sentiment towards practical application."
+87,lecturer_quality,positive,False,False,The review does not clearly express an opinion about the lecturer's quality.
+87,workload,negative,True,True,"The review mentions the semester being 'heavy' and the report focus feeling 'draining', indicating a negative sentiment towards the workload."
+88,organization,neutral,False,False,review does not clearly express opinion on course organization
+88,accessibility,positive,True,True,quick feedback and office hours suggest positive accessibility
+89,tooling_usability,neutral,True,False,"The review mentions 'tooling setup was a headache', indicating a negative sentiment, not neutral."
+89,assessment_design,negative,True,True,"The review states 'The few assessments mattered a lot', implying that the assessments had a significant impact, and the overall tone suggests a negative experience with them."
+90,exam_fairness,positive,True,True,"The review states 'The exam felt fair, with problems that matched what we’d practiced in class and on the weekly problem sets'"
+91,assessment_design,negative,True,True,"The review states 'the assessment design felt off', indicating a negative sentiment."
+91,grading_transparency,negative,True,True,"The review states 'the grading wasn’t transparent enough', indicating a negative sentiment."
+92,peer_interaction,positive,True,True,The review mentions helpful forums and TAs.
+92,clarity,neutral,True,False,The review mentions some instructions left too much interpretation.
+92,interest,positive,False,False,The review states the course was 'essential' but only because it was needed.
+93,feedback_quality,neutral,True,True,"The review mentions both positive and negative aspects, resulting in a neutral sentiment."
+93,peer_interaction,positive,True,True,"The review highlights students helping each other, indicating a positive peer interaction."
+94,support,negative,True,True,"Mention of office-hours session and quick clarifications, but also mentions timing of feedback feels rushed."
+94,accessibility,negative,True,True,"Mentions having to juggle with a full-time job, course feeling scattered, and platform quirks causing stress."
+95,materials,positive,True,True,The review mentions 'handy diagrams and concrete examples' which indicates a positive sentiment.
+95,grading_transparency,positive,True,True,The review states 'I’m glad the grading felt transparent' which directly supports the positive sentiment.
+96,feedback_quality,positive,False,False,"review mentions issues with communication from staff, not feedback quality"
+96,lecturer_quality,neutral,False,False,"review mentions issues with staff communication, but does not clearly express lecturer quality"
+97,workload,neutral,True,False,"The review mentions the course being 'intense' and 'project-heavy', indicating a potentially high workload, but the declared sentiment is neutral."
+97,materials,neutral,False,False,The review does not clearly express an opinion about the materials.
+98,tooling_usability,neutral,False,False,review does not mention tooling usability
+98,grading_transparency,negative,True,True,"review mentions feedback varied a lot and some comments felt generic, indicating issues with grading transparency"
+99,difficulty,neutral,True,False,"The review mentions the experience was 'messy', 'rough', and 'exhausting', indicating a more negative sentiment than 'neutral'."
+100,relevance,neutral,True,False,"Student booked the course to fit their schedule, not out of interest, indicating a negative sentiment towards relevance"
+101,practical_application,neutral,False,False,review does not clearly mention practical application
+101,materials,positive,True,False,"review mentions instructions had issues, which does not match positive sentiment"
+102,practical_application,neutral,True,False,"The review mentions relying on peer discussions and classmates to understand the topics, and having to scramble to catch up, indicating a more negative experience with practical application than a neutral sentiment suggests."
+103,clarity,positive,False,False,review does not mention clarity
+103,assessment_design,neutral,True,False,"review states the course handled few big assessments well, but also mentions that feedback varied, which is more mixed than neutral"
+104,materials,positive,False,False,"The review mentions 'the material clicked best' but it's referring to the course content, not materials in general."
+105,assessment_design,positive,True,False,"The review mentions that 'the quizzes and project felt mismatched to what was actually taught', which indicates a negative sentiment."
+105,practical_application,negative,True,True,"The review states 'the real-world examples were thin', which aligns with the declared negative sentiment."
+106,practical_application,positive,True,True,The review mentions that the projects were where they learned something practical.
+106,tooling_usability,negative,True,True,The review states that the tooling setup was a pain and caused friction.
+107,tooling_usability,neutral,True,False,"The review mentions the software stack started 'rough' and 'clunky', and 'the rough edges of the tooling faded into something functional', indicating a more negative experience than a neutral sentiment."
+108,overall_experience,positive,True,True,The reviewer calls it a 'solid fit' and mentions positive aspects like peer discussion sessions.
+109,workload,neutral,True,False,"The review describes the workload as 'intense' and mentions falling behind, which suggests a more negative sentiment than 'neutral'."
+110,tooling_usability,neutral,True,True,The review mentions the tools were 'usable enough'.
+110,accessibility,negative,True,True,The review criticizes accessibility outside campus hours.
+110,organization,negative,True,True,The review criticizes the deadline cadence and course structure.
+111,workload,neutral,True,False,"The review mentions 'project-heavy pace' and 'high-stakes exams', indicating a negative workload sentiment, contradicting the declared neutral sentiment."
+111,grading_transparency,neutral,False,False,The review does not clearly express the aspect of grading transparency.
+111,interest,positive,True,False,"The review states the course was 'not enjoyable', indicating a negative interest sentiment, contradicting the declared positive sentiment."
+112,materials,negative,True,False,"The review mentions issues with the mix of assessments and the notes not guiding directly, but also mentions the LMS and submission flow were smooth, which contradicts the overall negative label."
+112,accessibility,positive,True,True,"The review mentions the LMS and submission flow were smooth, which supports the positive label for accessibility."
+113,prerequisite_fit,positive,True,True,The review mentions 'the prerequisite fit felt solid for my background' which clearly supports and matches the positive sentiment.
+114,exam_fairness,negative,True,True,mentioned as a negative aspect due to platform quirks and weird grading quirks
+114,prerequisite_fit,positive,True,True,"mentioned as a positive aspect, indicating a solid fit"
+114,workload,neutral,True,True,mentioned as a neutral aspect due to the stress of juggling a full-time job and the OS course
+115,peer_interaction,neutral,True,False,"The review mentions that peer discussion helped, indicating a positive sentiment, but the declared label is neutral."
+115,organization,positive,True,False,"The review mentions struggling with the prerequisite pace, thin official materials, and vague grading, indicating a negative sentiment, but the declared label is positive."
+116,difficulty,neutral,True,False,"review mentions frustration and obstacles, indicating a negative sentiment"
+116,materials,neutral,True,False,"review mentions thin examples and frustrating tooling setup, indicating a negative sentiment"
+116,lecturer_quality,neutral,True,False,"review appreciates lecturer's ability but criticizes other aspects, indicating a mixed sentiment"
+117,materials,negative,True,True,The review mentions 'PDF handouts that felt like they were stitched together last minute' which clearly expresses a negative sentiment.
+117,difficulty,neutral,False,False,"The review does not clearly express the difficulty of the course, although it mentions 'juggling a full-time job' and 'pressure'."
+117,support,negative,True,True,"The review mentions 'feedback came in sparse bursts' and 'vague directions', which clearly expresses a negative sentiment towards the support provided."
+118,pacing,positive,True,False,"review mentions pace alternated between steady and sprint, indicating a negative experience"
+118,exam_fairness,negative,True,True,"review states midterm questions leaned on unmastered topics, supporting the negative sentiment"
+118,prerequisite_fit,negative,True,True,"review mentions the course assumes more prior knowledge than advertised, aligning with the negative sentiment"
+119,accessibility,positive,True,True,"The review mentions that accessibility was 'mostly nailed' and that the student could pause, rewatch, and catch up without feeling lost."
+120,pacing,positive,True,False,"The review states the pacing 'felt manageable' but also mentions the pace 'was always one step ahead of our energy', indicating a mixed sentiment."
+121,lecturer_quality,neutral,False,False,review does not explicitly mention lecturer quality
+121,grading_transparency,neutral,True,False,"review mentions vague instructions and desire for clearer grading notes, indicating a negative sentiment"
+122,materials,negative,True,False,"The review mentions issues with the platform and video controls, but also appreciates the chance to reconnect with ideas, which suggests a more mixed sentiment than purely negative."
+122,grading_transparency,neutral,True,False,"The review explicitly states that the grading rubric 'felt vague', which suggests a negative sentiment rather than neutral."
+123,practical_application,neutral,True,True,The review mentions the course felt 'useful enough' which aligns with a neutral sentiment towards its practical application.
+124,exam_fairness,neutral,False,False,review does not mention exam fairness
+125,overall_experience,neutral,True,True,"The review mentions both positive and negative experiences, resulting in a neutral overall sentiment."
+125,materials,positive,True,True,"The review praises the materials, describing them as 'solid' with 'clear slides' and 'decent pacing'."
+125,support,negative,True,True,"The review criticizes the administrative support, stating that instructions and collaboration expectations were unclear."
+126,feedback_quality,negative,True,True,The review states that feedback 'often feels rushed or generic'.
+126,support,positive,True,True,The review mentions that 'students help each other out a lot' and peers provided 'quick clarifications'.
+126,clarity,neutral,True,False,"The review criticizes 'instruction delivery' as 'uneven' and pacing issues, indicating a negative sentiment."
+127,practical_application,negative,False,False,"The review discusses pacing, slides, feedback, and study approach, but does not explicitly mention practical application."
+128,overall_experience,neutral,True,False,"The review describes a 'mixed bag' experience, which doesn't clearly align with a neutral sentiment as it leans towards the positive aspects."
+128,tooling_usability,positive,True,False,"The review mentions that 'getting the tool environment up and running felt like a chore' and 'the interface notating errors in a way that helped only after I paired with a TA', which indicates a negative experience with tooling usability."
+129,workload,positive,True,False,"The review mentions 'deadlines are frequent and the work piles up', indicating a negative workload experience."
+129,overall_experience,positive,True,False,"The review expresses a mix of negative and positive sentiments, but the overall tone leans towards being overwhelmed and resigned, not entirely positive."
+130,workload,negative,True,True,review mentions 'workload was rough and uneven'
+130,accessibility,positive,False,False,"review does not clearly express accessibility, but mentions related aspects like recordings, notes, and LMS"
+131,clarity,neutral,False,False,The review does not clearly express the clarity of the course.
+132,feedback_quality,negative,True,True,"The review mentions chasing quick feedback by email, which arrived slow when it mattered, indicating negative feedback quality."
+132,assessment_design,positive,False,False,"The review does not clearly express an opinion about the assessment design, only mentioning that slides were fine but not memorable."
+132,lecturer_quality,negative,True,True,"The review states that Dr. Park knows proofs but not the systems grind, indicating a negative sentiment towards the lecturer's quality."
+133,clarity,positive,False,False,"review mentions confusion and vague memory, contradicting positive clarity"
+133,organization,negative,True,True,review explicitly states the class felt poorly organized
+133,overall_experience,negative,True,True,review describes the experience as a mixed bag and provides negative feedback
+134,assessment_design,negative,True,True,"The review mentions the 'assessment mix never quite clicked with the lectures', indicating a negative sentiment."
+135,workload,positive,True,False,review mentions 'project-heavy workload' which implies a negative sentiment
+135,pacing,positive,False,False,review does not clearly express the pacing aspect
+136,accessibility,positive,True,True,"The review mentions the class fit their schedule, implying it was accessible."
+136,interest,neutral,True,True,"The review states they took the class because it fit their schedule, not their curiosity, which aligns with a neutral interest sentiment."
+137,pacing,positive,True,False,"The review states the pacing 'felt mostly workable' but also 'dragged and others sprinted', indicating a mixed sentiment, not entirely positive."
+137,workload,positive,True,True,"The review mentions the workload was 'doable' when chunked into small blocks, supporting a positive sentiment."
+137,assessment_design,negative,True,True,"The review criticizes the grading rubric as 'vague' and mentions issues with feedback timing and emphasis, supporting a negative sentiment."
+138,exam_fairness,negative,True,True,The review states the exam 'felt unfair'.
+138,practical_application,positive,True,True,The review mentions 'practical portions' and 'hands-on lab exercises' as positive experiences.
+138,peer_interaction,neutral,False,False,"The review does not clearly express sentiment about peer interaction, though it mentions working solo and appreciating it."
+139,lecturer_quality,negative,False,False,"The review criticizes the timing of reviews and the need for TA's office hours, but does not directly comment on the lecturer's quality."
+139,feedback_quality,neutral,True,False,"The review states that 'feedback came sparse until just before the big project deadline', which implies a negative sentiment towards feedback quality, not neutral."
+140,peer_interaction,neutral,True,False,"The review states 'I found peer discussion helped more than the official materials', indicating a positive sentiment, but the declared label is neutral."
+141,exam_fairness,positive,True,True,The review mentions 'the exam felt fair' which directly supports the positive sentiment.
+142,accessibility,neutral,True,False,"The review mentions struggling with the workload and feeling unprepared, which suggests negative accessibility."
+142,practical_application,positive,True,False,"The review mentions that finishing the course helped see a few concrete tools, but also expresses frustration with the learning process, which suggests a more neutral or negative sentiment."
+142,exam_fairness,positive,True,False,"The review describes a stressful exam experience with a misread condition and a ticking clock, which suggests a negative sentiment towards exam fairness."
+143,peer_interaction,negative,True,False,"The review states that 'The peer discussion saved me', indicating a positive sentiment towards peer interaction."
+144,organization,negative,True,True,"The review mentions 'deadlines stacked up on me' and 'grading rubric felt vague', indicating negative sentiment towards organization."
+144,interest,neutral,False,False,The review does not clearly express the student's interest in the course.
+145,clarity,neutral,True,False,"prof. cohen spoke clearly enough implies a positive sentiment, not neutral"
+146,accessibility,neutral,False,False,"review discusses tool setup and email support issues, but does not clearly express accessibility concerns"
+146,relevance,negative,False,False,"review does not clearly express the relevance of the course, but rather discusses the difficulty and assessment structure"
+147,peer_interaction,positive,True,True,The review mentions a study group and trading proofs as a 'bright spot'.
+147,interest,neutral,False,False,The review does not clearly express the student's interest in the subject matter.
+147,materials,neutral,True,True,"The review discusses lectures, notation, and grading comments, which can be considered part of the course materials, and describes them as uneven, which aligns with a neutral sentiment."
+148,grading_transparency,neutral,True,False,"The review mentions 'Feedback felt sparse' and 'by the time a rubric arrived it was almost too late', indicating a negative sentiment towards grading transparency, not neutral."
+149,overall_experience,neutral,True,True,"The review mentions both positive and negative experiences, resulting in a neutral overall sentiment."
+149,peer_interaction,negative,False,False,"The review does not clearly express peer interaction, but rather mentions collaboration expectations and TA responsiveness."
+150,accessibility,neutral,True,False,"The review mentions both positive (clear lectures, decent pacing) and negative (tool setup hassle) aspects related to accessibility."
+150,grading_transparency,neutral,True,False,"The review mentions thin explanations for quick scores, indicating a negative sentiment towards grading transparency."
+151,lecturer_quality,neutral,True,False,"The review praises Prof. Cohen's office hours, indicating a positive sentiment, but the declared label is neutral."
+152,feedback_quality,negative,True,True,The review mentions 'late feedback' which implies a negative sentiment towards feedback quality.
+153,tooling_usability,neutral,False,False,The review does not mention tooling usability.
+153,lecturer_quality,negative,True,True,The review criticizes the lecturer's pace and teaching style.
+154,interest,positive,True,True,The student mentions being 'genuinely enthusiastic' and enjoying moments when peer discussions clicked.
+154,grading_transparency,neutral,True,False,"The student describes the grading pattern as 'odd' and mentions that feedback sometimes felt 'skimpy in explanation', indicating a negative sentiment."
+155,pacing,neutral,True,False,review mentions pacing as a source of confusion and uncertainty
+156,workload,positive,True,True,The review states the workload 'felt doable' which indicates a positive sentiment.
+157,grading_transparency,neutral,True,False,"The review expresses frustration with the vagueness of the grading rubric, indicating a negative sentiment."
+157,pacing,neutral,True,True,"The review states the pacing 'isn't bad', which aligns with a neutral sentiment."
+157,feedback_quality,negative,True,True,"The review mentions the grading rubric feels vague and they are left guessing, which aligns with a negative sentiment."
+158,interest,positive,True,False,"The review mentions the course 'did the job' and content connected to future goals, but also expresses reluctance to sign up again and feeling 'rusty', indicating a mixed sentiment rather than purely positive."
+158,materials,negative,True,True,"The review criticizes the slides as 'nothing memorable' and notes a lack of 'worked examples', which aligns with a negative sentiment towards the materials."
+159,organization,negative,True,True,"The review mentions issues with pacing, uneven teaching, and difficulty with deadlines, indicating negative sentiment towards organization."
+160,tooling_usability,neutral,True,False,"The review mentions the tooling didn't feel user-friendly, which suggests a negative sentiment, not neutral."
+160,support,positive,True,True,"The review praises Dr. Miller's approachability and the peer help, indicating a positive sentiment."
+160,practical_application,negative,True,True,"The review expresses difficulty and frustration with practical application, matching the declared negative sentiment."
+161,organization,positive,True,True,The review mentions the course 'felt organized in slides and weekly topics'.
+161,practical_application,positive,False,False,The review does not clearly express the practical application of the course.
+162,feedback_quality,neutral,True,False,"The review mentions slow email support, which implies a negative sentiment, but the declared label is neutral."
+162,exam_fairness,negative,True,False,"The review mentions 'grading quirks' and 'project rubric weighed against the exams' as a 'fair but blunt reality', which implies a neutral or even positive sentiment, but the declared label is negative."
+162,materials,negative,True,False,"The review mentions that 'the materials were there' and appreciates their availability, which implies a positive sentiment, but the declared label is negative."
+163,relevance,positive,False,False,review does not mention relevance of the course
+163,prerequisite_fit,positive,False,False,review does not discuss prerequisite fit
+164,accessibility,positive,False,False,"review mentions difficulties with setup and tooling, and slow email support"
+164,overall_experience,positive,True,False,review describes the course as 'okay' and mentions several negative aspects
+164,lecturer_quality,neutral,False,False,"review does not explicitly mention the lecturer's quality, only mentions the course and its aspects"
+165,difficulty,neutral,True,True,neutral difficulty due to clear lectures and manageable work shifts
+165,feedback_quality,positive,True,True,positive feedback quality due to clear explanations and quick peer discussions
+166,prerequisite_fit,positive,True,False,"review states prerequisites assumed more math and code basics than expected, indicating a negative sentiment"
+166,clarity,negative,True,True,"review mentions quirky deadline bursts and a heavy project that didn’t map neatly to lectures, indicating a lack of clarity"
+167,relevance,negative,False,False,The review does not clearly express the relevance of the course.
+168,tooling_usability,neutral,True,True,The review mentions the LMS and submission flow were smooth.
+168,clarity,positive,False,False,The review does not explicitly mention clarity.
+169,interest,neutral,True,True,"The review describes the course as a 'decent intro' and mentions a project that 'stuck in my memory', indicating a neutral interest."
+170,peer_interaction,neutral,False,False,review does not mention peer interaction
+170,lecturer_quality,neutral,True,False,"lectures were clear, which suggests a positive sentiment"
+170,prerequisite_fit,positive,False,False,review mentions feeling rusty but does not discuss prerequisite fit
+171,materials,positive,True,True,The review mentions that the materials were 'solid' and 'kept the core ideas in view'.
+171,feedback_quality,positive,False,False,"The review does not clearly express the quality of feedback, although it mentions forums and instructor impressions."
+172,overall_experience,neutral,True,False,"The review mentions 'I still disliked the overall experience', which indicates a negative sentiment, not neutral."
+172,workload,positive,True,False,"The review states 'the heavy report-heavy workload stretched my week more than I expected', which indicates a negative sentiment, not positive."
+173,practical_application,positive,True,True,"The review mentions the course was needed for a specialization, implying practical application."
+173,accessibility,negative,False,False,"The review does not clearly express issues with accessibility, but rather mentions the LMS flow was smooth."
+174,practical_application,positive,True,True,The review mentions 'The practical parts were helpful' which directly supports the positive sentiment.
+174,lecturer_quality,neutral,False,False,"The review does not directly mention the lecturer's quality, only mentioning office hours."
+174,organization,positive,False,False,"The review mentions a variable workload and late feedback, which does not support a positive sentiment for organization."
+175,interest,positive,True,True,"The review mentions going in with 'genuine curiosity', indicating a positive interest in the course."
+176,materials,negative,True,True,"The review mentions 'materials were a slog', which clearly expresses a negative sentiment."
+177,assessment_design,positive,True,True,"The review mentions 'the design of the assessments was solid', which directly supports the positive label."
+178,organization,neutral,True,False,"The review mentions issues with the mix of assignments and grading rubrics, indicating a negative sentiment towards organization."
+179,workload,neutral,True,False,"The review mentions having to rely on short evening sessions and a study group to stay afloat, indicating a potentially high workload, but the declared label is neutral."
+179,lecturer_quality,neutral,False,False,"The review does not directly mention the lecturer's quality, but rather the quality of the slides, feedback, and help from the TA."
+180,tooling_usability,negative,True,False,"The review mentions the LMS and submission flow were 'smooth', which is a positive sentiment."
+180,materials,negative,True,True,"The review states the material 'felt a bit thin at times' and grading explanations were 'skimmed at best', which is a negative sentiment."
+180,peer_interaction,neutral,True,False,"The review highlights that peer discussions 'often helped more than the official notes', which is a positive sentiment."
+181,lecturer_quality,positive,True,True,"The review mentions 'Dr. Singh explains concepts clearly', which indicates a positive sentiment."
+181,tooling_usability,neutral,True,False,"The review mentions 'tooling glitches during deadlines worsened weeks', which indicates a negative sentiment, not neutral."
+182,tooling_usability,positive,True,False,review text expresses frustration with tooling issues and platform hiccups
+183,tooling_usability,positive,True,True,The review mentions the tooling was solid and the online compiler finally felt usable.
+183,organization,positive,False,False,The review does not clearly express a positive sentiment towards the course organization.
+183,practical_application,positive,False,False,The review does not clearly express a positive sentiment towards the practical application of the course.
+184,accessibility,negative,True,True,"The review mentions 'the tools to set up our environment felt like a slog', indicating difficulty with accessibility."
+184,grading_transparency,neutral,False,False,"The review does not clearly discuss grading transparency, but mentions 'pass with a curve', which is somewhat related but not enough to support the aspect."
+184,overall_experience,negative,True,False,"Although the review mentions several negative points, it also mentions 'quick feedback helped me claw back' and the course 'works better with a study group', indicating a mixed experience rather than entirely negative."
+185,accessibility,positive,False,False,The review does not clearly express the accessibility aspect.
+185,workload,negative,True,True,"The review mentions the workload piling up, which matches the negative sentiment."
+185,clarity,negative,True,True,"The review mentions lectures not matching the assessment mix and sloppy communications, which matches the negative sentiment."
+186,lecturer_quality,negative,True,False,"The review mentions 'instructor’s comments came late', which is negative, but also 'clear focus on the core ideas', which is positive, not entirely negative."
+186,practical_application,positive,True,True,"The review mentions 'the project with the small graphing tool stuck with me', indicating a positive practical application."
+186,accessibility,neutral,False,False,The review does not clearly express the aspect of accessibility.
+187,practical_application,positive,True,True,"The review mentions that Prof. Haddad's explanations helped see the big picture, implying positive practical application."
+187,prerequisite_fit,positive,True,True,"The review states that the prerequisites fit better than expected, which matches the declared positive sentiment."
+188,lecturer_quality,neutral,True,True,"The review mentions 'The lectures felt steady enough', which supports a neutral sentiment."
+188,prerequisite_fit,negative,True,True,"The review states 'Prerequisites seemed to build on what was promised', but also mentions being left 'scrambling' due to stacked deadlines, which supports a negative sentiment."
+189,exam_fairness,negative,True,True,The review states the exam feels 'unfairly stingy' which aligns with the negative sentiment.
+190,assessment_design,neutral,True,False,"The review mentions the assessment felt pivotal, which implies importance rather than neutrality."
+190,interest,negative,True,True,"The reviewer states they needed the course but wouldn't take it again, indicating a lack of interest."
+191,relevance,positive,True,True,"The review mentions the course 'clicked' when using notes selectively, indicating positive relevance."
+191,accessibility,negative,True,True,"The review criticizes the 'tool setup' and 'slow email responses', supporting the negative accessibility label."
+191,assessment_design,negative,False,False,"The review does not clearly express issues with assessment design, mentioning instead confusion about eigenvectors and issues with tool setup and email responses."
+192,prerequisite_fit,neutral,False,False,"review mentions needing adjacent material, but doesn't clearly express fit with prerequisites"
+192,feedback_quality,negative,True,True,review explicitly states that feedback is sparse until it's too late
+193,exam_fairness,positive,True,True,"The review mentions that the exam felt fair and the difficulty manageable, which indicates a positive sentiment towards the exam's fairness."
+193,difficulty,positive,True,True,"The review mentions that the difficulty was manageable, which indicates a positive sentiment towards the course's difficulty."
+194,lecturer_quality,positive,True,True,The review mentions 'Dr. Park is great' which clearly expresses a positive sentiment towards the lecturer.
+194,support,positive,False,False,"The review does not clearly express that the support was positive, it actually mentions 'the tooling setup was a mess' and 'an early confusion'."
+195,prerequisite_fit,positive,False,False,"The review mentions the course assuming more background than advertised, which implies a negative sentiment."
+195,organization,negative,True,True,The review states that the lectures felt uneven and the overall organization was not helped.
+195,feedback_quality,neutral,True,False,"The review mentions that the feedback tended to come late, which implies a negative sentiment rather than neutral."
+196,prerequisite_fit,negative,True,True,"The review mentions that the prerequisite feel didn't match what was advertised, indicating a negative sentiment."
+197,overall_experience,positive,True,False,"review mentions both positive and negative experiences, but overall tone is mixed rather than positive"
+198,clarity,neutral,False,False,review does not clearly express the clarity of the course
+199,tooling_usability,positive,True,False,"The review mentions 'platform quirks' and 'avoidable stress', indicating some issues with the tooling."
+199,lecturer_quality,positive,True,True,"The review mentions 'clear lectures' and a 'useful office-hours chat', indicating a positive experience with the lecturer."
+199,overall_experience,negative,True,False,"The review describes a 'mixed bag' and the student is 'not sure I’d take it again', indicating a more neutral or mixed sentiment than purely negative."
+200,clarity,positive,False,False,review mentions confusion and doesn't clearly express clarity
+200,peer_interaction,neutral,False,False,review doesn't mention peer interaction
+200,practical_application,negative,True,True,review mentions tool setup and quirks hindering learning time
+201,peer_interaction,neutral,False,False,"Mention of TA and forums, but not enough to clearly express peer interaction"
+201,lecturer_quality,negative,True,False,"Instructor's style is a mixed bag, which doesn't clearly align with a negative sentiment"
+201,overall_experience,neutral,True,True,"Review describes challenges and mixed feelings, aligning with a neutral sentiment"
+202,overall_experience,neutral,True,True,"The review discusses both positive and negative points, resulting in a neutral overall tone."
+202,grading_transparency,positive,True,True,"The review states that 'the grading feels fair enough', which aligns with a positive sentiment."
+203,interest,positive,True,True,The student was 'genuinely curious' about the course content.
+203,tooling_usability,positive,True,False,"The review mentions the platform 'felt rough at first' and 'early UI and setup' as a hassle, but improves over time."
+203,grading_transparency,negative,True,True,The student states they're 'not sure' their grade 'truly reflected' their understanding.
+204,accessibility,negative,False,False,review does not clearly discuss accessibility
+204,tooling_usability,neutral,True,False,"review mentions hands-on parts as valuable, but also expresses difficulties and a sense of drift"
+204,clarity,positive,True,True,review states lectures were clear enough on concepts
+205,grading_transparency,positive,True,True,The review mentions that 'The grading felt transparent' which directly supports the positive sentiment.
+205,practical_application,neutral,False,False,"The review does not clearly express the practical application of the course in a neutral light; instead, it criticizes the tool setup and the experience."
+206,practical_application,neutral,False,False,review does not clearly discuss practical application
+207,materials,neutral,True,False,"The review mentions that peer discussions filled gaps in the official materials, implying that the materials were not sufficient on their own, which suggests a slightly negative sentiment rather than neutral."
+207,relevance,negative,False,False,The review does not explicitly discuss the relevance of the course content to the student's interests or career goals.
+207,overall_experience,negative,True,True,"The review expresses a negative overall experience due to the course feeling heavy on assignments, the student feeling tired and resigned, and the course not clicking as well as the prerequisite."
+208,practical_application,negative,True,False,"The review mentions difficulties, but also adaptability and manageability, which doesn't fully align with a purely negative sentiment."
+208,accessibility,neutral,False,False,The review does not clearly express the accessibility of the course.
+209,assessment_design,neutral,True,False,"The review mentions that deadlines stacked up and the curve nudged an A, which felt fair but not tidy, indicating a more complex sentiment than neutral."
+210,relevance,positive,False,False,"The review discusses the course's content, instructor, and platform, but does not explicitly mention relevance."
+211,exam_fairness,neutral,False,False,"The review mentions grading and tests, but does not explicitly discuss fairness."
+212,lecturer_quality,neutral,True,False,"The review mentions 'Dr. Chen’s lectures were clear', which indicates a positive sentiment, not neutral."
+212,practical_application,positive,True,True,"The review states 'the practical parts left a stronger impression', which matches the positive sentiment."
+213,accessibility,neutral,True,True,"The review mentions juggling a full-time job and getting used to the software stack, implying a neutral experience with accessibility."
+213,support,negative,True,True,"The review mentions the forums helped sometimes, but some replies felt dismissive, which aligns with a negative sentiment for support."
+213,lecturer_quality,negative,False,False,"The review does not mention the lecturer's quality, making the declared label unsubstantiated."
+214,accessibility,neutral,False,False,review does not discuss accessibility
+214,assessment_design,negative,True,True,review criticizes vague grading rubric
+215,grading_transparency,positive,True,False,"The review mentions the grading rubric 'never quite clicked' and left the student 'guessing', indicating a negative sentiment."
+216,overall_experience,negative,True,False,"The review has both positive and negative comments, but does not overall express a negative experience."
+217,grading_transparency,neutral,True,False,"The review mentions a 'vague' grading rubric, indicating a negative sentiment."
+217,assessment_design,positive,False,False,The review does not clearly express a positive sentiment towards assessment design.
+218,grading_transparency,positive,True,True,The review mentions 'I appreciated how transparent the grading seemed on the surface' which supports the positive sentiment.
+218,prerequisite_fit,positive,False,False,"The review does not clearly express the aspect of prerequisite fit, although it mentions the student's return to coursework after a gap."
+219,relevance,neutral,False,False,review does not discuss how relevant the course is
+220,interest,neutral,False,False,review does not clearly express interest in the course
+220,relevance,positive,True,False,"review mentions the course being their main focus, but also expresses significant negative experiences"
+221,prerequisite_fit,neutral,False,False,"The review mentions the course fit the student's schedule, but does not discuss prerequisites."
+221,grading_transparency,negative,True,True,"The review expresses frustration with the 'heavy, report-heavy assessment load' and 'random formatting quirks in submissions', indicating negative sentiment towards grading transparency."
+222,workload,positive,True,True,The review states the workload 'stayed doable the whole way'.
+222,materials,neutral,True,True,"The review describes the slides as 'serviceable but not memorable', which aligns with a neutral sentiment."
+222,tooling_usability,neutral,False,False,The review does not mention tooling usability.
+223,assessment_design,neutral,True,False,"The review mentions vague grading rubric and unclear collaboration expectations, indicating a negative sentiment."
+223,exam_fairness,positive,True,False,"The review mentions a midterm that emphasized implementation quirks in a way that didn’t map cleanly to practice problems, indicating a negative sentiment."
+223,support,neutral,True,True,"The review mentions TAs being responsive and practical, but also mentions unclear collaboration expectations, resulting in a neutral sentiment."
+224,accessibility,positive,False,False,review does not clearly express accessibility
+225,interest,neutral,True,False,"The review mentions the student signed up for the class because it's useful for industry work and felt optimistic, indicating a positive interest, but the declared label is neutral."
+226,prerequisite_fit,neutral,False,False,review does not mention prerequisites
+226,exam_fairness,negative,True,False,"review states exam felt fair in structure, contradicting negative label"
+226,feedback_quality,neutral,False,False,review does not explicitly mention feedback quality
+227,support,positive,False,False,"The review does not clearly express support as a positive aspect, but rather mentions the professor being engaging and the material clicking when having adjacent knowledge."
+227,difficulty,positive,True,False,"The review clearly expresses that the course is difficult, but the sentiment is negative, not positive, as it caused anxiety and wore the student out."
+228,lecturer_quality,neutral,True,False,"The review mentions 'lectures were dry', which indicates a negative sentiment, not neutral."
+228,workload,positive,False,False,"The review does not clearly express the workload aspect, though it mentions juggling a full-time job."
+228,clarity,positive,True,False,"The review mentions 'feedback came sparsely and often felt late', which indicates a negative sentiment, and 'the lectures were dry', but also some positive points like 'the recorded ones helped me catch the ideas at my own pace'."
+229,workload,positive,True,True,"The workload felt heavy in a good way, mostly because there were enough structured tasks to keep me honest without drowning in busywork."
+229,support,positive,True,True,"The lecturer, Dr. Singh, is genuinely engaging in class, even when I'm frustrated with the grading."
+230,tooling_usability,neutral,True,False,"review mentions tooling being 'rougher at first' but 'settles into something manageable', which leans more towards a positive sentiment than neutral"
+231,overall_experience,positive,True,False,"The review has mixed opinions, both positive and negative, about the course."
+232,clarity,neutral,False,False,review does not explicitly discuss clarity of the course
+232,materials,positive,True,True,review mentions materials filled gaps and problem sets were useful
+232,practical_application,positive,True,True,review highlights understanding linear independence was practically useful
+233,workload,negative,True,True,The review mentions the workload felt 'heavier than I expected' and 'constant deadlines' which indicates a negative sentiment.
+233,exam_fairness,positive,True,True,The review states 'The exam timing and structure felt fair enough' which indicates a positive sentiment.
+233,interest,positive,True,True,The review mentions 'the interest shown in the material when a lab scenario clicked was tangible' which indicates a positive sentiment.
+234,difficulty,negative,True,True,The review mentions the course felt 'tougher than I expected' and 'the grind didn’t end up helping me'.
+234,materials,neutral,True,False,"The review mentions both positive and negative aspects of the materials, such as prerequisites helping but also questions assuming prior knowledge, which doesn't clearly align with a neutral sentiment."
+234,tooling_usability,positive,True,False,"The review describes 'platform quirks' and 'quirky submission windows' as creating 'more stress than they should', indicating a negative sentiment rather than positive."
+235,pacing,negative,True,True,The review mentions 'tough stretches' and a 'mid-semester crunch' that made it hard to keep up.
+235,clarity,positive,True,True,The review states that 'clarity in explanations when they landed helped one or two concepts stick'.
+235,prerequisite_fit,negative,False,False,The review does not explicitly discuss whether the student's prior knowledge or preparation was sufficient for the course.
+236,overall_experience,neutral,True,True,"The review has both positive and negative comments, which aligns with a neutral overall experience."
+236,assessment_design,positive,False,False,"The review mentions instructor explanations and examples, but not the assessment design itself."
+236,organization,neutral,True,False,"The review mentions platform quirks adding stress, which suggests a negative sentiment towards organization."
+237,interest,neutral,True,False,"The review describes the course as 'an interesting ride', indicating a positive sentiment, but the declared label is neutral."
+237,prerequisite_fit,negative,True,False,"The review states that the course 'filled some gaps in prerequisite knowledge better than I expected', indicating a positive sentiment, but the declared label is negative."
+237,feedback_quality,neutral,True,False,"The review mentions that 'the feedback arrived so late that I barely had time to revise', indicating a negative sentiment, but the declared label is neutral."
+238,overall_experience,neutral,True,True,"The reviewer states they 'can't strictly recommend it', indicating a neutral experience."
+238,clarity,positive,False,False,"The review mentions unclear expectations and sloppy policy implementation, contradicting the positive clarity label."
+238,workload,negative,True,True,"The reviewer describes the workload as stacking up and mentions a particularly challenging midterm week, supporting the negative workload label."
+239,accessibility,negative,False,False,review does not mention accessibility issues
+240,relevance,negative,True,True,"The student took the course because it was required and expresses resentment, indicating a negative sentiment towards the course's relevance."
+240,tooling_usability,neutral,False,False,"The review mentions issues with the router lab documentation, but it does not clearly express an opinion about the usability of tools in general."
+241,materials,positive,False,False,review does not mention course materials
+242,overall_experience,negative,True,False,"The review has both positive and negative comments, but the student would still recommend the course, indicating a more neutral or mixed experience."
+243,clarity,negative,True,True,The review mentions 'clarity drifts' in abstract parts and lack of 'steady through-line'.
+243,feedback_quality,negative,True,True,The review states 'feedback quality fluctuates a lot' and 'comments arrive so late'.
+243,difficulty,neutral,False,False,The review does not clearly express the difficulty of the course.
+244,assessment_design,negative,True,True,"The review mentions that the assessments felt exhausting and were piled into tight windows, which aligns with the negative label."
+245,overall_experience,negative,True,False,"The review describes the course as a 'mixed bag' and the student is 'conflicted' about the experience, which doesn't clearly indicate a negative overall experience."
+245,difficulty,positive,True,False,"The review mentions the course 'raised the bar' but also had 'uneven feedback' and was a 'mixed bag', which doesn't clearly indicate a positive sentiment towards difficulty."
+246,feedback_quality,positive,True,True,The review mentions 'quick feedback after assignments helped me adjust my approach fast enough'
+246,clarity,positive,True,True,The review states 'Prof. Cohen is sharp and clear when he’s on a topic'
+247,workload,neutral,True,False,"review describes workload as 'exhausting', which is negative, not neutral"
+248,difficulty,neutral,True,True,"The review mentions being 'rusty' but also mentions that the course material 'came together', indicating a neutral difficulty level."
+248,prerequisite_fit,negative,True,False,"The review states that the way ML came together around Prereqs 'actually helped me feel like I wasn’t starting from scratch', indicating a positive sentiment towards prerequisite fit."
+249,difficulty,positive,True,True,"The review states the difficulty level 'pushed me to actually learn something', indicating a positive sentiment."
+249,pacing,neutral,True,True,"The review mentions 'the delivery felt uneven week to week', which aligns with a neutral sentiment regarding pacing."
+249,feedback_quality,positive,True,True,"The review states 'the quick feedback helped me adjust mid-term', indicating a positive sentiment towards feedback quality."

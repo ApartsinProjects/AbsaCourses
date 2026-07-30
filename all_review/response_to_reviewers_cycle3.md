@@ -49,7 +49,7 @@ Two results settle the realism question in the form that matters for a labeled t
 [DONE] Figure 1 is tightened to fill its frame, the bar-chart axis and number font is a clean sans-serif, and Table 5 is verified for readability. *Location:* Figures 1, A2, A3.
 
 **H4. Address the 841 token-capped rows.**
-[DONE + ADDING] Regenerating exactly those rows at a higher cap eliminates the truncation and restores full-corpus length adherence (done); we add an analysis of the truncated rows' aspect and polarity distribution and an exclusion ablation (shared with dWED-D2). *Location:* Appendix A.14.
+[DONE] Regenerating exactly those rows at a higher cap eliminates the truncation and restores full-corpus length adherence. We further analyzed the truncated rows for bias: their aspect distribution is not skewed (chi-square p=0.23, Cramer's V=0.034) and their polarity distribution is negligibly different (Cramer's V=0.020); they differ only in the mechanically-expected ways (fewer labeled aspects, shorter text). Critically, their audit faithfulness is statistically indistinguishable from the complete corpus (mean audit score 0.573 vs 0.577, p=0.76), so excluding them does not change the benchmark's faithfulness or label profile. *Location:* Appendix A.14.
 
 **H5. The bottom-25% low-fidelity rows inflate sentiment error.**
 [CLARIFY] Precisely: that is the signal the filtering recipe exploits. The negative-control bottom quartile collapses on sentiment MSE across both architectures and both transfer targets (0 of 8 seeds recovering), which is why retaining the top 50% by audit score reduces error at half the training cost. The audit score discriminates informative from uninformative rows at both ends of the distribution. *Location:* §5.7.
@@ -67,10 +67,10 @@ Two results settle the realism question in the form that matters for a labeled t
 We thank Reviewer dWED for the careful and generous review and for the constructive, actionable suggestions; we are pleased the experimental design, filtering pipeline, and transfer evidence came through clearly.
 
 **D1. Discuss generator-auditor circularity directly.**
-[DONE] §6.1 gives a standalone treatment: generator and auditor share a provider family, and we test whether the audit merely detects same-family latent patterns by reproducing the human-agreement check with a fully independent family (Gemini, kappa 0.62), together with the behavioral perturbation control. *Location:* §6.1, Appendix A.19.
+[DONE] §6.1 gives a standalone treatment, and we settle the concern empirically: we re-ran the faithfulness audit with two open-weights auditors from independent families (Llama-3.3-70B, Meta; GLM-4.6, Zhipu) on the same 250-review sample. All three families converge on the same per-aspect judgments (support-rate GPT 0.77 / Llama 0.74 / GLM 0.73; cross-architecture Cohen's kappa 0.56 to 0.65, row-score Spearman 0.54 to 0.69), and the two open-weights auditors agree with each other at the same level, so the GPT auditor is not privileged. A same-family artifact would make out-of-family auditors diverge; instead they reproduce the audit, which shows it measures textual faithfulness rather than a generator-auditor family effect. This complements the earlier Gemini human-agreement check (kappa 0.62) and the behavioral perturbation control. *Location:* §6.1, Appendix A.19.
 
 **D2. Analyze whether the 841 incomplete rows are biased and whether excluding them changes results.**
-[ADDING] We add the aspect and polarity distribution of the truncated rows and an exclusion ablation (shared with H4). *Location:* Appendix A.14.
+[DONE] The truncated rows are not systematically biased across aspects (Cramer's V=0.034) or polarities (V=0.020), and their audit faithfulness matches the complete corpus (0.573 vs 0.577, p=0.76); the only differences are the mechanical ones (fewer aspects, shorter text). Their label and faithfulness profile is representative, so excluding them leaves the benchmark unchanged (shared with H4). *Location:* Appendix A.14.
 
 **D3. Cite emerging methods (multimodal-sarcasm VLMs; set-matching GCD).**
 [DONE] Both are cited. *Location:* References.
@@ -82,7 +82,7 @@ We thank Reviewer dWED for the careful and generous review and for the construct
 [DONE] §6.2 provides a fine-tuning-size curve: roughly 250-500 local reviews capture most of the benefit, the synthetic pretrain reaches real-only quality with about half the real data, practitioners should expect the Figure 6 curve rather than internal-benchmark numbers, and should monitor against a held-out locally-adjudicated slice with re-checks on distribution shift. *Location:* §6.2, Figure 6.
 
 **D-additional (moderate scores / error analysis / generalizability).**
-[CLARIFY + ADDING] Absolute scores reflect the intrinsic difficulty of 20-aspect ABSA under conservative overlap; we add a short qualitative error analysis of the dominant failure modes, and the English-STEM/graduate scope is stated explicitly. *Location:* §5, §6.1.
+[DONE] Absolute scores reflect the intrinsic difficulty of 20-aspect ABSA under conservative overlap. We add a qualitative error analysis showing the failures are systematic, not random, in four recurring patterns: (1) high-prevalence diffuse aspects are over-predicted while specific aspects are under-detected (overall_experience 660 false positives; peer_interaction recall 0.08); (2) a specific-to-generic substitution pattern (missed specific aspects replaced by generic evaluative ones); (3) polarity compression toward neutral on detected aspects; and (4) a positive skew under real-review transfer, reflecting the enthusiastic register of real course reviews that the synthetic distribution under-represents. Practitioners can therefore expect reliable detection and polarity on frequent, lexically distinctive aspects, and should treat fine-grained aspects and non-positive polarities on out-of-domain reviews as the model's weak regime. The English-STEM/graduate scope is stated explicitly. *Location:* §5, §6.1.
 
 ---
 

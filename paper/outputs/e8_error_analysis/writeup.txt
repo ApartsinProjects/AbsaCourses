@@ -1,0 +1,35 @@
+Error-analysis paragraph (draft for paper; plain prose, no em-dashes)
+
+A qualitative pass over the bert-base-uncased predictions (1,000 held-out synthetic
+reviews; 1,680 real Herath transfer reviews) shows that the model's errors are
+systematic rather than random, concentrating in four recurring patterns. First, a
+detection frequency bias: high-prevalence, diffuse aspects are over-predicted while
+specific, lower-frequency aspects are under-detected. Four broad aspects account for
+the bulk of false positives (overall_experience 660, clarity 538, support 529,
+feedback_quality 525 spurious firings), whereas fine-grained aspects are routinely
+missed, with peer_interaction recovered in only 8 percent of its gold mentions
+(recall 0.08), prerequisite_fit in 14 percent, and difficulty in 17 percent. Second,
+these two behaviours are linked as a substitution pattern: when a specific aspect is
+present the model tends to drop it and instead fire a generic aspect, so the most
+common confusions are peer_interaction miss-substituted by overall_experience (69
+reviews) or clarity (66), and organization, assessment_design, and practical_application
+each collapsing into overall_experience. The shared evaluative vocabulary of these
+generic aspects makes them attractors for any review with an overall sentiment. Third,
+sentiment shows polarity compression toward neutral: on detected aspects the regression
+head pulls strong polarities to the middle, mislabelling 178 of 319 gold-negative and
+209 of 364 gold-positive detections as neutral, so neutral is the dominant off-diagonal
+cell in both directions while direct negative-to-positive flips are rare (17 total).
+Fourth, this compression worsens under real-review transfer and acquires a positive
+skew: on Herath reviews only 26 of 272 gold-negative aspects are labelled negative,
+with 190 pushed to neutral and 56 flipped to positive, reflecting the enthusiastic
+register of real course reviews that the synthetic training distribution under-represents.
+Together these patterns indicate that the failures are structural properties of the
+label distribution and shared aspect vocabulary, not sporadic noise: practitioners can
+expect reliable detection and polarity only on frequent, lexically distinctive aspects,
+and should treat fine-grained aspects and non-positive polarities on out-of-domain
+reviews as the model's weak regime.
+
+(Sentiment polarity here is derived by binning the continuous regression head at the
+midpoint boundary +/-0.5 between the equally spaced gold classes -1/0/+1; the dump's
+predicted_aspects string field is a display artifact that collapses every value to
+"neutral" and is not used for this analysis.)
