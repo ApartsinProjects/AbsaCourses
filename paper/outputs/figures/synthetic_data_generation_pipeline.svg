@@ -1,18 +1,18 @@
 <svg xmlns="http://www.w3.org/2000/svg" width="1600" height="668" viewBox="0 0 1600 668" role="img" aria-label="Synthetic educational review generation pipeline">
   <defs>
     <style>
-      .bg { fill: #fcfbf7; }
+      .bg { fill: #ffffff; }
       .frame { fill: #fffefe; stroke: #d8d3c9; stroke-width: 1.2; }
       .label { font: 700 32px Georgia, "Times New Roman", serif; fill: #16324a; }
-      .body { font: 17px Georgia, "Times New Roman", serif; fill: #31414f; }
-      .chip { font: 700 13px Arial, sans-serif; fill: #9a5a30; letter-spacing: 0.09em; }
+      .body { font: 20px Georgia, "Times New Roman", serif; fill: #1a2733; }
+      .chip { font: 700 15px Arial, sans-serif; fill: #7a4522; letter-spacing: 0.09em; }
       .flow { stroke: #6a7886; stroke-width: 4; fill: none; marker-end: url(#arrow); stroke-linejoin: round; }
       .fb { stroke: #b5703f; stroke-width: 3.4; fill: none; marker-end: url(#arrowfb); stroke-dasharray: 11 9; stroke-linejoin: round; }
-      .panelA { fill: #edf3f7; stroke: #cddbe6; stroke-width: 1.6; }
-      .panelB { fill: #f2f5ee; stroke: #d6e0cc; stroke-width: 1.6; }
-      .panelC { fill: #f8f1e9; stroke: #e6d3bf; stroke-width: 1.6; }
-      .panelD { fill: #edf4ee; stroke: #cfe0d2; stroke-width: 1.6; }
-      .fbbox { fill: #fbf2ea; stroke: #e3c4a8; stroke-width: 1.6; }
+      .panelA { fill: #edf3f7; stroke: #7fa6c4; stroke-width: 2.0; }
+      .panelB { fill: #f2f5ee; stroke: #9cbf8f; stroke-width: 2.0; }
+      .panelC { fill: #f8f1e9; stroke: #d0a878; stroke-width: 2.0; }
+      .panelD { fill: #edf4ee; stroke: #93bf9e; stroke-width: 2.0; }
+      .fbbox { fill: #fbf2ea; stroke: #c99a6e; stroke-width: 2.0; }
       .center { text-anchor: middle; }
     </style>
     <marker id="arrow" markerWidth="11" markerHeight="11" refX="8.5" refY="5" orient="auto">
