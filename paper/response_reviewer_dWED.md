@@ -8,9 +8,9 @@ We thank Reviewer dWED for a careful and generous review and for constructive, a
 
 **Requested.** The same provider family (OpenAI) generates the data and performs the audit; a dedicated discussion of potential circularity is needed.
 
-Done, with a new experiment. Beyond the standalone discussion, we settle the concern empirically by re-running the audit with two open-weights auditors from independent families (Llama-3.3-70B from Meta and GLM-4.6 from Zhipu) on the same sample. All three families converge on the same per-aspect judgments (support-rate 0.77, 0.74, 0.73; cross-architecture Cohen's kappa 0.56 to 0.65, row-score Spearman 0.54 to 0.69, Appendix A.29), and the two open-weights auditors agree with each other at the same level, so the GPT auditor is not privileged. A same-family artifact would make out-of-family auditors diverge; instead they reproduce the audit, which shows it measures textual faithfulness.
+Done, with a new experiment. Beyond the standalone discussion, we settle the concern empirically by re-running the audit with two open-weights auditors from independent families (Llama-3.3-70B from Meta and GLM-4.6 from Zhipu) on the same sample. All three families converge on the same per-aspect judgments (support-rate 0.77, 0.74, 0.73; cross-architecture Cohen's kappa 0.56 to 0.65, row-score Spearman 0.54 to 0.69, Appendix A.4.4), and the two open-weights auditors agree with each other at the same level, so the GPT auditor is not privileged. A same-family artifact would make out-of-family auditors diverge; instead they reproduce the audit, which shows it measures textual faithfulness.
 
-*Location:* Section 6.1; Appendix A.19, A.29.
+*Location:* Section 6.1; Appendix A.3.2, A.4.4.
 
 ### 2. Bias analysis of the incomplete rows
 
@@ -18,7 +18,7 @@ Done, with a new experiment. Beyond the standalone discussion, we settle the con
 
 Done. The truncated rows are not systematically biased across aspects (Cramer's V=0.034) or polarities (V=0.020), and their audit faithfulness matches the complete corpus (0.573 versus 0.577, p=0.76); the only differences are mechanical (fewer aspects, shorter text). Their label and faithfulness profile is representative, so excluding them leaves the benchmark unchanged.
 
-*Location:* Appendix A.14.
+*Location:* Appendix A.1.5.
 
 ### 3. Broader related-work discussion
 
@@ -48,7 +48,7 @@ Done. Section 6.2 provides a fine-tuning-size curve: roughly 250 to 500 local re
 
 **Requested.** Moderate absolute performance leaves unclear what good-enough means; a qualitative error analysis of common failure modes would help practitioners diagnose systematic errors.
 
-Done. Absolute scores reflect the intrinsic difficulty of 20-aspect ABSA under conservative overlap. We add a qualitative error analysis showing the failures are systematic in four recurring patterns: high-prevalence diffuse aspects are over-predicted while specific aspects are under-detected; missed specific aspects are substituted by generic evaluative ones; polarity compresses toward neutral on detected aspects; and a positive skew appears under real-review transfer. Practitioners can therefore expect reliable detection and polarity on frequent, lexically distinctive aspects, and should treat fine-grained aspects and non-positive polarities on out-of-domain reviews as the weak regime (Appendix A.33).
+Done. Absolute scores reflect the intrinsic difficulty of 20-aspect ABSA under conservative overlap. We add a qualitative error analysis showing the failures are systematic in four recurring patterns: high-prevalence diffuse aspects are over-predicted while specific aspects are under-detected; missed specific aspects are substituted by generic evaluative ones; polarity compresses toward neutral on detected aspects; and a positive skew appears under real-review transfer. Practitioners can therefore expect reliable detection and polarity on frequent, lexically distinctive aspects, and should treat fine-grained aspects and non-positive polarities on out-of-domain reviews as the weak regime (Appendix A.7.1).
 
 *Location:* Section 5; Section 6.1.
 

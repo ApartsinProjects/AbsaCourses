@@ -523,7 +523,7 @@
 
       <h3>3.3 Aspect Inventory and Pedagogical Scope</h3>
       <p>
-        The benchmark uses a 20-aspect inventory so that distinct student concerns can be represented directly instead of being collapsed into broad categories such as <code>overall_experience</code> or <code>relevance</code>. For readability, the inventory is organized into five pedagogical blocks: instructional quality (<code>clarity</code>, <code>lecturer_quality</code>, <code>materials</code>, <code>feedback_quality</code>), assessment and course management (<code>exam_fairness</code>, <code>assessment_design</code>, <code>grading_transparency</code>, <code>organization</code>, <code>tooling_usability</code>), learning demand and readiness (<code>difficulty</code>, <code>workload</code>, <code>pacing</code>, <code>prerequisite_fit</code>), learning environment (<code>support</code>, <code>accessibility</code>, <code>peer_interaction</code>), and engagement and value (<code>relevance</code>, <code>interest</code>, <code>practical_application</code>, <code>overall_experience</code>). Appendix A.1 lists the full inventory with these group assignments.
+        The benchmark uses a 20-aspect inventory so that distinct student concerns can be represented directly instead of being collapsed into broad categories such as <code>overall_experience</code> or <code>relevance</code>. For readability, the inventory is organized into five pedagogical blocks: instructional quality (<code>clarity</code>, <code>lecturer_quality</code>, <code>materials</code>, <code>feedback_quality</code>), assessment and course management (<code>exam_fairness</code>, <code>assessment_design</code>, <code>grading_transparency</code>, <code>organization</code>, <code>tooling_usability</code>), learning demand and readiness (<code>difficulty</code>, <code>workload</code>, <code>pacing</code>, <code>prerequisite_fit</code>), learning environment (<code>support</code>, <code>accessibility</code>, <code>peer_interaction</code>), and engagement and value (<code>relevance</code>, <code>interest</code>, <code>practical_application</code>, <code>overall_experience</code>). Appendix A.1.1 lists the full inventory with these group assignments.
       </p>
       <p>
         These additions are motivated by pedagogy rather than by label inflation. Students frequently distinguish between a course that is difficult and one that is poorly paced, between a fair exam and a badly aligned assessment structure, and between strong content and weak tooling or feedback loops. Making those distinctions explicit is one of the main novelty claims: the goal is not only more labels, but a more educationally actionable aspect space than the small public student-feedback corpora described in prior work.
@@ -559,13 +559,13 @@
 
       <h3>3.6 Synthetic Training Data and Real Validation Data</h3>
       <p>
-        The final corpus contains 10,000 synthetic records generated from the realism-tuned prompt package. All rows contain review text and at least one valid labeled aspect, although 841 rows were marked <code>incomplete</code> by the API because they hit the output-token cap. These capped rows are modestly different from complete rows, shorter (mean 100 vs 119 words) and carrying fewer aspects (a 0.07 versus 0.33 share of three-aspect reviews), with a similar sentiment mix (Appendix A.18). Retraining the benchmark with these 841 rows excluded leaves held-out detection essentially unchanged (micro-F1 0.264 versus 0.275, macro balanced accuracy 0.613 versus 0.619 across three seeds), so the corpus is robust to their inclusion. Regenerating exactly these rows at a raised output cap also removes the truncation and restores full-corpus length-band adherence to the never-truncated level (Appendix A.14). The generation length budget is also a deliberate and realistic constraint rather than only a limitation: real course-feedback platforms cap how much a student can write, and the retained reviews match the length profile of real full-length course reviews. On the public OMSCS reviews, the retained synthetic reviews have a median of 122 words against 104 for the real reviews, and 92% fall within the real 10th-to-90th-percentile band of 43 to 311 words (they diverge only from Herath, whose entries are sentence-level snippets rather than whole reviews). The assembled corpus spans 8 course names, 6 observed writing-style labels, 5 grade bands, and the full 20-aspect inventory. The mean review length is 117.2 words, the median is 108 words, and each review contains an average of 2.0 labeled aspects. In practical terms, the corpus is large enough for controlled internal benchmarking, while realism validation and synthetic-to-real transfer remain separate supporting analyses.
+        The final corpus contains 10,000 synthetic records generated from the realism-tuned prompt package. All rows contain review text and at least one valid labeled aspect, although 841 rows were marked <code>incomplete</code> by the API because they hit the output-token cap. These capped rows are modestly different from complete rows, shorter (mean 100 vs 119 words) and carrying fewer aspects (a 0.07 versus 0.33 share of three-aspect reviews), with a similar sentiment mix (Appendix A.1.6). Retraining the benchmark with these 841 rows excluded leaves held-out detection essentially unchanged (micro-F1 0.264 versus 0.275, macro balanced accuracy 0.613 versus 0.619 across three seeds), so the corpus is robust to their inclusion. Regenerating exactly these rows at a raised output cap also removes the truncation and restores full-corpus length-band adherence to the never-truncated level (Appendix A.1.5). The generation length budget is also a deliberate and realistic constraint rather than only a limitation: real course-feedback platforms cap how much a student can write, and the retained reviews match the length profile of real full-length course reviews. On the public OMSCS reviews, the retained synthetic reviews have a median of 122 words against 104 for the real reviews, and 92% fall within the real 10th-to-90th-percentile band of 43 to 311 words (they diverge only from Herath, whose entries are sentence-level snippets rather than whole reviews). The assembled corpus spans 8 course names, 6 observed writing-style labels, 5 grade bands, and the full 20-aspect inventory. The mean review length is 117.2 words, the median is 108 words, and each review contains an average of 2.0 labeled aspects. In practical terms, the corpus is large enough for controlled internal benchmarking, while realism validation and synthetic-to-real transfer remain separate supporting analyses.
       </p>
       <p>
         Real data are used in two different roles, and it is important not to conflate them when judging the scope of the evidence. The first role is a small blinded reference pool of 32 public OMSCS reviews drawn from four course pages (<code>CS-6200</code>, <code>CS-6250</code>, <code>CS-6400</code>, <code>CS-7641</code>); these are never used for training, validation, or test evaluation, only as blinded items in the real-versus-synthetic judge loop so prompt changes can be checked against naturally occurring educational-review language, and this pool is freely enlargeable from public sources (for example, thousands of RateMyProfessor teaching-feedback comments are available). The 32-review figure therefore bounds a diagnostic loop, not the benchmark's real-data scope. The second role, which is the actual external evaluation, uses two independent annotated real corpora under two different annotation schemes: the student-feedback corpus of Herath et al. [17] (2,829 reviews, conservatively mapped to a 9-aspect overlap) and EduRABSA (mapped to a 7-aspect overlap). Models trained only on synthetic data are evaluated out of domain on both, so the transfer evidence rests on thousands of real reviews across two schemes rather than on the blinded realism pool. This distinction matters for interpretation: synthetic data define the main ABSA benchmark, while real data are reserved for generator analysis and for two independent external evaluations.
       </p>
       <p>
-        The richness of the generator comes from the combination of target attributes and nuance attributes. Target attributes define the supervision target, while nuance attributes introduce course- and student-level variation that helps the same aspect labels appear in different contexts. In this protocol, the nuance space is grouped into four functional blocks so the prompt remains interpretable: one block anchors the course situation, one changes the pedagogical events being described, one changes linguistic realization, and one suppresses templated synthetic regularity. Table 2 lists representative variables from each block rather than exhausting the full schema, because the scientific point is the role each block plays in controlled diversity; the aspect blocks themselves are listed separately in Appendix A.1.
+        The richness of the generator comes from the combination of target attributes and nuance attributes. Target attributes define the supervision target, while nuance attributes introduce course- and student-level variation that helps the same aspect labels appear in different contexts. In this protocol, the nuance space is grouped into four functional blocks so the prompt remains interpretable: one block anchors the course situation, one changes the pedagogical events being described, one changes linguistic realization, and one suppresses templated synthetic regularity. Table 2 lists representative variables from each block rather than exhausting the full schema, because the scientific point is the role each block plays in controlled diversity; the aspect blocks themselves are listed separately in Appendix A.1.1.
       </p>
       <table class="spotlight-table nuance-table">
         <caption>Table 2. Representative nuance-attribute groups used to diversify synthetic reviews while keeping the target aspect labels fixed. The table emphasizes the functional role of each block; individual reviews sample only a subset of these variables.</caption>
@@ -656,7 +656,7 @@
         so it asks a separate binary presence question for each \(a_k\) and only then queries sentiment where needed. This formulation is more expensive but useful for diagnosing whether per-aspect prompting improves recall control or sentiment calibration.
       </p>
       <p>
-        These GPT-based variants are part of the ABSA evaluation plan, not the realism protocol. The realism protocol (Appendix A.11) remains a separate judge-based validation loop used to improve the generator prompt, whereas the evaluation plan asks whether different ABSA approaches can recover the synthetic aspect labels once the dataset has been fixed. Across all planned approaches, model selection, threshold calibration, and prompt-choice decisions are confined to the validation split, and final benchmark numbers are reported only on held-out data.
+        These GPT-based variants are part of the ABSA evaluation plan, not the realism protocol. The realism protocol (Appendix A.2.4) remains a separate judge-based validation loop used to improve the generator prompt, whereas the evaluation plan asks whether different ABSA approaches can recover the synthetic aspect labels once the dataset has been fixed. Across all planned approaches, model selection, threshold calibration, and prompt-choice decisions are confined to the validation split, and final benchmark numbers are reported only on held-out data.
       </p>
       <p>
         Table 3 functions as a compact map of the executed experiment families. Rather than repeating implementation details, it keeps the benchmark logic visible in one place: which approaches learn from synthetic supervision, which recover labels through inference-time prompting, and which analyses are used to examine robustness and transfer.
@@ -683,7 +683,7 @@
       </p>
 
       <table>
-        <caption>Table 4. Exact corpus-level counts and ranges for the synthetic benchmark and the two real-data pools used in realism analysis and external transfer. The table provides the precise summary values that complement the broader visual distribution shown later in Figure A7.</caption>
+        <caption>Table 4. Exact corpus-level counts and ranges for the synthetic benchmark and the two real-data pools used in realism analysis and external transfer. The table provides the precise summary values that complement the broader visual distribution shown later in Figure A2.</caption>
         <thead>
           <tr>
             <th>Measure</th>
@@ -697,7 +697,7 @@
           <tr><td>Mapped external test reviews</td><td>2,829</td><td>Annotated student-feedback reviews from Herath et al. used only for synthetic-to-real evaluation on a 9-aspect overlap</td></tr>
           <tr><td>Course names</td><td>8</td><td>Multiple academic contexts rather than a single course</td></tr>
           <tr><td>Observed writing styles</td><td>6</td><td>Style-conditioned prompting remains present in the assembled dataset</td></tr>
-          <tr><td>Aspect inventory</td><td>20</td><td>The benchmark runs directly on the 20-aspect pedagogical schema listed in Appendix A.1</td></tr>
+          <tr><td>Aspect inventory</td><td>20</td><td>The benchmark runs directly on the 20-aspect pedagogical schema listed in Appendix A.1.1</td></tr>
           <tr><td>Mean / median words</td><td>117.2 / 108</td><td>The corpus mixes short comments with longer reflective reviews</td></tr>
           <tr><td>Mean aspects per review</td><td>2.0</td><td>Many reviews are genuinely multi-aspect</td></tr>
           <tr><td>Min-max words</td><td>34-273</td><td>Substantial variation in compression and detail remains visible even after length controls</td></tr>
@@ -734,7 +734,7 @@
       </table>
 
       <p>
-        Table 5 therefore complements rather than repeats Table 3. Table 3 says which method families are executed, while Table 5 says what each analysis block is meant to establish, which split it uses, and how it should be interpreted alongside the main benchmark. Supporting detail for the analyses that follow is collected in the appendix: side-by-side real and synthetic review examples (Appendix A.2), the exact prompt instructions used across realism-validation cycles (Appendix A.3), the pilot-subset procedure validation (Appendix A.7), complementary generator diagnostics (Appendix A.12), the corpus profile and representative examples (Appendix A.15), the per-aspect behavior of the best model (Appendix A.16), and prior real-data educational sentiment results placed in context (Appendix A.17).
+        Table 5 therefore complements rather than repeats Table 3. Table 3 says which method families are executed, while Table 5 says what each analysis block is meant to establish, which split it uses, and how it should be interpreted alongside the main benchmark. Supporting detail for the analyses that follow is collected in the appendix: side-by-side real and synthetic review examples (Appendix A.1.2), the exact prompt instructions used across realism-validation cycles (Appendix A.2.2), the pilot-subset procedure validation (Appendix A.2.3), complementary generator diagnostics (Appendix A.3.1), the corpus profile and representative examples (Appendix A.1.4), the per-aspect behavior of the best model (Appendix A.5.3), and prior real-data educational sentiment results placed in context (Appendix A.6.1).
       </p>
 
       <h3>5.2 Internal Benchmark on the 10K / 20-Aspect Corpus</h3>
@@ -742,10 +742,10 @@
         The main benchmark uses the 10,000-review corpus with a strict 8,000/1,000/1,000 train-validation-test split. Seven local approaches are reported: TF-IDF, four two-step transformer encoders, and two joint encoders that predict aspect presence and polarity together. Among the untuned models, <code>bert-base-uncased</code> gives the strongest held-out detection, at macro balanced accuracy 0.623 and macro AUROC 0.681 (micro-F1 0.276, detected-aspect sentiment MSE 0.4959), followed by <code>distilbert-base-uncased</code> at balanced accuracy 0.621 (micro-F1 0.2691). The joint variants remain competitive but lower (<code>distilbert_joint</code> micro-F1 0.2524, <code>bert_joint</code> 0.2447), which supports the two-step decomposition as the clearest baseline family in this benchmark. We lead with balanced accuracy and threshold-free AUROC rather than micro-F1 because micro-F1 is a deliberately strict operating-point metric here: with one to three aspects per review among twenty mostly-absent labels, the trivial all-present baseline already scores 0.183 micro-F1, so the absolute level is compressed by the task structure and the measured label noise rather than by weak representations. Micro-F1 is retained throughout the tables as the standard comparable metric, but it is read alongside balanced accuracy and ranking quality, not alone.
       </p>
       <p>
-        Additional robustness analyses sharpen that picture. Across three seeds for TF-IDF, DistilBERT, and BERT, the highest mean detection score comes from BERT at \(0.2791 \pm 0.0140\) micro-F1, while DistilBERT remains the most stable model at \(0.2694 \pm 0.0005\). A lower-rate four-epoch BERT schedule further raises the held-out score to 0.2930 and lowers sentiment MSE to 0.4728. Appendix A.9 reports the full seed-stability, joint-versus-two-step, and tuning tables and figures that support these observations.
+        Additional robustness analyses sharpen that picture. Across three seeds for TF-IDF, DistilBERT, and BERT, the highest mean detection score comes from BERT at \(0.2791 \pm 0.0140\) micro-F1, while DistilBERT remains the most stable model at \(0.2694 \pm 0.0005\). A lower-rate four-epoch BERT schedule further raises the held-out score to 0.2930 and lowers sentiment MSE to 0.4728. Appendix A.5.1 reports the full seed-stability, joint-versus-two-step, and tuning tables and figures that support these observations.
       </p>
       <p>
-        Absolute scores are shaped by task structure and the corpus's measured label noise, and the benchmark's difficulty is itself informative; a qualitative error analysis further shows the residual failures are systematic rather than random, in four recurring patterns (Appendix A.33). The benchmark covers 20 aspects across five pedagogical groups, includes subtle categories such as <code>feedback_quality</code>, <code>peer_interaction</code>, and <code>prerequisite_fit</code>, and allows one to three aspects per review across multiple writing styles and course contexts. The ranking also has a concrete error-profile interpretation. BERT and DistilBERT improve primarily by lifting recall above 0.43 while retaining enough precision to prevent indiscriminate overprediction. ALBERT and RoBERTa, by contrast, collapse to recall 1.000 at micro-F1 0.183, and the resulting false positives inflate downstream sentiment MSE to 0.577 and 0.684 respectively. In this sense, Table 6 shows that the benchmark rewards models that recover many aspect mentions without collapsing into broad positive prediction.
+        Absolute scores are shaped by task structure and the corpus's measured label noise, and the benchmark's difficulty is itself informative; a qualitative error analysis further shows the residual failures are systematic rather than random, in four recurring patterns (Appendix A.7.1). The benchmark covers 20 aspects across five pedagogical groups, includes subtle categories such as <code>feedback_quality</code>, <code>peer_interaction</code>, and <code>prerequisite_fit</code>, and allows one to three aspects per review across multiple writing styles and course contexts. The ranking also has a concrete error-profile interpretation. BERT and DistilBERT improve primarily by lifting recall above 0.43 while retaining enough precision to prevent indiscriminate overprediction. ALBERT and RoBERTa, by contrast, collapse to recall 1.000 at micro-F1 0.183, and the resulting false positives inflate downstream sentiment MSE to 0.577 and 0.684 respectively. In this sense, Table 6 shows that the benchmark rewards models that recover many aspect mentions without collapsing into broad positive prediction.
       </p>
       <p>
         Part of the moderate ceiling is a property of the labels rather than of the models. The held-out test split carries the same label faithfulness as the training corpus: under the full-corpus <code>gpt-4.1-mini</code> audit (Section 5.7), the 1,000-review held-out split has a mean per-row aspect-sentiment match rate of 0.58, statistically identical to the 0.58 of the full 10K. A held-out score is bounded by the faithfulness of the held-out labels, so a portion of the unrecovered detection F1 reflects test rows whose declared polarity is not visibly supported in the text rather than model limitation alone. This is directly measurable: re-scoring the trained <code>bert-base-uncased</code> detector on the faithful subset of the test split (the rows whose declared aspects are all supported) lifts micro-F1 from 0.276 (95% CI [0.270, 0.285]) on the full 1,000-review test set to 0.307 ([0.277, 0.337]) on the faithful subset, a paired gain of +0.030 (95% bootstrap CI [0.006, 0.054], higher in all four seeds). The model recovers labels more accurately exactly where the labels are faithful, which is the same signal the faithfulness-aware filtering in Section 5.7 exploits on the training side. The benchmark is therefore positioned as a controllable resource with an explicit, measurable label-noise level rather than as a saturated leaderboard.
@@ -754,7 +754,7 @@
         Three controls establish that this signal is genuine rather than an artifact of label frequencies. First, a label-permutation control, retraining with the text-to-label correspondence destroyed, collapses detection micro-F1 to 0.182 (95% CI [0.177, 0.187]), indistinguishable from the strongest trivial baseline (predict-all-present, 0.183) and 0.094 below the real-label 0.276; the recovered F1 thus comes from text that genuinely predicts the labels. Second, detection scales monotonically with training data, from 0.183 at 250 reviews to 0.285 at 8,000, increasing in every seed with no plateau. Third, the learned model clears every trivial floor (predict-all-present 0.183, predict-by-frequency 0.000, random-at-prevalence 0.101) by at least 0.093. Consistent with the label-noise account, restricting both training and test to faithful rows raises micro-F1 to 0.319 ([0.290, 0.348], +0.043 over the full corpus) at audit row-score 1.0 and 0.340 ([0.332, 0.348], +0.064) at row-score 0.5 or above.
       </p>
       <p>
-        The additional diagnostics tell a fuller story than F1 alone. On the principal local comparison, BERT and DistilBERT are nearly tied in macro balanced accuracy at 0.6229 and 0.6207 respectively, while BERT now also holds the strongest untuned sentiment MSE and macro MCC. This is useful because the 20-aspect benchmark contains many negative label decisions per review, so balanced accuracy and specificity clarify whether a model is improving by recovering minority positives or merely by exploiting the dominant negatives. A threshold-free view confirms the same reading: on the 20-aspect held-out test set the BERT detector reaches a macro AUROC of 0.681 and a micro AUROC of 0.688, with per-aspect AUROC ranging from 0.54 to 0.83 (highest for lexically marked aspects such as <code>pacing</code> at 0.83 and <code>workload</code> at 0.81). Because AUROC is independent of the decision threshold and therefore of the noisy gold operating point, this shows the detector ranks aspect presence well above chance and that the moderate micro-F1 reflects thresholding and label noise rather than weak representations. Appendix A.10 reports these complementary diagnostics for the principal synthetic-benchmark, GPT-based, and mapped real-data comparisons.
+        The additional diagnostics tell a fuller story than F1 alone. On the principal local comparison, BERT and DistilBERT are nearly tied in macro balanced accuracy at 0.6229 and 0.6207 respectively, while BERT now also holds the strongest untuned sentiment MSE and macro MCC. This is useful because the 20-aspect benchmark contains many negative label decisions per review, so balanced accuracy and specificity clarify whether a model is improving by recovering minority positives or merely by exploiting the dominant negatives. A threshold-free view confirms the same reading: on the 20-aspect held-out test set the BERT detector reaches a macro AUROC of 0.681 and a micro AUROC of 0.688, with per-aspect AUROC ranging from 0.54 to 0.83 (highest for lexically marked aspects such as <code>pacing</code> at 0.83 and <code>workload</code> at 0.81). Because AUROC is independent of the decision threshold and therefore of the noisy gold operating point, this shows the detector ranks aspect presence well above chance and that the moderate micro-F1 reflects thresholding and label noise rather than weak representations. Appendix A.5.2 reports these complementary diagnostics for the principal synthetic-benchmark, GPT-based, and mapped real-data comparisons.
       </p>
       <p>
         Table 6 provides the exact values for the executed local benchmark. Figure 2 serves a different role: instead of repeating the table cell-by-cell, it visualizes the main trade-offs among detection quality, recall, runtime, and sentiment error. This separation is intentional so that the table remains the precise archival record while the figure highlights the comparative structure of the result space.
@@ -815,13 +815,13 @@
         </tbody>
       </table>
       <p>
-        The ranking is informative in its own right. Under this strict sparse-schema contract, zero-shot prompting and retrieval-based few-shot prompting are the strongest GPT variants, which suggests that example selection matters but that a highly constrained zero-shot formulation is already competitive. Relative to the local benchmark, the full-test GPT runs outperform TF-IDF and both joint encoders while remaining below the strongest two-step transformers. This places batch GPT inference in a meaningful middle band of the benchmark rather than at the edges of the comparison space. Because <code>gpt-5.2</code> also serves as the strict faithfulness auditor (Section 5.6) and shares a provider family with the <code>gpt-5-nano</code> generator, these are reported as same-family reference baselines rather than independent external systems. Appendix A.6 records the configuration choices that distinguish the four GPT-based inference variants.
+        The ranking is informative in its own right. Under this strict sparse-schema contract, zero-shot prompting and retrieval-based few-shot prompting are the strongest GPT variants, which suggests that example selection matters but that a highly constrained zero-shot formulation is already competitive. Relative to the local benchmark, the full-test GPT runs outperform TF-IDF and both joint encoders while remaining below the strongest two-step transformers. This places batch GPT inference in a meaningful middle band of the benchmark rather than at the edges of the comparison space. Because <code>gpt-5.2</code> also serves as the strict faithfulness auditor (Section 5.6) and shares a provider family with the <code>gpt-5-nano</code> generator, these are reported as same-family reference baselines rather than independent external systems. Appendix A.2.1 records the configuration choices that distinguish the four GPT-based inference variants.
       </p>
       <p>
-        The confusion-based diagnostics reinforce that interpretation. The strongest GPT variants reach macro balanced accuracy near 0.59 with macro specificity around 0.87, which indicates conservative but well-controlled prediction behavior: the batch prompts avoid broad overprediction, but they still miss many positive aspects that the stronger local encoders recover. In other words, GPT-based inference is competitive partly because it remains selective rather than because it dominates recall. Appendix A.10 includes these complementary values alongside the main F1-based ranking.
+        The confusion-based diagnostics reinforce that interpretation. The strongest GPT variants reach macro balanced accuracy near 0.59 with macro specificity around 0.87, which indicates conservative but well-controlled prediction behavior: the batch prompts avoid broad overprediction, but they still miss many positive aspects that the stronger local encoders recover. In other words, GPT-based inference is competitive partly because it remains selective rather than because it dominates recall. Appendix A.5.2 includes these complementary values alongside the main F1-based ranking.
       </p>
       <p>
-        Because <code>gpt-5.2</code> is a same-family baseline, we additionally ran the identical zero-shot-glossary contract across four generator families spanning four providers, OpenAI <code>gpt-5.4</code>, Google <code>gemini-2.5-flash</code>, Zhipu <code>glm-4.6</code>, and Meta <code>llama-3.3-70b</code>, on the full 1,000-review held-out test split (seed 42), scored in one construct-matched pass. All four land in the same narrow band, detection micro-F1 0.239 to 0.267 and sentiment accuracy on matched aspects 0.629 to 0.663, with the non-GPT families matching or slightly exceeding <code>gpt-5.4</code>; the OpenAI score on this split (<code>gpt-5.4</code>, 0.239) is in the same band as the full-test <code>gpt-5.2</code> zero-shot result (0.252). The prompted baseline is therefore not specific to a single provider or prompting family, and the placement of zero-shot prompting in a middle band below the strongest trained encoders holds across providers. Appendix A.20 and Table A18 report the per-family scores.
+        Because <code>gpt-5.2</code> is a same-family baseline, we additionally ran the identical zero-shot-glossary contract across four generator families spanning four providers, OpenAI <code>gpt-5.4</code>, Google <code>gemini-2.5-flash</code>, Zhipu <code>glm-4.6</code>, and Meta <code>llama-3.3-70b</code>, on the full 1,000-review held-out test split (seed 42), scored in one construct-matched pass. All four land in the same narrow band, detection micro-F1 0.239 to 0.267 and sentiment accuracy on matched aspects 0.629 to 0.663, with the non-GPT families matching or slightly exceeding <code>gpt-5.4</code>; the OpenAI score on this split (<code>gpt-5.4</code>, 0.239) is in the same band as the full-test <code>gpt-5.2</code> zero-shot result (0.252). The prompted baseline is therefore not specific to a single provider or prompting family, and the placement of zero-shot prompting in a middle band below the strongest trained encoders holds across providers. Appendix A.6.2 and Table A29 report the per-family scores.
       </p>
 
       <h3>5.4 External Validation on a Mapped Real Student-Feedback Dataset</h3>
@@ -832,10 +832,10 @@
         The transfer result is a focused external validation, reported as the mean across five seeds because this small-overlap setting is high-variance (Table 8). On this overlap benchmark, <code>bert-base-uncased</code> achieves the strongest detection micro-F1 at 0.402, followed by <code>tfidf_two_step</code> at 0.360 and <code>distilbert-base-uncased</code> at 0.322, and BERT also produces the lowest detected-aspect sentiment MSE at 0.354. These nine-aspect transfer scores are stronger than the internal 20-aspect benchmark (0.276), which is plausible because the external test covers fewer aspects, includes a dominant <code>lecturer_quality</code> signal, and uses a conservative overlap mapping rather than the full pedagogical schema. The result therefore supports partial synthetic-to-real transfer on one mapped educational annotation space.
       </p>
       <p>
-        To interpret that result more carefully, we also ran an overlap-matched internal comparison using the same 9 aspects on the synthetic corpus (Table 9). Internal and external micro-F1 are comparable for the strongest model, BERT (0.409 internally versus 0.402 on the mapped real set), and the differences for the other models fall within the seed variance, so there is no large uniform domain-shift penalty. The mapped real benchmark is therefore best interpreted as a constrained overlap evaluation that demonstrates compatibility between the synthetic supervision scheme and one real educational annotation space. Table 9 and Figure 4 make this comparison explicit side by side, while Appendix A.4 lists the overlap counts and label balance and Appendix A.5 expands the result into a per-aspect transfer view.
+        To interpret that result more carefully, we also ran an overlap-matched internal comparison using the same 9 aspects on the synthetic corpus (Table 9). Internal and external micro-F1 are comparable for the strongest model, BERT (0.409 internally versus 0.402 on the mapped real set), and the differences for the other models fall within the seed variance, so there is no large uniform domain-shift penalty. The mapped real benchmark is therefore best interpreted as a constrained overlap evaluation that demonstrates compatibility between the synthetic supervision scheme and one real educational annotation space. Table 9 and Figure 4 make this comparison explicit side by side, while Appendix A.1.3 lists the overlap counts and label balance and Appendix A.2.6 expands the result into a per-aspect transfer view.
       </p>
       <p>
-        The same comparison holds when balanced metrics are included. On the mapped real benchmark, BERT retains the strongest balance between sensitivity and specificity across the nine mapped aspects, so the best synthetic-trained encoder is not merely matching the real overlap through dominant negative decisions. Appendix A.10 reports the balanced-accuracy values.
+        The same comparison holds when balanced metrics are included. On the mapped real benchmark, BERT retains the strongest balance between sensitivity and specificity across the nine mapped aspects, so the best synthetic-trained encoder is not merely matching the real overlap through dominant negative decisions. Appendix A.5.2 reports the balanced-accuracy values.
       </p>
       <p>
         A real-trained reference point puts this transfer in context. Training the same <code>bert-base-uncased</code> detector on a real-Herath split and evaluating it on held-out real Herath, over the identical nine-aspect detection metric, reaches micro-F1 0.767 (95% CI [0.734, 0.800], four seeds, roughly 1,980 train / 566 test reviews). Against this same-task upper reference, the synthetic-only transfer of 0.402 (five-seed mean), obtained with no real training data at all, recovers about 52% of real-trained performance, which is the relevant property when no labeled institutional data are available. This figure is a ratio of two micro-F1 scores on the identical nine-aspect detection metric (0.402 / 0.767), not a classification accuracy, so its proximity to one-half does not indicate chance-level guessing: it measures how much of the fully-supervised ceiling the transferred model reaches using no real labels. That the model carries genuine learned signal rather than reproducing label frequencies is established separately by the label-permutation control, which collapses detection to a trivial floor on the internal task (0.182 micro-F1, Section 5.2). This is consistent with the corpus authors' own published baselines on the real data (F1 0.64 for target-oriented opinion and aspect-term extraction and 0.75 for aspect-level sentiment, using fine-tuned BERT- and RoBERTa-family encoders [17]), which use different task formulations and so serve as additional context rather than a matched comparison.
@@ -912,7 +912,7 @@
 
       <h3>5.5 Corpus-Scale Generation Diagnostics</h3>
       <p>
-        The next two subsections return from downstream model behavior to generator quality: first the model-assisted label-faithfulness audit, then a faithfulness-aware filtering recipe that turns that audit into a training-data selection method. Corpus-scale output-control statistics (Appendix A.14) and the three-cycle realism-validation protocol and results (Appendices A.11 and A.13) are reported separately as generator diagnostics.
+        The next two subsections return from downstream model behavior to generator quality: first the model-assisted label-faithfulness audit, then a faithfulness-aware filtering recipe that turns that audit into a training-data selection method. Corpus-scale output-control statistics (Appendix A.1.5) and the three-cycle realism-validation protocol and results (Appendices A.2.4 and A.2.5) are reported separately as generator diagnostics.
       </p>
 
       <h3>5.6 Model-Assisted Label-Faithfulness Audit</h3>
@@ -939,7 +939,7 @@
         </tbody>
       </table>
       <p>
-        These results make the character of the corpus clearer. Many declared aspects are visibly present in the text, but polarity faithfulness is weaker, especially at full-corpus scale. At the same time, the larger 250-review audit is more favorable than the earlier smaller probe, which suggests that the benchmark preserves declared aspect presence more consistently than the harsher initial sample implied, even though polarity drift remains substantial. The benchmark is therefore strongest as a controllable and useful educational ABSA resource whose labels remain informative but imperfect. The 0.42 aspect sentiment-match rate should be read precisely: it is a strict, conservative, per-aspect exact-polarity match required by the strictest auditor (<code>gpt-5.2</code>, instructed to be strict and conservative) on the raw, unfiltered corpus, so it is a lower bound on faithfulness rather than a claim that "over half the sentiments conflict with the text"; a partly-correct multi-aspect row can score zero on an aspect whose polarity is merely understated. This raw diagnostic is precisely the signal the faithfulness-aware filter in Section 5.7 exploits: the low-scoring rows are demonstrably worse training data, and discarding them by audit score improves downstream sentiment fidelity. This interpretation supports benchmarking and method comparison while also motivating the filtering recipe that follows. Appendix A.8 retains the detailed audit table for direct comparison with later regenerated versions of the corpus.
+        These results make the character of the corpus clearer. Many declared aspects are visibly present in the text, but polarity faithfulness is weaker, especially at full-corpus scale. At the same time, the larger 250-review audit is more favorable than the earlier smaller probe, which suggests that the benchmark preserves declared aspect presence more consistently than the harsher initial sample implied, even though polarity drift remains substantial. The benchmark is therefore strongest as a controllable and useful educational ABSA resource whose labels remain informative but imperfect. The 0.42 aspect sentiment-match rate should be read precisely: it is a strict, conservative, per-aspect exact-polarity match required by the strictest auditor (<code>gpt-5.2</code>, instructed to be strict and conservative) on the raw, unfiltered corpus, so it is a lower bound on faithfulness rather than a claim that "over half the sentiments conflict with the text"; a partly-correct multi-aspect row can score zero on an aspect whose polarity is merely understated. This raw diagnostic is precisely the signal the faithfulness-aware filter in Section 5.7 exploits: the low-scoring rows are demonstrably worse training data, and discarding them by audit score improves downstream sentiment fidelity. This interpretation supports benchmarking and method comparison while also motivating the filtering recipe that follows. Appendix A.4.1 retains the detailed audit table for direct comparison with later regenerated versions of the corpus.
       </p>
 
       <h3>5.7 Faithfulness-Aware Filtering of the Training Corpus</h3>
@@ -1027,7 +1027,7 @@
         Two properties make this filtering result robust to the audit being a model rather than ground truth. First, the audit score is validated behaviorally, not by judge agreement alone: the <code>bot25</code> bucket is defined purely as the rows the audit scored lowest, and training on it degrades transfer on every architecture and target above, so low-audit rows are demonstrably worse training data regardless of whether any single verdict matches a human label. Second, because the same model family both generates and audits the corpus, the score is best read as an LLM-audit signal that is useful for training-row selection rather than as a measurement of ground-truth faithfulness; the cross-provider agreement above bounds single-judge bias, and the audit additionally reproduces human faithfulness labels on annotated data, as we show next.
       </p>
       <p>
-        We close the loop by validating the audit directly against human labels. From the two human-annotated corpora (Herath and EduRABSA) we build 1,200 perturbation-controlled label variants: each sampled review carries a <em>faithful</em> variant with its human gold labels, a polarity-<em>flipped</em> variant, and an aspect-<em>injected</em> variant, and the Section 5.6 audit scores all three. The right comparison is per aspect, because the filter audits each declared aspect independently. Across 2,482 aspect-label decisions the audit reproduces the human judgment at Cohen's kappa 0.56 (moderate agreement on the Landis-Koch scale; precision 0.88, accuracy 0.78): it retains 0.69 of genuinely faithful aspects, rejects 0.89 of polarity-flipped aspects, and rejects 0.87 of injected absent aspects, with agreement higher on EduRABSA (kappa 0.62) than on Herath (kappa 0.51). The audit that drives the filter therefore tracks human faithfulness judgments on real annotated data, not only the verdicts of other LLM judges, and its precision means a label it accepts as faithful agrees with the human annotation 88% of the time. Because the generator and the cost-matched auditor share a provider family, one might worry that this agreement reflects a shared latent space rather than genuine textual faithfulness. To rule that out, we repeat the identical human-validation with a fully independent family: Google <code>gemini-2.5-flash</code> scores the same 1,200 variants and agrees with the human labels at Cohen's kappa 0.62 (precision 0.89), matching and slightly exceeding the same-family GPT auditor. A model with no shared provenance with the <code>gpt-5-nano</code> generator therefore reproduces the human faithfulness judgments at least as well, so the audit signal is human-grounded rather than an artifact of the generator's own family. Agreement is broken out by corpus in Appendix A.21 (Table A19): both auditors agree with humans more on EduRABSA (kappa 0.62 same-family, 0.67 independent) than on Herath (0.51 and 0.58). This tracks item granularity rather than a defect in either corpus, Herath items are single sentences (median 20 words) while EduRABSA items are short passages (median 38 words), so a shorter item gives the auditor less textual evidence per aspect. Because each decision is a binary faithful-versus-unfaithful judgment, the metric is invariant to the two corpora's different aspect label sets. Appendix A.22 decomposes this reliability further: recall on genuine aspects rises with review length, while specificity against fabricated aspects falls as a review packs more aspects, so agreement peaks at moderate length and aspect count.
+        We close the loop by validating the audit directly against human labels. From the two human-annotated corpora (Herath and EduRABSA) we build 1,200 perturbation-controlled label variants: each sampled review carries a <em>faithful</em> variant with its human gold labels, a polarity-<em>flipped</em> variant, and an aspect-<em>injected</em> variant, and the Section 5.6 audit scores all three. The right comparison is per aspect, because the filter audits each declared aspect independently. Across 2,482 aspect-label decisions the audit reproduces the human judgment at Cohen's kappa 0.56 (moderate agreement on the Landis-Koch scale; precision 0.88, accuracy 0.78): it retains 0.69 of genuinely faithful aspects, rejects 0.89 of polarity-flipped aspects, and rejects 0.87 of injected absent aspects, with agreement higher on EduRABSA (kappa 0.62) than on Herath (kappa 0.51). The audit that drives the filter therefore tracks human faithfulness judgments on real annotated data, not only the verdicts of other LLM judges, and its precision means a label it accepts as faithful agrees with the human annotation 88% of the time. Because the generator and the cost-matched auditor share a provider family, one might worry that this agreement reflects a shared latent space rather than genuine textual faithfulness. To rule that out, we repeat the identical human-validation with a fully independent family: Google <code>gemini-2.5-flash</code> scores the same 1,200 variants and agrees with the human labels at Cohen's kappa 0.62 (precision 0.89), matching and slightly exceeding the same-family GPT auditor. A model with no shared provenance with the <code>gpt-5-nano</code> generator therefore reproduces the human faithfulness judgments at least as well, so the audit signal is human-grounded rather than an artifact of the generator's own family. Agreement is broken out by corpus in Appendix A.4.2 (Table A16): both auditors agree with humans more on EduRABSA (kappa 0.62 same-family, 0.67 independent) than on Herath (0.51 and 0.58). This tracks item granularity rather than a defect in either corpus, Herath items are single sentences (median 20 words) while EduRABSA items are short passages (median 38 words), so a shorter item gives the auditor less textual evidence per aspect. Because each decision is a binary faithful-versus-unfaithful judgment, the metric is invariant to the two corpora's different aspect label sets. Appendix A.4.3 decomposes this reliability further: recall on genuine aspects rises with review length, while specificity against fabricated aspects falls as a review packs more aspects, so agreement peaks at moderate length and aspect count.
       </p>
       <p>
         We further validate the audit on the synthetic corpus itself, which is the text the filter actually scores. Three annotators independently labeled a stratified sample of 300 synthetic reviews (610 declared review-aspect decisions), blind to the declared labels, marking for each declared aspect whether it is expressed in the review and with what sentiment. Inter-annotator reliability is substantial (Fleiss kappa 0.70 on aspect presence; pairwise Cohen kappa 0.60, 0.66, and 0.87). Three findings validate the audit directly on synthetic text. First, the annotators confirm the declared aspect is present in 70% of cases by majority vote, and human and audit presence judgments agree 76% of the time. Second, and most directly, human confirmation rises monotonically with the audit score, from 55% in the lowest audit-score quartile to 79% in the highest (Table 15), so the score the filter uses tracks human judgment on the actual synthetic corpus rather than only on the perturbation-controlled real labels above. Third, the human annotation independently reproduces the audit's central finding that aspect presence is the faithful signal while aspect sentiment is the noisier one: human-declared aspect-sentiment agreement is about 0.40, closely matching the audit's strict per-aspect sentiment-match rate of 0.42. The direct human annotation therefore confirms both that the audit score is a valid, human-grounded quality signal on synthetic text and that the corpus's measured noise level is accurate.
@@ -1050,7 +1050,7 @@
         </tbody>
       </table>
       <p>
-        A final robustness check asks whether the generate-audit-filter pipeline is specific to the GPT family that produced the corpus. We regenerated the same 150 label-conditioned prompts with four generator families spanning four providers, OpenAI <code>gpt-5-nano</code>, Google <code>gemini-2.5-flash</code>, Zhipu <code>glm-4.6</code>, and Meta <code>llama-3.3-70b</code>, and scored every generation with the identical <code>gpt-5.2</code> label-fidelity audit. All four families produce auditable, label-faithful reviews: aspect support ranges from 0.921 to 0.968 and per-aspect sentiment match from 0.759 to 0.904, and the two non-GPT families, one closed (Google) and one open-weight (Zhipu), match or exceed the same-family <code>gpt-5-nano</code> generator (sentiment match 0.857 and 0.904 versus 0.759). The audit therefore behaves consistently across providers and the pipeline is not tied to a single generator family. Appendix A.19 and Table A17 report the per-family rates.
+        A final robustness check asks whether the generate-audit-filter pipeline is specific to the GPT family that produced the corpus. We regenerated the same 150 label-conditioned prompts with four generator families spanning four providers, OpenAI <code>gpt-5-nano</code>, Google <code>gemini-2.5-flash</code>, Zhipu <code>glm-4.6</code>, and Meta <code>llama-3.3-70b</code>, and scored every generation with the identical <code>gpt-5.2</code> label-fidelity audit. All four families produce auditable, label-faithful reviews: aspect support ranges from 0.921 to 0.968 and per-aspect sentiment match from 0.759 to 0.904, and the two non-GPT families, one closed (Google) and one open-weight (Zhipu), match or exceed the same-family <code>gpt-5-nano</code> generator (sentiment match 0.857 and 0.904 versus 0.759). The audit therefore behaves consistently across providers and the pipeline is not tied to a single generator family. Appendix A.3.2 and Table A13 report the per-family rates.
       </p>
 
       <div class="review-box">
@@ -1069,7 +1069,7 @@
 
       <h3>6.1 Limitations</h3>
       <p>
-        Five limitations remain central. First, external validation uses two real educational corpora (Herath 9-aspect, EduRABSA 7-aspect) and conservative aspect overlaps, so broader claims about the entire 20-aspect schema still require additional real-data tests. These two targets are also sentence-level (Herath median 20 words, EduRABSA 38) while the synthetic corpus is full-length reviews (median 122 words), so transfer here is a cross-granularity test. This granularity mismatch is not, however, the limiting factor: a review-level real target (OATS, median 70 words) transfers no better than the sentence-level targets, so transfer difficulty is governed by how closely a target's aspect vocabulary and register align with the synthetic supervision rather than by review length (Appendix A.24). Training granularity can nonetheless be aligned to the target: training the detector on synthetic sentences rather than full reviews raises transfer to the two sentence-level targets by a paired 0.21 (M-ABSA) and 0.04 (Herath) micro-F1 across seeds (Appendix A.28). A full-review real benchmark matched to institutional course feedback is the natural next target; the one public review-level educational corpus is MOOC-focused (OATS-ABSA, Coursera reviews [4]), while course-evaluation feedback of the kind our schema targets remains annotated only at the sentence level [19]. Aspect-annotating a set of full-length institutional reviews (for example public OMSCS reviews) is therefore the concrete path to fully closing this granularity gap. Practitioners should therefore not read the transfer results as validating the full schema: only 9 of the 20 aspects are externally checked, synthetic-only training recovers about 52% of a real-trained model, and any high-stakes or personnel decision requires human-in-the-loop review rather than reliance on the eleven aspects that have no real-data validation. The scope is also bounded in domain: the synthetic corpus and every real target here are English-language higher-education course reviews (STEM and graduate-level in the mapped corpora), so extension to other languages, to K-12, and to non-STEM disciplines is future work rather than a claim of the present study. Second, the realism-validation analysis is conducted with LLM judges and improves prompt quality without establishing statistical indistinguishability from real reviews under an adversarial frontier-model detector, a bar that current LLM-generated text does not clear regardless of generator family; the realism that is operative for a labeled training benchmark is functional rather than perceptual, and is evidenced by the synthetic-to-real transfer results above, where a model trained on the synthetic corpus recovers real-review aspect and polarity signal on two independent external corpora. A sentence-level distributional check places the synthetic corpus at MAUVE 0.23 from the real OMSCS reviews, below both the 0.98 real-to-real ceiling and the 0.63 between two independent real corpora (OMSCS and Herath), so at the pool level the synthetic sentence distribution is still separable from real. This gap reflects writing style rather than course or platform identity: scrubbing course codes, instructor names, and platform terms from both sides leaves it essentially unchanged. A more consequential gap is structural: synthetic reviews sample aspect polarities independently, so they are internally balanced far more often than the opinion-consistent real reviews (Appendix A.25), and they sample aspect sets more uniformly than the semantically clustered real reviews (Appendix A.26). The polarity gap is actionable: conditioning per-aspect polarity on a review-level sentiment disposition robustly lowers gold-present sentiment transfer error across seeds, by a paired 0.23 (OATS) and 0.16 (Herath) in mean squared error (Appendix A.27); aspect co-occurrence matching, by contrast, leaves transfer unchanged, so per-aspect polarity conditioning is the actionable lever (Appendix A.26). Most tellingly, the separability is a document-structure effect rather than a sentence-realism one: judged sentence by sentence, individual synthetic sentences are near-indistinguishable from real ones, with the same judge only 60% accurate (close to the 50% chance floor, versus 93% on whole reviews) and calling 63% of synthetic sentences real. The detectability is a cumulative property of extended synthetic text: a weak per-sentence signal accumulates across a full review, and a control that assembles real sentences into equally multi-aspect documents is still judged real, so it is not multi-aspect coverage or incoherence. The signal is thus orthogonal to the individual sentences that carry the aspect-sentiment supervision (Appendix A.23). The label-faithfulness audit is validated four ways (a behavioral negative control, cross-provider judge agreement, direct agreement with human labels at Cohen's kappa 0.56 on two annotated corpora, and direct human annotation of a stratified sample of the synthetic corpus itself, where human confirmation of declared aspects rises monotonically with the audit score, Section 5.7 and Table 15). Because the generator and the cost-matched auditor share a provider family, we further confirm that the audit is not merely detecting same-family latent patterns by reproducing the human-agreement check with a fully independent family (Google Gemini, Cohen's kappa 0.62), and two independent open-weights auditors, Llama-3.3-70B and GLM-4.6, reproduce the audit at the same level (Appendix A.29); exhaustive re-annotation across the full 20-aspect schema remains the natural extension. Third, a nontrivial share of rows (841 of 10,000) reached the output-token cap and lowered full-corpus length-band adherence to 0.6819; this is a recoverable token-budget artifact rather than a control failure, since regenerating exactly those rows at a higher cap eliminates the truncation and restores full-corpus adherence to 0.7125, close to but still below the never-truncated rate of 0.7304 (Appendix A.14); these token-capped rows are moreover not systematically biased across aspects or polarities, so excluding them leaves the benchmark unchanged (Appendix A.30), and length band is in any case a soft stylistic target rather than a labeled control variable. Fourth, downstream training on the 10K corpus benefits from the Section 5.7 top-50% faithfulness filter (validated across two BERT-family architectures and both transfer targets); the audit score is the validated way to select training rows for sentiment-polarity fidelity on transferred aspects, and a quartile dose-response confirms this end to end, with higher-audit training quartiles yielding a monotonically better detector (Appendix A.32). Fifth, the four-way prompting-method comparison in Table 7 (zero-, fixed-, diverse-, and retrieval-few-shot) is run on a single provider (<code>gpt-5.2</code>); the provider axis, however, is covered separately, since the prompted zero-shot baseline reproduces the same narrow band across four families spanning four providers on the full 1,000-review test split (detection micro-F1 0.239 to 0.267, Appendix A.20), and the generate-audit-filter loop likewise reproduces comparable label fidelity across four generator families (Appendix A.19), and a held-out-generator check confirms the learnable signal itself is generator-invariant rather than a single generator's fingerprint (Appendix A.31). What remains single-provider is therefore the head-to-head of prompting variants, not the provider comparison or the corpus construction.
+        Five limitations remain central. First, external validation uses two real educational corpora (Herath 9-aspect, EduRABSA 7-aspect) and conservative aspect overlaps, so broader claims about the entire 20-aspect schema still require additional real-data tests. These two targets are also sentence-level (Herath median 20 words, EduRABSA 38) while the synthetic corpus is full-length reviews (median 122 words), so transfer here is a cross-granularity test. This granularity mismatch is not, however, the limiting factor: a review-level real target (OATS, median 70 words) transfers no better than the sentence-level targets, so transfer difficulty is governed by how closely a target's aspect vocabulary and register align with the synthetic supervision rather than by review length (Appendix A.5.4). Training granularity can nonetheless be aligned to the target: training the detector on synthetic sentences rather than full reviews raises transfer to the two sentence-level targets by a paired 0.21 (M-ABSA) and 0.04 (Herath) micro-F1 across seeds (Appendix A.5.6). A full-review real benchmark matched to institutional course feedback is the natural next target; the one public review-level educational corpus is MOOC-focused (OATS-ABSA, Coursera reviews [4]), while course-evaluation feedback of the kind our schema targets remains annotated only at the sentence level [19]. Aspect-annotating a set of full-length institutional reviews (for example public OMSCS reviews) is therefore the concrete path to fully closing this granularity gap. Practitioners should therefore not read the transfer results as validating the full schema: only 9 of the 20 aspects are externally checked, synthetic-only training recovers about 52% of a real-trained model, and any high-stakes or personnel decision requires human-in-the-loop review rather than reliance on the eleven aspects that have no real-data validation. The scope is also bounded in domain: the synthetic corpus and every real target here are English-language higher-education course reviews (STEM and graduate-level in the mapped corpora), so extension to other languages, to K-12, and to non-STEM disciplines is future work rather than a claim of the present study. Second, the realism-validation analysis is conducted with LLM judges and improves prompt quality without establishing statistical indistinguishability from real reviews under an adversarial frontier-model detector, a bar that current LLM-generated text does not clear regardless of generator family; the realism that is operative for a labeled training benchmark is functional rather than perceptual, and is evidenced by the synthetic-to-real transfer results above, where a model trained on the synthetic corpus recovers real-review aspect and polarity signal on two independent external corpora. A sentence-level distributional check places the synthetic corpus at MAUVE 0.23 from the real OMSCS reviews, below both the 0.98 real-to-real ceiling and the 0.63 between two independent real corpora (OMSCS and Herath), so at the pool level the synthetic sentence distribution is still separable from real. This gap reflects writing style rather than course or platform identity: scrubbing course codes, instructor names, and platform terms from both sides leaves it essentially unchanged. A more consequential gap is structural: synthetic reviews sample aspect polarities independently, so they are internally balanced far more often than the opinion-consistent real reviews (Appendix A.1.7), and they sample aspect sets more uniformly than the semantically clustered real reviews (Appendix A.1.8). The polarity gap is actionable: conditioning per-aspect polarity on a review-level sentiment disposition robustly lowers gold-present sentiment transfer error across seeds, by a paired 0.23 (OATS) and 0.16 (Herath) in mean squared error (Appendix A.5.5); aspect co-occurrence matching, by contrast, leaves transfer unchanged, so per-aspect polarity conditioning is the actionable lever (Appendix A.1.8). Most tellingly, the separability is a document-structure effect rather than a sentence-realism one: judged sentence by sentence, individual synthetic sentences are near-indistinguishable from real ones, with the same judge only 60% accurate (close to the 50% chance floor, versus 93% on whole reviews) and calling 63% of synthetic sentences real. The detectability is a cumulative property of extended synthetic text: a weak per-sentence signal accumulates across a full review, and a control that assembles real sentences into equally multi-aspect documents is still judged real, so it is not multi-aspect coverage or incoherence. The signal is thus orthogonal to the individual sentences that carry the aspect-sentiment supervision (Appendix A.2.7). The label-faithfulness audit is validated four ways (a behavioral negative control, cross-provider judge agreement, direct agreement with human labels at Cohen's kappa 0.56 on two annotated corpora, and direct human annotation of a stratified sample of the synthetic corpus itself, where human confirmation of declared aspects rises monotonically with the audit score, Section 5.7 and Table 15). Because the generator and the cost-matched auditor share a provider family, we further confirm that the audit is not merely detecting same-family latent patterns by reproducing the human-agreement check with a fully independent family (Google Gemini, Cohen's kappa 0.62), and two independent open-weights auditors, Llama-3.3-70B and GLM-4.6, reproduce the audit at the same level (Appendix A.4.4); exhaustive re-annotation across the full 20-aspect schema remains the natural extension. Third, a nontrivial share of rows (841 of 10,000) reached the output-token cap and lowered full-corpus length-band adherence to 0.6819; this is a recoverable token-budget artifact rather than a control failure, since regenerating exactly those rows at a higher cap eliminates the truncation and restores full-corpus adherence to 0.7125, close to but still below the never-truncated rate of 0.7304 (Appendix A.1.5); these token-capped rows are moreover not systematically biased across aspects or polarities, so excluding them leaves the benchmark unchanged (Appendix A.1.6), and length band is in any case a soft stylistic target rather than a labeled control variable. Fourth, downstream training on the 10K corpus benefits from the Section 5.7 top-50% faithfulness filter (validated across two BERT-family architectures and both transfer targets); the audit score is the validated way to select training rows for sentiment-polarity fidelity on transferred aspects, and a quartile dose-response confirms this end to end, with higher-audit training quartiles yielding a monotonically better detector (Appendix A.4.5). Fifth, the four-way prompting-method comparison in Table 7 (zero-, fixed-, diverse-, and retrieval-few-shot) is run on a single provider (<code>gpt-5.2</code>); the provider axis, however, is covered separately, since the prompted zero-shot baseline reproduces the same narrow band across four families spanning four providers on the full 1,000-review test split (detection micro-F1 0.239 to 0.267, Appendix A.6.2), and the generate-audit-filter loop likewise reproduces comparable label fidelity across four generator families (Appendix A.3.2), and a held-out-generator check confirms the learnable signal itself is generator-invariant rather than a single generator's fingerprint (Appendix A.3.3). What remains single-provider is therefore the head-to-head of prompting variants, not the provider comparison or the corpus construction.
       </p>
       <p>
         These limitations help define the next stage of work rather than undercut the contribution of the study. The reported evidence supports a resource-and-benchmark study with meaningful generator validation, informative internal comparisons, and a first mapped real-data check.
@@ -1096,7 +1096,7 @@
         Fourth, it supports <em>instructor-level reflective practice</em>. Aspect-tagged feedback enables individualised end-of-term debriefs (a mathematics instructor receives a summary highlighting <code>clarity</code> and <code>pacing</code> trends across their own sections rather than program-level averages) and feeds faculty-development workshops with concrete patterns rather than anecdotes. Used this way, the model becomes part of formative review rather than summative evaluation, and noise on individual labels matters less than the aggregate pattern across many comments.
       </p>
       <p>
-        A concrete adoption roadmap follows from a fine-tuning-size sweep. Pretraining the detector on the synthetic corpus and then fine-tuning on a subsampled slice of real, locally adjudicated reviews traces a smooth curve (Figure 6): as few as 100 real reviews lift 9-aspect detection to micro-F1 0.58 (well above the 0.402 five-seed synthetic-only transfer), 500 reach 0.70, 1,000 reach 0.74, and the full real set 0.77, matching a model trained on real data alone (0.767). Two operational guidelines follow. First, minimum data: roughly 250 to 500 locally labeled reviews already capture most of the benefit and are a realistic annotation budget for a single department, while the synthetic pretrain lets an institution reach real-only quality with about half the real data. Second, expected degradation and monitoring: a deployment fine-tuned on N local reviews should expect the micro-F1 in Figure 6 rather than the internal-benchmark or full-real numbers, and should be monitored against a held-out slice of locally adjudicated examples, re-checking whenever the feedback distribution shifts (new platform, course redesign, or cohort change). Practitioners applying the faithfulness audit itself should note that its reliability is review-shape dependent: it is most trustworthy on moderate-length reviews with a handful of aspects, under-confirming genuine aspects on very short comments and under-rejecting spurious ones on aspect-dense reviews (Appendix A.22).
+        A concrete adoption roadmap follows from a fine-tuning-size sweep. Pretraining the detector on the synthetic corpus and then fine-tuning on a subsampled slice of real, locally adjudicated reviews traces a smooth curve (Figure 6): as few as 100 real reviews lift 9-aspect detection to micro-F1 0.58 (well above the 0.402 five-seed synthetic-only transfer), 500 reach 0.70, 1,000 reach 0.74, and the full real set 0.77, matching a model trained on real data alone (0.767). Two operational guidelines follow. First, minimum data: roughly 250 to 500 locally labeled reviews already capture most of the benefit and are a realistic annotation budget for a single department, while the synthetic pretrain lets an institution reach real-only quality with about half the real data. Second, expected degradation and monitoring: a deployment fine-tuned on N local reviews should expect the micro-F1 in Figure 6 rather than the internal-benchmark or full-real numbers, and should be monitored against a held-out slice of locally adjudicated examples, re-checking whenever the feedback distribution shifts (new platform, course redesign, or cohort change). Practitioners applying the faithfulness audit itself should note that its reliability is review-shape dependent: it is most trustworthy on moderate-length reviews with a handful of aspects, under-confirming genuine aspects on very short comments and under-rejecting spurious ones on aspect-dense reviews (Appendix A.4.3).
       </p>
       <figure>
         <img src="outputs/figures/rc5_finetune_curve.svg" alt="Minimum fine-tuning-size curve">
@@ -1111,7 +1111,7 @@
         The synthetic corpus released with this study contains no identifiable student data: instructor names, course codes, and personas are sampled or invented as part of the controlled-generation protocol, and the corpus is generated rather than scraped. The mapped external evaluation uses the publicly released Herath et al. 2022 student-feedback corpus under its MIT license; that release was prepared by the authors of the original study with their institutional approvals, and our use is limited to evaluation, citation, and a conservative schema mapping documented at <code>paper/real_transfer/herath_mapping.json</code>. Preliminary realism-validation work also drew on the public OMSCS course-review pages; only public text was used and no individual reviewer is identified in any downstream artifact. Any institutional deployment of the resulting models should re-consent or re-anonymize student-authored text per local research-ethics policy and should make clear to students and instructors that an automated aspect summary is produced from feedback they submit. We do not recommend using model outputs as inputs to high-stakes personnel decisions about instructors without human review.
       </p>
       <p>
-        Three further risks warrant explicit attention in any deployment. First, stylistic bias: the synthetic corpus is fluent LLM text, so a model trained on it may systematically mishandle feedback written by non-native speakers or in non-standard registers, under-detecting aspects or mis-assigning sentiment for exactly the students whose voices are already least represented. Deployments should therefore monitor per-aspect error stratified by writing style and language background and must not let a model's lower confidence on such text translate into their feedback counting less. Second, attribution to identifiable entities: because courses, instructors, and incidents in the corpus are invented, model outputs are aggregate estimates over many comments and must never be used to attach a model-inferred negative aspect to a specific, identifiable course or instructor as if it were a factual record; doing so would risk propagating a fictional negative judgement onto a real person. Third, uncertainty reporting: given the moderate label faithfulness (0.42 aspect-sentiment match, Section 5.7) and the review-shape-dependent audit reliability (Appendix A.22), any institutional dashboard built on these models should surface per-aspect uncertainty rather than point predictions, route low-confidence cases to human review, and provide an appeals process for instructors who contest an automated summary.
+        Three further risks warrant explicit attention in any deployment. First, stylistic bias: the synthetic corpus is fluent LLM text, so a model trained on it may systematically mishandle feedback written by non-native speakers or in non-standard registers, under-detecting aspects or mis-assigning sentiment for exactly the students whose voices are already least represented. Deployments should therefore monitor per-aspect error stratified by writing style and language background and must not let a model's lower confidence on such text translate into their feedback counting less. Second, attribution to identifiable entities: because courses, instructors, and incidents in the corpus are invented, model outputs are aggregate estimates over many comments and must never be used to attach a model-inferred negative aspect to a specific, identifiable course or instructor as if it were a factual record; doing so would risk propagating a fictional negative judgement onto a real person. Third, uncertainty reporting: given the moderate label faithfulness (0.42 aspect-sentiment match, Section 5.7) and the review-shape-dependent audit reliability (Appendix A.4.3), any institutional dashboard built on these models should surface per-aspect uncertainty rather than point predictions, route low-confidence cases to human review, and provide an appeals process for instructors who contest an automated summary.
       </p>
     </section>
 
@@ -1128,7 +1128,10 @@
     <section>
       <h2>Appendix</h2>
 
-      <h3>A.1 Twenty-Aspect Inventory</h3>
+      
+
+      <h3>A.1 Corpus, Aspects, and Structure</h3>
+      <h4>A.1.1 Twenty-Aspect Inventory</h4>
       <p>
         Table A1 lists the 20-aspect inventory used for generation, realism validation, and benchmarking, grouped into the five pedagogical blocks discussed in Sections 3 and 6.
       </p>
@@ -1165,7 +1168,7 @@
         </tbody>
       </table>
 
-      <h3>A.2 Side-by-Side Real and Synthetic Examples</h3>
+            <h4>A.1.2 Side-by-Side Real and Synthetic Examples</h4>
       <p>
         Table A2 shows representative real and synthetic review pairs from the realism study. For the synthetic reviews, the table includes both the target aspect labels and the sampled nuance attributes used to construct the prompt.
       </p>
@@ -1226,12 +1229,174 @@
         </tbody>
       </table>
 
-      <h3>A.3 Prompt Instructions Across Realism-Validation Cycles</h3>
+            <h4>A.1.3 Mapped Real-Data Overlap and Label Balance</h4>
       <p>
-        The realism-validation procedure rewrites the prompt between complete 60-question cycles. The prompt used in the next cycle is the editor-refined output from the previous cycle when correctly detected synthetic reviews provide sufficient cue evidence. Table A3 shows the generation instruction at each cycle.
+        Table A3 documents the conservative overlap used for external validation against the Herath student-feedback corpus. The mapped real benchmark is intentionally narrower than the full 20-aspect schema, because only defensible correspondences were retained.
       </p>
       <table>
-        <caption>Table A3. Prompt instructions across realism-study cycles, showing how the generation instruction changed as synthetic cues were identified and reduced.</caption>
+        <caption>Table A3. Exact support and polarity balance for the nine overlap aspects retained in the mapped Herath benchmark. This appendix table preserves the full counts behind the lighter overlap context summarized in Figure 3.</caption>
+        <thead>
+          <tr>
+            <th>Aspect</th>
+            <th>Reviews</th>
+            <th>Positive</th>
+            <th>Neutral</th>
+            <th>Negative</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>lecturer_quality</code></td><td>2190</td><td>1402</td><td>398</td><td>390</td></tr>
+          <tr><td><code>overall_experience</code></td><td>557</td><td>395</td><td>61</td><td>101</td></tr>
+          <tr><td><code>organization</code></td><td>477</td><td>266</td><td>155</td><td>56</td></tr>
+          <tr><td><code>materials</code></td><td>390</td><td>137</td><td>194</td><td>59</td></tr>
+          <tr><td><code>assessment_design</code></td><td>235</td><td>83</td><td>100</td><td>52</td></tr>
+          <tr><td><code>exam_fairness</code></td><td>184</td><td>29</td><td>97</td><td>58</td></tr>
+          <tr><td><code>grading_transparency</code></td><td>146</td><td>49</td><td>66</td><td>31</td></tr>
+          <tr><td><code>workload</code></td><td>75</td><td>12</td><td>21</td><td>42</td></tr>
+          <tr><td><code>accessibility</code></td><td>35</td><td>11</td><td>12</td><td>12</td></tr>
+        </tbody>
+      </table>
+
+            <h4>A.1.4 Corpus Profile and Representative Examples</h4>
+      <p>
+        Figure A1 and Figure A2 establish the corpus-level structure before any model results are introduced. Figure A1 shows how label support is distributed across aspects and sentiment polarities, which makes it easier to distinguish heavily represented pedagogical dimensions from thinner parts of the schema. Figure A2 complements that view with review length, aspect-count mixture, course coverage, and style variation. Table A4 then gives a qualitative sense of how these distributions appear in actual review text. These examples are included to help the reader interpret the benchmark qualitatively, not as a substitute for aggregate model evidence.
+      </p>
+      <table>
+        <caption>Table A4. Representative synthetic review snippets showing how aspect labels appear under different writing styles and pedagogical situations.</caption>
+        <thead>
+          <tr>
+            <th>Example type</th>
+            <th>Style</th>
+            <th>Aspect labels</th>
+            <th>Excerpt</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Tradeoff-heavy</td>
+            <td>Neutral everyday prose</td>
+            <td><code>difficulty=positive</code>, <code>materials=positive</code></td>
+            <td>"I took Computer Networks mainly to fit my schedule ... the material felt accessible at times ... Dr. Chen’s delivery varies week to week ... the LMS was smooth, but feedback came too late to be useful."</td>
+          </tr>
+          <tr>
+            <td>Compressed complaint</td>
+            <td>Analytic but Simple</td>
+            <td><code>interest=negative</code></td>
+            <td>"I stuck with Cyber Security Basics only when I needed it ... the lead-in theory never clicked for me ... the few but heavy deadlines left me frustrated but still fair about the effort."</td>
+          </tr>
+          <tr>
+            <td>Pedagogical frustration</td>
+            <td>Analytic but Simple</td>
+            <td><code>assessment_design=negative</code>, <code>relevance=negative</code></td>
+            <td>"Data Structures felt like a required hurdle more than a doorway to real understanding ... the assessments were exhausting and overbearing ... even when I passed a task, I was not convinced it reflected useful learning."</td>
+          </tr>
+        </tbody>
+      </table>
+      <h4>A.1.5 Full-Corpus Output Control</h4>
+      <p>
+        The full dataset is large enough to support a realistic internal benchmark, and it also reveals how output control behaves at scale. All 10,000 rows returned usable review text and no duplicates were detected. At the same time, 841 rows were marked incomplete because they reached the output-token cap, and overall length-band adherence settled at 0.6819 over the full corpus. This shortfall is a token-budget artifact rather than a control failure: on the 9,159 rows that never hit the cap, length-band adherence is 0.7304, and the 841 truncated rows account for the entire gap below that level. Regenerating exactly those 841 rows with the same generator (<code>gpt-5-nano</code>) and prompt at a raised output cap eliminates the truncation (incomplete rate 8.41% to 0%) and recovers full-corpus adherence to 0.7125, close to but still below the never-truncated rate of 0.7304 (the regenerated rows themselves reach about 0.52, so a small residual gap remains). Length band is a soft stylistic target sampled per review; the controlled variables are the per-review aspect-sentiment labels, which truncation does not affect. The released corpus is left unchanged and this regeneration is reported only as an output-control diagnostic (<code>paper/outputs/n1_adherence_summary.json</code>).
+      </p>
+      <p>
+        This behavior does not invalidate the benchmark, because every row still contains the target labels and usable text, and the train-validation-test pipeline runs cleanly on the assembled corpus. It does, however, matter for interpretation: stronger long-form length control would further improve the controllability of future releases. Figure A2 makes this visible directly by combining length, aspect-count, course, and style evidence in one place.
+      </p>
+
+    
+<figure>
+        <img src="outputs/figures/production_aspect_sentiment_heatmap.svg" alt="Aspect sentiment heatmap">
+        <figcaption>Figure A1. Aspect-level label support across the 10K / 20-aspect corpus. The heatmap shows polarity composition for each aspect, ordered by total support, and the companion bar panel shows the total number of labeled mentions per aspect.</figcaption>
+      </figure>
+
+      <figure>
+        <img src="outputs/figures/production_dataset_profile.svg" alt="Corpus profile">
+        <figcaption>Figure A2. Corpus profile and diversity cues. The panels visualize the distributional shape of review length, aspect-count mixture, course coverage, and observed style cues, while Table 4 provides the corresponding exact summary values.</figcaption>
+      </figure>
+
+            <h4>A.1.6 Output-Token-Capped (Incomplete) Rows</h4>
+      <p>
+        The 841 rows the API marked <code>incomplete</code> (Section 3.6) were identified exactly by joining the generation batch output's per-row status to the assembled corpus. Relative to the 9,159 complete rows they are shorter and carry fewer aspects, with a comparable sentiment mix (Table A5). Retraining <code>bert-base-uncased</code> detection on the corpus with these rows excluded, at three seeds, changes the held-out benchmark only marginally and not favorably (micro-F1 0.264 versus 0.275, macro balanced accuracy 0.613 versus 0.619), a difference consistent with the roughly 8% smaller training set rather than a systematic label-quality gain. The reported benchmark is therefore robust to their inclusion.
+      </p>
+      <table>
+        <caption>Table A5. Distribution of the 841 output-token-capped (incomplete) rows versus the 9,159 complete rows, with the effect of excluding them from training.</caption>
+        <thead>
+          <tr><th>Measure</th><th>Incomplete (841)</th><th>Complete (9,159)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Mean / median words</td><td>100 / 89</td><td>118.8 / 122</td></tr>
+          <tr><td>Aspects per review (1 / 2 / 3 share)</td><td>0.43 / 0.51 / 0.07</td><td>0.29 / 0.38 / 0.33</td></tr>
+          <tr><td>Sentiment share (positive / neutral / negative)</td><td>0.36 / 0.30 / 0.34</td><td>0.34 / 0.34 / 0.33</td></tr>
+          <tr><td>Held-out detection micro-F1 (3 seeds, excluded vs full)</td><td colspan="2">complete-only 0.264 &plusmn; 0.007 versus full 0.275 &plusmn; 0.003</td></tr>
+        </tbody>
+      </table>
+
+      <p>
+        The capped rows are also not systematically biased in a way that would distort the benchmark. Their aspect distribution is not skewed (chi-square p=0.23, Cramer's V=0.034) and their polarity distribution differs negligibly (Cramer's V=0.020); they differ from the complete corpus only in the mechanically-expected ways (mean 1.64 versus 2.03 declared aspects and 100 versus 119 words, the direct consequence of truncation). Critically, their label-faithfulness profile is statistically indistinguishable from the complete corpus (mean audit score 0.573 versus 0.577, Welch p=0.76). The truncated rows are therefore representative in aspect, polarity, and faithfulness, so excluding them leaves the benchmark's label and faithfulness composition unchanged. Script: <code>paper/e3_truncated_bias</code> (outputs under <code>paper/outputs/e3_truncated_bias/</code>).
+      </p>
+
+            <h4>A.1.7 Within-Review Sentiment Correlation</h4>
+      <p>
+        One concrete way the synthetic corpus departs from real reviews is the correlation of sentiment across a review's aspects. Because the generator samples each aspect's target polarity independently, a synthetic multi-aspect review is often internally balanced, praising one aspect while criticizing another. Real reviews instead show a strong halo effect: a student who likes a course tends to rate most of its aspects positively. Across the multi-aspect reviews in each corpus (Table A6), 50 to 72% of real reviews assign the same polarity to every aspect, against only 22% of synthetic reviews, and synthetic reviews mix positive and negative aspects in 33% of cases, roughly one and a half to two and a half times the real rate. This independence is a genuine realism gap and a likely contributor to the weaker sentiment transfer, since the polarity head is trained on aspect-sentiment combinations that are comparatively rare in real feedback. A natural remedy is to draw a review-level sentiment disposition first and condition the per-aspect polarities on it, rather than sampling them independently; Appendix A.5.5 implements this remedy and confirms it improves sentiment transfer. Script: <code>paper/within_review_sentiment.py</code>.
+      </p>
+      <table>
+        <caption>Table A6. Sentiment consistency within multi-aspect reviews (two or more aspects). Real reviews are opinion-consistent (a halo effect); the synthetic corpus, which samples aspect polarities independently, is unnaturally balanced.</caption>
+        <thead>
+          <tr><th>Corpus</th><th>Multi-aspect reviews</th><th>All aspects same polarity</th><th>Mixes positive and negative</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Synthetic</td><td>6,485</td><td>0.22</td><td>0.33</td></tr>
+          <tr><td>Herath</td><td>1,061</td><td>0.50</td><td>0.13</td></tr>
+          <tr><td>EduRABSA</td><td>3,466</td><td>0.62</td><td>0.24</td></tr>
+          <tr><td>OATS (review-level)</td><td>1,404</td><td>0.72</td><td>0.22</td></tr>
+        </tbody>
+      </table>
+
+            <h4>A.1.8 Aspect Co-occurrence Structure</h4>
+      <p>
+        A second structural property, orthogonal to the polarity correlation of Appendix A.1.7, is which aspects appear together. Because the generator draws each review's aspect set by uniform sampling, synthetic aspect co-occurrence reflects only the marginal frequencies. We measure the standard deviation of pairwise log-lift (the log of observed-over-expected co-occurrence) across aspect pairs with sufficient support, at a common sample size of 1,680 reviews so the statistic is comparable across corpora (Table A7). The synthetic corpus sits at 0.228, near the finite-sample floor of a uniform sampler, while real corpora range from 0.30 (OATS and EduRABSA) to 0.47 (Herath). Real co-occurrence is semantically coherent, clustering course-delivery aspects (materials with organization, clarity with organization) and evaluation aspects (assessment design with grading transparency). The gap is pronounced for the institutional Herath corpus and modest for the two MOOC corpora; it is a real but uneven departure from real feedback. Script: <code>paper/analysis_stratified_cooccur.py</code>.
+      </p>
+      <table>
+        <caption>Table A7. Aspect co-occurrence structure, measured as the standard deviation of pairwise log-lift (observed over expected co-occurrence) across aspect pairs with support, at a matched sample size of 1,680 reviews (mean and standard deviation over five subsamples). The synthetic corpus sits near the uniform-sampler floor; real corpora are more structured, most strongly Herath.</caption>
+        <thead>
+          <tr><th>Corpus</th><th>Log-lift std @ N=1,680</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Synthetic</td><td>0.228 &plusmn; 0.011</td></tr>
+          <tr><td>Herath</td><td>0.473 &plusmn; 0.016</td></tr>
+          <tr><td>EduRABSA</td><td>0.297 &plusmn; 0.013</td></tr>
+          <tr><td>OATS</td><td>0.302 &plusmn; 0.000</td></tr>
+        </tbody>
+      </table>
+
+      
+      <h3>A.2 Generation Configuration and Realism Validation</h3>
+      <h4>A.2.1 GPT-Based Inference Configuration Details</h4>
+      <p>
+        Table A8 complements Table 7 by documenting the configuration differences behind the four GPT-based inference variants rather than repeating the same held-out scores. All four methods used the same exact-key sparse JSON contract and achieved parse success of 1.00 on the full 1,000-review test split.
+      </p>
+      <table>
+        <caption>Table A8. Configuration details for the GPT-based inference methods reported in Table 7.</caption>
+        <thead>
+          <tr>
+            <th>Approach</th>
+            <th>Demonstration policy</th>
+            <th>Context selection</th>
+            <th>Test reviews</th>
+            <th>Parse success</th>
+            <th>Intended comparison</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>gpt-5.2 zero-shot</code></td><td>No demonstrations</td><td>Schema instructions only</td><td>1000</td><td>1.00</td><td>Measures the strongest constrained inference baseline without example conditioning.</td></tr>
+          <tr><td><code>gpt-5.2 retrieval-few-shot</code></td><td>Nearest-neighbor labeled demonstrations</td><td>Examples retrieved from the synthetic training split per test review</td><td>1000</td><td>1.00</td><td>Tests whether instance-level example selection improves over fixed prompting.</td></tr>
+          <tr><td><code>gpt-5.2 few-shot</code></td><td>Three static labeled demonstrations</td><td>Fixed examples drawn from the synthetic training split</td><td>1000</td><td>1.00</td><td>Reference few-shot condition with stable prompt context across the full test set.</td></tr>
+          <tr><td><code>gpt-5.2 few-shot-diverse</code></td><td>Five static demonstrations with varied tone and aspect count</td><td>Curated fixed examples from the synthetic training split</td><td>1000</td><td>1.00</td><td>Tests whether broader example diversity changes the precision-recall trade-off.</td></tr>
+        </tbody>
+      </table>
+            <h4>A.2.2 Prompt Instructions Across Realism-Validation Cycles</h4>
+      <p>
+        The realism-validation procedure rewrites the prompt between complete 60-question cycles. The prompt used in the next cycle is the editor-refined output from the previous cycle when correctly detected synthetic reviews provide sufficient cue evidence. Table A9 shows the generation instruction at each cycle.
+      </p>
+      <table>
+        <caption>Table A9. Prompt instructions across realism-study cycles, showing how the generation instruction changed as synthetic cues were identified and reduced.</caption>
         <thead>
           <tr>
             <th>Stage</th>
@@ -1276,72 +1441,12 @@ Return only the review text.</pre></td>
         </tbody>
       </table>
 
-      <h3>A.4 Mapped Real-Data Overlap and Label Balance</h3>
+            <h4>A.2.3 Pilot Subset Procedure-Validation Details</h4>
       <p>
-        Table A4 documents the conservative overlap used for external validation against the Herath student-feedback corpus. The mapped real benchmark is intentionally narrower than the full 20-aspect schema, because only defensible correspondences were retained.
+        The pilot subset is included to document the small-scale validation used before full-scale generation, and documents end-to-end validation of the data contract rather than serving as a model comparison. Table A10 records the acceptance criteria and Figure A3 shows the sampled aspect-count mix used in that validation subset.
       </p>
       <table>
-        <caption>Table A4. Exact support and polarity balance for the nine overlap aspects retained in the mapped Herath benchmark. This appendix table preserves the full counts behind the lighter overlap context summarized in Figure 3.</caption>
-        <thead>
-          <tr>
-            <th>Aspect</th>
-            <th>Reviews</th>
-            <th>Positive</th>
-            <th>Neutral</th>
-            <th>Negative</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><code>lecturer_quality</code></td><td>2190</td><td>1402</td><td>398</td><td>390</td></tr>
-          <tr><td><code>overall_experience</code></td><td>557</td><td>395</td><td>61</td><td>101</td></tr>
-          <tr><td><code>organization</code></td><td>477</td><td>266</td><td>155</td><td>56</td></tr>
-          <tr><td><code>materials</code></td><td>390</td><td>137</td><td>194</td><td>59</td></tr>
-          <tr><td><code>assessment_design</code></td><td>235</td><td>83</td><td>100</td><td>52</td></tr>
-          <tr><td><code>exam_fairness</code></td><td>184</td><td>29</td><td>97</td><td>58</td></tr>
-          <tr><td><code>grading_transparency</code></td><td>146</td><td>49</td><td>66</td><td>31</td></tr>
-          <tr><td><code>workload</code></td><td>75</td><td>12</td><td>21</td><td>42</td></tr>
-          <tr><td><code>accessibility</code></td><td>35</td><td>11</td><td>12</td><td>12</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.5 Per-Aspect Synthetic-to-Real Diagnostics</h3>
-      <p>
-        Figure A1 expands the external-validation result into an aspect-by-model matrix. It is included in the appendix because it is diagnostically valuable, but too detailed for the main body.
-      </p>
-      <figure>
-        <img src="outputs/figures/real_transfer_per_aspect_heatmap.svg" alt="Per-aspect F1 heatmap on the mapped real benchmark">
-        <figcaption>Figure A1. Per-aspect detection F1 for each synthetic-trained model on the mapped real benchmark. The heatmap shows that cross-dataset transfer is highly uneven: <code>lecturer_quality</code> and <code>exam_fairness</code> transfer more cleanly than sparse or weakly aligned categories such as <code>accessibility</code>.</figcaption>
-      </figure>
-
-      <h3>A.6 GPT-Based Inference Configuration Details</h3>
-      <p>
-        Table A5 complements Table 7 by documenting the configuration differences behind the four GPT-based inference variants rather than repeating the same held-out scores. All four methods used the same exact-key sparse JSON contract and achieved parse success of 1.00 on the full 1,000-review test split.
-      </p>
-      <table>
-        <caption>Table A5. Configuration details for the GPT-based inference methods reported in Table 7.</caption>
-        <thead>
-          <tr>
-            <th>Approach</th>
-            <th>Demonstration policy</th>
-            <th>Context selection</th>
-            <th>Test reviews</th>
-            <th>Parse success</th>
-            <th>Intended comparison</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><code>gpt-5.2 zero-shot</code></td><td>No demonstrations</td><td>Schema instructions only</td><td>1000</td><td>1.00</td><td>Measures the strongest constrained inference baseline without example conditioning.</td></tr>
-          <tr><td><code>gpt-5.2 retrieval-few-shot</code></td><td>Nearest-neighbor labeled demonstrations</td><td>Examples retrieved from the synthetic training split per test review</td><td>1000</td><td>1.00</td><td>Tests whether instance-level example selection improves over fixed prompting.</td></tr>
-          <tr><td><code>gpt-5.2 few-shot</code></td><td>Three static labeled demonstrations</td><td>Fixed examples drawn from the synthetic training split</td><td>1000</td><td>1.00</td><td>Reference few-shot condition with stable prompt context across the full test set.</td></tr>
-          <tr><td><code>gpt-5.2 few-shot-diverse</code></td><td>Five static demonstrations with varied tone and aspect count</td><td>Curated fixed examples from the synthetic training split</td><td>1000</td><td>1.00</td><td>Tests whether broader example diversity changes the precision-recall trade-off.</td></tr>
-        </tbody>
-      </table>
-      <h3>A.7 Pilot Subset Procedure-Validation Details</h3>
-      <p>
-        The pilot subset is included to document the small-scale validation used before full-scale generation, and documents end-to-end validation of the data contract rather than serving as a model comparison. Table A6 records the acceptance criteria and Figure A2 shows the sampled aspect-count mix used in that validation subset.
-      </p>
-      <table>
-        <caption>Table A6. Pilot-subset validation criteria used before full-scale generation.</caption>
+        <caption>Table A10. Pilot-subset validation criteria used before full-scale generation.</caption>
         <thead>
           <tr>
             <th>Criterion</th>
@@ -1361,15 +1466,141 @@ Return only the review text.</pre></td>
       </table>
       <figure>
         <img src="outputs/figures/canary_smoke_aspect_count_distribution.svg" alt="Aspect count distribution in the pilot validation subset">
-        <figcaption>Figure A2. Distribution of sampled target-aspect counts in the pilot validation subset. This appendix figure is retained because it documents the pilot mixture without duplicating the acceptance criteria already summarized in Table A6.</figcaption>
+        <figcaption>Figure A3. Distribution of sampled target-aspect counts in the pilot validation subset. This appendix figure is retained because it documents the pilot mixture without duplicating the acceptance criteria already summarized in Table A10.</figcaption>
       </figure>
 
-      <h3>A.8 Label-Faithfulness Audit Details</h3>
+            <h4>A.2.4 Generator Realism-Validation Protocol</h4>
       <p>
-        Table A7 records the strict model-assisted label-faithfulness audit used to check whether declared aspect sentiments are visibly supported in the generated text. The main body reports the headline implication; this appendix keeps the exact audited rates visible for future comparison after regeneration or filtering.
+        To assess generator quality without redefining the paper's main task, we built a small-scale real-versus-synthetic discrimination protocol. The reference pool is a public OMSCS review source from which 32 reviews were prepared across four computer science courses. This source is useful for a first realism stress test because it provides naturally written educational reviews with concrete course experiences, but it is not representative enough to serve as the only real benchmark. It is graduate-level, computer-science-heavy, English-only, and drawn from a single public review website. Accordingly, OMSCS is treated as a constrained validation source rather than a final external evaluation set, and these reviews are never mixed into the ABSA train, validation, or test splits.
+      </p>
+      <p>
+        The realism-validation procedure is iterative. In this protocol, one cycle means a complete pass over 60 judge questions: 30 real reviews and 30 synthetic reviews, each judged independently as a binary REAL-versus-SYNTHETIC decision with confidence, cue tags, and justification. Synthetic reviews are generated from sampled aspect sentiments together with a sampled subset of nuance attributes rather than the full schema, so the prompt remains controllable without looking templated. Each cycle records judge labels, confidence, entropy, a chance-confusion percentage, and exact-versus-chance significance statistics. When the judge correctly identifies synthetic cues, those explanations are fed into an editor step that rewrites the instruction before the next cycle, so each cycle is evaluated under one fixed prompt specification rather than an ad hoc prompt mixture. These checks are positioned as generator validation steps that support the main synthetic-data ABSA study, not as a substitute for the paper's core training-and-evaluation experiments. They are diagnostic, single-source, and single-judge evidence rather than a broad realism claim.
+      </p>
+      <div class="math-block">
+        $$\hat{y}_{c,i} \in \{\text{real}, \text{synthetic}\}, \qquad q_{c,i} \in [0,1]$$
+        $$\mathrm{Acc}_c = \frac{1}{M}\sum_{i=1}^{M} \mathbf{1}[\hat{y}_{c,i} = y_i], \qquad M = 60$$
+        $$\mathrm{Confusion}_c = 100\left(1 - \frac{|\mathrm{Acc}_c - 0.5|}{0.5}\right)$$
+        $$H_c = -\frac{1}{M}\sum_{i=1}^{M}\left(q_{c,i}\log q_{c,i} + (1-q_{c,i})\log(1-q_{c,i})\right)$$
+        $$I_{c+1} = E\left(I_c, \{(\hat{y}_{c,i}, q_{c,i}, r_{c,i}) : \hat{y}_{c,i}=\text{synthetic} \land y_i=\text{synthetic}\}\right)$$
+      </div>
+      <p>
+        Here \(y_i\) is the hidden ground-truth source label, \(\hat{y}_{c,i}\) is the judge decision for item \(i\) in cycle \(c\), \(q_{c,i}\) is the judge confidence, \(r_{c,i}\) denotes the textual cue explanation, \(\mathrm{Acc}_c\) is the judge accuracy, \(\mathrm{Confusion}_c\) is the paper-facing chance-confusion statistic, \(H_c\) is mean decision entropy, and \(E\) is the editor function that produces the next stable realism instruction only from cues that correctly exposed synthetic items.
+      </p>
+      <figure>
+        <img src="outputs/figures/realism_improvement_curve.svg" alt="Realism improvement curve">
+        <figcaption>Figure A4. Realism-validation outcomes across three judge-editor cycles. The three panels summarize judge accuracy, chance-confusion, and decision entropy over complete 60-question cycles. The figure documents how judge uncertainty changes across cycles rather than claiming statistical indistinguishability from real reviews.</figcaption>
+      </figure>
+
+            <h4>A.2.5 Three-Cycle Realism-Validation Results</h4>
+      <p>
+        The realism study remains diagnostic, and it is reported here as a complete three-cycle procedure rather than as a single pass. Each cycle used 60 independent judge questions: 30 real OMSCS reviews and 30 synthetic reviews generated from the richer attribute prompt, with binary REAL-versus-SYNTHETIC decisions, confidence scores, cue tags, and textual justification. Across cycles 0, 1, and 2, judge item accuracy was 0.5167, 0.4333, and 0.4333; mean confusion was 0.5737, 0.6417, and 0.6430; mean entropy was 0.6912, 0.7020, and 0.7068 bits; and the number of correctly detected synthetic reviews fell from 5 to 1 to 0. These diagnostics indicate that the stabilized prompt reduced several synthetic cues, even though the accuracy-based chance-confusion statistic was not monotonic across cycles. Figure A4 plots the per-cycle accuracy, confusion, and entropy, and Table A11 summarizes the three cycles.
+      </p>
+      <p>
+        The final cycle does <em>not</em> support an equivalence claim. In cycle 2, the judge accuracy remained 0.4333, the exact binomial test against chance yielded <code>p = 0.366294</code>, and the Wilson 95% interval was <code>[0.3157, 0.5590]</code>, which is too wide for the predefined ±0.10 equivalence margin. The value of the procedure is therefore diagnostic rather than confirmatory. Judge explanations repeatedly highlighted generic specificity, overbalanced structure, overpolished prose, stacked motifs, and occasional persona inconsistencies; those cues were then used by the editor step to stabilize the next-cycle prompt. The realism analysis therefore contributes a cycle-level improvement curve, cue summaries, prompt states, and side-by-side appendix examples rather than only a final binary verdict.
       </p>
       <table>
-        <caption>Table A7. Detailed label-faithfulness audit rates for the full-corpus sample and the pilot sample.</caption>
+        <caption>Table A11. Realism-study summary across the three complete judge-editor cycles, including accuracy, confusion, entropy, and whether prompt rewriting was triggered.</caption>
+        <thead>
+          <tr>
+            <th>Prompt state</th>
+            <th>Cycle</th>
+            <th>Judge accuracy</th>
+            <th>Mean confusion</th>
+            <th>Mean entropy (bits)</th>
+            <th>Binomial p-value</th>
+            <th>Editor triggered</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td><code>rich_attributes_baseline</code></td><td>0</td><td>0.5167</td><td>0.5737</td><td>0.6912</td><td>0.8974</td><td>yes</td></tr>
+          <tr><td><code>reduce_synthetic_signatures</code></td><td>1</td><td>0.4333</td><td>0.6417</td><td>0.7020</td><td>0.3663</td><td>yes</td></tr>
+          <tr><td><code>messier_realism</code></td><td>2</td><td>0.4333</td><td>0.6430</td><td>0.7068</td><td>0.3663</td><td>no</td></tr>
+        </tbody>
+      </table>
+      <p>
+        To make the realism analysis auditable, the appendix includes side-by-side real and synthetic review examples together with the synthetic review's sampled aspects and nuance attributes. The paper therefore reports not only the final cycle summary, but also the prompt instructions and qualitative evidence used to justify revision between cycles; the paired examples appear in Appendix A.1.2.
+      </p>
+
+            <h4>A.2.6 Per-Aspect Synthetic-to-Real Diagnostics</h4>
+      <p>
+        Figure A5 expands the external-validation result into an aspect-by-model matrix. It is included in the appendix because it is diagnostically valuable, but too detailed for the main body.
+      </p>
+      <figure>
+        <img src="outputs/figures/real_transfer_per_aspect_heatmap.svg" alt="Per-aspect F1 heatmap on the mapped real benchmark">
+        <figcaption>Figure A5. Per-aspect detection F1 for each synthetic-trained model on the mapped real benchmark. The heatmap shows that cross-dataset transfer is highly uneven: <code>lecturer_quality</code> and <code>exam_fairness</code> transfer more cleanly than sparse or weakly aligned categories such as <code>accessibility</code>.</figcaption>
+      </figure>
+
+            <h4>A.2.7 Sentence-Versus-Review Realism</h4>
+      <p>
+        The realism-validation judge separates whole synthetic reviews from real ones easily, but this reflects document structure rather than the realism of the text itself. We re-ran the identical real-versus-synthetic judgment at sentence granularity, giving the judge one sentence at a time (150 synthetic and 150 real OMSCS sentences of 5 to 40 words), and compared it to the review-level decision (Table A12). Accuracy falls from 93% to 60%, close to the 50% chance floor: the judge flags only 37% of synthetic sentences as synthetic (versus 97% of whole reviews) and calls 63% of them real, while its false-synthetic rate on real sentences is unchanged at 16%. Individual synthetic sentences are therefore near-indistinguishable from real ones to the same detector. The detectability is instead a cumulative property of extended synthetic text: each synthetic sentence carries only a weak signal (flagged synthetic 37% of the time, against a 15% floor on real sentences), and that signal accumulates across a full generated review to near-certain detection (97%). To confirm this is not merely an effect of covering several aspects in one document, we ran a control that assembles real OMSCS sentences from the same course into equally multi-aspect documents (mean 63 words); these all-real-sentence documents are judged synthetic only 19% of the time, essentially the real-review rate, so neither multi-aspect coverage nor mild incoherence triggers the tell (Table A12). The signal is the accumulated style of genuinely synthetic text, which is orthogonal to the sentence-level aspect-sentiment labels the corpus supplies for training; a MAUVE gap of 0.23 between the sentence pools reflects an aggregate distributional shift consistent with this weak per-sentence signal. Scripts: <code>paper/n2_sentence_judge.py</code>, <code>paper/n2_assembled_real.py</code>.
+      </p>
+      <table>
+        <caption>Table A12. Rate at which the real-versus-synthetic judge (<code>gpt-5.4</code>) flags text as synthetic, across four conditions. A weak per-sentence signal accumulates over a full synthetic review; assembling real sentences into equally multi-aspect documents does not reproduce it, so the tell is the accumulated style of synthetic text rather than multi-aspect coverage or incoherence.</caption>
+        <thead>
+          <tr><th>Condition</th><th>Median words</th><th>Flagged synthetic</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Real full reviews</td><td>104</td><td>0.15</td></tr>
+          <tr><td>Assembled real (multi-aspect documents)</td><td>63</td><td>0.19</td></tr>
+          <tr><td>Individual synthetic sentences</td><td>~12</td><td>0.37</td></tr>
+          <tr><td>Whole synthetic reviews</td><td>122</td><td>0.975</td></tr>
+        </tbody>
+      </table>
+
+      
+      <h3>A.3 Generator Diagnostics and Robustness</h3>
+      <h4>A.3.1 Complementary Generator Diagnostics</h4>
+      <ul>
+        <li>A real-versus-synthetic validation harness with cycle-by-cycle prompt-debug logging.</li>
+        <li>Compact model-assisted audits of aspect support and sentiment consistency on both stable-prompt samples and the full dataset.</li>
+      </ul>
+      <p>
+        We also ran compact model-assisted auxiliary audits with <code>gpt-5.2</code>. On 30 synthetic reviews generated directly from the corpus-generation prompt, all declared aspects were judged to be textually supported (\(1.0000\) support rates at both the aspect and review level), while exact sentiment agreement was lower (\(0.7377\) at the aspect level and \(0.5333\) at the full-review level). This prompt-level result should be read together with the harsher full-dataset audit reported in Section 5.6: the combination suggests that target aspect presence can be preserved under the generation prompt, but large-scale generation still introduces substantial label-faithfulness drift, especially for sentiment polarity. Together these diagnostics justify treating realism and faithfulness checks as generator audits rather than as evidence that the 10K corpus is a synthetic gold standard.
+      </p>
+
+            <h4>A.3.2 Generator-Family Robustness</h4>
+      <p>
+        To check that the generate-audit-filter pipeline is not specific to the GPT family that produced the corpus (Section 5.7), we regenerated the same 150 label-conditioned prompts with four generator families spanning four providers, accessed through a common OpenRouter interface, and scored every generation with the identical <code>gpt-5.2</code> label-fidelity audit used in Section 5.6. The comparison is construct-matched: one auditor, one prompt set, one scoring pass. All four families yield high and comparable aspect support (0.921 to 0.968) and per-aspect sentiment match (0.759 to 0.904), with the two non-GPT families matching or exceeding the same-family <code>gpt-5-nano</code> generator. Non-GPT generators therefore produce auditable, label-faithful data, and the audit signal is consistent across providers rather than tuned to one family. GLM-4.6 is a reasoning-first model whose default output is empty under a plain chat call; it was queried with explicit-reasoning disabled, which is why its usable aspect count is slightly lower.
+      </p>
+      <table>
+        <caption>Table A13. Label-fidelity audit (<code>gpt-5.2</code>) of the same 150 label-conditioned prompts regenerated by four generator families across four providers. Rates are per declared aspect; the comparison is read across families under one fixed auditor and prompt set.</caption>
+        <thead>
+          <tr><th>Provider</th><th>Generator</th><th>Declared aspects</th><th>Aspect support rate</th><th>Aspect sentiment-match rate</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>OpenAI</td><td><code>gpt-5-nano</code> (corpus generator)</td><td>315</td><td>0.9365</td><td>0.7587</td></tr>
+          <tr><td>Google</td><td><code>gemini-2.5-flash</code></td><td>315</td><td>0.9683</td><td>0.8571</td></tr>
+          <tr><td>Zhipu</td><td><code>glm-4.6</code></td><td>251</td><td>0.9681</td><td>0.9044</td></tr>
+          <tr><td>Meta</td><td><code>llama-3.3-70b</code></td><td>315</td><td>0.9206</td><td>0.7873</td></tr>
+        </tbody>
+      </table>
+
+            <h4>A.3.3 The Learnable Signal Is Generator-Invariant</h4>
+      <p>
+        Because the train and test splits come from one generator and prompt, a reviewer may ask whether the detector exploits generator-specific patterns rather than aspect content. It does not. Training the detector on the GPT-generated corpus and evaluating it on held-out corpora generated by three other families (Table A14) does not collapse: GPT-trained detection reaches micro-F1 0.32 to 0.38 on the gpt5nano, GLM, and Llama corpora and 0.23 on Gemini, comparable to or above its own in-domain 0.277. The learnable signal is thus generator-invariant rather than a single generator's fingerprint. Outputs: <code>paper/outputs/w5_heldout_generator/</code>.
+      </p>
+      <table>
+        <caption>Table A14. Held-out-generator detection transfer (micro-F1, mean over three seeds). A detector trained on GPT-generated data transfers to other families at or above its in-domain level, so the signal is not generator-specific.</caption>
+        <thead>
+          <tr><th>Train &rarr; test corpus</th><th>Detection micro-F1</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>GPT &rarr; GPT (in-domain)</td><td>0.277</td></tr>
+          <tr><td>GPT &rarr; gpt5nano</td><td>0.376</td></tr>
+          <tr><td>GPT &rarr; GLM-4.6</td><td>0.321</td></tr>
+          <tr><td>GPT &rarr; Llama-3.3-70B</td><td>0.318</td></tr>
+          <tr><td>GPT &rarr; Gemini-flash</td><td>0.233</td></tr>
+        </tbody>
+      </table>
+
+      
+      <h3>A.4 Label-Faithfulness Audit: Reliability, Human Agreement, and Independence</h3>
+      <h4>A.4.1 Label-Faithfulness Audit Details</h4>
+      <p>
+        Table A15 records the strict model-assisted label-faithfulness audit used to check whether declared aspect sentiments are visibly supported in the generated text. The main body reports the headline implication; this appendix keeps the exact audited rates visible for future comparison after regeneration or filtering.
+      </p>
+      <table>
+        <caption>Table A15. Detailed label-faithfulness audit rates for the full-corpus sample and the pilot sample.</caption>
         <thead>
           <tr>
             <th>Split</th>
@@ -1388,12 +1619,85 @@ Return only the review text.</pre></td>
         </tbody>
       </table>
 
-      <h3>A.9 Additional Local-Benchmark Robustness Analyses</h3>
+            <h4>A.4.2 Per-Corpus Audit-versus-Human Agreement</h4>
       <p>
-        Tables A8-A10 and Figures A3-A4 collect the robustness analyses cited in Section 5.2. They show how the two-step and joint formulations compare directly, how stable the strongest local models are across three seeds, and how a modest training-budget change affects BERT and DistilBERT.
+        The audit-versus-human agreement of Section 5.7 is reported here per corpus, for both the cost-matched auditor that drives the filter and the fully independent auditor. It is computed over the same 2,482 aspect-level decisions from 1,200 perturbation-controlled variants (faithful / polarity-flipped / aspect-injected). Each decision is a binary faithful-versus-unfaithful judgment (does the auditor accept an aspect that is genuinely faithful, and reject a flipped or injected one), so the metric is invariant to the two corpora's different aspect label sets and is directly comparable across them. Both auditors agree more with humans on EduRABSA than on Herath; this tracks item length (EduRABSA passages median 38 words versus Herath sentences median 20), and the independent auditor equals or exceeds the same-family one on both corpora, reinforcing that the audit signal is human-grounded rather than a same-family artifact.
       </p>
       <table>
-        <caption>Table A8. Joint-versus-two-step comparison on the held-out synthetic benchmark.</caption>
+        <caption>Table A16. Per-corpus audit-versus-human agreement over 2,482 aspect-level faithfulness decisions. The cost-matched auditor drives the training-data filter; the independent auditor is the anti-circularity cross-check. Each decision is binary faithful-versus-unfaithful, so the metric does not depend on the two corpora's different aspect label sets.</caption>
+        <thead>
+          <tr><th>Auditor</th><th>Corpus</th><th>Decisions</th><th>Cohen's kappa</th><th>Precision</th></tr>
+        </thead>
+        <tbody>
+          <tr><td><code>gpt-4.1-mini</code> (cost-matched)</td><td>Herath</td><td>1,396</td><td>0.51</td><td>0.87</td></tr>
+          <tr><td><code>gpt-4.1-mini</code> (cost-matched)</td><td>EduRABSA</td><td>1,086</td><td>0.62</td><td>0.89</td></tr>
+          <tr><td><code>gpt-4.1-mini</code> (cost-matched)</td><td>Both</td><td>2,482</td><td>0.56</td><td>0.88</td></tr>
+          <tr><td><code>gemini-2.5-flash</code> (independent)</td><td>Herath</td><td>1,396</td><td>0.58</td><td>0.89</td></tr>
+          <tr><td><code>gemini-2.5-flash</code> (independent)</td><td>EduRABSA</td><td>1,086</td><td>0.67</td><td>0.89</td></tr>
+          <tr><td><code>gemini-2.5-flash</code> (independent)</td><td>Both</td><td>2,482</td><td>0.62</td><td>0.89</td></tr>
+        </tbody>
+      </table>
+
+            <h4>A.4.3 Audit Reliability by Review Length and Aspect Count</h4>
+      <p>
+        The audit-versus-human agreement of Table A16 varies systematically with two correlated review properties (Pearson 0.48): review length and the number of declared aspects. Decomposing the 2,482 decisions isolates two opposing forces (Table A17). Recall, the rate at which the audit confirms a genuinely faithful aspect, rises with content: from 0.61 on one-aspect reviews to 0.74 on reviews with four or more aspects, and, holding the aspect count fixed at one, from 0.50 on reviews of at most 20 words to 0.56 on reviews over 40 words. More text lets the audit verify that a real aspect is present. Specificity, the rate at which it rejects an injected absent aspect, instead falls with aspect density: from 0.90 on one-aspect reviews to about 0.74 on reviews with three or more aspects, because a fabricated aspect blends in when a review already discusses many aspects. Agreement is therefore highest for moderate-length, moderate-aspect reviews: the shortest reviews are hard because the audit cannot confirm real aspects, and the most aspect-dense reviews are hard because it cannot reject fabricated ones. This also explains the per-corpus ordering in Table A16, where the shorter Herath sentences sit below the longer EduRABSA passages. Scripts: <code>paper/v7_kappa_by_length.py</code>, <code>paper/v7_by_len_and_aspects.py</code>.
+      </p>
+      <table>
+        <caption>Table A17. Audit-versus-human agreement decomposed by the number of declared aspects per review (cost-matched <code>gpt-4.1-mini</code> auditor; the independent auditor follows the same pattern). Recall is the keep-rate on genuinely faithful aspects; specificity is the reject-rate on injected absent aspects. Recall rises with content while specificity falls with aspect density.</caption>
+        <thead>
+          <tr><th>Aspects per review</th><th>Decisions</th><th>Mean words</th><th>Cohen's kappa</th><th>Recall (confirm faithful)</th><th>Specificity (reject injected)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>1</td><td>792</td><td>23</td><td>0.51</td><td>0.61</td><td>0.90</td></tr>
+          <tr><td>2</td><td>959</td><td>35</td><td>0.59</td><td>0.72</td><td>0.88</td></tr>
+          <tr><td>3</td><td>460</td><td>55</td><td>0.56</td><td>0.71</td><td>0.74</td></tr>
+          <tr><td>4+</td><td>271</td><td>110</td><td>0.55</td><td>0.74</td><td>0.74</td></tr>
+        </tbody>
+      </table>
+
+            <h4>A.4.4 Independent Open-Weights Auditors Reproduce the Faithfulness Audit</h4>
+      <p>
+        The generator and the cost-matched auditor are both OpenAI models, which raises the question of whether the audit detects genuine textual faithfulness or a same-family latent pattern. We re-ran the audit on the same 250-review sample with two independent open-weights auditors, Llama-3.3-70B (Meta) and GLM-4.6 (Zhipu). All three families converge (Table A18): mean support-rates are within a few points (0.77, 0.74, 0.73), cross-architecture agreement with the GPT auditor is Cohen's kappa 0.56 to 0.65 with row-score Spearman 0.54 to 0.69, and the two open-weights auditors agree with each other at the same level (supported kappa 0.65), so no auditor is privileged. A same-family artifact would make out-of-family auditors diverge; instead they reproduce the audit, indicating it measures textual faithfulness rather than a generator-auditor family effect. This complements the Gemini human-agreement check (Cohen's kappa 0.62, Appendix A.4.2). Outputs: <code>paper/outputs/w3_openweights_auditor/</code>.
+      </p>
+      <table>
+        <caption>Table A18. Faithfulness audit reproduced by independent open-weights auditors on the same 250-review sample (501 declared aspects). Agreement is cross-architecture and cross-vendor.</caption>
+        <thead>
+          <tr><th>Auditor (family)</th><th>Support-rate</th><th>vs GPT: <code>supported</code> kappa</th><th>vs GPT: <code>sentiment_match</code> kappa</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>GPT-5.2 (OpenAI, baseline)</td><td>0.77</td><td>n/a</td><td>n/a</td></tr>
+          <tr><td>Llama-3.3-70B (Meta)</td><td>0.74</td><td>0.63</td><td>0.65</td></tr>
+          <tr><td>GLM-4.6 (Zhipu)</td><td>0.73</td><td>0.61</td><td>0.56</td></tr>
+        </tbody>
+      </table>
+
+      
+            <h4>A.4.5 Audit Score Predicts Training Quality Monotonically</h4>
+      <p>
+        The faithfulness-aware filter rests on the claim that the audit score tracks how useful a row is for training. We test this directly with a dose-response: training the detector on each audit-score quartile of the corpus at matched size and evaluating on the 9-aspect overlap of a held-out synthetic test split (Table A19). The response is monotone on both seeds: detection micro-F1 (9-aspect overlap) rises from 0.285 in the lowest-audit quartile to 0.411 in the highest, and sentiment mean squared error falls from 0.744 to 0.529. Higher-audit training data yields a strictly better detector across the whole distribution, not only at the extremes, which is the end-to-end validation of the audit score as a training-data quality signal. Outputs: <code>paper/outputs/w7_dose_response/</code>.
+      </p>
+      <table>
+        <caption>Table A19. Audit-quartile dose-response (<code>bert-base-uncased</code>, matched bucket size 1,373 rows, 9-aspect overlap on the held-out synthetic test split, seed 42; monotone on both seeds). Detection micro-F1 here is on the 9-aspect overlap (comparable to the Table 9 internal 9-aspect value, not the 20-aspect benchmark). Detection improves and sentiment error falls as audit score rises.</caption>
+        <thead>
+          <tr><th>Audit-score quartile</th><th>Detection micro-F1</th><th>Sentiment MSE</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Q1 (lowest audit)</td><td>0.285</td><td>0.744</td></tr>
+          <tr><td>Q2</td><td>0.335</td><td>0.677</td></tr>
+          <tr><td>Q3</td><td>0.383</td><td>0.529</td></tr>
+          <tr><td>Q4 (highest audit)</td><td>0.411</td><td>0.529</td></tr>
+          <tr><td>full corpus</td><td>0.418</td><td>0.399</td></tr>
+        </tbody>
+      </table>
+
+      
+      <h3>A.5 Modeling, Detection, and Transfer Diagnostics</h3>
+      <h4>A.5.1 Additional Local-Benchmark Robustness Analyses</h4>
+      <p>
+        Tables A20-A22 and Figures A6-A7 collect the robustness analyses cited in Section 5.2. They show how the two-step and joint formulations compare directly, how stable the strongest local models are across three seeds, and how a modest training-budget change affects BERT and DistilBERT.
+      </p>
+      <table>
+        <caption>Table A20. Joint-versus-two-step comparison on the held-out synthetic benchmark.</caption>
         <thead>
           <tr>
             <th>Family</th>
@@ -1414,10 +1718,10 @@ Return only the review text.</pre></td>
       </table>
       <figure>
         <img src="outputs/figures/seed_stability_micro_f1.svg" alt="Seed stability across the strongest local models">
-        <figcaption>Figure A3. Micro-F1 across three random seeds for TF-IDF, DistilBERT, and BERT. The figure highlights the strong stability of DistilBERT and the larger upside variance of BERT.</figcaption>
+        <figcaption>Figure A6. Micro-F1 across three random seeds for TF-IDF, DistilBERT, and BERT. The figure highlights the strong stability of DistilBERT and the larger upside variance of BERT.</figcaption>
       </figure>
       <table>
-        <caption>Table A9. Three-seed stability summary for the strongest local benchmark models.</caption>
+        <caption>Table A21. Three-seed stability summary for the strongest local benchmark models.</caption>
         <thead>
           <tr>
             <th>Approach</th>
@@ -1436,10 +1740,10 @@ Return only the review text.</pre></td>
       </table>
       <figure>
         <img src="outputs/figures/encoder_tuning_comparison.svg" alt="Training-budget tuning comparison for BERT and DistilBERT">
-        <figcaption>Figure A4. Effect of a modest training-budget change on the two strongest transformer baselines. BERT benefits noticeably from the longer lower-rate schedule, while DistilBERT remains essentially flat.</figcaption>
+        <figcaption>Figure A7. Effect of a modest training-budget change on the two strongest transformer baselines. BERT benefits noticeably from the longer lower-rate schedule, while DistilBERT remains essentially flat.</figcaption>
       </figure>
       <table>
-        <caption>Table A10. Targeted training-budget comparison for the two strongest transformer baselines.</caption>
+        <caption>Table A22. Targeted training-budget comparison for the two strongest transformer baselines.</caption>
         <thead>
           <tr>
             <th>Approach</th>
@@ -1457,12 +1761,12 @@ Return only the review text.</pre></td>
         </tbody>
       </table>
 
-      <h3>A.10 Additional Detection Diagnostics</h3>
+            <h4>A.5.2 Additional Detection Diagnostics</h4>
       <p>
-        Table A11 complements the headline F1 metrics with three confusion-based summaries that are less sensitive to label sparsity: macro balanced accuracy, macro specificity, and macro Matthews correlation. These values are especially useful in the present 20-aspect multilabel setting because they show whether a model is improving through better minority-positive recovery, through conservative rejection of negatives, or through a more balanced combination of both.
+        Table A23 complements the headline F1 metrics with three confusion-based summaries that are less sensitive to label sparsity: macro balanced accuracy, macro specificity, and macro Matthews correlation. These values are especially useful in the present 20-aspect multilabel setting because they show whether a model is improving through better minority-positive recovery, through conservative rejection of negatives, or through a more balanced combination of both.
       </p>
       <table>
-        <caption>Table A11. Additional confusion-based detection diagnostics for the principal synthetic-benchmark, GPT-based, and mapped real-data comparisons.</caption>
+        <caption>Table A23. Additional confusion-based detection diagnostics for the principal synthetic-benchmark, GPT-based, and mapped real-data comparisons.</caption>
         <thead>
           <tr>
             <th>Family</th>
@@ -1490,124 +1794,9 @@ Return only the review text.</pre></td>
       </table>
 
 
-      <h3>A.11 Generator Realism-Validation Protocol</h3>
+            <h4>A.5.3 Per-Aspect Behavior of the Best Model</h4>
       <p>
-        To assess generator quality without redefining the paper's main task, we built a small-scale real-versus-synthetic discrimination protocol. The reference pool is a public OMSCS review source from which 32 reviews were prepared across four computer science courses. This source is useful for a first realism stress test because it provides naturally written educational reviews with concrete course experiences, but it is not representative enough to serve as the only real benchmark. It is graduate-level, computer-science-heavy, English-only, and drawn from a single public review website. Accordingly, OMSCS is treated as a constrained validation source rather than a final external evaluation set, and these reviews are never mixed into the ABSA train, validation, or test splits.
-      </p>
-      <p>
-        The realism-validation procedure is iterative. In this protocol, one cycle means a complete pass over 60 judge questions: 30 real reviews and 30 synthetic reviews, each judged independently as a binary REAL-versus-SYNTHETIC decision with confidence, cue tags, and justification. Synthetic reviews are generated from sampled aspect sentiments together with a sampled subset of nuance attributes rather than the full schema, so the prompt remains controllable without looking templated. Each cycle records judge labels, confidence, entropy, a chance-confusion percentage, and exact-versus-chance significance statistics. When the judge correctly identifies synthetic cues, those explanations are fed into an editor step that rewrites the instruction before the next cycle, so each cycle is evaluated under one fixed prompt specification rather than an ad hoc prompt mixture. These checks are positioned as generator validation steps that support the main synthetic-data ABSA study, not as a substitute for the paper's core training-and-evaluation experiments. They are diagnostic, single-source, and single-judge evidence rather than a broad realism claim.
-      </p>
-      <div class="math-block">
-        $$\hat{y}_{c,i} \in \{\text{real}, \text{synthetic}\}, \qquad q_{c,i} \in [0,1]$$
-        $$\mathrm{Acc}_c = \frac{1}{M}\sum_{i=1}^{M} \mathbf{1}[\hat{y}_{c,i} = y_i], \qquad M = 60$$
-        $$\mathrm{Confusion}_c = 100\left(1 - \frac{|\mathrm{Acc}_c - 0.5|}{0.5}\right)$$
-        $$H_c = -\frac{1}{M}\sum_{i=1}^{M}\left(q_{c,i}\log q_{c,i} + (1-q_{c,i})\log(1-q_{c,i})\right)$$
-        $$I_{c+1} = E\left(I_c, \{(\hat{y}_{c,i}, q_{c,i}, r_{c,i}) : \hat{y}_{c,i}=\text{synthetic} \land y_i=\text{synthetic}\}\right)$$
-      </div>
-      <p>
-        Here \(y_i\) is the hidden ground-truth source label, \(\hat{y}_{c,i}\) is the judge decision for item \(i\) in cycle \(c\), \(q_{c,i}\) is the judge confidence, \(r_{c,i}\) denotes the textual cue explanation, \(\mathrm{Acc}_c\) is the judge accuracy, \(\mathrm{Confusion}_c\) is the paper-facing chance-confusion statistic, \(H_c\) is mean decision entropy, and \(E\) is the editor function that produces the next stable realism instruction only from cues that correctly exposed synthetic items.
-      </p>
-      <figure>
-        <img src="outputs/figures/realism_improvement_curve.svg" alt="Realism improvement curve">
-        <figcaption>Figure A5. Realism-validation outcomes across three judge-editor cycles. The three panels summarize judge accuracy, chance-confusion, and decision entropy over complete 60-question cycles. The figure documents how judge uncertainty changes across cycles rather than claiming statistical indistinguishability from real reviews.</figcaption>
-      </figure>
-
-      <h3>A.12 Complementary Generator Diagnostics</h3>
-      <ul>
-        <li>A real-versus-synthetic validation harness with cycle-by-cycle prompt-debug logging.</li>
-        <li>Compact model-assisted audits of aspect support and sentiment consistency on both stable-prompt samples and the full dataset.</li>
-      </ul>
-      <p>
-        We also ran compact model-assisted auxiliary audits with <code>gpt-5.2</code>. On 30 synthetic reviews generated directly from the corpus-generation prompt, all declared aspects were judged to be textually supported (\(1.0000\) support rates at both the aspect and review level), while exact sentiment agreement was lower (\(0.7377\) at the aspect level and \(0.5333\) at the full-review level). This prompt-level result should be read together with the harsher full-dataset audit reported in Section 5.6: the combination suggests that target aspect presence can be preserved under the generation prompt, but large-scale generation still introduces substantial label-faithfulness drift, especially for sentiment polarity. Together these diagnostics justify treating realism and faithfulness checks as generator audits rather than as evidence that the 10K corpus is a synthetic gold standard.
-      </p>
-
-      <h3>A.13 Three-Cycle Realism-Validation Results</h3>
-      <p>
-        The realism study remains diagnostic, and it is reported here as a complete three-cycle procedure rather than as a single pass. Each cycle used 60 independent judge questions: 30 real OMSCS reviews and 30 synthetic reviews generated from the richer attribute prompt, with binary REAL-versus-SYNTHETIC decisions, confidence scores, cue tags, and textual justification. Across cycles 0, 1, and 2, judge item accuracy was 0.5167, 0.4333, and 0.4333; mean confusion was 0.5737, 0.6417, and 0.6430; mean entropy was 0.6912, 0.7020, and 0.7068 bits; and the number of correctly detected synthetic reviews fell from 5 to 1 to 0. These diagnostics indicate that the stabilized prompt reduced several synthetic cues, even though the accuracy-based chance-confusion statistic was not monotonic across cycles. Figure A5 plots the per-cycle accuracy, confusion, and entropy, and Table A12 summarizes the three cycles.
-      </p>
-      <p>
-        The final cycle does <em>not</em> support an equivalence claim. In cycle 2, the judge accuracy remained 0.4333, the exact binomial test against chance yielded <code>p = 0.366294</code>, and the Wilson 95% interval was <code>[0.3157, 0.5590]</code>, which is too wide for the predefined ±0.10 equivalence margin. The value of the procedure is therefore diagnostic rather than confirmatory. Judge explanations repeatedly highlighted generic specificity, overbalanced structure, overpolished prose, stacked motifs, and occasional persona inconsistencies; those cues were then used by the editor step to stabilize the next-cycle prompt. The realism analysis therefore contributes a cycle-level improvement curve, cue summaries, prompt states, and side-by-side appendix examples rather than only a final binary verdict.
-      </p>
-      <table>
-        <caption>Table A12. Realism-study summary across the three complete judge-editor cycles, including accuracy, confusion, entropy, and whether prompt rewriting was triggered.</caption>
-        <thead>
-          <tr>
-            <th>Prompt state</th>
-            <th>Cycle</th>
-            <th>Judge accuracy</th>
-            <th>Mean confusion</th>
-            <th>Mean entropy (bits)</th>
-            <th>Binomial p-value</th>
-            <th>Editor triggered</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr><td><code>rich_attributes_baseline</code></td><td>0</td><td>0.5167</td><td>0.5737</td><td>0.6912</td><td>0.8974</td><td>yes</td></tr>
-          <tr><td><code>reduce_synthetic_signatures</code></td><td>1</td><td>0.4333</td><td>0.6417</td><td>0.7020</td><td>0.3663</td><td>yes</td></tr>
-          <tr><td><code>messier_realism</code></td><td>2</td><td>0.4333</td><td>0.6430</td><td>0.7068</td><td>0.3663</td><td>no</td></tr>
-        </tbody>
-      </table>
-      <p>
-        To make the realism analysis auditable, the appendix includes side-by-side real and synthetic review examples together with the synthetic review's sampled aspects and nuance attributes. The paper therefore reports not only the final cycle summary, but also the prompt instructions and qualitative evidence used to justify revision between cycles; the paired examples appear in Appendix A.2.
-      </p>
-
-      <h3>A.14 Full-Corpus Output Control</h3>
-      <p>
-        The full dataset is large enough to support a realistic internal benchmark, and it also reveals how output control behaves at scale. All 10,000 rows returned usable review text and no duplicates were detected. At the same time, 841 rows were marked incomplete because they reached the output-token cap, and overall length-band adherence settled at 0.6819 over the full corpus. This shortfall is a token-budget artifact rather than a control failure: on the 9,159 rows that never hit the cap, length-band adherence is 0.7304, and the 841 truncated rows account for the entire gap below that level. Regenerating exactly those 841 rows with the same generator (<code>gpt-5-nano</code>) and prompt at a raised output cap eliminates the truncation (incomplete rate 8.41% to 0%) and recovers full-corpus adherence to 0.7125, close to but still below the never-truncated rate of 0.7304 (the regenerated rows themselves reach about 0.52, so a small residual gap remains). Length band is a soft stylistic target sampled per review; the controlled variables are the per-review aspect-sentiment labels, which truncation does not affect. The released corpus is left unchanged and this regeneration is reported only as an output-control diagnostic (<code>paper/outputs/n1_adherence_summary.json</code>).
-      </p>
-      <p>
-        This behavior does not invalidate the benchmark, because every row still contains the target labels and usable text, and the train-validation-test pipeline runs cleanly on the assembled corpus. It does, however, matter for interpretation: stronger long-form length control would further improve the controllability of future releases. Figure A7 makes this visible directly by combining length, aspect-count, course, and style evidence in one place.
-      </p>
-
-    
-<figure>
-        <img src="outputs/figures/production_aspect_sentiment_heatmap.svg" alt="Aspect sentiment heatmap">
-        <figcaption>Figure A6. Aspect-level label support across the 10K / 20-aspect corpus. The heatmap shows polarity composition for each aspect, ordered by total support, and the companion bar panel shows the total number of labeled mentions per aspect.</figcaption>
-      </figure>
-
-      <figure>
-        <img src="outputs/figures/production_dataset_profile.svg" alt="Corpus profile">
-        <figcaption>Figure A7. Corpus profile and diversity cues. The panels visualize the distributional shape of review length, aspect-count mixture, course coverage, and observed style cues, while Table 4 provides the corresponding exact summary values.</figcaption>
-      </figure>
-
-      <h3>A.15 Corpus Profile and Representative Examples</h3>
-      <p>
-        Figure A6 and Figure A7 establish the corpus-level structure before any model results are introduced. Figure A6 shows how label support is distributed across aspects and sentiment polarities, which makes it easier to distinguish heavily represented pedagogical dimensions from thinner parts of the schema. Figure A7 complements that view with review length, aspect-count mixture, course coverage, and style variation. Table A13 then gives a qualitative sense of how these distributions appear in actual review text. These examples are included to help the reader interpret the benchmark qualitatively, not as a substitute for aggregate model evidence.
-      </p>
-      <table>
-        <caption>Table A13. Representative synthetic review snippets showing how aspect labels appear under different writing styles and pedagogical situations.</caption>
-        <thead>
-          <tr>
-            <th>Example type</th>
-            <th>Style</th>
-            <th>Aspect labels</th>
-            <th>Excerpt</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Tradeoff-heavy</td>
-            <td>Neutral everyday prose</td>
-            <td><code>difficulty=positive</code>, <code>materials=positive</code></td>
-            <td>"I took Computer Networks mainly to fit my schedule ... the material felt accessible at times ... Dr. Chen’s delivery varies week to week ... the LMS was smooth, but feedback came too late to be useful."</td>
-          </tr>
-          <tr>
-            <td>Compressed complaint</td>
-            <td>Analytic but Simple</td>
-            <td><code>interest=negative</code></td>
-            <td>"I stuck with Cyber Security Basics only when I needed it ... the lead-in theory never clicked for me ... the few but heavy deadlines left me frustrated but still fair about the effort."</td>
-          </tr>
-          <tr>
-            <td>Pedagogical frustration</td>
-            <td>Analytic but Simple</td>
-            <td><code>assessment_design=negative</code>, <code>relevance=negative</code></td>
-            <td>"Data Structures felt like a required hurdle more than a doorway to real understanding ... the assessments were exhausting and overbearing ... even when I passed a task, I was not convinced it reflected useful learning."</td>
-          </tr>
-        </tbody>
-      </table>
-<h3>A.16 Per-Aspect Behavior of the Best Model</h3>
-      <p>
-        The per-aspect profile of the best untuned model, BERT, is uneven in a way that matches the pedagogical complexity of the label space. Stronger aspect categories concentrate in the assessment-and-management and learning-demand blocks, especially <code>workload</code>, <code>grading_transparency</code>, <code>exam_fairness</code>, <code>pacing</code>, and <code>tooling_usability</code>. Harder categories cluster in the instructional-quality, learning-environment, and engagement blocks, including <code>peer_interaction</code>, <code>support</code>, <code>interest</code>, <code>feedback_quality</code>, and <code>clarity</code>, which likely require more implicit reasoning and weaker lexical cues. This pattern shows that the benchmark is not uniformly easy even when labels are known by construction. Figure A8 plots the per-aspect detection and sentiment profile, and Table A14 lists the strongest and weakest aspect categories.
+        The per-aspect profile of the best untuned model, BERT, is uneven in a way that matches the pedagogical complexity of the label space. Stronger aspect categories concentrate in the assessment-and-management and learning-demand blocks, especially <code>workload</code>, <code>grading_transparency</code>, <code>exam_fairness</code>, <code>pacing</code>, and <code>tooling_usability</code>. Harder categories cluster in the instructional-quality, learning-environment, and engagement blocks, including <code>peer_interaction</code>, <code>support</code>, <code>interest</code>, <code>feedback_quality</code>, and <code>clarity</code>, which likely require more implicit reasoning and weaker lexical cues. This pattern shows that the benchmark is not uniformly easy even when labels are known by construction. Figure A8 plots the per-aspect detection and sentiment profile, and Table A24 lists the strongest and weakest aspect categories.
       </p>
 
       <figure>
@@ -1616,7 +1805,7 @@ Return only the review text.</pre></td>
       </figure>
 
       <table>
-        <caption>Table A14. Strongest and weakest aspect categories for the best local model, showing where the benchmark is comparatively explicit or comparatively latent.</caption>
+        <caption>Table A24. Strongest and weakest aspect categories for the best local model, showing where the benchmark is comparatively explicit or comparatively latent.</caption>
         <thead>
           <tr>
             <th>Model</th>
@@ -1641,9 +1830,58 @@ Return only the review text.</pre></td>
           <tr><td><code>bert-base-uncased</code></td><td>bottom-5</td><td><code>peer_interaction</code></td><td>0.1385</td><td>0.8416</td><td>0.3913</td><td>0.0841</td></tr>
         </tbody>
       </table>
-<h3>A.17 Prior Real-Data Educational Sentiment Results in Context</h3>
+      <h4>A.5.4 Review Granularity Does Not Predict Transfer</h4>
+      <p>
+        A natural concern is that the synthetic corpus is full-review while the two primary transfer targets are sentence-level, so transfer might be limited by this granularity mismatch. It is not. We evaluated the same synthetic-trained <code>bert-base-uncased</code> detector on four real targets that vary in granularity, over each target's conservative aspect overlap (Table A25). A review-level target (OATS, median 70 words) transfers no better (micro-F1 0.275) than sentence-level targets (M-ABSA 0.263, EduRABSA 0.275), and all three sit well below the best-aligned Herath overlap (0.40 across five seeds; the three MOOC-derived targets are single-seed screening runs). Transfer difficulty is therefore governed by how closely a target's aspect vocabulary and register align with the synthetic supervision, not by review length; the cross-granularity mismatch is not the operative limitation. The two Coursera-derived MOOC targets (M-ABSA, OATS) are additionally short and positive-skewed, which further depresses their transferred scores.
+      </p>
+      <table>
+        <caption>Table A25. Synthetic-to-real detection transfer (micro-F1, <code>bert-base-uncased</code>; Herath is the five-seed mean, the other three targets are single-seed seed-42 screening runs) across four real targets spanning sentence- and review-level granularity. Review-level OATS transfers no better than sentence-level targets, so granularity is not the transfer bottleneck.</caption>
+        <thead>
+          <tr><th>Target</th><th>Granularity (median words)</th><th>Source</th><th>Transfer micro-F1</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Herath</td><td>sentence (20)</td><td>student feedback</td><td>0.40</td></tr>
+          <tr><td>EduRABSA</td><td>sentence (38)</td><td>Waterloo course / teacher reviews</td><td>0.275</td></tr>
+          <tr><td>M-ABSA</td><td>sentence (14)</td><td>Coursera MOOC</td><td>0.263</td></tr>
+          <tr><td>OATS</td><td>review (70)</td><td>Coursera MOOC</td><td>0.275</td></tr>
+        </tbody>
+      </table>
+
+            <h4>A.5.5 Correlated-Polarity Generation Improves Sentiment Transfer</h4>
+      <p>
+        The polarity-independence gap of Appendix A.1.7 is not merely descriptive: closing it improves sentiment transfer. We regenerated a correlated-polarity corpus that first draws a review-level sentiment disposition and then conditions the per-aspect polarities on it, raising within-review polarity agreement from 0.22 to 0.51 (into the real 0.50 to 0.72 range of Table A6), while holding the aspect-count distribution, seed attributes, prompt template, and generation pipeline fixed. The baseline is an equal-size, identically-generated independent-polarity corpus, so the only difference is the polarity structure. Training the sentiment head on each and evaluating gold-present mean squared error on the real targets, with paired per-seed comparison across three seeds (Table A26), correlated polarity lowers the error on both targets in every seed: a paired reduction of 0.231 &plusmn; 0.117 on OATS and 0.157 &plusmn; 0.114 on Herath. The per-seed magnitude varies but the direction is consistent, and the paired design removes the substantial between-seed variance of this transfer task. Scripts: <code>paper/exp4_generate.py</code>, <code>paper/exp_indep_generate.py</code>, <code>paper/multiseed_validation.py</code>.
+      </p>
+      <table>
+        <caption>Table A26. Gold-present sentiment MSE (lower is better) under correlated-polarity versus equal-size independent-polarity generation from the same pipeline (<code>bert-base-uncased</code>). Columns are the mean across three seeds (17, 23, 42); the paired delta is the per-seed difference, negative in every seed.</caption>
+        <thead>
+          <tr><th>Target</th><th>Independent polarity</th><th>Correlated polarity</th><th>Paired &Delta; (mean &plusmn; sd)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>OATS</td><td>0.724</td><td>0.493</td><td>&minus;0.231 &plusmn; 0.117</td></tr>
+          <tr><td>Herath</td><td>0.566</td><td>0.409</td><td>&minus;0.157 &plusmn; 0.114</td></tr>
+        </tbody>
+      </table>
+
+            <h4>A.5.6 Sentence-Level Training Improves Transfer to Sentence-Level Targets</h4>
+      <p>
+        The synthetic corpus is full-length reviews, but it can be trained at review or at sentence granularity. Because a single aspect is usually expressed in one or two sentences, we split each synthetic review into sentences and localize its declared aspects to the sentences that mention them (a lexicon weak-supervision step), then train the detector on those sentence-level examples. This aligns the training granularity with sentence-level real targets. With paired per-seed comparison across three seeds (Table A27), sentence-level training raises detection micro-F1 on both sentence-level targets in every seed: a paired gain of 0.211 &plusmn; 0.061 on M-ABSA and 0.039 &plusmn; 0.012 on Herath. The effect is specific to granularity rather than to training quantity: it appears on the sentence-level targets but not on the review-level OATS target, where sentence-level training instead underperforms review-level training. A pure data-quantity effect from the larger sentence set would help all targets uniformly, so the differential pattern isolates granularity alignment as the operative factor. Scripts: <code>paper/exp2_sentence_train.py</code>, <code>paper/exp2b_matched.py</code>, <code>paper/multiseed_validation.py</code>.
+      </p>
+      <table>
+        <caption>Table A27. Detection transfer (micro-F1) under review-level versus sentence-level training on the same synthetic corpus (<code>bert-base-uncased</code>). Columns are the mean across three seeds (17, 23, 42); the paired delta is the per-seed difference, positive in every seed for both sentence-level targets.</caption>
+        <thead>
+          <tr><th>Target (granularity)</th><th>Review-trained</th><th>Sentence-trained</th><th>Paired &Delta; (mean &plusmn; sd)</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>M-ABSA (sentence)</td><td>0.263</td><td>0.474</td><td>+0.211 &plusmn; 0.061</td></tr>
+          <tr><td>Herath (sentence)</td><td>0.381</td><td>0.419</td><td>+0.039 &plusmn; 0.012</td></tr>
+        </tbody>
+      </table>
+
+      
+      <h3>A.6 Baselines and Prior Work</h3>
+      <h4>A.6.1 Prior Real-Data Educational Sentiment Results in Context</h4>
 <table>
-        <caption>Table A15. Prior real-data educational sentiment results included for context; the final column states how directly each study compares to the present benchmark.</caption>
+        <caption>Table A28. Prior real-data educational sentiment results included for context; the final column states how directly each study compares to the present benchmark.</caption>
         <thead>
           <tr>
             <th>Study</th>
@@ -1662,49 +1900,15 @@ Return only the review text.</pre></td>
         </tbody>
       </table>
       <p>
-        Table A15 is included to prevent overinterpretation of the transfer result. Our mapped-overlap score should not be read as “worse than Herath” or “better than Welch” in any simple leaderboard sense, because the task definitions differ substantially. Welch and Mihalcea study targeted sentiment toward extracted course or instructor entities, while Herath et al. evaluate aspect-level sentiment under their own annotation structure. The most defensible reading is narrower: the reported result shows that models trained only on the synthetic corpus recover some real educational signal on one mapped real benchmark, but the paper does not yet claim parity with prior real-data educational sentiment systems under their native tasks.
+        Table A28 is included to prevent overinterpretation of the transfer result. Our mapped-overlap score should not be read as “worse than Herath” or “better than Welch” in any simple leaderboard sense, because the task definitions differ substantially. Welch and Mihalcea study targeted sentiment toward extracted course or instructor entities, while Herath et al. evaluate aspect-level sentiment under their own annotation structure. The most defensible reading is narrower: the reported result shows that models trained only on the synthetic corpus recover some real educational signal on one mapped real benchmark, but the paper does not yet claim parity with prior real-data educational sentiment systems under their native tasks.
       </p>
 
-      <h3>A.18 Output-Token-Capped (Incomplete) Rows</h3>
-      <p>
-        The 841 rows the API marked <code>incomplete</code> (Section 3.6) were identified exactly by joining the generation batch output's per-row status to the assembled corpus. Relative to the 9,159 complete rows they are shorter and carry fewer aspects, with a comparable sentiment mix (Table A16). Retraining <code>bert-base-uncased</code> detection on the corpus with these rows excluded, at three seeds, changes the held-out benchmark only marginally and not favorably (micro-F1 0.264 versus 0.275, macro balanced accuracy 0.613 versus 0.619), a difference consistent with the roughly 8% smaller training set rather than a systematic label-quality gain. The reported benchmark is therefore robust to their inclusion.
-      </p>
-      <table>
-        <caption>Table A16. Distribution of the 841 output-token-capped (incomplete) rows versus the 9,159 complete rows, with the effect of excluding them from training.</caption>
-        <thead>
-          <tr><th>Measure</th><th>Incomplete (841)</th><th>Complete (9,159)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Mean / median words</td><td>100 / 89</td><td>118.8 / 122</td></tr>
-          <tr><td>Aspects per review (1 / 2 / 3 share)</td><td>0.43 / 0.51 / 0.07</td><td>0.29 / 0.38 / 0.33</td></tr>
-          <tr><td>Sentiment share (positive / neutral / negative)</td><td>0.36 / 0.30 / 0.34</td><td>0.34 / 0.34 / 0.33</td></tr>
-          <tr><td>Held-out detection micro-F1 (3 seeds, excluded vs full)</td><td colspan="2">complete-only 0.264 &plusmn; 0.007 versus full 0.275 &plusmn; 0.003</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.19 Generator-Family Robustness</h3>
-      <p>
-        To check that the generate-audit-filter pipeline is not specific to the GPT family that produced the corpus (Section 5.7), we regenerated the same 150 label-conditioned prompts with four generator families spanning four providers, accessed through a common OpenRouter interface, and scored every generation with the identical <code>gpt-5.2</code> label-fidelity audit used in Section 5.6. The comparison is construct-matched: one auditor, one prompt set, one scoring pass. All four families yield high and comparable aspect support (0.921 to 0.968) and per-aspect sentiment match (0.759 to 0.904), with the two non-GPT families matching or exceeding the same-family <code>gpt-5-nano</code> generator. Non-GPT generators therefore produce auditable, label-faithful data, and the audit signal is consistent across providers rather than tuned to one family. GLM-4.6 is a reasoning-first model whose default output is empty under a plain chat call; it was queried with explicit-reasoning disabled, which is why its usable aspect count is slightly lower.
-      </p>
-      <table>
-        <caption>Table A17. Label-fidelity audit (<code>gpt-5.2</code>) of the same 150 label-conditioned prompts regenerated by four generator families across four providers. Rates are per declared aspect; the comparison is read across families under one fixed auditor and prompt set.</caption>
-        <thead>
-          <tr><th>Provider</th><th>Generator</th><th>Declared aspects</th><th>Aspect support rate</th><th>Aspect sentiment-match rate</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>OpenAI</td><td><code>gpt-5-nano</code> (corpus generator)</td><td>315</td><td>0.9365</td><td>0.7587</td></tr>
-          <tr><td>Google</td><td><code>gemini-2.5-flash</code></td><td>315</td><td>0.9683</td><td>0.8571</td></tr>
-          <tr><td>Zhipu</td><td><code>glm-4.6</code></td><td>251</td><td>0.9681</td><td>0.9044</td></tr>
-          <tr><td>Meta</td><td><code>llama-3.3-70b</code></td><td>315</td><td>0.9206</td><td>0.7873</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.20 Multi-Provider Prompted Baseline</h3>
+            <h4>A.6.2 Multi-Provider Prompted Baseline</h4>
       <p>
         To check that the prompted inference baseline (Section 5.3) is not confined to one provider or one prompting family, we ran the identical zero-shot-glossary ABSA contract across four families spanning four providers on the full 1,000-review held-out synthetic test split (seed 42, 20 aspects), scored in one construct-matched pass with the same per-aspect detection and sentiment metrics. All four families fall in the same narrow band, detection micro-F1 0.239 to 0.267 and sentiment accuracy on matched aspects 0.629 to 0.663, and sit below the strongest trained encoders (BERT detection micro-F1 around 0.28), consistent with the paper's reading that zero-shot prompting is an informative but non-dominant baseline regardless of provider. Predictions are parsed leniently so a model is scored on content rather than exact JSON syntax. The OpenAI score on this full split (<code>gpt-5.4</code>, 0.239) is in the same band as the full-test <code>gpt-5.2</code> zero-shot result of 0.252 in Table 7; these are two different OpenAI models, compared only for band placement.
       </p>
       <table>
-        <caption>Table A18. Multi-provider zero-shot-glossary ABSA baseline on the full 1,000-review held-out synthetic test split (seed 42, 20 aspects), co-computed in one pass. Detection micro-F1 and sentiment accuracy on matched aspects. Predictions are parsed leniently so a model is scored on content rather than exact JSON syntax.</caption>
+        <caption>Table A29. Multi-provider zero-shot-glossary ABSA baseline on the full 1,000-review held-out synthetic test split (seed 42, 20 aspects), co-computed in one pass. Detection micro-F1 and sentiment accuracy on matched aspects. Predictions are parsed leniently so a model is scored on content rather than exact JSON syntax.</caption>
         <thead>
           <tr><th>Provider</th><th>Model</th><th>Detection micro-F1</th><th>Sentiment accuracy (matched)</th><th>Parsed</th></tr>
         </thead>
@@ -1716,198 +1920,9 @@ Return only the review text.</pre></td>
         </tbody>
       </table>
 
-      <h3>A.21 Per-Corpus Audit-versus-Human Agreement</h3>
-      <p>
-        The audit-versus-human agreement of Section 5.7 is reported here per corpus, for both the cost-matched auditor that drives the filter and the fully independent auditor. It is computed over the same 2,482 aspect-level decisions from 1,200 perturbation-controlled variants (faithful / polarity-flipped / aspect-injected). Each decision is a binary faithful-versus-unfaithful judgment (does the auditor accept an aspect that is genuinely faithful, and reject a flipped or injected one), so the metric is invariant to the two corpora's different aspect label sets and is directly comparable across them. Both auditors agree more with humans on EduRABSA than on Herath; this tracks item length (EduRABSA passages median 38 words versus Herath sentences median 20), and the independent auditor equals or exceeds the same-family one on both corpora, reinforcing that the audit signal is human-grounded rather than a same-family artifact.
-      </p>
-      <table>
-        <caption>Table A19. Per-corpus audit-versus-human agreement over 2,482 aspect-level faithfulness decisions. The cost-matched auditor drives the training-data filter; the independent auditor is the anti-circularity cross-check. Each decision is binary faithful-versus-unfaithful, so the metric does not depend on the two corpora's different aspect label sets.</caption>
-        <thead>
-          <tr><th>Auditor</th><th>Corpus</th><th>Decisions</th><th>Cohen's kappa</th><th>Precision</th></tr>
-        </thead>
-        <tbody>
-          <tr><td><code>gpt-4.1-mini</code> (cost-matched)</td><td>Herath</td><td>1,396</td><td>0.51</td><td>0.87</td></tr>
-          <tr><td><code>gpt-4.1-mini</code> (cost-matched)</td><td>EduRABSA</td><td>1,086</td><td>0.62</td><td>0.89</td></tr>
-          <tr><td><code>gpt-4.1-mini</code> (cost-matched)</td><td>Both</td><td>2,482</td><td>0.56</td><td>0.88</td></tr>
-          <tr><td><code>gemini-2.5-flash</code> (independent)</td><td>Herath</td><td>1,396</td><td>0.58</td><td>0.89</td></tr>
-          <tr><td><code>gemini-2.5-flash</code> (independent)</td><td>EduRABSA</td><td>1,086</td><td>0.67</td><td>0.89</td></tr>
-          <tr><td><code>gemini-2.5-flash</code> (independent)</td><td>Both</td><td>2,482</td><td>0.62</td><td>0.89</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.22 Audit Reliability by Review Length and Aspect Count</h3>
-      <p>
-        The audit-versus-human agreement of Table A19 varies systematically with two correlated review properties (Pearson 0.48): review length and the number of declared aspects. Decomposing the 2,482 decisions isolates two opposing forces (Table A20). Recall, the rate at which the audit confirms a genuinely faithful aspect, rises with content: from 0.61 on one-aspect reviews to 0.74 on reviews with four or more aspects, and, holding the aspect count fixed at one, from 0.50 on reviews of at most 20 words to 0.56 on reviews over 40 words. More text lets the audit verify that a real aspect is present. Specificity, the rate at which it rejects an injected absent aspect, instead falls with aspect density: from 0.90 on one-aspect reviews to about 0.74 on reviews with three or more aspects, because a fabricated aspect blends in when a review already discusses many aspects. Agreement is therefore highest for moderate-length, moderate-aspect reviews: the shortest reviews are hard because the audit cannot confirm real aspects, and the most aspect-dense reviews are hard because it cannot reject fabricated ones. This also explains the per-corpus ordering in Table A19, where the shorter Herath sentences sit below the longer EduRABSA passages. Scripts: <code>paper/v7_kappa_by_length.py</code>, <code>paper/v7_by_len_and_aspects.py</code>.
-      </p>
-      <table>
-        <caption>Table A20. Audit-versus-human agreement decomposed by the number of declared aspects per review (cost-matched <code>gpt-4.1-mini</code> auditor; the independent auditor follows the same pattern). Recall is the keep-rate on genuinely faithful aspects; specificity is the reject-rate on injected absent aspects. Recall rises with content while specificity falls with aspect density.</caption>
-        <thead>
-          <tr><th>Aspects per review</th><th>Decisions</th><th>Mean words</th><th>Cohen's kappa</th><th>Recall (confirm faithful)</th><th>Specificity (reject injected)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>1</td><td>792</td><td>23</td><td>0.51</td><td>0.61</td><td>0.90</td></tr>
-          <tr><td>2</td><td>959</td><td>35</td><td>0.59</td><td>0.72</td><td>0.88</td></tr>
-          <tr><td>3</td><td>460</td><td>55</td><td>0.56</td><td>0.71</td><td>0.74</td></tr>
-          <tr><td>4+</td><td>271</td><td>110</td><td>0.55</td><td>0.74</td><td>0.74</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.23 Sentence-Versus-Review Realism</h3>
-      <p>
-        The realism-validation judge separates whole synthetic reviews from real ones easily, but this reflects document structure rather than the realism of the text itself. We re-ran the identical real-versus-synthetic judgment at sentence granularity, giving the judge one sentence at a time (150 synthetic and 150 real OMSCS sentences of 5 to 40 words), and compared it to the review-level decision (Table A21). Accuracy falls from 93% to 60%, close to the 50% chance floor: the judge flags only 37% of synthetic sentences as synthetic (versus 97% of whole reviews) and calls 63% of them real, while its false-synthetic rate on real sentences is unchanged at 16%. Individual synthetic sentences are therefore near-indistinguishable from real ones to the same detector. The detectability is instead a cumulative property of extended synthetic text: each synthetic sentence carries only a weak signal (flagged synthetic 37% of the time, against a 15% floor on real sentences), and that signal accumulates across a full generated review to near-certain detection (97%). To confirm this is not merely an effect of covering several aspects in one document, we ran a control that assembles real OMSCS sentences from the same course into equally multi-aspect documents (mean 63 words); these all-real-sentence documents are judged synthetic only 19% of the time, essentially the real-review rate, so neither multi-aspect coverage nor mild incoherence triggers the tell (Table A21). The signal is the accumulated style of genuinely synthetic text, which is orthogonal to the sentence-level aspect-sentiment labels the corpus supplies for training; a MAUVE gap of 0.23 between the sentence pools reflects an aggregate distributional shift consistent with this weak per-sentence signal. Scripts: <code>paper/n2_sentence_judge.py</code>, <code>paper/n2_assembled_real.py</code>.
-      </p>
-      <table>
-        <caption>Table A21. Rate at which the real-versus-synthetic judge (<code>gpt-5.4</code>) flags text as synthetic, across four conditions. A weak per-sentence signal accumulates over a full synthetic review; assembling real sentences into equally multi-aspect documents does not reproduce it, so the tell is the accumulated style of synthetic text rather than multi-aspect coverage or incoherence.</caption>
-        <thead>
-          <tr><th>Condition</th><th>Median words</th><th>Flagged synthetic</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Real full reviews</td><td>104</td><td>0.15</td></tr>
-          <tr><td>Assembled real (multi-aspect documents)</td><td>63</td><td>0.19</td></tr>
-          <tr><td>Individual synthetic sentences</td><td>~12</td><td>0.37</td></tr>
-          <tr><td>Whole synthetic reviews</td><td>122</td><td>0.975</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.24 Review Granularity Does Not Predict Transfer</h3>
-      <p>
-        A natural concern is that the synthetic corpus is full-review while the two primary transfer targets are sentence-level, so transfer might be limited by this granularity mismatch. It is not. We evaluated the same synthetic-trained <code>bert-base-uncased</code> detector on four real targets that vary in granularity, over each target's conservative aspect overlap (Table A22). A review-level target (OATS, median 70 words) transfers no better (micro-F1 0.275) than sentence-level targets (M-ABSA 0.263, EduRABSA 0.275), and all three sit well below the best-aligned Herath overlap (0.40 across five seeds; the three MOOC-derived targets are single-seed screening runs). Transfer difficulty is therefore governed by how closely a target's aspect vocabulary and register align with the synthetic supervision, not by review length; the cross-granularity mismatch is not the operative limitation. The two Coursera-derived MOOC targets (M-ABSA, OATS) are additionally short and positive-skewed, which further depresses their transferred scores.
-      </p>
-      <table>
-        <caption>Table A22. Synthetic-to-real detection transfer (micro-F1, <code>bert-base-uncased</code>; Herath is the five-seed mean, the other three targets are single-seed seed-42 screening runs) across four real targets spanning sentence- and review-level granularity. Review-level OATS transfers no better than sentence-level targets, so granularity is not the transfer bottleneck.</caption>
-        <thead>
-          <tr><th>Target</th><th>Granularity (median words)</th><th>Source</th><th>Transfer micro-F1</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Herath</td><td>sentence (20)</td><td>student feedback</td><td>0.40</td></tr>
-          <tr><td>EduRABSA</td><td>sentence (38)</td><td>Waterloo course / teacher reviews</td><td>0.275</td></tr>
-          <tr><td>M-ABSA</td><td>sentence (14)</td><td>Coursera MOOC</td><td>0.263</td></tr>
-          <tr><td>OATS</td><td>review (70)</td><td>Coursera MOOC</td><td>0.275</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.25 Within-Review Sentiment Correlation</h3>
-      <p>
-        One concrete way the synthetic corpus departs from real reviews is the correlation of sentiment across a review's aspects. Because the generator samples each aspect's target polarity independently, a synthetic multi-aspect review is often internally balanced, praising one aspect while criticizing another. Real reviews instead show a strong halo effect: a student who likes a course tends to rate most of its aspects positively. Across the multi-aspect reviews in each corpus (Table A23), 50 to 72% of real reviews assign the same polarity to every aspect, against only 22% of synthetic reviews, and synthetic reviews mix positive and negative aspects in 33% of cases, roughly one and a half to two and a half times the real rate. This independence is a genuine realism gap and a likely contributor to the weaker sentiment transfer, since the polarity head is trained on aspect-sentiment combinations that are comparatively rare in real feedback. A natural remedy is to draw a review-level sentiment disposition first and condition the per-aspect polarities on it, rather than sampling them independently; Appendix A.27 implements this remedy and confirms it improves sentiment transfer. Script: <code>paper/within_review_sentiment.py</code>.
-      </p>
-      <table>
-        <caption>Table A23. Sentiment consistency within multi-aspect reviews (two or more aspects). Real reviews are opinion-consistent (a halo effect); the synthetic corpus, which samples aspect polarities independently, is unnaturally balanced.</caption>
-        <thead>
-          <tr><th>Corpus</th><th>Multi-aspect reviews</th><th>All aspects same polarity</th><th>Mixes positive and negative</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Synthetic</td><td>6,485</td><td>0.22</td><td>0.33</td></tr>
-          <tr><td>Herath</td><td>1,061</td><td>0.50</td><td>0.13</td></tr>
-          <tr><td>EduRABSA</td><td>3,466</td><td>0.62</td><td>0.24</td></tr>
-          <tr><td>OATS (review-level)</td><td>1,404</td><td>0.72</td><td>0.22</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.26 Aspect Co-occurrence Structure</h3>
-      <p>
-        A second structural property, orthogonal to the polarity correlation of Appendix A.25, is which aspects appear together. Because the generator draws each review's aspect set by uniform sampling, synthetic aspect co-occurrence reflects only the marginal frequencies. We measure the standard deviation of pairwise log-lift (the log of observed-over-expected co-occurrence) across aspect pairs with sufficient support, at a common sample size of 1,680 reviews so the statistic is comparable across corpora (Table A24). The synthetic corpus sits at 0.228, near the finite-sample floor of a uniform sampler, while real corpora range from 0.30 (OATS and EduRABSA) to 0.47 (Herath). Real co-occurrence is semantically coherent, clustering course-delivery aspects (materials with organization, clarity with organization) and evaluation aspects (assessment design with grading transparency). The gap is pronounced for the institutional Herath corpus and modest for the two MOOC corpora; it is a real but uneven departure from real feedback. Script: <code>paper/analysis_stratified_cooccur.py</code>.
-      </p>
-      <table>
-        <caption>Table A24. Aspect co-occurrence structure, measured as the standard deviation of pairwise log-lift (observed over expected co-occurrence) across aspect pairs with support, at a matched sample size of 1,680 reviews (mean and standard deviation over five subsamples). The synthetic corpus sits near the uniform-sampler floor; real corpora are more structured, most strongly Herath.</caption>
-        <thead>
-          <tr><th>Corpus</th><th>Log-lift std @ N=1,680</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Synthetic</td><td>0.228 &plusmn; 0.011</td></tr>
-          <tr><td>Herath</td><td>0.473 &plusmn; 0.016</td></tr>
-          <tr><td>EduRABSA</td><td>0.297 &plusmn; 0.013</td></tr>
-          <tr><td>OATS</td><td>0.302 &plusmn; 0.000</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.27 Correlated-Polarity Generation Improves Sentiment Transfer</h3>
-      <p>
-        The polarity-independence gap of Appendix A.25 is not merely descriptive: closing it improves sentiment transfer. We regenerated a correlated-polarity corpus that first draws a review-level sentiment disposition and then conditions the per-aspect polarities on it, raising within-review polarity agreement from 0.22 to 0.51 (into the real 0.50 to 0.72 range of Table A23), while holding the aspect-count distribution, seed attributes, prompt template, and generation pipeline fixed. The baseline is an equal-size, identically-generated independent-polarity corpus, so the only difference is the polarity structure. Training the sentiment head on each and evaluating gold-present mean squared error on the real targets, with paired per-seed comparison across three seeds (Table A25), correlated polarity lowers the error on both targets in every seed: a paired reduction of 0.231 &plusmn; 0.117 on OATS and 0.157 &plusmn; 0.114 on Herath. The per-seed magnitude varies but the direction is consistent, and the paired design removes the substantial between-seed variance of this transfer task. Scripts: <code>paper/exp4_generate.py</code>, <code>paper/exp_indep_generate.py</code>, <code>paper/multiseed_validation.py</code>.
-      </p>
-      <table>
-        <caption>Table A25. Gold-present sentiment MSE (lower is better) under correlated-polarity versus equal-size independent-polarity generation from the same pipeline (<code>bert-base-uncased</code>). Columns are the mean across three seeds (17, 23, 42); the paired delta is the per-seed difference, negative in every seed.</caption>
-        <thead>
-          <tr><th>Target</th><th>Independent polarity</th><th>Correlated polarity</th><th>Paired &Delta; (mean &plusmn; sd)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>OATS</td><td>0.724</td><td>0.493</td><td>&minus;0.231 &plusmn; 0.117</td></tr>
-          <tr><td>Herath</td><td>0.566</td><td>0.409</td><td>&minus;0.157 &plusmn; 0.114</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.28 Sentence-Level Training Improves Transfer to Sentence-Level Targets</h3>
-      <p>
-        The synthetic corpus is full-length reviews, but it can be trained at review or at sentence granularity. Because a single aspect is usually expressed in one or two sentences, we split each synthetic review into sentences and localize its declared aspects to the sentences that mention them (a lexicon weak-supervision step), then train the detector on those sentence-level examples. This aligns the training granularity with sentence-level real targets. With paired per-seed comparison across three seeds (Table A26), sentence-level training raises detection micro-F1 on both sentence-level targets in every seed: a paired gain of 0.211 &plusmn; 0.061 on M-ABSA and 0.039 &plusmn; 0.012 on Herath. The effect is specific to granularity rather than to training quantity: it appears on the sentence-level targets but not on the review-level OATS target, where sentence-level training instead underperforms review-level training. A pure data-quantity effect from the larger sentence set would help all targets uniformly, so the differential pattern isolates granularity alignment as the operative factor. Scripts: <code>paper/exp2_sentence_train.py</code>, <code>paper/exp2b_matched.py</code>, <code>paper/multiseed_validation.py</code>.
-      </p>
-      <table>
-        <caption>Table A26. Detection transfer (micro-F1) under review-level versus sentence-level training on the same synthetic corpus (<code>bert-base-uncased</code>). Columns are the mean across three seeds (17, 23, 42); the paired delta is the per-seed difference, positive in every seed for both sentence-level targets.</caption>
-        <thead>
-          <tr><th>Target (granularity)</th><th>Review-trained</th><th>Sentence-trained</th><th>Paired &Delta; (mean &plusmn; sd)</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>M-ABSA (sentence)</td><td>0.263</td><td>0.474</td><td>+0.211 &plusmn; 0.061</td></tr>
-          <tr><td>Herath (sentence)</td><td>0.381</td><td>0.419</td><td>+0.039 &plusmn; 0.012</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.29 Independent Open-Weights Auditors Reproduce the Faithfulness Audit</h3>
-      <p>
-        The generator and the cost-matched auditor are both OpenAI models, which raises the question of whether the audit detects genuine textual faithfulness or a same-family latent pattern. We re-ran the audit on the same 250-review sample with two independent open-weights auditors, Llama-3.3-70B (Meta) and GLM-4.6 (Zhipu). All three families converge (Table A27): mean support-rates are within a few points (0.77, 0.74, 0.73), cross-architecture agreement with the GPT auditor is Cohen's kappa 0.56 to 0.65 with row-score Spearman 0.54 to 0.69, and the two open-weights auditors agree with each other at the same level (supported kappa 0.65), so no auditor is privileged. A same-family artifact would make out-of-family auditors diverge; instead they reproduce the audit, indicating it measures textual faithfulness rather than a generator-auditor family effect. This complements the Gemini human-agreement check (Cohen's kappa 0.62, Appendix A.21). Outputs: <code>paper/outputs/w3_openweights_auditor/</code>.
-      </p>
-      <table>
-        <caption>Table A27. Faithfulness audit reproduced by independent open-weights auditors on the same 250-review sample (501 declared aspects). Agreement is cross-architecture and cross-vendor.</caption>
-        <thead>
-          <tr><th>Auditor (family)</th><th>Support-rate</th><th>vs GPT: <code>supported</code> kappa</th><th>vs GPT: <code>sentiment_match</code> kappa</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>GPT-5.2 (OpenAI, baseline)</td><td>0.77</td><td>n/a</td><td>n/a</td></tr>
-          <tr><td>Llama-3.3-70B (Meta)</td><td>0.74</td><td>0.63</td><td>0.65</td></tr>
-          <tr><td>GLM-4.6 (Zhipu)</td><td>0.73</td><td>0.61</td><td>0.56</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.30 The Token-Capped Rows Are Not Systematically Biased</h3>
-      <p>
-        A share of rows (841 of 10,000) reached the output-token cap. We checked whether excluding them would bias the benchmark. Their aspect distribution is not skewed (chi-square p=0.23, Cramer's V=0.034) and their polarity distribution differs negligibly (Cramer's V=0.020); they differ from the complete corpus only in the mechanically-expected ways (mean 1.64 versus 2.03 declared aspects and 100 versus 119 words, the direct consequence of truncation). Critically, their label-faithfulness profile is statistically indistinguishable from the complete corpus (mean audit score 0.573 versus 0.577, Welch p=0.76). The truncated rows are therefore representative in aspect, polarity, and faithfulness, so excluding them leaves the benchmark's label and faithfulness composition unchanged. Script: <code>paper/e3_truncated_bias</code> (outputs under <code>paper/outputs/e3_truncated_bias/</code>).
-      </p>
-
-      <h3>A.31 The Learnable Signal Is Generator-Invariant</h3>
-      <p>
-        Because the train and test splits come from one generator and prompt, a reviewer may ask whether the detector exploits generator-specific patterns rather than aspect content. It does not. Training the detector on the GPT-generated corpus and evaluating it on held-out corpora generated by three other families (Table A28) does not collapse: GPT-trained detection reaches micro-F1 0.32 to 0.38 on the gpt5nano, GLM, and Llama corpora and 0.23 on Gemini, comparable to or above its own in-domain 0.277. The learnable signal is thus generator-invariant rather than a single generator's fingerprint. Outputs: <code>paper/outputs/w5_heldout_generator/</code>.
-      </p>
-      <table>
-        <caption>Table A28. Held-out-generator detection transfer (micro-F1, mean over three seeds). A detector trained on GPT-generated data transfers to other families at or above its in-domain level, so the signal is not generator-specific.</caption>
-        <thead>
-          <tr><th>Train &rarr; test corpus</th><th>Detection micro-F1</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>GPT &rarr; GPT (in-domain)</td><td>0.277</td></tr>
-          <tr><td>GPT &rarr; gpt5nano</td><td>0.376</td></tr>
-          <tr><td>GPT &rarr; GLM-4.6</td><td>0.321</td></tr>
-          <tr><td>GPT &rarr; Llama-3.3-70B</td><td>0.318</td></tr>
-          <tr><td>GPT &rarr; Gemini-flash</td><td>0.233</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.32 Audit Score Predicts Training Quality Monotonically</h3>
-      <p>
-        The faithfulness-aware filter rests on the claim that the audit score tracks how useful a row is for training. We test this directly with a dose-response: training the detector on each audit-score quartile of the corpus at matched size and evaluating on the 9-aspect overlap of a held-out synthetic test split (Table A29). The response is monotone on both seeds: detection micro-F1 (9-aspect overlap) rises from 0.285 in the lowest-audit quartile to 0.411 in the highest, and sentiment mean squared error falls from 0.744 to 0.529. Higher-audit training data yields a strictly better detector across the whole distribution, not only at the extremes, which is the end-to-end validation of the audit score as a training-data quality signal. Outputs: <code>paper/outputs/w7_dose_response/</code>.
-      </p>
-      <table>
-        <caption>Table A29. Audit-quartile dose-response (<code>bert-base-uncased</code>, matched bucket size 1,373 rows, 9-aspect overlap on the held-out synthetic test split, seed 42; monotone on both seeds). Detection micro-F1 here is on the 9-aspect overlap (comparable to the Table 9 internal 9-aspect value, not the 20-aspect benchmark). Detection improves and sentiment error falls as audit score rises.</caption>
-        <thead>
-          <tr><th>Audit-score quartile</th><th>Detection micro-F1</th><th>Sentiment MSE</th></tr>
-        </thead>
-        <tbody>
-          <tr><td>Q1 (lowest audit)</td><td>0.285</td><td>0.744</td></tr>
-          <tr><td>Q2</td><td>0.335</td><td>0.677</td></tr>
-          <tr><td>Q3</td><td>0.383</td><td>0.529</td></tr>
-          <tr><td>Q4 (highest audit)</td><td>0.411</td><td>0.529</td></tr>
-          <tr><td>full corpus</td><td>0.418</td><td>0.399</td></tr>
-        </tbody>
-      </table>
-
-      <h3>A.33 Qualitative Error Analysis</h3>
+      
+      <h3>A.7 Qualitative Error Analysis</h3>
+      <h4>A.7.1 Qualitative Error Analysis</h4>
       <p>
         A qualitative pass over the <code>bert-base-uncased</code> predictions (1,000 held-out synthetic reviews and 1,680 real Herath transfer reviews) shows the errors are systematic rather than random, in four recurring patterns. First, a detection frequency bias: high-prevalence diffuse aspects are over-predicted while specific low-frequency aspects are under-detected. Four broad aspects (<code>overall_experience</code>, <code>clarity</code>, <code>support</code>, <code>feedback_quality</code>) account for the bulk of false positives, whereas <code>peer_interaction</code> is recovered in only 8% of its gold mentions, <code>prerequisite_fit</code> in 14%, and <code>difficulty</code> in 17%. Second, a linked substitution pattern: when a specific aspect is present the model tends to drop it and fire a generic aspect instead, so the most common confusions are <code>peer_interaction</code> miss-substituted by <code>overall_experience</code> or <code>clarity</code>, and <code>organization</code> and <code>practical_application</code> collapsing into <code>overall_experience</code>; the shared evaluative vocabulary of the generic aspects makes them attractors. Third, polarity compression toward neutral: the regression head pulls strong polarities to the middle, mislabelling 178 of 319 gold-negative and 209 of 364 gold-positive detections as neutral, while direct negative-to-positive flips are rare. Fourth, this compression acquires a positive skew under real-review transfer: on Herath only 26 of 272 gold-negative aspects are labelled negative, reflecting the enthusiastic register of real course reviews that the synthetic training distribution under-represents. These are structural properties of the label distribution and shared aspect vocabulary, not sporadic noise: practitioners can expect reliable detection and polarity on frequent, lexically distinctive aspects, and should treat fine-grained aspects and non-positive polarities on out-of-domain reviews as the model's weak regime. Outputs: <code>paper/outputs/e8_error_analysis/</code>.
       </p>
