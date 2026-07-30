@@ -1,0 +1,72 @@
+{
+  "n_items": 610,
+  "n_raters": 3,
+  "human_vs_declared": {
+    "per_rater": {
+      "rater1": {
+        "presence_confirm_rate": 0.554,
+        "sentiment_match_rate_when_present": 0.405,
+        "n_present": 338
+      },
+      "rater2": {
+        "presence_confirm_rate": 0.739,
+        "sentiment_match_rate_when_present": 0.39,
+        "n_present": 451
+      },
+      "rater3": {
+        "presence_confirm_rate": 0.684,
+        "sentiment_match_rate_when_present": 0.341,
+        "n_present": 417
+      }
+    },
+    "majority_presence_confirm_rate": 0.698
+  },
+  "inter_rater": {
+    "presence_cohen_pairwise": {
+      "rater1-rater2": {
+        "kappa": 0.602,
+        "percent_agree": 0.811
+      },
+      "rater1-rater3": {
+        "kappa": 0.662,
+        "percent_agree": 0.838
+      },
+      "rater2-rater3": {
+        "kappa": 0.865,
+        "percent_agree": 0.944
+      }
+    },
+    "presence_fleiss_kappa": 0.698,
+    "sentiment_all3_present_exact_agree": 0.515,
+    "n_all3_present": 328
+  },
+  "human_vs_audit": {
+    "n_matched_aspects": 610,
+    "presence_cohen_kappa": 0.363,
+    "presence_percent_agree": 0.761,
+    "human_vs_declared_sentiment_when_both_present": 0.379,
+    "n_both_present": 388
+  },
+  "audit_validation_by_stratum": {
+    "Q1_low": {
+      "n": 152,
+      "audit_row_score_mean": 0.099,
+      "human_majority_confirm_rate": 0.546
+    },
+    "Q2": {
+      "n": 152,
+      "audit_row_score_mean": 0.424,
+      "human_majority_confirm_rate": 0.711
+    },
+    "Q3": {
+      "n": 152,
+      "audit_row_score_mean": 0.734,
+      "human_majority_confirm_rate": 0.75
+    },
+    "Q4_high": {
+      "n": 154,
+      "audit_row_score_mean": 1.0,
+      "human_majority_confirm_rate": 0.786
+    }
+  }
+}

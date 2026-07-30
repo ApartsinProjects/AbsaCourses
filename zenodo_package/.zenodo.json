@@ -1,0 +1,25 @@
+{
+  "title": "A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis: corpus, human-validation study, and code",
+  "upload_type": "dataset",
+  "description": "<p>Artifacts for the paper <em>A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis</em>. Includes a 10,000-review synthetic educational ABSA corpus over a 20-aspect pedagogical schema, the Herath (2022) student-feedback corpus mapped to a 9-aspect overlap for external transfer, per-row LLM label-faithfulness audit scores, a three-rater human-annotation study validating the audit on the synthetic corpus (Fleiss kappa 0.70; human confirmation of declared aspects rises monotonically with the audit score), and the code to reproduce the benchmark, transfer, and filtering results. Model checkpoints (best per transfer target) are added in a later version of this record.</p>",
+  "access_right": "open",
+  "license": "cc-by-4.0",
+  "keywords": [
+    "aspect-based sentiment analysis",
+    "ABSA",
+    "synthetic data",
+    "educational data mining",
+    "student feedback",
+    "LLM-generated supervision",
+    "label faithfulness",
+    "data quality",
+    "benchmark"
+  ],
+  "creators": [
+    {"name": "TODO: FILL IN AUTHOR NAME(S) BEFORE PUBLISHING", "affiliation": "TODO", "orcid": ""}
+  ],
+  "notes": "The synthetic corpus and human-annotation study are CC-BY-4.0; the code is MIT (see LICENSE-CODE). The mapped Herath evaluation data derives from Herath et al. (2022) under its MIT license.",
+  "related_identifiers": [
+    {"relation": "isSupplementTo", "identifier": "TODO: paper DOI or OpenReview URL when available", "scheme": "url"}
+  ]
+}

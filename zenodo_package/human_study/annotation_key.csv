@@ -1,0 +1,611 @@
+item_id,sample_id,aspect,declared_sentiment,audit_row_score
+r1747_lecturer_quality,1747,lecturer quality,neutral,0.333
+r1747_tooling_usability,1747,tooling usability,neutral,0.333
+r1747_interest,1747,interest,positive,0.333
+r6111_relevance,6111,relevance,neutral,0.0
+r2502_exam_fairness,2502,exam fairness,positive,0.333
+r2502_feedback_quality,2502,feedback quality,negative,0.333
+r2502_accessibility,2502,accessibility,neutral,0.333
+r5220_peer_interaction,5220,peer interaction,negative,0.0
+r5220_prerequisite_fit,5220,prerequisite fit,neutral,0.0
+r3294_materials,3294,materials,neutral,0.0
+r5845_exam_fairness,5845,exam fairness,neutral,0.0
+r5845_grading_transparency,5845,grading transparency,neutral,0.0
+r8198_grading_transparency,8198,grading transparency,neutral,0.0
+r1514_difficulty,1514,difficulty,positive,0.0
+r4394_overall_experience,4394,overall experience,positive,0.0
+r2210_prerequisite_fit,2210,prerequisite fit,negative,0.0
+r3297_tooling_usability,3297,tooling usability,positive,0.0
+r9977_materials,9977,materials,neutral,0.0
+r7460_peer_interaction,7460,peer interaction,neutral,0.0
+r7460_support,7460,support,positive,0.0
+r7460_overall_experience,7460,overall experience,positive,0.0
+r3165_peer_interaction,3165,peer interaction,neutral,0.0
+r3606_assessment_design,3606,assessment design,neutral,0.0
+r3606_peer_interaction,3606,peer interaction,positive,0.0
+r1781_exam_fairness,1781,exam fairness,neutral,0.0
+r9792_difficulty,9792,difficulty,neutral,0.0
+r9792_practical_application,9792,practical application,neutral,0.0
+r9792_exam_fairness,9792,exam fairness,neutral,0.0
+r242_lecturer_quality,242,lecturer quality,negative,0.0
+r242_pacing,242,pacing,neutral,0.0
+r5823_workload,5823,workload,neutral,0.0
+r5823_support,5823,support,negative,0.0
+r3374_clarity,3374,clarity,positive,0.0
+r3374_grading_transparency,3374,grading transparency,neutral,0.0
+r169_feedback_quality,169,feedback quality,neutral,0.0
+r169_grading_transparency,169,grading transparency,positive,0.0
+r6944_difficulty,6944,difficulty,neutral,0.0
+r7368_clarity,7368,clarity,positive,0.0
+r842_organization,842,organization,negative,0.333
+r842_grading_transparency,842,grading transparency,neutral,0.333
+r842_workload,842,workload,neutral,0.333
+r2159_accessibility,2159,accessibility,neutral,0.0
+r2159_difficulty,2159,difficulty,neutral,0.0
+r7924_relevance,7924,relevance,negative,0.0
+r6288_grading_transparency,6288,grading transparency,neutral,0.0
+r6288_materials,6288,materials,negative,0.0
+r6288_support,6288,support,positive,0.0
+r1424_grading_transparency,1424,grading transparency,neutral,0.0
+r1974_tooling_usability,1974,tooling usability,positive,0.0
+r6966_clarity,6966,clarity,negative,0.0
+r2507_tooling_usability,2507,tooling usability,positive,0.333
+r2507_feedback_quality,2507,feedback quality,negative,0.333
+r2507_accessibility,2507,accessibility,neutral,0.333
+r8129_feedback_quality,8129,feedback quality,neutral,0.0
+r8129_clarity,8129,clarity,neutral,0.0
+r9423_peer_interaction,9423,peer interaction,neutral,0.0
+r9423_overall_experience,9423,overall experience,neutral,0.0
+r5820_feedback_quality,5820,feedback quality,negative,0.0
+r5820_accessibility,5820,accessibility,positive,0.0
+r4661_prerequisite_fit,4661,prerequisite fit,negative,0.0
+r4661_accessibility,4661,accessibility,positive,0.0
+r886_materials,886,materials,positive,0.0
+r8615_tooling_usability,8615,tooling usability,neutral,0.0
+r8965_assessment_design,8965,assessment design,positive,0.0
+r9335_accessibility,9335,accessibility,positive,0.0
+r7035_overall_experience,7035,overall experience,neutral,0.0
+r143_clarity,143,clarity,positive,0.0
+r9718_tooling_usability,9718,tooling usability,neutral,0.0
+r2429_tooling_usability,2429,tooling usability,neutral,0.333
+r2429_lecturer_quality,2429,lecturer quality,neutral,0.333
+r2429_assessment_design,2429,assessment design,neutral,0.333
+r2388_prerequisite_fit,2388,prerequisite fit,neutral,0.0
+r2388_tooling_usability,2388,tooling usability,positive,0.0
+r2388_organization,2388,organization,neutral,0.0
+r2397_practical_application,2397,practical application,positive,0.0
+r2397_lecturer_quality,2397,lecturer quality,negative,0.0
+r5614_support,5614,support,positive,0.0
+r426_clarity,426,clarity,negative,0.0
+r426_accessibility,426,accessibility,neutral,0.0
+r1012_workload,1012,workload,negative,0.333
+r1012_organization,1012,organization,neutral,0.333
+r1012_relevance,1012,relevance,neutral,0.333
+r4348_exam_fairness,4348,exam fairness,positive,0.0
+r4348_prerequisite_fit,4348,prerequisite fit,positive,0.0
+r5766_feedback_quality,5766,feedback quality,positive,0.0
+r3558_prerequisite_fit,3558,prerequisite fit,neutral,0.0
+r4246_lecturer_quality,4246,lecturer quality,neutral,0.0
+r4246_feedback_quality,4246,feedback quality,positive,0.0
+r3795_accessibility,3795,accessibility,positive,0.0
+r3795_peer_interaction,3795,peer interaction,negative,0.0
+r1345_difficulty,1345,difficulty,positive,0.0
+r1345_organization,1345,organization,positive,0.0
+r1532_materials,1532,materials,positive,0.0
+r223_grading_transparency,223,grading transparency,positive,0.0
+r223_difficulty,223,difficulty,neutral,0.0
+r223_lecturer_quality,223,lecturer quality,neutral,0.0
+r6737_difficulty,6737,difficulty,neutral,0.0
+r6431_prerequisite_fit,6431,prerequisite fit,neutral,0.0
+r4358_accessibility,4358,accessibility,positive,0.0
+r440_tooling_usability,440,tooling usability,positive,0.333
+r440_support,440,support,neutral,0.333
+r440_prerequisite_fit,440,prerequisite fit,negative,0.333
+r9119_organization,9119,organization,positive,0.0
+r9119_exam_fairness,9119,exam fairness,positive,0.0
+r6539_clarity,6539,clarity,negative,0.0
+r4965_clarity,4965,clarity,positive,0.0
+r4965_grading_transparency,4965,grading transparency,positive,0.0
+r4965_difficulty,4965,difficulty,positive,0.0
+r8462_feedback_quality,8462,feedback quality,positive,0.0
+r2248_support,2248,support,negative,0.0
+r2248_peer_interaction,2248,peer interaction,negative,0.0
+r2248_materials,2248,materials,neutral,0.0
+r8433_grading_transparency,8433,grading transparency,negative,0.0
+r1732_assessment_design,1732,assessment design,positive,0.0
+r6545_tooling_usability,6545,tooling usability,neutral,0.0
+r6545_overall_experience,6545,overall experience,neutral,0.0
+r6545_lecturer_quality,6545,lecturer quality,neutral,0.0
+r2943_materials,2943,materials,neutral,0.0
+r2943_relevance,2943,relevance,negative,0.0
+r2943_practical_application,2943,practical application,positive,0.0
+r3571_feedback_quality,3571,feedback quality,positive,0.0
+r5439_peer_interaction,5439,peer interaction,negative,0.0
+r2749_peer_interaction,2749,peer interaction,neutral,0.0
+r630_feedback_quality,630,feedback quality,neutral,0.0
+r630_support,630,support,neutral,0.0
+r630_tooling_usability,630,tooling usability,neutral,0.0
+r6468_interest,6468,interest,positive,0.0
+r6208_relevance,6208,relevance,negative,0.0
+r4369_lecturer_quality,4369,lecturer quality,neutral,0.5
+r4369_pacing,4369,pacing,negative,0.5
+r3513_interest,3513,interest,neutral,0.333
+r3513_prerequisite_fit,3513,prerequisite fit,negative,0.333
+r3513_relevance,3513,relevance,neutral,0.333
+r4270_lecturer_quality,4270,lecturer quality,negative,0.333
+r4270_interest,4270,interest,neutral,0.333
+r4270_relevance,4270,relevance,neutral,0.333
+r640_support,640,support,positive,0.5
+r640_practical_application,640,practical application,positive,0.5
+r5821_support,5821,support,positive,0.333
+r5821_pacing,5821,pacing,neutral,0.333
+r5821_interest,5821,interest,negative,0.333
+r3595_lecturer_quality,3595,lecturer quality,positive,0.5
+r3595_materials,3595,materials,positive,0.5
+r5204_materials,5204,materials,negative,0.333
+r5204_interest,5204,interest,neutral,0.333
+r5204_exam_fairness,5204,exam fairness,neutral,0.333
+r2087_accessibility,2087,accessibility,negative,0.5
+r2087_pacing,2087,pacing,negative,0.5
+r2826_exam_fairness,2826,exam fairness,neutral,0.333
+r2826_pacing,2826,pacing,neutral,0.333
+r2826_difficulty,2826,difficulty,positive,0.333
+r9433_organization,9433,organization,negative,0.333
+r9433_accessibility,9433,accessibility,neutral,0.333
+r9433_interest,9433,interest,neutral,0.333
+r4053_difficulty,4053,difficulty,negative,0.5
+r4053_overall_experience,4053,overall experience,positive,0.5
+r8451_materials,8451,materials,positive,0.333
+r8451_prerequisite_fit,8451,prerequisite fit,positive,0.333
+r8451_lecturer_quality,8451,lecturer quality,neutral,0.333
+r5643_support,5643,support,positive,0.5
+r5643_accessibility,5643,accessibility,neutral,0.5
+r9942_assessment_design,9942,assessment design,negative,0.333
+r9942_organization,9942,organization,positive,0.333
+r9942_clarity,9942,clarity,neutral,0.333
+r36_exam_fairness,36,exam fairness,neutral,0.5
+r36_organization,36,organization,positive,0.5
+r6074_overall_experience,6074,overall experience,neutral,0.5
+r6074_pacing,6074,pacing,neutral,0.5
+r7449_workload,7449,workload,negative,0.333
+r7449_peer_interaction,7449,peer interaction,neutral,0.333
+r7449_support,7449,support,neutral,0.333
+r2625_grading_transparency,2625,grading transparency,positive,0.5
+r2625_prerequisite_fit,2625,prerequisite fit,neutral,0.5
+r5577_clarity,5577,clarity,positive,0.5
+r5577_tooling_usability,5577,tooling usability,neutral,0.5
+r8693_accessibility,8693,accessibility,positive,0.333
+r8693_support,8693,support,neutral,0.333
+r8693_assessment_design,8693,assessment design,negative,0.333
+r4909_difficulty,4909,difficulty,neutral,0.333
+r4909_grading_transparency,4909,grading transparency,neutral,0.333
+r4909_organization,4909,organization,positive,0.333
+r3198_lecturer_quality,3198,lecturer quality,positive,0.333
+r3198_interest,3198,interest,neutral,0.333
+r3198_tooling_usability,3198,tooling usability,neutral,0.333
+r8149_lecturer_quality,8149,lecturer quality,neutral,0.5
+r8149_feedback_quality,8149,feedback quality,neutral,0.5
+r6994_feedback_quality,6994,feedback quality,negative,0.5
+r6994_difficulty,6994,difficulty,positive,0.5
+r6199_interest,6199,interest,positive,0.5
+r6199_tooling_usability,6199,tooling usability,positive,0.5
+r5669_practical_application,5669,practical application,negative,0.333
+r5669_lecturer_quality,5669,lecturer quality,negative,0.333
+r5669_prerequisite_fit,5669,prerequisite fit,positive,0.333
+r5270_grading_transparency,5270,grading transparency,neutral,0.5
+r5270_lecturer_quality,5270,lecturer quality,positive,0.5
+r7363_clarity,7363,clarity,negative,0.333
+r7363_grading_transparency,7363,grading transparency,negative,0.333
+r7363_prerequisite_fit,7363,prerequisite fit,neutral,0.333
+r8659_prerequisite_fit,8659,prerequisite fit,neutral,0.5
+r8659_practical_application,8659,practical application,positive,0.5
+r9612_accessibility,9612,accessibility,positive,0.333
+r9612_workload,9612,workload,neutral,0.333
+r9612_overall_experience,9612,overall experience,positive,0.333
+r4281_practical_application,4281,practical application,neutral,0.5
+r4281_lecturer_quality,4281,lecturer quality,negative,0.5
+r7290_grading_transparency,7290,grading transparency,neutral,0.333
+r7290_support,7290,support,neutral,0.333
+r7290_feedback_quality,7290,feedback quality,neutral,0.333
+r802_accessibility,802,accessibility,negative,0.5
+r802_workload,802,workload,neutral,0.5
+r8482_materials,8482,materials,negative,0.333
+r8482_lecturer_quality,8482,lecturer quality,neutral,0.333
+r8482_interest,8482,interest,neutral,0.333
+r5774_support,5774,support,neutral,0.333
+r5774_exam_fairness,5774,exam fairness,neutral,0.333
+r5774_difficulty,5774,difficulty,negative,0.333
+r6615_peer_interaction,6615,peer interaction,positive,0.5
+r6615_tooling_usability,6615,tooling usability,positive,0.5
+r6673_prerequisite_fit,6673,prerequisite fit,neutral,0.333
+r6673_workload,6673,workload,negative,0.333
+r6673_relevance,6673,relevance,neutral,0.333
+r1600_materials,1600,materials,positive,0.5
+r1600_difficulty,1600,difficulty,positive,0.5
+r3436_materials,3436,materials,neutral,0.333
+r3436_difficulty,3436,difficulty,neutral,0.333
+r3436_workload,3436,workload,positive,0.333
+r9537_materials,9537,materials,neutral,0.333
+r9537_support,9537,support,neutral,0.333
+r9537_pacing,9537,pacing,neutral,0.333
+r5826_peer_interaction,5826,peer interaction,negative,0.5
+r5826_exam_fairness,5826,exam fairness,positive,0.5
+r3312_clarity,3312,clarity,negative,0.5
+r3312_tooling_usability,3312,tooling usability,positive,0.5
+r3719_exam_fairness,3719,exam fairness,negative,0.5
+r3719_support,3719,support,neutral,0.5
+r6694_assessment_design,6694,assessment design,positive,0.333
+r6694_exam_fairness,6694,exam fairness,neutral,0.333
+r6694_materials,6694,materials,negative,0.333
+r603_support,603,support,negative,0.5
+r603_accessibility,603,accessibility,negative,0.5
+r9099_tooling_usability,9099,tooling usability,neutral,0.5
+r9099_pacing,9099,pacing,negative,0.5
+r2677_tooling_usability,2677,tooling usability,neutral,0.333
+r2677_peer_interaction,2677,peer interaction,positive,0.333
+r2677_clarity,2677,clarity,positive,0.333
+r4587_peer_interaction,4587,peer interaction,neutral,0.333
+r4587_lecturer_quality,4587,lecturer quality,neutral,0.333
+r4587_relevance,4587,relevance,positive,0.333
+r8917_feedback_quality,8917,feedback quality,positive,0.5
+r8917_tooling_usability,8917,tooling usability,negative,0.5
+r6210_workload,6210,workload,positive,0.333
+r6210_assessment_design,6210,assessment design,positive,0.333
+r6210_accessibility,6210,accessibility,neutral,0.333
+r4202_organization,4202,organization,positive,0.5
+r4202_practical_application,4202,practical application,positive,0.5
+r9245_relevance,9245,relevance,positive,0.333
+r9245_peer_interaction,9245,peer interaction,negative,0.333
+r9245_pacing,9245,pacing,negative,0.333
+r4952_lecturer_quality,4952,lecturer quality,negative,0.5
+r4952_exam_fairness,4952,exam fairness,negative,0.5
+r5313_pacing,5313,pacing,negative,0.5
+r5313_relevance,5313,relevance,negative,0.5
+r5556_support,5556,support,negative,0.5
+r5556_relevance,5556,relevance,neutral,0.5
+r1769_grading_transparency,1769,grading transparency,neutral,0.5
+r1769_practical_application,1769,practical application,neutral,0.5
+r9470_exam_fairness,9470,exam fairness,negative,0.333
+r9470_lecturer_quality,9470,lecturer quality,positive,0.333
+r9470_interest,9470,interest,negative,0.333
+r4388_support,4388,support,negative,0.5
+r4388_feedback_quality,4388,feedback quality,positive,0.5
+r3697_tooling_usability,3697,tooling usability,neutral,0.5
+r3697_practical_application,3697,practical application,positive,0.5
+r6945_peer_interaction,6945,peer interaction,positive,0.5
+r6945_support,6945,support,positive,0.5
+r7969_grading_transparency,7969,grading transparency,positive,0.5
+r7969_overall_experience,7969,overall experience,positive,0.5
+r6981_exam_fairness,6981,exam fairness,positive,0.333
+r6981_peer_interaction,6981,peer interaction,positive,0.333
+r6981_difficulty,6981,difficulty,positive,0.333
+r1362_assessment_design,1362,assessment design,positive,0.5
+r1362_accessibility,1362,accessibility,neutral,0.5
+r6822_relevance,6822,relevance,positive,0.5
+r6822_practical_application,6822,practical application,neutral,0.5
+r8838_materials,8838,materials,negative,0.5
+r8838_assessment_design,8838,assessment design,positive,0.5
+r6350_pacing,6350,pacing,positive,0.5
+r6350_tooling_usability,6350,tooling usability,positive,0.5
+r7199_peer_interaction,7199,peer interaction,neutral,0.5
+r7199_grading_transparency,7199,grading transparency,neutral,0.5
+r5884_grading_transparency,5884,grading transparency,negative,0.333
+r5884_materials,5884,materials,negative,0.333
+r5884_tooling_usability,5884,tooling usability,positive,0.333
+r1011_support,1011,support,positive,0.5
+r1011_relevance,1011,relevance,positive,0.5
+r2592_feedback_quality,2592,feedback quality,positive,0.5
+r2592_difficulty,2592,difficulty,positive,0.5
+r5152_accessibility,5152,accessibility,negative,0.333
+r5152_grading_transparency,5152,grading transparency,neutral,0.333
+r5152_prerequisite_fit,5152,prerequisite fit,neutral,0.333
+r4557_relevance,4557,relevance,positive,0.333
+r4557_tooling_usability,4557,tooling usability,negative,0.333
+r4557_assessment_design,4557,assessment design,neutral,0.333
+r7051_interest,7051,interest,positive,0.5
+r7051_feedback_quality,7051,feedback quality,neutral,0.5
+r4682_workload,4682,workload,negative,0.5
+r4682_organization,4682,organization,positive,0.5
+r6621_pacing,6621,pacing,positive,0.5
+r6621_support,6621,support,negative,0.5
+r4082_prerequisite_fit,4082,prerequisite fit,positive,0.667
+r4082_exam_fairness,4082,exam fairness,positive,0.667
+r4082_relevance,4082,relevance,positive,0.667
+r7955_peer_interaction,7955,peer interaction,negative,0.667
+r7955_accessibility,7955,accessibility,negative,0.667
+r7955_materials,7955,materials,positive,0.667
+r1087_clarity,1087,clarity,negative,0.667
+r1087_difficulty,1087,difficulty,positive,0.667
+r1087_interest,1087,interest,negative,0.667
+r1176_difficulty,1176,difficulty,negative,1.0
+r4487_assessment_design,4487,assessment design,neutral,0.667
+r4487_practical_application,4487,practical application,negative,0.667
+r4487_prerequisite_fit,4487,prerequisite fit,neutral,0.667
+r3076_tooling_usability,3076,tooling usability,neutral,1.0
+r3076_support,3076,support,negative,1.0
+r1190_exam_fairness,1190,exam fairness,positive,1.0
+r1190_interest,1190,interest,positive,1.0
+r5771_assessment_design,5771,assessment design,negative,0.667
+r5771_materials,5771,materials,positive,0.667
+r5771_organization,5771,organization,positive,0.667
+r740_pacing,740,pacing,neutral,1.0
+r2338_organization,2338,organization,positive,0.667
+r2338_tooling_usability,2338,tooling usability,neutral,0.667
+r2338_support,2338,support,negative,0.667
+r8963_materials,8963,materials,positive,0.667
+r8963_exam_fairness,8963,exam fairness,neutral,0.667
+r8963_tooling_usability,8963,tooling usability,negative,0.667
+r4154_relevance,4154,relevance,neutral,0.667
+r4154_materials,4154,materials,positive,0.667
+r4154_peer_interaction,4154,peer interaction,positive,0.667
+r5254_overall_experience,5254,overall experience,neutral,0.667
+r5254_workload,5254,workload,negative,0.667
+r5254_feedback_quality,5254,feedback quality,positive,0.667
+r1633_difficulty,1633,difficulty,negative,0.667
+r1633_lecturer_quality,1633,lecturer quality,neutral,0.667
+r1633_organization,1633,organization,negative,0.667
+r198_difficulty,198,difficulty,neutral,1.0
+r9345_pacing,9345,pacing,negative,0.667
+r9345_overall_experience,9345,overall experience,positive,0.667
+r9345_clarity,9345,clarity,neutral,0.667
+r2242_exam_fairness,2242,exam fairness,negative,1.0
+r9413_lecturer_quality,9413,lecturer quality,positive,0.5
+r9413_feedback_quality,9413,feedback quality,neutral,0.5
+r9653_interest,9653,interest,neutral,0.667
+r9653_clarity,9653,clarity,positive,0.667
+r9653_tooling_usability,9653,tooling usability,positive,0.667
+r1473_assessment_design,1473,assessment design,neutral,1.0
+r8969_workload,8969,workload,neutral,0.667
+r8969_interest,8969,interest,positive,0.667
+r8969_materials,8969,materials,negative,0.667
+r2298_exam_fairness,2298,exam fairness,neutral,0.667
+r2298_lecturer_quality,2298,lecturer quality,negative,0.667
+r2298_support,2298,support,positive,0.667
+r1998_materials,1998,materials,negative,0.667
+r1998_organization,1998,organization,positive,0.667
+r1998_difficulty,1998,difficulty,neutral,0.667
+r9912_interest,9912,interest,positive,0.667
+r9912_organization,9912,organization,negative,0.667
+r9912_overall_experience,9912,overall experience,neutral,0.667
+r1741_lecturer_quality,1741,lecturer quality,neutral,1.0
+r1741_accessibility,1741,accessibility,negative,1.0
+r1741_clarity,1741,clarity,neutral,1.0
+r8754_workload,8754,workload,positive,0.667
+r8754_clarity,8754,clarity,negative,0.667
+r8754_grading_transparency,8754,grading transparency,neutral,0.667
+r1455_materials,1455,materials,neutral,1.0
+r1455_overall_experience,1455,overall experience,negative,1.0
+r1064_support,1064,support,negative,1.0
+r3051_workload,3051,workload,positive,1.0
+r3051_organization,3051,organization,positive,1.0
+r3051_exam_fairness,3051,exam fairness,positive,1.0
+r9703_support,9703,support,negative,0.5
+r9703_exam_fairness,9703,exam fairness,neutral,0.5
+r1328_materials,1328,materials,neutral,1.0
+r1328_exam_fairness,1328,exam fairness,neutral,1.0
+r282_practical_application,282,practical application,negative,1.0
+r282_pacing,282,pacing,neutral,1.0
+r2052_clarity,2052,clarity,positive,1.0
+r2052_relevance,2052,relevance,negative,1.0
+r2052_lecturer_quality,2052,lecturer quality,neutral,1.0
+r8889_practical_application,8889,practical application,negative,0.667
+r8889_peer_interaction,8889,peer interaction,negative,0.667
+r8889_lecturer_quality,8889,lecturer quality,negative,0.667
+r9334_interest,9334,interest,positive,0.5
+r9334_accessibility,9334,accessibility,positive,0.5
+r1607_relevance,1607,relevance,positive,1.0
+r1607_overall_experience,1607,overall experience,neutral,1.0
+r559_accessibility,559,accessibility,negative,1.0
+r559_exam_fairness,559,exam fairness,positive,1.0
+r559_difficulty,559,difficulty,negative,1.0
+r1285_peer_interaction,1285,peer interaction,negative,0.667
+r1285_clarity,1285,clarity,neutral,0.667
+r1285_interest,1285,interest,negative,0.667
+r16_practical_application,16,practical application,neutral,0.667
+r16_accessibility,16,accessibility,negative,0.667
+r16_organization,16,organization,positive,0.667
+r9503_assessment_design,9503,assessment design,positive,0.5
+r9503_support,9503,support,positive,0.5
+r6112_prerequisite_fit,6112,prerequisite fit,neutral,0.667
+r6112_organization,6112,organization,positive,0.667
+r6112_pacing,6112,pacing,positive,0.667
+r8110_clarity,8110,clarity,neutral,0.667
+r8110_peer_interaction,8110,peer interaction,positive,0.667
+r8110_workload,8110,workload,negative,0.667
+r874_prerequisite_fit,874,prerequisite fit,negative,1.0
+r874_tooling_usability,874,tooling usability,negative,1.0
+r7761_interest,7761,interest,positive,0.667
+r7761_relevance,7761,relevance,negative,0.667
+r7761_exam_fairness,7761,exam fairness,negative,0.667
+r2918_support,2918,support,negative,1.0
+r3295_practical_application,3295,practical application,positive,1.0
+r2746_grading_transparency,2746,grading transparency,negative,1.0
+r2746_feedback_quality,2746,feedback quality,negative,1.0
+r2746_peer_interaction,2746,peer interaction,positive,1.0
+r5481_organization,5481,organization,negative,0.667
+r5481_lecturer_quality,5481,lecturer quality,positive,0.667
+r5481_clarity,5481,clarity,positive,0.667
+r1494_grading_transparency,1494,grading transparency,neutral,1.0
+r1494_prerequisite_fit,1494,prerequisite fit,negative,1.0
+r3169_practical_application,3169,practical application,negative,1.0
+r3169_tooling_usability,3169,tooling usability,neutral,1.0
+r3169_relevance,3169,relevance,positive,1.0
+r2787_lecturer_quality,2787,lecturer quality,neutral,1.0
+r2787_workload,2787,workload,positive,1.0
+r8668_exam_fairness,8668,exam fairness,neutral,0.667
+r8668_tooling_usability,8668,tooling usability,neutral,0.667
+r8668_lecturer_quality,8668,lecturer quality,negative,0.667
+r3316_support,3316,support,neutral,1.0
+r3029_relevance,3029,relevance,neutral,1.0
+r3029_peer_interaction,3029,peer interaction,neutral,1.0
+r9532_lecturer_quality,9532,lecturer quality,negative,0.667
+r9532_support,9532,support,negative,0.667
+r9532_organization,9532,organization,positive,0.667
+r2173_peer_interaction,2173,peer interaction,neutral,1.0
+r2173_assessment_design,2173,assessment design,neutral,1.0
+r2173_difficulty,2173,difficulty,negative,1.0
+r2402_workload,2402,workload,positive,0.667
+r2402_relevance,2402,relevance,neutral,0.667
+r2402_materials,2402,materials,negative,0.667
+r516_difficulty,516,difficulty,negative,1.0
+r2753_organization,2753,organization,negative,1.0
+r2753_assessment_design,2753,assessment design,negative,1.0
+r2753_interest,2753,interest,negative,1.0
+r3027_workload,3027,workload,positive,1.0
+r3027_tooling_usability,3027,tooling usability,positive,1.0
+r3221_overall_experience,3221,overall experience,neutral,1.0
+r7428_exam_fairness,7428,exam fairness,neutral,0.667
+r7428_practical_application,7428,practical application,neutral,0.667
+r7428_clarity,7428,clarity,negative,0.667
+r2342_grading_transparency,2342,grading transparency,positive,0.667
+r2342_practical_application,2342,practical application,negative,0.667
+r2342_clarity,2342,clarity,positive,0.667
+r9807_practical_application,9807,practical application,positive,0.5
+r9807_grading_transparency,9807,grading transparency,positive,0.5
+r3081_assessment_design,3081,assessment design,positive,1.0
+r3081_workload,3081,workload,positive,1.0
+r1145_lecturer_quality,1145,lecturer quality,positive,1.0
+r1145_support,1145,support,negative,1.0
+r708_support,708,support,negative,1.0
+r1830_accessibility,1830,accessibility,neutral,1.0
+r3146_relevance,3146,relevance,positive,1.0
+r3146_assessment_design,3146,assessment design,negative,1.0
+r738_interest,738,interest,negative,1.0
+r738_peer_interaction,738,peer interaction,negative,1.0
+r1284_support,1284,support,negative,1.0
+r1284_overall_experience,1284,overall experience,positive,1.0
+r1284_tooling_usability,1284,tooling usability,negative,1.0
+r7750_relevance,7750,relevance,neutral,0.667
+r7750_pacing,7750,pacing,negative,0.667
+r7750_workload,7750,workload,neutral,0.667
+r7957_accessibility,7957,accessibility,neutral,0.667
+r7957_difficulty,7957,difficulty,neutral,0.667
+r7957_tooling_usability,7957,tooling usability,negative,0.667
+r2065_peer_interaction,2065,peer interaction,positive,0.667
+r2065_tooling_usability,2065,tooling usability,positive,0.667
+r2065_pacing,2065,pacing,positive,0.667
+r9183_support,9183,support,positive,0.5
+r9183_organization,9183,organization,negative,0.5
+r6965_exam_fairness,6965,exam fairness,positive,1.0
+r4559_tooling_usability,4559,tooling usability,positive,1.0
+r5629_feedback_quality,5629,feedback quality,negative,1.0
+r9492_relevance,9492,relevance,neutral,1.0
+r5325_organization,5325,organization,positive,1.0
+r5325_pacing,5325,pacing,positive,1.0
+r5687_interest,5687,interest,negative,1.0
+r5687_lecturer_quality,5687,lecturer quality,neutral,1.0
+r9872_workload,9872,workload,positive,1.0
+r9913_feedback_quality,9913,feedback quality,neutral,1.0
+r9380_assessment_design,9380,assessment design,positive,1.0
+r5713_pacing,5713,pacing,neutral,1.0
+r8974_tooling_usability,8974,tooling usability,negative,1.0
+r8974_difficulty,8974,difficulty,negative,1.0
+r5218_assessment_design,5218,assessment design,negative,1.0
+r6065_exam_fairness,6065,exam fairness,positive,1.0
+r6065_prerequisite_fit,6065,prerequisite fit,neutral,1.0
+r6679_accessibility,6679,accessibility,negative,1.0
+r9935_workload,9935,workload,negative,1.0
+r9935_prerequisite_fit,9935,prerequisite fit,negative,1.0
+r9935_grading_transparency,9935,grading transparency,negative,1.0
+r7198_accessibility,7198,accessibility,neutral,1.0
+r9505_pacing,9505,pacing,positive,1.0
+r7047_grading_transparency,7047,grading transparency,neutral,1.0
+r7047_difficulty,7047,difficulty,negative,1.0
+r6499_accessibility,6499,accessibility,negative,1.0
+r5450_interest,5450,interest,negative,1.0
+r7588_organization,7588,organization,negative,1.0
+r7588_assessment_design,7588,assessment design,negative,1.0
+r6651_interest,6651,interest,negative,1.0
+r6651_pacing,6651,pacing,negative,1.0
+r7890_pacing,7890,pacing,positive,1.0
+r7890_relevance,7890,relevance,positive,1.0
+r7890_overall_experience,7890,overall experience,negative,1.0
+r9606_feedback_quality,9606,feedback quality,neutral,1.0
+r5344_materials,5344,materials,positive,1.0
+r5344_accessibility,5344,accessibility,negative,1.0
+r9086_difficulty,9086,difficulty,neutral,1.0
+r9086_practical_application,9086,practical application,negative,1.0
+r7932_exam_fairness,7932,exam fairness,neutral,1.0
+r9130_clarity,9130,clarity,positive,1.0
+r9130_tooling_usability,9130,tooling usability,negative,1.0
+r7308_relevance,7308,relevance,negative,1.0
+r7544_practical_application,7544,practical application,neutral,1.0
+r7865_clarity,7865,clarity,neutral,1.0
+r4983_support,4983,support,negative,1.0
+r4983_clarity,4983,clarity,neutral,1.0
+r6999_organization,6999,organization,positive,1.0
+r3701_grading_transparency,3701,grading transparency,negative,1.0
+r8616_peer_interaction,8616,peer interaction,negative,1.0
+r8616_clarity,8616,clarity,positive,1.0
+r8616_materials,8616,materials,positive,1.0
+r6804_accessibility,6804,accessibility,neutral,1.0
+r4446_peer_interaction,4446,peer interaction,positive,1.0
+r7427_lecturer_quality,7427,lecturer quality,positive,1.0
+r5650_assessment_design,5650,assessment design,negative,1.0
+r5650_pacing,5650,pacing,negative,1.0
+r4447_practical_application,4447,practical application,negative,1.0
+r9209_accessibility,9209,accessibility,negative,1.0
+r4229_workload,4229,workload,neutral,1.0
+r4229_materials,4229,materials,negative,1.0
+r5628_interest,5628,interest,neutral,1.0
+r5261_exam_fairness,5261,exam fairness,positive,1.0
+r5261_lecturer_quality,5261,lecturer quality,neutral,1.0
+r5197_organization,5197,organization,positive,1.0
+r3346_exam_fairness,3346,exam fairness,positive,1.0
+r4584_organization,4584,organization,positive,1.0
+r4584_assessment_design,4584,assessment design,negative,1.0
+r6158_organization,6158,organization,negative,1.0
+r6158_lecturer_quality,6158,lecturer quality,positive,1.0
+r5151_accessibility,5151,accessibility,neutral,1.0
+r5151_prerequisite_fit,5151,prerequisite fit,neutral,1.0
+r5151_tooling_usability,5151,tooling usability,negative,1.0
+r6301_overall_experience,6301,overall experience,negative,1.0
+r6301_interest,6301,interest,positive,1.0
+r4646_interest,4646,interest,negative,1.0
+r4646_support,4646,support,negative,1.0
+r7696_practical_application,7696,practical application,neutral,1.0
+r8061_organization,8061,organization,negative,1.0
+r6414_accessibility,6414,accessibility,negative,1.0
+r7288_pacing,7288,pacing,neutral,1.0
+r7288_lecturer_quality,7288,lecturer quality,positive,1.0
+r4342_pacing,4342,pacing,negative,1.0
+r4425_organization,4425,organization,positive,1.0
+r5858_organization,5858,organization,positive,1.0
+r3413_accessibility,3413,accessibility,neutral,1.0
+r3413_materials,3413,materials,positive,1.0
+r4437_workload,4437,workload,neutral,1.0
+r9072_lecturer_quality,9072,lecturer quality,negative,1.0
+r6163_peer_interaction,6163,peer interaction,negative,1.0
+r6163_assessment_design,6163,assessment design,negative,1.0
+r6578_interest,6578,interest,negative,1.0
+r6578_accessibility,6578,accessibility,positive,1.0
+r3618_support,3618,support,neutral,1.0
+r3618_feedback_quality,3618,feedback quality,positive,1.0
+r3618_tooling_usability,3618,tooling usability,negative,1.0
+r8531_tooling_usability,8531,tooling usability,negative,1.0
+r8531_organization,8531,organization,negative,1.0
+r8531_materials,8531,materials,neutral,1.0
+r3596_relevance,3596,relevance,positive,1.0
+r3596_lecturer_quality,3596,lecturer quality,neutral,1.0
+r3929_tooling_usability,3929,tooling usability,negative,1.0
+r3929_clarity,3929,clarity,positive,1.0
+r3929_pacing,3929,pacing,negative,1.0
+r7552_relevance,7552,relevance,negative,1.0
+r7552_overall_experience,7552,overall experience,negative,1.0
+r4179_peer_interaction,4179,peer interaction,positive,1.0
+r4179_exam_fairness,4179,exam fairness,neutral,1.0
+r4248_accessibility,4248,accessibility,negative,1.0
+r4248_organization,4248,organization,negative,1.0
+r6531_prerequisite_fit,6531,prerequisite fit,neutral,1.0
+r6531_organization,6531,organization,negative,1.0
+r6531_tooling_usability,6531,tooling usability,neutral,1.0
+r8213_assessment_design,8213,assessment design,negative,1.0
+r8213_peer_interaction,8213,peer interaction,negative,1.0
+r8213_pacing,8213,pacing,positive,1.0
+r3485_exam_fairness,3485,exam fairness,positive,1.0
+r3485_feedback_quality,3485,feedback quality,positive,1.0
+r7529_prerequisite_fit,7529,prerequisite fit,negative,1.0
+r7529_workload,7529,workload,negative,1.0
+r3864_clarity,3864,clarity,positive,1.0
+r3864_materials,3864,materials,positive,1.0
+r3864_assessment_design,3864,assessment design,negative,1.0
