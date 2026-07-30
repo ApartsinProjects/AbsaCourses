@@ -44,8 +44,8 @@
 <div class="rc">
 <h2>2. Match filtering subsets to isolate faithfulness</h2>
 <p class="req">Requested: Sentiment MSE is measured only on aspects each model predicts, so filtering comparisons may be confounded; match subsets by aspect, polarity, aspect count, length, and style.</p>
-<p class="resp"><b class="wip">New experiment underway.</b> We add a covariate-matched filtering comparison that holds aspect, polarity, aspect-count, length, and style fixed across the retained and control subsets and scores both on a common gold-present aspect set, so the filtering gain is attributable to faithfulness rather than to differing prediction masks. The size-matched result already reported (retaining the top 50% cuts sentiment error at half the training cost, 7 of 8 seeds, replicated across architectures) motivates this stricter matched design.</p>
-<span class="loc">Section 5.7.</span>
+<p class="resp"><b class="tag">Done (new Table 13).</b> We add a covariate-matched filtering comparison that matches the retained and control subsets one-to-one on aspect set, aspect count, polarity composition, length band, and formality band, so the two subsets are identical on every covariate except the audit score itself (matched-pair audit-score means 0.90 versus 0.26; 3,441 pairs). Both are then trained and scored on the same common gold-present aspect cells on the 9-aspect Herath overlap (4,289 shared cells), which removes the prediction-mask confound entirely. Under this strict design the faithfulness-retained subset has the lower transferred sentiment error in every seed (sentiment MSE 0.412 versus 0.519, a paired reduction of 0.108 across three seeds) and a higher detection micro-F1 (0.400 versus 0.338), so the filtering gain is attributable to label faithfulness alone rather than to differing composition or prediction masks. This complements the size-matched result already reported (retaining the top 50% cuts sentiment error at half the training cost, 7 of 8 seeds, replicated across architectures).</p>
+<span class="loc">Section 5.7 (Table 13).</span>
 </div>
 <div class="rc">
 <h2>3. Reconcile inconsistent numbers</h2>

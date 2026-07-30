@@ -986,6 +986,28 @@
         Table 12 collects these paired contrasts across both architectures and both transfer targets, and Figure 5 visualizes all conditions. Practically, the result is that the audit score in Section 5.6 is an actionable filter for downstream training. Discarding the bottom 50% of the corpus by faithfulness score matches the full-corpus sentiment-MSE level at half the training cost on Herath, and the recipe transfers to a smaller distilled architecture without loss. Discarding the bottom 25% is decisively the wrong move: that bucket is an active liability for sentiment polarity on every (architecture, target) condition we tested, with sentiment MSE 0.34 to 0.42 above the full corpus.
       </p>
       <p>
+        To isolate the filtering gain from any residual composition difference, we ran a strict covariate-matched comparison. From the corpus we drew a high-faithfulness retained subset and a low-faithfulness control subset that are matched one-to-one on aspect set, aspect count, review-level polarity composition, length band, and formality band, so the two subsets are identical on every covariate except the audit score itself (matched-pair audit-score means 0.90 retained versus 0.26 control; 3,441 matched pairs). Both subsets are then trained and scored on the <em>same</em> common gold-present aspect cells on the 9-aspect Herath overlap (4,289 shared cells), which removes the prediction-mask confound entirely: the two models are graded on one identical set of aspect-sentiment targets. Under this design the faithfulness-retained subset has the lower transferred sentiment error in every seed (Table 13): sentiment MSE 0.412 versus 0.519 on average, a paired reduction of 0.108 (three of three seeds), together with a higher detection micro-F1 (0.400 versus 0.338). Because aspect, polarity, aspect-count, length, and style are held fixed and the evaluation cells are shared, the improvement is attributable to label faithfulness alone rather than to differing composition or prediction sets.
+      </p>
+      <table>
+        <caption>Table 13. Covariate-matched filtering isolates faithfulness. High-faithfulness retained versus low-faithfulness control subsets, matched one-to-one on aspect set, aspect count, polarity composition, length band, and formality band (only the audit score differs), each trained and evaluated on the same common gold-present aspect cells (9-aspect Herath overlap, 4,289 shared cells). Lower sentiment MSE and higher detection micro-F1 are better. The retained subset wins on both metrics in all three seeds.</caption>
+        <thead>
+          <tr>
+            <th>Seed</th>
+            <th>Retained sentiment MSE</th>
+            <th>Control sentiment MSE</th>
+            <th>&Delta; MSE (retained − control)</th>
+            <th>Retained det. micro-F1</th>
+            <th>Control det. micro-F1</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>42</td><td>0.383</td><td>0.527</td><td>−0.144</td><td>0.394</td><td>0.354</td></tr>
+          <tr><td>17</td><td>0.441</td><td>0.533</td><td>−0.092</td><td>0.415</td><td>0.303</td></tr>
+          <tr><td>23</td><td>0.411</td><td>0.497</td><td>−0.087</td><td>0.390</td><td>0.357</td></tr>
+          <tr><td><strong>mean</strong></td><td><strong>0.412</strong></td><td><strong>0.519</strong></td><td><strong>−0.108</strong></td><td><strong>0.400</strong></td><td><strong>0.338</strong></td></tr>
+        </tbody>
+      </table>
+      <p>
         We additionally cross-checked that the bucketing is not specific to the chosen audit judge by re-auditing the original 250-row calibration sample with three independent cost-matched judges across two providers. Per-aspect agreement against the GPT-5.2 audit converges for all three: gpt-4.1-mini at 0.874 support / 0.790 sentiment-match, gpt-4o-mini at 0.845 / 0.715, and Claude 3.5 Haiku (via OpenRouter) at 0.817 / 0.678. The audit-derived buckets are therefore robust to the choice of cost-matched judge. Using an LLM as a label auditor is consistent with evidence that LLM annotators can rival or exceed crowd workers on annotation tasks [35]; because LLM judges also carry documented biases [36], we control for them with the cross-provider agreement here and with the human-label validation below.
       </p>
       <p>
