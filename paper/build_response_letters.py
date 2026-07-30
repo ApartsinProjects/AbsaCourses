@@ -79,7 +79,7 @@ H7LN = {
          "Section 5.7 (Table 14); Section 6.1; Appendix A.23."),
         ("2. Broaden baselines beyond one provider and prompt", "ok",
          "Baselines are confined to a single provider's GPT family and one structured prompting method.",
-         "Done. The multi-provider zero-shot baseline spans four generator families across four providers (GPT, Gemini, GLM, Llama).",
+         "Done. We broaden the baseline on both axes. The prompting axis is covered by the four zero-, fixed-, diverse-, and retrieval-few-shot variants in Table 7. The provider axis is now covered on the full 1,000-review test split: the identical zero-shot-glossary contract run across four families spanning four providers (GPT-5.4, Gemini-2.5-Flash, GLM-4.6, Llama-3.3-70B) lands in a single narrow band (detection micro-F1 0.239 to 0.267), all below the trained encoders, so the placement of zero-shot prompting holds regardless of provider.",
          "Appendix A.19; Appendix A.20."),
         ("3. Figure and table formatting", "ok",
          "The formatting of Figure 1, Table 5, Figure A2, and Figure A3 could benefit from refinement.",

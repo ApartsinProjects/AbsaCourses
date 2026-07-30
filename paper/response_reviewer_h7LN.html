@@ -44,7 +44,7 @@
 <div class="rc">
 <h2>2. Broaden baselines beyond one provider and prompt</h2>
 <p class="req">Requested: Baselines are confined to a single provider&#x27;s GPT family and one structured prompting method.</p>
-<p class="resp"><b class="tag">Done.</b> The multi-provider zero-shot baseline spans four generator families across four providers (GPT, Gemini, GLM, Llama).</p>
+<p class="resp"><b class="tag">Done.</b> We broaden the baseline on both axes. The prompting axis is covered by the four zero-, fixed-, diverse-, and retrieval-few-shot variants in Table 7. The provider axis is now covered on the full 1,000-review test split: the identical zero-shot-glossary contract run across four families spanning four providers (GPT-5.4, Gemini-2.5-Flash, GLM-4.6, Llama-3.3-70B) lands in a single narrow band (detection micro-F1 0.239 to 0.267), all below the trained encoders, so the placement of zero-shot prompting holds regardless of provider.</p>
 <span class="loc">Appendix A.19; Appendix A.20.</span>
 </div>
 <div class="rc">

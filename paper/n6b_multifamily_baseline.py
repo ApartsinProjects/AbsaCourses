@@ -40,27 +40,42 @@ def parse_map(raw, aspects):
     aset = {a.lower(): a for a in aspects}
     out = {}
     ok = ("negative", "neutral", "positive")
-    m = re.search(r"\{.*\}", raw or "", flags=re.S)
-    if not m:
-        return out
-    try:
-        obj = json.loads(m.group(0))
-    except Exception:
-        return out
-    items = obj.get("aspects") if isinstance(obj, dict) else None
-    if isinstance(items, list):  # {"aspects":[{"aspect":..,"sentiment":..}]}
-        for e in items:
-            if isinstance(e, dict):
-                ak = aset.get(str(e.get("aspect", "")).strip().lower())
-                vs = str(e.get("sentiment", "")).strip().lower()
-                if ak and vs in ok:
-                    out[ak] = vs
-    elif isinstance(obj, dict):  # flat {"aspect":"sentiment"}
-        for k, v in obj.items():
-            ak = aset.get(str(k).strip().lower())
-            vs = str(v).strip().lower()
-            if ak and vs in ok:
-                out[ak] = vs
+    raw = raw or ""
+    m = re.search(r"\{.*\}", raw, flags=re.S)
+    if m:
+        try:
+            obj = json.loads(m.group(0))
+            items = obj.get("aspects") if isinstance(obj, dict) else None
+            if isinstance(items, list):  # {"aspects":[{"aspect":..,"sentiment":..}]}
+                for e in items:
+                    if isinstance(e, dict):
+                        ak = aset.get(str(e.get("aspect", "")).strip().lower())
+                        vs = str(e.get("sentiment", "")).strip().lower()
+                        if ak and vs in ok:
+                            out[ak] = vs
+            elif isinstance(obj, dict):  # flat {"aspect":"sentiment"}
+                for k, v in obj.items():
+                    ak = aset.get(str(k).strip().lower())
+                    vs = str(v).strip().lower()
+                    if ak and vs in ok:
+                        out[ak] = vs
+        except Exception:
+            pass
+    if not out:
+        # Lenient fallback (applied uniformly to every provider) so a model is scored
+        # on content, not exact JSON syntax. Handles the common list form, including the
+        # malformed {"aspect":"X","negative"} variant some models emit, and the flat map.
+        for ak_raw, vs in re.findall(
+                r'"aspect"\s*:\s*"([^"]+)"\s*,\s*(?:"sentiment"\s*:\s*)?"(positive|negative|neutral)"',
+                raw, flags=re.I):
+            ak = aset.get(ak_raw.strip().lower())
+            if ak:
+                out[ak] = vs.lower()
+        if not out:
+            for k, vs in re.findall(r'"([a-z_]+)"\s*:\s*"(positive|negative|neutral)"', raw, flags=re.I):
+                ak = aset.get(k.strip().lower())
+                if ak:
+                    out[ak] = vs.lower()
     return out
 
 
@@ -121,9 +136,8 @@ async def main(n, conc):
     prompts = [build_openai_prompt(str(te.iloc[i]["text"]), aspects, "zero-shot-glossary", []) + JSON_DIRECTIVE
                for i in range(len(te))]
     client = AsyncOpenAI(base_url="https://openrouter.ai/api/v1", api_key=load_key())
-    sem = asyncio.Semaphore(conc)
-    report = {}
-    for fam, slug in FAMILIES.items():
+    async def run_model(fam, slug):
+        sem = asyncio.Semaphore(conc)  # per-model semaphore: the four providers run concurrently
         cache = OUTD / f"n6b_pred_{fam}.jsonl"
         if cache.exists() and sum(1 for _ in open(cache)) >= len(prompts):
             raws = [json.loads(l)["raw"] for l in open(cache, encoding="utf-8")]
@@ -134,9 +148,13 @@ async def main(n, conc):
                     f.write(json.dumps({"raw": rr}, ensure_ascii=False) + "\n")
         preds = [parse_map(rr, aspects) for rr in raws]
         n_parsed = sum(1 for p in preds if p)
-        report[fam] = {"slug": slug, "n_test": len(te), "n_parsed": n_parsed, **score(golds, preds, aspects)}
-        print(f"[{fam:13s}] micro-F1={report[fam]['detect_micro_f1']} "
-              f"sent_acc={report[fam]['sentiment_accuracy_on_matched']} parsed={n_parsed}/{len(te)}")
+        entry = {"slug": slug, "n_test": len(te), "n_parsed": n_parsed, **score(golds, preds, aspects)}
+        print(f"[{fam:13s}] micro-F1={entry['detect_micro_f1']} "
+              f"sent_acc={entry['sentiment_accuracy_on_matched']} parsed={n_parsed}/{len(te)}", flush=True)
+        return fam, entry
+
+    pairs = await asyncio.gather(*[run_model(fam, slug) for fam, slug in FAMILIES.items()])
+    report = {fam: entry for fam, entry in pairs}
     out = {"variant": "zero-shot-glossary", "seed": 42, "n_test_rows": len(te),
            "n_aspects": len(aspects), "per_family": report}
     json.dump(out, open(OUTD / "n6b_multifamily_baseline_summary.json", "w"), indent=2)
