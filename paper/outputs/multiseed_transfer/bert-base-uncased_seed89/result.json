@@ -1,0 +1,44 @@
+{
+  "experiment": "multiseed_synthetic_to_real_transfer",
+  "approach": "bert-base-uncased",
+  "seed": 89,
+  "n_overlap_aspects": 9,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_synth_overlap": 6867,
+  "n_train": 5495,
+  "n_calib": 686,
+  "n_internal_test": 686,
+  "n_real_herath": 2829,
+  "config": {
+    "max_len": 192,
+    "batch_size": 8,
+    "lr": 3e-05,
+    "epochs_detection": 3,
+    "epochs_sentiment": 3
+  },
+  "metrics": {
+    "internal_synthetic_test": {
+      "micro_f1": 0.4036791006642821,
+      "macro_f1": 0.4313872715361811,
+      "micro_recall": 0.4428251121076233,
+      "sentiment_mse": 0.4559539547713899
+    },
+    "external_real_herath": {
+      "micro_f1": 0.5163487738419619,
+      "macro_f1": 0.2894662391071507,
+      "micro_recall": 0.4418279319188622,
+      "sentiment_mse": 0.44255897769760294
+    }
+  },
+  "elapsed_seconds": 514.9
+}

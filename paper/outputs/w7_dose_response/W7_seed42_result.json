@@ -1,0 +1,84 @@
+{
+  "experiment": "W7_audit_quartile_dose_response",
+  "seed": 42,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_herath": 2829,
+  "matched_bucket_size": 1373,
+  "sanity_gate": {
+    "full_corpus_herath_micro_f1": 0.4029887920298879,
+    "expected_range": "0.40-0.48 (paper synthetic-only transfer ref 0.4593)",
+    "passed": true
+  },
+  "arms": {
+    "full": {
+      "n_train": 5495,
+      "internal_micro_f1": 0.4183070866141732,
+      "internal_sentiment_mse": 0.39905513080240995,
+      "herath_micro_f1": 0.4029887920298879,
+      "herath_sentiment_mse": 0.36965681539251877
+    },
+    "Q1": {
+      "n_train": 1373,
+      "internal_micro_f1": 0.28544378698224854,
+      "internal_sentiment_mse": 0.7435854449101378,
+      "herath_micro_f1": 0.24655302080721986,
+      "herath_sentiment_mse": 0.6796670139801976,
+      "row_score_min": 0.0,
+      "row_score_mean": 0.08593459577567371,
+      "row_score_max": 0.3333
+    },
+    "Q2": {
+      "n_train": 1373,
+      "internal_micro_f1": 0.3347107438016529,
+      "internal_sentiment_mse": 0.6773920798613339,
+      "herath_micro_f1": 0.2833864158210503,
+      "herath_sentiment_mse": 0.5928387103733311,
+      "row_score_min": 0.3333,
+      "row_score_mean": 0.4496136198106337,
+      "row_score_max": 0.5
+    },
+    "Q3": {
+      "n_train": 1373,
+      "internal_micro_f1": 0.3828470380194518,
+      "internal_sentiment_mse": 0.5285027662878844,
+      "herath_micro_f1": 0.37530072173215717,
+      "herath_sentiment_mse": 0.5505031938162822,
+      "row_score_min": 0.5,
+      "row_score_mean": 0.770230080116533,
+      "row_score_max": 1.0
+    },
+    "Q4": {
+      "n_train": 1373,
+      "internal_micro_f1": 0.4106596767147226,
+      "internal_sentiment_mse": 0.5284910888452986,
+      "herath_micro_f1": 0.27645245976486704,
+      "herath_sentiment_mse": 0.39851087229291265,
+      "row_score_min": 1.0,
+      "row_score_mean": 1.0,
+      "row_score_max": 1.0
+    }
+  },
+  "internal_dose_response_Q1_to_Q4": [
+    0.28544378698224854,
+    0.3347107438016529,
+    0.3828470380194518,
+    0.4106596767147226
+  ],
+  "herath_dose_response_Q1_to_Q4": [
+    0.24655302080721986,
+    0.2833864158210503,
+    0.37530072173215717,
+    0.27645245976486704
+  ],
+  "elapsed_seconds": 959.0
+}

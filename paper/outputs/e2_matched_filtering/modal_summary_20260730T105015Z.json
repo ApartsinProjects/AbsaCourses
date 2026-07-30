@@ -1,0 +1,884 @@
+[
+  {
+    "run_name": "seed42",
+    "seed": 42,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 652.8,
+    "headline": {
+      "experiment": "E2_covariate_matched_filtering",
+      "seed": 42,
+      "matching_seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_matched_pairs": 3441,
+      "covariate_balance": {
+        "pre_matching": {
+          "retained_full": {
+            "n": 5000,
+            "row_score_mean": 0.912,
+            "aspect_count": {
+              "1": 0.387,
+              "3": 0.3204,
+              "2": 0.2926
+            },
+            "polarity_comp": {
+              "mixed": 0.4676,
+              "all_negative": 0.2488,
+              "all_neutral": 0.142,
+              "all_positive": 0.1416
+            },
+            "length_band": {
+              "2": 0.3948,
+              "1": 0.3282,
+              "0": 0.277
+            },
+            "formality_band": {
+              "unknown": 0.6662,
+              "fairly polished and careful": 0.0854,
+              "mixed academic and casual phrasing": 0.0846,
+              "informal and conversational": 0.0842,
+              "neutral everyday prose": 0.0796
+            },
+            "polarity_token_marginal": {
+              "negative": 0.4323,
+              "positive": 0.3015,
+              "neutral": 0.2662
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.0978,
+              "assessment_design": 0.0966,
+              "clarity": 0.092,
+              "difficulty": 0.0986,
+              "exam_fairness": 0.1038,
+              "feedback_quality": 0.0876,
+              "grading_transparency": 0.0878,
+              "interest": 0.0968,
+              "lecturer_quality": 0.0992,
+              "materials": 0.1046,
+              "organization": 0.1134,
+              "overall_experience": 0.111,
+              "pacing": 0.1028,
+              "peer_interaction": 0.0832,
+              "practical_application": 0.092,
+              "prerequisite_fit": 0.0978,
+              "relevance": 0.081,
+              "support": 0.0958,
+              "tooling_usability": 0.0918,
+              "workload": 0.0998
+            },
+            "word_count_mean": 127.17
+          },
+          "control_pool_full": {
+            "n": 5000,
+            "row_score_mean": 0.2413,
+            "aspect_count": {
+              "2": 0.4908,
+              "3": 0.2898,
+              "1": 0.2194
+            },
+            "polarity_comp": {
+              "mixed": 0.6124,
+              "all_positive": 0.1744,
+              "all_neutral": 0.1572,
+              "all_negative": 0.056
+            },
+            "length_band": {
+              "0": 0.4038,
+              "1": 0.328,
+              "2": 0.2682
+            },
+            "formality_band": {
+              "unknown": 0.6732,
+              "neutral everyday prose": 0.0834,
+              "mixed academic and casual phrasing": 0.0832,
+              "informal and conversational": 0.0812,
+              "fairly polished and careful": 0.079
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.3953,
+              "negative": 0.2314,
+              "positive": 0.3734
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1126,
+              "assessment_design": 0.0992,
+              "clarity": 0.1056,
+              "difficulty": 0.1,
+              "exam_fairness": 0.1088,
+              "feedback_quality": 0.1006,
+              "grading_transparency": 0.116,
+              "interest": 0.097,
+              "lecturer_quality": 0.1032,
+              "materials": 0.0954,
+              "organization": 0.0946,
+              "overall_experience": 0.093,
+              "pacing": 0.1008,
+              "peer_interaction": 0.1106,
+              "practical_application": 0.1006,
+              "prerequisite_fit": 0.1044,
+              "relevance": 0.1056,
+              "support": 0.1052,
+              "tooling_usability": 0.1114,
+              "workload": 0.1058
+            },
+            "word_count_mean": 107.23
+          }
+        },
+        "post_matching": {
+          "retained_matched": {
+            "n": 3441,
+            "row_score_mean": 0.8986,
+            "aspect_count": {
+              "2": 0.37,
+              "3": 0.3441,
+              "1": 0.286
+            },
+            "polarity_comp": {
+              "mixed": 0.5859,
+              "all_positive": 0.1915,
+              "all_neutral": 0.1421,
+              "all_negative": 0.0805
+            },
+            "length_band": {
+              "1": 0.3377,
+              "0": 0.3345,
+              "2": 0.3278
+            },
+            "formality_band": {
+              "unknown": 0.6722,
+              "fairly polished and careful": 0.0866,
+              "mixed academic and casual phrasing": 0.0857,
+              "informal and conversational": 0.0788,
+              "neutral everyday prose": 0.0767
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.2926,
+              "negative": 0.3507,
+              "positive": 0.3567
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1,
+              "assessment_design": 0.0962,
+              "clarity": 0.0971,
+              "difficulty": 0.1055,
+              "exam_fairness": 0.109,
+              "feedback_quality": 0.0904,
+              "grading_transparency": 0.0907,
+              "interest": 0.104,
+              "lecturer_quality": 0.1099,
+              "materials": 0.1096,
+              "organization": 0.1221,
+              "overall_experience": 0.1212,
+              "pacing": 0.1122,
+              "peer_interaction": 0.0933,
+              "practical_application": 0.0985,
+              "prerequisite_fit": 0.1061,
+              "relevance": 0.0872,
+              "support": 0.1014,
+              "tooling_usability": 0.1006,
+              "workload": 0.1035
+            },
+            "word_count_mean": 118.8
+          },
+          "control_matched": {
+            "n": 3441,
+            "row_score_mean": 0.2551,
+            "aspect_count": {
+              "2": 0.37,
+              "3": 0.3441,
+              "1": 0.286
+            },
+            "polarity_comp": {
+              "mixed": 0.5859,
+              "all_positive": 0.1915,
+              "all_neutral": 0.1421,
+              "all_negative": 0.0805
+            },
+            "length_band": {
+              "1": 0.3377,
+              "0": 0.3345,
+              "2": 0.3278
+            },
+            "formality_band": {
+              "unknown": 0.6722,
+              "fairly polished and careful": 0.0866,
+              "mixed academic and casual phrasing": 0.0857,
+              "informal and conversational": 0.0788,
+              "neutral everyday prose": 0.0767
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.3671,
+              "negative": 0.2532,
+              "positive": 0.3797
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1125,
+              "assessment_design": 0.0936,
+              "clarity": 0.1029,
+              "difficulty": 0.1058,
+              "exam_fairness": 0.1099,
+              "feedback_quality": 0.093,
+              "grading_transparency": 0.1096,
+              "interest": 0.1023,
+              "lecturer_quality": 0.1043,
+              "materials": 0.0962,
+              "organization": 0.0944,
+              "overall_experience": 0.0976,
+              "pacing": 0.1011,
+              "peer_interaction": 0.1087,
+              "practical_application": 0.091,
+              "prerequisite_fit": 0.1067,
+              "relevance": 0.1037,
+              "support": 0.1064,
+              "tooling_usability": 0.1099,
+              "workload": 0.1087
+            },
+            "word_count_mean": 115.5
+          }
+        },
+        "max_abs_marginal_gap": {
+          "aspect_count_pre": 0.1982,
+          "aspect_count_post": 0.0,
+          "polarity_comp_pre": 0.1928,
+          "polarity_comp_post": 0.0,
+          "length_band_pre": 0.1268,
+          "length_band_post": 0.0,
+          "formality_band_pre": 0.007,
+          "formality_band_post": 0.0,
+          "aspect_prevalence_pre": 0.0282,
+          "aspect_prevalence_post": 0.0277
+        },
+        "overlap9_survival": {
+          "retained_train_n": 2411,
+          "control_train_n": 2361
+        }
+      },
+      "common_gold_eval": {
+        "herath_overlap9_rows": 2829,
+        "retained": {
+          "detection_micro_f1": 0.3935,
+          "detection_micro_precision": 0.5224,
+          "detection_micro_recall": 0.3157,
+          "sentiment_mse_common_gold": 0.38315,
+          "n_common_gold_cells": 4289,
+          "n_train": 1929,
+          "n_calib": 241
+        },
+        "control": {
+          "detection_micro_f1": 0.3543,
+          "detection_micro_precision": 0.2515,
+          "detection_micro_recall": 0.5992,
+          "sentiment_mse_common_gold": 0.526858,
+          "n_common_gold_cells": 4289,
+          "n_train": 1889,
+          "n_calib": 236
+        },
+        "delta_sentiment_mse_retained_minus_control": -0.143708,
+        "delta_detection_f1_retained_minus_control": 0.0392
+      },
+      "win_definition": "filtering gain = retained sentiment MSE LOWER than covariate-matched control on the common gold set (negative delta_sentiment_mse)",
+      "sanity_gate": {
+        "full_corpus_herath_micro_f1": 0.3093,
+        "n_full9_rows": 6867,
+        "expected_range": [
+          0.4,
+          0.48
+        ],
+        "sanity_ok": false
+      },
+      "elapsed_seconds": 645.0
+    }
+  },
+  {
+    "run_name": "seed17",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 345.8,
+    "headline": {
+      "experiment": "E2_covariate_matched_filtering",
+      "seed": 17,
+      "matching_seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_matched_pairs": 3441,
+      "covariate_balance": {
+        "pre_matching": {
+          "retained_full": {
+            "n": 5000,
+            "row_score_mean": 0.912,
+            "aspect_count": {
+              "1": 0.387,
+              "3": 0.3204,
+              "2": 0.2926
+            },
+            "polarity_comp": {
+              "mixed": 0.4676,
+              "all_negative": 0.2488,
+              "all_neutral": 0.142,
+              "all_positive": 0.1416
+            },
+            "length_band": {
+              "2": 0.3948,
+              "1": 0.3282,
+              "0": 0.277
+            },
+            "formality_band": {
+              "unknown": 0.6662,
+              "fairly polished and careful": 0.0854,
+              "mixed academic and casual phrasing": 0.0846,
+              "informal and conversational": 0.0842,
+              "neutral everyday prose": 0.0796
+            },
+            "polarity_token_marginal": {
+              "negative": 0.4323,
+              "positive": 0.3015,
+              "neutral": 0.2662
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.0978,
+              "assessment_design": 0.0966,
+              "clarity": 0.092,
+              "difficulty": 0.0986,
+              "exam_fairness": 0.1038,
+              "feedback_quality": 0.0876,
+              "grading_transparency": 0.0878,
+              "interest": 0.0968,
+              "lecturer_quality": 0.0992,
+              "materials": 0.1046,
+              "organization": 0.1134,
+              "overall_experience": 0.111,
+              "pacing": 0.1028,
+              "peer_interaction": 0.0832,
+              "practical_application": 0.092,
+              "prerequisite_fit": 0.0978,
+              "relevance": 0.081,
+              "support": 0.0958,
+              "tooling_usability": 0.0918,
+              "workload": 0.0998
+            },
+            "word_count_mean": 127.17
+          },
+          "control_pool_full": {
+            "n": 5000,
+            "row_score_mean": 0.2413,
+            "aspect_count": {
+              "2": 0.4908,
+              "3": 0.2898,
+              "1": 0.2194
+            },
+            "polarity_comp": {
+              "mixed": 0.6124,
+              "all_positive": 0.1744,
+              "all_neutral": 0.1572,
+              "all_negative": 0.056
+            },
+            "length_band": {
+              "0": 0.4038,
+              "1": 0.328,
+              "2": 0.2682
+            },
+            "formality_band": {
+              "unknown": 0.6732,
+              "neutral everyday prose": 0.0834,
+              "mixed academic and casual phrasing": 0.0832,
+              "informal and conversational": 0.0812,
+              "fairly polished and careful": 0.079
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.3953,
+              "negative": 0.2314,
+              "positive": 0.3734
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1126,
+              "assessment_design": 0.0992,
+              "clarity": 0.1056,
+              "difficulty": 0.1,
+              "exam_fairness": 0.1088,
+              "feedback_quality": 0.1006,
+              "grading_transparency": 0.116,
+              "interest": 0.097,
+              "lecturer_quality": 0.1032,
+              "materials": 0.0954,
+              "organization": 0.0946,
+              "overall_experience": 0.093,
+              "pacing": 0.1008,
+              "peer_interaction": 0.1106,
+              "practical_application": 0.1006,
+              "prerequisite_fit": 0.1044,
+              "relevance": 0.1056,
+              "support": 0.1052,
+              "tooling_usability": 0.1114,
+              "workload": 0.1058
+            },
+            "word_count_mean": 107.23
+          }
+        },
+        "post_matching": {
+          "retained_matched": {
+            "n": 3441,
+            "row_score_mean": 0.8986,
+            "aspect_count": {
+              "2": 0.37,
+              "3": 0.3441,
+              "1": 0.286
+            },
+            "polarity_comp": {
+              "mixed": 0.5859,
+              "all_positive": 0.1915,
+              "all_neutral": 0.1421,
+              "all_negative": 0.0805
+            },
+            "length_band": {
+              "1": 0.3377,
+              "0": 0.3345,
+              "2": 0.3278
+            },
+            "formality_band": {
+              "unknown": 0.6722,
+              "fairly polished and careful": 0.0866,
+              "mixed academic and casual phrasing": 0.0857,
+              "informal and conversational": 0.0788,
+              "neutral everyday prose": 0.0767
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.2926,
+              "negative": 0.3507,
+              "positive": 0.3567
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1,
+              "assessment_design": 0.0962,
+              "clarity": 0.0971,
+              "difficulty": 0.1055,
+              "exam_fairness": 0.109,
+              "feedback_quality": 0.0904,
+              "grading_transparency": 0.0907,
+              "interest": 0.104,
+              "lecturer_quality": 0.1099,
+              "materials": 0.1096,
+              "organization": 0.1221,
+              "overall_experience": 0.1212,
+              "pacing": 0.1122,
+              "peer_interaction": 0.0933,
+              "practical_application": 0.0985,
+              "prerequisite_fit": 0.1061,
+              "relevance": 0.0872,
+              "support": 0.1014,
+              "tooling_usability": 0.1006,
+              "workload": 0.1035
+            },
+            "word_count_mean": 118.8
+          },
+          "control_matched": {
+            "n": 3441,
+            "row_score_mean": 0.2551,
+            "aspect_count": {
+              "2": 0.37,
+              "3": 0.3441,
+              "1": 0.286
+            },
+            "polarity_comp": {
+              "mixed": 0.5859,
+              "all_positive": 0.1915,
+              "all_neutral": 0.1421,
+              "all_negative": 0.0805
+            },
+            "length_band": {
+              "1": 0.3377,
+              "0": 0.3345,
+              "2": 0.3278
+            },
+            "formality_band": {
+              "unknown": 0.6722,
+              "fairly polished and careful": 0.0866,
+              "mixed academic and casual phrasing": 0.0857,
+              "informal and conversational": 0.0788,
+              "neutral everyday prose": 0.0767
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.3671,
+              "negative": 0.2532,
+              "positive": 0.3797
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1125,
+              "assessment_design": 0.0936,
+              "clarity": 0.1029,
+              "difficulty": 0.1058,
+              "exam_fairness": 0.1099,
+              "feedback_quality": 0.093,
+              "grading_transparency": 0.1096,
+              "interest": 0.1023,
+              "lecturer_quality": 0.1043,
+              "materials": 0.0962,
+              "organization": 0.0944,
+              "overall_experience": 0.0976,
+              "pacing": 0.1011,
+              "peer_interaction": 0.1087,
+              "practical_application": 0.091,
+              "prerequisite_fit": 0.1067,
+              "relevance": 0.1037,
+              "support": 0.1064,
+              "tooling_usability": 0.1099,
+              "workload": 0.1087
+            },
+            "word_count_mean": 115.5
+          }
+        },
+        "max_abs_marginal_gap": {
+          "aspect_count_pre": 0.1982,
+          "aspect_count_post": 0.0,
+          "polarity_comp_pre": 0.1928,
+          "polarity_comp_post": 0.0,
+          "length_band_pre": 0.1268,
+          "length_band_post": 0.0,
+          "formality_band_pre": 0.007,
+          "formality_band_post": 0.0,
+          "aspect_prevalence_pre": 0.0282,
+          "aspect_prevalence_post": 0.0277
+        },
+        "overlap9_survival": {
+          "retained_train_n": 2411,
+          "control_train_n": 2361
+        }
+      },
+      "common_gold_eval": {
+        "herath_overlap9_rows": 2829,
+        "retained": {
+          "detection_micro_f1": 0.4154,
+          "detection_micro_precision": 0.4693,
+          "detection_micro_recall": 0.3726,
+          "sentiment_mse_common_gold": 0.441191,
+          "n_common_gold_cells": 4289,
+          "n_train": 1929,
+          "n_calib": 241
+        },
+        "control": {
+          "detection_micro_f1": 0.3033,
+          "detection_micro_precision": 0.2129,
+          "detection_micro_recall": 0.5272,
+          "sentiment_mse_common_gold": 0.533232,
+          "n_common_gold_cells": 4289,
+          "n_train": 1889,
+          "n_calib": 236
+        },
+        "delta_sentiment_mse_retained_minus_control": -0.092041,
+        "delta_detection_f1_retained_minus_control": 0.1121
+      },
+      "win_definition": "filtering gain = retained sentiment MSE LOWER than covariate-matched control on the common gold set (negative delta_sentiment_mse)",
+      "elapsed_seconds": 323.4
+    }
+  },
+  {
+    "run_name": "seed23",
+    "seed": 23,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 328.6,
+    "headline": {
+      "experiment": "E2_covariate_matched_filtering",
+      "seed": 23,
+      "matching_seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_matched_pairs": 3441,
+      "covariate_balance": {
+        "pre_matching": {
+          "retained_full": {
+            "n": 5000,
+            "row_score_mean": 0.912,
+            "aspect_count": {
+              "1": 0.387,
+              "3": 0.3204,
+              "2": 0.2926
+            },
+            "polarity_comp": {
+              "mixed": 0.4676,
+              "all_negative": 0.2488,
+              "all_neutral": 0.142,
+              "all_positive": 0.1416
+            },
+            "length_band": {
+              "2": 0.3948,
+              "1": 0.3282,
+              "0": 0.277
+            },
+            "formality_band": {
+              "unknown": 0.6662,
+              "fairly polished and careful": 0.0854,
+              "mixed academic and casual phrasing": 0.0846,
+              "informal and conversational": 0.0842,
+              "neutral everyday prose": 0.0796
+            },
+            "polarity_token_marginal": {
+              "negative": 0.4323,
+              "positive": 0.3015,
+              "neutral": 0.2662
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.0978,
+              "assessment_design": 0.0966,
+              "clarity": 0.092,
+              "difficulty": 0.0986,
+              "exam_fairness": 0.1038,
+              "feedback_quality": 0.0876,
+              "grading_transparency": 0.0878,
+              "interest": 0.0968,
+              "lecturer_quality": 0.0992,
+              "materials": 0.1046,
+              "organization": 0.1134,
+              "overall_experience": 0.111,
+              "pacing": 0.1028,
+              "peer_interaction": 0.0832,
+              "practical_application": 0.092,
+              "prerequisite_fit": 0.0978,
+              "relevance": 0.081,
+              "support": 0.0958,
+              "tooling_usability": 0.0918,
+              "workload": 0.0998
+            },
+            "word_count_mean": 127.17
+          },
+          "control_pool_full": {
+            "n": 5000,
+            "row_score_mean": 0.2413,
+            "aspect_count": {
+              "2": 0.4908,
+              "3": 0.2898,
+              "1": 0.2194
+            },
+            "polarity_comp": {
+              "mixed": 0.6124,
+              "all_positive": 0.1744,
+              "all_neutral": 0.1572,
+              "all_negative": 0.056
+            },
+            "length_band": {
+              "0": 0.4038,
+              "1": 0.328,
+              "2": 0.2682
+            },
+            "formality_band": {
+              "unknown": 0.6732,
+              "neutral everyday prose": 0.0834,
+              "mixed academic and casual phrasing": 0.0832,
+              "informal and conversational": 0.0812,
+              "fairly polished and careful": 0.079
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.3953,
+              "negative": 0.2314,
+              "positive": 0.3734
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1126,
+              "assessment_design": 0.0992,
+              "clarity": 0.1056,
+              "difficulty": 0.1,
+              "exam_fairness": 0.1088,
+              "feedback_quality": 0.1006,
+              "grading_transparency": 0.116,
+              "interest": 0.097,
+              "lecturer_quality": 0.1032,
+              "materials": 0.0954,
+              "organization": 0.0946,
+              "overall_experience": 0.093,
+              "pacing": 0.1008,
+              "peer_interaction": 0.1106,
+              "practical_application": 0.1006,
+              "prerequisite_fit": 0.1044,
+              "relevance": 0.1056,
+              "support": 0.1052,
+              "tooling_usability": 0.1114,
+              "workload": 0.1058
+            },
+            "word_count_mean": 107.23
+          }
+        },
+        "post_matching": {
+          "retained_matched": {
+            "n": 3441,
+            "row_score_mean": 0.8986,
+            "aspect_count": {
+              "2": 0.37,
+              "3": 0.3441,
+              "1": 0.286
+            },
+            "polarity_comp": {
+              "mixed": 0.5859,
+              "all_positive": 0.1915,
+              "all_neutral": 0.1421,
+              "all_negative": 0.0805
+            },
+            "length_band": {
+              "1": 0.3377,
+              "0": 0.3345,
+              "2": 0.3278
+            },
+            "formality_band": {
+              "unknown": 0.6722,
+              "fairly polished and careful": 0.0866,
+              "mixed academic and casual phrasing": 0.0857,
+              "informal and conversational": 0.0788,
+              "neutral everyday prose": 0.0767
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.2926,
+              "negative": 0.3507,
+              "positive": 0.3567
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1,
+              "assessment_design": 0.0962,
+              "clarity": 0.0971,
+              "difficulty": 0.1055,
+              "exam_fairness": 0.109,
+              "feedback_quality": 0.0904,
+              "grading_transparency": 0.0907,
+              "interest": 0.104,
+              "lecturer_quality": 0.1099,
+              "materials": 0.1096,
+              "organization": 0.1221,
+              "overall_experience": 0.1212,
+              "pacing": 0.1122,
+              "peer_interaction": 0.0933,
+              "practical_application": 0.0985,
+              "prerequisite_fit": 0.1061,
+              "relevance": 0.0872,
+              "support": 0.1014,
+              "tooling_usability": 0.1006,
+              "workload": 0.1035
+            },
+            "word_count_mean": 118.8
+          },
+          "control_matched": {
+            "n": 3441,
+            "row_score_mean": 0.2551,
+            "aspect_count": {
+              "2": 0.37,
+              "3": 0.3441,
+              "1": 0.286
+            },
+            "polarity_comp": {
+              "mixed": 0.5859,
+              "all_positive": 0.1915,
+              "all_neutral": 0.1421,
+              "all_negative": 0.0805
+            },
+            "length_band": {
+              "1": 0.3377,
+              "0": 0.3345,
+              "2": 0.3278
+            },
+            "formality_band": {
+              "unknown": 0.6722,
+              "fairly polished and careful": 0.0866,
+              "mixed academic and casual phrasing": 0.0857,
+              "informal and conversational": 0.0788,
+              "neutral everyday prose": 0.0767
+            },
+            "polarity_token_marginal": {
+              "neutral": 0.3671,
+              "negative": 0.2532,
+              "positive": 0.3797
+            },
+            "aspect_prevalence": {
+              "accessibility": 0.1125,
+              "assessment_design": 0.0936,
+              "clarity": 0.1029,
+              "difficulty": 0.1058,
+              "exam_fairness": 0.1099,
+              "feedback_quality": 0.093,
+              "grading_transparency": 0.1096,
+              "interest": 0.1023,
+              "lecturer_quality": 0.1043,
+              "materials": 0.0962,
+              "organization": 0.0944,
+              "overall_experience": 0.0976,
+              "pacing": 0.1011,
+              "peer_interaction": 0.1087,
+              "practical_application": 0.091,
+              "prerequisite_fit": 0.1067,
+              "relevance": 0.1037,
+              "support": 0.1064,
+              "tooling_usability": 0.1099,
+              "workload": 0.1087
+            },
+            "word_count_mean": 115.5
+          }
+        },
+        "max_abs_marginal_gap": {
+          "aspect_count_pre": 0.1982,
+          "aspect_count_post": 0.0,
+          "polarity_comp_pre": 0.1928,
+          "polarity_comp_post": 0.0,
+          "length_band_pre": 0.1268,
+          "length_band_post": 0.0,
+          "formality_band_pre": 0.007,
+          "formality_band_post": 0.0,
+          "aspect_prevalence_pre": 0.0282,
+          "aspect_prevalence_post": 0.0277
+        },
+        "overlap9_survival": {
+          "retained_train_n": 2411,
+          "control_train_n": 2361
+        }
+      },
+      "common_gold_eval": {
+        "herath_overlap9_rows": 2829,
+        "retained": {
+          "detection_micro_f1": 0.3904,
+          "detection_micro_precision": 0.4154,
+          "detection_micro_recall": 0.3682,
+          "sentiment_mse_common_gold": 0.410708,
+          "n_common_gold_cells": 4289,
+          "n_train": 1929,
+          "n_calib": 241
+        },
+        "control": {
+          "detection_micro_f1": 0.3574,
+          "detection_micro_precision": 0.2555,
+          "detection_micro_recall": 0.595,
+          "sentiment_mse_common_gold": 0.497346,
+          "n_common_gold_cells": 4289,
+          "n_train": 1889,
+          "n_calib": 236
+        },
+        "delta_sentiment_mse_retained_minus_control": -0.086638,
+        "delta_detection_f1_retained_minus_control": 0.033
+      },
+      "win_definition": "filtering gain = retained sentiment MSE LOWER than covariate-matched control on the common gold set (negative delta_sentiment_mse)",
+      "elapsed_seconds": 315.6
+    }
+  }
+]

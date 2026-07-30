@@ -1,0 +1,44 @@
+{
+  "experiment": "multiseed_synthetic_to_real_transfer",
+  "approach": "distilbert-base-uncased",
+  "seed": 17,
+  "n_overlap_aspects": 9,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_synth_overlap": 6867,
+  "n_train": 5495,
+  "n_calib": 686,
+  "n_internal_test": 686,
+  "n_real_herath": 2829,
+  "config": {
+    "max_len": 192,
+    "batch_size": 8,
+    "lr": 3e-05,
+    "epochs_detection": 3,
+    "epochs_sentiment": 3
+  },
+  "metrics": {
+    "internal_synthetic_test": {
+      "micro_f1": 0.38862102217936356,
+      "macro_f1": 0.42827917201250837,
+      "micro_recall": 0.43995633187772926,
+      "sentiment_mse": 0.5020812097821997
+    },
+    "external_real_herath": {
+      "micro_f1": 0.2822249589490969,
+      "macro_f1": 0.21872705275872406,
+      "micro_recall": 0.32058754954534857,
+      "sentiment_mse": 0.4391740165754829
+    }
+  },
+  "elapsed_seconds": 273.4
+}

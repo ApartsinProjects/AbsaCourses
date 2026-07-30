@@ -1,0 +1,95 @@
+{
+  "experiment": "W5_heldout_generator_transfer",
+  "seed": 42,
+  "n_aspects": 20,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "clarity",
+    "difficulty",
+    "exam_fairness",
+    "feedback_quality",
+    "grading_transparency",
+    "interest",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "pacing",
+    "peer_interaction",
+    "practical_application",
+    "prerequisite_fit",
+    "relevance",
+    "support",
+    "tooling_usability",
+    "workload"
+  ],
+  "shared_aspect_note": "all 5 corpora share the identical 20-aspect schema; shared = full 20",
+  "cells": [
+    {
+      "train_gen": "gpt",
+      "test_gen": "gpt_indomain_testsplit",
+      "micro_f1": 0.2796092796092796,
+      "micro_precision": 0.2018065653227583,
+      "micro_recall": 0.4550422255340288,
+      "n_rows": 1000
+    },
+    {
+      "train_gen": "gpt",
+      "test_gen": "gpt5nano",
+      "micro_f1": 0.39704329461457233,
+      "micro_precision": 0.2974683544303797,
+      "micro_recall": 0.5968253968253968,
+      "n_rows": 150
+    },
+    {
+      "train_gen": "gpt",
+      "test_gen": "gemini_flash",
+      "micro_f1": 0.2387218045112782,
+      "micro_precision": 0.16955941255006676,
+      "micro_recall": 0.4031746031746032,
+      "n_rows": 150
+    },
+    {
+      "train_gen": "gpt",
+      "test_gen": "glm_46",
+      "micro_f1": 0.32564102564102565,
+      "micro_precision": 0.24007561436672967,
+      "micro_recall": 0.5059760956175299,
+      "n_rows": 119
+    },
+    {
+      "train_gen": "gpt",
+      "test_gen": "llama33_70b",
+      "micro_f1": 0.3206997084548105,
+      "micro_precision": 0.23109243697478993,
+      "micro_recall": 0.5238095238095238,
+      "n_rows": 150
+    },
+    {
+      "train_gen": "gemini_flash",
+      "test_gen": "gpt_testsplit",
+      "micro_f1": 0.1837015869775986,
+      "micro_precision": 0.10236578707916287,
+      "micro_recall": 0.8941877794336811,
+      "n_rows": 1000
+    },
+    {
+      "train_gen": "glm_46",
+      "test_gen": "gpt_testsplit",
+      "micro_f1": 0.18239722061378114,
+      "micro_precision": 0.10101010101010101,
+      "micro_recall": 0.9388971684053651,
+      "n_rows": 1000
+    },
+    {
+      "train_gen": "llama33_70b",
+      "test_gen": "gpt_testsplit",
+      "micro_f1": 0.18305084745762712,
+      "micro_precision": 0.10226080876354737,
+      "micro_recall": 0.8718330849478391,
+      "n_rows": 1000
+    }
+  ],
+  "elapsed_seconds": 396.4
+}

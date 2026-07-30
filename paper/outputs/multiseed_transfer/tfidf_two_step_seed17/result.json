@@ -1,0 +1,44 @@
+{
+  "experiment": "multiseed_synthetic_to_real_transfer",
+  "approach": "tfidf_two_step",
+  "seed": 17,
+  "n_overlap_aspects": 9,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_synth_overlap": 6867,
+  "n_train": 5495,
+  "n_calib": 686,
+  "n_internal_test": 686,
+  "n_real_herath": 2829,
+  "config": {
+    "max_len": 192,
+    "batch_size": 8,
+    "lr": 3e-05,
+    "epochs_detection": 3,
+    "epochs_sentiment": 3
+  },
+  "metrics": {
+    "internal_synthetic_test": {
+      "micro_f1": 0.33066666666666666,
+      "macro_f1": 0.36913888344836576,
+      "micro_recall": 0.4737991266375546,
+      "sentiment_mse": 0.6609499951678655
+    },
+    "external_real_herath": {
+      "micro_f1": 0.32765036780614454,
+      "macro_f1": 0.22580489568993484,
+      "micro_recall": 0.44136162275588714,
+      "sentiment_mse": 0.6671446498062854
+    }
+  },
+  "elapsed_seconds": 5.5
+}

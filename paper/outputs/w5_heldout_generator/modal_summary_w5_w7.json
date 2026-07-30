@@ -1,0 +1,495 @@
+[
+  {
+    "run_name": "W5_seed42",
+    "experiment": "W5",
+    "seed": 42,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 403.5,
+    "headline": {
+      "experiment": "W5_heldout_generator_transfer",
+      "seed": 42,
+      "n_aspects": 20,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "clarity",
+        "difficulty",
+        "exam_fairness",
+        "feedback_quality",
+        "grading_transparency",
+        "interest",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "pacing",
+        "peer_interaction",
+        "practical_application",
+        "prerequisite_fit",
+        "relevance",
+        "support",
+        "tooling_usability",
+        "workload"
+      ],
+      "shared_aspect_note": "all 5 corpora share the identical 20-aspect schema; shared = full 20",
+      "cells": [
+        {
+          "train_gen": "gpt",
+          "test_gen": "gpt_indomain_testsplit",
+          "micro_f1": 0.2796092796092796,
+          "micro_precision": 0.2018065653227583,
+          "micro_recall": 0.4550422255340288,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "gpt5nano",
+          "micro_f1": 0.39704329461457233,
+          "micro_precision": 0.2974683544303797,
+          "micro_recall": 0.5968253968253968,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "gemini_flash",
+          "micro_f1": 0.2387218045112782,
+          "micro_precision": 0.16955941255006676,
+          "micro_recall": 0.4031746031746032,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "glm_46",
+          "micro_f1": 0.32564102564102565,
+          "micro_precision": 0.24007561436672967,
+          "micro_recall": 0.5059760956175299,
+          "n_rows": 119
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "llama33_70b",
+          "micro_f1": 0.3206997084548105,
+          "micro_precision": 0.23109243697478993,
+          "micro_recall": 0.5238095238095238,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gemini_flash",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.1837015869775986,
+          "micro_precision": 0.10236578707916287,
+          "micro_recall": 0.8941877794336811,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "glm_46",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.18239722061378114,
+          "micro_precision": 0.10101010101010101,
+          "micro_recall": 0.9388971684053651,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "llama33_70b",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.18305084745762712,
+          "micro_precision": 0.10226080876354737,
+          "micro_recall": 0.8718330849478391,
+          "n_rows": 1000
+        }
+      ],
+      "elapsed_seconds": 396.4
+    }
+  },
+  {
+    "run_name": "W5_seed17",
+    "experiment": "W5",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 330.4,
+    "headline": {
+      "experiment": "W5_heldout_generator_transfer",
+      "seed": 17,
+      "n_aspects": 20,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "clarity",
+        "difficulty",
+        "exam_fairness",
+        "feedback_quality",
+        "grading_transparency",
+        "interest",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "pacing",
+        "peer_interaction",
+        "practical_application",
+        "prerequisite_fit",
+        "relevance",
+        "support",
+        "tooling_usability",
+        "workload"
+      ],
+      "shared_aspect_note": "all 5 corpora share the identical 20-aspect schema; shared = full 20",
+      "cells": [
+        {
+          "train_gen": "gpt",
+          "test_gen": "gpt_indomain_testsplit",
+          "micro_f1": 0.2728391264226392,
+          "micro_precision": 0.19790272199910755,
+          "micro_recall": 0.4391089108910891,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "gpt5nano",
+          "micro_f1": 0.34237995824634654,
+          "micro_precision": 0.25505443234836706,
+          "micro_recall": 0.5206349206349207,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "gemini_flash",
+          "micro_f1": 0.2144927536231884,
+          "micro_precision": 0.15416666666666667,
+          "micro_recall": 0.3523809523809524,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "glm_46",
+          "micro_f1": 0.29591836734693877,
+          "micro_precision": 0.2176360225140713,
+          "micro_recall": 0.46215139442231074,
+          "n_rows": 119
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "llama33_70b",
+          "micro_f1": 0.3053722902921772,
+          "micro_precision": 0.21715817694369974,
+          "micro_recall": 0.5142857142857142,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gemini_flash",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.18241779877928727,
+          "micro_precision": 0.10127896808045475,
+          "micro_recall": 0.9173267326732674,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "glm_46",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.1796580057739285,
+          "micro_precision": 0.10117558779389695,
+          "micro_recall": 0.800990099009901,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "llama33_70b",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.18360655737704917,
+          "micro_precision": 0.10110330992978937,
+          "micro_recall": 0.998019801980198,
+          "n_rows": 1000
+        }
+      ],
+      "elapsed_seconds": 320.7
+    }
+  },
+  {
+    "run_name": "W5_seed23",
+    "experiment": "W5",
+    "seed": 23,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 331.3,
+    "headline": {
+      "experiment": "W5_heldout_generator_transfer",
+      "seed": 23,
+      "n_aspects": 20,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "clarity",
+        "difficulty",
+        "exam_fairness",
+        "feedback_quality",
+        "grading_transparency",
+        "interest",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "pacing",
+        "peer_interaction",
+        "practical_application",
+        "prerequisite_fit",
+        "relevance",
+        "support",
+        "tooling_usability",
+        "workload"
+      ],
+      "shared_aspect_note": "all 5 corpora share the identical 20-aspect schema; shared = full 20",
+      "cells": [
+        {
+          "train_gen": "gpt",
+          "test_gen": "gpt_indomain_testsplit",
+          "micro_f1": 0.2771571960498624,
+          "micro_precision": 0.20414977343191032,
+          "micro_recall": 0.4314516129032258,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "gpt5nano",
+          "micro_f1": 0.38907103825136613,
+          "micro_precision": 0.2966666666666667,
+          "micro_recall": 0.5650793650793651,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "gemini_flash",
+          "micro_f1": 0.24609375,
+          "micro_precision": 0.1777150916784203,
+          "micro_recall": 0.4,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "glm_46",
+          "micro_f1": 0.34214186369958277,
+          "micro_precision": 0.26282051282051283,
+          "micro_recall": 0.4900398406374502,
+          "n_rows": 119
+        },
+        {
+          "train_gen": "gpt",
+          "test_gen": "llama33_70b",
+          "micro_f1": 0.3285123966942149,
+          "micro_precision": 0.2434915773353752,
+          "micro_recall": 0.5047619047619047,
+          "n_rows": 150
+        },
+        {
+          "train_gen": "gemini_flash",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.17987295218990304,
+          "micro_precision": 0.10111514847763438,
+          "micro_recall": 0.813508064516129,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "glm_46",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.1784037558685446,
+          "micro_precision": 0.09867751780264497,
+          "micro_recall": 0.9289314516129032,
+          "n_rows": 1000
+        },
+        {
+          "train_gen": "llama33_70b",
+          "test_gen": "gpt_testsplit",
+          "micro_f1": 0.18186332936034963,
+          "micro_precision": 0.10087042750110181,
+          "micro_recall": 0.922883064516129,
+          "n_rows": 1000
+        }
+      ],
+      "elapsed_seconds": 321.1
+    }
+  },
+  {
+    "run_name": "W7_seed42",
+    "experiment": "W7",
+    "seed": 42,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 970.7,
+    "headline": {
+      "experiment": "W7_audit_quartile_dose_response",
+      "seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_herath": 2829,
+      "matched_bucket_size": 1373,
+      "sanity_gate": {
+        "full_corpus_herath_micro_f1": 0.4029887920298879,
+        "expected_range": "0.40-0.48 (paper synthetic-only transfer ref 0.4593)",
+        "passed": true
+      },
+      "arms": {
+        "full": {
+          "n_train": 5495,
+          "internal_micro_f1": 0.4183070866141732,
+          "internal_sentiment_mse": 0.39905513080240995,
+          "herath_micro_f1": 0.4029887920298879,
+          "herath_sentiment_mse": 0.36965681539251877
+        },
+        "Q1": {
+          "n_train": 1373,
+          "internal_micro_f1": 0.28544378698224854,
+          "internal_sentiment_mse": 0.7435854449101378,
+          "herath_micro_f1": 0.24655302080721986,
+          "herath_sentiment_mse": 0.6796670139801976,
+          "row_score_min": 0.0,
+          "row_score_mean": 0.08593459577567371,
+          "row_score_max": 0.3333
+        },
+        "Q2": {
+          "n_train": 1373,
+          "internal_micro_f1": 0.3347107438016529,
+          "internal_sentiment_mse": 0.6773920798613339,
+          "herath_micro_f1": 0.2833864158210503,
+          "herath_sentiment_mse": 0.5928387103733311,
+          "row_score_min": 0.3333,
+          "row_score_mean": 0.4496136198106337,
+          "row_score_max": 0.5
+        },
+        "Q3": {
+          "n_train": 1373,
+          "internal_micro_f1": 0.3828470380194518,
+          "internal_sentiment_mse": 0.5285027662878844,
+          "herath_micro_f1": 0.37530072173215717,
+          "herath_sentiment_mse": 0.5505031938162822,
+          "row_score_min": 0.5,
+          "row_score_mean": 0.770230080116533,
+          "row_score_max": 1.0
+        },
+        "Q4": {
+          "n_train": 1373,
+          "internal_micro_f1": 0.4106596767147226,
+          "internal_sentiment_mse": 0.5284910888452986,
+          "herath_micro_f1": 0.27645245976486704,
+          "herath_sentiment_mse": 0.39851087229291265,
+          "row_score_min": 1.0,
+          "row_score_mean": 1.0,
+          "row_score_max": 1.0
+        }
+      },
+      "internal_dose_response_Q1_to_Q4": [
+        0.28544378698224854,
+        0.3347107438016529,
+        0.3828470380194518,
+        0.4106596767147226
+      ],
+      "herath_dose_response_Q1_to_Q4": [
+        0.24655302080721986,
+        0.2833864158210503,
+        0.37530072173215717,
+        0.27645245976486704
+      ],
+      "elapsed_seconds": 959.0
+    }
+  },
+  {
+    "run_name": "W7_seed17",
+    "experiment": "W7",
+    "seed": 17,
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 950.6,
+    "headline": {
+      "experiment": "W7_audit_quartile_dose_response",
+      "seed": 17,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_herath": 2829,
+      "matched_bucket_size": 1373,
+      "sanity_gate": {
+        "full_corpus_herath_micro_f1": 0.3309438470728793,
+        "expected_range": "0.40-0.48 (paper synthetic-only transfer ref 0.4593)",
+        "passed": false
+      },
+      "arms": {
+        "full": {
+          "n_train": 5495,
+          "internal_micro_f1": 0.3880037488284911,
+          "internal_sentiment_mse": 0.45512906721254953,
+          "herath_micro_f1": 0.3309438470728793,
+          "herath_sentiment_mse": 0.34584507096269784
+        },
+        "Q1": {
+          "n_train": 1373,
+          "internal_micro_f1": 0.2766595289079229,
+          "internal_sentiment_mse": 0.752633322899366,
+          "herath_micro_f1": 0.22832938328879027,
+          "herath_sentiment_mse": 0.6231237561624209,
+          "row_score_min": 0.0,
+          "row_score_mean": 0.08836212672978878,
+          "row_score_max": 0.3333
+        },
+        "Q2": {
+          "n_train": 1373,
+          "internal_micro_f1": 0.3408333333333333,
+          "internal_sentiment_mse": 0.6558065009431121,
+          "herath_micro_f1": 0.2923554585885709,
+          "herath_sentiment_mse": 0.45124960448446244,
+          "row_score_min": 0.3333,
+          "row_score_mean": 0.45398448652585577,
+          "row_score_max": 0.5
+        },
+        "Q3": {
+          "n_train": 1373,
+          "internal_micro_f1": 0.3844328429046037,
+          "internal_sentiment_mse": 0.6216621334797956,
+          "herath_micro_f1": 0.2925075388540942,
+          "herath_sentiment_mse": 0.5389940237012324,
+          "row_score_min": 0.5,
+          "row_score_mean": 0.7834617625637289,
+          "row_score_max": 1.0
+        },
+        "Q4": {
+          "n_train": 1373,
+          "internal_micro_f1": 0.3805567095970087,
+          "internal_sentiment_mse": 0.5615213434036525,
+          "herath_micro_f1": 0.5093243656374198,
+          "herath_sentiment_mse": 0.3376769519785806,
+          "row_score_min": 1.0,
+          "row_score_mean": 1.0,
+          "row_score_max": 1.0
+        }
+      },
+      "internal_dose_response_Q1_to_Q4": [
+        0.2766595289079229,
+        0.3408333333333333,
+        0.3844328429046037,
+        0.3805567095970087
+      ],
+      "herath_dose_response_Q1_to_Q4": [
+        0.22832938328879027,
+        0.2923554585885709,
+        0.2925075388540942,
+        0.5093243656374198
+      ],
+      "elapsed_seconds": 939.1
+    }
+  }
+]

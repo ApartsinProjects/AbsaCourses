@@ -1,0 +1,181 @@
+=== stdout ===
+[2026-07-30T10:31:22.190891+00:00] [W7 seed=17] device=cuda
+[2026-07-30T10:31:23.754655+00:00] [W7] synthetic rows with audit score = 10000
+[2026-07-30T10:31:24.212428+00:00] [W7] synthetic rows with >=1 of the 9 overlap aspects = 6867
+[2026-07-30T10:31:24.215226+00:00] [W7] train_pool=5495 calib=686 internal_test=686
+[2026-07-30T10:31:27.766667+00:00] [W7] Herath rows=2829 aspects=['accessibility', 'assessment_design', 'exam_fairness', 'grading_transparency', 'lecturer_quality', 'materials', 'organization', 'overall_experience', 'workload']
+[2026-07-30T10:31:27.774334+00:00] [W7] Q1: n=1373 row_score[min=0.000 mean=0.088 max=0.333]
+[2026-07-30T10:31:27.774817+00:00] [W7] Q2: n=1373 row_score[min=0.333 mean=0.454 max=0.500]
+[2026-07-30T10:31:27.775027+00:00] [W7] Q3: n=1373 row_score[min=0.500 mean=0.783 max=1.000]
+[2026-07-30T10:31:27.775193+00:00] [W7] Q4: n=1373 row_score[min=1.000 mean=1.000 max=1.000]
+[2026-07-30T10:31:27.775240+00:00] [W7] ===== FULL arm (sanity gate) =====
+[2026-07-30T10:31:27.776253+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:31:38.449679+00:00] [bert-base-uncased] detection training start: train_rows=5495 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:32:41.406583+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.0843 val_micro_f1=0.3988 val_macro_f1=0.4265 best_macro_f1=0.4265 patience=0 epoch_seconds=63.0
+[2026-07-30T10:33:43.638245+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=0.9672 val_micro_f1=0.3788 val_macro_f1=0.4022 best_macro_f1=0.4265 patience=0 epoch_seconds=62.0
+[2026-07-30T10:34:45.615875+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.9015 val_micro_f1=0.3952 val_macro_f1=0.4063 best_macro_f1=0.4265 patience=1 epoch_seconds=62.0
+[2026-07-30T10:34:45.616000+00:00] [bert-base-uncased] detection early stop at epoch 3
+[2026-07-30T10:34:45.661189+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.4265
+[2026-07-30T10:34:45.661690+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-07-30T10:34:45.664252+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:34:46.500995+00:00] [bert-base-uncased] sentiment training start: train_rows=5495 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:35:48.465042+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.6590 val_mse=0.5862 best_val_mse=0.5862 patience=0 epoch_seconds=62.0
+[2026-07-30T10:36:50.501615+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.5067 val_mse=0.5129 best_val_mse=0.5129 patience=0 epoch_seconds=61.9
+[2026-07-30T10:37:52.669714+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.3732 val_mse=0.4784 best_val_mse=0.4784 patience=0 epoch_seconds=61.9
+[2026-07-30T10:37:52.784182+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.4784
+[2026-07-30T10:37:52.784756+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[2026-07-30T10:38:17.084936+00:00] [W7] FULL herath_micro_f1=0.3309 (sanity gate ~0.40-0.48; paper ref 0.4593)
+[2026-07-30T10:38:17.085004+00:00] [W7] ===== Q1 arm =====
+[2026-07-30T10:38:17.087641+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:38:18.805248+00:00] [bert-base-uncased] detection training start: train_rows=1373 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:38:36.057348+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.1939 val_micro_f1=0.2434 val_macro_f1=0.1651 best_macro_f1=0.1651 patience=0 epoch_seconds=17.3
+[2026-07-30T10:38:53.326096+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.1620 val_micro_f1=0.2675 val_macro_f1=0.2799 best_macro_f1=0.2799 patience=0 epoch_seconds=17.2
+[2026-07-30T10:39:10.685768+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.1007 val_micro_f1=0.2704 val_macro_f1=0.2405 best_macro_f1=0.2799 patience=0 epoch_seconds=17.2
+[2026-07-30T10:39:10.730964+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.2799
+[2026-07-30T10:39:10.731555+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-07-30T10:39:10.735885+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:39:11.631502+00:00] [bert-base-uncased] sentiment training start: train_rows=1373 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:39:28.750859+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.5073 val_mse=0.7611 best_val_mse=0.7611 patience=0 epoch_seconds=17.1
+[2026-07-30T10:39:45.835531+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.4751 val_mse=0.7668 best_val_mse=0.7611 patience=0 epoch_seconds=17.0
+[2026-07-30T10:40:02.872480+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.4017 val_mse=0.8123 best_val_mse=0.7611 patience=1 epoch_seconds=17.0
+[2026-07-30T10:40:02.872607+00:00] [bert-base-uncased] sentiment early stop at epoch 3
+[2026-07-30T10:40:02.917961+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.7611
+[2026-07-30T10:40:02.918588+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[2026-07-30T10:40:26.965642+00:00] [W7] Q1 internal_micro_f1=0.2767 herath_micro_f1=0.2283 internal_mse=0.7526
+[2026-07-30T10:40:26.965719+00:00] [W7] ===== Q2 arm =====
+[2026-07-30T10:40:26.966497+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:40:28.621479+00:00] [bert-base-uncased] detection training start: train_rows=1373 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:40:45.742755+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.1820 val_micro_f1=0.2497 val_macro_f1=0.2204 best_macro_f1=0.2204 patience=0 epoch_seconds=17.1
+[2026-07-30T10:41:02.924033+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.1230 val_micro_f1=0.3222 val_macro_f1=0.3439 best_macro_f1=0.3439 patience=0 epoch_seconds=17.1
+[2026-07-30T10:41:20.186341+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=1.0059 val_micro_f1=0.3320 val_macro_f1=0.3358 best_macro_f1=0.3439 patience=0 epoch_seconds=17.1
+[2026-07-30T10:41:20.232434+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.3439
+[2026-07-30T10:41:20.232940+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-07-30T10:41:20.235219+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:41:21.067764+00:00] [bert-base-uncased] sentiment training start: train_rows=1373 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:41:38.352600+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.6955 val_mse=0.7026 best_val_mse=0.7026 patience=0 epoch_seconds=17.3
+[2026-07-30T10:41:55.686852+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.6211 val_mse=0.6931 best_val_mse=0.6931 patience=0 epoch_seconds=17.3
+[2026-07-30T10:42:13.115022+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.4664 val_mse=0.6151 best_val_mse=0.6151 patience=0 epoch_seconds=17.2
+[2026-07-30T10:42:13.231913+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.6151
+[2026-07-30T10:42:13.232451+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[2026-07-30T10:42:37.488321+00:00] [W7] Q2 internal_micro_f1=0.3408 herath_micro_f1=0.2924 internal_mse=0.6558
+[2026-07-30T10:42:37.488387+00:00] [W7] ===== Q3 arm =====
+[2026-07-30T10:42:37.489003+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:42:39.230490+00:00] [bert-base-uncased] detection training start: train_rows=1373 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:42:56.597667+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.1537 val_micro_f1=0.2865 val_macro_f1=0.2820 best_macro_f1=0.2820 patience=0 epoch_seconds=17.4
+[2026-07-30T10:43:14.068970+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=1.0169 val_micro_f1=0.3275 val_macro_f1=0.3572 best_macro_f1=0.3572 patience=0 epoch_seconds=17.4
+[2026-07-30T10:43:31.649262+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.8885 val_micro_f1=0.3676 val_macro_f1=0.4024 best_macro_f1=0.4024 patience=0 epoch_seconds=17.4
+[2026-07-30T10:43:31.766078+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.4024
+[2026-07-30T10:43:31.766645+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-07-30T10:43:31.768989+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:43:32.647013+00:00] [bert-base-uncased] sentiment training start: train_rows=1373 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:43:50.066153+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.7425 val_mse=0.6814 best_val_mse=0.6814 patience=0 epoch_seconds=17.4
+[2026-07-30T10:44:07.558005+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.6607 val_mse=0.5918 best_val_mse=0.5918 patience=0 epoch_seconds=17.4
+[2026-07-30T10:44:25.190401+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.4271 val_mse=0.6517 best_val_mse=0.5918 patience=0 epoch_seconds=17.4
+[2026-07-30T10:44:25.235964+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.5918
+[2026-07-30T10:44:25.236746+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[2026-07-30T10:44:49.717120+00:00] [W7] Q3 internal_micro_f1=0.3844 herath_micro_f1=0.2925 internal_mse=0.6217
+[2026-07-30T10:44:49.717195+00:00] [W7] ===== Q4 arm =====
+[2026-07-30T10:44:49.718110+00:00] [bert-base-uncased:detection] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:44:51.608519+00:00] [bert-base-uncased] detection training start: train_rows=1373 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:45:08.923894+00:00] [bert-base-uncased] detection epoch 1/3: train_loss=1.1948 val_micro_f1=0.2676 val_macro_f1=0.2636 best_macro_f1=0.2636 patience=0 epoch_seconds=17.3
+[2026-07-30T10:45:26.377249+00:00] [bert-base-uncased] detection epoch 2/3: train_loss=0.9772 val_micro_f1=0.3637 val_macro_f1=0.3989 best_macro_f1=0.3989 patience=0 epoch_seconds=17.3
+[2026-07-30T10:45:44.026044+00:00] [bert-base-uncased] detection epoch 3/3: train_loss=0.8000 val_micro_f1=0.3713 val_macro_f1=0.3892 best_macro_f1=0.3989 patience=0 epoch_seconds=17.3
+[2026-07-30T10:45:44.076062+00:00] [bert-base-uncased] detection training complete: best_macro_f1=0.3989
+[2026-07-30T10:45:44.076593+00:00] [bert-base-uncased:detection] released GPU training lock
+[2026-07-30T10:45:44.080224+00:00] [bert-base-uncased:sentiment] acquired GPU training lock -> /app/paper/benchmark_outputs/gpu_training.lock
+[2026-07-30T10:45:44.924230+00:00] [bert-base-uncased] sentiment training start: train_rows=1373 val_rows=686 epochs=3 batch_size=8 device=cuda
+[2026-07-30T10:46:02.245704+00:00] [bert-base-uncased] sentiment epoch 1/3: train_loss=0.7162 val_mse=0.7242 best_val_mse=0.7242 patience=0 epoch_seconds=17.3
+[2026-07-30T10:46:19.615969+00:00] [bert-base-uncased] sentiment epoch 2/3: train_loss=0.5682 val_mse=0.6511 best_val_mse=0.6511 patience=0 epoch_seconds=17.3
+[2026-07-30T10:46:37.066960+00:00] [bert-base-uncased] sentiment epoch 3/3: train_loss=0.3723 val_mse=0.6223 best_val_mse=0.6223 patience=0 epoch_seconds=17.3
+[2026-07-30T10:46:37.160066+00:00] [bert-base-uncased] sentiment training complete: best_val_mse=0.6223
+[2026-07-30T10:46:37.160529+00:00] [bert-base-uncased:sentiment] released GPU training lock
+[2026-07-30T10:47:01.285507+00:00] [W7] Q4 internal_micro_f1=0.3806 herath_micro_f1=0.5093 internal_mse=0.5615
+RESULT_JSON_BEGIN
+{
+  "experiment": "W7_audit_quartile_dose_response",
+  "seed": 17,
+  "aspects": [
+    "accessibility",
+    "assessment_design",
+    "exam_fairness",
+    "grading_transparency",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "n_herath": 2829,
+  "matched_bucket_size": 1373,
+  "sanity_gate": {
+    "full_corpus_herath_micro_f1": 0.3309438470728793,
+    "expected_range": "0.40-0.48 (paper synthetic-only transfer ref 0.4593)",
+    "passed": false
+  },
+  "arms": {
+    "full": {
+      "n_train": 5495,
+      "internal_micro_f1": 0.3880037488284911,
+      "internal_sentiment_mse": 0.45512906721254953,
+      "herath_micro_f1": 0.3309438470728793,
+      "herath_sentiment_mse": 0.34584507096269784
+    },
+    "Q1": {
+      "n_train": 1373,
+      "internal_micro_f1": 0.2766595289079229,
+      "internal_sentiment_mse": 0.752633322899366,
+      "herath_micro_f1": 0.22832938328879027,
+      "herath_sentiment_mse": 0.6231237561624209,
+      "row_score_min": 0.0,
+      "row_score_mean": 0.08836212672978878,
+      "row_score_max": 0.3333
+    },
+    "Q2": {
+      "n_train": 1373,
+      "internal_micro_f1": 0.3408333333333333,
+      "internal_sentiment_mse": 0.6558065009431121,
+      "herath_micro_f1": 0.2923554585885709,
+      "herath_sentiment_mse": 0.45124960448446244,
+      "row_score_min": 0.3333,
+      "row_score_mean": 0.45398448652585577,
+      "row_score_max": 0.5
+    },
+    "Q3": {
+      "n_train": 1373,
+      "internal_micro_f1": 0.3844328429046037,
+      "internal_sentiment_mse": 0.6216621334797956,
+      "herath_micro_f1": 0.2925075388540942,
+      "herath_sentiment_mse": 0.5389940237012324,
+      "row_score_min": 0.5,
+      "row_score_mean": 0.7834617625637289,
+      "row_score_max": 1.0
+    },
+    "Q4": {
+      "n_train": 1373,
+      "internal_micro_f1": 0.3805567095970087,
+      "internal_sentiment_mse": 0.5615213434036525,
+      "herath_micro_f1": 0.5093243656374198,
+      "herath_sentiment_mse": 0.3376769519785806,
+      "row_score_min": 1.0,
+      "row_score_mean": 1.0,
+      "row_score_max": 1.0
+    }
+  },
+  "internal_dose_response_Q1_to_Q4": [
+    0.2766595289079229,
+    0.3408333333333333,
+    0.3844328429046037,
+    0.3805567095970087
+  ],
+  "herath_dose_response_Q1_to_Q4": [
+    0.22832938328879027,
+    0.2923554585885709,
+    0.2925075388540942,
+    0.5093243656374198
+  ],
+  "elapsed_seconds": 939.1
+}
+RESULT_JSON_END
+
+=== stderr ===
+
