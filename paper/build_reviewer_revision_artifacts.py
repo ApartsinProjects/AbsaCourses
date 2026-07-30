@@ -99,10 +99,10 @@ def plot_overlap_gap() -> None:
     synth = [float(df[(df["approach"] == a) & (df["eval_split"] == "synthetic_overlap_test")]["micro_f1"].iloc[0]) for a in approaches]
     real = [float(df[(df["approach"] == a) & (df["eval_split"] == "real_herath_mapped")]["micro_f1"].iloc[0]) for a in approaches]
 
-    fig, ax = plt.subplots(figsize=(8.8, 4.8))
+    fig, ax = plt.subplots(figsize=(11.0, 5.0))
     ax.bar(x - width / 2, synth, width=width, color="#315c88", label="synthetic overlap test")
     ax.bar(x + width / 2, real, width=width, color="#b5742d", label="mapped real test")
-    ax.set_xticks(x, approaches, rotation=12, ha="right")
+    ax.set_xticks(x, approaches, rotation=0, ha="center")
     ax.set_ylim(0.0, max(max(synth), max(real)) + 0.12)
     ax.set_ylabel("Micro-F1")
     for xpos, val in zip(x - width / 2, synth):

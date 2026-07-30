@@ -107,7 +107,7 @@ def plot_real_transfer_overview(summary: pd.DataFrame, overlap: pd.DataFrame) ->
     y_overlap = np.arange(len(overlap_sorted))
     y_results = np.arange(len(results))
 
-    fig, axes = plt.subplots(1, 3, figsize=(13.2, 4.8))
+    fig, axes = plt.subplots(1, 3, figsize=(15.5, 5.6))
 
     axes[0].barh(y_overlap, overlap_sorted["review_count"], color="#4f8f5b")
     axes[0].set_yticks(y_overlap, overlap_sorted["aspect"])
