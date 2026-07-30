@@ -1,0 +1,432 @@
+C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:45: DeprecationWarning: 'asyncio.WindowsSelectorEventLoopPolicy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:45: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+✓ Initialized. View run at 
+https://modal.com/apps/llmcourse/main/ap-kvrKVPg2ePhD63KgyyCcj0
+Building image im-AhgEIgnCbnUBV2eEHVji7t
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 4.40s
+
+Built image im-AhgEIgnCbnUBV2eEHVji7t in 6.11s
+
+
+Building image im-IATM7RpmnCFQ0s5WpUdKCt
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 1.98s
+
+Built image im-IATM7RpmnCFQ0s5WpUdKCt in 4.31s
+
+
+Building image im-geKnSFVFiRzSyHM9Hzxpfz
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 2.33s
+
+Built image im-geKnSFVFiRzSyHM9Hzxpfz in 4.25s
+
+
+Building image im-sDJXmG8MwGrrGlTvqf00hU
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 3.46s
+
+Built image im-sDJXmG8MwGrrGlTvqf00hU in 5.59s
+
+
+✓ Created objects.
+├── 🔨 Created mount E:\Projects\Submitted\CourseABSA\modal_edurabsa.py
+├── 🔨 Created mount E:\Projects\Submitted\CourseABSA\paper\absa_data_io.py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\absa_model_comparison.py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\evaluate_synthetic_to_real_transfer.
+│   py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\multiseed_transfer_worker.py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\checkpoint_train_worker.py
+├── 🔨 Created mount E:\Projects\Submitted\CourseABSA\paper\edurabsa_worker.py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\generated_datasets\batch_69cc15c4834
+│   88190941478aa4e3a976d_generated_reviews.jsonl
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\external_data\EduRABSA_mapped\edurabsa_tra
+│   in_mapped.jsonl
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\external_data\EduRABSA_mapped\edurabsa_tes
+│   t_mapped.jsonl
+└── 🔨 Created function run_spec.
+[local] 8 EduRABSA specs
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+[real_only_seed17] ok=True rc=0 in 277.5s
+[real_only_seed23] ok=True rc=0 in 281.1s
+[real_only_seed89] ok=True rc=0 in 280.1s
+[real_only_seed42] ok=True rc=0 in 290.8s
+[pretrain_finetune_seed89] ok=True rc=0 in 548.3s
+[pretrain_finetune_seed23] ok=True rc=0 in 560.1s
+[pretrain_finetune_seed42] ok=True rc=0 in 568.6s
+[pretrain_finetune_seed17] ok=True rc=0 in 665.8s
+[
+  {
+    "name": "real_only_seed17",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 277.5,
+    "result": {
+      "experiment": "edurabsa_real_only",
+      "mode": "real_only",
+      "seed": 17,
+      "n_aspects": 7,
+      "aspects": [
+        "accessibility",
+        "exam_fairness",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_real_train": 3020,
+      "n_real_test": 2152,
+      "micro_f1": 0.7481683064684949,
+      "macro_f1": 0.7015605115248552,
+      "micro_recall": 0.8344618258230212,
+      "sentiment_mse": 0.23635738560558606
+    }
+  },
+  {
+    "name": "real_only_seed23",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 281.1,
+    "result": {
+      "experiment": "edurabsa_real_only",
+      "mode": "real_only",
+      "seed": 23,
+      "n_aspects": 7,
+      "aspects": [
+        "accessibility",
+        "exam_fairness",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_real_train": 3020,
+      "n_real_test": 2152,
+      "micro_f1": 0.7440894252646156,
+      "macro_f1": 0.7012348484575837,
+      "micro_recall": 0.8781228111137054,
+      "sentiment_mse": 0.24530316678923156
+    }
+  },
+  {
+    "name": "real_only_seed42",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 290.8,
+    "result": {
+      "experiment": "edurabsa_real_only",
+      "mode": "real_only",
+      "seed": 42,
+      "n_aspects": 7,
+      "aspects": [
+        "accessibility",
+        "exam_fairness",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_real_train": 3020,
+      "n_real_test": 2152,
+      "micro_f1": 0.7550192447727037,
+      "macro_f1": 0.7070097400995164,
+      "micro_recall": 0.8473032920849871,
+      "sentiment_mse": 0.2899385670730617
+    }
+  },
+  {
+    "name": "real_only_seed89",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 280.1,
+    "result": {
+      "experiment": "edurabsa_real_only",
+      "mode": "real_only",
+      "seed": 89,
+      "n_aspects": 7,
+      "aspects": [
+        "accessibility",
+        "exam_fairness",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_real_train": 3020,
+      "n_real_test": 2152,
+      "micro_f1": 0.7576857386848848,
+      "macro_f1": 0.7128582644623039,
+      "micro_recall": 0.8286247957039459,
+      "sentiment_mse": 0.2273121056929022
+    }
+  },
+  {
+    "name": "pretrain_finetune_seed17",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 665.8,
+    "result": {
+      "experiment": "edurabsa_pretrain_finetune",
+      "mode": "pretrain_finetune",
+      "seed": 17,
+      "n_aspects": 7,
+      "aspects": [
+        "accessibility",
+        "exam_fairness",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_real_train": 3020,
+      "n_real_test": 2152,
+      "micro_f1": 0.7516886782941828,
+      "macro_f1": 0.708471999827563,
+      "micro_recall": 0.8704179313565258,
+      "sentiment_mse": 0.2284779679143349
+    }
+  },
+  {
+    "name": "pretrain_finetune_seed23",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 560.1,
+    "result": {
+      "experiment": "edurabsa_pretrain_finetune",
+      "mode": "pretrain_finetune",
+      "seed": 23,
+      "n_aspects": 7,
+      "aspects": [
+        "accessibility",
+        "exam_fairness",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_real_train": 3020,
+      "n_real_test": 2152,
+      "micro_f1": 0.7616060225846926,
+      "macro_f1": 0.7149027899710888,
+      "micro_recall": 0.8503385477469064,
+      "sentiment_mse": 0.24207701404796647
+    }
+  },
+  {
+    "name": "pretrain_finetune_seed42",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 568.6,
+    "result": {
+      "experiment": "edurabsa_pretrain_finetune",
+      "mode": "pretrain_finetune",
+      "seed": 42,
+      "n_aspects": 7,
+      "aspects": [
+        "accessibility",
+        "exam_fairness",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_real_train": 3020,
+      "n_real_test": 2152,
+      "micro_f1": 0.7445948676500304,
+      "macro_f1": 0.7040566179963959,
+      "micro_recall": 0.8603782395517161,
+      "sentiment_mse": 0.24960039885753132
+    }
+  },
+  {
+    "name": "pretrain_finetune_seed89",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 548.3,
+    "result": {
+      "experiment": "edurabsa_pretrain_finetune",
+      "mode": "pretrain_finetune",
+      "seed": 89,
+      "n_aspects": 7,
+      "aspects": [
+        "accessibility",
+        "exam_fairness",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_real_train": 3020,
+      "n_real_test": 2152,
+      "micro_f1": 0.7555695670449769,
+      "macro_f1": 0.7087990413021034,
+      "micro_recall": 0.8393649311230446,
+      "sentiment_mse": 0.22061725176245167
+    }
+  }
+]
+Stopping app - local entrypoint completed.
+Runner terminated.
+✓ App completed. View run at 
+https://modal.com/apps/llmcourse/main/ap-kvrKVPg2ePhD63KgyyCcj0
