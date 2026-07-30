@@ -25,17 +25,20 @@ def ensure_dirs() -> None:
 def configure_style() -> None:
     plt.rcParams.update(
         {
-            "figure.facecolor": "#fcfbf7",
-            "axes.facecolor": "#fcfbf7",
-            "savefig.facecolor": "#fcfbf7",
+            "figure.facecolor": "white",
+            "axes.facecolor": "white",
+            "savefig.facecolor": "white",
             "font.family": "DejaVu Sans",
-            "font.size": 10,
-            "axes.titlesize": 13,
-            "axes.labelsize": 10,
-            "axes.edgecolor": "#d0ccc2",
+            "font.size": 13,
+            "xtick.labelsize": 12,
+            "ytick.labelsize": 12,
+            "legend.fontsize": 12,
+            "axes.titlesize": 15,
+            "axes.labelsize": 13,
+            "axes.edgecolor": "#bbbbbb",
             "axes.linewidth": 0.8,
             "axes.grid": True,
-            "grid.color": "#e6e1d8",
+            "grid.color": "#d9d9d9",
             "grid.linewidth": 0.7,
             "grid.alpha": 0.8,
             "legend.frameon": False,
@@ -190,7 +193,7 @@ def plot_realism_curve(realism: pd.DataFrame) -> None:
             ax.axhline(baseline, color="#8a8a8a", linestyle="--", linewidth=1.1)
         ax.set_ylabel(title)
         for x, y in zip(cycles, values):
-            ax.text(x, y + 0.006, f"{y:.3f}", ha="center", va="bottom", fontsize=8, color="#30363d")
+            ax.text(x, y + 0.006, f"{y:.3f}", ha="center", va="bottom", fontsize=10, color="#30363d")
     axes[0].set_ylim(0.38, 0.56)
     axes[1].set_ylim(0.54, 0.67)
     axes[2].set_ylim(0.68, 0.72)
@@ -210,7 +213,7 @@ def plot_method_comparison(summary: pd.DataFrame) -> None:
     df["micro_recall"] = df["micro_recall"].astype(float)
     df["sentiment_mse_detected"] = df["sentiment_mse_detected"].astype(float)
 
-    fig, axes = plt.subplots(1, 2, figsize=(12.8, 4.8))
+    fig, axes = plt.subplots(1, 2, figsize=(13.6, 5.4))
 
     ax = axes[0]
     scatter = ax.scatter(
@@ -223,18 +226,29 @@ def plot_method_comparison(summary: pd.DataFrame) -> None:
         linewidths=0.8,
         zorder=3,
     )
-    for _, row in df.iterrows():
-        ax.text(
-            float(row["runtime_min"]) + 0.6,
-            float(row["micro_f1"]) + 0.0015,
-            str(row["approach"]),
-            fontsize=8,
-            va="center",
-        )
+    # Declutter labels: spread their y-positions so none collide, and draw a thin
+    # leader line from each marker to its (possibly shifted) label.
+    pts = df.sort_values("micro_f1").reset_index(drop=True)
+    ylo, yhi = 0.14, 0.30
+    min_gap = (yhi - ylo) / 15.0
+    label_y = []
+    for i, yv in enumerate(pts["micro_f1"].astype(float)):
+        ty = float(yv)
+        if label_y and ty - label_y[-1] < min_gap:
+            ty = label_y[-1] + min_gap
+        label_y.append(ty)
+    xmax = max(52, float(df["runtime_min"].max()) + 3)
+    lx = xmax * 0.60
+    for i, row in pts.iterrows():
+        px, py, ty = float(row["runtime_min"]), float(row["micro_f1"]), label_y[i]
+        ax.annotate(str(row["approach"]), xy=(px, py), xytext=(lx, ty),
+                    fontsize=11, va="center", ha="left",
+                    arrowprops=dict(arrowstyle="-", color="#9aa4ad", lw=0.7))
     ax.set_xlabel("Runtime (minutes)")
     ax.set_ylabel("Detection micro-F1")
-    ax.set_xlim(-1, max(52, df["runtime_min"].max() + 3))
-    ax.set_ylim(0.14, 0.29)
+    ax.set_xlim(-1, xmax)
+    ax.set_ylim(ylo, yhi)
+    ax.set_title("(a) Accuracy vs. runtime", fontsize=13, loc="left")
     cbar = fig.colorbar(scatter, ax=ax, fraction=0.046, pad=0.03)
     cbar.ax.set_ylabel("Sentiment MSE", rotation=90)
 
@@ -244,12 +258,13 @@ def plot_method_comparison(summary: pd.DataFrame) -> None:
     ax2.barh(y, plot_df["micro_recall"], color="#d8e4ef", edgecolor="#b7c8d8", height=0.58, label="Micro-recall")
     ax2.barh(y, plot_df["micro_f1"], color="#315c88", height=0.38, label="Micro-F1")
     ax2.set_yticks(y, plot_df["approach"])
-    ax2.set_xlim(0.0, 0.75)
+    ax2.set_xlim(0.0, 1.12)   # recall reaches 1.000; keep bars + labels inside the axes
     ax2.set_xlabel("Score")
-    ax2.legend(loc="lower right")
+    ax2.set_title("(b) Detection recall vs. micro-F1", fontsize=13, loc="left")
+    ax2.legend(loc="upper right", framealpha=0.95, facecolor="white", edgecolor="#cccccc")
     for yi, f1, rec in zip(y, plot_df["micro_f1"], plot_df["micro_recall"]):
-        ax2.text(float(rec) + 0.012, yi + 0.16, f"{rec:.3f}", va="center", fontsize=8, color="#4f657a")
-        ax2.text(float(f1) + 0.012, yi - 0.16, f"{f1:.3f}", va="center", fontsize=8, color="#16324a")
+        ax2.text(min(float(rec) + 0.012, 1.02), yi + 0.16, f"{rec:.3f}", va="center", fontsize=10, color="#4f657a")
+        ax2.text(float(f1) + 0.012, yi - 0.16, f"{f1:.3f}", va="center", fontsize=10, color="#16324a")
 
     fig.tight_layout()
     fig.savefig(FIG_DIR / "production_method_comparison.svg", format="svg", bbox_inches="tight")
@@ -330,7 +345,7 @@ def plot_aspect_sentiment_heatmap(df: pd.DataFrame) -> None:
                 f"{value:,}",
                 ha="center",
                 va="center",
-                fontsize=8.6,
+                fontsize=10.6,
                 fontweight="semibold",
                 color=text_color,
             )
@@ -359,7 +374,7 @@ def plot_aspect_sentiment_heatmap(df: pd.DataFrame) -> None:
             f"{int(value):,}",
             va="center",
             ha="left",
-            fontsize=8.7,
+            fontsize=10.7,
             color="#22384a",
         )
 

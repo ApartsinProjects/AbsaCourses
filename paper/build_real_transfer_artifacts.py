@@ -22,17 +22,20 @@ def ensure_dirs() -> None:
 def configure_style() -> None:
     plt.rcParams.update(
         {
-            "figure.facecolor": "#fcfbf7",
-            "axes.facecolor": "#fcfbf7",
-            "savefig.facecolor": "#fcfbf7",
+            "figure.facecolor": "white",
+            "axes.facecolor": "white",
+            "savefig.facecolor": "white",
             "font.family": "DejaVu Sans",
-            "font.size": 10,
-            "axes.titlesize": 13,
-            "axes.labelsize": 10,
-            "axes.edgecolor": "#d0ccc2",
+            "font.size": 13,
+            "xtick.labelsize": 12,
+            "ytick.labelsize": 12,
+            "legend.fontsize": 12,
+            "axes.titlesize": 15,
+            "axes.labelsize": 13,
+            "axes.edgecolor": "#bbbbbb",
             "axes.linewidth": 0.8,
             "axes.grid": True,
-            "grid.color": "#e6e1d8",
+            "grid.color": "#d9d9d9",
             "grid.linewidth": 0.7,
             "grid.alpha": 0.8,
             "legend.frameon": False,
@@ -110,7 +113,7 @@ def plot_real_transfer_overview(summary: pd.DataFrame, overlap: pd.DataFrame) ->
     axes[0].set_yticks(y_overlap, overlap_sorted["aspect"])
     axes[0].set_xlabel("Reviews")
     for yi, val in zip(y_overlap, overlap_sorted["review_count"]):
-        axes[0].text(float(val) + 10, yi, str(int(val)), va="center", fontsize=8)
+        axes[0].text(float(val) + 10, yi, str(int(val)), va="center", fontsize=10)
 
     axes[1].hlines(y_results, 0, results["micro_f1"], color="#315c88", linewidth=2.2)
     axes[1].scatter(results["micro_f1"], y_results, color="#315c88", s=70, zorder=3)
@@ -118,7 +121,7 @@ def plot_real_transfer_overview(summary: pd.DataFrame, overlap: pd.DataFrame) ->
     axes[1].set_xlim(0.28, 0.44)
     axes[1].set_xlabel("Micro-F1")
     for yi, val in zip(y_results, results["micro_f1"]):
-        axes[1].text(float(val) + 0.003, yi, f"{float(val):.3f}", va="center", fontsize=8)
+        axes[1].text(float(val) + 0.003, yi, f"{float(val):.3f}", va="center", fontsize=10)
 
     axes[2].hlines(y_results, 0, results["sentiment_mse_detected"], color="#b5742d", linewidth=2.2)
     axes[2].scatter(results["sentiment_mse_detected"], y_results, color="#b5742d", s=70, zorder=3)
@@ -126,7 +129,7 @@ def plot_real_transfer_overview(summary: pd.DataFrame, overlap: pd.DataFrame) ->
     axes[2].set_xlim(0.30, 0.76)
     axes[2].set_xlabel("MSE")
     for yi, val in zip(y_results, results["sentiment_mse_detected"]):
-        axes[2].text(float(val) + 0.01, yi, f"{float(val):.3f}", va="center", fontsize=8)
+        axes[2].text(float(val) + 0.01, yi, f"{float(val):.3f}", va="center", fontsize=10)
 
     fig.tight_layout()
     fig.savefig(FIG_DIR / "real_transfer_overview.svg", format="svg", bbox_inches="tight")
@@ -149,7 +152,7 @@ def plot_real_transfer_per_aspect(per_aspect: pd.DataFrame) -> None:
     ax.set_yticks(np.arange(len(pivot.index)), labels=pivot.index.tolist())
     for i in range(matrix.shape[0]):
         for j in range(matrix.shape[1]):
-            ax.text(j, i, f"{float(matrix[i, j]):.2f}", ha="center", va="center", fontsize=7, color="#182026")
+            ax.text(j, i, f"{float(matrix[i, j]):.2f}", ha="center", va="center", fontsize=9, color="#182026")
     cbar = fig.colorbar(im, ax=ax, fraction=0.035, pad=0.03)
     cbar.ax.set_ylabel("F1", rotation=90)
     fig.tight_layout()

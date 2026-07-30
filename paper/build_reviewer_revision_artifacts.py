@@ -23,17 +23,20 @@ def ensure_dirs() -> None:
 def configure_style() -> None:
     plt.rcParams.update(
         {
-            "figure.facecolor": "#fcfbf7",
-            "axes.facecolor": "#fcfbf7",
-            "savefig.facecolor": "#fcfbf7",
+            "figure.facecolor": "white",
+            "axes.facecolor": "white",
+            "savefig.facecolor": "white",
             "font.family": "DejaVu Sans",
-            "font.size": 10,
-            "axes.titlesize": 13,
-            "axes.labelsize": 10,
-            "axes.edgecolor": "#d0ccc2",
+            "font.size": 13,
+            "xtick.labelsize": 12,
+            "ytick.labelsize": 12,
+            "legend.fontsize": 12,
+            "axes.titlesize": 15,
+            "axes.labelsize": 13,
+            "axes.edgecolor": "#bbbbbb",
             "axes.linewidth": 0.8,
             "axes.grid": True,
-            "grid.color": "#e6e1d8",
+            "grid.color": "#d9d9d9",
             "grid.linewidth": 0.7,
             "grid.alpha": 0.8,
             "legend.frameon": False,
@@ -103,9 +106,9 @@ def plot_overlap_gap() -> None:
     ax.set_ylim(0.0, max(max(synth), max(real)) + 0.12)
     ax.set_ylabel("Micro-F1")
     for xpos, val in zip(x - width / 2, synth):
-        ax.text(xpos, val + 0.01, f"{val:.3f}", ha="center", va="bottom", fontsize=8)
+        ax.text(xpos, val + 0.01, f"{val:.3f}", ha="center", va="bottom", fontsize=10)
     for xpos, val in zip(x + width / 2, real):
-        ax.text(xpos, val + 0.01, f"{val:.3f}", ha="center", va="bottom", fontsize=8)
+        ax.text(xpos, val + 0.01, f"{val:.3f}", ha="center", va="bottom", fontsize=10)
     ax.legend(ncol=2, loc="upper left")
     fig.tight_layout()
     fig.savefig(FIG_DIR / "overlap_internal_vs_external_f1.svg", format="svg", bbox_inches="tight")
@@ -140,7 +143,7 @@ def plot_prompt_baselines() -> None:
         ax.scatter(values, y, color=color, s=65, zorder=3)
         ax.set_xlabel(title)
         for yi, val in zip(y, values):
-            ax.text(val + 0.005, yi, f"{val:.3f}", va="center", fontsize=8)
+            ax.text(val + 0.005, yi, f"{val:.3f}", va="center", fontsize=10)
     axes[0].set_yticks(y, df["variant"])
     axes[0].set_xlim(0.0, max(0.30, float(df["micro_f1"].max()) + 0.06))
     axes[1].set_xlim(0.0, max(0.38, float(df["micro_recall"].max()) + 0.08))
