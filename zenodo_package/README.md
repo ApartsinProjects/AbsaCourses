@@ -37,8 +37,9 @@ human_study/
                                        inter-rater agreement.
   human_study_scores.json              Scored results.
 
-checkpoints/                           Best-per-target BERT checkpoints (added in a later
-                                       version of this record; see checkpoints/README.md).
+checkpoints/README.md                  Documents the best-per-target BERT checkpoints, which
+                                       ship in the companion archive course_absa_checkpoints.zip
+                                       (separate file on this record, due to size).
 ```
 
 ## Key results reproduced by this deposit

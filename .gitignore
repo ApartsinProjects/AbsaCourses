@@ -82,3 +82,6 @@ paper/outputs/*_run.log
 paper/outputs/n6b_pred_*.jsonl
 paper/outputs/n6b_run.log
 paper/_mathml.html
+paper/outputs/zenodo_checkpoints/
+course_absa_checkpoints.zip
+course_absa_zenodo_v1.zip

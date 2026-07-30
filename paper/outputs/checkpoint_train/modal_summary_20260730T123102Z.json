@@ -1,0 +1,101 @@
+[
+  {
+    "config": "synthetic_transfer",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 511.1,
+    "meta": {
+      "config": "synthetic_transfer",
+      "base_model": "bert-base-uncased",
+      "seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_aspects": 9,
+      "max_len": 192,
+      "batch_size": 8,
+      "lr": 3e-05,
+      "epochs_detection": 3,
+      "epochs_sentiment": 3,
+      "reload": "instantiate absa_model_comparison.DetectionModel(base_model, n_aspects) and SentimentModel(base_model, n_aspects), then load_state_dict from the .pt files",
+      "eval_micro_f1": 0.3093083723348934,
+      "eval_sentiment_mse": 0.3803033182584652,
+      "internal_micro_f1": 0.3985983355234341,
+      "n_train": 5495
+    }
+  },
+  {
+    "config": "pretrain_finetune_herath",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 537.5,
+    "meta": {
+      "config": "pretrain_finetune_herath",
+      "base_model": "bert-base-uncased",
+      "seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_aspects": 9,
+      "max_len": 192,
+      "batch_size": 8,
+      "lr": 3e-05,
+      "epochs_detection": 3,
+      "epochs_sentiment": 3,
+      "reload": "instantiate absa_model_comparison.DetectionModel(base_model, n_aspects) and SentimentModel(base_model, n_aspects), then load_state_dict from the .pt files",
+      "eval_micro_f1": 0.8,
+      "eval_sentiment_mse": 0.23429617538919426,
+      "internal_micro_f1": 0.332182320441989,
+      "n_train": 5495
+    }
+  },
+  {
+    "config": "top50_filtered",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 353.8,
+    "meta": {
+      "config": "top50_filtered",
+      "base_model": "bert-base-uncased",
+      "seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_aspects": 9,
+      "max_len": 192,
+      "batch_size": 8,
+      "lr": 3e-05,
+      "epochs_detection": 3,
+      "epochs_sentiment": 3,
+      "reload": "instantiate absa_model_comparison.DetectionModel(base_model, n_aspects) and SentimentModel(base_model, n_aspects), then load_state_dict from the .pt files",
+      "eval_micro_f1": 0.3404367271770587,
+      "eval_sentiment_mse": 0.27852815137781306,
+      "internal_micro_f1": 0.48099301784328935,
+      "n_train": 3706
+    }
+  }
+]

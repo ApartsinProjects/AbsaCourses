@@ -1,0 +1,246 @@
+C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:45: DeprecationWarning: 'asyncio.WindowsSelectorEventLoopPolicy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\modal\_utils\async_utils.py:45: DeprecationWarning: 'asyncio.set_event_loop_policy' is deprecated and slated for removal in Python 3.16
+  asyncio.set_event_loop_policy(asyncio.WindowsSelectorEventLoopPolicy())
+✓ Initialized. View run at 
+https://modal.com/apps/llmcourse/main/ap-UkHlg8JkvOrpnBcJej4u3b
+Building image im-sP1uDtESfdx73wk03sl2oN
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 4.65s
+
+Built image im-sP1uDtESfdx73wk03sl2oN in 6.15s
+
+
+Building image im-4usJZJw3X0Bb9gqm5TzpGG
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 1.97s
+
+Built image im-4usJZJw3X0Bb9gqm5TzpGG in 4.10s
+
+
+Building image im-HxGkiDrQgyWXIc4HBFj2oi
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 10.69s
+
+Built image im-HxGkiDrQgyWXIc4HBFj2oi in 12.38s
+
+
+Building image im-avjbCXWUH8jQJRz6OYegif
+
+Using legacy Image Builder version. We suggest upgrading at https://modal.com/settings/image-config.
+
+=> Step 0: FROM base
+
+=> Step 1: COPY . /
+Saving image...
+Image saved, took 1.48s
+
+Built image im-avjbCXWUH8jQJRz6OYegif in 3.07s
+
+
+✓ Created objects.
+├── 🔨 Created mount E:\Projects\Submitted\CourseABSA\modal_checkpoints.py
+├── 🔨 Created mount E:\Projects\Submitted\CourseABSA\paper\absa_data_io.py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\absa_model_comparison.py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\evaluate_synthetic_to_real_transfer.
+│   py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\multiseed_transfer_worker.py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\checkpoint_train_worker.py
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\generated_datasets\batch_69cc15c4834
+│   88190941478aa4e3a976d_generated_reviews.jsonl
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\real_transfer\herath_mapped_real_rev
+│   iews.jsonl
+├── 🔨 Created mount 
+│   E:\Projects\Submitted\CourseABSA\paper\faithfulness_audit\at_scale_gpt-4.1-
+│   mini_per_row_scores.csv
+└── 🔨 Created function run_config.
+[local] training 3 checkpoints: ['synthetic_transfer', 'pretrain_finetune_herath', 'top50_filtered']
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+
+==========
+== CUDA ==
+==========
+
+CUDA Version 12.4.0
+
+Container image Copyright (c) 2016-2023, NVIDIA CORPORATION & AFFILIATES. All rights reserved.
+
+This container image and its contents are governed by the NVIDIA Deep Learning Container License.
+By pulling and using the container, you accept the terms and conditions of this license:
+https://developer.nvidia.com/ngc/nvidia-deep-learning-container-license
+
+A copy of this license is made available in this container at /NGC-DL-CONTAINER-LICENSE for your convenience.
+
+[top50_filtered] done ok=True rc=0 in 353.8s
+[synthetic_transfer] done ok=True rc=0 in 511.1s
+StopAsyncIteration exception in shielded future
+future: <Future finished exception=StopAsyncIteration()>
+Traceback (most recent call last):
+  File "C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\synchronicity\synchronizer.py", line 485, in wrapper_coro
+    return await inner_task
+           ^^^^^^^^^^^^^^^^
+  File "C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\synchronicity\synchronizer.py", line 315, in coro_wrapped
+    value = await coro
+            ^^^^^^^^^^
+  File "C:\Users\apart\AppData\Roaming\Python\Python314\site-packages\synchronicity\exceptions.py", line 31, in coro_wrapped
+    return await coro
+           ^^^^^^^^^^
+StopAsyncIteration
+[
+  {
+    "config": "synthetic_transfer",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 511.1,
+    "meta": {
+      "config": "synthetic_transfer",
+      "base_model": "bert-base-uncased",
+      "seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_aspects": 9,
+      "max_len": 192,
+      "batch_size": 8,
+      "lr": 3e-05,
+      "epochs_detection": 3,
+      "epochs_sentiment": 3,
+      "reload": "instantiate absa_model_comparison.DetectionModel(base_model, n_aspects) and SentimentModel(base_model, n_aspects), then load_state_dict from the .pt files",
+      "eval_micro_f1": 0.3093083723348934,
+      "eval_sentiment_mse": 0.3803033182584652,
+      "internal_micro_f1": 0.3985983355234341,
+      "n_train": 5495
+    }
+  },
+  {
+    "config": "pretrain_finetune_herath",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 537.5,
+    "meta": {
+      "config": "pretrain_finetune_herath",
+      "base_model": "bert-base-uncased",
+      "seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_aspects": 9,
+      "max_len": 192,
+      "batch_size": 8,
+      "lr": 3e-05,
+      "epochs_detection": 3,
+      "epochs_sentiment": 3,
+      "reload": "instantiate absa_model_comparison.DetectionModel(base_model, n_aspects) and SentimentModel(base_model, n_aspects), then load_state_dict from the .pt files",
+      "eval_micro_f1": 0.8,
+      "eval_sentiment_mse": 0.23429617538919426,
+      "internal_micro_f1": 0.332182320441989,
+      "n_train": 5495
+    }
+  },
+  {
+    "config": "top50_filtered",
+    "ok": true,
+    "rc": 0,
+    "elapsed_s": 353.8,
+    "meta": {
+      "config": "top50_filtered",
+      "base_model": "bert-base-uncased",
+      "seed": 42,
+      "aspects": [
+        "accessibility",
+        "assessment_design",
+        "exam_fairness",
+        "grading_transparency",
+        "lecturer_quality",
+        "materials",
+        "organization",
+        "overall_experience",
+        "workload"
+      ],
+      "n_aspects": 9,
+      "max_len": 192,
+      "batch_size": 8,
+      "lr": 3e-05,
+      "epochs_detection": 3,
+      "epochs_sentiment": 3,
+      "reload": "instantiate absa_model_comparison.DetectionModel(base_model, n_aspects) and SentimentModel(base_model, n_aspects), then load_state_dict from the .pt files",
+      "eval_micro_f1": 0.3404367271770587,
+      "eval_sentiment_mse": 0.27852815137781306,
+      "internal_micro_f1": 0.48099301784328935,
+      "n_train": 3706
+    }
+  }
+]
+[pretrain_finetune_herath] done ok=True rc=0 in 537.5s
+Stopping app - local entrypoint completed.
+✓ App completed. View run at 
+https://modal.com/apps/llmcourse/main/ap-UkHlg8JkvOrpnBcJej4u3b
