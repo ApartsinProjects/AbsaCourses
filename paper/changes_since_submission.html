@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Summary of Changes Since Original Submission (TMLR)</title>
+<style>
+  :root{
+    --ink:#111418; --soft:#2c3138; --muted:#5a626c; --accent:#14385c;
+    --rule:#d1d4d8; --paper:#fffdfa; --chip:#eef2f7; --chipline:#c9d2dd;
+  }
+  html{background:#f3f0e8;}
+  body{
+    margin:32px auto; color:var(--ink); background:var(--paper);
+    font-family:"Charter","Iowan Old Style","Source Serif Pro",Georgia,"Times New Roman",serif;
+    line-height:1.55; font-size:11.2pt; max-width:760px;
+    padding:38px 46px; box-shadow:0 1px 4px rgba(0,0,0,0.06); border-radius:4px;
+  }
+  h1{font-size:17pt; font-weight:600; margin:0 0 3px; letter-spacing:0.1px;}
+  .venue{color:var(--muted); font-size:10pt; margin:0 0 4px;}
+  .meta{font-size:9.6pt; color:var(--muted); margin:0 0 22px;}
+  .meta b{color:var(--soft);}
+  .lede{margin:0 0 20px; text-align:justify; hyphens:auto;}
+  h2{font-size:11.6pt; font-weight:700; color:var(--accent); margin:24px 0 8px; letter-spacing:0.2px;}
+  ul{margin:0 0 12px; padding-left:20px;}
+  li{margin:0 0 8px; text-align:justify; hyphens:auto;}
+  li b{color:var(--soft);}
+  code{font-family:"SFMono-Regular",Consolas,"Liberation Mono",monospace; font-size:0.86em;
+       background:#f4f1ea; padding:0 3px; border-radius:3px;}
+  .rule{border:0; border-top:1px solid var(--rule); margin:24px 0;}
+  .counts{display:flex; flex-wrap:wrap; gap:8px; margin:6px 0 4px; padding:0; list-style:none;}
+  .counts li{margin:0; font-size:9.6pt; background:var(--chip); border:1px solid var(--chipline);
+             border-radius:6px; padding:5px 10px; color:var(--soft);}
+  .counts b{color:var(--accent);}
+  .foot{font-size:9.4pt; color:var(--muted); margin-top:26px;}
+  a{color:#14557a; text-decoration:none;} a:hover{text-decoration:underline;}
+</style>
+</head>
+<body>
+  <h1>Summary of Changes Since the Original Submission</h1>
+  <p class="venue">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis &middot; TMLR</p>
+  <p class="meta">Baseline: original submission of <b>13 June 2026</b>. This note summarizes the substantive additions and revisions made across the review period. No headline claim from the original submission was retracted; the revisions add evidence, a second real benchmark, and presentation improvements.</p>
+
+  <p class="lede">The revision keeps the original contribution (a controlled synthetic ABSA corpus plus an audit&ndash;filter&ndash;validate methodology) and strengthens it on three fronts: the label-faithfulness audit is now validated against humans and independent model families, the synthetic-to-real story is completed on a second real benchmark, and every reported control is expanded to multiple seeds and a second architecture.</p>
+
+  <h2>New empirical results</h2>
+  <ul>
+    <li><b>Direct human validation of the audit.</b> A three-annotator study labels a stratified sample of the synthetic corpus for aspect presence and sentiment (Fleiss <code>&kappa;</code> 0.70 on presence). Human confirmation of a declared aspect rises monotonically with the audit score, and the human labels reproduce the audit's presence-faithful / sentiment-noisier split (human sentiment agreement &asymp;0.40, matching the audit's strict 0.42).</li>
+    <li><b>Audit independence.</b> Two independent open-weights auditors (Llama-3.3-70B, GLM-4.6) reproduce the faithfulness audit (cross-family Cohen <code>&kappa;</code> 0.56&ndash;0.65), so the signal is not an artifact of a single judge family.</li>
+    <li><b>Provider-agnostic pipeline.</b> Both the generation pipeline and the prompted baseline now reproduce across four generator families spanning four providers (GPT-5.4, Gemini-2.5-Flash, GLM-4.6, Llama-3.3-70B); the multi-provider zero-shot baseline lands in a single narrow band below the trained encoders.</li>
+    <li><b>Second real benchmark (EduRABSA) completed.</b> Built out from a passing mention into a full multi-seed synthetic-to-real transfer table, a real-only trained reference, and a synthetic-pretrain + real-fine-tune result. Synthetic-only training now recovers about half a real-trained model on <em>both</em> datasets (52% Herath, 60% EduRABSA), and synthetic pre-training followed by real fine-tuning matches or exceeds real-only training on both.</li>
+    <li><b>Cross-architecture and multi-seed controls.</b> The faithfulness-filtering contrasts are replicated on DistilBERT alongside BERT and extended to eight seeds, and a covariate-matched comparison isolates the filtering gain from composition and prediction-mask confounds.</li>
+    <li><b>Learnable-signal controls.</b> Label-permutation collapses detection to the trivial floor (0.182 vs 0.276), accuracy scales monotonically with training size, and restricting to faithfully labeled rows raises the ceiling &mdash; establishing genuine learnable signal rather than label priors.</li>
+    <li><b>Truncated-row robustness.</b> Regenerating the 841 output-token-capped rows at a raised cap restores full-corpus length adherence, and the capped rows are shown not to bias the benchmark in aspect, polarity, or faithfulness.</li>
+  </ul>
+
+  <h2>Presentation and structure</h2>
+  <ul>
+    <li><b>Abstract and introduction.</b> Abstract completed and tightened; the contribution statement de-duplicated against Section 1.1; the paper-structure paragraph moved to the end of the introduction.</li>
+    <li><b>Figures.</b> All figures redrawn on white backgrounds with enlarged, non-overlapping labels; Figure 2 redesigned with labeled panels and in-plot annotations; Figure 5's legend overlap removed; Figure 4 model names set horizontally.</li>
+    <li><b>Tables and cross-references.</b> Table 1 column widths and padding fixed and inter-table spacing standardized; every table and figure is now introduced in the immediately preceding paragraph with a note on what it shows.</li>
+    <li><b>References.</b> Reference list alphabetized by author surname (TMLR requirement) with all in-text citations renumbered; seven recent (2024&ndash;2026) citations added for literature completeness.</li>
+    <li><b>Appendices.</b> Reorganized from a long flat list into seven thematic sections (A.1&ndash;A.7) with subsections, and a duplicated appendix table removed, so the supporting material is easier to navigate.</li>
+    <li><b>Artifacts.</b> Code, datasets, the human-ranking study, and model checkpoints released as a versioned archive.</li>
+  </ul>
+
+  <hr class="rule">
+  <ul class="counts">
+    <li>Main tables <b>12 &rarr; 15</b></li>
+    <li>Appendix tables <b>15 &rarr; 28</b></li>
+    <li>Main figures <b>5 &rarr; 6</b></li>
+    <li>Appendix sections <b>flat &rarr; 7 themes</b></li>
+  </ul>
+
+  <p class="foot">Point-by-point replies to each reviewer are in the <a href="response_letters_index.html">author responses</a>; the submission rationale is in the <a href="cover_letter.html">cover letter</a>. This summary is a reading aid and is not part of the manuscript.</p>
+</body>
+</html>
