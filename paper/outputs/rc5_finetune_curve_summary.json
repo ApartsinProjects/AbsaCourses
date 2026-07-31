@@ -1,34 +1,150 @@
 {
   "curve_by_real_train_n": {
     "100": {
-      "n_seeds": 2,
-      "micro_f1_mean": 0.5834,
-      "micro_f1_std": 0.0412
+      "n_seeds": 5,
+      "micro_f1_mean": 0.5913,
+      "micro_f1_std": 0.0733,
+      "micro_f1_ci95": 0.091
     },
     "250": {
-      "n_seeds": 2,
-      "micro_f1_mean": 0.6387,
-      "micro_f1_std": 0.0147
+      "n_seeds": 5,
+      "micro_f1_mean": 0.6519,
+      "micro_f1_std": 0.0456,
+      "micro_f1_ci95": 0.0566
     },
     "500": {
-      "n_seeds": 2,
-      "micro_f1_mean": 0.6964,
-      "micro_f1_std": 0.0031
+      "n_seeds": 5,
+      "micro_f1_mean": 0.6822,
+      "micro_f1_std": 0.0662,
+      "micro_f1_ci95": 0.0822
     },
     "1000": {
-      "n_seeds": 2,
-      "micro_f1_mean": 0.7405,
-      "micro_f1_std": 0.0052
+      "n_seeds": 5,
+      "micro_f1_mean": 0.7441,
+      "micro_f1_std": 0.0161,
+      "micro_f1_ci95": 0.02
     },
     "1980": {
-      "n_seeds": 2,
-      "micro_f1_mean": 0.7705,
-      "micro_f1_std": 0.006
+      "n_seeds": 5,
+      "micro_f1_mean": 0.7801,
+      "micro_f1_std": 0.0163,
+      "micro_f1_ci95": 0.0202
     }
   },
   "references": {
     "synthetic_only_transfer": 0.4593,
     "real_only_training": 0.7673,
-    "synth_pretrain_full_finetune_paper": 0.784
+    "synth_pretrain_full_finetune_paper": 0.784,
+    "synthetic_only_transfer_5seed": 0.402
+  },
+  "real_only_curve_by_real_train_n": {
+    "100": {
+      "n_seeds": 5,
+      "micro_f1_mean": 0.5286,
+      "micro_f1_std": 0.0454,
+      "micro_f1_ci95": 0.0563
+    },
+    "250": {
+      "n_seeds": 5,
+      "micro_f1_mean": 0.6048,
+      "micro_f1_std": 0.0208,
+      "micro_f1_ci95": 0.0258
+    },
+    "500": {
+      "n_seeds": 5,
+      "micro_f1_mean": 0.6633,
+      "micro_f1_std": 0.0401,
+      "micro_f1_ci95": 0.0498
+    },
+    "1000": {
+      "n_seeds": 5,
+      "micro_f1_mean": 0.7222,
+      "micro_f1_std": 0.0433,
+      "micro_f1_ci95": 0.0537
+    },
+    "1980": {
+      "n_seeds": 5,
+      "micro_f1_mean": 0.7699,
+      "micro_f1_std": 0.0301,
+      "micro_f1_ci95": 0.0374
+    }
+  },
+  "arms": {
+    "real_only": {
+      "100": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.5286,
+        "micro_f1_std": 0.0454,
+        "micro_f1_ci95": 0.0563
+      },
+      "250": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.6048,
+        "micro_f1_std": 0.0208,
+        "micro_f1_ci95": 0.0258
+      },
+      "500": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.6633,
+        "micro_f1_std": 0.0401,
+        "micro_f1_ci95": 0.0498
+      },
+      "1000": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.7222,
+        "micro_f1_std": 0.0433,
+        "micro_f1_ci95": 0.0537
+      },
+      "1980": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.7699,
+        "micro_f1_std": 0.0301,
+        "micro_f1_ci95": 0.0374
+      }
+    },
+    "synth_pretrain_finetune": {
+      "100": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.5913,
+        "micro_f1_std": 0.0733,
+        "micro_f1_ci95": 0.091
+      },
+      "250": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.6519,
+        "micro_f1_std": 0.0456,
+        "micro_f1_ci95": 0.0566
+      },
+      "500": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.6822,
+        "micro_f1_std": 0.0662,
+        "micro_f1_ci95": 0.0822
+      },
+      "1000": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.7441,
+        "micro_f1_std": 0.0161,
+        "micro_f1_ci95": 0.02
+      },
+      "1980": {
+        "n_seeds": 5,
+        "micro_f1_mean": 0.7801,
+        "micro_f1_std": 0.0163,
+        "micro_f1_ci95": 0.0202
+      }
+    }
+  },
+  "seeds": [
+    17,
+    23,
+    41,
+    42,
+    89
+  ],
+  "provenance": {
+    "source": "modal_summary_20260731T075926Z.json",
+    "grid": "N in {100,250,500,1000,full} x seed in {17,23,41,42,89} x arm in {real_only, synth_pretrain_finetune}",
+    "protocol": "9-aspect detection micro-F1 on fixed 566-row real Herath test; 283-row calib; bert-base-uncased"
   }
 }

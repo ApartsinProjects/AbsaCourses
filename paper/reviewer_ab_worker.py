@@ -458,11 +458,18 @@ def _restrict_aspects(df: pd.DataFrame, keep: list) -> pd.DataFrame:
 
 
 def run_experiment_b5(corpus_path: Path, herath_mapped_jsonl: Path, seed: int, out_dir: Path,
-                      real_train_n: int = None) -> dict:
-    """9-aspect synth->real fine-tune. (1) Pretrain a 9-aspect detection head on the synthetic
-    train split (9-aspect labels). (2) Fine-tune the SAME head on the real-Herath train split
-    (mode B's real-train/real-test split + seed). (3) Eval on real-Herath test, 9-aspect micro-F1.
-    References: synthetic-only transfer 0.4593, real-only training (mode B) 0.7673."""
+                      real_train_n: int = None, arm: str = "synth_pretrain_finetune") -> dict:
+    """9-aspect real-test detection micro-F1 vs number of real fine-tuning examples.
+
+    arm="synth_pretrain_finetune" (default, original B5): (1) Pretrain a 9-aspect detection
+    head on the synthetic train split. (2) Fine-tune the SAME head on the real-Herath train
+    split. (3) Eval on real-Herath test.
+    arm="real_only": skip the synthetic pretrain entirely and train a 9-aspect detection head
+    FROM SCRATCH on the real-Herath train split (same N-subsampled train / calib), then eval on
+    the SAME real-Herath test split. This is the per-N real-only learning curve (RC9).
+    The real train/calib/test split, the N-subsample, threshold calibration, and evaluation are
+    IDENTICAL across arms, so the two curves are directly comparable point-for-point.
+    References: synthetic-only transfer 0.4593, real-only training (mode B, full data) 0.7673."""
     from torch.utils.data import DataLoader
     cfg = eng.Config(seed=seed)
     eng.set_seed(seed)
@@ -510,13 +517,19 @@ def run_experiment_b5(corpus_path: Path, herath_mapped_jsonl: Path, seed: int, o
     real_test = _restrict_aspects(real_df.iloc[test_idx].reset_index(drop=True), aspects)
     eng.log_event(f"[B5 seed={seed}] real train={len(real_train)} calib={len(real_calib)} test={len(real_test)} (9-aspect)")
 
-    # ---- (1) pretrain 9-aspect detection head on synthetic
-    eng.log_event(f"[B5 seed={seed}] STAGE 1: pretrain on synthetic (9-aspect)")
-    det_model, det_tok = eng.train_detection("bert-base-uncased", syn_train9, syn_calib9, aspects, cfg)
+    if arm == "real_only":
+        # ---- real-only: train a 9-aspect detection head FROM SCRATCH on real-Herath train.
+        eng.log_event(f"[B5 seed={seed}] arm=real_only: train from scratch on N={len(real_train)} real reviews")
+        eng.set_seed(seed)
+        det_model, det_tok = eng.train_detection("bert-base-uncased", real_train, real_calib, aspects, cfg)
+    else:
+        # ---- (1) pretrain 9-aspect detection head on synthetic
+        eng.log_event(f"[B5 seed={seed}] STAGE 1: pretrain on synthetic (9-aspect)")
+        det_model, det_tok = eng.train_detection("bert-base-uncased", syn_train9, syn_calib9, aspects, cfg)
 
-    # ---- (2) fine-tune the SAME head on real-Herath train (continue training the same module)
-    eng.log_event(f"[B5 seed={seed}] STAGE 2: fine-tune on real-Herath (same head)")
-    det_model = _finetune_detection(det_model, det_tok, real_train, real_calib, aspects, cfg)
+        # ---- (2) fine-tune the SAME head on real-Herath train (continue training the same module)
+        eng.log_event(f"[B5 seed={seed}] STAGE 2: fine-tune on real-Herath (same head)")
+        det_model = _finetune_detection(det_model, det_tok, real_train, real_calib, aspects, cfg)
 
     # ---- (3) evaluate on real-Herath test, calibrate thresholds on real calib
     thresholds = eng.calibrate_thresholds(det_model, real_calib, det_tok, aspects, cfg)
@@ -547,10 +560,11 @@ def run_experiment_b5(corpus_path: Path, herath_mapped_jsonl: Path, seed: int, o
 
     result = {
         "experiment": "B5_synth_to_real_finetune",
+        "arm": arm,
         "seed": seed,
         "n_aspects": len(aspects),
         "aspects": aspects,
-        "n_syn_train": int(len(syn_train9)), "n_real_train": int(len(real_train)),
+        "n_syn_train": (0 if arm == "real_only" else int(len(syn_train9))), "n_real_train": int(len(real_train)),
         "n_real_calib": int(len(real_calib)), "n_real_test": int(len(real_test)),
         "synth_to_real_real_test": full_metrics,
         "synth_to_real_micro_f1": full_metrics["micro_f1"],
@@ -709,6 +723,9 @@ def main() -> None:
     p.add_argument("--scores-csv", default="/app/data/at_scale_per_row_scores.csv")
     p.add_argument("--herath-mapped-jsonl", default="/app/data/herath_mapped_real_reviews_2829.jsonl")
     p.add_argument("--real-train-n", type=int, default=None, help="RC5: subsample real-train to N rows (B5 only)")
+    p.add_argument("--arm", default="synth_pretrain_finetune",
+                   choices=["synth_pretrain_finetune", "real_only"],
+                   help="B5/RC9 arm: synth-pretrain+finetune (default) or real-only from scratch")
     args = p.parse_args()
 
     eng.configure_console_encoding()
@@ -727,7 +744,7 @@ def main() -> None:
         res = run_experiment_v4(Path(args.corpus_path), Path(args.scores_csv), args.seed, out_dir)
     elif args.experiment == "B5":
         res = run_experiment_b5(Path(args.corpus_path), Path(args.herath_mapped_jsonl), args.seed, out_dir,
-                                real_train_n=args.real_train_n)
+                                real_train_n=args.real_train_n, arm=args.arm)
     else:
         raise ValueError(args.experiment)
     res["elapsed_seconds"] = round(time.time() - t0, 1)

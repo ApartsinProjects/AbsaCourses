@@ -16,10 +16,16 @@
     "benchmark"
   ],
   "creators": [
-    {"name": "TODO: FILL IN AUTHOR NAME(S) BEFORE PUBLISHING", "affiliation": "TODO", "orcid": ""}
+    {
+      "name": "Anonymous (under double-blind review)"
+    }
   ],
   "notes": "The synthetic corpus and human-annotation study are CC-BY-4.0; the code is MIT (see LICENSE-CODE). The mapped Herath evaluation data derives from Herath et al. (2022) under its MIT license.",
   "related_identifiers": [
-    {"relation": "isSupplementTo", "identifier": "TODO: paper DOI or OpenReview URL when available", "scheme": "url"}
+    {
+      "relation": "isSupplementTo",
+      "identifier": "TODO: paper DOI or OpenReview URL when available",
+      "scheme": "url"
+    }
   ]
 }
