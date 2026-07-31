@@ -32,4 +32,22 @@ We thank the reviewers and Action Editor. The revision retains the original cont
 
 13. Code, datasets, the human-ranking study, and model checkpoints released as a versioned archive.
 
-Counts: main tables 12 to 15, appendix tables 15 to 28, main figures 5 to 6, appendix sections reorganized into 7 themes. Point-by-point replies appear in the per-reviewer author responses.
+LATEST REVISION ROUND (additional corrections and additions)
+
+14. Corrected Figure 3: its left panel had shown EduRABSA overlap counts under a Herath label; it now plots the true Herath nine-aspect overlap, consistent with Table A3.
+
+15. EduRABSA transfer now reported with full uncertainty (Table 10 gives mean and standard deviation across eight seeds on all metrics, with seeds and train/test sizes), and an appendix transcription error was corrected (the EduRABSA screening value 0.275, duplicated from OATS, is now the eight-seed 0.448 that matches Table 10).
+
+16. Figure 6 sample-efficiency strengthened: a real-only-from-scratch learning curve is added at every sample size (100, 250, 500, 1,000, full) across five seeds with confidence intervals. The claim is corrected to a consistent per-budget pre-training boost with roughly double data efficiency in the low-data regime, converging with real-only near the full set (no longer a half-the-data claim).
+
+17. Human study extended: inter-annotator agreement for sentiment, Wilson intervals on the quartile confirmation rates, and a review-level clustered bootstrap are added; the annotator instructions (aspect shown, declared presence and sentiment hidden) and the Table 15 column label ("Declared aspect decisions") are clarified.
+
+18. Data and Code Availability section added (Section 6.4) with an anonymized Zenodo archive, DOI 10.5281/zenodo.21717252, listing the corpus, fixed splits, prompts, schema, both mappings, audit scores, and scripts.
+
+19. Both real-data mappings documented (new Appendix A.8) with parallel Herath and EduRABSA source-label-to-aspect tables and the EduRABSA support and polarity distribution.
+
+20. Pipeline cost quantified (about US$3 total: generation, full-corpus audit, and realism cycles), roughly three orders of magnitude cheaper per label than fair-pay human annotation.
+
+21. The pre-training claim is softened to "matches or slightly exceeds" real-only training and "the unbiased metric" to "external real-data evaluation"; an inaccurate per-review refinement operator was removed from the generation description; the M-ABSA dataset is now cited and several related-work citations corrected.
+
+Counts: main tables 12 to 15, appendix tables 15 to 30, main figures 5 to 6, references 41 to 42, appendix sections reorganized into seven themes plus a real-data-mapping appendix. Point-by-point replies appear in the per-reviewer author responses.
