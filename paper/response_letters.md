@@ -107,7 +107,7 @@ Done. We broaden the baseline on both axes. The prompting axis is covered by the
 
 Done. Figure 1 is tightened to fill its frame with even margins, and the bar-chart axis and numeric labels now use a clean sans-serif (the y-axis label reads Micro-F1 correctly). Table 5 was checked for readability.
 
-*Location:* Figures 1, A2, A3.
+*Location:* Figure 1; Table 5; Figures A3 and A6.
 
 ### 4. The 841 token-capped rows
 
