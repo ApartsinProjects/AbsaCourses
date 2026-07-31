@@ -1,0 +1,35 @@
+{
+  "source": "EduRABSA_ASQE (HuggingFace datasets load_from_disk), mapped via _d2_e2_map_edurabsa.py to external_data/EduRABSA_mapped/edurabsa_{train,test,all}_mapped.jsonl",
+  "mapping": {
+    "Staff - Teaching": "lecturer_quality",
+    "Staff - Knowledge & skills": "lecturer_quality",
+    "Course - Overall": "overall_experience",
+    "Staff - Overall": "overall_experience",
+    "Course - Learning activity": "organization",
+    "Course - Course materials": "materials",
+    "Course - Technology & tools": "materials",
+    "Course - Assessment": "exam_fairness",
+    "Course - Difficulty": "workload",
+    "Course - Workload": "workload",
+    "Staff - Helpfulness": "accessibility",
+    "University - Information & services": "accessibility"
+  },
+  "polarity_map": {
+    "Positive": "positive",
+    "Negative": "negative",
+    "Neutral": "neutral"
+  },
+  "n_reviews": 5584,
+  "n_test": 2152,
+  "n_train": 3432,
+  "overlap_aspects": [
+    "accessibility",
+    "exam_fairness",
+    "lecturer_quality",
+    "materials",
+    "organization",
+    "overall_experience",
+    "workload"
+  ],
+  "note": "The source-label to schema-aspect dict is recovered from _d2_e2_map_edurabsa.py (CATEGORY_TO_ASPECT). Per-row aggregation: if all mentions of an aspect within a row agree on polarity, that polarity is kept; mixed-polarity aspects are dropped for that row. The 2 schema aspects with no EduRABSA category (assessment_design, grading_transparency) are not covered, so 7 of the 20 schema aspects overlap. Support/polarity counts in the accompanying table are computed over the combined (train+test) mapped set of 5584 reviews; one review may carry multiple aspects."
+}
