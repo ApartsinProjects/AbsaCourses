@@ -24,9 +24,9 @@ Done. The truncated rows are not systematically biased across aspects (Cramer's 
 
 **Requested.** Discuss emerging methods, including multimodal sarcasm perception in vision-language models and set-matching for generalized category discovery.
 
-Done. Both works are cited in the manuscript.
+Done, and we thank the reviewer for both pointers. The related-work section now places our contribution against these advances: it notes probing how vision-language models perceive nuanced signals such as multimodal sarcasm [5] and exploiting relational structure among unlabelled samples for generalized category discovery [24], and states that our data-quality-control contribution is orthogonal to these modeling advances. Both works are cited in the running text and listed in the bibliography.
 
-*Location:* References.
+*Location:* Section 2 (related work); References [5] and [24].
 
 ### 4. Strengthen the transfer-limits statement
 
@@ -51,6 +51,14 @@ Done. Section 6.2 provides a fine-tuning-size curve: roughly 250 to 500 local re
 Done. Absolute scores reflect the intrinsic difficulty of 20-aspect ABSA under conservative overlap. We add a qualitative error analysis showing the failures are systematic in four recurring patterns: high-prevalence diffuse aspects are over-predicted while specific aspects are under-detected; missed specific aspects are substituted by generic evaluative ones; polarity compresses toward neutral on detected aspects; and a positive skew appears under real-review transfer. Practitioners can therefore expect reliable detection and polarity on frequent, lexically distinctive aspects, and should treat fine-grained aspects and non-positive polarities on out-of-domain reviews as the weak regime (Appendix A.7.1).
 
 *Location:* Section 5; Section 6.1.
+
+### 7. Broader impact
+
+**Requested.** No broader-impact concerns were raised.
+
+Thank you for the positive assessment of the broader-impact discussion. We have kept the ethics statement thorough and, prompted by the other reviews, extended it with stylistic-bias monitoring for non-native and non-standard writing, a prohibition on attaching model-inferred negatives to identifiable courses or instructors, and per-aspect uncertainty reporting with low-confidence routing to human review and an appeals process, on top of the existing no-identifiable-data, licensing, re-consent, and high-stakes-use provisions.
+
+*Location:* Section 6.3.
 
 ---
 

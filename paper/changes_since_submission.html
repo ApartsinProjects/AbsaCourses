@@ -127,7 +127,7 @@ We are grateful to Reviewer nfat for a careful and constructive report, and espe
 
 **Requested.** Human-annotate a representative sample of the actual synthetic corpus; the auditor is validated mainly on perturbed real labels rather than direct human annotation of synthetic reviews.
 
-Done (new Table 15). Three annotators independently labeled a stratified sample of 300 synthetic reviews (610 declared review-aspect decisions), blind to the declared labels, marking per-aspect presence and sentiment. Inter-annotator reliability is substantial (Fleiss kappa 0.70 on aspect presence; pairwise Cohen kappa 0.60 to 0.87). The annotation validates the audit directly on synthetic text three ways: human confirmation of the declared aspect rises monotonically with the audit score (55% in the lowest audit-score quartile to 79% in the highest); human and audit presence judgments agree 76% of the time; and the human annotation independently reproduces the audit&#x27;s central finding that aspect presence is the faithful signal (70% human-confirmed) while aspect sentiment is the noisier one (human-declared agreement about 0.40, closely matching the audit&#x27;s strict 0.42). The audit score is therefore a valid, human-grounded quality signal on the synthetic corpus, and the corpus&#x27;s measured noise level is accurate.
+Done (new Table 15). Three annotators independently labeled a stratified sample of 300 synthetic reviews (610 declared review-aspect decisions), blind to the declared labels, marking per-aspect presence and sentiment. Inter-annotator reliability is substantial for both label types: Fleiss kappa 0.70 on aspect presence, with pairwise Cohen kappa 0.60 to 0.87 spanning presence and sentiment, and Table 15 now reports the sentiment inter-annotator agreement alongside the presence agreement. The annotation validates the audit directly on synthetic text three ways: human confirmation of the declared aspect rises monotonically with the audit score (55% in the lowest audit-score quartile to 79% in the highest); human and audit presence judgments agree 76% of the time; and the human annotation independently reproduces the audit&#x27;s central finding that aspect presence is the faithful signal (70% human-confirmed) while aspect sentiment is the noisier one (human-declared agreement about 0.40, closely matching the audit&#x27;s strict 0.42). The audit score is therefore a valid, human-grounded quality signal on the synthetic corpus, and the corpus&#x27;s measured noise level is accurate.
 
 *Location:* Section 5.7 (Table 15); Section 6.1.
 
@@ -167,7 +167,7 @@ Done. The abstract, Section 6.2, and conclusion state that this is a controlled 
 
 **Requested.** Address instructor evaluation, student-comment privacy, bias against non-native or unusual writing styles, and the risk of attaching fictional negative reviews to identifiable courses or instructors; require human review, uncertainty reporting, data protection, and an appeals process.
 
-Done. The ethics statement now adds stylistic-bias monitoring for non-native and non-standard writing, a prohibition on attaching model-inferred negatives to identifiable courses or instructors, and per-aspect uncertainty reporting with low-confidence routing to human review and an appeals process, on top of the existing no-identifiable-data, licensing, re-consent, and high-stakes provisions.
+Done, and we thank the reviewer for this constructive list; every item now has a corresponding provision. On instructor evaluation, the ethics statement states that outputs are intended to inform formative course improvement and must not drive high-stakes instructor assessment without human oversight. On student-comment privacy and data protection, it retains the no-identifiable-data, licensing, and re-consent provisions and adds explicit data-protection and access-control language for any deployment on real comments. On bias, it adds stylistic-bias monitoring for non-native and non-standard writing. On the fictional-negative-review risk, it adds a prohibition on attaching model-inferred negatives to identifiable courses or instructors. And it adds per-aspect uncertainty reporting with low-confidence routing to human review and an appeals process.
 
 *Location:* Section 6.3.
 
@@ -214,9 +214,9 @@ Done. The truncated rows are not systematically biased across aspects (Cramer&#x
 
 **Requested.** Discuss emerging methods, including multimodal sarcasm perception in vision-language models and set-matching for generalized category discovery.
 
-Done. Both works are cited in the manuscript.
+Done, and we thank the reviewer for both pointers. The related-work section now places our contribution against these advances: it notes probing how vision-language models perceive nuanced signals such as multimodal sarcasm [5] and exploiting relational structure among unlabelled samples for generalized category discovery [24], and states that our data-quality-control contribution is orthogonal to these modeling advances. Both works are cited in the running text and listed in the bibliography.
 
-*Location:* References.
+*Location:* Section 2 (related work); References [5] and [24].
 
 ### 4. Strengthen the transfer-limits statement
 
@@ -241,6 +241,14 @@ Done. Section 6.2 provides a fine-tuning-size curve: roughly 250 to 500 local re
 Done. Absolute scores reflect the intrinsic difficulty of 20-aspect ABSA under conservative overlap. We add a qualitative error analysis showing the failures are systematic in four recurring patterns: high-prevalence diffuse aspects are over-predicted while specific aspects are under-detected; missed specific aspects are substituted by generic evaluative ones; polarity compresses toward neutral on detected aspects; and a positive skew appears under real-review transfer. Practitioners can therefore expect reliable detection and polarity on frequent, lexically distinctive aspects, and should treat fine-grained aspects and non-positive polarities on out-of-domain reviews as the weak regime (Appendix A.7.1).
 
 *Location:* Section 5; Section 6.1.
+
+### 7. Broader impact
+
+**Requested.** No broader-impact concerns were raised.
+
+Thank you for the positive assessment of the broader-impact discussion. We have kept the ethics statement thorough and, prompted by the other reviews, extended it with stylistic-bias monitoring for non-native and non-standard writing, a prohibition on attaching model-inferred negatives to identifiable courses or instructors, and per-aspect uncertainty reporting with low-confidence routing to human review and an appeals process, on top of the existing no-identifiable-data, licensing, re-consent, and high-stakes-use provisions.
+
+*Location:* Section 6.3.
 
 ---
 
@@ -275,9 +283,9 @@ Done. We broaden the baseline on both axes. The prompting axis is covered by the
 
 ### 3. Figure and table formatting
 
-**Requested.** The formatting of Figure 1, Table 5, Figure A3, and Figure A6 could benefit from refinement.
+**Requested.** The formatting of Figure 1, Table 5, Figure A2, and Figure A3 could benefit from refinement.
 
-Done. Figure 1 is tightened to fill its frame with even margins, and the bar-chart axis and numeric labels now use a clean sans-serif (the y-axis label reads Micro-F1 correctly). Table 5 was checked for readability.
+Done, and we thank the reviewer for the specific pointers. Figure 1 is tightened to fill its frame with even margins, and its bar-chart axis and numeric labels now use a clean sans-serif (the y-axis label reads Micro-F1 correctly). Table 5 was reset for consistent column alignment and readability, and the two appendix panels the reviewer flagged (Figures A2 and A3 in the reviewed version, now Figures A3 and A6 after the appendix reorganization) were regenerated with matched fonts, axis labels, and spacing so they are legible at print size.
 
 *Location:* Figure 1; Table 5; Figures A3 and A6.
 

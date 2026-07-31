@@ -50,8 +50,8 @@
 <div class="rc">
 <h2>3. Broader related-work discussion</h2>
 <p class="req">Requested: Discuss emerging methods, including multimodal sarcasm perception in vision-language models and set-matching for generalized category discovery.</p>
-<p class="resp"><b class="tag">Done.</b> Both works are cited in the manuscript.</p>
-<span class="loc">References.</span>
+<p class="resp"><b class="tag">Done, and we thank the reviewer for both pointers.</b> The related-work section now places our contribution against these advances: it notes probing how vision-language models perceive nuanced signals such as multimodal sarcasm [5] and exploiting relational structure among unlabelled samples for generalized category discovery [24], and states that our data-quality-control contribution is orthogonal to these modeling advances. Both works are cited in the running text and listed in the bibliography.</p>
+<span class="loc">Section 2 (related work); References [5] and [24].</span>
 </div>
 <div class="rc">
 <h2>4. Strengthen the transfer-limits statement</h2>
@@ -70,6 +70,12 @@
 <p class="req">Requested: Moderate absolute performance leaves unclear what good-enough means; a qualitative error analysis of common failure modes would help practitioners diagnose systematic errors.</p>
 <p class="resp"><b class="tag">Done.</b> Absolute scores reflect the intrinsic difficulty of 20-aspect ABSA under conservative overlap. We add a qualitative error analysis showing the failures are systematic in four recurring patterns: high-prevalence diffuse aspects are over-predicted while specific aspects are under-detected; missed specific aspects are substituted by generic evaluative ones; polarity compresses toward neutral on detected aspects; and a positive skew appears under real-review transfer. Practitioners can therefore expect reliable detection and polarity on frequent, lexically distinctive aspects, and should treat fine-grained aspects and non-positive polarities on out-of-domain reviews as the weak regime (Appendix A.7.1).</p>
 <span class="loc">Section 5; Section 6.1.</span>
+</div>
+<div class="rc">
+<h2>7. Broader impact</h2>
+<p class="req">Requested: No broader-impact concerns were raised.</p>
+<p class="resp"><b class="tag">Thank you for the positive assessment of the broader-impact discussion.</b> We have kept the ethics statement thorough and, prompted by the other reviews, extended it with stylistic-bias monitoring for non-native and non-standard writing, a prohibition on attaching model-inferred negatives to identifiable courses or instructors, and per-aspect uncertainty reporting with low-confidence routing to human review and an appeals process, on top of the existing no-identifiable-data, licensing, re-consent, and high-stakes-use provisions.</p>
+<span class="loc">Section 6.3.</span>
 </div>
 <p class="footer">Locations reference the revised <code>course_absa_manuscript.html</code>. Every requested change is in the revised manuscript at the cited location.</p>
 </div>

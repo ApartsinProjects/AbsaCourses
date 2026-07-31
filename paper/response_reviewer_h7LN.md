@@ -22,9 +22,9 @@ Done. We broaden the baseline on both axes. The prompting axis is covered by the
 
 ### 3. Figure and table formatting
 
-**Requested.** The formatting of Figure 1, Table 5, Figure A3, and Figure A6 could benefit from refinement.
+**Requested.** The formatting of Figure 1, Table 5, Figure A2, and Figure A3 could benefit from refinement.
 
-Done. Figure 1 is tightened to fill its frame with even margins, and the bar-chart axis and numeric labels now use a clean sans-serif (the y-axis label reads Micro-F1 correctly). Table 5 was checked for readability.
+Done, and we thank the reviewer for the specific pointers. Figure 1 is tightened to fill its frame with even margins, and its bar-chart axis and numeric labels now use a clean sans-serif (the y-axis label reads Micro-F1 correctly). Table 5 was reset for consistent column alignment and readability, and the two appendix panels the reviewer flagged (Figures A2 and A3 in the reviewed version, now Figures A3 and A6 after the appendix reorganization) were regenerated with matched fonts, axis labels, and spacing so they are legible at print size.
 
 *Location:* Figure 1; Table 5; Figures A3 and A6.
 
