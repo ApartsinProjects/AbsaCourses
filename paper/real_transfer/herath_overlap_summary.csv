@@ -1,8 +1,10 @@
 aspect,review_count,positive,neutral,negative
-accessibility,795,672,2,121
-exam_fairness,1167,524,136,507
-lecturer_quality,2153,1344,53,756
-materials,581,263,101,217
-organization,819,343,142,334
-overall_experience,3697,2514,182,1001
-workload,1814,961,239,614
+accessibility,35,11,12,12
+assessment_design,235,83,100,52
+exam_fairness,184,29,97,58
+grading_transparency,146,49,66,31
+lecturer_quality,2190,1402,398,390
+materials,390,137,194,59
+organization,477,266,155,56
+overall_experience,557,395,61,101
+workload,75,12,21,42
