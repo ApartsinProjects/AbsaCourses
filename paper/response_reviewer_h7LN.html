@@ -34,47 +34,47 @@
 <div class="sheet">
 <h1>Response to Reviewer h7LN</h1>
 <p class="venue">A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis (TMLR)</p>
-<p class="lede">We thank Reviewer h7LN for a thorough and technically precise report, and for the concrete pointers on baselines, figures, and the truncated rows, which we acted on directly. Each point is answered below with the specific evidence and its location.</p>
+<p class="lede">We thank Reviewer h7LN for a thorough and technically precise report, and for the concrete pointers on baselines, figures, and the truncated rows, which we acted on directly. Each point is answered with its evidence and location.</p>
 <div class="rc">
 <h2>1. Statistical realism and full-schema re-annotation</h2>
-<p class="req">Requested: LLM-as-judge realism does not statistically establish indistinguishability from real feedback; the full dimensional label set lacks comprehensive human re-annotation.</p>
-<p class="resp"><b class="tag">Reframed, with analysis and a new human study.</b> The realism that matters for a labeled training benchmark is functional: a model trained on the synthetic corpus recovers real aspect and sentiment signal on independent external corpora. Judged sentence by sentence, synthetic sentences are near-indistinguishable from real ones (the judge is only 60% accurate, near the 50% floor, versus 93% on whole reviews), and a sentence-level distributional check places the synthetic corpus close to real on the units that carry the supervision. On the label side, three annotators re-annotated a stratified sample of the synthetic corpus (Table 15, shared with point-N1): inter-annotator reliability is substantial (Fleiss kappa 0.70), human confirmation of declared aspects rises monotonically with the audit score, and the human labels reproduce the audit's presence-faithful, sentiment-noisier split, so the label validation now rests on direct human annotation of the synthetic text itself.</p>
+<p class="req">Requested: LLM-as-judge realism does not statistically establish indistinguishability from real feedback; the full label set lacks comprehensive human re-annotation.</p>
+<p class="resp"><b class="tag">Reframed, with analysis and a new human study.</b> The realism that matters for a labeled training benchmark is functional: a model trained on the synthetic corpus recovers real aspect and sentiment signal on independent external corpora. Judged sentence by sentence, synthetic sentences are near-indistinguishable from real ones (the judge is 60% accurate, near the 50% floor, versus 93% on whole reviews). On the label side, three annotators re-annotated a stratified sample (Table 15): inter-annotator reliability is substantial (Fleiss 0.70), human confirmation rises monotonically with the audit score, and the human labels reproduce the audit's presence-faithful, sentiment-noisier split, so label validation now rests on direct human annotation of the synthetic text.</p>
 <span class="loc">Section 5.7 (Table 15); Section 6.1; Appendix A.2.7.</span>
 </div>
 <div class="rc">
 <h2>2. Broaden baselines beyond one provider and prompt</h2>
-<p class="req">Requested: Baselines are confined to a single provider&#x27;s GPT family and one structured prompting method.</p>
-<p class="resp"><b class="tag">Done.</b> We broaden the baseline on both axes. The prompting axis is covered by the four zero-, fixed-, diverse-, and retrieval-few-shot variants in Table 7. The provider axis is now covered on the full 1,000-review test split: the identical zero-shot-glossary contract run across four families spanning four providers (GPT-5.4, Gemini-2.5-Flash, GLM-4.6, Llama-3.3-70B) lands in a single narrow band (detection micro-F1 0.239 to 0.267), all below the trained encoders, so the placement of zero-shot prompting holds regardless of provider.</p>
+<p class="req">Requested: Baselines are confined to a single provider&#x27;s GPT family and one prompting method.</p>
+<p class="resp"><b class="tag">Done.</b> The prompting axis is covered by four zero-, fixed-, diverse-, and retrieval-few-shot variants (Table 7). The provider axis is now covered on the full 1,000-review test split: the identical zero-shot contract run across four families spanning four providers (GPT-5.4, Gemini-2.5-Flash, GLM-4.6, Llama-3.3-70B) lands in a single narrow band (micro-F1 0.239 to 0.267), all below the trained encoders.</p>
 <span class="loc">Appendix A.3.2; Appendix A.6.2.</span>
 </div>
 <div class="rc">
 <h2>3. Figure and table formatting</h2>
 <p class="req">Requested: The formatting of Figure 1, Table 5, Figure A2, and Figure A3 could benefit from refinement.</p>
-<p class="resp"><b class="tag">Done, and we thank the reviewer for the specific pointers.</b> Figure 1 is tightened to fill its frame with even margins, and its bar-chart axis and numeric labels now use a clean sans-serif (the y-axis label reads Micro-F1 correctly). Table 5 was reset for consistent column alignment and readability, and the two appendix panels the reviewer flagged (Figures A2 and A3 in the reviewed version, now Figures A3 and A6 after the appendix reorganization) were regenerated with matched fonts, axis labels, and spacing so they are legible at print size.</p>
+<p class="resp"><b class="tag">Done, and we thank the reviewer for the specific pointers.</b> Figure 1 is tightened with even margins and a clean sans-serif axis, Table 5 was reset for consistent alignment, and the two appendix panels flagged (Figures A2 and A3 in the reviewed version, now Figures A3 and A6 after the appendix reorganization) were regenerated with matched fonts and spacing.</p>
 <span class="loc">Figure 1; Table 5; Figures A3 and A6.</span>
 </div>
 <div class="rc">
 <h2>4. The 841 token-capped rows</h2>
-<p class="req">Requested: 841 of 10,000 samples hit the token cap; full-corpus length-band adherence is 0.6819, so a substantial share falls outside the length bounds.</p>
-<p class="resp"><b class="tag">Done.</b> Regenerating exactly those rows at a higher cap eliminates the truncation and restores full-corpus length adherence. We further show the truncated rows are not systematically biased: their aspect distribution is not skewed (chi-square p=0.23, Cramer's V=0.034, Appendix A.1.6), their polarity distribution is negligibly different (V=0.020), and their audit faithfulness is statistically identical to the complete corpus (0.573 versus 0.577, p=0.76). They differ only in the mechanical ways (fewer aspects, shorter text), so excluding them does not change the benchmark.</p>
+<p class="req">Requested: 841 of 10,000 samples hit the token cap; full-corpus length-band adherence is 0.6819.</p>
+<p class="resp"><b class="tag">Done.</b> Regenerating those rows at a higher cap restores full-corpus length adherence. The truncated rows are not systematically biased: aspect distribution not skewed (chi-square p=0.23, V=0.034), polarity negligibly different (V=0.020), and audit faithfulness statistically identical (0.573 versus 0.577, p=0.76). They differ only mechanically, so excluding them does not change the benchmark.</p>
 <span class="loc">Appendix A.1.5, A.1.6.</span>
 </div>
 <div class="rc">
 <h2>5. Bottom-quartile rows and training value</h2>
-<p class="req">Requested: The bottom 25% instances markedly inflate sentiment error (Table 12) and hold little training value.</p>
-<p class="resp"><b class="tag">Clarified.</b> This is the signal the filtering recipe exploits: the negative-control bottom quartile collapses on sentiment error across both architectures and both transfer targets (0 of 8 seeds recovering), which is why retaining the top 50% by audit score reduces error at half the training cost. A quartile dose-response confirms the effect is monotone across the whole distribution (Appendix A.4.5), so the audit score discriminates informative from uninformative rows at both ends.</p>
+<p class="req">Requested: The bottom 25% markedly inflate sentiment error and hold little training value.</p>
+<p class="resp"><b class="tag">Clarified.</b> This is exactly the signal the filter exploits: the negative-control bottom quartile collapses on sentiment error across both architectures and both transfer targets (0 of 8 seeds recovering), which is why retaining the top 50% by audit score reduces error at half the training cost. A quartile dose-response confirms the effect is monotone across the whole distribution.</p>
 <span class="loc">Section 5.7.</span>
 </div>
 <div class="rc">
 <h2>6. Audit-human agreement (kappa 0.56)</h2>
 <p class="req">Requested: Cohen&#x27;s kappa 0.56 is moderate, so the audit cannot be a fully reliable proxy for human judgement.</p>
-<p class="resp"><b class="tag">Clarified.</b> The 0.42 match is a strict per-aspect lower bound (per-row mean 0.58) and the audit's value is demonstrated downstream: filtering by it reduces sentiment error at half the data, and it agrees with humans at kappa 0.56 and 0.62 across independent families. It is a validated selection instrument rather than a ground-truth oracle; the synthetic-corpus annotation study (point-N1) measures its agreement on synthetic text directly.</p>
+<p class="resp"><b class="tag">Clarified.</b> The 0.42 match is a strict per-aspect lower bound (per-row mean 0.58), and the audit's value is downstream: filtering by it reduces sentiment error at half the data, and it agrees with humans at kappa 0.56 and 0.62 across independent families. It is a validated selection instrument, not a ground-truth oracle; the synthetic-corpus annotation study measures its agreement on synthetic text directly.</p>
 <span class="loc">Section 5.7; Section 6.2.</span>
 </div>
 <div class="rc">
 <h2>7. Scope of the external validation</h2>
-<p class="req">Requested: The OMSCS reviews number only 32 and the Herath corpus 2,829, so the conclusions apply to a narrow scope.</p>
-<p class="resp"><b class="tag">Clarified.</b> External validation spans four independent real corpora (Herath, EduRABSA, M-ABSA, OATS) across institutional and MOOC settings. We state the current scope (English STEM and graduate) and identify cross-domain and cross-language extension as future work.</p>
+<p class="req">Requested: The OMSCS reviews number only 32 and Herath 2,829, so conclusions apply to a narrow scope.</p>
+<p class="resp"><b class="tag">Clarified.</b> External validation now spans four real corpora (Herath, EduRABSA, M-ABSA, OATS) across institutional and MOOC settings. We state the current scope (English STEM and graduate) and identify cross-domain and cross-language extension as future work.</p>
 <span class="loc">Appendix A.5.4; Section 6.1.</span>
 </div>
 <p class="footer">Locations reference the revised <code>course_absa_manuscript.html</code>. Every requested change is in the revised manuscript at the cited location.</p>

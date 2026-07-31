@@ -2,29 +2,29 @@
 
 *A Controlled Synthetic Benchmark for Educational Aspect-Based Sentiment Analysis (TMLR)*
 
-We are grateful to Reviewer nfat for a careful and constructive report, and especially for pressing on the validation of the audit and the internal consistency of the reporting. Both have made the paper stronger. We answer each point below with the specific change and its location in the revised manuscript.
+We thank Reviewer nfat for a careful and constructive report. Both the validation of the audit and the internal consistency of the reporting are now stronger. We answer each point with the change and its location.
 
 ### 1. Human validation of the audit on the synthetic corpus
 
-**Requested.** Human-annotate a representative sample of the actual synthetic corpus; the auditor is validated mainly on perturbed real labels rather than direct human annotation of synthetic reviews.
+**Requested.** Human-annotate a representative sample of the actual synthetic corpus and report aspect and sentiment agreement.
 
-Done (new Table 15). Three annotators independently labeled a stratified sample of 300 synthetic reviews (610 declared review-aspect decisions), blind to the declared labels, marking per-aspect presence and sentiment. Inter-annotator reliability is substantial for both label types: Fleiss kappa 0.70 on aspect presence, with pairwise Cohen kappa 0.60 to 0.87 spanning presence and sentiment, and Table 15 now reports the sentiment inter-annotator agreement alongside the presence agreement. The annotation validates the audit directly on synthetic text three ways: human confirmation of the declared aspect rises monotonically with the audit score (55% in the lowest audit-score quartile to 79% in the highest); human and audit presence judgments agree 76% of the time; and the human annotation independently reproduces the audit's central finding that aspect presence is the faithful signal (70% human-confirmed) while aspect sentiment is the noisier one (human-declared agreement about 0.40, closely matching the audit's strict 0.42). The audit score is therefore a valid, human-grounded quality signal on the synthetic corpus, and the corpus's measured noise level is accurate.
+Done (new Table 15). Three annotators labeled 300 synthetic reviews (610 declared aspect decisions), shown each candidate aspect but blind to its declared presence and sentiment. Human confirmation of the declared aspect rises monotonically with the audit score (0.55 to 0.79 across quartiles, with Wilson intervals and a review-level clustered bootstrap), and the human labels reproduce the audit's presence-faithful, sentiment-noisier split (human sentiment agreement 0.38, matching the audit's strict 0.42). Inter-annotator reliability is substantial for presence (Fleiss 0.70) and moderate for sentiment (Fleiss 0.49). The audit score is therefore a human-validated selection signal on the synthetic corpus.
 
-*Location:* Section 5.7 (Table 15); Section 6.1.
+*Location:* Section 5.7 (Table 15).
 
 ### 2. Match filtering subsets to isolate faithfulness
 
-**Requested.** Sentiment MSE is measured only on aspects each model predicts, so filtering comparisons may be confounded; match subsets by aspect, polarity, aspect count, length, and style.
+**Requested.** Match retained and control subsets by aspect, polarity, aspect count, length, and style.
 
-Done (new Table 14). We add a covariate-matched filtering comparison that matches the retained and control subsets one-to-one on aspect set, aspect count, polarity composition, length band, and formality band, so the two subsets are identical on every covariate except the audit score itself (matched-pair audit-score means 0.90 versus 0.26; 3,441 pairs). Both are then trained and scored on the same common gold-present aspect cells on the 9-aspect Herath overlap (4,289 shared cells), which removes the prediction-mask confound entirely. Under this strict design the faithfulness-retained subset has the lower transferred sentiment error in every seed (sentiment MSE 0.412 versus 0.519, a paired reduction of 0.108 across three seeds) and a higher detection micro-F1 (0.400 versus 0.338), so the filtering gain is attributable to label faithfulness alone rather than to differing composition or prediction masks. This complements the size-matched result already reported (retaining the top 50% cuts sentiment error at half the training cost, 7 of 8 seeds, replicated across architectures).
+Done (new Table 14). A covariate-matched comparison pairs the retained and control subsets one-to-one on aspect set, aspect count, polarity, length band, and formality (3,441 pairs, audit-score means 0.90 versus 0.26) and scores both on the same gold-present cells, removing the prediction-mask confound. The faithfulness-retained subset has lower transferred sentiment error in every seed (0.412 versus 0.519) and higher detection micro-F1 (0.400 versus 0.338), so the gain is attributable to faithfulness alone.
 
 *Location:* Section 5.7 (Table 14).
 
 ### 3. Reconcile inconsistent numbers
 
-**Requested.** Resolve inconsistent numbers, especially the BERT scores in Tables 8 and 9, aspect-count totals that do not sum to 10,000, and the incomplete abstract.
+**Requested.** Resolve the Tables 8 and 9 BERT scores, the aspect-count totals, and the incomplete abstract.
 
-Done. The aspect-count totals now sum to 10,000 (3,032 plus 3,917 plus 3,051) and the abstract is complete. The Table 8 versus Table 9 BERT discrepancy arose because the two tables were built from two separate single-seed transfer runs; we now report the transfer with a multi-seed table so every transfer score and the derived generalization gap trace to one consistent set of runs.
+Done. The aspect-count totals sum to 10,000 (3,032 + 3,917 + 3,051) and the abstract is complete. The Table 8 versus Table 9 discrepancy came from two single-seed runs; the transfer is now a multi-seed table, so every score traces to one consistent set of runs.
 
 *Location:* Abstract; Section 5.1; Section 5.4 (Tables 8 and 9).
 
@@ -32,23 +32,23 @@ Done. The aspect-count totals now sum to 10,000 (3,032 plus 3,917 plus 3,051) an
 
 **Requested.** Shorten repeated discussion.
 
-Done. We streamlined the discussion by removing verbatim restatements of the headline figures and caveats as they travel between sections, while retaining every experiment, control, and reviewer-requested caveat (each now appears once in its natural home).
+Done. The generation process is stated once, the shared-split contract is cross-referenced, and the Section 5.8 recap is collapsed into a short bridge, while every experiment and caveat is retained.
 
-*Location:* Section 6.
+*Location:* Sections 3, 5.8, 6.
 
 ### 5. Frame the resource as noisy synthetic supervision
 
-**Requested.** Clearly describe the resource as noisy synthetic supervision rather than a gold benchmark.
+**Requested.** Describe the resource as noisy synthetic supervision rather than a gold benchmark.
 
-Done. The abstract, Section 6.2, and conclusion state that this is a controlled synthetic-supervision resource whose label faithfulness is explicitly measured (0.42 strict per-aspect lower bound, 0.58 per-row) and controlled by the audit-and-filter pipeline, with a documented benchmark setting, rather than a gold-labeled corpus. Quantifying and filtering label noise is a central contribution, not a caveat on it.
+Done. The abstract, Section 6.2, and conclusion describe a controlled synthetic-supervision resource whose label faithfulness is measured (strict 0.42 per-aspect, 0.58 per-row) and controlled by the audit-and-filter pipeline, not a gold-labeled corpus.
 
 *Location:* Abstract; Section 6.2; Section 7.
 
 ### 6. Broaden the impact discussion
 
-**Requested.** Address instructor evaluation, student-comment privacy, bias against non-native or unusual writing styles, and the risk of attaching fictional negative reviews to identifiable courses or instructors; require human review, uncertainty reporting, data protection, and an appeals process.
+**Requested.** Address instructor evaluation, comment privacy, bias against non-native writing, and fictional negative reviews, and require human review, uncertainty reporting, data protection, and an appeals process.
 
-Done, and we thank the reviewer for this constructive list; every item now has a corresponding provision. On instructor evaluation, the ethics statement states that outputs are intended to inform formative course improvement and must not drive high-stakes instructor assessment without human oversight. On student-comment privacy and data protection, it retains the no-identifiable-data, licensing, and re-consent provisions and adds explicit data-protection and access-control language for any deployment on real comments. On bias, it adds stylistic-bias monitoring for non-native and non-standard writing. On the fictional-negative-review risk, it adds a prohibition on attaching model-inferred negatives to identifiable courses or instructors. And it adds per-aspect uncertainty reporting with low-confidence routing to human review and an appeals process.
+Done. The ethics statement adds stylistic-bias monitoring for non-native and non-standard writing, a prohibition on attaching model-inferred negatives to identifiable courses or instructors, and per-aspect uncertainty with low-confidence routing to human review and an appeals process, on top of the existing no-identifiable-data, licensing, and re-consent provisions.
 
 *Location:* Section 6.3.
 
@@ -56,7 +56,7 @@ Done, and we thank the reviewer for this constructive list; every item now has a
 
 **Requested.** Random splits from the same generator and prompt may reward generator-specific patterns.
 
-Clarified, with a new control. The learnable signal is not a single generator's artifact: regenerating and auditing with three independent model families reproduces the label fidelity, and a held-out-generator transfer check (Appendix A.3.3) shows a detector trained on one generator's data transfers to other generators' data without collapse. An overlap-generalization analysis further separates aspect-composition effects from domain shift.
+Clarified, with a new control. Regenerating and auditing with three independent model families reproduces the label fidelity, and a held-out-generator check shows a detector trained on one generator's data transfers to other generators' data without collapse.
 
 *Location:* Appendix A.3.2, A.5.4, A.3.3.
 
